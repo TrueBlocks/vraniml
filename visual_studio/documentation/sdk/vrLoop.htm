@@ -1,0 +1,242 @@
+<html><head><title>vrLoop Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrLoop</a></h1>
+<dl>
+<dd>
+	A <a href="vrRingList.htm">vrRingList</a> of vrHalfEdges defining a <a href="vrFace.htm">vrFace</a>.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrloop.htm#aag">Summary</a> | </a>
+<a href="vrloop.htm#DESCRIPTION">Description</a> | 
+<a href="vrloop.htm#NOTES">Notes</a> | 
+<a href="vrloop.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrloop.htm#MEMBERS">Members</a> | 
+<a href="vrloop.htm#parents">Ancestors</a> | <a href="vrloop.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrLoop :<br>
+public vrIntrusiveListNode &lt; vrLoop * &gt;<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">vrHalfEdgeList </td><td><a href="vrLoop.htm#vrHalfEdgeList_halfedges$">halfedges</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrLoop.htm#vrLoop_(const_vrLoop&amp;_l)$">vrLoop</a> (const vrLoop&amp; l);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrLoop.htm#vrLoop_(vrFace_*f,_SFBool_isOuter_)$">vrLoop</a> (<a href="vrFace.htm">vrFace</a> *f, SFBool isOuter );</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrLoop.htm#~vrLoop_()$">vrLoop</a> ();</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLoop.htm#void_SetFace_(vrFace_*f)$">SetFace</a> (<a href="vrFace.htm">vrFace</a> *f);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLoop.htm#void_SetFirstHe_(vrHalfEdge_*he)$">SetFirstHe</a> (<a href="vrHalfEdge.htm">vrHalfEdge</a> *he);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLoop.htm#void_AddHalfEdge_(vrHalfEdge_*he)$">AddHalfEdge</a> (<a href="vrHalfEdge.htm">vrHalfEdge</a> *he);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLoop.htm#void_AddHalfEdge_(vrHalfEdge_*before,_vrHalfEdge_*he)$">AddHalfEdge</a> (<a href="vrHalfEdge.htm">vrHalfEdge</a> *before, <a href="vrHalfEdge.htm">vrHalfEdge</a> *he);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrLoop.htm#SFBool_GetVertexLocations(Uint32&amp;_max,_SFVec3f_*vecs)_const$">GetVertexLocations</a>(Uint32&amp; max, <a href="SFVec3f.htm">SFVec3f</a> *vecs) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrFace.htm">vrFace</a> *</td><td><a href="vrLoop.htm#vrFace_*GetFace_(void)_const$">GetFace</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrHalfEdge.htm">vrHalfEdge</a> *</td><td><a href="vrLoop.htm#vrHalfEdge_*GetFirstHe_(void)_const$">GetFirstHe</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrSolid.htm">vrSolid</a> *</td><td><a href="vrLoop.htm#vrSolid_*GetSolid_(void)_const$">GetSolid</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrHalfEdge.htm">vrHalfEdge</a> *</td><td><a href="vrLoop.htm#vrHalfEdge_*GetNearest_(vrHalfEdge_*he)_const$">GetNearest</a> (<a href="vrHalfEdge.htm">vrHalfEdge</a> *he) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrLoop.htm#SFBool_isOuterLoop_(void)_const$">isOuterLoop</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrLoop.htm#SFFloat_Area_(void)_const$">Area</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrLoop.htm#SFBool_BoundaryContains_(vrVertex_*v,_vrIntersectRecord&amp;_rec)_const$">BoundaryContains</a> (<a href="vrVertex.htm">vrVertex</a> *v, vrIntersectRecord&amp; rec) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrLoop.htm#SFBool_Contains_(vrVertex_*v,_SFInt32_drop,_vrIntersectRecord&amp;_rec)_const$">Contains</a> (<a href="vrVertex.htm">vrVertex</a> *v, SFInt32 drop, vrIntersectRecord&amp; rec) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrLoop.htm#SFBool_CheckForContainment_(const_SFVec3f&amp;_v,_SFInt32_drop)_const$">CheckForContainment</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; v, SFInt32 drop) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLoop.htm#void_RemoveHe_(vrHalfEdge_*he)$">RemoveHe</a> (<a href="vrHalfEdge.htm">vrHalfEdge</a> *he);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLoop.htm#void_Show_(vrDumpContext&amp;_dc)_const$">Show</a> (<a href="vrDumpContext.htm">vrDumpContext</a>&amp; dc) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLoop.htm#void_Verify_(void)_const$">Verify</a> (void) const;</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	A <a href="vrFace.htm">vrFace</a> contains a list of vrLoop objects.  The vrLoop stores a ring list
+	of vrHalfEdges.  Each halfedge points to a <a href="vrVertex.htm">vrVertex</a> and the 'loop'
+	defines the verticies of a <a href="vrFace.htm">vrFace</a>.  Inside loops may also be present
+	in a <a href="vrFace.htm">vrFace</a> in which case the face has a hole.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>You will not use this class directly.</li>
+	<li>Copy constructors are private so you can't copy it.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="vrHalfEdgeList_halfedges$"><ul><h3><li>vrHalfEdgeList halfedges;</li></h3></a>
+</ul>
+</ul>	   <dd>The halfedge list.
+<p>
+<dl><dl>
+<dt><i>defualt</i><strong> Empty</strong>
+<p>
+</dl></dl>
+<a name="vrLoop_(const_vrLoop&amp;_l)$"><ul><h3><li>vrLoop (const vrLoop&amp; l);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy Constructor.
+<p>
+<a name="vrLoop_(vrFace_*f,_SFBool_isOuter_)$"><ul><h3><li>vrLoop (vrFace *f, SFBool isOuter );</li></h3></a>
+</ul>
+</ul>	   <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>The face to which this loop belongs.
+<dt><i>in</i><strong> isOuter:</strong>
+<dd>TRUE if this loop is the outer loop of the face.
+<p>
+</dl></dl>
+<a name="~vrLoop_()$"><ul><h3><li>~vrLoop ();</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<p>
+<a name="void_SetFace_(vrFace_*f)$"><ul><h3><li>void SetFace (vrFace *f);</li></h3></a>
+</ul>
+</ul>	   <dd>Set this loop's <a href="vrFace.htm">vrFace</a> pointer.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>The face to set.
+<p>
+</dl></dl>
+<a name="void_SetFirstHe_(vrHalfEdge_*he)$"><ul><h3><li>void SetFirstHe (vrHalfEdge *he);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the first halfedge in the vrLoop.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> he:</strong>
+<dd>The halfedge to make the head of the list.
+<p>
+</dl></dl>
+<a name="void_AddHalfEdge_(vrHalfEdge_*he)$"><ul><h3><li>void AddHalfEdge (vrHalfEdge *he);</li></h3></a>
+</ul>
+</ul>	   <dd>Add a halfedge to the end of the list.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> he:</strong>
+<dd>The halfedge to add.
+<p>
+</dl></dl>
+<a name="void_AddHalfEdge_(vrHalfEdge_*before,_vrHalfEdge_*he)$"><ul><h3><li>void AddHalfEdge (vrHalfEdge *before, vrHalfEdge *he);</li></h3></a>
+</ul>
+</ul>	   <dd>Add a halfedge to the end of the list before the given halfedge.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> before:</strong>
+<dd>The halfedge to add 'he' after.
+<dt><i>in</i><strong> he:</strong>
+<dd>The halfedge to add.
+<p>
+</dl></dl>
+<a name="SFBool_GetVertexLocations(Uint32&amp;_max,_SFVec3f_*vecs)_const$"><ul><h3><li>SFBool GetVertexLocations(Uint32&amp; max, SFVec3f *vecs) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the loop's verticies in the given array.  Returns TRUE if the verticies fit into the array.
+<p>
+<dl><dl>
+<dt><i>in/out</i><strong> max:</strong>
+<dd>The number of vecs that can be added.
+<dt><i>out</i><strong> vecs:</strong>
+<dd>The memory location into which to copy the verticies.  If NULL, max returns the required number of verticies.
+<p>
+</dl></dl>
+<a name="vrFace_*GetFace_(void)_const$"><ul><h3><li>vrFace *GetFace (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the <a href="vrFace.htm">vrFace</a> to which this loop belongs.
+<p>
+<a name="vrHalfEdge_*GetFirstHe_(void)_const$"><ul><h3><li>vrHalfEdge *GetFirstHe (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the first <a href="vrHalfEdge.htm">vrHalfEdge</a> in this loop.
+<p>
+<a name="vrSolid_*GetSolid_(void)_const$"><ul><h3><li>vrSolid *GetSolid (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the <a href="vrSolid.htm">vrSolid</a> to which this loop belongs.
+<p>
+<a name="vrHalfEdge_*GetNearest_(vrHalfEdge_*he)_const$"><ul><h3><li>vrHalfEdge *GetNearest (vrHalfEdge *he) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the halfedge in this loop that is closest (Euclidian distance to the halfedge's vertex) to the given he.
+<p>
+<a name="SFBool_isOuterLoop_(void)_const$"><ul><h3><li>SFBool isOuterLoop (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return TRUE if this loop is the face's outer loop.
+<p>
+<a name="SFFloat_Area_(void)_const$"><ul><h3><li>SFFloat Area (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return TRUE area represented by this loop.
+<p>
+<a name="SFBool_BoundaryContains_(vrVertex_*v,_vrIntersectRecord&amp;_rec)_const$"><ul><h3><li>SFBool BoundaryContains (vrVertex *v, vrIntersectRecord&amp; rec) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the vertex is 'inside' this loop.  Returns intersection information in the vrIntersectRecord.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The query vertex.
+<dt><i>in</i><strong> rec:</strong>
+<dd>A location in which to return information about the intersection.
+<p>
+</dl></dl>
+<a name="SFBool_Contains_(vrVertex_*v,_SFInt32_drop,_vrIntersectRecord&amp;_rec)_const$"><ul><h3><li>SFBool Contains (vrVertex *v, SFInt32 drop, vrIntersectRecord&amp; rec) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the loop contains the vertex.  Returns intersection information in the vrIntersectRecord.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The query vertex.
+<dt><i>in</i><strong> rec:</strong>
+<dd>A location in which to return information about the intersection.
+<p>
+</dl></dl>
+<a name="SFBool_CheckForContainment_(const_SFVec3f&amp;_v,_SFInt32_drop)_const$"><ul><h3><li>SFBool CheckForContainment (const SFVec3f&amp; v, SFInt32 drop) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the loop contains the vertex.  Returns intersection information in the vrIntersectRecord.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The query vertex.
+<p>
+</dl></dl>
+<a name="void_RemoveHe_(vrHalfEdge_*he)$"><ul><h3><li>void RemoveHe (vrHalfEdge *he);</li></h3></a>
+</ul>
+</ul>	   <dd>Remove the he from this loop.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> he:</strong>
+<dd>The he to remove.
+<p>
+</dl></dl>
+<a name="void_Show_(vrDumpContext&amp;_dc)_const$"><ul><h3><li>void Show (vrDumpContext&amp; dc) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Debugging support.  Display the contents of the <a href="vrEdge.htm">vrEdge</a> to the dc.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> dc:</strong>
+<dd>The <a href="vrDumpContext.htm">vrDumpContext</a> to which to dump this edge.
+<p>
+</dl></dl>
+<a name="void_Verify_(void)_const$"><ul><h3><li>void Verify (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Debugging support.  Verify the edge.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrLoop:<p>
+<ul>
+<li>vrIntrusiveListNode
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:00 1999
+.<p>
+</body></html>

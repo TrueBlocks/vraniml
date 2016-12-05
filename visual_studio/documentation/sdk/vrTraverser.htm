@@ -1,0 +1,551 @@
+<html><head><title>vrTraverser Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrTraverser</a></h1>
+<dl>
+<dd>
+	The base class for all Traversers.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrtraverser.htm#aag">Summary</a> | </a>
+<a href="vrtraverser.htm#DESCRIPTION">Description</a> | 
+<a href="vrtraverser.htm#NOTES">Notes</a> | 
+<a href="vrtraverser.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrtraverser.htm#MEMBERS">Members</a> | 
+<a href="vrtraverser.htm#parents">Ancestors</a> | <a href="vrtraverser.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrTraverser : public <a href="vrBaseNode.htm">vrBaseNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="vrBrowser.htm">vrBrowser</a> *</td><td><a href="vrTraverser.htm#vrBrowser_*m_Browser$">m_Browser</a>;</td></tr>
+<tr><td align="right" valign="top">void *</td><td><a href="vrTraverser.htm#void_*m_hWnd$">m_hWnd</a>;</td></tr>
+<tr><td align="right" valign="top">vrNodeStack&amp;ltvrGroupingNode *&gt; </td><td><a href="vrTraverser.htm#vrNodeStack&amp;ltvrGroupingNode_*&gt;_parentStack$">parentStack</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrTraverser.htm#vrTraverser()_$">vrTraverser</a>() ;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrTraverser.htm#vrTraverser(vrBrowser_*b,_void_*h)$">vrTraverser</a>(<a href="vrBrowser.htm">vrBrowser</a> *b, void *h);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrTraverser.htm#~vrTraverser(void)_$">vrTraverser</a></i>(void) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrAppearance_*node)_$">Traverse</a></i>(const <a href="vrAppearance.htm">vrAppearance</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrFontStyle_*node)_$">Traverse</a></i>(const <a href="vrFontStyle.htm">vrFontStyle</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrImageTexture_*node)_$">Traverse</a></i>(const <a href="vrImageTexture.htm">vrImageTexture</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrMaterial_*node)_$">Traverse</a></i>(const <a href="vrMaterial.htm">vrMaterial</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrMovieTexture_*node)_$">Traverse</a></i>(const <a href="vrMovieTexture.htm">vrMovieTexture</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrPixelTexture_*node)_$">Traverse</a></i>(const <a href="vrPixelTexture.htm">vrPixelTexture</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrTextureTransform_*node)_$">Traverse</a></i>(const <a href="vrTextureTransform.htm">vrTextureTransform</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrBackground_*node)_$">Traverse</a></i>(const <a href="vrBackground.htm">vrBackground</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrFog_*node)_$">Traverse</a></i>(const <a href="vrFog.htm">vrFog</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrNavigationInfo_*node)_$">Traverse</a></i>(const <a href="vrNavigationInfo.htm">vrNavigationInfo</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrViewpoint_*node)_$">Traverse</a></i>(const <a href="vrViewpoint.htm">vrViewpoint</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrAudioClip_*node)_$">Traverse</a></i>(const <a href="vrAudioClip.htm">vrAudioClip</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrDirectionalLight_*node)_$">Traverse</a></i>(const <a href="vrDirectionalLight.htm">vrDirectionalLight</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrLight_*node)_$">Traverse</a></i>(const <a href="vrLight.htm">vrLight</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrPointLight_*node)_$">Traverse</a></i>(const <a href="vrPointLight.htm">vrPointLight</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrScript_*node)_$">Traverse</a></i>(const <a href="vrScript.htm">vrScript</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrShape_*node)_$">Traverse</a></i>(const <a href="vrShape.htm">vrShape</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrSound_*node)_$">Traverse</a></i>(const <a href="vrSound.htm">vrSound</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrSpotLight_*node)_$">Traverse</a></i>(const <a href="vrSpotLight.htm">vrSpotLight</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrWorldInfo_*node)_$">Traverse</a></i>(const <a href="vrWorldInfo.htm">vrWorldInfo</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrGroupingNode_*node)$">Traverse</a></i>(const <a href="vrGroupingNode.htm">vrGroupingNode</a> *node);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrAnchor_*node)$">Traverse</a></i>(const <a href="vrAnchor.htm">vrAnchor</a> *node);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrBillboard_*node)$">Traverse</a></i>(const <a href="vrBillboard.htm">vrBillboard</a> *node);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrCollision_*node)$">Traverse</a></i>(const <a href="vrCollision.htm">vrCollision</a> *node);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrGroup_*node)$">Traverse</a></i>(const <a href="vrGroup.htm">vrGroup</a> *node);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrTransform_*node)$">Traverse</a></i>(const <a href="vrTransform.htm">vrTransform</a> *node);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrInline_*node)$">Traverse</a></i>(const <a href="vrInline.htm">vrInline</a> *node);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrLOD_*node)$">Traverse</a></i>(const <a href="vrLOD.htm">vrLOD</a> *node);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrSwitch_*node)$">Traverse</a></i>(const <a href="vrSwitch.htm">vrSwitch</a> *node);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrGeometryNode_*node)_$">Traverse</a></i>(const <a href="vrGeometryNode.htm">vrGeometryNode</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrBox_*node)_$">Traverse</a></i>(const <a href="vrBox.htm">vrBox</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrCone_*node)_$">Traverse</a></i>(const <a href="vrCone.htm">vrCone</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrCylinder_*node)_$">Traverse</a></i>(const <a href="vrCylinder.htm">vrCylinder</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrExtrusion_*node)_$">Traverse</a></i>(const <a href="vrExtrusion.htm">vrExtrusion</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrSphere_*node)_$">Traverse</a></i>(const <a href="vrSphere.htm">vrSphere</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrText_*node)_$">Traverse</a></i>(const <a href="vrText.htm">vrText</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrDataSet_*node)_$">Traverse</a></i>(const <a href="vrDataSet.htm">vrDataSet</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrElevationGrid_*node)_$">Traverse</a></i>(const <a href="vrElevationGrid.htm">vrElevationGrid</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrIndexedFaceSet_*node)_$">Traverse</a></i>(const <a href="vrIndexedFaceSet.htm">vrIndexedFaceSet</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrIndexedLineSet_*node)_$">Traverse</a></i>(const <a href="vrIndexedLineSet.htm">vrIndexedLineSet</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrPointSet_*node)_$">Traverse</a></i>(const <a href="vrPointSet.htm">vrPointSet</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrColor_*node)_$">Traverse</a></i>(const <a href="vrColor.htm">vrColor</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrCoordinate_*node)_$">Traverse</a></i>(const <a href="vrCoordinate.htm">vrCoordinate</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrNormal_*node)_$">Traverse</a></i>(const <a href="vrNormal.htm">vrNormal</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrTextureCoordinate_*node)_$">Traverse</a></i>(const <a href="vrTextureCoordinate.htm">vrTextureCoordinate</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrInterpolator_*node)_$">Traverse</a></i>(const <a href="vrInterpolator.htm">vrInterpolator</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrColorInterpolator_*node)_$">Traverse</a></i>(const <a href="vrColorInterpolator.htm">vrColorInterpolator</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrCoordinateInterpolator_*node)_$">Traverse</a></i>(const <a href="vrCoordinateInterpolator.htm">vrCoordinateInterpolator</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrNormalInterpolator_*node)_$">Traverse</a></i>(const <a href="vrNormalInterpolator.htm">vrNormalInterpolator</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrOrientationInterpolator_*node)_$">Traverse</a></i>(const <a href="vrOrientationInterpolator.htm">vrOrientationInterpolator</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrPositionInterpolator_*node)_$">Traverse</a></i>(const <a href="vrPositionInterpolator.htm">vrPositionInterpolator</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrScalarInterpolator_*node)_$">Traverse</a></i>(const <a href="vrScalarInterpolator.htm">vrScalarInterpolator</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrSensor_*node)_$">Traverse</a></i>(const <a href="vrSensor.htm">vrSensor</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrCylinderSensor_*node)_$">Traverse</a></i>(const <a href="vrCylinderSensor.htm">vrCylinderSensor</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrPlaneSensor_*node)_$">Traverse</a></i>(const <a href="vrPlaneSensor.htm">vrPlaneSensor</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrProximitySensor_*node)_$">Traverse</a></i>(const <a href="vrProximitySensor.htm">vrProximitySensor</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrSphereSensor_*node)_$">Traverse</a></i>(const <a href="vrSphereSensor.htm">vrSphereSensor</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrTimeSensor_*node)_$">Traverse</a></i>(const <a href="vrTimeSensor.htm">vrTimeSensor</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrTouchSensor_*node)_$">Traverse</a></i>(const <a href="vrTouchSensor.htm">vrTouchSensor</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrVisibilitySensor_*node)_$">Traverse</a></i>(const <a href="vrVisibilitySensor.htm">vrVisibilitySensor</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrBrowser_*node)_$">Traverse</a></i>(const <a href="vrBrowser.htm">vrBrowser</a> *node) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_TraverseChildren(const_vrGroupingNode_*node)$">TraverseChildren</a></i>(const <a href="vrGroupingNode.htm">vrGroupingNode</a> *node);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrNode_*node)$">Traverse</a></i>(const <a href="vrNode.htm">vrNode</a> *node);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Traverse(const_vrBoundingBox_*node)$">Traverse</a></i>(const <a href="vrBoundingBox.htm">vrBoundingBox</a> *node);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_PreTraverse()_$">PreTraverse</a></i>() ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_PostTraverse()_$">PostTraverse</a></i>() ;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrTraverser.htm#SFBool_ProcessUserMessage(const_vrUserMessage&amp;_msg)_$">ProcessUserMessage</a></i>(const vrUserMessage&amp; msg) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Reset(void)$">Reset</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Clear(void)$">Clear</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_Init(void)$">Init</a></i>(void);</td></tr>
+<tr><td align="right" valign="top"><a href="vrMatrix.htm">vrMatrix</a> </td><td><a href="vrTraverser.htm#vrMatrix_GetTotalTransformation(void)_const$">GetTotalTransformation</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrTraverser.htm#void_SetMousePos(SFVec3f_pos)$">SetMousePos</a>(<a href="SFVec3f.htm">SFVec3f</a> pos);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrTraverser.htm#void_GetMousePos(SFVec3f&amp;_cur,_SFVec3f&amp;_prev)_const$">GetMousePos</a>(<a href="SFVec3f.htm">SFVec3f</a>&amp; cur, <a href="SFVec3f.htm">SFVec3f</a>&amp; prev) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrTraverser.htm#SFVec3f_GetMousePos(void)_const$">GetMousePos</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrRect2D.htm">vrRect2D</a> </td><td><a href="vrTraverser.htm#vrRect2D_GetViewport_(void)_const$">GetViewport</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrTraverser.htm#void_SetViewport_(long_x,_long_y,_long_w,_long_h)$">SetViewport</a></i> (long x, long y, long w, long h);</td></tr>
+<tr><td align="right" valign="top">void *</td><td><a href="vrTraverser.htm#void_*GetWindowHandle_(void)_const$">GetWindowHandle</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrTraverser.htm#void_SetWindowHandle_(void_*hWnd)$">SetWindowHandle</a> (void *hWnd);</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrTraverser.htm#SFString_GetUniqueID(const_vrNode_*node)_const$">GetUniqueID</a>(const <a href="vrNode.htm">vrNode</a> *node) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrTraverser.htm#DECLARE_NODE(vrTraverser)$">DECLARE_NODE</a>(vrTraverser);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	This is the base class for all traversers.  It implements functionality
+	that is common to all traversers (such as traversing grouping node's children).
+	This class also maintains a stack of grouping nodes that represent the
+	parentage of a given node in the traversal.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>None.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="vrBrowser_*m_Browser$"><ul><h3><li>vrBrowser *m_Browser;</li></h3></a>
+</ul>
+</ul>	   <dd>The browser which contains the scene graph to traverse.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NA</strong>
+<p>
+</dl></dl>
+<a name="void_*m_hWnd$"><ul><h3><li>void *m_hWnd;</li></h3></a>
+</ul>
+</ul>	   <dd>The window into which to draw the scene graph.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NA</strong>
+<p>
+</dl></dl>
+<a name="vrNodeStack&amp;ltvrGroupingNode_*&gt;_parentStack$"><ul><h3><li>vrNodeStack&amp;ltvrGroupingNode *&gt; parentStack;</li></h3></a>
+</ul>
+</ul>	   <dd>The parentage of the current node being traversed (the branch of the scene graph that is currently being traversed).
+<p>
+<a name="vrTraverser()_$"><ul><h3><li>vrTraverser() ;</li></h3></a>
+</ul>
+</ul>	   <dd>Constructor (don't use this).
+<p>
+<a name="vrTraverser(vrBrowser_*b,_void_*h)$"><ul><h3><li>vrTraverser(vrBrowser *b, void *h);</li></h3></a>
+</ul>
+</ul>	   <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> b:</strong>
+<dd>The browser to attach this traverser to.
+<dt><i>in</i><strong> h:</strong>
+<dd>A window handle.
+<p>
+</dl></dl>
+<a name="~vrTraverser(void)_$"><ul><h3><li>~vrTraverser(void) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="void_Traverse(const_vrAppearance_*node)_$"><ul><h3><li>void Traverse(const vrAppearance *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrFontStyle_*node)_$"><ul><h3><li>void Traverse(const vrFontStyle *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrImageTexture_*node)_$"><ul><h3><li>void Traverse(const vrImageTexture *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrMaterial_*node)_$"><ul><h3><li>void Traverse(const vrMaterial *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrMovieTexture_*node)_$"><ul><h3><li>void Traverse(const vrMovieTexture *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrPixelTexture_*node)_$"><ul><h3><li>void Traverse(const vrPixelTexture *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrTextureTransform_*node)_$"><ul><h3><li>void Traverse(const vrTextureTransform *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrBackground_*node)_$"><ul><h3><li>void Traverse(const vrBackground *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrFog_*node)_$"><ul><h3><li>void Traverse(const vrFog *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrNavigationInfo_*node)_$"><ul><h3><li>void Traverse(const vrNavigationInfo *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrViewpoint_*node)_$"><ul><h3><li>void Traverse(const vrViewpoint *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrAudioClip_*node)_$"><ul><h3><li>void Traverse(const vrAudioClip *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrDirectionalLight_*node)_$"><ul><h3><li>void Traverse(const vrDirectionalLight *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrLight_*node)_$"><ul><h3><li>void Traverse(const vrLight *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrPointLight_*node)_$"><ul><h3><li>void Traverse(const vrPointLight *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrScript_*node)_$"><ul><h3><li>void Traverse(const vrScript *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrShape_*node)_$"><ul><h3><li>void Traverse(const vrShape *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrSound_*node)_$"><ul><h3><li>void Traverse(const vrSound *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrSpotLight_*node)_$"><ul><h3><li>void Traverse(const vrSpotLight *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrWorldInfo_*node)_$"><ul><h3><li>void Traverse(const vrWorldInfo *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrGroupingNode_*node)$"><ul><h3><li>void Traverse(const vrGroupingNode *node);</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node.
+<p>
+<a name="void_Traverse(const_vrAnchor_*node)$"><ul><h3><li>void Traverse(const vrAnchor *node);</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node.
+<p>
+<a name="void_Traverse(const_vrBillboard_*node)$"><ul><h3><li>void Traverse(const vrBillboard *node);</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node.
+<p>
+<a name="void_Traverse(const_vrCollision_*node)$"><ul><h3><li>void Traverse(const vrCollision *node);</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node.
+<p>
+<a name="void_Traverse(const_vrGroup_*node)$"><ul><h3><li>void Traverse(const vrGroup *node);</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node.
+<p>
+<a name="void_Traverse(const_vrTransform_*node)$"><ul><h3><li>void Traverse(const vrTransform *node);</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node.
+<p>
+<a name="void_Traverse(const_vrInline_*node)$"><ul><h3><li>void Traverse(const vrInline *node);</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node.
+<p>
+<a name="void_Traverse(const_vrLOD_*node)$"><ul><h3><li>void Traverse(const vrLOD *node);</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node.
+<p>
+<a name="void_Traverse(const_vrSwitch_*node)$"><ul><h3><li>void Traverse(const vrSwitch *node);</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node.
+<p>
+<a name="void_Traverse(const_vrGeometryNode_*node)_$"><ul><h3><li>void Traverse(const vrGeometryNode *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrBox_*node)_$"><ul><h3><li>void Traverse(const vrBox *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrCone_*node)_$"><ul><h3><li>void Traverse(const vrCone *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrCylinder_*node)_$"><ul><h3><li>void Traverse(const vrCylinder *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrExtrusion_*node)_$"><ul><h3><li>void Traverse(const vrExtrusion *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrSphere_*node)_$"><ul><h3><li>void Traverse(const vrSphere *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrText_*node)_$"><ul><h3><li>void Traverse(const vrText *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrDataSet_*node)_$"><ul><h3><li>void Traverse(const vrDataSet *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrElevationGrid_*node)_$"><ul><h3><li>void Traverse(const vrElevationGrid *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrIndexedFaceSet_*node)_$"><ul><h3><li>void Traverse(const vrIndexedFaceSet *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrIndexedLineSet_*node)_$"><ul><h3><li>void Traverse(const vrIndexedLineSet *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrPointSet_*node)_$"><ul><h3><li>void Traverse(const vrPointSet *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrColor_*node)_$"><ul><h3><li>void Traverse(const vrColor *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrCoordinate_*node)_$"><ul><h3><li>void Traverse(const vrCoordinate *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrNormal_*node)_$"><ul><h3><li>void Traverse(const vrNormal *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrTextureCoordinate_*node)_$"><ul><h3><li>void Traverse(const vrTextureCoordinate *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrInterpolator_*node)_$"><ul><h3><li>void Traverse(const vrInterpolator *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrColorInterpolator_*node)_$"><ul><h3><li>void Traverse(const vrColorInterpolator *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrCoordinateInterpolator_*node)_$"><ul><h3><li>void Traverse(const vrCoordinateInterpolator *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrNormalInterpolator_*node)_$"><ul><h3><li>void Traverse(const vrNormalInterpolator *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrOrientationInterpolator_*node)_$"><ul><h3><li>void Traverse(const vrOrientationInterpolator *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrPositionInterpolator_*node)_$"><ul><h3><li>void Traverse(const vrPositionInterpolator *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrScalarInterpolator_*node)_$"><ul><h3><li>void Traverse(const vrScalarInterpolator *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrSensor_*node)_$"><ul><h3><li>void Traverse(const vrSensor *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrCylinderSensor_*node)_$"><ul><h3><li>void Traverse(const vrCylinderSensor *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrPlaneSensor_*node)_$"><ul><h3><li>void Traverse(const vrPlaneSensor *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrProximitySensor_*node)_$"><ul><h3><li>void Traverse(const vrProximitySensor *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrSphereSensor_*node)_$"><ul><h3><li>void Traverse(const vrSphereSensor *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrTimeSensor_*node)_$"><ul><h3><li>void Traverse(const vrTimeSensor *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrTouchSensor_*node)_$"><ul><h3><li>void Traverse(const vrTouchSensor *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrVisibilitySensor_*node)_$"><ul><h3><li>void Traverse(const vrVisibilitySensor *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_Traverse(const_vrBrowser_*node)_$"><ul><h3><li>void Traverse(const vrBrowser *node) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse this node (does nothing).
+<p>
+<a name="void_TraverseChildren(const_vrGroupingNode_*node)$"><ul><h3><li>void TraverseChildren(const vrGroupingNode *node);</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse the children of the given grouping node.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> node:</strong>
+<dd>The grouping node to traverse the children of.
+<p>
+</dl></dl>
+<a name="void_Traverse(const_vrNode_*node)$"><ul><h3><li>void Traverse(const vrNode *node);</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse an arbitrary node type.
+	   <dd>Probably never called.
+<p>
+<a name="void_Traverse(const_vrBoundingBox_*node)$"><ul><h3><li>void Traverse(const vrBoundingBox *node);</li></h3></a>
+</ul>
+</ul>	   <dd>Traverse a bounding box (unknown use) - not documented.
+<p>
+<a name="void_PreTraverse()_$"><ul><h3><li>void PreTraverse() ;</li></h3></a>
+</ul>
+</ul>	   <dd>A chance to do something just prior to a traversal.  (Does nothing).
+<p>
+<a name="void_PostTraverse()_$"><ul><h3><li>void PostTraverse() ;</li></h3></a>
+</ul>
+</ul>	   <dd>A chance to do something just after a traversal.  (Does nothing).
+<p>
+<a name="SFBool_ProcessUserMessage(const_vrUserMessage&amp;_msg)_$"><ul><h3><li>SFBool ProcessUserMessage(const vrUserMessage&amp; msg) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a user generated event. (Does nothing).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> msg:</strong>
+<dd>The vrUserMessage event.
+<p>
+</dl></dl>
+<a name="void_Reset(void)$"><ul><h3><li>void Reset(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Reset the traverser.
+<p>
+<a name="void_Clear(void)$"><ul><h3><li>void Clear(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Clear the traverser.
+<p>
+<a name="void_Init(void)$"><ul><h3><li>void Init(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Initialize the traverser (called by constructor).
+<p>
+<a name="vrMatrix_GetTotalTransformation(void)_const$"><ul><h3><li>vrMatrix GetTotalTransformation(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns the total transformation matrix represented by the currently traversed branch of the scene graph.
+<p>
+<a name="void_SetMousePos(SFVec3f_pos)$"><ul><h3><li>void SetMousePos(SFVec3f pos);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the current mouse position (and copy the last mouse position to previous mouse position).
+<p>
+<a name="void_GetMousePos(SFVec3f&amp;_cur,_SFVec3f&amp;_prev)_const$"><ul><h3><li>void GetMousePos(SFVec3f&amp; cur, SFVec3f&amp; prev) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Get the current and previous mouse positions.
+<p>
+<dl><dl>
+<dt><i>out</i><strong> cur:</strong>
+<dd>Memory location for the current mouse position.
+<dt><i>out</i><strong> prev:</strong>
+<dd>Memory location for the previous mouse position.
+<p>
+</dl></dl>
+<a name="SFVec3f_GetMousePos(void)_const$"><ul><h3><li>SFVec3f GetMousePos(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Get the current and previous mouse positions.
+<p>
+<a name="vrRect2D_GetViewport_(void)_const$"><ul><h3><li>vrRect2D GetViewport (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Get the viewport.
+<p>
+<a name="void_SetViewport_(long_x,_long_y,_long_w,_long_h)$"><ul><h3><li>void SetViewport (long x, long y, long w, long h);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the viewport.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> x,y:</strong>
+<dd>The top-left of the window.
+<dt><i>in</i><strong> w,h:</strong>
+<dd>The width and height of the window.
+<p>
+</dl></dl>
+<a name="void_*GetWindowHandle_(void)_const$"><ul><h3><li>void *GetWindowHandle (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Get the window handle.
+<p>
+<a name="void_SetWindowHandle_(void_*hWnd)$"><ul><h3><li>void SetWindowHandle (void *hWnd);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the window handle.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> hWnd:</strong>
+<dd>The handle.
+<p>
+</dl></dl>
+<a name="SFString_GetUniqueID(const_vrNode_*node)_const$"><ul><h3><li>SFString GetUniqueID(const vrNode *node) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return a unique identifier for a given node based on the node's
+	   <dd>parentage.  The string returned is a concatenation of the
+	   <dd>current parent stack.
+<p>
+<a name="DECLARE_NODE(vrTraverser)$"><ul><h3><li>DECLARE_NODE(vrTraverser);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this class may be runtime typed. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrTraverser:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrActionTraverser.htm">vrActionTraverser</a>
+<li><a href="vrRenderTraverser.htm">vrRenderTraverser</a>
+<ul>
+<li><a href="vrD3DTraverser.htm">vrD3DTraverser</a>
+<li><a href="vrOGLTraverser.htm">vrOGLTraverser</a>
+</ul>
+<li><a href="vrValidateTraverser.htm">vrValidateTraverser</a>
+<li><a href="vrWriteTraverser.htm">vrWriteTraverser</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:04 1999
+.<p>
+</body></html>

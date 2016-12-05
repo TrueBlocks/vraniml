@@ -1,0 +1,939 @@
+<html><head><title>vrBackground Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrBackground</a></h1>
+<dl>
+<dd>
+	This class corresponds to the Background node in VRML.  
+	<a href="../spec/part1/nodesRef.html#Background">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrbackground.htm#aag">Summary</a> | </a>
+<a href="vrbackground.htm#DESCRIPTION">Description</a> | 
+<a href="vrbackground.htm#NOTES">Notes</a> | 
+<a href="vrbackground.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrbackground.htm#MEMBERS">Members</a> | 
+<a href="vrbackground.htm#parents">Ancestors</a> | <a href="vrbackground.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrBackground : public <a href="vrBindable.htm">vrBindable</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBackground.htm#vrBackground(void)$">vrBackground</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBackground.htm#vrBackground(const_vrBackground&amp;_v)$">vrBackground</a>(const vrBackground&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrBackground.htm#~vrBackground(void)$">vrBackground</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrBackground&amp; </td><td><a href="vrBackground.htm#vrBackground&amp;_operator$(const_vrBackground&amp;_v)$">operator=</a>(const vrBackground&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrBackground.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddOrigBackUrl(const_SFString&amp;_origbackurl)$">AddOrigBackUrl</a>(const <a href="SFString.htm">SFString</a>&amp; origbackurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetOrigBackUrl(const_MFString&amp;_origbackurl)$">SetOrigBackUrl</a>(const <a href="MFString.htm">MFString</a>&amp; origbackurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddOrigBottomUrl(const_SFString&amp;_origbottomurl)$">AddOrigBottomUrl</a>(const <a href="SFString.htm">SFString</a>&amp; origbottomurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetOrigBottomUrl(const_MFString&amp;_origbottomurl)$">SetOrigBottomUrl</a>(const <a href="MFString.htm">MFString</a>&amp; origbottomurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddOrigFrontUrl(const_SFString&amp;_origfronturl)$">AddOrigFrontUrl</a>(const <a href="SFString.htm">SFString</a>&amp; origfronturl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetOrigFrontUrl(const_MFString&amp;_origfronturl)$">SetOrigFrontUrl</a>(const <a href="MFString.htm">MFString</a>&amp; origfronturl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddOrigLeftUrl(const_SFString&amp;_origlefturl)$">AddOrigLeftUrl</a>(const <a href="SFString.htm">SFString</a>&amp; origlefturl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetOrigLeftUrl(const_MFString&amp;_origlefturl)$">SetOrigLeftUrl</a>(const <a href="MFString.htm">MFString</a>&amp; origlefturl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddOrigRightUrl(const_SFString&amp;_origrighturl)$">AddOrigRightUrl</a>(const <a href="SFString.htm">SFString</a>&amp; origrighturl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetOrigRightUrl(const_MFString&amp;_origrighturl)$">SetOrigRightUrl</a>(const <a href="MFString.htm">MFString</a>&amp; origrighturl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddOrigTopUrl(const_SFString&amp;_origtopurl)$">AddOrigTopUrl</a>(const <a href="SFString.htm">SFString</a>&amp; origtopurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetOrigTopUrl(const_MFString&amp;_origtopurl)$">SetOrigTopUrl</a>(const <a href="MFString.htm">MFString</a>&amp; origtopurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetBackgroundGroup(const_vrGroup*_backgroundgroup)$">SetBackgroundGroup</a>(const <a href="vrGroup.htm">vrGroup</a>* backgroundgroup);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNOrigBackUrls(void)_const$">GetNOrigBackUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrBackground.htm#SFString_GetOrigBackUrl(SFInt32_n)_const$">GetOrigBackUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrBackground.htm#const_MFString&amp;_GetOrigBackUrlArray(void)_const$">GetOrigBackUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNOrigBottomUrls(void)_const$">GetNOrigBottomUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrBackground.htm#SFString_GetOrigBottomUrl(SFInt32_n)_const$">GetOrigBottomUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrBackground.htm#const_MFString&amp;_GetOrigBottomUrlArray(void)_const$">GetOrigBottomUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNOrigFrontUrls(void)_const$">GetNOrigFrontUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrBackground.htm#SFString_GetOrigFrontUrl(SFInt32_n)_const$">GetOrigFrontUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrBackground.htm#const_MFString&amp;_GetOrigFrontUrlArray(void)_const$">GetOrigFrontUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNOrigLeftUrls(void)_const$">GetNOrigLeftUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrBackground.htm#SFString_GetOrigLeftUrl(SFInt32_n)_const$">GetOrigLeftUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrBackground.htm#const_MFString&amp;_GetOrigLeftUrlArray(void)_const$">GetOrigLeftUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNOrigRightUrls(void)_const$">GetNOrigRightUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrBackground.htm#SFString_GetOrigRightUrl(SFInt32_n)_const$">GetOrigRightUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrBackground.htm#const_MFString&amp;_GetOrigRightUrlArray(void)_const$">GetOrigRightUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNOrigTopUrls(void)_const$">GetNOrigTopUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrBackground.htm#SFString_GetOrigTopUrl(SFInt32_n)_const$">GetOrigTopUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrBackground.htm#const_MFString&amp;_GetOrigTopUrlArray(void)_const$">GetOrigTopUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrGroup.htm">vrGroup</a>* </td><td><a href="vrBackground.htm#vrGroup*_GetBackgroundGroup(void)_const$">GetBackgroundGroup</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddGroundAngle(SFFloat_groundangle)$">AddGroundAngle</a>(SFFloat groundangle);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetGroundAngle(const_MFFloat&amp;_groundangle)$">SetGroundAngle</a>(const MFFloat&amp; groundangle);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddGroundColor(const_SFColor&amp;_groundcolor)$">AddGroundColor</a>(const <a href="SFColor.htm">SFColor</a>&amp; groundcolor);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetGroundColor(const_MFColor&amp;_groundcolor)$">SetGroundColor</a>(const MFColor&amp; groundcolor);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddBackUrl(const_SFString&amp;_backurl)$">AddBackUrl</a>(const <a href="SFString.htm">SFString</a>&amp; backurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetBackUrl(const_MFString&amp;_backurl)$">SetBackUrl</a>(const <a href="MFString.htm">MFString</a>&amp; backurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddBottomUrl(const_SFString&amp;_bottomurl)$">AddBottomUrl</a>(const <a href="SFString.htm">SFString</a>&amp; bottomurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetBottomUrl(const_MFString&amp;_bottomurl)$">SetBottomUrl</a>(const <a href="MFString.htm">MFString</a>&amp; bottomurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddFrontUrl(const_SFString&amp;_fronturl)$">AddFrontUrl</a>(const <a href="SFString.htm">SFString</a>&amp; fronturl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetFrontUrl(const_MFString&amp;_fronturl)$">SetFrontUrl</a>(const <a href="MFString.htm">MFString</a>&amp; fronturl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddLeftUrl(const_SFString&amp;_lefturl)$">AddLeftUrl</a>(const <a href="SFString.htm">SFString</a>&amp; lefturl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetLeftUrl(const_MFString&amp;_lefturl)$">SetLeftUrl</a>(const <a href="MFString.htm">MFString</a>&amp; lefturl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddRightUrl(const_SFString&amp;_righturl)$">AddRightUrl</a>(const <a href="SFString.htm">SFString</a>&amp; righturl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetRightUrl(const_MFString&amp;_righturl)$">SetRightUrl</a>(const <a href="MFString.htm">MFString</a>&amp; righturl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddTopUrl(const_SFString&amp;_topurl)$">AddTopUrl</a>(const <a href="SFString.htm">SFString</a>&amp; topurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetTopUrl(const_MFString&amp;_topurl)$">SetTopUrl</a>(const <a href="MFString.htm">MFString</a>&amp; topurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddSkyAngle(SFFloat_skyangle)$">AddSkyAngle</a>(SFFloat skyangle);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetSkyAngle(const_MFFloat&amp;_skyangle)$">SetSkyAngle</a>(const MFFloat&amp; skyangle);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_AddSkyColor(const_SFColor&amp;_skycolor)$">AddSkyColor</a>(const <a href="SFColor.htm">SFColor</a>&amp; skycolor);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBackground.htm#void_SetSkyColor(const_MFColor&amp;_skycolor)$">SetSkyColor</a>(const MFColor&amp; skycolor);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNGroundAngles(void)_const$">GetNGroundAngles</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrBackground.htm#SFFloat_GetGroundAngle(SFInt32_n)_const$">GetGroundAngle</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const MFFloat&amp; </td><td><a href="vrBackground.htm#const_MFFloat&amp;_GetGroundAngleArray(void)_const$">GetGroundAngleArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNGroundColors(void)_const$">GetNGroundColors</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFColor.htm">SFColor</a> </td><td><a href="vrBackground.htm#SFColor_GetGroundColor(SFInt32_n)_const$">GetGroundColor</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const MFColor&amp; </td><td><a href="vrBackground.htm#const_MFColor&amp;_GetGroundColorArray(void)_const$">GetGroundColorArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNBackUrls(void)_const$">GetNBackUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrBackground.htm#SFString_GetBackUrl(SFInt32_n)_const$">GetBackUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrBackground.htm#const_MFString&amp;_GetBackUrlArray(void)_const$">GetBackUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNBottomUrls(void)_const$">GetNBottomUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrBackground.htm#SFString_GetBottomUrl(SFInt32_n)_const$">GetBottomUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrBackground.htm#const_MFString&amp;_GetBottomUrlArray(void)_const$">GetBottomUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNFrontUrls(void)_const$">GetNFrontUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrBackground.htm#SFString_GetFrontUrl(SFInt32_n)_const$">GetFrontUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrBackground.htm#const_MFString&amp;_GetFrontUrlArray(void)_const$">GetFrontUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNLeftUrls(void)_const$">GetNLeftUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrBackground.htm#SFString_GetLeftUrl(SFInt32_n)_const$">GetLeftUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrBackground.htm#const_MFString&amp;_GetLeftUrlArray(void)_const$">GetLeftUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNRightUrls(void)_const$">GetNRightUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrBackground.htm#SFString_GetRightUrl(SFInt32_n)_const$">GetRightUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrBackground.htm#const_MFString&amp;_GetRightUrlArray(void)_const$">GetRightUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNTopUrls(void)_const$">GetNTopUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrBackground.htm#SFString_GetTopUrl(SFInt32_n)_const$">GetTopUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrBackground.htm#const_MFString&amp;_GetTopUrlArray(void)_const$">GetTopUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNSkyAngles(void)_const$">GetNSkyAngles</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrBackground.htm#SFFloat_GetSkyAngle(SFInt32_n)_const$">GetSkyAngle</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const MFFloat&amp; </td><td><a href="vrBackground.htm#const_MFFloat&amp;_GetSkyAngleArray(void)_const$">GetSkyAngleArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBackground.htm#SFInt32_GetNSkyColors(void)_const$">GetNSkyColors</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFColor.htm">SFColor</a> </td><td><a href="vrBackground.htm#SFColor_GetSkyColor(SFInt32_n)_const$">GetSkyColor</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const MFColor&amp; </td><td><a href="vrBackground.htm#const_MFColor&amp;_GetSkyColorArray(void)_const$">GetSkyColorArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrBackground.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrBackground.htm#void_ReceiveEventIn(vrEvent_*event)$">ReceiveEventIn</a></i>(<a href="vrEvent.htm">vrEvent</a> *event);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrBackground.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBackground.htm#DECLARE_NODE(vrBackground)$">DECLARE_NODE</a>(vrBackground);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrBackground.htm#MFString_m_OrigBackUrl$">m_OrigBackUrl</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrBackground.htm#MFString_m_OrigBottomUrl$">m_OrigBottomUrl</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrBackground.htm#MFString_m_OrigFrontUrl$">m_OrigFrontUrl</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrBackground.htm#MFString_m_OrigLeftUrl$">m_OrigLeftUrl</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrBackground.htm#MFString_m_OrigRightUrl$">m_OrigRightUrl</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrBackground.htm#MFString_m_OrigTopUrl$">m_OrigTopUrl</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrGroup.htm">vrGroup</a>* </td><td><a href="vrBackground.htm#vrGroup*_m_BackgroundGroup$">m_BackgroundGroup</a>;</td></tr>
+<tr><td align="right" valign="top">MFFloat </td><td><a href="vrBackground.htm#MFFloat_m_GroundAngle$">m_GroundAngle</a>;</td></tr>
+<tr><td align="right" valign="top">MFColor </td><td><a href="vrBackground.htm#MFColor_m_GroundColor$">m_GroundColor</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrBackground.htm#MFString_m_BackUrl$">m_BackUrl</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrBackground.htm#MFString_m_BottomUrl$">m_BottomUrl</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrBackground.htm#MFString_m_FrontUrl$">m_FrontUrl</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrBackground.htm#MFString_m_LeftUrl$">m_LeftUrl</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrBackground.htm#MFString_m_RightUrl$">m_RightUrl</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrBackground.htm#MFString_m_TopUrl$">m_TopUrl</a>;</td></tr>
+<tr><td align="right" valign="top">MFFloat </td><td><a href="vrBackground.htm#MFFloat_m_SkyAngle$">m_SkyAngle</a>;</td></tr>
+<tr><td align="right" valign="top">MFColor </td><td><a href="vrBackground.htm#MFColor_m_SkyColor$">m_SkyColor</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the Background node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#Background">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="MFString_m_OrigBackUrl$"><ul><h3><li>MFString m_OrigBackUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>The original BackUrl as read from the .wrl file.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_OrigBottomUrl$"><ul><h3><li>MFString m_OrigBottomUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>The original BottomUrl as read from the .wrl file.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_OrigFrontUrl$"><ul><h3><li>MFString m_OrigFrontUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>The original FrontUrl as read from the .wrl file.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_OrigLeftUrl$"><ul><h3><li>MFString m_OrigLeftUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>The original LeftUrl as read from the .wrl file.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_OrigRightUrl$"><ul><h3><li>MFString m_OrigRightUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>The original RightUrl as read from the .wrl file.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_OrigTopUrl$"><ul><h3><li>MFString m_OrigTopUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>The original TopUrl as read from the .wrl file.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="vrGroup*_m_BackgroundGroup$"><ul><h3><li>vrGroup* m_BackgroundGroup;</li></h3></a>
+</ul>
+</ul>	  <dd>vrGrouping node containing geometry for this vrBackground node.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="MFFloat_m_GroundAngle$"><ul><h3><li>MFFloat m_GroundAngle;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'groundAngle' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFColor_m_GroundColor$"><ul><h3><li>MFColor m_GroundColor;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'groundColor' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_BackUrl$"><ul><h3><li>MFString m_BackUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'backUrl' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_BottomUrl$"><ul><h3><li>MFString m_BottomUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'bottomUrl' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_FrontUrl$"><ul><h3><li>MFString m_FrontUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'frontUrl' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_LeftUrl$"><ul><h3><li>MFString m_LeftUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'leftUrl' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_RightUrl$"><ul><h3><li>MFString m_RightUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'rightUrl' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_TopUrl$"><ul><h3><li>MFString m_TopUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'topUrl' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFFloat_m_SkyAngle$"><ul><h3><li>MFFloat m_SkyAngle;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'skyAngle' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFColor_m_SkyColor$"><ul><h3><li>MFColor m_SkyColor;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'skyColor' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="vrBackground(void)$"><ul><h3><li>vrBackground(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrBackground(const_vrBackground&amp;_v)$"><ul><h3><li>vrBackground(const vrBackground&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrBackground(void)$"><ul><h3><li>~vrBackground(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrBackground&amp;_operator$(const_vrBackground&amp;_v)$"><ul><h3><li>vrBackground&amp; operator=(const vrBackground&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_AddOrigBackUrl(const_SFString&amp;_origbackurl)$"><ul><h3><li>void AddOrigBackUrl(const SFString&amp; origbackurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_OrigBackUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origbackurl:</strong>
+<dd>The value to add to the m_OrigBackUrl array.
+<p>
+</dl></dl>
+<a name="void_SetOrigBackUrl(const_MFString&amp;_origbackurl)$"><ul><h3><li>void SetOrigBackUrl(const MFString&amp; origbackurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_OrigBackUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origbackurl:</strong>
+<dd>The m_OrigBackUrl array.
+<p>
+</dl></dl>
+<a name="void_AddOrigBottomUrl(const_SFString&amp;_origbottomurl)$"><ul><h3><li>void AddOrigBottomUrl(const SFString&amp; origbottomurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_OrigBottomUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origbottomurl:</strong>
+<dd>The value to add to the m_OrigBottomUrl array.
+<p>
+</dl></dl>
+<a name="void_SetOrigBottomUrl(const_MFString&amp;_origbottomurl)$"><ul><h3><li>void SetOrigBottomUrl(const MFString&amp; origbottomurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_OrigBottomUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origbottomurl:</strong>
+<dd>The m_OrigBottomUrl array.
+<p>
+</dl></dl>
+<a name="void_AddOrigFrontUrl(const_SFString&amp;_origfronturl)$"><ul><h3><li>void AddOrigFrontUrl(const SFString&amp; origfronturl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_OrigFrontUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origfronturl:</strong>
+<dd>The value to add to the m_OrigFrontUrl array.
+<p>
+</dl></dl>
+<a name="void_SetOrigFrontUrl(const_MFString&amp;_origfronturl)$"><ul><h3><li>void SetOrigFrontUrl(const MFString&amp; origfronturl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_OrigFrontUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origfronturl:</strong>
+<dd>The m_OrigFrontUrl array.
+<p>
+</dl></dl>
+<a name="void_AddOrigLeftUrl(const_SFString&amp;_origlefturl)$"><ul><h3><li>void AddOrigLeftUrl(const SFString&amp; origlefturl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_OrigLeftUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origlefturl:</strong>
+<dd>The value to add to the m_OrigLeftUrl array.
+<p>
+</dl></dl>
+<a name="void_SetOrigLeftUrl(const_MFString&amp;_origlefturl)$"><ul><h3><li>void SetOrigLeftUrl(const MFString&amp; origlefturl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_OrigLeftUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origlefturl:</strong>
+<dd>The m_OrigLeftUrl array.
+<p>
+</dl></dl>
+<a name="void_AddOrigRightUrl(const_SFString&amp;_origrighturl)$"><ul><h3><li>void AddOrigRightUrl(const SFString&amp; origrighturl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_OrigRightUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origrighturl:</strong>
+<dd>The value to add to the m_OrigRightUrl array.
+<p>
+</dl></dl>
+<a name="void_SetOrigRightUrl(const_MFString&amp;_origrighturl)$"><ul><h3><li>void SetOrigRightUrl(const MFString&amp; origrighturl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_OrigRightUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origrighturl:</strong>
+<dd>The m_OrigRightUrl array.
+<p>
+</dl></dl>
+<a name="void_AddOrigTopUrl(const_SFString&amp;_origtopurl)$"><ul><h3><li>void AddOrigTopUrl(const SFString&amp; origtopurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_OrigTopUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origtopurl:</strong>
+<dd>The value to add to the m_OrigTopUrl array.
+<p>
+</dl></dl>
+<a name="void_SetOrigTopUrl(const_MFString&amp;_origtopurl)$"><ul><h3><li>void SetOrigTopUrl(const MFString&amp; origtopurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_OrigTopUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origtopurl:</strong>
+<dd>The m_OrigTopUrl array.
+<p>
+</dl></dl>
+<a name="void_SetBackgroundGroup(const_vrGroup*_backgroundgroup)$"><ul><h3><li>void SetBackgroundGroup(const vrGroup* backgroundgroup);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_BackgroundGroup member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> backgroundgroup:</strong>
+<dd>The backgroundgroup value.
+<p>
+</dl></dl>
+<a name="SFInt32_GetNOrigBackUrls(void)_const$"><ul><h3><li>SFInt32 GetNOrigBackUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_OrigBackUrl member.
+<p>
+<a name="SFString_GetOrigBackUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetOrigBackUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_OrigBackUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetOrigBackUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetOrigBackUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_OrigBackUrl member.
+<p>
+<a name="SFInt32_GetNOrigBottomUrls(void)_const$"><ul><h3><li>SFInt32 GetNOrigBottomUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_OrigBottomUrl member.
+<p>
+<a name="SFString_GetOrigBottomUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetOrigBottomUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_OrigBottomUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetOrigBottomUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetOrigBottomUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_OrigBottomUrl member.
+<p>
+<a name="SFInt32_GetNOrigFrontUrls(void)_const$"><ul><h3><li>SFInt32 GetNOrigFrontUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_OrigFrontUrl member.
+<p>
+<a name="SFString_GetOrigFrontUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetOrigFrontUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_OrigFrontUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetOrigFrontUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetOrigFrontUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_OrigFrontUrl member.
+<p>
+<a name="SFInt32_GetNOrigLeftUrls(void)_const$"><ul><h3><li>SFInt32 GetNOrigLeftUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_OrigLeftUrl member.
+<p>
+<a name="SFString_GetOrigLeftUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetOrigLeftUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_OrigLeftUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetOrigLeftUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetOrigLeftUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_OrigLeftUrl member.
+<p>
+<a name="SFInt32_GetNOrigRightUrls(void)_const$"><ul><h3><li>SFInt32 GetNOrigRightUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_OrigRightUrl member.
+<p>
+<a name="SFString_GetOrigRightUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetOrigRightUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_OrigRightUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetOrigRightUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetOrigRightUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_OrigRightUrl member.
+<p>
+<a name="SFInt32_GetNOrigTopUrls(void)_const$"><ul><h3><li>SFInt32 GetNOrigTopUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_OrigTopUrl member.
+<p>
+<a name="SFString_GetOrigTopUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetOrigTopUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_OrigTopUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetOrigTopUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetOrigTopUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_OrigTopUrl member.
+<p>
+<a name="vrGroup*_GetBackgroundGroup(void)_const$"><ul><h3><li>vrGroup* GetBackgroundGroup(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_BackgroundGroup member.
+<p>
+<a name="void_AddGroundAngle(SFFloat_groundangle)$"><ul><h3><li>void AddGroundAngle(SFFloat groundangle);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_GroundAngle array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> groundangle:</strong>
+<dd>The value to add to the m_GroundAngle array.
+<p>
+</dl></dl>
+<a name="void_SetGroundAngle(const_MFFloat&amp;_groundangle)$"><ul><h3><li>void SetGroundAngle(const MFFloat&amp; groundangle);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_GroundAngle member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> groundangle:</strong>
+<dd>The m_GroundAngle array.
+<p>
+</dl></dl>
+<a name="void_AddGroundColor(const_SFColor&amp;_groundcolor)$"><ul><h3><li>void AddGroundColor(const SFColor&amp; groundcolor);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_GroundColor array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> groundcolor:</strong>
+<dd>The value to add to the m_GroundColor array.
+<p>
+</dl></dl>
+<a name="void_SetGroundColor(const_MFColor&amp;_groundcolor)$"><ul><h3><li>void SetGroundColor(const MFColor&amp; groundcolor);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_GroundColor member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> groundcolor:</strong>
+<dd>The m_GroundColor array.
+<p>
+</dl></dl>
+<a name="void_AddBackUrl(const_SFString&amp;_backurl)$"><ul><h3><li>void AddBackUrl(const SFString&amp; backurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_BackUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> backurl:</strong>
+<dd>The value to add to the m_BackUrl array.
+<p>
+</dl></dl>
+<a name="void_SetBackUrl(const_MFString&amp;_backurl)$"><ul><h3><li>void SetBackUrl(const MFString&amp; backurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_BackUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> backurl:</strong>
+<dd>The m_BackUrl array.
+<p>
+</dl></dl>
+<a name="void_AddBottomUrl(const_SFString&amp;_bottomurl)$"><ul><h3><li>void AddBottomUrl(const SFString&amp; bottomurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_BottomUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> bottomurl:</strong>
+<dd>The value to add to the m_BottomUrl array.
+<p>
+</dl></dl>
+<a name="void_SetBottomUrl(const_MFString&amp;_bottomurl)$"><ul><h3><li>void SetBottomUrl(const MFString&amp; bottomurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_BottomUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> bottomurl:</strong>
+<dd>The m_BottomUrl array.
+<p>
+</dl></dl>
+<a name="void_AddFrontUrl(const_SFString&amp;_fronturl)$"><ul><h3><li>void AddFrontUrl(const SFString&amp; fronturl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_FrontUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fronturl:</strong>
+<dd>The value to add to the m_FrontUrl array.
+<p>
+</dl></dl>
+<a name="void_SetFrontUrl(const_MFString&amp;_fronturl)$"><ul><h3><li>void SetFrontUrl(const MFString&amp; fronturl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_FrontUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fronturl:</strong>
+<dd>The m_FrontUrl array.
+<p>
+</dl></dl>
+<a name="void_AddLeftUrl(const_SFString&amp;_lefturl)$"><ul><h3><li>void AddLeftUrl(const SFString&amp; lefturl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_LeftUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> lefturl:</strong>
+<dd>The value to add to the m_LeftUrl array.
+<p>
+</dl></dl>
+<a name="void_SetLeftUrl(const_MFString&amp;_lefturl)$"><ul><h3><li>void SetLeftUrl(const MFString&amp; lefturl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_LeftUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> lefturl:</strong>
+<dd>The m_LeftUrl array.
+<p>
+</dl></dl>
+<a name="void_AddRightUrl(const_SFString&amp;_righturl)$"><ul><h3><li>void AddRightUrl(const SFString&amp; righturl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_RightUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> righturl:</strong>
+<dd>The value to add to the m_RightUrl array.
+<p>
+</dl></dl>
+<a name="void_SetRightUrl(const_MFString&amp;_righturl)$"><ul><h3><li>void SetRightUrl(const MFString&amp; righturl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_RightUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> righturl:</strong>
+<dd>The m_RightUrl array.
+<p>
+</dl></dl>
+<a name="void_AddTopUrl(const_SFString&amp;_topurl)$"><ul><h3><li>void AddTopUrl(const SFString&amp; topurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_TopUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> topurl:</strong>
+<dd>The value to add to the m_TopUrl array.
+<p>
+</dl></dl>
+<a name="void_SetTopUrl(const_MFString&amp;_topurl)$"><ul><h3><li>void SetTopUrl(const MFString&amp; topurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_TopUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> topurl:</strong>
+<dd>The m_TopUrl array.
+<p>
+</dl></dl>
+<a name="void_AddSkyAngle(SFFloat_skyangle)$"><ul><h3><li>void AddSkyAngle(SFFloat skyangle);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_SkyAngle array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> skyangle:</strong>
+<dd>The value to add to the m_SkyAngle array.
+<p>
+</dl></dl>
+<a name="void_SetSkyAngle(const_MFFloat&amp;_skyangle)$"><ul><h3><li>void SetSkyAngle(const MFFloat&amp; skyangle);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_SkyAngle member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> skyangle:</strong>
+<dd>The m_SkyAngle array.
+<p>
+</dl></dl>
+<a name="void_AddSkyColor(const_SFColor&amp;_skycolor)$"><ul><h3><li>void AddSkyColor(const SFColor&amp; skycolor);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_SkyColor array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> skycolor:</strong>
+<dd>The value to add to the m_SkyColor array.
+<p>
+</dl></dl>
+<a name="void_SetSkyColor(const_MFColor&amp;_skycolor)$"><ul><h3><li>void SetSkyColor(const MFColor&amp; skycolor);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_SkyColor member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> skycolor:</strong>
+<dd>The m_SkyColor array.
+<p>
+</dl></dl>
+<a name="SFInt32_GetNGroundAngles(void)_const$"><ul><h3><li>SFInt32 GetNGroundAngles(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_GroundAngle member.
+<p>
+<a name="SFFloat_GetGroundAngle(SFInt32_n)_const$"><ul><h3><li>SFFloat GetGroundAngle(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_GroundAngle member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFFloat&amp;_GetGroundAngleArray(void)_const$"><ul><h3><li>const MFFloat&amp; GetGroundAngleArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_GroundAngle member.
+<p>
+<a name="SFInt32_GetNGroundColors(void)_const$"><ul><h3><li>SFInt32 GetNGroundColors(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_GroundColor member.
+<p>
+<a name="SFColor_GetGroundColor(SFInt32_n)_const$"><ul><h3><li>SFColor GetGroundColor(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_GroundColor member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFColor&amp;_GetGroundColorArray(void)_const$"><ul><h3><li>const MFColor&amp; GetGroundColorArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_GroundColor member.
+<p>
+<a name="SFInt32_GetNBackUrls(void)_const$"><ul><h3><li>SFInt32 GetNBackUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_BackUrl member.
+<p>
+<a name="SFString_GetBackUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetBackUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_BackUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetBackUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetBackUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_BackUrl member.
+<p>
+<a name="SFInt32_GetNBottomUrls(void)_const$"><ul><h3><li>SFInt32 GetNBottomUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_BottomUrl member.
+<p>
+<a name="SFString_GetBottomUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetBottomUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_BottomUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetBottomUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetBottomUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_BottomUrl member.
+<p>
+<a name="SFInt32_GetNFrontUrls(void)_const$"><ul><h3><li>SFInt32 GetNFrontUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_FrontUrl member.
+<p>
+<a name="SFString_GetFrontUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetFrontUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_FrontUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetFrontUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetFrontUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_FrontUrl member.
+<p>
+<a name="SFInt32_GetNLeftUrls(void)_const$"><ul><h3><li>SFInt32 GetNLeftUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_LeftUrl member.
+<p>
+<a name="SFString_GetLeftUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetLeftUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_LeftUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetLeftUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetLeftUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_LeftUrl member.
+<p>
+<a name="SFInt32_GetNRightUrls(void)_const$"><ul><h3><li>SFInt32 GetNRightUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_RightUrl member.
+<p>
+<a name="SFString_GetRightUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetRightUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_RightUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetRightUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetRightUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_RightUrl member.
+<p>
+<a name="SFInt32_GetNTopUrls(void)_const$"><ul><h3><li>SFInt32 GetNTopUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_TopUrl member.
+<p>
+<a name="SFString_GetTopUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetTopUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_TopUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetTopUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetTopUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_TopUrl member.
+<p>
+<a name="SFInt32_GetNSkyAngles(void)_const$"><ul><h3><li>SFInt32 GetNSkyAngles(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_SkyAngle member.
+<p>
+<a name="SFFloat_GetSkyAngle(SFInt32_n)_const$"><ul><h3><li>SFFloat GetSkyAngle(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_SkyAngle member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFFloat&amp;_GetSkyAngleArray(void)_const$"><ul><h3><li>const MFFloat&amp; GetSkyAngleArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_SkyAngle member.
+<p>
+<a name="SFInt32_GetNSkyColors(void)_const$"><ul><h3><li>SFInt32 GetNSkyColors(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_SkyColor member.
+<p>
+<a name="SFColor_GetSkyColor(SFInt32_n)_const$"><ul><h3><li>SFColor GetSkyColor(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_SkyColor member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFColor&amp;_GetSkyColorArray(void)_const$"><ul><h3><li>const MFColor&amp; GetSkyColorArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_SkyColor member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vrbackground.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="void_ReceiveEventIn(vrEvent_*event)$"><ul><h3><li>void ReceiveEventIn(vrEvent *event);</li></h3></a>
+</ul>
+</ul>	   <dd>Receive an event during an event cascade or directly from caller.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> event:</strong>
+<dd>The <a href="vrEvent.htm">vrEvent</a> to be processed.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrBackground)$"><ul><h3><li>DECLARE_NODE(vrBackground);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed and dynamically created. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrBackground:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+<li><a href="vrBindable.htm">vrBindable</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:49 1999
+.<p>
+</body></html>

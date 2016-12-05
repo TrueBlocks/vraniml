@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<title>Library Tutorial</title>
+</head>
+
+<body BACKGROUND="../../sumtextb.jpg" BGCOLOR="#FFFFFF">
+
+<h1><img src="../../logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">VRaniML Tutorials</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Step 3: Opening a VRML File</h1>
+
+<p>In this step we create a <b>vrBrowser</b> class and read in a VRML file.</p>
+
+<hr>
+
+<ul>
+  <li>Add a <b>vrBrowser</b> variable to the function main.</li>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <pre>void main(int argc, char *argv[])
+{
+	printf(&quot;VRaniML Pretty Printer\n&quot;);
+	printf(&quot;Version 1.0\n\n&quot;);
+
+	<font color="FF0000">vrBrowser browser;</font>
+}</pre>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <li>Open a file.</li>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <pre>void main(int argc, char *argv[])
+{
+	printf(&quot;VRaniML Pretty Printer\n&quot;);
+	printf(&quot;Version 1.0\n\n&quot;);
+
+	vrBrowser browser;
+
+<font COLOR="#8000FF">	// Read the file (note: we hardcode the filename here
+	// for ease of instruction).</font>&nbsp; <font COLOR="#8000FF">Note: Sending NULL to ReadURL
+	// will cause the browser to read from stdin.</font>
+<font color="FF0000">	browser.ReadURL(&quot;<i><b>[install_dir]/sample browser/logo.wrl</b></i>&quot;);</font>
+}
+</pre>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>Where '<i><b>[install_dir]</b></i>' is the directory into which you installed the
+    VRaniML&#153; library (c:/program files/great hill corporation/vraniml by default).</p>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <li>Recompile and run the program.</li>
+</ul>
+
+<p><font face="book antiqua">This program should behave exactly as it did in Step 2.
+&nbsp; </font>We now have a full scene graph.&nbsp; In the <a href="step4.htm">next step</a>
+we will export the file to the stdout stream. </p>
+
+<hr>
+</body>
+</html>

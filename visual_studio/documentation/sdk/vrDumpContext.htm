@@ -1,0 +1,365 @@
+<html><head><title>vrDumpContext Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrDumpContext</a></h1>
+<dl>
+<dd>
+	Utility class for dumping data to an output device.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrdumpcontext.htm#aag">Summary</a> | </a>
+<a href="vrdumpcontext.htm#DESCRIPTION">Description</a> | 
+<a href="vrdumpcontext.htm#NOTES">Notes</a> | 
+<a href="vrdumpcontext.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrdumpcontext.htm#MEMBERS">Members</a> | 
+<a href="vrdumpcontext.htm#parents">Ancestors</a> | <a href="vrdumpcontext.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface vrDumpContext<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDumpContext.htm#SFInt32_m_nIndents$">m_nIndents</a>;</td></tr>
+<tr><td align="right" valign="top">char </td><td><a href="vrDumpContext.htm#char_m_TabChar$">m_TabChar</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDumpContext.htm#SFInt32_m_TabStop$">m_TabStop</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrDumpContext.htm#SFBool_m_Verbose$">m_Verbose</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDumpContext.htm#SFInt32_m_nDigits$">m_nDigits</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDumpContext.htm#SFInt32_m_PerRow$">m_PerRow</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrDumpContext.htm#SFBool_m_Suppress$">m_Suppress</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrDumpContext.htm#vrDumpContext_(FILE*_file_)$">vrDumpContext</a> (FILE* file );</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrDumpContext.htm#~vrDumpContext_(void)$">vrDumpContext</a></i> (void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrDumpContext.htm#void_Flush_(void)$">Flush</a></i> (void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrDumpContext.htm#void_Close_(void)$">Close</a></i> (void);</td></tr>
+<tr><td align="right" valign="top">char *</td><td><i><a href="vrDumpContext.htm#char_*Indent_(void)_const$">Indent</a></i> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrDumpContext.htm#SFBool_SetFilename_(const_SFString&amp;_filename)$">SetFilename</a></i> (const <a href="SFString.htm">SFString</a>&amp; filename);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(const_SFString&amp;_val)$">operator&lt;&lt;</a> (const <a href="SFString.htm">SFString</a>&amp; val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(char_val)$">operator&lt;&lt;</a> (char val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(short_val)$">operator&lt;&lt;</a> (short val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(unsigned_int_val)$">operator&lt;&lt;</a> (unsigned int val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(long_val)$">operator&lt;&lt;</a> (long val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(float_val)$">operator&lt;&lt;</a> (float val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(double_val)$">operator&lt;&lt;</a> (double val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(int_val)$">operator&lt;&lt;</a> (int val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(const_SFVec2f&amp;_val)$">operator&lt;&lt;</a> (const <a href="SFVec2f.htm">SFVec2f</a>&amp; val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(const_SFVec3f&amp;_val)$">operator&lt;&lt;</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(const_SFColor&amp;_val)$">operator&lt;&lt;</a> (const <a href="SFColor.htm">SFColor</a>&amp; val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(const_SFRotation&amp;_val)$">operator&lt;&lt;</a> (const <a href="SFRotation.htm">SFRotation</a>&amp; val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(const_SFImage&amp;_val)$">operator&lt;&lt;</a> (const <a href="SFImage.htm">SFImage</a>&amp; val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(const_vrMatrix&amp;_val)$">operator&lt;&lt;</a> (const <a href="vrMatrix.htm">vrMatrix</a>&amp; val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(const_vrBoundingBox&amp;_val)$">operator&lt;&lt;</a> (const <a href="vrBoundingBox.htm">vrBoundingBox</a>&amp; val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(const_vrPlane&amp;_val)$">operator&lt;&lt;</a> (const <a href="vrPlane.htm">vrPlane</a>&amp; val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(const_vrRay&amp;_val)$">operator&lt;&lt;</a> (const <a href="vrRay.htm">vrRay</a>&amp; val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(const_vrRect2D&amp;_val)$">operator&lt;&lt;</a> (const <a href="vrRect2D.htm">vrRect2D</a>&amp; val);</td></tr>
+<tr><td align="right" valign="top">vrDumpContext&amp; </td><td><a href="vrDumpContext.htm#vrDumpContext&amp;_operator&lt;&lt;_(const_vrTime&amp;_val)$">operator&lt;&lt;</a> (const <a href="vrTime.htm">vrTime</a>&amp; val);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">FILE* </td><td><a href="vrDumpContext.htm#FILE*_m_File$">m_File</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	The vrDumpContext class aids in writing data to an output
+	device.  It is modeled after the CDumpContext from the MFC
+	and is used in exactly the same way.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>Using the default constructor with a NULL argument will
+	cause the vrDumpContext to write to standard output (stdout).</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// First create the output device and attach it to the vrDumpContext...
+	FILE *file = fopen(&quot;file.txt&quot;, &quot;w&quot;);
+	ASSERT(file);
+	vrDumpContext dc(file);
+
+	// ... and then start writing
+	dc << 1 << " is the loneliest number.\n"; // Increase indent level dc.m_nIndents++; // Write indented text dc << dc.Indent() << "This is indented\n"; // Close and Flush dc.Close(); </pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="FILE*_m_File$"><ul><h3><li>FILE* m_File;</li></h3></a>
+</ul>
+</ul>     <dd>Output device.
+<dl><dl>
+<dt><i>default:</i><strong> stdout</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_nIndents$"><ul><h3><li>SFInt32 m_nIndents;</li></h3></a>
+</ul>
+</ul>	   <dd>Current indentation level.
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="char_m_TabChar$"><ul><h3><li>char m_TabChar;</li></h3></a>
+</ul>
+</ul>     <dd>The character to use for indentation.
+<dl><dl>
+<dt><i>default:</i><strong> space</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_TabStop$"><ul><h3><li>SFInt32 m_TabStop;</li></h3></a>
+</ul>
+</ul>	   <dd>Number of 'm_TabChar' characters to write at each indent.
+<dl><dl>
+<dt><i>default:</i><strong> 4</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_Verbose$"><ul><h3><li>SFBool m_Verbose;</li></h3></a>
+</ul>
+</ul>     <dd>Enable verbose output.
+<dl><dl>
+<dt><i>default:</i><strong> FALSE</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_nDigits$"><ul><h3><li>SFInt32 m_nDigits;</li></h3></a>
+</ul>
+</ul>	   <dd>Number of digits for display of floating point numbers
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<dd>implies use of standard C++ formatting for floats.
+<p>
+</dl></dl>
+<a name="SFInt32_m_PerRow$"><ul><h3><li>SFInt32 m_PerRow;</li></h3></a>
+</ul>
+</ul>	   <dd>Number of values to display per row (for multi valued fields).  Items are seperated by one m_TabChar character.
+<dl><dl>
+<dt><i>default:</i><strong> 4</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_Suppress$"><ul><h3><li>SFBool m_Suppress;</li></h3></a>
+</ul>
+</ul>	   <dd>If TRUE then all output is suppressed
+<dl><dl>
+<dt><i>default:</i><strong> FALSE</strong>
+<p>
+</dl></dl>
+<a name="vrDumpContext_(FILE*_file_)$"><ul><h3><li>vrDumpContext (FILE* file );</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> file:</strong>
+<dd>a FILE handle to the file used as the output device. 
+	              May be NULL in which case stdout is used.
+<p>
+</dl></dl>
+<a name="~vrDumpContext_(void)$"><ul><h3><li>~vrDumpContext (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="void_Flush_(void)$"><ul><h3><li>void Flush (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Flush the output device.
+<p>
+<a name="void_Close_(void)$"><ul><h3><li>void Close (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Closes the output device.
+<p>
+<a name="char_*Indent_(void)_const$"><ul><h3><li>char *Indent (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns a string of m_nIndents*m_TabStop characters of type m_TabChar.
+<p>
+<a name="SFBool_SetFilename_(const_SFString&amp;_filename)$"><ul><h3><li>SFBool SetFilename (const SFString&amp; filename);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the file into which to write the dump.  Returns TRUE if the file was opened.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> filename:</strong>
+<dd>the name of the file to open.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(const_SFString&amp;_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (const SFString&amp; val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a string to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(char_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (char val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a single character to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(short_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (short val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a short to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(unsigned_int_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (unsigned int val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write an unsigned int to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(long_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (long val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a long (SFBool, SFInt32) to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(float_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (float val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a float (SFFloat) to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(double_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (double val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a double to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(int_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (int val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a int to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(const_SFVec2f&amp;_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (const SFVec2f&amp; val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write an <a href="SFVec2f.htm">SFVec2f</a> to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(const_SFVec3f&amp;_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (const SFVec3f&amp; val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write an <a href="SFVec3f.htm">SFVec3f</a> to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(const_SFColor&amp;_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (const SFColor&amp; val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write an <a href="SFColor.htm">SFColor</a> to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(const_SFRotation&amp;_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (const SFRotation&amp; val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write an <a href="SFRotation.htm">SFRotation</a> to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(const_SFImage&amp;_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (const SFImage&amp; val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write an <a href="SFImage.htm">SFImage</a> to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(const_vrMatrix&amp;_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (const vrMatrix&amp; val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a <a href="vrMatrix.htm">vrMatrix</a> to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(const_vrBoundingBox&amp;_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (const vrBoundingBox&amp; val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a <a href="vrBoundingBox.htm">vrBoundingBox</a> to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(const_vrPlane&amp;_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (const vrPlane&amp; val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a <a href="vrPlane.htm">vrPlane</a> to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(const_vrRay&amp;_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (const vrRay&amp; val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a <a href="vrRay.htm">vrRay</a> to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(const_vrRect2D&amp;_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (const vrRect2D&amp; val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a <a href="vrRect2D.htm">vrRect2D</a> to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="vrDumpContext&amp;_operator&lt;&lt;_(const_vrTime&amp;_val)$"><ul><h3><li>vrDumpContext&amp; operator&lt;&lt; (const vrTime&amp; val);</li></h3></a>
+</ul>
+</ul>	   <dd>Write a <a href="vrTime.htm">vrTime</a> to the output device.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>the value to write out.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrDumpString.htm">vrDumpString</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:58 1999
+.<p>
+</body></html>

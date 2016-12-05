@@ -1,0 +1,123 @@
+<html>
+
+<head>
+<title>Step 4</title>
+
+<meta name="Microsoft Theme" content="sumipntg 011"></head>
+
+<body background="../../../../_themes/sumipntg/sumtextb.jpg" bgcolor="#FFFFFF" text="#808080" link="#3333CC" vlink="#666699" alink="#990099"><!--mstheme--><font face="verdana, arial, helvetica">
+<font face="book antiqua">
+
+<!--mstheme--></font><table border="0" width="100%" height="97">
+  <tr>
+    <td width="12%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><img src="../../logo.gif" alt="[Logo]" border="0" start="fileopen" width="100" height="110"><!--mstheme--></font></td>
+    <td width="88%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><em><br>
+    <big><big><big>Great Hill Corporation</big></big></big></em><br>
+    <em>Step 4: Drawing Something</em><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="verdana, arial, helvetica"><a HREF="step3.htm">[Prev]</a> <a HREF="step5.htm">[Next]</a> <a HREF="../sample3.htm">[Tutorial3]</a><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+<!--commentbeg------------------------------------------>
+<!--commentbeg------------------------------------------>
+
+<p>Enough of this boring stuff. Let's draw something.<br>
+<br>
+In this step we will create the browser and associate the CView class's window with it. We
+will also add a simple scene graph to the browser and render it when the window gets an
+OnDraw message.</p>
+
+<p>Follow these tasks to complete this step:</p>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <ol>
+    <li>We first create the browser and add a simple scene graph.<br>
+      <br>
+      Using the class wizard add the <b>OnInitialUpdate</b> member to the <b>CSample3View</b>
+      class. Then add the following code to that function: <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--mstheme--></font><pre><font color="FF0000">void CSample3View::OnInitialUpdate(void)
+{
+	<font COLOR="#8000FF">// Call the base class's OnInitialUpdate function</font>
+	CView::OnInitialUpdate();
+
+	<font COLOR="#8000FF">// Get the document</font>
+	CSample3Doc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+
+	if (!pDoc-&gt;browser)
+	{
+		<font COLOR="#8000FF">// Create the browser and associate it to this window</font>
+		pDoc-&gt;browser = new vrBrowser(m_hWnd);
+		
+		<font COLOR="#8000FF">// Create a default box</font>
+		vrBox *box = new vrBox;
+
+		<font COLOR="#8000FF">// Create a shape in which we can hold the box</font>
+		vrShape *shape = new vrShape;
+		
+		<font COLOR="#8000FF">// Now add the box to the shape and the shape to the browser</font>
+		shape-&gt;SetGeometry(box);
+		pDoc-&gt;browser-&gt;AddChild(shape);
+	}
+}
+</font></pre><!--mstheme--><font face="verdana, arial, helvetica">
+      <!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+    </li>
+    <li>We now have a browser with a scene graph associated with a window. All we need to do now
+      is draw the scene graph. We do this by adding the following code to the <b>OnDraw</b>
+      member of the <b>CSample3View</b> class: <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--mstheme--></font><pre><font color="FF0000">void CSample3View::OnDraw(CDC *pDC)
+{
+	CSample3Doc *pDoc = (CSample3Doc *)GetDocument();
+	ASSERT(pDoc);
+
+	<font COLOR="#8000FF">// If the browser exists...</font>
+	if (pDoc-&gt;browser)
+		<font COLOR="#8000FF">// ...draw it</font>
+		pDoc-&gt;browser-&gt;Traverse();
+}</font></pre><!--mstheme--><font face="verdana, arial, helvetica">
+      <!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+    </li>
+    <li>Re-compile and run the program you should now see a grey box in the center of a black
+      window.</li>
+    <li><br>
+      <br>
+      Notice that the box is not square as it should be. So let's quickly fix that by completing
+      the following additional step before proceeding to the <a href="step5.htm">next tutorial
+      step</a>. </li>
+    <li>Using the class wizard add the <b?onsize</b> method to the <b>CSample3View</b> class. Add the
+      following code to that function:<br>
+      <br>
+      <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--mstheme--></font><pre><font color="FF0000">void CSample3View::OnSize(UINT nType, int cx, int cy) 
+{
+	CView::OnSize(nType, cx, cy);
+
+	CSample3Doc *pDoc = (CSample3Doc *)GetDocument();
+	ASSERT(pDoc);
+
+	<font COLOR="#8000FF">// If the browser exists...</font>
+	if (pDoc-&gt;browser)
+		<font COLOR="#8000FF">// ...resize it's viewport</font>
+		pDoc-&gt;browser-&gt;GetRenderTraverser()-&gt;SetViewport(0,0,cx,cy);
+}
+</font></pre><!--mstheme--><font face="verdana, arial, helvetica">
+      <!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+    </li>
+    <li>Re-compile and run the program again. You should now see a grey box as a true square
+      centered on the screen. Also, when you re-size the window, the box should stay square.</li>
+  </ol>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p>In the <a href="step5.htm">next step</a> we will actually read a VRML 2.0 file. <!--commentend------------------------------------------> <!--commentend------------------------------------------> </p>
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+
+<h5><!--mstheme--><font color="#003366"><font COLOR="#660033">Send mail to <a HREF="mailto:webmaster@greathill.com">webmaster@greathill.com</a>
+with questions or comments about this web site.<br>
+Copyright © 1997 Great Hill Corporation<br>
+Last modified: December 17, 1997&nbsp;</font><!--mstheme--></font></h5>
+</font>
+<!--mstheme--></font></body>
+</html>

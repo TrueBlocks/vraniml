@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<title>For Every Documentation</title>
+</head>
+
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF">
+
+<h1><img src="logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">Utility Library Reference Manual<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ForEvery and FindBy Functions</a></h1>
+
+<p>The <a href="sdk/vrNode.htm">vrNode</a> class defines two particular interfaces that allow
+an alternative way to search and modify the scene graph.&nbsp; These interfaces are the <strong>ForEvery</strong>
+and <strong>FindBy</strong> methods.&nbsp; These interfaces are defined here.</p>
+
+<hr>
+
+<table width="810">
+  <tr>
+    <td align="right" valign="top" width="95"><a href="Types.htm#SFBool">SFBool</a> </td>
+    <td width="79"></td>
+    <td width="248"><i><a href="forevery.htm#ForEvery">ForEvery</a></i></td>
+    <td width="1048">(PFBO3V userFn, void *userData, PFBO3V afterFn );</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95"><a href="Types.htm#SFNode">SFNode </a></td>
+    <td width="79"></td>
+    <td width="248"><i><a href="forevery.htm#FindByType">FindByType</a></i></td>
+    <td width="1048">(<a href="sdk/vrRuntimeClass.htm">vrRuntimeClass</a> *pClass) const;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95"><a href="Types.htm#SFNode">SFNode</a> </td>
+    <td width="79"></td>
+    <td width="248"><i><a href="forevery.htm#FindByName">FindByName</a></i></td>
+    <td width="1048">(const <a href="sdk/SFString.htm">SFString</a>&amp; nodeName) const;</td>
+  </tr>
+</table>
+
+<hr>
+<a name="ForEvery">
+
+<h4><em>SFBool vrNode::ForEvery(PFBO3V userFn, void *userData, PFBO3V afterFn); </em></h4>
+</a>
+
+<blockquote>
+  <dl>
+    <p>Applys the given user defined function to each item in the scene graph. The user
+    defined function should have the following signature:</p>
+    <p> <em><strong>SFBool FunctionName(vrNode *node, void *data);</strong></em></p>
+    <p>Each node encountered in the scene graph is visited in turn.&nbsp; A user supplied void
+    data pointer is sent to each invocation of '<em><strong>userFn</strong></em>'.</p>
+    <dt><i>in</i><strong> userFn:</strong> </dt>
+    <dd>A function pointer to a function with the following signature:</dd>
+    <dt>&nbsp;</dt>
+    <dt>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em><strong>SFBool
+      FunctionName(vrNode *node, void *data)</strong></em></dt>
+  </dl>
+  <dl>
+    <dd>The <em><strong>userFn</strong></em> is invoked for each node in the scene graph.&nbsp; <em><strong>userData</strong></em>
+      is passed into the invocation. </dd>
+  </dl>
+  <dl>
+    <dt><i>in</i><strong> userData:</strong> </dt>
+    <dd>A void pointer to user defined data.&nbsp; In the body of the <em><strong>userFn</strong></em>
+      function you may cast the void pointer back to your user defined type. </dd>
+    <dt>&nbsp;</dt>
+    <dt><i>in</i><strong> afterFn:</strong> </dt>
+    <dd>During traversal of the scene graph, each grouping node represents a level of a
+      hierarchy (such as a coordinate space for example).&nbsp; The <em><strong>afterFn</strong></em>
+      is called after visiting all children of any grouping nodes.&nbsp; This may be usefull to
+      pop transformation stacks (that were pushed in <em><strong>userFn</strong></em> for
+      example).&nbsp; This parameter may be NULL and is in fact optional and defaults to NULL.</dd>
+  </dl>
+</blockquote>
+<a name="FindByType">
+
+<h4><em>SFNode vrNode::FindByType(vrRuntimeClass *pClass); </em></h4>
+</a>
+
+<blockquote>
+  <p>Returns the first node encountered in the current subtree of the scene graph of the
+  given type (or NULL if no such node is found). <dl>
+    <dt><i>in</i><strong> pClass:</strong> </dt>
+    <dd>The node type seached for. </dd>
+  </dl>
+</blockquote>
+<a name="FindByName">
+
+<h4><em>SFNode vrNode::FindByName(const SFString&amp; name); </em></h4>
+</a>
+
+<blockquote>
+  <p>Returns the first node encountered in the current subtree of the scene graph with the
+  given name (or NULL if no such node is found). <dl>
+    <dt><i>in</i><strong> name:</strong> </dt>
+    <dd>The name of the node (as returned by GetName(). </dd>
+  </dl>
+</blockquote>
+
+<hr>
+</body>
+</html>

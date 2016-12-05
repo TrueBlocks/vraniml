@@ -1,0 +1,224 @@
+<html><head><title>vrRect2D Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrRect2D</a></h1>
+<dl>
+<dd>
+	A utility class representing a 2d rectangle.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrrect2d.htm#aag">Summary</a> | </a>
+<a href="vrrect2d.htm#DESCRIPTION">Description</a> | 
+<a href="vrrect2d.htm#NOTES">Notes</a> | 
+<a href="vrrect2d.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrrect2d.htm#MEMBERS">Members</a> | 
+<a href="vrrect2d.htm#parents">Ancestors</a> | <a href="vrrect2d.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface vrRect2D<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrRect2D.htm#SFFloat_left$">left</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrRect2D.htm#SFFloat_top$">top</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrRect2D.htm#SFFloat_right$">right</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrRect2D.htm#SFFloat_bottom$">bottom</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrRect2D.htm#vrRect2D_(void)$">vrRect2D</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrRect2D.htm#vrRect2D_(const_vrRect2D&amp;_rect)$">vrRect2D</a> (const vrRect2D&amp; rect);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrRect2D.htm#vrRect2D_(SFFloat_l,_SFFloat_t,_SFFloat_r,_SFFloat_b)$">vrRect2D</a> (SFFloat l, SFFloat t, SFFloat r, SFFloat b);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrRect2D.htm#vrRect2D_(const_SFVec2f&amp;_tl,_const_SFVec2f&amp;_br)$">vrRect2D</a> (const <a href="SFVec2f.htm">SFVec2f</a>&amp; tl, const <a href="SFVec2f.htm">SFVec2f</a>&amp; br);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrRect2D.htm#~vrRect2D_(void)_$">vrRect2D</a> (void) ;</td></tr>
+<tr><td align="right" valign="top">vrRect2D&amp; </td><td><a href="vrRect2D.htm#vrRect2D&amp;_operator$_(const_vrRect2D&amp;_pt)$">operator=</a> (const vrRect2D&amp; pt);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrRect2D.htm#SFBool_operator$$(const_vrRect2D&amp;_rect)_const$">operator==</a>(const vrRect2D&amp; rect) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrRect2D.htm#SFBool_operator!$(const_vrRect2D&amp;_rect)_const$">operator!=</a>(const vrRect2D&amp; rect) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRect2D.htm#void_operator+$(const_SFVec2f&amp;_pt)$">operator+=</a>(const <a href="SFVec2f.htm">SFVec2f</a>&amp; pt);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRect2D.htm#void_operator-$(const_SFVec2f&amp;_pt)$">operator-=</a>(const <a href="SFVec2f.htm">SFVec2f</a>&amp; pt);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRect2D.htm#void_operator$$(const_SFVec2f&amp;_pt)$">operator/=</a>(const <a href="SFVec2f.htm">SFVec2f</a>&amp; pt);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRect2D.htm#void_operator*$(const_SFVec2f&amp;_pt)$">operator*=</a>(const <a href="SFVec2f.htm">SFVec2f</a>&amp; pt);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrRect2D.htm#SFFloat_Width_(void)_const$">Width</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrRect2D.htm#SFFloat_Height_(void)_const$">Height</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec2f.htm">SFVec2f</a> </td><td><a href="vrRect2D.htm#SFVec2f_Size_(void)_const$">Size</a> (void) const;</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	Utility class for representing 2D rectangle.  Corresponds directly to
+	the MFC class CRect.  This class can be used as a standalone 2D bounding box.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>None.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// This class has various uses:
+	
+	// Get a bounding box from some VRML model.
+	<a href="vrBoundingBox.htm">vrBoundingBox</a> box = model-&gt;GetBoundingBox();
+
+	vrRect2D front = box.GetFront();
+	vrRect2D side = box.GetSide();
+	vrRect2D top = box.GetTop();
+
+	// Use the 2d bounding boxes for some calculation...
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFFloat_left$"><ul><h3><li>SFFloat left;</li></h3></a>
+</ul>
+</ul>     <dd>The left component of the rectangle.
+<dl><dl>
+<dt><i>default:</i><strong> 0.0</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_top$"><ul><h3><li>SFFloat top;</li></h3></a>
+</ul>
+</ul>     <dd>The top component of the rectangle.
+<dl><dl>
+<dt><i>default:</i><strong> 0.0</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_right$"><ul><h3><li>SFFloat right;</li></h3></a>
+</ul>
+</ul>     <dd>The right component of the rectangle.
+<dl><dl>
+<dt><i>default:</i><strong> 0.0</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_bottom$"><ul><h3><li>SFFloat bottom;</li></h3></a>
+</ul>
+</ul>     <dd>The bottom component of the rectangle.
+<dl><dl>
+<dt><i>default:</i><strong> 0.0</strong>
+<p>
+</dl></dl>
+<a name="vrRect2D_(void)$"><ul><h3><li>vrRect2D (void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="vrRect2D_(const_vrRect2D&amp;_rect)$"><ul><h3><li>vrRect2D (const vrRect2D&amp; rect);</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="vrRect2D_(SFFloat_l,_SFFloat_t,_SFFloat_r,_SFFloat_b)$"><ul><h3><li>vrRect2D (SFFloat l, SFFloat t, SFFloat r, SFFloat b);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> l:</strong>
+<dd>The left component of the rectangle.
+<dt><i>in</i><strong> t:</strong>
+<dd>The top component of the rectangle.
+<dt><i>in</i><strong> r:</strong>
+<dd>The right component of the rectangle.
+<dt><i>in</i><strong> b:</strong>
+<dd>The bottom component of the rectangle.
+<p>
+</dl></dl>
+<a name="vrRect2D_(const_SFVec2f&amp;_tl,_const_SFVec2f&amp;_br)$"><ul><h3><li>vrRect2D (const SFVec2f&amp; tl, const SFVec2f&amp; br);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> tl:</strong>
+<dd>The top-left of the rectangle.
+<dt><i>in</i><strong> br:</strong>
+<dd>The bottom-right of the rectangle.
+<p>
+</dl></dl>
+<a name="~vrRect2D_(void)_$"><ul><h3><li>~vrRect2D (void) ;</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="vrRect2D&amp;_operator$_(const_vrRect2D&amp;_pt)$"><ul><h3><li>vrRect2D&amp; operator= (const vrRect2D&amp; pt);</li></h3></a>
+</ul>
+</ul>     <dd>Equal operator.
+<p>
+<a name="SFBool_operator$$(const_vrRect2D&amp;_rect)_const$"><ul><h3><li>SFBool operator==(const vrRect2D&amp; rect) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if the two rectangle are identical.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> rect:</strong>
+<dd>The query rectangle.
+<p>
+</dl></dl>
+<a name="SFBool_operator!$(const_vrRect2D&amp;_rect)_const$"><ul><h3><li>SFBool operator!=(const vrRect2D&amp; rect) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if the two rectangle are different.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> rect:</strong>
+<dd>The query rectangle.
+<p>
+</dl></dl>
+<a name="void_operator+$(const_SFVec2f&amp;_pt)$"><ul><h3><li>void operator+=(const SFVec2f&amp; pt);</li></h3></a>
+</ul>
+</ul>     <dd>Expand the recatangle in both width and height by pt.x and pt.y respectively.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pt:</strong>
+<dd>The amounts by which to grow the rectangle.
+<p>
+</dl></dl>
+<a name="void_operator-$(const_SFVec2f&amp;_pt)$"><ul><h3><li>void operator-=(const SFVec2f&amp; pt);</li></h3></a>
+</ul>
+</ul>     <dd>Shrink the recatangle in both width and height by pt.x and pt.y respectively.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pt:</strong>
+<dd>The amounts by which to shrink the rectangle.
+<p>
+</dl></dl>
+<a name="void_operator$$(const_SFVec2f&amp;_pt)$"><ul><h3><li>void operator/=(const SFVec2f&amp; pt);</li></h3></a>
+</ul>
+</ul>     <dd>Scale the recatangle in both width and height by pt.x and pt.y respectively.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pt:</strong>
+<dd>The amounts by which to scale the rectangle.
+<p>
+</dl></dl>
+<a name="void_operator*$(const_SFVec2f&amp;_pt)$"><ul><h3><li>void operator*=(const SFVec2f&amp; pt);</li></h3></a>
+</ul>
+</ul>     <dd>Scale the recatangle in both width and height by pt.x and pt.y respectively.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pt:</strong>
+<dd>The amounts by which to scale the rectangle.
+<p>
+</dl></dl>
+<a name="SFFloat_Width_(void)_const$"><ul><h3><li>SFFloat Width (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return the width of the rectangle.
+<p>
+<a name="SFFloat_Height_(void)_const$"><ul><h3><li>SFFloat Height (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return the height of the rectangle.
+<p>
+<a name="SFVec2f_Size_(void)_const$"><ul><h3><li>SFVec2f Size (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return the width and height of the rectangle.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:02 1999
+.<p>
+</body></html>

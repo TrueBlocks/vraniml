@@ -1,0 +1,546 @@
+<html><head><title>vrDataSet Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrDataSet</a></h1>
+<dl>
+<dd>
+	This class corresponds to the DataSet node in VRML.  
+	<a href="../spec/part1/nodesRef.html#DataSet">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrdataset.htm#aag">Summary</a> | </a>
+<a href="vrdataset.htm#DESCRIPTION">Description</a> | 
+<a href="vrdataset.htm#NOTES">Notes</a> | 
+<a href="vrdataset.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrdataset.htm#MEMBERS">Members</a> | 
+<a href="vrdataset.htm#parents">Ancestors</a> | <a href="vrdataset.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrDataSet : public <a href="vrGeometryNode.htm">vrGeometryNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrDataSet.htm#vrDataSet(void)$">vrDataSet</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrDataSet.htm#vrDataSet(const_vrDataSet&amp;_v)$">vrDataSet</a>(const vrDataSet&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrDataSet.htm#~vrDataSet(void)$">vrDataSet</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrDataSet&amp; </td><td><a href="vrDataSet.htm#vrDataSet&amp;_operator$(const_vrDataSet&amp;_v)$">operator=</a>(const vrDataSet&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrDataSet.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_SetColorPerVertex(SFBool_colorpervertex)$">SetColorPerVertex</a>(SFBool colorpervertex);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_SetNormalPerVertex(SFBool_normalpervertex)$">SetNormalPerVertex</a>(SFBool normalpervertex);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_AddColorIndex(SFInt32_colorindex)$">AddColorIndex</a>(SFInt32 colorindex);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_SetColorIndex(const_MFInt32&amp;_colorindex)$">SetColorIndex</a>(const MFInt32&amp; colorindex);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_AddCoordIndex(SFInt32_coordindex)$">AddCoordIndex</a>(SFInt32 coordindex);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_SetCoordIndex(const_MFInt32&amp;_coordindex)$">SetCoordIndex</a>(const MFInt32&amp; coordindex);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_AddNormalIndex(SFInt32_normalindex)$">AddNormalIndex</a>(SFInt32 normalindex);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_SetNormalIndex(const_MFInt32&amp;_normalindex)$">SetNormalIndex</a>(const MFInt32&amp; normalindex);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_AddTexCoordIndex(SFInt32_texcoordindex)$">AddTexCoordIndex</a>(SFInt32 texcoordindex);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_SetTexCoordIndex(const_MFInt32&amp;_texcoordindex)$">SetTexCoordIndex</a>(const MFInt32&amp; texcoordindex);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_SetColor(const_vrColor*_color)$">SetColor</a>(const <a href="vrColor.htm">vrColor</a>* color);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_SetCoord(const_vrCoordinate*_coord)$">SetCoord</a>(const <a href="vrCoordinate.htm">vrCoordinate</a>* coord);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_SetNormal(const_vrNormal*_normal)$">SetNormal</a>(const <a href="vrNormal.htm">vrNormal</a>* normal);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrDataSet.htm#void_SetTexCoord(const_vrTextureCoordinate*_texcoord)$">SetTexCoord</a>(const <a href="vrTextureCoordinate.htm">vrTextureCoordinate</a>* texcoord);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrDataSet.htm#SFBool_GetColorPerVertex(void)_const$">GetColorPerVertex</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrDataSet.htm#SFBool_GetNormalPerVertex(void)_const$">GetNormalPerVertex</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDataSet.htm#SFInt32_GetNColorIndexs(void)_const$">GetNColorIndexs</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDataSet.htm#SFInt32_GetColorIndex(SFInt32_n)_const$">GetColorIndex</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const MFInt32&amp; </td><td><a href="vrDataSet.htm#const_MFInt32&amp;_GetColorIndexArray(void)_const$">GetColorIndexArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDataSet.htm#SFInt32_GetNCoordIndexs(void)_const$">GetNCoordIndexs</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDataSet.htm#SFInt32_GetCoordIndex(SFInt32_n)_const$">GetCoordIndex</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const MFInt32&amp; </td><td><a href="vrDataSet.htm#const_MFInt32&amp;_GetCoordIndexArray(void)_const$">GetCoordIndexArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDataSet.htm#SFInt32_GetNNormalIndexs(void)_const$">GetNNormalIndexs</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDataSet.htm#SFInt32_GetNormalIndex(SFInt32_n)_const$">GetNormalIndex</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const MFInt32&amp; </td><td><a href="vrDataSet.htm#const_MFInt32&amp;_GetNormalIndexArray(void)_const$">GetNormalIndexArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDataSet.htm#SFInt32_GetNTexCoordIndexs(void)_const$">GetNTexCoordIndexs</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDataSet.htm#SFInt32_GetTexCoordIndex(SFInt32_n)_const$">GetTexCoordIndex</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const MFInt32&amp; </td><td><a href="vrDataSet.htm#const_MFInt32&amp;_GetTexCoordIndexArray(void)_const$">GetTexCoordIndexArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrColor.htm">vrColor</a>* </td><td><a href="vrDataSet.htm#vrColor*_GetColor(void)_const$">GetColor</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrCoordinate.htm">vrCoordinate</a>* </td><td><a href="vrDataSet.htm#vrCoordinate*_GetCoord(void)_const$">GetCoord</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrNormal.htm">vrNormal</a>* </td><td><a href="vrDataSet.htm#vrNormal*_GetNormal(void)_const$">GetNormal</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrTextureCoordinate.htm">vrTextureCoordinate</a>* </td><td><a href="vrDataSet.htm#vrTextureCoordinate*_GetTexCoord(void)_const$">GetTexCoord</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrDataSet.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrDataSet.htm#void_ReceiveEventIn(vrEvent_*event)$">ReceiveEventIn</a></i>(<a href="vrEvent.htm">vrEvent</a> *event);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrDataSet.htm#SFNode_FindByType(vrRuntimeClass_*pClass)_const$">FindByType</a></i>(<a href="vrRuntimeClass.htm">vrRuntimeClass</a> *pClass) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrDataSet.htm#SFNode_FindByName(const_SFString&amp;_nodeName)_const$">FindByName</a></i>(const <a href="SFString.htm">SFString</a>&amp; nodeName) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrDataSet.htm#SFBool_ForEvery(PFBO3V_userFn,_void_*userData,_PFBO3V_afterFn_)$">ForEvery</a></i>(PFBO3V userFn, void *userData, PFBO3V afterFn );</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrDataSet.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrDataSet.htm#DECLARE_NODE(vrDataSet)$">DECLARE_NODE</a>(vrDataSet);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrDataSet.htm#SFBool_m_ColorPerVertex$">m_ColorPerVertex</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrDataSet.htm#SFBool_m_NormalPerVertex$">m_NormalPerVertex</a>;</td></tr>
+<tr><td align="right" valign="top">MFInt32 </td><td><a href="vrDataSet.htm#MFInt32_m_ColorIndex$">m_ColorIndex</a>;</td></tr>
+<tr><td align="right" valign="top">MFInt32 </td><td><a href="vrDataSet.htm#MFInt32_m_CoordIndex$">m_CoordIndex</a>;</td></tr>
+<tr><td align="right" valign="top">MFInt32 </td><td><a href="vrDataSet.htm#MFInt32_m_NormalIndex$">m_NormalIndex</a>;</td></tr>
+<tr><td align="right" valign="top">MFInt32 </td><td><a href="vrDataSet.htm#MFInt32_m_TexCoordIndex$">m_TexCoordIndex</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrColor.htm">vrColor</a>* </td><td><a href="vrDataSet.htm#vrColor*_m_Color$">m_Color</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrCoordinate.htm">vrCoordinate</a>* </td><td><a href="vrDataSet.htm#vrCoordinate*_m_Coord$">m_Coord</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrNormal.htm">vrNormal</a>* </td><td><a href="vrDataSet.htm#vrNormal*_m_Normal$">m_Normal</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrTextureCoordinate.htm">vrTextureCoordinate</a>* </td><td><a href="vrDataSet.htm#vrTextureCoordinate*_m_TexCoord$">m_TexCoord</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDataSet.htm#SFInt32_m_ColorIndexEv$">m_ColorIndexEv</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDataSet.htm#SFInt32_m_CoordIndexEv$">m_CoordIndexEv</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDataSet.htm#SFInt32_m_NormalIndexEv$">m_NormalIndexEv</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrDataSet.htm#SFInt32_m_TexCoordIndexEv$">m_TexCoordIndexEv</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the DataSet node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#DataSet">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFBool_m_ColorPerVertex$"><ul><h3><li>SFBool m_ColorPerVertex;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'colorPerVertex' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_NormalPerVertex$"><ul><h3><li>SFBool m_NormalPerVertex;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'normalPerVertex' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="MFInt32_m_ColorIndex$"><ul><h3><li>MFInt32 m_ColorIndex;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'colorIndex' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFInt32_m_CoordIndex$"><ul><h3><li>MFInt32 m_CoordIndex;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'coordIndex' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFInt32_m_NormalIndex$"><ul><h3><li>MFInt32 m_NormalIndex;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'normalIndex' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFInt32_m_TexCoordIndex$"><ul><h3><li>MFInt32 m_TexCoordIndex;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'texCoordIndex' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="vrColor*_m_Color$"><ul><h3><li>vrColor* m_Color;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'color' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="vrCoordinate*_m_Coord$"><ul><h3><li>vrCoordinate* m_Coord;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'coord' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="vrNormal*_m_Normal$"><ul><h3><li>vrNormal* m_Normal;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'normal' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="vrTextureCoordinate*_m_TexCoord$"><ul><h3><li>vrTextureCoordinate* m_TexCoord;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'texCoord' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_ColorIndexEv$"><ul><h3><li>SFInt32 m_ColorIndexEv;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'colorIndexEv' eventIn.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_CoordIndexEv$"><ul><h3><li>SFInt32 m_CoordIndexEv;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'coordIndexEv' eventIn.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_NormalIndexEv$"><ul><h3><li>SFInt32 m_NormalIndexEv;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'normalIndexEv' eventIn.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_TexCoordIndexEv$"><ul><h3><li>SFInt32 m_TexCoordIndexEv;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'texCoordIndexEv' eventIn.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="vrDataSet(void)$"><ul><h3><li>vrDataSet(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrDataSet(const_vrDataSet&amp;_v)$"><ul><h3><li>vrDataSet(const vrDataSet&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrDataSet(void)$"><ul><h3><li>~vrDataSet(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrDataSet&amp;_operator$(const_vrDataSet&amp;_v)$"><ul><h3><li>vrDataSet&amp; operator=(const vrDataSet&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_SetColorPerVertex(SFBool_colorpervertex)$"><ul><h3><li>void SetColorPerVertex(SFBool colorpervertex);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_ColorPerVertex member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> colorpervertex:</strong>
+<dd>The colorpervertex value.
+<p>
+</dl></dl>
+<a name="void_SetNormalPerVertex(SFBool_normalpervertex)$"><ul><h3><li>void SetNormalPerVertex(SFBool normalpervertex);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_NormalPerVertex member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> normalpervertex:</strong>
+<dd>The normalpervertex value.
+<p>
+</dl></dl>
+<a name="void_AddColorIndex(SFInt32_colorindex)$"><ul><h3><li>void AddColorIndex(SFInt32 colorindex);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_ColorIndex array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> colorindex:</strong>
+<dd>The value to add to the m_ColorIndex array.
+<p>
+</dl></dl>
+<a name="void_SetColorIndex(const_MFInt32&amp;_colorindex)$"><ul><h3><li>void SetColorIndex(const MFInt32&amp; colorindex);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_ColorIndex member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> colorindex:</strong>
+<dd>The m_ColorIndex array.
+<p>
+</dl></dl>
+<a name="void_AddCoordIndex(SFInt32_coordindex)$"><ul><h3><li>void AddCoordIndex(SFInt32 coordindex);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_CoordIndex array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> coordindex:</strong>
+<dd>The value to add to the m_CoordIndex array.
+<p>
+</dl></dl>
+<a name="void_SetCoordIndex(const_MFInt32&amp;_coordindex)$"><ul><h3><li>void SetCoordIndex(const MFInt32&amp; coordindex);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_CoordIndex member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> coordindex:</strong>
+<dd>The m_CoordIndex array.
+<p>
+</dl></dl>
+<a name="void_AddNormalIndex(SFInt32_normalindex)$"><ul><h3><li>void AddNormalIndex(SFInt32 normalindex);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_NormalIndex array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> normalindex:</strong>
+<dd>The value to add to the m_NormalIndex array.
+<p>
+</dl></dl>
+<a name="void_SetNormalIndex(const_MFInt32&amp;_normalindex)$"><ul><h3><li>void SetNormalIndex(const MFInt32&amp; normalindex);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_NormalIndex member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> normalindex:</strong>
+<dd>The m_NormalIndex array.
+<p>
+</dl></dl>
+<a name="void_AddTexCoordIndex(SFInt32_texcoordindex)$"><ul><h3><li>void AddTexCoordIndex(SFInt32 texcoordindex);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_TexCoordIndex array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> texcoordindex:</strong>
+<dd>The value to add to the m_TexCoordIndex array.
+<p>
+</dl></dl>
+<a name="void_SetTexCoordIndex(const_MFInt32&amp;_texcoordindex)$"><ul><h3><li>void SetTexCoordIndex(const MFInt32&amp; texcoordindex);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_TexCoordIndex member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> texcoordindex:</strong>
+<dd>The m_TexCoordIndex array.
+<p>
+</dl></dl>
+<a name="void_SetColor(const_vrColor*_color)$"><ul><h3><li>void SetColor(const vrColor* color);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Color member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> color:</strong>
+<dd>The color value.
+<p>
+</dl></dl>
+<a name="void_SetCoord(const_vrCoordinate*_coord)$"><ul><h3><li>void SetCoord(const vrCoordinate* coord);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Coord member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> coord:</strong>
+<dd>The coord value.
+<p>
+</dl></dl>
+<a name="void_SetNormal(const_vrNormal*_normal)$"><ul><h3><li>void SetNormal(const vrNormal* normal);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Normal member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> normal:</strong>
+<dd>The normal value.
+<p>
+</dl></dl>
+<a name="void_SetTexCoord(const_vrTextureCoordinate*_texcoord)$"><ul><h3><li>void SetTexCoord(const vrTextureCoordinate* texcoord);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_TexCoord member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> texcoord:</strong>
+<dd>The texcoord value.
+<p>
+</dl></dl>
+<a name="SFBool_GetColorPerVertex(void)_const$"><ul><h3><li>SFBool GetColorPerVertex(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_ColorPerVertex member.
+<p>
+<a name="SFBool_GetNormalPerVertex(void)_const$"><ul><h3><li>SFBool GetNormalPerVertex(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_NormalPerVertex member.
+<p>
+<a name="SFInt32_GetNColorIndexs(void)_const$"><ul><h3><li>SFInt32 GetNColorIndexs(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_ColorIndex member.
+<p>
+<a name="SFInt32_GetColorIndex(SFInt32_n)_const$"><ul><h3><li>SFInt32 GetColorIndex(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_ColorIndex member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFInt32&amp;_GetColorIndexArray(void)_const$"><ul><h3><li>const MFInt32&amp; GetColorIndexArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_ColorIndex member.
+<p>
+<a name="SFInt32_GetNCoordIndexs(void)_const$"><ul><h3><li>SFInt32 GetNCoordIndexs(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_CoordIndex member.
+<p>
+<a name="SFInt32_GetCoordIndex(SFInt32_n)_const$"><ul><h3><li>SFInt32 GetCoordIndex(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_CoordIndex member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFInt32&amp;_GetCoordIndexArray(void)_const$"><ul><h3><li>const MFInt32&amp; GetCoordIndexArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_CoordIndex member.
+<p>
+<a name="SFInt32_GetNNormalIndexs(void)_const$"><ul><h3><li>SFInt32 GetNNormalIndexs(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_NormalIndex member.
+<p>
+<a name="SFInt32_GetNormalIndex(SFInt32_n)_const$"><ul><h3><li>SFInt32 GetNormalIndex(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_NormalIndex member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFInt32&amp;_GetNormalIndexArray(void)_const$"><ul><h3><li>const MFInt32&amp; GetNormalIndexArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_NormalIndex member.
+<p>
+<a name="SFInt32_GetNTexCoordIndexs(void)_const$"><ul><h3><li>SFInt32 GetNTexCoordIndexs(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_TexCoordIndex member.
+<p>
+<a name="SFInt32_GetTexCoordIndex(SFInt32_n)_const$"><ul><h3><li>SFInt32 GetTexCoordIndex(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_TexCoordIndex member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFInt32&amp;_GetTexCoordIndexArray(void)_const$"><ul><h3><li>const MFInt32&amp; GetTexCoordIndexArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_TexCoordIndex member.
+<p>
+<a name="vrColor*_GetColor(void)_const$"><ul><h3><li>vrColor* GetColor(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Color member.
+<p>
+<a name="vrCoordinate*_GetCoord(void)_const$"><ul><h3><li>vrCoordinate* GetCoord(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Coord member.
+<p>
+<a name="vrNormal*_GetNormal(void)_const$"><ul><h3><li>vrNormal* GetNormal(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Normal member.
+<p>
+<a name="vrTextureCoordinate*_GetTexCoord(void)_const$"><ul><h3><li>vrTextureCoordinate* GetTexCoord(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_TexCoord member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vrdataset.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="void_ReceiveEventIn(vrEvent_*event)$"><ul><h3><li>void ReceiveEventIn(vrEvent *event);</li></h3></a>
+</ul>
+</ul>	   <dd>Receive an event during an event cascade or directly from caller.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> event:</strong>
+<dd>The <a href="vrEvent.htm">vrEvent</a> to be processed.
+<p>
+</dl></dl>
+<a name="SFNode_FindByType(vrRuntimeClass_*pClass)_const$"><ul><h3><li>SFNode FindByType(vrRuntimeClass *pClass) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Find a node by class type.  Returns NULL if not found. (Overridden to search <a href="vrNode.htm">vrNode</a> derived data members).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pClass:</strong>
+<dd>Pointer to a <a href="vrRuntimeClass.htm">vrRuntimeClass</a> representing the searched for type.
+<p>
+</dl></dl>
+<a name="SFNode_FindByName(const_SFString&amp;_nodeName)_const$"><ul><h3><li>SFNode FindByName(const SFString&amp; nodeName) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Find a node by name.  Returns NULL if not found.  (Overridden to search <a href="vrNode.htm">vrNode</a> derived data members)
+<p>
+<dl><dl>
+<dt><i>in</i><strong> nodeName:</strong>
+<dd>The name of the node being searched for.
+<p>
+</dl></dl>
+<a name="SFBool_ForEvery(PFBO3V_userFn,_void_*userData,_PFBO3V_afterFn_)$"><ul><h3><li>SFBool ForEvery(PFBO3V userFn, void *userData, PFBO3V afterFn );</li></h3></a>
+</ul>
+</ul>	   <dd>Apply 'userFn' to all contained nodes (including any children and/or direct references).  [ <a href="../forevery.htm">Additional information.</a> ]
+<p>
+<dl><dl>
+<dt><i>in</i><strong> userFn:</strong>
+<dd>Pointer to a function returning SFBool and taking an SFNode and void pointer as arguments.  'userFn' is applied to this node and all children (if any).
+<dt><i>in</i><strong> userData:</strong>
+<dd>Pointer to arbitrary user data.
+<dt><i>in</i><strong> afterFn:</strong>
+<dd>Pointer to a function to apply after applying 'userFn' to all children (for example: popping a stack).
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrDataSet)$"><ul><h3><li>DECLARE_NODE(vrDataSet);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrDataSet:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+<li><a href="vrGeometryNode.htm">vrGeometryNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrElevationGrid.htm">vrElevationGrid</a>
+<li><a href="vrIndexedFaceSet.htm">vrIndexedFaceSet</a>
+<li><a href="vrIndexedLineSet.htm">vrIndexedLineSet</a>
+<li><a href="vrPointSet.htm">vrPointSet</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:51 1999
+.<p>
+</body></html>

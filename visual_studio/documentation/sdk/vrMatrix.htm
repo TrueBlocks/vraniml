@@ -1,0 +1,420 @@
+<html><head><title>vrMatrix Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrMatrix</a></h1>
+<dl>
+<dd>
+	Represents a 4x4 transformation matrix.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrmatrix.htm#aag">Summary</a> | </a>
+<a href="vrmatrix.htm#DESCRIPTION">Description</a> | 
+<a href="vrmatrix.htm#NOTES">Notes</a> | 
+<a href="vrmatrix.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrmatrix.htm#MEMBERS">Members</a> | 
+<a href="vrmatrix.htm#parents">Ancestors</a> | <a href="vrmatrix.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface vrMatrix<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> vals [</td><td><a href="vrMatrix.htm#SFFloat_vals_[4][4]$">4]</a>[4];</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrMatrix.htm#vrMatrix_(void)$">vrMatrix</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrMatrix.htm#vrMatrix_(const_vrMatrix&amp;_mat)$">vrMatrix</a> (const vrMatrix&amp; mat);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrMatrix.htm#vrMatrix_(const_SFVec4&amp;_c0,_const_SFVec4&amp;_c1,_const_SFVec4&amp;_c2,_const_SFVec4&amp;_c3)$">vrMatrix</a> (const SFVec4&amp; c0, const SFVec4&amp; c1, const SFVec4&amp; c2, const SFVec4&amp; c3);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrMatrix.htm#~vrMatrix_(void)$">vrMatrix</a> (void);</td></tr>
+<tr><td align="right" valign="top">vrMatrix&amp; </td><td><a href="vrMatrix.htm#vrMatrix&amp;_operator$_(const_vrMatrix&amp;_A)$">operator=</a> (const vrMatrix&amp; A);</td></tr>
+<tr><td align="right" valign="top">vrMatrix&amp; </td><td><a href="vrMatrix.htm#vrMatrix&amp;_operator+$_(const_vrMatrix&amp;_A)$">operator+=</a> (const vrMatrix&amp; A);</td></tr>
+<tr><td align="right" valign="top">vrMatrix&amp; </td><td><a href="vrMatrix.htm#vrMatrix&amp;_operator-$_(const_vrMatrix&amp;_A)$">operator-=</a> (const vrMatrix&amp; A);</td></tr>
+<tr><td align="right" valign="top">vrMatrix&amp; </td><td><a href="vrMatrix.htm#vrMatrix&amp;_operator*$_(const_vrMatrix&amp;_A)$">operator*=</a> (const vrMatrix&amp; A);</td></tr>
+<tr><td align="right" valign="top">vrMatrix&amp; </td><td><a href="vrMatrix.htm#vrMatrix&amp;_operator*$_(SFFloat_A)$">operator*=</a> (SFFloat A);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrMatrix.htm#void_Invert_(void)$">Invert</a> (void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrMatrix.htm#void_Transpose_(void)$">Transpose</a> (void);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_Invert_(const_vrMatrix&amp;_M)$">Invert</a> (const vrMatrix&amp; M);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_Transpose_(const_vrMatrix&amp;_M)$">Transpose</a> (const vrMatrix&amp; M);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_IdentityMatrix_(void)$">IdentityMatrix</a> (void);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_ZeroMatrix_(void)$">ZeroMatrix</a> (void);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_TranslationMatrix_(const_SFVec3f&amp;_trans)$">TranslationMatrix</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; trans);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_RotationXMatrix_(SFFloat_angle)$">RotationXMatrix</a> (SFFloat angle);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_RotationYMatrix_(SFFloat_angle)$">RotationYMatrix</a> (SFFloat angle);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_RotationZMatrix_(SFFloat_angle)$">RotationZMatrix</a> (SFFloat angle);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_AlignXMatrix_(const_SFVec3f&amp;_pt1,_const_SFVec3f&amp;_pt2)$">AlignXMatrix</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; pt1, const <a href="SFVec3f.htm">SFVec3f</a>&amp; pt2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_AlignYMatrix_(const_SFVec3f&amp;_pt1,_const_SFVec3f&amp;_pt2)$">AlignYMatrix</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; pt1, const <a href="SFVec3f.htm">SFVec3f</a>&amp; pt2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_AlignZMatrix_(const_SFVec3f&amp;_pt1,_const_SFVec3f&amp;_pt2)$">AlignZMatrix</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; pt1, const <a href="SFVec3f.htm">SFVec3f</a>&amp; pt2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_RotationYPRMatrix_(SFFloat_yaw,_SFFloat_pitch,_SFFloat_roll)$">RotationYPRMatrix</a> (SFFloat yaw, SFFloat pitch, SFFloat roll);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_RotationAxisMatrix(const_SFVec3f&amp;_axis,_SFFloat_radians)$">RotationAxisMatrix</a>(const <a href="SFVec3f.htm">SFVec3f</a>&amp; axis, SFFloat radians);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_RotationMatrix_(const_SFRotation&amp;_rot)$">RotationMatrix</a> (const <a href="SFRotation.htm">SFRotation</a>&amp; rot);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_ViewMatrix_(const_SFVec3f&amp;_lookAt,_const_SFVec3f&amp;_viewer,_const_SFVec3f&amp;_up)$">ViewMatrix</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; lookAt, const <a href="SFVec3f.htm">SFVec3f</a>&amp; viewer, const <a href="SFVec3f.htm">SFVec3f</a>&amp; up);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_ScaleMatrix_(const_SFVec3f&amp;_scale)$">ScaleMatrix</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; scale);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_ScaleMatrix_(SFFloat_X,_SFFloat_Y,_SFFloat_Z)$">ScaleMatrix</a> (SFFloat X, SFFloat Y, SFFloat Z);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_MirrorX_(void)$">MirrorX</a> (void);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_MirrorY_(void)$">MirrorY</a> (void);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_MirrorZ_(void)$">MirrorZ</a> (void);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_RotationOnly_(const_vrMatrix&amp;_M)$">RotationOnly</a> (const vrMatrix&amp; M);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_operator+_(const_vrMatrix&amp;_A,_const_vrMatrix&amp;_B)$">operator+</a> (const vrMatrix&amp; A, const vrMatrix&amp; B);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_operator-_(const_vrMatrix&amp;_A,_const_vrMatrix&amp;_B)$">operator-</a> (const vrMatrix&amp; A, const vrMatrix&amp; B);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_operator*_(const_vrMatrix&amp;_A,_SFFloat_B)$">operator*</a> (const vrMatrix&amp; A, SFFloat B);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrMatrix </td><td><a href="vrMatrix.htm#friend_UL_Interface_vrMatrix_operator*_(const_vrMatrix&amp;_A,_const_vrMatrix&amp;_B)$">operator*</a> (const vrMatrix&amp; A, const vrMatrix&amp; B);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	Utility class for representing an arbitrary 4x4 transformation.
+	This class can be used stand-alone to perform various matrix
+	related operations.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>None.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// Use the vrMatrix class to perform various matrix related operations:
+	vrMatrix rot = <a href="vrmatrix.htm#friend_UL_Interface_vrMatrix_RotationZMatrix_(SFFloat_angle)$">RotationZMatrix</a>(vrDeg2Rad(180.0));
+	<a href="SFVec3f.htm">SFVec3f</a> rotated = rot * xAxis;
+	ASSERT(rotated == -xAxis);
+
+	vrMatrix scale = <a href="vrmatrix.htm#friend_UL_Interface_vrMatrix_ScaleMatrix_(SFFloat_X,_SFFloat_Y,_SFFloat_Z)$">ScaleMatrix</a>(2.0);
+	<a href="SFVec3f.htm">SFVec3f</a> scaled = scale * xAxis;
+	ASSERT(scaled == xAxis*2.0);
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFFloat_vals_[4][4]$"><ul><h3><li>SFFloat vals [4][4];</li></h3></a>
+</ul>
+</ul>     <dd>16 floating point numbers representing the matrix.
+<dl><dl>
+<dt><i>default:</i><strong> IdentityMatrix</strong>
+<p>
+</dl></dl>
+<a name="vrMatrix_(void)$"><ul><h3><li>vrMatrix (void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="vrMatrix_(const_vrMatrix&amp;_mat)$"><ul><h3><li>vrMatrix (const vrMatrix&amp; mat);</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="vrMatrix_(const_SFVec4&amp;_c0,_const_SFVec4&amp;_c1,_const_SFVec4&amp;_c2,_const_SFVec4&amp;_c3)$"><ul><h3><li>vrMatrix (const SFVec4&amp; c0, const SFVec4&amp; c1, const SFVec4&amp; c2, const SFVec4&amp; c3);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> c0:</strong>
+<dd>Column 0 of the matrix.
+<dt><i>in</i><strong> c1:</strong>
+<dd>Column 1 of the matrix.
+<dt><i>in</i><strong> c2:</strong>
+<dd>Column 2 of the matrix.
+<dt><i>in</i><strong> c3:</strong>
+<dd>Column 3 of the matrix.
+<p>
+</dl></dl>
+<a name="~vrMatrix_(void)$"><ul><h3><li>~vrMatrix (void);</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="vrMatrix&amp;_operator$_(const_vrMatrix&amp;_A)$"><ul><h3><li>vrMatrix&amp; operator= (const vrMatrix&amp; A);</li></h3></a>
+</ul>
+</ul>     <dd>Equals operator.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> A:</strong>
+<dd>The matrix to assign from.
+<p>
+</dl></dl>
+<a name="vrMatrix&amp;_operator+$_(const_vrMatrix&amp;_A)$"><ul><h3><li>vrMatrix&amp; operator+= (const vrMatrix&amp; A);</li></h3></a>
+</ul>
+</ul>     <dd>Additive equals operator.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> A:</strong>
+<dd>The matrix to add from.
+<p>
+</dl></dl>
+<a name="vrMatrix&amp;_operator-$_(const_vrMatrix&amp;_A)$"><ul><h3><li>vrMatrix&amp; operator-= (const vrMatrix&amp; A);</li></h3></a>
+</ul>
+</ul>     <dd>Subtractive equals operator.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> A:</strong>
+<dd>The matrix to subtract.
+<p>
+</dl></dl>
+<a name="vrMatrix&amp;_operator*$_(const_vrMatrix&amp;_A)$"><ul><h3><li>vrMatrix&amp; operator*= (const vrMatrix&amp; A);</li></h3></a>
+</ul>
+</ul>     <dd>Multiplicitive equals operator.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> A:</strong>
+<dd>The matrix to multiply by.
+<p>
+</dl></dl>
+<a name="vrMatrix&amp;_operator*$_(SFFloat_A)$"><ul><h3><li>vrMatrix&amp; operator*= (SFFloat A);</li></h3></a>
+</ul>
+</ul>     <dd>Multiplicitive by scalar equals operator.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> A:</strong>
+<dd>The scalar to multiply by.
+<p>
+</dl></dl>
+<a name="void_Invert_(void)$"><ul><h3><li>void Invert (void);</li></h3></a>
+</ul>
+</ul>     <dd>Invert the matrix.
+<p>
+<a name="void_Transpose_(void)$"><ul><h3><li>void Transpose (void);</li></h3></a>
+</ul>
+</ul>     <dd>Transpose the matrix.
+<p>
+<a name="friend_UL_Interface_vrMatrix_Invert_(const_vrMatrix&amp;_M)$"><ul><h3><li>friend UL_Interface vrMatrix Invert (const vrMatrix&amp; M);</li></h3></a>
+</ul>
+</ul>     <dd>Invert the given matrix.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> M:</strong>
+<dd>The matrix to invert.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_Transpose_(const_vrMatrix&amp;_M)$"><ul><h3><li>friend UL_Interface vrMatrix Transpose (const vrMatrix&amp; M);</li></h3></a>
+</ul>
+</ul>     <dd>Transpose the given matrix.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> M:</strong>
+<dd>The matrix to transpose.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_IdentityMatrix_(void)$"><ul><h3><li>friend UL_Interface vrMatrix IdentityMatrix (void);</li></h3></a>
+</ul>
+</ul>     <dd>Return an identity matrix.
+<p>
+<a name="friend_UL_Interface_vrMatrix_ZeroMatrix_(void)$"><ul><h3><li>friend UL_Interface vrMatrix ZeroMatrix (void);</li></h3></a>
+</ul>
+</ul>     <dd>Return a zero matrix.
+<p>
+<a name="friend_UL_Interface_vrMatrix_TranslationMatrix_(const_SFVec3f&amp;_trans)$"><ul><h3><li>friend UL_Interface vrMatrix TranslationMatrix (const SFVec3f&amp; trans);</li></h3></a>
+</ul>
+</ul>     <dd>Return a translation matrix by the given vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trans:</strong>
+<dd>The translation amount.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_RotationXMatrix_(SFFloat_angle)$"><ul><h3><li>friend UL_Interface vrMatrix RotationXMatrix (SFFloat angle);</li></h3></a>
+</ul>
+</ul>     <dd>Return a rotation matrix by the given angle about the X axis.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> angle:</strong>
+<dd>The rotation amount.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_RotationYMatrix_(SFFloat_angle)$"><ul><h3><li>friend UL_Interface vrMatrix RotationYMatrix (SFFloat angle);</li></h3></a>
+</ul>
+</ul>     <dd>Return a rotation matrix by the given angle about the Y axis.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> angle:</strong>
+<dd>The rotation amount.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_RotationZMatrix_(SFFloat_angle)$"><ul><h3><li>friend UL_Interface vrMatrix RotationZMatrix (SFFloat angle);</li></h3></a>
+</ul>
+</ul>     <dd>Return a rotation matrix by the given angle about the Z axis.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> angle:</strong>
+<dd>The rotation amount.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_AlignXMatrix_(const_SFVec3f&amp;_pt1,_const_SFVec3f&amp;_pt2)$"><ul><h3><li>friend UL_Interface vrMatrix AlignXMatrix (const SFVec3f&amp; pt1, const SFVec3f&amp; pt2);</li></h3></a>
+</ul>
+</ul>     <dd>Return the matrix that will align the vector from pt1 to pt2 with the X axis.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pt1:</strong>
+<dd>The start of the alignment vector.
+<dt><i>in</i><strong> pt2:</strong>
+<dd>The end of the alignment vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_AlignYMatrix_(const_SFVec3f&amp;_pt1,_const_SFVec3f&amp;_pt2)$"><ul><h3><li>friend UL_Interface vrMatrix AlignYMatrix (const SFVec3f&amp; pt1, const SFVec3f&amp; pt2);</li></h3></a>
+</ul>
+</ul>     <dd>Return the matrix that will align the vector from pt1 to pt2 with the Y axis.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pt1:</strong>
+<dd>The start of the alignment vector.
+<dt><i>in</i><strong> pt2:</strong>
+<dd>The end of the alignment vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_AlignZMatrix_(const_SFVec3f&amp;_pt1,_const_SFVec3f&amp;_pt2)$"><ul><h3><li>friend UL_Interface vrMatrix AlignZMatrix (const SFVec3f&amp; pt1, const SFVec3f&amp; pt2);</li></h3></a>
+</ul>
+</ul>     <dd>Return the matrix that will align the vector from pt1 to pt2 with the Z axis.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pt1:</strong>
+<dd>The start of the alignment vector.
+<dt><i>in</i><strong> pt2:</strong>
+<dd>The end of the alignment vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_RotationYPRMatrix_(SFFloat_yaw,_SFFloat_pitch,_SFFloat_roll)$"><ul><h3><li>friend UL_Interface vrMatrix RotationYPRMatrix (SFFloat yaw, SFFloat pitch, SFFloat roll);</li></h3></a>
+</ul>
+</ul>     <dd>Return a matrix given yaw, pitch and roll.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> yaw:</strong>
+<dd>The yaw value for the matrix.
+<dt><i>in</i><strong> pitch:</strong>
+<dd>The pitch value for the matrix.
+<dt><i>in</i><strong> roll:</strong>
+<dd>The roll value for the matrix.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_RotationAxisMatrix(const_SFVec3f&amp;_axis,_SFFloat_radians)$"><ul><h3><li>friend UL_Interface vrMatrix RotationAxisMatrix(const SFVec3f&amp; axis, SFFloat radians);</li></h3></a>
+</ul>
+</ul>     <dd>Return the matrix represented by the axis and angle.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> axis:</strong>
+<dd>The axis about which to rotate.
+<dt><i>in</i><strong> radians:</strong>
+<dd>The angle (in radians) to rotate about the axis.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_RotationMatrix_(const_SFRotation&amp;_rot)$"><ul><h3><li>friend UL_Interface vrMatrix RotationMatrix (const SFRotation&amp; rot);</li></h3></a>
+</ul>
+</ul>     <dd>Return the matrix represented by the <a href="SFRotation.htm">SFRotation</a>.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> rot:</strong>
+<dd>The <a href="SFRotation.htm">SFRotation</a> representing the angle and axis for the matrix.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_ViewMatrix_(const_SFVec3f&amp;_lookAt,_const_SFVec3f&amp;_viewer,_const_SFVec3f&amp;_up)$"><ul><h3><li>friend UL_Interface vrMatrix ViewMatrix (const SFVec3f&amp; lookAt, const SFVec3f&amp; viewer, const SFVec3f&amp; up);</li></h3></a>
+</ul>
+</ul>     <dd>Return a view matrix given lookat, viewer location and up vectors.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> lookAt:</strong>
+<dd>A point at which the viewer is looking.
+<dt><i>in</i><strong> viewer:</strong>
+<dd>The position of the viewer.
+<dt><i>in</i><strong> up:</strong>
+<dd>The direction of 'up'.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_ScaleMatrix_(const_SFVec3f&amp;_scale)$"><ul><h3><li>friend UL_Interface vrMatrix ScaleMatrix (const SFVec3f&amp; scale);</li></h3></a>
+</ul>
+</ul>     <dd>Return a scale matrix.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> scale:</strong>
+<dd>The amount to scale in each dimension.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_ScaleMatrix_(SFFloat_X,_SFFloat_Y,_SFFloat_Z)$"><ul><h3><li>friend UL_Interface vrMatrix ScaleMatrix (SFFloat X, SFFloat Y, SFFloat Z);</li></h3></a>
+</ul>
+</ul>     <dd>Return a scale matrix.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> X:</strong>
+<dd>The amount to scale in the X dimension.
+<dt><i>in</i><strong> Y:</strong>
+<dd>The amount to scale in the Y dimension.
+<dt><i>in</i><strong> Z:</strong>
+<dd>The amount to scale in the Z dimension.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_MirrorX_(void)$"><ul><h3><li>friend UL_Interface vrMatrix MirrorX (void);</li></h3></a>
+</ul>
+</ul>     <dd>Return a matrix that will mirror a vector about the X axis.
+<p>
+<a name="friend_UL_Interface_vrMatrix_MirrorY_(void)$"><ul><h3><li>friend UL_Interface vrMatrix MirrorY (void);</li></h3></a>
+</ul>
+</ul>     <dd>Return a matrix that will mirror a vector about the Y axis.
+<p>
+<a name="friend_UL_Interface_vrMatrix_MirrorZ_(void)$"><ul><h3><li>friend UL_Interface vrMatrix MirrorZ (void);</li></h3></a>
+</ul>
+</ul>     <dd>Return a matrix that will mirror a vector about the Z axis.
+<p>
+<a name="friend_UL_Interface_vrMatrix_RotationOnly_(const_vrMatrix&amp;_M)$"><ul><h3><li>friend UL_Interface vrMatrix RotationOnly (const vrMatrix&amp; M);</li></h3></a>
+</ul>
+</ul>     <dd>Return the rotation only portion of a matrix.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> M:</strong>
+<dd>The matrix to extract the rotation from.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_operator+_(const_vrMatrix&amp;_A,_const_vrMatrix&amp;_B)$"><ul><h3><li>friend UL_Interface vrMatrix operator+ (const vrMatrix&amp; A, const vrMatrix&amp; B);</li></h3></a>
+</ul>
+</ul>     <dd>Return the componentwise addition of two matricies.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> A:</strong>
+<dd>The first matrix.
+<dt><i>in</i><strong> B:</strong>
+<dd>The second matrix.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_operator-_(const_vrMatrix&amp;_A,_const_vrMatrix&amp;_B)$"><ul><h3><li>friend UL_Interface vrMatrix operator- (const vrMatrix&amp; A, const vrMatrix&amp; B);</li></h3></a>
+</ul>
+</ul>     <dd>Return the componentwise subtraction of two matricies.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> A:</strong>
+<dd>The first matrix.
+<dt><i>in</i><strong> B:</strong>
+<dd>The second matrix.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_operator*_(const_vrMatrix&amp;_A,_SFFloat_B)$"><ul><h3><li>friend UL_Interface vrMatrix operator* (const vrMatrix&amp; A, SFFloat B);</li></h3></a>
+</ul>
+</ul>     <dd>Return the scalar mulitplication of the matrix by a scalar.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> A:</strong>
+<dd>The first matrix.
+<dt><i>in</i><strong> B:</strong>
+<dd>A scalar.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrMatrix_operator*_(const_vrMatrix&amp;_A,_const_vrMatrix&amp;_B)$"><ul><h3><li>friend UL_Interface vrMatrix operator* (const vrMatrix&amp; A, const vrMatrix&amp; B);</li></h3></a>
+</ul>
+</ul>     <dd>Return the mulitplication of two matricies.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> A:</strong>
+<dd>The first matrix.
+<dt><i>in</i><strong> B:</strong>
+<dd>The second matrix.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:01 1999
+.<p>
+</body></html>

@@ -1,0 +1,448 @@
+<html><head><title>vrNode Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrNode</a></h1>
+<dl>
+<dd>
+	The vrNode is the base class for all VRML nodes.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrnode.htm#aag">Summary</a> | </a>
+<a href="vrnode.htm#DESCRIPTION">Description</a> | 
+<a href="vrnode.htm#NOTES">Notes</a> | 
+<a href="vrnode.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrnode.htm#MEMBERS">Members</a> | 
+<a href="vrnode.htm#parents">Ancestors</a> | <a href="vrnode.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrNode : public <a href="vrBaseNode.htm">vrBaseNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrNode.htm#SFBool_IsIsMapped(const_SFString&amp;_fieldName)_const$">IsIsMapped</a>(const <a href="SFString.htm">SFString</a>&amp; fieldName) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrNode.htm#vrNode_(void)$">vrNode</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrNode.htm#vrNode_(const_vrNode&amp;_ob)$">vrNode</a> (const vrNode&amp; ob);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrNode.htm#~vrNode_(void)$">vrNode</a></i> (void);</td></tr>
+<tr><td align="right" valign="top">vrNode&amp; </td><td><a href="vrNode.htm#vrNode&amp;_operator$_(const_vrNode&amp;_ob)$">operator=</a> (const vrNode&amp; ob);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrNode.htm#SFNode_Clone_(void)_const$">Clone</a></i> (void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrNode.htm#void_SetName_(const_SFString&amp;_name)$">SetName</a> (const <a href="SFString.htm">SFString</a>&amp; name);</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrNode.htm#SFString_GetName_(void)_const$">GetName</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrNode.htm#SFInt32_HasRoutes_(void)_const_$">HasRoutes</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top"><a href="vrRoute.htm">vrRoute</a> *</td><td><a href="vrNode.htm#vrRoute_*AddRoute_(const_SFString&amp;_srcField,_SFNode_dstNode,_const_SFString&amp;_dstField,_SFBool_internal_)$">AddRoute</a> (const <a href="SFString.htm">SFString</a>&amp; srcField, SFNode dstNode, const <a href="SFString.htm">SFString</a>&amp; dstField, SFBool internal );</td></tr>
+<tr><td align="right" valign="top"><a href="vrRoute.htm">vrRoute</a> *</td><td><a href="vrNode.htm#vrRoute_*AddRoute_(SFInt32_srcType,_SFNode_dstNode,_SFInt32_dstType,_SFBool_internal_)$">AddRoute</a> (SFInt32 srcType, SFNode dstNode, SFInt32 dstType, SFBool internal );</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrNode.htm#void_RemoveRoute_(vrRoute_*route)$">RemoveRoute</a> (<a href="vrRoute.htm">vrRoute</a> *route);</td></tr>
+<tr><td align="right" valign="top"><a href="vrRoute.htm">vrRoute</a> *</td><td><a href="vrNode.htm#vrRoute_*FindRoute_(const_SFString&amp;_srcField,_SFNode_dstNode,_const_SFString&amp;_dstField)_const$">FindRoute</a> (const <a href="SFString.htm">SFString</a>&amp; srcField, SFNode dstNode, const <a href="SFString.htm">SFString</a>&amp; dstField) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrRouteList.htm">vrRouteList</a> *</td><td><a href="vrNode.htm#vrRouteList_*GetRouteList_(void)_const$">GetRouteList</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrNode.htm#void_Traverse_(vrTraverser_*t)_const$">Traverse</a></i> (<a href="vrTraverser.htm">vrTraverser</a> *t) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrNode.htm#void_ReceiveEventIn(vrEvent_*e)_$">ReceiveEventIn</a></i>(<a href="vrEvent.htm">vrEvent</a> *e) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrNode.htm#void_SendEventOut_(SFInt32_eventID,_void_*data)$">SendEventOut</a></i> (SFInt32 eventID, void *data);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrNode.htm#SFBool_SetFieldValue(const_SFString&amp;_fieldName,_void_*val)_$">SetFieldValue</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName, void *val) ;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrNode.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const_$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrNode.htm#void_AddChild_(SFNode_node)$">AddChild</a></i> (SFNode node);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrNode.htm#SFNode_FindByType_(vrRuntimeClass_*pClass)_const$">FindByType</a></i> (<a href="vrRuntimeClass.htm">vrRuntimeClass</a> *pClass) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrNode.htm#SFNode_FindByName_(const_SFString&amp;_nodeName)_const$">FindByName</a></i> (const <a href="SFString.htm">SFString</a>&amp; nodeName) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrNode.htm#SFBool_ForEvery_(PFBO3V_userFn,_void_*userData,_PFBO3V_afterFn_)$">ForEvery</a></i> (PFBO3V userFn, void *userData, PFBO3V afterFn );</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrNode.htm#DECLARE_NODE(vrNode)$">DECLARE_NODE</a>(vrNode);</td></tr>
+<tr><td align="right" valign="top"><a href="vrUserData.htm">vrUserData</a> *</td><td><a href="vrNode.htm#vrUserData_*GetUserData(const_SFString&amp;_id)_const$">GetUserData</a>(const <a href="SFString.htm">SFString</a>&amp; id) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrNode.htm#void_SetUserData(const_SFString&amp;_id,_vrUserData_*data)$">SetUserData</a>(const <a href="SFString.htm">SFString</a>&amp; id, <a href="vrUserData.htm">vrUserData</a> *data);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="vrRouteList.htm">vrRouteList</a> *</td><td><a href="vrNode.htm#vrRouteList_*m_RouteList$">m_RouteList</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrNode.htm#SFString_m_Name$">m_Name</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrBoundingBox.htm">vrBoundingBox</a> </td><td><a href="vrNode.htm#vrBoundingBox_m_Bounds$">m_Bounds</a>;</td></tr>
+<tr><td align="right" valign="top">vrUserDataList *</td><td><a href="vrNode.htm#vrUserDataList_*m_UserDataList$">m_UserDataList</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	This class implements interfaces for various node related functions
+	such as node naming, bounding box calculation, adding children nodes,
+	setting and adding fields, etc.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>You will not use this class directly, instead you might use it as
+		the base class for your own derived classes.</li>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="vrRouteList_*m_RouteList$"><ul><h3><li>vrRouteList *m_RouteList;</li></h3></a>
+</ul>
+</ul>     <dd>A dynamically allocated list of <a href="vrRoute.htm">vrRoute</a> objects that eminate from this node.
+	   <dd>For each ROUTE statement in a .wrl file, this list will contain a <a href="vrRoute.htm">vrRoute</a>
+	   <dd>   if this node is the source of the Route.
+<dl><dl>
+<dt><i>default:</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="SFString_m_Name$"><ul><h3><li>SFString m_Name;</li></h3></a>
+</ul>
+</ul>     <dd>The name of this node (as described in the DEF syntax of VRML).
+<dl><dl>
+<dt><i>default:</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="vrBoundingBox_m_Bounds$"><ul><h3><li>vrBoundingBox m_Bounds;</li></h3></a>
+</ul>
+</ul>     <dd>The bounding box (in the object's own space) that is represented
+	   <dd>   by this node and its children (if any).
+<p>
+<a name="vrUserDataList_*m_UserDataList$"><ul><h3><li>vrUserDataList *m_UserDataList;</li></h3></a>
+</ul>
+</ul>     <dd>A list of vrUserDataItem objects each of which stores user defined
+	   <dd>   data for this object.  An identifier is needed for each user
+	   <dd>   defined data object because nodes may be multiply referenced
+	   <dd>   (or DEF/USE'd).
+<p>
+<a name="SFBool_IsIsMapped(const_SFString&amp;_fieldName)_const$"><ul><h3><li>SFBool IsIsMapped(const SFString&amp; fieldName) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the given field is 'IS' mapped (in a PROTO)
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for IS mapping.
+<p>
+</dl></dl>
+<a name="vrNode_(void)$"><ul><h3><li>vrNode (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrNode_(const_vrNode&amp;_ob)$"><ul><h3><li>vrNode (const vrNode&amp; ob);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrNode_(void)$"><ul><h3><li>~vrNode (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrNode&amp;_operator$_(const_vrNode&amp;_ob)$"><ul><h3><li>vrNode&amp; operator= (const vrNode&amp; ob);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone_(void)_const$"><ul><h3><li>SFNode Clone (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of this node.
+<p>
+<a name="void_SetName_(const_SFString&amp;_name)$"><ul><h3><li>void SetName (const SFString&amp; name);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the name of this node (equates to the VRML concept of DEF).
+	   <dd>A copy is made of the name string.
+	   <dd>The name is verified as per VRML97 rules for naming nodes.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> name:</strong>
+<dd>The name of this node.
+<p>
+</dl></dl>
+<a name="SFString_GetName_(void)_const$"><ul><h3><li>SFString GetName (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns the name of this node or NULL.  Used by FindByName function for example.
+<p>
+<a name="SFInt32_HasRoutes_(void)_const_$"><ul><h3><li>SFInt32 HasRoutes (void) const ;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if this node has one or more routes eminating from it.
+<p>
+<a name="vrRoute_*AddRoute_(const_SFString&amp;_srcField,_SFNode_dstNode,_const_SFString&amp;_dstField,_SFBool_internal_)$"><ul><h3><li>vrRoute *AddRoute (const SFString&amp; srcField, SFNode dstNode, const SFString&amp; dstField, SFBool internal );</li></h3></a>
+</ul>
+</ul>	   <dd>Add a <a href="vrRoute.htm">vrRoute</a> to this node by specifying the source field, destintation node and destination field.
+	   <dd>Rules for adding routes is defined here.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> srcField:</strong>
+<dd>A <a href="vrField.htm">vrField</a> name for a node of this type that initiates the route.
+<dt><i>in</i><strong> dstNode:</strong>
+<dd>The node to which the srcField is routed.
+<dt><i>in</i><strong> dstField:</strong>
+<dd>The <a href="vrField.htm">vrField</a> in the dstNode to which the srcField is routed.
+<dt><i>in</i><strong> internal:</strong>
+<dd>TRUE if this is an interally generated route (i.e. not defined in the VRML specification).
+<p>
+</dl></dl>
+<a name="vrRoute_*AddRoute_(SFInt32_srcType,_SFNode_dstNode,_SFInt32_dstType,_SFBool_internal_)$"><ul><h3><li>vrRoute *AddRoute (SFInt32 srcType, SFNode dstNode, SFInt32 dstType, SFBool internal );</li></h3></a>
+</ul>
+</ul>	   <dd>Add a <a href="vrRoute.htm">vrRoute</a> to this node by specifying the source field, destintation node and destination field.
+	   <dd>Rules for adding routes is defined here.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> srcType:</strong>
+<dd>A <a href="vrField.htm">vrField</a> ID for a node of this type that initiates the route.
+<dt><i>in</i><strong> dstNode:</strong>
+<dd>The node to which the srcField is routed.
+<dt><i>in</i><strong> dstType:</strong>
+<dd>The <a href="vrField.htm">vrField</a> in the dstNode to which the srcField is routed.
+<dt><i>in</i><strong> internal:</strong>
+<dd>TRUE if this is an interally generated route (i.e. not defined in the VRML specification).
+<p>
+</dl></dl>
+<a name="void_RemoveRoute_(vrRoute_*route)$"><ul><h3><li>void RemoveRoute (vrRoute *route);</li></h3></a>
+</ul>
+</ul>	   <dd>Remove a <a href="vrRoute.htm">vrRoute</a> from this node.
+	   <dd>If the route pointer is not found there is no effect or warning.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> route:</strong>
+<dd>A pointer to the <a href="vrRoute.htm">vrRoute</a> to add to this node.
+<p>
+</dl></dl>
+<a name="vrRoute_*FindRoute_(const_SFString&amp;_srcField,_SFNode_dstNode,_const_SFString&amp;_dstField)_const$"><ul><h3><li>vrRoute *FindRoute (const SFString&amp; srcField, SFNode dstNode, const SFString&amp; dstField) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return a pointer to a <a href="vrRoute.htm">vrRoute</a> if this node has a route matching the given characteristics.
+	   <dd>If the route pointer is not found NULL is returned.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> srcField:</strong>
+<dd>A <a href="vrField.htm">vrField</a> name for a node of this type that initiates the route.
+<dt><i>in</i><strong> dstNode:</strong>
+<dd>The node to which the srcField is routed.
+<dt><i>in</i><strong> dstField:</strong>
+<dd>The <a href="vrField.htm">vrField</a> in the dstNode to which the srcField is routed.
+<p>
+</dl></dl>
+<a name="vrRouteList_*GetRouteList_(void)_const$"><ul><h3><li>vrRouteList *GetRouteList (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return a pointer to this node's route list (or NULL).
+<p>
+<a name="void_Traverse_(vrTraverser_*t)_const$"><ul><h3><li>void Traverse (vrTraverser *t) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.
+	   <dd>Note: Normally, nodes just call t-&gt;<a href="vrnode.htm#void_Traverse_(vrTraverser_*t)_const$">Traverse</a>(this) to have the traverser handle the traversal.
+	   <dd>      you may override this method in your derived class to handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="void_ReceiveEventIn(vrEvent_*e)_$"><ul><h3><li>void ReceiveEventIn(vrEvent *e) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Receive an event during an event cascade or directly from caller.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> event:</strong>
+<dd>The <a href="vrEvent.htm">vrEvent</a> to be processed.
+<p>
+</dl></dl>
+<a name="void_SendEventOut_(SFInt32_eventID,_void_*data)$"><ul><h3><li>void SendEventOut (SFInt32 eventID, void *data);</li></h3></a>
+</ul>
+</ul>	   <dd>After receiving an event in send any corresponding event outs.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> eventID:</strong>
+<dd>The eventOut to send.
+<dt><i>in</i><strong> data:</strong>
+<dd>Void pointer to event data.
+<p>
+</dl></dl>
+<a name="SFBool_SetFieldValue(const_SFString&amp;_fieldName,_void_*val)_$"><ul><h3><li>SFBool SetFieldValue(const SFString&amp; fieldName, void *val) ;</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of a field given the field's name and a value.
+	   <dd>Note: Error checking is done on 'fieldName' but cannot be done on 'val',
+	   <dd>      so make sure you send the correct type of data to this method.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The name of the field to set (as specified in the VRML97 specification).
+<dt><i>in</i><strong> val:</strong>
+<dd>Void pointer to a field of the type corresponding to fieldName.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const_$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const ;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="void_AddChild_(SFNode_node)$"><ul><h3><li>void AddChild (SFNode node);</li></h3></a>
+</ul>
+</ul>	   <dd>Add a child to this node.  The node is verified before being added as
+	   <dd>   per the VRML specification.
+	   <dd>Note: This function does nothing by default.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> node:</strong>
+<dd>The node to add.
+<p>
+</dl></dl>
+<a name="SFNode_FindByType_(vrRuntimeClass_*pClass)_const$"><ul><h3><li>SFNode FindByType (vrRuntimeClass *pClass) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Find a node by type (searches any vrNode derived data members).  Returns NULL if not found.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pClass:</strong>
+<dd>Pointer to a <a href="vrRuntimeClass.htm">vrRuntimeClass</a> representing the searched for type.
+<p>
+</dl></dl>
+<a name="SFNode_FindByName_(const_SFString&amp;_nodeName)_const$"><ul><h3><li>SFNode FindByName (const SFString&amp; nodeName) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Find a node by name (searches vrNode derived data members).  Returns NULL if not found.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> nodeName:</strong>
+<dd>The name of the node being searched for.
+<p>
+</dl></dl>
+<a name="SFBool_ForEvery_(PFBO3V_userFn,_void_*userData,_PFBO3V_afterFn_)$"><ul><h3><li>SFBool ForEvery (PFBO3V userFn, void *userData, PFBO3V afterFn );</li></h3></a>
+</ul>
+</ul>	   <dd>Apply 'userFn' to all contained nodes (including any children and/or direct references).  [ <a href="../forevery.htm">Additional information.</a> ]
+<p>
+<dl><dl>
+<dt><i>in</i><strong> userFn:</strong>
+<dd>Pointer to a function returning SFBool and taking an SFNode and void pointer as arguments.  'userFn' is applied to this node and all children (if any).
+<dt><i>in</i><strong> userData:</strong>
+<dd>Pointer to arbitrary user data.
+<dt><i>in</i><strong> afterFn:</strong>
+<dd>Pointer to a function to apply after applying 'userFn' to all children (for example: popping a stack).
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrNode)$"><ul><h3><li>DECLARE_NODE(vrNode);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="vrUserData_*GetUserData(const_SFString&amp;_id)_const$"><ul><h3><li>vrUserData *GetUserData(const SFString&amp; id) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the <a href="vrUserData.htm">vrUserData</a> stored at this 'id'.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> id:</strong>
+<dd>An identifier for the user defined data to be retrieved.
+<p>
+</dl></dl>
+<a name="void_SetUserData(const_SFString&amp;_id,_vrUserData_*data)$"><ul><h3><li>void SetUserData(const SFString&amp; id, vrUserData *data);</li></h3></a>
+</ul>
+</ul>	   <dd>Add a <a href="vrUserData.htm">vrUserData</a> to the node at this 'id'.  If 'id' is unique
+	   <dd>   for each occurence of a node in the scene graph (for example
+	   <dd>   if the node is multiply referenced (or DEF/USE'd) then you
+	   <dd>   can store unique data per node.  If the same id is used for
+	   <dd>   multiply referenced objects then the same user data will be
+	   <dd>   stored for all occurances of the node.
+<p>
+	   <dd>Note: The node owns the user data once it is passed in so do not
+	   <dd>   delete it.  The node will delete the user data when the node
+	   <dd>   is destroyed.  This means you should not store temporary 
+	   <dd>   user data (i.e. user data created on the stack) without 
+	   <dd>   removing it prior to going out of scope.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> id:</strong>
+<dd>A unique identifier for this instance of user defined data.
+<dt><i>in</i><strong> data:</strong>
+<dd>A <a href="vrUserData.htm">vrUserData</a> derived class holder user defined data.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrNode:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrAppearance.htm">vrAppearance</a>
+<li><a href="vrAudioClip.htm">vrAudioClip</a>
+<li><a href="vrBindable.htm">vrBindable</a>
+<ul>
+<li><a href="vrBackground.htm">vrBackground</a>
+<li><a href="vrFog.htm">vrFog</a>
+<li><a href="vrNavigationInfo.htm">vrNavigationInfo</a>
+<li><a href="vrViewpoint.htm">vrViewpoint</a>
+</ul>
+<li><a href="vrColor.htm">vrColor</a>
+<li><a href="vrCoordinate.htm">vrCoordinate</a>
+<li><a href="vrFontStyle.htm">vrFontStyle</a>
+<li><a href="vrGeometryNode.htm">vrGeometryNode</a>
+<ul>
+<li><a href="vrBox.htm">vrBox</a>
+<li><a href="vrCone.htm">vrCone</a>
+<li><a href="vrCylinder.htm">vrCylinder</a>
+<li><a href="vrDataSet.htm">vrDataSet</a>
+<ul>
+<li><a href="vrElevationGrid.htm">vrElevationGrid</a>
+<li><a href="vrIndexedFaceSet.htm">vrIndexedFaceSet</a>
+<li><a href="vrIndexedLineSet.htm">vrIndexedLineSet</a>
+<li><a href="vrPointSet.htm">vrPointSet</a>
+</ul>
+<li><a href="vrExtrusion.htm">vrExtrusion</a>
+<li><a href="vrSphere.htm">vrSphere</a>
+<li><a href="vrText.htm">vrText</a>
+</ul>
+<li><a href="vrGroupingNode.htm">vrGroupingNode</a>
+<ul>
+<li><a href="vrAnchor.htm">vrAnchor</a>
+<li><a href="vrBillboard.htm">vrBillboard</a>
+<li><a href="vrCollision.htm">vrCollision</a>
+<li><a href="vrGroup.htm">vrGroup</a>
+<li><a href="vrInline.htm">vrInline</a>
+<li><a href="vrTransform.htm">vrTransform</a>
+<ul>
+<li><a href="vrBrowser.htm">vrBrowser</a>
+</ul>
+</ul>
+<li><a href="vrInterpolator.htm">vrInterpolator</a>
+<ul>
+<li><a href="vrColorInterpolator.htm">vrColorInterpolator</a>
+<li><a href="vrCoordinateInterpolator.htm">vrCoordinateInterpolator</a>
+<li><a href="vrNormalInterpolator.htm">vrNormalInterpolator</a>
+<li><a href="vrOrientationInterpolator.htm">vrOrientationInterpolator</a>
+<li><a href="vrPositionInterpolator.htm">vrPositionInterpolator</a>
+<li><a href="vrScalarInterpolator.htm">vrScalarInterpolator</a>
+</ul>
+<li><a href="vrLOD.htm">vrLOD</a>
+<li><a href="vrLight.htm">vrLight</a>
+<ul>
+<li><a href="vrDirectionalLight.htm">vrDirectionalLight</a>
+<li><a href="vrPointLight.htm">vrPointLight</a>
+<li><a href="vrSpotLight.htm">vrSpotLight</a>
+</ul>
+<li><a href="vrMaterial.htm">vrMaterial</a>
+<li><a href="vrNormal.htm">vrNormal</a>
+<li><a href="vrPixelTexture.htm">vrPixelTexture</a>
+<ul>
+<li><a href="vrImageTexture.htm">vrImageTexture</a>
+<li><a href="vrMovieTexture.htm">vrMovieTexture</a>
+</ul>
+<li><a href="vrScript.htm">vrScript</a>
+<li><a href="vrSensor.htm">vrSensor</a>
+<ul>
+<li><a href="vrPointingDeviceSensor.htm">vrPointingDeviceSensor</a>
+<ul>
+<li><a href="vrCylinderSensor.htm">vrCylinderSensor</a>
+<li><a href="vrPlaneSensor.htm">vrPlaneSensor</a>
+<li><a href="vrSphereSensor.htm">vrSphereSensor</a>
+<li><a href="vrTouchSensor.htm">vrTouchSensor</a>
+</ul>
+<li><a href="vrProximitySensor.htm">vrProximitySensor</a>
+<li><a href="vrTimeSensor.htm">vrTimeSensor</a>
+<li><a href="vrVisibilitySensor.htm">vrVisibilitySensor</a>
+</ul>
+<li><a href="vrShape.htm">vrShape</a>
+<li><a href="vrSound.htm">vrSound</a>
+<li><a href="vrSwitch.htm">vrSwitch</a>
+<li><a href="vrTextureCoordinate.htm">vrTextureCoordinate</a>
+<li><a href="vrTextureTransform.htm">vrTextureTransform</a>
+<li><a href="vrWorldInfo.htm">vrWorldInfo</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:53 1999
+.<p>
+</body></html>

@@ -1,0 +1,190 @@
+<html><head><title>vrRay Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrRay</a></h1>
+<dl>
+<dd>
+	Represents a line segment in 3-space.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrray.htm#aag">Summary</a> | </a>
+<a href="vrray.htm#DESCRIPTION">Description</a> | 
+<a href="vrray.htm#NOTES">Notes</a> | 
+<a href="vrray.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrray.htm#MEMBERS">Members</a> | 
+<a href="vrray.htm#parents">Ancestors</a> | <a href="vrray.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface vrRay<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrRay.htm#SFVec3f_m_Loc$">m_Loc</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrRay.htm#SFVec3f_m_Dir$">m_Dir</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrRay.htm#vrRay_(void)$">vrRay</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrRay.htm#vrRay_(const_vrRay&amp;_ray)$">vrRay</a> (const vrRay&amp; ray);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrRay.htm#vrRay_(const_SFVec3f&amp;_from,_const_SFVec3f&amp;_dir)$">vrRay</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; from, const <a href="SFVec3f.htm">SFVec3f</a>&amp; dir);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrRay.htm#~vrRay_(void)$">vrRay</a> (void);</td></tr>
+<tr><td align="right" valign="top">vrRay&amp; </td><td><a href="vrRay.htm#vrRay&amp;_operator$_(const_vrRay&amp;_r)$">operator=</a> (const vrRay&amp; r);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrRay.htm#SFFloat_GetDistance_(const_SFVec3f&amp;_v)_const$">GetDistance</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; v) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrRay.htm#SFFloat_Evaluate_(const_SFVec3f&amp;_v)_const$">Evaluate</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; v) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrRay.htm#SFVec3f_Extrapolate_(SFFloat_t)_const$">Extrapolate</a> (SFFloat t) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrRay.htm#SFFloat_Interpolate_(const_SFVec3f&amp;_x)_const$">Interpolate</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; x) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrRay.htm#SFVec3f_ReflectRay_(const_SFVec3f&amp;_v)_const$">ReflectRay</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; v) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRay.htm#void_ApplyTransform_(const_vrMatrix&amp;_tform)$">ApplyTransform</a> (const <a href="vrMatrix.htm">vrMatrix</a>&amp; tform);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	Utility class for representing 3d rays or line segments.  Used in 
+	various places for calculation of intersections, etc.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>The symbol vrLine is #defined as a synonym of vrRay and is used interchangably.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// A vrRay can be used to calculate intersections for visiblity
+	// calculations or plane intersections (among other things):
+	SFNode model = new <a href="vrBox.htm">vrBox</a>;
+
+	// a bounding box from some VRML model
+	<a href="vrBoundingBox.htm">vrBoundingBox</a> box = model-&gt;GetBoundingBox(); 
+	vrRay lineOfSite = GetLineOfSite();
+
+	if (box.Intersect(lineOfSite))
+		prinf(&quot;Ray hits bounding box\n&quot;);
+	else
+		prinf(&quot;Ray does not hit bounding box\n&quot;);
+
+	<a href="vrPlane.htm">vrPlane</a> plane1(xAxis, 1.0);
+	<a href="vrPlane.htm">vrPlane</a> plane2(yAxis, 1.0);
+
+	// The intersection of two planes is a ray:
+	vrRay intersection = plane1.Intersect(plane2);
+	printf(&quot;intersection: (%f,%f) to (%f,%f)\n&quot;, 
+			intersection.m_Loc.x,
+			intersection.m_Loc.y,
+			intersection.m_Dir.x,
+			intersection.m_Dir.y);
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFVec3f_m_Loc$"><ul><h3><li>SFVec3f m_Loc;</li></h3></a>
+</ul>
+</ul>     <dd>The starting point of the ray.
+<dl><dl>
+<dt><i>default:</i><strong> (0.0,0.0,0.0)</strong>
+<p>
+</dl></dl>
+<a name="SFVec3f_m_Dir$"><ul><h3><li>SFVec3f m_Dir;</li></h3></a>
+</ul>
+</ul>     <dd>The direction and magnitude of the ray.
+<dl><dl>
+<dt><i>default:</i><strong> (0.0,0.0,0.0)</strong>
+<p>
+</dl></dl>
+<a name="vrRay_(void)$"><ul><h3><li>vrRay (void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="vrRay_(const_vrRay&amp;_ray)$"><ul><h3><li>vrRay (const vrRay&amp; ray);</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="vrRay_(const_SFVec3f&amp;_from,_const_SFVec3f&amp;_dir)$"><ul><h3><li>vrRay (const SFVec3f&amp; from, const SFVec3f&amp; dir);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> from:</strong>
+<dd>The starting point of the ray.
+<dt><i>in</i><strong> dir:</strong>
+<dd>The direction and magnitude of the ray.
+<p>
+</dl></dl>
+<a name="~vrRay_(void)$"><ul><h3><li>~vrRay (void);</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="vrRay&amp;_operator$_(const_vrRay&amp;_r)$"><ul><h3><li>vrRay&amp; operator= (const vrRay&amp; r);</li></h3></a>
+</ul>
+</ul>     <dd>Equal operator.
+<p>
+<a name="SFFloat_GetDistance_(const_SFVec3f&amp;_v)_const$"><ul><h3><li>SFFloat GetDistance (const SFVec3f&amp; v) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return the distance of the vector from this line.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The query vector.
+<p>
+</dl></dl>
+<a name="SFFloat_Evaluate_(const_SFVec3f&amp;_v)_const$"><ul><h3><li>SFFloat Evaluate (const SFVec3f&amp; v) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns the value calculated by substituing the vector into the line equation.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector.
+<p>
+</dl></dl>
+<a name="SFVec3f_Extrapolate_(SFFloat_t)_const$"><ul><h3><li>SFVec3f Extrapolate (SFFloat t) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return the point on the line represented by the value of 't' when the line equation is evaluated.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> t:</strong>
+<dd>The value of 't' at which to evaluate the line.
+<p>
+</dl></dl>
+<a name="SFFloat_Interpolate_(const_SFVec3f&amp;_x)_const$"><ul><h3><li>SFFloat Interpolate (const SFVec3f&amp; x) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns the value of 't' that would evaluate to the given vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector (it should be on the line).
+<p>
+</dl></dl>
+<a name="SFVec3f_ReflectRay_(const_SFVec3f&amp;_v)_const$"><ul><h3><li>SFVec3f ReflectRay (const SFVec3f&amp; v) const;</li></h3></a>
+</ul>
+</ul>     <dd>Reflect the vector about the line.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to reflect.
+<p>
+</dl></dl>
+<a name="void_ApplyTransform_(const_vrMatrix&amp;_tform)$"><ul><h3><li>void ApplyTransform (const vrMatrix&amp; tform);</li></h3></a>
+</ul>
+</ul>     <dd>Transform the ray by the given matrix.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> tform:</strong>
+<dd>The transformation to apply to this line.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:02 1999
+.<p>
+</body></html>

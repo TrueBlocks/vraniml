@@ -1,0 +1,11 @@
+Great Hill Corporation made the following modifications
+to this software for inclusion in its VRaniML utility
+library free source code distribution.  These modifications
+were made so that the software did not require the
+use of the C++ standard template library.
+
+1. Removal of all include statements including standard C++
+	library headers
+2. Replacment of standard C++ string class
+3. Replacment of standard C++ io classes
+4. Modified bmpdecode to not swap red and blue

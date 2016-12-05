@@ -1,0 +1,57 @@
+<html>
+
+<head>
+<title>VEM - VRML Runtime Environment</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+
+
+<meta name="Microsoft Theme" content="neon 011, default"><meta name="Microsoft Border" content="b, default"></head>
+
+<body background="../../../_themes/neon/neobkgnd.gif" bgcolor="#000000" text="#FFFFFF" link="#FFFF66" vlink="#CCCC33" alink="#FFFF00"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top"><!--mstheme--><font face="verdana, arial, helvetica">
+
+<h1><!--mstheme--><font color="#CCCC00"><img src="../logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">VRaniML Design Documentation</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Browser Related Classes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (VRML Execution Model - VEM)<!--mstheme--></font></h1>
+
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/neon/neoarule.gif" width="300" height="10"></p>
+
+<p><font size="3">This component provides support for the VRML 2.0 runtime execution
+model.&nbsp; In other words, this component supports VRML event ROUTEing.&nbsp; This
+component also supports the VRML parser which is a lex/yacc based parser which builds the
+scene graph from a .wrl file.&nbsp; The classes making up this component are described
+below.&nbsp; <a href="../browserrelated.htm">For
+more information click here</a>.</font></p>
+
+<p align="center"><font SIZE="2"><img SRC="browser.gif" WIDTH="249" HEIGHT="412"></font></p>
+
+<p>&nbsp;</p>
+
+<p><strong>Browser class</strong>:&nbsp; This grouping node class serves as the top-level
+of the scene graph.&nbsp; The browser is basically the place where all the data is
+stored.&nbsp; The browser maintains the VRML clock, insuring that the scene is rendered at
+a sustained frame rate.&nbsp; The browser also maintains a list of <a href="traversers.htm">Traversers</a> supporting such things as multi-pass rendering.</p>
+
+<p><strong>Event class</strong>: The event class is used to propagate VRML 2.0 events from
+node to node along ROUTEs.&nbsp; The event class helps keep track of what data is to be
+changed with each event that is propagated.&nbsp; When an event is initiated (for example
+from a TimeSensor) it is sent along any ROUTEs using the event class.</p>
+
+<p><strong>Route class</strong>: The route class maintains the ROUTEs between nodes.
+&nbsp; Each node may ROUTE any of its exposedFields or eventOuts to other nodes
+exposedFields or eventIns.&nbsp; The route class holds the data for this connection.</p>
+
+<p><strong>UserMessage class</strong>: This class abstracts windows messages such as a
+mouse movement or keystroke.&nbsp; It exists mostly to make porting to operating systems
+other than MS Windows easier.</p>
+
+<p>&nbsp;</p>
+<!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><br>
+<img src="../../../_borders/bar.jpg" width="100%" height="3" alt="bar.jpg (730 bytes)" start="fileopen"></p>
+
+<h5><!--mstheme--><font color="#6633FF">Send mail to <a href="mailto:webmaster@greathill.com">webmaster@greathill.com</a> with questions or comments about this web site.<br>
+Copyright © 1998 Great Hill Corporation<br>
+Last modified: February 01, 1999 <!--mstheme--></font></h5>
+<!--mstheme--></font></td></tr><!--msnavigation--></table></body>
+</html>

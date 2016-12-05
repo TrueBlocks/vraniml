@@ -1,0 +1,210 @@
+<html><head><title>vrBaseNode Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrBaseNode</a></h1>
+<dl>
+<dd>
+	The vrBaseNode is the base class for all classes that wish to implement
+	reference counting and runtime typing.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrbasenode.htm#aag">Summary</a> | </a>
+<a href="vrbasenode.htm#DESCRIPTION">Description</a> | 
+<a href="vrbasenode.htm#NOTES">Notes</a> | 
+<a href="vrbasenode.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrbasenode.htm#MEMBERS">Members</a> | 
+<a href="vrbasenode.htm#parents">Ancestors</a> | <a href="vrbasenode.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface vrBaseNode<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBaseNode.htm#vrBaseNode_(void)$">vrBaseNode</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrBaseNode.htm#~vrBaseNode_(void)$">vrBaseNode</a></i> (void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBaseNode.htm#void_Reference_(void)$">Reference</a> (void);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBaseNode.htm#SFInt32_Dereference_(void)$">Dereference</a> (void);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrBaseNode.htm#SFBool_IsReferenced_(void)$">IsReferenced</a> (void);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrBaseNode.htm#SFBool_IsKindOf_(const_vrRuntimeClass*_pClass)_const$">IsKindOf</a></i> (const <a href="vrRuntimeClass.htm">vrRuntimeClass</a>* pClass) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBaseNode.htm#DECLARE_NODE(vrBaseNode)$">DECLARE_NODE</a>(vrBaseNode);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	Base class for any object added to any container.  Implements reference
+	counting and runtime typing.  Future versions of this class will include
+	memory debugging.  This class is equivelant to the CObject class in the
+	MFC.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>If you use the <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> macro in a class
+	definition you must add a corresponding <a href="../../Documentation/define.htm#IMPLEMENT_NODE">IMPLEMENT_NODE</a> macro
+	in the class implementation file.</li>
+<p>
+	<li>Use the <a href="../../Documentation/define.htm#vrDELETE">vrDELETE</a> macro for proper deletion of reference counted objects.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="vrBaseNode_(void)$"><ul><h3><li>vrBaseNode (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="~vrBaseNode_(void)$"><ul><h3><li>~vrBaseNode (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Desctructor.
+<p>
+<a name="void_Reference_(void)$"><ul><h3><li>void Reference (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Increment the object's reference count.
+<p>
+<a name="SFInt32_Dereference_(void)$"><ul><h3><li>SFInt32 Dereference (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Decrement the object's reference count.
+<p>
+<a name="SFBool_IsReferenced_(void)$"><ul><h3><li>SFBool IsReferenced (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the object is referenced.
+<p>
+<a name="SFBool_IsKindOf_(const_vrRuntimeClass*_pClass)_const$"><ul><h3><li>SFBool IsKindOf (const vrRuntimeClass* pClass) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the object is of the query type or
+	       derived from a class of the query type.
+	   <dd>This is used for runtime typing.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pClass:</strong>
+<dd>A pointer to the query class type.  Use the 
+	         GETRUNTIME_CLASS(className) macro to access the static
+	         <a href="vrRuntimeClass.htm">vrRuntimeClass</a> pointer for a given class.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrBaseNode)$"><ul><h3><li>DECLARE_NODE(vrBaseNode);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrNode.htm">vrNode</a>
+<ul>
+<li><a href="vrAppearance.htm">vrAppearance</a>
+<li><a href="vrAudioClip.htm">vrAudioClip</a>
+<li><a href="vrBindable.htm">vrBindable</a>
+<ul>
+<li><a href="vrBackground.htm">vrBackground</a>
+<li><a href="vrFog.htm">vrFog</a>
+<li><a href="vrNavigationInfo.htm">vrNavigationInfo</a>
+<li><a href="vrViewpoint.htm">vrViewpoint</a>
+</ul>
+<li><a href="vrColor.htm">vrColor</a>
+<li><a href="vrCoordinate.htm">vrCoordinate</a>
+<li><a href="vrFontStyle.htm">vrFontStyle</a>
+<li><a href="vrGeometryNode.htm">vrGeometryNode</a>
+<ul>
+<li><a href="vrBox.htm">vrBox</a>
+<li><a href="vrCone.htm">vrCone</a>
+<li><a href="vrCylinder.htm">vrCylinder</a>
+<li><a href="vrDataSet.htm">vrDataSet</a>
+<ul>
+<li><a href="vrElevationGrid.htm">vrElevationGrid</a>
+<li><a href="vrIndexedFaceSet.htm">vrIndexedFaceSet</a>
+<li><a href="vrIndexedLineSet.htm">vrIndexedLineSet</a>
+<li><a href="vrPointSet.htm">vrPointSet</a>
+</ul>
+<li><a href="vrExtrusion.htm">vrExtrusion</a>
+<li><a href="vrSphere.htm">vrSphere</a>
+<li><a href="vrText.htm">vrText</a>
+</ul>
+<li><a href="vrGroupingNode.htm">vrGroupingNode</a>
+<ul>
+<li><a href="vrAnchor.htm">vrAnchor</a>
+<li><a href="vrBillboard.htm">vrBillboard</a>
+<li><a href="vrCollision.htm">vrCollision</a>
+<li><a href="vrGroup.htm">vrGroup</a>
+<li><a href="vrInline.htm">vrInline</a>
+<li><a href="vrTransform.htm">vrTransform</a>
+<ul>
+<li><a href="vrBrowser.htm">vrBrowser</a>
+</ul>
+</ul>
+<li><a href="vrInterpolator.htm">vrInterpolator</a>
+<ul>
+<li><a href="vrColorInterpolator.htm">vrColorInterpolator</a>
+<li><a href="vrCoordinateInterpolator.htm">vrCoordinateInterpolator</a>
+<li><a href="vrNormalInterpolator.htm">vrNormalInterpolator</a>
+<li><a href="vrOrientationInterpolator.htm">vrOrientationInterpolator</a>
+<li><a href="vrPositionInterpolator.htm">vrPositionInterpolator</a>
+<li><a href="vrScalarInterpolator.htm">vrScalarInterpolator</a>
+</ul>
+<li><a href="vrLOD.htm">vrLOD</a>
+<li><a href="vrLight.htm">vrLight</a>
+<ul>
+<li><a href="vrDirectionalLight.htm">vrDirectionalLight</a>
+<li><a href="vrPointLight.htm">vrPointLight</a>
+<li><a href="vrSpotLight.htm">vrSpotLight</a>
+</ul>
+<li><a href="vrMaterial.htm">vrMaterial</a>
+<li><a href="vrNormal.htm">vrNormal</a>
+<li><a href="vrPixelTexture.htm">vrPixelTexture</a>
+<ul>
+<li><a href="vrImageTexture.htm">vrImageTexture</a>
+<li><a href="vrMovieTexture.htm">vrMovieTexture</a>
+</ul>
+<li><a href="vrScript.htm">vrScript</a>
+<li><a href="vrSensor.htm">vrSensor</a>
+<ul>
+<li><a href="vrPointingDeviceSensor.htm">vrPointingDeviceSensor</a>
+<ul>
+<li><a href="vrCylinderSensor.htm">vrCylinderSensor</a>
+<li><a href="vrPlaneSensor.htm">vrPlaneSensor</a>
+<li><a href="vrSphereSensor.htm">vrSphereSensor</a>
+<li><a href="vrTouchSensor.htm">vrTouchSensor</a>
+</ul>
+<li><a href="vrProximitySensor.htm">vrProximitySensor</a>
+<li><a href="vrTimeSensor.htm">vrTimeSensor</a>
+<li><a href="vrVisibilitySensor.htm">vrVisibilitySensor</a>
+</ul>
+<li><a href="vrShape.htm">vrShape</a>
+<li><a href="vrSound.htm">vrSound</a>
+<li><a href="vrSwitch.htm">vrSwitch</a>
+<li><a href="vrTextureCoordinate.htm">vrTextureCoordinate</a>
+<li><a href="vrTextureTransform.htm">vrTextureTransform</a>
+<li><a href="vrWorldInfo.htm">vrWorldInfo</a>
+</ul>
+<li><a href="vrSolid.htm">vrSolid</a>
+<li><a href="vrTraverser.htm">vrTraverser</a>
+<ul>
+<li><a href="vrActionTraverser.htm">vrActionTraverser</a>
+<li><a href="vrRenderTraverser.htm">vrRenderTraverser</a>
+<ul>
+<li><a href="vrD3DTraverser.htm">vrD3DTraverser</a>
+<li><a href="vrOGLTraverser.htm">vrOGLTraverser</a>
+</ul>
+<li><a href="vrValidateTraverser.htm">vrValidateTraverser</a>
+<li><a href="vrWriteTraverser.htm">vrWriteTraverser</a>
+</ul>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:57 1999
+.<p>
+</body></html>

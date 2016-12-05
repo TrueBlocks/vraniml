@@ -1,0 +1,517 @@
+<html><head><title>SFString Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">SFString</a></h1>
+<dl>
+<dd>
+	A string class.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="sfstring.htm#aag">Summary</a> | </a>
+<a href="sfstring.htm#DESCRIPTION">Description</a> | 
+<a href="sfstring.htm#NOTES">Notes</a> | 
+<a href="sfstring.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="sfstring.htm#MEMBERS">Members</a> | 
+<a href="sfstring.htm#parents">Ancestors</a> | <a href="sfstring.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface SFString<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFString.htm#SFString_(void)$">SFString</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFString.htm#SFString_(const_SFString&amp;_str)$">SFString</a> (const SFString&amp; str);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="SFString.htm#~SFString_(void)$">SFString</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFString.htm#SFString_(char_ch,_SFInt32_reps_)$">SFString</a> (char ch, SFInt32 reps );</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFString.htm#SFString_(const_char_*str,_SFInt32_start_,_SFInt32_len_)$">SFString</a> (const char *str, SFInt32 start , SFInt32 len );</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="SFString.htm#void_Clear_(void)$">Clear</a> (void);</td></tr>
+<tr><td align="right" valign="top">const SFString&amp; </td><td><a href="SFString.htm#const_SFString&amp;_operator$_(const_SFString&amp;_str)$">operator=</a> (const SFString&amp; str);</td></tr>
+<tr><td align="right" valign="top">const SFString&amp; </td><td><a href="SFString.htm#const_SFString&amp;_operator$_(char_ch)$">operator=</a> (char ch);</td></tr>
+<tr><td align="right" valign="top">const SFString&amp; </td><td><a href="SFString.htm#const_SFString&amp;_operator$_(const_char_*str)$">operator=</a> (const char *str);</td></tr>
+<tr><td align="right" valign="top">const SFString&amp; </td><td><a href="SFString.htm#const_SFString&amp;_operator+$_(const_SFString&amp;_str)$">operator+=</a> (const SFString&amp; str);</td></tr>
+<tr><td align="right" valign="top">const SFString&amp; </td><td><a href="SFString.htm#const_SFString&amp;_operator+$_(char_ch)$">operator+=</a> (char ch);</td></tr>
+<tr><td align="right" valign="top">const SFString&amp; </td><td><a href="SFString.htm#const_SFString&amp;_operator+$_(const_char_*str)$">operator+=</a> (const char *str);</td></tr>
+<tr><td align="right" valign="top">char </td><td><a href="SFString.htm#char_GetAt_(SFInt32_index)_const$">GetAt</a> (SFInt32 index) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="SFString.htm#void_SetAt_(SFInt32_index,_char_ch)$">SetAt</a> (SFInt32 index, char ch);</td></tr>
+<tr><td align="right" valign="top">char </td><td><a href="SFString.htm#char_operator[]_(int_index)_const$">operator[]</a> (int index) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFString.htm#operator_const_char_*_(void)_const$">operator const char *</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFString.htm#operator_char_*_(void)$">operator char *</a> (void);</td></tr>
+<tr><td align="right" valign="top">char *</td><td><a href="SFString.htm#char_*GetBuffer_(void)$">GetBuffer</a> (void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="SFString.htm#void_ReleaseBuffer_(void)$">ReleaseBuffer</a> (void);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="SFString.htm#SFInt32_Length_(void)_const$">Length</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="SFString.htm#SFBool_Empty_(void)_const$">Empty</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="SFString.htm#SFInt32_Compare_(const_char_*str)_const$">Compare</a> (const char *str) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="SFString.htm#SFInt32_ICompare_(const_char_*str)_const$">ICompare</a> (const char *str) const;</td></tr>
+<tr><td align="right" valign="top">SFString </td><td><a href="SFString.htm#SFString_Mid_(SFInt32_first,_SFInt32_len)_const$">Mid</a> (SFInt32 first, SFInt32 len) const;</td></tr>
+<tr><td align="right" valign="top">SFString </td><td><a href="SFString.htm#SFString_Mid_(SFInt32_first)_const$">Mid</a> (SFInt32 first) const;</td></tr>
+<tr><td align="right" valign="top">SFString </td><td><a href="SFString.htm#SFString_Left_(SFInt32_len)_const$">Left</a> (SFInt32 len) const;</td></tr>
+<tr><td align="right" valign="top">SFString </td><td><a href="SFString.htm#SFString_Right_(SFInt32_len)_const$">Right</a> (SFInt32 len) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="SFString.htm#void_ToUpper_(void)$">ToUpper</a> (void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="SFString.htm#void_ToLower_(void)$">ToLower</a> (void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="SFString.htm#void_Reverse_(void)$">Reverse</a> (void);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="SFString.htm#SFInt32_Find_(char_ch)_const$">Find</a> (char ch) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="SFString.htm#SFInt32_Find_(const_char_*str)_const$">Find</a> (const char *str) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="SFString.htm#SFInt32_ReverseFind_(char_ch)_const$">ReverseFind</a> (char ch) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="SFString.htm#void_ReplaceAll(const_SFString&amp;_what,_const_SFString&amp;_with)$">ReplaceAll</a>(const SFString&amp; what, const SFString&amp; with);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="SFString.htm#void_Replace(const_SFString&amp;_what,_const_SFString&amp;_with)$">Replace</a>(const SFString&amp; what, const SFString&amp; with);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="SFString.htm#SFBool_Contains(const_SFString&amp;_search)_const$">Contains</a>(const SFString&amp; search) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="SFString.htm#SFBool_Contains(char_search)_const$">Contains</a>(char search) const;</td></tr>
+<tr><td align="right" valign="top">friend SFString UL_Interface </td><td><a href="SFString.htm#friend_SFString_UL_Interface_operator+(const_SFString&amp;_str1,_const_SFString&amp;_str2)$">operator+</a>(const SFString&amp; str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFString UL_Interface </td><td><a href="SFString.htm#friend_SFString_UL_Interface_operator+(const_SFString&amp;_str,_char_ch)$">operator+</a>(const SFString&amp; str, char ch);</td></tr>
+<tr><td align="right" valign="top">friend SFString UL_Interface </td><td><a href="SFString.htm#friend_SFString_UL_Interface_operator+(char_ch,_const_SFString&amp;_str)$">operator+</a>(char ch, const SFString&amp; str);</td></tr>
+<tr><td align="right" valign="top">friend SFString UL_Interface </td><td><a href="SFString.htm#friend_SFString_UL_Interface_operator+(const_SFString&amp;_str1,_const_char_*str2)$">operator+</a>(const SFString&amp; str1, const char *str2);</td></tr>
+<tr><td align="right" valign="top">friend SFString UL_Interface </td><td><a href="SFString.htm#friend_SFString_UL_Interface_operator+(const_char_*str1,_const_SFString&amp;_str2)$">operator+</a>(const char *str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator$$_(const_SFString&amp;_str1,_const_SFString&amp;_str2)$">operator==</a> (const SFString&amp; str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator$$_(const_SFString&amp;_str1,_const_char_*str2)$">operator==</a> (const SFString&amp; str1, const char *str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator$$_(const_char_*str1,_const_SFString&amp;_str2)$">operator==</a> (const char *str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator$$_(const_SFString&amp;_str1,_char_ch)$">operator==</a> (const SFString&amp; str1, char ch);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator$$_(char_ch,_const_SFString&amp;_str2)$">operator==</a> (char ch, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator!$_(const_SFString&amp;_str1,_const_SFString&amp;_str2)$">operator!=</a> (const SFString&amp; str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator!$_(const_SFString&amp;_str1,_const_char_*str2)$">operator!=</a> (const SFString&amp; str1, const char *str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator!$_(const_char_*str1,_const_SFString&amp;_str2)$">operator!=</a> (const char *str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator&lt;_(const_SFString&amp;_str1,_const_SFString&amp;_str2)$">operator&lt;</a> (const SFString&amp; str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator&lt;_(const_SFString&amp;_str1,_const_char_*str2)$">operator&lt;</a> (const SFString&amp; str1, const char *str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator&lt;_(const_char_*str1,_const_SFString&amp;_str2)$">operator&lt;</a> (const char *str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator&gt;_(const_SFString&amp;_str1,_const_SFString&amp;_str2)$">operator&gt;</a> (const SFString&amp; str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator&gt;_(const_SFString&amp;_str1,_const_char_*str2)$">operator&gt;</a> (const SFString&amp; str1, const char *str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator&gt;_(const_char_*str1,_const_SFString&amp;_str2)$">operator&gt;</a> (const char *str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator&lt;$_(const_SFString&amp;_str1,_const_SFString&amp;_str2)$">operator&lt;=</a> (const SFString&amp; str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator&lt;$_(const_SFString&amp;_str1,_const_char_*str2)$">operator&lt;=</a> (const SFString&amp; str1, const char *str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator&lt;$_(const_char_*str1,_const_SFString&amp;_str2)$">operator&lt;=</a> (const char *str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator&gt;$_(const_SFString&amp;_str1,_const_SFString&amp;_str2)$">operator&gt;=</a> (const SFString&amp; str1, const SFString&amp; str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator&gt;$_(const_SFString&amp;_str1,_const_char_*str2)$">operator&gt;=</a> (const SFString&amp; str1, const char *str2);</td></tr>
+<tr><td align="right" valign="top">friend SFBool UL_Interface </td><td><a href="SFString.htm#friend_SFBool_UL_Interface_operator&gt;$_(const_char_*str1,_const_SFString&amp;_str2)$">operator&gt;=</a> (const char *str1, const SFString&amp; str2);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">char *</td><td><a href="SFString.htm#char_*m_Values$">m_Values</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="SFString.htm#SFInt32_m_nValues$">m_nValues</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="SFString.htm#SFInt32_m_nSize$">m_nSize</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	This is a basic C++ string class supporting most of the functionality
+	available for strings.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	All SFString class instances refer to the 'nullString' object
+	by default.
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// Use SFStrings as you would any string class
+	SFString string = &quot;This is a string&quot;;
+	// Find returns -1 if search string is not found.
+	ASSERT(string.<a href="sfstring.htm#SFInt32_Find_(char_ch)_const$">Find</a>(&quot;.&quot;)==-1);
+
+	// Add a period.
+	string += &quot;.&quot;;
+	// Now it is found.
+	ASSERT(string.<a href="sfstring.htm#SFInt32_Find_(char_ch)_const$">Find</a>(&quot;.&quot;)!=-1);
+
+	// Assignment
+	SFString str1 = string;
+	// Equality (many other operators are available also).
+	ASSERT(str1 == string);
+
+	// Use 'nullString' or Empty to test for empty strings
+	SFString defaultString;
+	ASSERT(defaultString == nullString);
+	ASSERT(defaultString.<a href="sfstring.htm#SFBool_Empty_(void)_const$">Empty</a>());
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="char_*m_Values$"><ul><h3><li>char *m_Values;</li></h3></a>
+</ul>
+</ul>     <dd>The actual characters for this string.
+<dl><dl>
+<dt><i>default:</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_nValues$"><ul><h3><li>SFInt32 m_nValues;</li></h3></a>
+</ul>
+</ul>     <dd>The number of characters in the string including trailing '\0'.
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_nSize$"><ul><h3><li>SFInt32 m_nSize;</li></h3></a>
+</ul>
+</ul>     <dd>The size of the string buffer (usually the same as m_nValues)
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="SFString_(void)$"><ul><h3><li>SFString (void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="SFString_(const_SFString&amp;_str)$"><ul><h3><li>SFString (const SFString&amp; str);</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="~SFString_(void)$"><ul><h3><li>~SFString (void);</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="SFString_(char_ch,_SFInt32_reps_)$"><ul><h3><li>SFString (char ch, SFInt32 reps );</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> ch:</strong>
+<dd>A character to use to initialize the string.
+<dt><i>in</i><strong> reps:</strong>
+<dd>The number of times to repeat the character.
+<p>
+</dl></dl>
+<a name="SFString_(const_char_*str,_SFInt32_start_,_SFInt32_len_)$"><ul><h3><li>SFString (const char *str, SFInt32 start , SFInt32 len );</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> str:</strong>
+<dd>A charater string to promote to this SFString.
+<dt><i>in</i><strong> start:</strong>
+<dd>The starting position from which to start copying (defaults to 0).
+<dt><i>in</i><strong> len:</strong>
+<dd>The number of characters to copy starting at start (defaults to rest of string).
+<p>
+</dl></dl>
+<a name="void_Clear_(void)$"><ul><h3><li>void Clear (void);</li></h3></a>
+</ul>
+</ul>     <dd>Clear string memory and reset the string (same as default construction).
+<p>
+<a name="const_SFString&amp;_operator$_(const_SFString&amp;_str)$"><ul><h3><li>const SFString&amp; operator= (const SFString&amp; str);</li></h3></a>
+</ul>
+</ul>     <dd>Assignment operator from another SFString.
+<p>
+<a name="const_SFString&amp;_operator$_(char_ch)$"><ul><h3><li>const SFString&amp; operator= (char ch);</li></h3></a>
+</ul>
+</ul>     <dd>Assignment operator from a character.
+<p>
+<a name="const_SFString&amp;_operator$_(const_char_*str)$"><ul><h3><li>const SFString&amp; operator= (const char *str);</li></h3></a>
+</ul>
+</ul>     <dd>Assignment operator from a character string.
+<p>
+<a name="const_SFString&amp;_operator+$_(const_SFString&amp;_str)$"><ul><h3><li>const SFString&amp; operator+= (const SFString&amp; str);</li></h3></a>
+</ul>
+</ul>     <dd>Append operator from an SFString.
+<p>
+<a name="const_SFString&amp;_operator+$_(char_ch)$"><ul><h3><li>const SFString&amp; operator+= (char ch);</li></h3></a>
+</ul>
+</ul>     <dd>Append operator from a character.
+<p>
+<a name="const_SFString&amp;_operator+$_(const_char_*str)$"><ul><h3><li>const SFString&amp; operator+= (const char *str);</li></h3></a>
+</ul>
+</ul>     <dd>Append operator from a character string.
+<p>
+<a name="char_GetAt_(SFInt32_index)_const$"><ul><h3><li>char GetAt (SFInt32 index) const;</li></h3></a>
+</ul>
+</ul>     <dd>Access operator for a particular character.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> index:</strong>
+<dd>The character to return.
+<p>
+</dl></dl>
+<a name="void_SetAt_(SFInt32_index,_char_ch)$"><ul><h3><li>void SetAt (SFInt32 index, char ch);</li></h3></a>
+</ul>
+</ul>     <dd>Set a particular character
+<p>
+<dl><dl>
+<dt><i>in</i><strong> index:</strong>
+<dd>The character to set.
+<dt><i>in</i><strong> ch:</strong>
+<dd>The character data.
+<p>
+</dl></dl>
+<a name="char_operator[]_(int_index)_const$"><ul><h3><li>char operator[] (int index) const;</li></h3></a>
+</ul>
+</ul>     <dd>Access operator for a particular character (same as GetAt).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> index:</strong>
+<dd>The character to return.
+<p>
+</dl></dl>
+<a name="operator_const_char_*_(void)_const$"><ul><h3><li>operator const char * (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Casts the string to a const char *
+<p>
+<a name="operator_char_*_(void)$"><ul><h3><li>operator char * (void);</li></h3></a>
+</ul>
+</ul>     <dd>Casts the string to a char *
+<p>
+<a name="char_*GetBuffer_(void)$"><ul><h3><li>char *GetBuffer (void);</li></h3></a>
+</ul>
+</ul>     <dd>Returns the character pointer data member for direct manipulation.
+<p>
+<a name="void_ReleaseBuffer_(void)$"><ul><h3><li>void ReleaseBuffer (void);</li></h3></a>
+</ul>
+</ul>     <dd>Releases the character buffer and resizes the array.
+<p>
+<a name="SFInt32_Length_(void)_const$"><ul><h3><li>SFInt32 Length (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return the length of this string.
+<p>
+<a name="SFBool_Empty_(void)_const$"><ul><h3><li>SFBool Empty (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if this string is empty (i.e. <a href="sfstring.htm#SFInt32_Length_(void)_const$">Length</a>() == 0).
+<p>
+<a name="SFInt32_Compare_(const_char_*str)_const$"><ul><h3><li>SFInt32 Compare (const char *str) const;</li></h3></a>
+</ul>
+</ul>     <dd>Case sensitive compare this string to the given string.  Returns -1 if 'str' is less than, 0 if equal and 1 if 'str' is greater than this string.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> str:</strong>
+<dd>The string to compare.
+<p>
+</dl></dl>
+<a name="SFInt32_ICompare_(const_char_*str)_const$"><ul><h3><li>SFInt32 ICompare (const char *str) const;</li></h3></a>
+</ul>
+</ul>     <dd>Case in-sensitive compare this string to the given string.  Returns -1 if 'str' is less than, 0 if equal and 1 if 'str' is greater than this string.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> str:</strong>
+<dd>The string to compare.
+<p>
+</dl></dl>
+<a name="SFString_Mid_(SFInt32_first,_SFInt32_len)_const$"><ul><h3><li>SFString Mid (SFInt32 first, SFInt32 len) const;</li></h3></a>
+</ul>
+</ul>     <dd>Extract a substring from the middle of this string.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> first:</strong>
+<dd>The starting character to extract.
+<dt><i>in</i><strong> len:</strong>
+<dd>The number of characters to extract from start.
+<p>
+</dl></dl>
+<a name="SFString_Mid_(SFInt32_first)_const$"><ul><h3><li>SFString Mid (SFInt32 first) const;</li></h3></a>
+</ul>
+</ul>     <dd>Extract a substring from the middle of this string to the end.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> first:</strong>
+<dd>The starting character to extract.
+<p>
+</dl></dl>
+<a name="SFString_Left_(SFInt32_len)_const$"><ul><h3><li>SFString Left (SFInt32 len) const;</li></h3></a>
+</ul>
+</ul>     <dd>Extract the leftmost 'len' characters from this string.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> len:</strong>
+<dd>The number of characters to extract.
+<p>
+</dl></dl>
+<a name="SFString_Right_(SFInt32_len)_const$"><ul><h3><li>SFString Right (SFInt32 len) const;</li></h3></a>
+</ul>
+</ul>     <dd>Extract the rightmost 'len' characters from this string.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> len:</strong>
+<dd>The number of characters to extract.
+<p>
+</dl></dl>
+<a name="void_ToUpper_(void)$"><ul><h3><li>void ToUpper (void);</li></h3></a>
+</ul>
+</ul>     <dd>Convert this string to all upper case.
+<p>
+<a name="void_ToLower_(void)$"><ul><h3><li>void ToLower (void);</li></h3></a>
+</ul>
+</ul>     <dd>Convert this string to all lower case.
+<p>
+<a name="void_Reverse_(void)$"><ul><h3><li>void Reverse (void);</li></h3></a>
+</ul>
+</ul>     <dd>Reverse this string.
+<p>
+<a name="SFInt32_Find_(char_ch)_const$"><ul><h3><li>SFInt32 Find (char ch) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns -1 if 'ch' is not found, the position of 'ch' if it is found.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> ch:</strong>
+<dd>The character to search for.
+<p>
+</dl></dl>
+<a name="SFInt32_Find_(const_char_*str)_const$"><ul><h3><li>SFInt32 Find (const char *str) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns -1 if 'str' is not found, the starting position of 'str' if it is found.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> str:</strong>
+<dd>The substring to search for.
+<p>
+</dl></dl>
+<a name="SFInt32_ReverseFind_(char_ch)_const$"><ul><h3><li>SFInt32 ReverseFind (char ch) const;</li></h3></a>
+</ul>
+</ul>     <dd>Search for 'ch' from the end of this string.  Returns -1 if 'ch' is not found, the position of 'ch' if it is found.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> ch:</strong>
+<dd>The character to search for.
+<p>
+</dl></dl>
+<a name="void_ReplaceAll(const_SFString&amp;_what,_const_SFString&amp;_with)$"><ul><h3><li>void ReplaceAll(const SFString&amp; what, const SFString&amp; with);</li></h3></a>
+</ul>
+</ul>     <dd>Replace all occurences of 'what' with 'with' in this string
+<p>
+<dl><dl>
+<dt><i>in</i><strong> what:</strong>
+<dd>The substring to be replace
+<dt><i>in</i><strong> what:</strong>
+<dd>The substring to replace 'what' with.
+<p>
+</dl></dl>
+<a name="void_Replace(const_SFString&amp;_what,_const_SFString&amp;_with)$"><ul><h3><li>void Replace(const SFString&amp; what, const SFString&amp; with);</li></h3></a>
+</ul>
+</ul>     <dd>Replace the first occurence of 'what' with 'with' in this string
+<p>
+<dl><dl>
+<dt><i>in</i><strong> what:</strong>
+<dd>The substring to be replace
+<dt><i>in</i><strong> what:</strong>
+<dd>The substring to replace 'what' with.
+<p>
+</dl></dl>
+<a name="SFBool_Contains(const_SFString&amp;_search)_const$"><ul><h3><li>SFBool Contains(const SFString&amp; search) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if this string contains 'search'
+<p>
+<dl><dl>
+<dt><i>in</i><strong> search:</strong>
+<dd>The substring to search for.
+<p>
+</dl></dl>
+<a name="SFBool_Contains(char_search)_const$"><ul><h3><li>SFBool Contains(char search) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if this string contains 'search'
+<p>
+<dl><dl>
+<dt><i>in</i><strong> search:</strong>
+<dd>The substring to search for.
+<p>
+</dl></dl>
+<a name="friend_SFString_UL_Interface_operator+(const_SFString&amp;_str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFString UL_Interface operator+(const SFString&amp; str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return str2 concatinated to str1.
+<p>
+<a name="friend_SFString_UL_Interface_operator+(const_SFString&amp;_str,_char_ch)$"><ul><h3><li>friend SFString UL_Interface operator+(const SFString&amp; str, char ch);</li></h3></a>
+</ul>
+</ul>     <dd>Return ch concatinated to str.
+<p>
+<a name="friend_SFString_UL_Interface_operator+(char_ch,_const_SFString&amp;_str)$"><ul><h3><li>friend SFString UL_Interface operator+(char ch, const SFString&amp; str);</li></h3></a>
+</ul>
+</ul>     <dd>Return str concatinated to ch.
+<p>
+<a name="friend_SFString_UL_Interface_operator+(const_SFString&amp;_str1,_const_char_*str2)$"><ul><h3><li>friend SFString UL_Interface operator+(const SFString&amp; str1, const char *str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return str2 concatinated to str1.
+<p>
+<a name="friend_SFString_UL_Interface_operator+(const_char_*str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFString UL_Interface operator+(const char *str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return str2 concatinated to str1.
+<p>
+<a name="friend_SFBool_UL_Interface_operator$$_(const_SFString&amp;_str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator== (const SFString&amp; str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if the two strings are the same.
+<p>
+<a name="friend_SFBool_UL_Interface_operator$$_(const_SFString&amp;_str1,_const_char_*str2)$"><ul><h3><li>friend SFBool UL_Interface operator== (const SFString&amp; str1, const char *str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if the two strings are the same.
+<p>
+<a name="friend_SFBool_UL_Interface_operator$$_(const_char_*str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator== (const char *str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if the two strings are the same.
+<p>
+<a name="friend_SFBool_UL_Interface_operator$$_(const_SFString&amp;_str1,_char_ch)$"><ul><h3><li>friend SFBool UL_Interface operator== (const SFString&amp; str1, char ch);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if the two strings are the same.
+<p>
+<a name="friend_SFBool_UL_Interface_operator$$_(char_ch,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator== (char ch, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if the two strings are the same.
+<p>
+<a name="friend_SFBool_UL_Interface_operator!$_(const_SFString&amp;_str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator!= (const SFString&amp; str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if the two strings are not the same.
+<p>
+<a name="friend_SFBool_UL_Interface_operator!$_(const_SFString&amp;_str1,_const_char_*str2)$"><ul><h3><li>friend SFBool UL_Interface operator!= (const SFString&amp; str1, const char *str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if the two strings are not the same.
+<p>
+<a name="friend_SFBool_UL_Interface_operator!$_(const_char_*str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator!= (const char *str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if the two strings are not the same.
+<p>
+<a name="friend_SFBool_UL_Interface_operator&lt;_(const_SFString&amp;_str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator&lt; (const SFString&amp; str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if str1 is strictly less than str2.
+<p>
+<a name="friend_SFBool_UL_Interface_operator&lt;_(const_SFString&amp;_str1,_const_char_*str2)$"><ul><h3><li>friend SFBool UL_Interface operator&lt; (const SFString&amp; str1, const char *str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if str1 is strictly less than str2.
+<p>
+<a name="friend_SFBool_UL_Interface_operator&lt;_(const_char_*str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator&lt; (const char *str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if str1 is strictly less than str2.
+<p>
+<a name="friend_SFBool_UL_Interface_operator&gt;_(const_SFString&amp;_str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator&gt; (const SFString&amp; str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if str1 is strictly greater than str2.
+<p>
+<a name="friend_SFBool_UL_Interface_operator&gt;_(const_SFString&amp;_str1,_const_char_*str2)$"><ul><h3><li>friend SFBool UL_Interface operator&gt; (const SFString&amp; str1, const char *str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if str1 is strictly greater than str2.
+<p>
+<a name="friend_SFBool_UL_Interface_operator&gt;_(const_char_*str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator&gt; (const char *str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if str1 is strictly greater than str2.
+<p>
+<a name="friend_SFBool_UL_Interface_operator&lt;$_(const_SFString&amp;_str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator&lt;= (const SFString&amp; str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if str1 is less than or equal to str2.
+<p>
+<a name="friend_SFBool_UL_Interface_operator&lt;$_(const_SFString&amp;_str1,_const_char_*str2)$"><ul><h3><li>friend SFBool UL_Interface operator&lt;= (const SFString&amp; str1, const char *str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if str1 is less than or equal to str2.
+<p>
+<a name="friend_SFBool_UL_Interface_operator&lt;$_(const_char_*str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator&lt;= (const char *str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if str1 is less than or equal to str2.
+<p>
+<a name="friend_SFBool_UL_Interface_operator&gt;$_(const_SFString&amp;_str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator&gt;= (const SFString&amp; str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if str1 is greater than or equal to str2.
+<p>
+<a name="friend_SFBool_UL_Interface_operator&gt;$_(const_SFString&amp;_str1,_const_char_*str2)$"><ul><h3><li>friend SFBool UL_Interface operator&gt;= (const SFString&amp; str1, const char *str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if str1 is greater than or equal to str2.
+<p>
+<a name="friend_SFBool_UL_Interface_operator&gt;$_(const_char_*str1,_const_SFString&amp;_str2)$"><ul><h3><li>friend SFBool UL_Interface operator&gt;= (const char *str1, const SFString&amp; str2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if str1 is greater than or equal to str2.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:03 1999
+.<p>
+</body></html>

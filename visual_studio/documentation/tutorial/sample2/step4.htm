@@ -1,0 +1,178 @@
+<html>
+
+<head>
+<title>Step 4</title>
+
+<meta name="Microsoft Theme" content="sumipntg 011"></head>
+
+<body background="../../../../_themes/sumipntg/sumtextb.jpg" bgcolor="#FFFFFF" text="#808080" link="#3333CC" vlink="#666699" alink="#990099"><!--mstheme--><font face="verdana, arial, helvetica">
+<font face="book antiqua">
+
+<!--mstheme--></font><table border="0" width="100%" height="97">
+  <tr>
+    <td width="12%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><img src="../../logo.gif" alt="[Logo]" border="0" start="fileopen" width="100" height="110"><!--mstheme--></font></td>
+    <td width="88%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><em><br>
+    <big><big><big>Great Hill Corporation</big></big></big></em><br>
+    <em>Step 4: Drawing Something Interesting</em><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="verdana, arial, helvetica"><a HREF="step3.htm">[Prev]</a> <a HREF="step5.htm">[Next]</a> <a HREF="../sample2.htm">[Tutorial2]</a><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+<!--commentbeg------------------------------------------>
+<!--commentbeg------------------------------------------>
+
+<p>Enough of this boring stuff. Let's draw something interesting.</p>
+
+<p>Make the changes marked in <font color="FF0000">red</font> in the file <b>sample2.cpp</b>
+(as it exists after step 3) and recompile and run the program.</p>
+
+<p>You should see a red cone next to a green cylinder. Now we're getting somewhere. </p>
+
+<p>The <b>'ani'</b> part of the word VRaniML&#153; means <b>animation</b>, so in the <a href="step5.htm">next</a> couple of steps we will learn how to animate things.</p>
+
+<p><img SRC="../bar.jpg" width="100%" height="3" alt="bar.jpg (730 bytes)" start="fileopen"> </p>
+
+<!--mstheme--></font><pre>#include &quot;windows.h&quot;
+
+#include &quot;vraniml.h&quot;
+
+LRESULT APIENTRY WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	switch (message)
+	{
+	case WM_DESTROY:
+		PostQuitMessage( 0 );
+		break;
+	}
+	
+	return DefWindowProc(hWnd, message, wParam, lParam);
+}
+
+HWND InitWindow(HINSTANCE hCurrentInst, char *className, char *windowName)
+{
+	WNDCLASS wndClass;
+	HWND hWnd;
+
+	/* register window class */
+	wndClass.style         = CS_HREDRAW | CS_VREDRAW;
+	wndClass.lpfnWndProc   = WindowProc;
+	wndClass.cbClsExtra    = 0;
+	wndClass.cbWndExtra    = 0;
+	wndClass.hInstance     = hCurrentInst;
+	wndClass.hIcon         = LoadIcon(NULL, IDI_APPLICATION);
+	wndClass.hCursor       = LoadCursor(NULL, IDC_ARROW);
+	wndClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
+	wndClass.lpszMenuName  = NULL;
+	wndClass.lpszClassName = className;
+	RegisterClass(&amp;wndClass);
+
+	/* create window */
+	hWnd = CreateWindow(className, 
+		windowName,
+		WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS,
+		0, 0, 640, 480,
+		NULL, NULL, hCurrentInst, NULL);
+
+
+	ShowWindow(hWnd, SW_SHOW);
+	UpdateWindow(hWnd);
+
+	return hWnd;
+}
+
+<font color="FF0000">
+//
+// Create a shape object of the given color using the given geometry
+// This function simply makes it easier to build shapes.
+//
+vrShape *BuildShape(const SFColor&amp; color, vrGeometryNode *node)
+{
+	<font color="#8000FF">// In a certain sense the following code is very similar
+	// to the format of a VRML file.  Notice also the use of
+	// the 'Set' functions which are available for all exposed
+	// members of all classes.</font>
+	vrShape *shape = new vrShape;
+	vrAppearance *app = new vrAppearance;
+	vrMaterial *mat = new vrMaterial;
+	mat-&gt;SetDiffuseColor(color);
+	app-&gt;SetMaterial(mat);
+	shape-&gt;SetAppearance(app);
+	shape-&gt;SetGeometry(node);
+	return shape;
+}
+</font>
+
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPreviousInst, LPSTR lpszCmdLine, int nCmdShow)
+{
+	HWND hWnd = InitWindow(hInstance, &quot;VRaniML&quot;, &quot;VRaniML Sample Program 2&quot;);
+
+	vrBrowser *browser = new vrBrowser(hWnd);
+
+<font color="FF0000">delete this line ---&gt;// Create a sphere
+delete this line ---&gt;vrSphere *sphere = new vrSphere;
+	
+delete this line ---&gt;// Create a shape to hold the sphere
+delete this line ---&gt;vrShape *shape = new vrShape;
+	
+delete this line ---&gt;// Add the sphere to the shape and the shape to the browser
+delete this line ---&gt;shape-&gt;SetGeometry(sphere);
+delete this line ---&gt;browser-AddChild(sphere);
+
+	<font color="#8000FF">// The transform node allows one to build a hierarchy.
+	// After the next few lines the scene graph will contain
+	// four nodes, two top level transforms each with its
+	// own shape node.  This again reflects the VRML file
+	// format very closely.
+	//
+	// Notice also the use of the predefined colors 'Red' and 'Green'.
+	// VRaniML has a large set of predefined colors.</font>
+	
+	// Add a red cone, slightly away from the origin
+	vrTransform *t = new vrTransform;
+	t-&gt;SetTranslation(SFVec3f(-1.0, 0.0, 0.0));
+	t-&gt;AddChild(BuildShape(Red, new vrCone));
+	browser-&gt;AddChild(t);
+
+	// Add a green cylinder in a slightly different place
+	t = new vrTransform;
+	t-&gt;SetTranslation(SFVec3f(1.0, 0.0, 0.0));
+	t-&gt;AddChild(BuildShape(Green, new vrCylinder));
+	browser-&gt;AddChild(t);
+
+	</font>browser-&gt;Traverse();
+
+	while (1)
+	{
+		MSG msg;
+		if (PeekMessage(&amp;msg, NULL, 0, 0, PM_NOREMOVE))
+		{
+			if (GetMessage(&amp;msg, NULL, 0, 0) != TRUE)
+			{
+				// cleanup -- the browser -- deletes the scene graph
+				delete browser;
+				return msg.wParam;
+			}
+
+			TranslateMessage(&amp;msg);
+			DispatchMessage(&amp;msg);
+		}
+	}
+
+	// cleanup -- the browser -- deletes the scene graph
+	delete browser;
+	return FALSE;
+}
+</pre><!--mstheme--><font face="verdana, arial, helvetica">
+<!--commentend------------------------------------------>
+<!--commentend------------------------------------------>
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+
+<h5><!--mstheme--><font color="#003366"><font COLOR="#660033">Send mail to <a HREF="mailto:webmaster@greathill.com">webmaster@greathill.com</a>
+with questions or comments about this web site.<br>
+Copyright © 1997 Great Hill Corporation<br>
+Last modified: December 17, 1997&nbsp;</font><!--mstheme--></font></h5>
+</font>
+<!--mstheme--></font></body>
+</html>

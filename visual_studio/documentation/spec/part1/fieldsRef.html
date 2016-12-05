@@ -1,0 +1,320 @@
+<html>
+<head>
+  <meta NAME="GENERATOR" CONTENT="Adobe PageMill 2.0 Win">
+  <!-- SGI_COMMENT COSMOCREATE -->
+  <!-- SGI_COMMENT VERSION NUMBER="1.0.2" -->
+  <title>VRML97, ISO/IEC 14772-1:1997 -- 5 Field and Event Reference</title>
+</head>
+<body>
+
+<h1><center><img SRC="../Images/vrml97.gif" ALT="VRML97 logo" ALIGN="TOP" WIDTH="470" HEIGHT="85" NATURALSIZEFLAG="0"></center></h1>
+
+<h1><center>The Virtual Reality Modeling Language</center></h1>
+
+<h1><center><a NAME="FieldsReference"></a>5 Field and event reference</center></h1>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="+"> 5.1 <a NAME="Introduction"></a>Introduction</h2>
+
+<h3><a NAME="5.1.1"></a>5.1.1 Table of contents</h3>
+
+<p>5.1 <a HREF="fieldsref.html#Introduction">Introduction</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.1 <a HREF="fieldsref.html#5.1.1">Table of contents</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.2 <a HREF="fieldsref.html#5.1.2">Description</a>
+<br>
+5.2 <a HREF="fieldsref.html#SFBool">SFBool</a> <br>
+5.3 <a HREF="fieldsref.html#SFColor">SFColor and MFColor</a> <br>
+5.4 <a HREF="fieldsref.html#SFFloat">SFFloat and MFFloat</a><br>
+5.5 <a HREF="fieldsref.html#SFImage">SFImage</a> <br>
+5.6 <a HREF="fieldsref.html#SFInt32">SFInt32 and MFInt32</a> <br>
+5.7 <a HREF="fieldsref.html#SFNode">SFNode and MFNode</a> <br>
+5.8 <a HREF="fieldsref.html#SFRotation">SFRotation and MFRotation</a> <br>
+5.9 <a HREF="fieldsref.html#SFString">SFString and MFString</a> <br>
+5.10 <a HREF="fieldsref.html#SFTime">SFTime&nbsp;and&nbsp;MFTime</a><br>
+5.11 <a HREF="fieldsref.html#SFVec2f">SFVec2f and MFVec2f</a> <br>
+5.12 <a HREF="fieldsref.html#SFVec3f">SFVec3f and MFVec3f</a></p>
+
+<h3><a NAME="5.1.2"></a>5.1.2 Description</h3>
+
+<p>This clause describes the syntax and general semantics of <i>fields</i>
+and <i>events, </i>the elemental data types used by VRML nodes to define
+objects (see <a HREF="nodesRef.html">6, Node reference</a>). Nodes are composed
+of fields and events (see <a HREF="concepts.html">4, Concepts</a>). The
+types defined in this annex are used by both fields and events.</p>
+
+<p>There are two general classes of fields and events: fields and events
+that contain a single value (where a value may be a single number, a vector,
+or even an image), and fields and events that contain an ordered list of
+multiple values. Single-valued fields and events have names that begin with
+<b><tt>SF.</tt></b>Multiple-valued fields and events have names that begin
+with <b><tt>MF</tt></b>.</p>
+
+<p>Multiple-valued fields/events are written as an ordered list of values
+enclosed in square brackets and separated by whitespace. If the field or
+event has zero values, only the square brackets (&quot;[&nbsp;]&quot;) are
+written. The last value may optionally be followed by whitespace. If the
+field has exactly one value, the brackets may be omitted. For example, all
+of the following are valid for a multiple-valued MFInt32 field named <i>foo</i>
+containing the single integer value 1:</p>
+
+<pre>
+<b><tt>    foo 1</tt></b>
+<b><tt>    foo [1,]</tt></b>
+<b><tt>    foo [ 1 ]</tt></b></pre>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="+"> <a NAME="SFBool"></a>5.2 SFBool</h2>
+
+<p>The SFBool field or event specifies a single boolean value. SFBools are
+written as TRUE or FALSE. For example,</p>
+
+<pre>
+<b><tt>    fooBool FALSE</tt></b></pre>
+
+<p>is an SFBool field, <i>fooBool</i>, defining a FALSE value.</p>
+
+<p>The initial value of an SFBool eventOut is FALSE.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="+"> <a NAME="SFColor"></a>5.3 SFColor and MFColor</h2>
+
+<p>The SFColor field or event specifies one RGB (red-green-blue) colour
+triple. MFColor specifies zero or more RGB triples. Each colour is written
+to the VRML file as an RGB triple of floating point numbers in ISO C floating
+point format (see <a HREF="references.html#[ISOC]">2.[ISOC]</a>) in the
+range 0.0 to 1.0. For example:</p>
+
+<pre>
+<b><tt>    fooColor [ 1.0 0. 0.0, 0 1 0, 0 0 1 ]</tt></b></pre>
+
+<p>is an MFColor field, <i>fooColor</i>, containing the three primary colours
+red, green, and blue.</p>
+
+<p>The initial value of an SFColor eventOut is (0 0 0). The initial value
+of an MFColor eventOut is [&nbsp;].</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="+"> <a NAME="SFFloat"></a>5.4 SFFloat and <a NAME="MFFloat"></a>MFFloat</h2>
+
+<p>The SFFloat field or event specifies one single-precision floating point
+number. MFFloat specifies zero or more single-precision floating point numbers.
+SFFloats and MFFloats are written to the VRML&nbsp;file in ISO C floating
+point format (see <a HREF="references.html#[ISOC]">2.[ISOC]</a>). For example:</p>
+
+<pre>
+<b><tt>    fooFloat [ 3.1415926, 12.5e-3, .0001 ]</tt></b></pre>
+
+<p>is an MFFloat field, <i>fooFloat</i>, containing three floating point
+values.</p>
+
+<p>The initial value of an SFFloat eventOut is 0.0. The initial value of
+an MFFloat eventOut is [&nbsp;].</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="+"> <a NAME="SFImage"></a>5.5 SFImage</h2>
+
+<p>The SFImage field or event specifies a single uncompressed 2-dimensional
+pixel image. SFImage fields and events are written to the VRML file as three
+integers representing the width, height and number of components in the
+image, followed by width*height hexadecimal or integer values representing
+the pixels in the image, separated by whitespace:</p>
+
+<pre>
+<b><tt>    fooImage &lt;width&gt; &lt;height&gt; &lt;num components&gt; &lt;pixels values&gt;</tt></b></pre>
+
+<p>Pixel values are limited to 256 levels of intensity (i.e., 0-255 decimal
+or 0x00-0xFF hexadecimal). A one-component image specifies one-byte hexadecimal
+or integer values representing the intensity of the image. For example,
+<tt>0xFF</tt> is full intensity in hexadecimal (255 in decimal), <tt>0x00</tt>
+is no intensity (0 in decimal). A two-component image specifies the intensity
+in the first (high) byte and the alpha opacity in the second (low) byte.
+Pixels in a three-component image specify the red component in the first
+(high) byte, followed by the green and blue components (e.g.,&nbsp;<tt>0xFF0000</tt>
+is red,<tt> 0x00FF00</tt> is green, <tt>0x0000FF</tt> is blue). Four-component
+images specify the alpha opacity byte after red/green/blue (e.g.,&nbsp;<tt>0x0000FF80</tt>
+is semi-transparent blue). A value of <tt>0x00</tt> is completely transparent,
+0xFF is completely opaque. Note that alpha equals (1.0&nbsp;-&nbsp;transparency),
+if alpha and transparency range from 0.0 to 1.0.</p>
+
+<p>Each pixel is read as a single unsigned number. For example, a 3-component
+pixel with value <tt>0x0000FF</tt> may also be written as <tt>0xFF</tt>
+(hexadecimal) or <tt>255 </tt>(decimal). Pixels are specified from left
+to right, bottom to top. The first hexadecimal value is the lower left pixel
+and the last value is the upper right pixel.</p>
+
+<p>For example,</p>
+
+<pre>
+<b><tt>    fooImage 1 2 1 0xFF 0x00</tt></b></pre>
+
+<p>is a 1 pixel wide by 2 pixel high one-component (i.e.,&nbsp;greyscale)
+image, with the bottom pixel white and the top pixel black. As another example,</p>
+
+<pre>
+<b>    fooImage 2 4 3 0xFF0000 0xFF00 0 0 0 0 0xFFFFFF 0xFFFF00</b>
+<b><tt>                   # red    green  black.. white    yellow</tt></b></pre>
+
+<p>is a 2 pixel wide by 4 pixel high RGB image, with the bottom left pixel
+red, the bottom right pixel green, the two middle rows of pixels black,
+the top left pixel white, and the top right pixel yellow.</p>
+
+<p>The initial value of an SFImage eventOut is (0 0 0).</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="+"> <a NAME="SFInt32"></a>5.6 SFInt32 and <a NAME="MFInt32"></a>MFInt32</h2>
+
+<p>The SFInt32 field and event specifies one 32-bit integer. The MFInt32
+field and event specifies zero or more 32-bit integers. SFInt32 and MFInt32
+fields and events are written to the VRML file as an integer in decimal
+or hexadecimal (beginning with '0x') format. For example:</p>
+
+<pre>
+<b><tt>    fooInt32 [ 17, -0xE20, -518820 ]</tt></b></pre>
+
+<p>is an MFInt32 field containing three values.</p>
+
+<p>The initial value of an SFInt32 eventOut is 0. The initial value of an
+MFInt32 eventOut is [&nbsp;].</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="+"> <a NAME="SFNode"></a>5.7 SFNode and <a NAME="MFNode"></a>MFNode</h2>
+
+<p>The SFNode field and event specifies a VRML node. The MFNode field and
+event specifies zero or more nodes. The following example illustrates valid
+syntax for an MFNode field, <i>fooNode</i>, defining four nodes:</p>
+
+<pre>
+<b><tt>    fooNode [ Transform { translation 1 0 0 }</tt></b>
+<b><tt>              DEF CUBE Box { }</tt></b>
+<b>              USE CUBE</b>
+<b><tt>              USE SOME_OTHER_NODE  ]</tt></b></pre>
+
+<p>The SFNode field and event may contain the keyword NULL to indicate that
+it is empty.</p>
+
+<p>The initial value of an SFNode eventOut is NULL. The initial value of
+an MFNode eventOut is [&nbsp;].</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="+"><a NAME="SFRotation"></a> 5.8 SFRotation and
+<a NAME="MFRotation"></a>MFRotation</h2>
+
+<p>The SFRotation field and event specifies one arbitrary rotation. The
+MFRotation field and event specifies zero or more arbitrary rotations. An
+SFRotation is written to the VRML&nbsp;file as four ISO&nbsp;C floating
+point values (see <a HREF="references.html#[ISOC]">2.[ISOC]</a>) separated
+by whitespace. The first three values specify a normalized rotation axis
+vector about which the rotation takes place. The fourth value specifies
+the amount of right-handed rotation about that axis in radians. For example,
+an SFRotation containing a PI&nbsp;radians rotation about the Y axis is:</p>
+
+<pre>
+<b>    fooRot 0.0 1.0 0.0 3.14159265</b></pre>
+
+<p>The 3x3 matrix representation of a rotation (x y z a) is</p>
+
+<pre>
+    [ tx<sup>2</sup>+c    txy+sz    txz-sy
+      txy-sz   ty<sup>2</sup>+c     tyz+sx
+      txz+sy   tyz-sx    tz<sup>2</sup>+c  ]
+
+    where c = cos(a), s = sin(a), and t = 1-c</pre>
+
+<p>The initial value of an SFRotation eventOut is (0 0 1 0). The initial
+value of an MFRotation eventOut is [&nbsp;].</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="+"> <a NAME="SFString"></a>5.9 SFString and <a NAME="MFString"></a>MFString</h2>
+
+<p>The SFString and MFString fields and events contain strings formatted
+with the UTF-8 universal character set (see <a HREF="references.html#[UTF8]">2.[UTF8]</a>).
+SFString specifies a single string. The MFString specifies zero or more
+strings. Strings are written to the VRML&nbsp;file as a sequence of UTF-8
+octets enclosed in double quotes (e.g.,&nbsp;<tt>&quot;string&quot;</tt>).</p>
+
+<p>Any characters (including linefeeds and '#') may appear within the quotes.
+A double quote character within the string is preceded with a backslash.
+A backslash character within the string is also preceded with a backslash
+forming two backslashes. For example:</p>
+
+<pre>
+<b><tt>    fooString [ &quot;One, Two, Three&quot;, &quot;He said, \&quot;Immel did it!\&quot;&quot; ]</tt></b></pre>
+
+<p>is an MFString field, <i>fooString</i>, with two valid strings.</p>
+
+<p>The initial value of an SFString eventOut is &quot;&quot; (the empty
+string). The initial value of an MFString eventOut is [&nbsp;].</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="+"> <a NAME="SFTime"></a>5.10 SFTime and MFTime</h2>
+
+<p>The SFTime field or event specifies a single time value. The MFTime field
+or event specifies zero or more time values. Time values are written to
+the VRML&nbsp;file as a double-precision floating point number in ISO C
+floating point format (see <a HREF="references.html#[ISOC]">2.[ISOC]</a>).
+Time values are specified as the number of seconds from a specific time
+origin. Typically, SFTime fields and events represent the number of seconds
+since Jan 1, 1970, 00:00:00 GMT. For example:</p>
+
+<p><b><tt>fooTime 0.0</tt></b></p>
+
+<p>is an SFTime field, <i>fooTime</i>, representing a time of 0.0 seconds.</p>
+
+<p>The initial value of an SFTime eventOut is -1. The initial value of an
+MFTime eventOut is [&nbsp;].</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="+"> <a NAME="SFVec2f"></a>5.11 SFVec2f and <a NAME="MFVec2f"></a>MFVec2f</h2>
+
+<p>The SFVec2f field or event specifies a two-dimensional (2D) vector. An
+MFVec2f field or event specifies zero or more 2D vectors. SFVec2f's and
+MFVec2f's are written to the VRML&nbsp;file as a pair of ISO&nbsp;C floating
+point values (see <a HREF="references.html#[ISOC]">2.[ISOC]</a>) separated
+by whitespace. For example:</p>
+
+<pre>
+<b><tt>    fooVec2f [ 42 666, 7 94 ]</tt></b></pre>
+
+<p>is an MFVec2f field, <i>fooVec2f</i>, with two valid vectors.</p>
+
+<p>The initial value of an SFVec2f eventOut is (0 0). The initial value
+of an MFVec2f eventOut is [&nbsp;].</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="+"> <a NAME="SFVec3f"></a>5.12 SFVec3f and <a NAME="MFVec3f"></a>MFVec3f</h2>
+
+<p>The SFVec3f field or event specifies a three-dimensional (3D) vector.
+An MFVec3f field or event specifies zero or more 3D vectors. SFVec3f's and
+MFVec3f's are written to the VRML file as three ISO&nbsp;C floating point
+values (see <a HREF="references.html#[ISOC]">2.[ISOC]</a>) separated by
+whitespace. For example:</p>
+
+<pre>
+<b><tt>    fooVec3f [ 1 42 666, 7 94 0 ]</tt></b></pre>
+
+<p>is an MFVec3f field, <i>fooVec3f</i>, with two valid vectors.</p>
+
+<p>The initial value of an SFVec3f eventOut is (0 0 0). The initial value
+of an MFVec3f eventOut is [&nbsp;].</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"><br>
+<font SIZE="-1"><a HREF="mailto:rikk@wasabisoft.com,gavin@wasabisoft.com,chris@marrin.com">Questions
+or comments.</a></font><br>
+<font SIZE="-1"><a HREF="../copyright.html">Copyright</a> &amp;COPY; 1997 The
+VRML Consortium Incorporated.<br>
+<tt>http://www.vrml.org/Specifications/VRML97/part1/fieldsRef.html</tt></font>
+</body>
+</html>

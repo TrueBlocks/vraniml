@@ -1,0 +1,69 @@
+<html>
+
+<head>
+<title>Step 5</title>
+
+<meta name="Microsoft Theme" content="sumipntg 011"></head>
+
+<body background="../../../../_themes/sumipntg/sumtextb.jpg" bgcolor="#FFFFFF" text="#808080" link="#3333CC" vlink="#666699" alink="#990099"><!--mstheme--><font face="verdana, arial, helvetica">
+<font face="book antiqua">
+
+<!--mstheme--></font><table border="0" width="100%" height="97">
+  <tr>
+    <td width="12%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><img src="../../logo.gif" alt="[Logo]" border="0" start="fileopen" width="100" height="110"><!--mstheme--></font></td>
+    <td width="88%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><em><br>
+    <big><big><big>Great Hill Corporation</big></big></big></em><br>
+    <em>Step 5: Opening a VRML File</em><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="verdana, arial, helvetica"><a HREF="step4.htm">[Prev]</a> <a HREF="step6.htm">[Next]</a> <a HREF="../sample3.htm">[Tutorial3]</a><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+<!--commentbeg------------------------------------------>
+<!--commentbeg------------------------------------------>
+
+<p>In this step we will read an actual VRML file. This is a very simple step.</p>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <ol>
+    <li>Add the following code to the <b>OnNewDocument</b> member of the <b>CSample3Doc</b>
+      class: <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--mstheme--></font><pre><font color="FF0000">BOOL CSample3Doc::OnNewDocument()
+{
+	<font COLOR="#8000FF">// Call the base class's OnNewDocument function</font>
+	if (!CDocument::OnNewDocument())
+		return FALSE;
+
+	<font COLOR="#8000FF">// Read the file (note: we hardcode the filename here for ease of instruction).</font>
+	if (browser)
+		browser-&gt;ReadURL(&quot;<i><b>[install_dir]/browser/logo.wrl</b></i>&quot;);
+
+	return TRUE;
+}
+</font></pre><!--mstheme--><font face="verdana, arial, helvetica">
+        <p>Where '<i><b>[install_dir]</b></i>' is the directory into which you installed the
+        VRaniML&#153; library (c:/program files/great hill corporation/vraniml by default)..<br>
+        <br>
+        </p>
+      <!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+    </li>
+  </ol>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../../_themes/sumipntg/sumbul1a.gif" width="20" height="20" hspace="11"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica">Recompile and run the program. You will still see the square box when the program
+    starts, but if you take the File|New menu choice you should see the VRaniML logo file.
+    Notice however that it is not being animated.<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p>In the <a HREF="step6.htm">next step</a> we will animate this scene. <!--commentend------------------------------------------> <!--commentend------------------------------------------> </p>
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+
+<h5><!--mstheme--><font color="#003366"><font COLOR="#660033">Send mail to <a HREF="mailto:webmaster@greathill.com">webmaster@greathill.com</a>
+with questions or comments about this web site.<br>
+Copyright © 1997 Great Hill Corporation<br>
+Last modified: December 17, 1997&nbsp;</font><!--mstheme--></font></h5>
+</font>
+<!--mstheme--></font></body>
+</html>

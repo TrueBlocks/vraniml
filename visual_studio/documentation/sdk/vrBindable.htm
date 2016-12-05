@@ -1,0 +1,192 @@
+<html><head><title>vrBindable Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrBindable</a></h1>
+<dl>
+<dd>
+	This class corresponds to the Bindable node in VRML.  
+	<a href="../spec/part1/nodesRef.html#Bindable">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrbindable.htm#aag">Summary</a> | </a>
+<a href="vrbindable.htm#DESCRIPTION">Description</a> | 
+<a href="vrbindable.htm#NOTES">Notes</a> | 
+<a href="vrbindable.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrbindable.htm#MEMBERS">Members</a> | 
+<a href="vrbindable.htm#parents">Ancestors</a> | <a href="vrbindable.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrBindable : public <a href="vrNode.htm">vrNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBindable.htm#vrBindable(void)$">vrBindable</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBindable.htm#vrBindable(const_vrBindable&amp;_v)$">vrBindable</a>(const vrBindable&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrBindable.htm#~vrBindable(void)$">vrBindable</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrBindable&amp; </td><td><a href="vrBindable.htm#vrBindable&amp;_operator$(const_vrBindable&amp;_v)$">operator=</a>(const vrBindable&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrBindable.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBindable.htm#void_SetBoundTo(const_vrBrowser*_boundto)$">SetBoundTo</a>(const <a href="vrBrowser.htm">vrBrowser</a>* boundto);</td></tr>
+<tr><td align="right" valign="top"><a href="vrBrowser.htm">vrBrowser</a>* </td><td><a href="vrBindable.htm#vrBrowser*_GetBoundTo(void)_const$">GetBoundTo</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBindable.htm#void_SetIsBound(SFBool_isbound)$">SetIsBound</a>(SFBool isbound);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrBindable.htm#SFBool_IsBound(void)_const$">IsBound</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrBindable.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrBindable.htm#void_ReceiveEventIn(vrEvent_*event)$">ReceiveEventIn</a></i>(<a href="vrEvent.htm">vrEvent</a> *event);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrBindable.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBindable.htm#DECLARE_NODE(vrBindable)$">DECLARE_NODE</a>(vrBindable);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="vrBrowser.htm">vrBrowser</a>* </td><td><a href="vrBindable.htm#vrBrowser*_m_BoundTo$">m_BoundTo</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrBindable.htm#SFBool_m_IsBound$">m_IsBound</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrBindable.htm#SFBool_m_Bind$">m_Bind</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the Bindable node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#Bindable">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="vrBrowser*_m_BoundTo$"><ul><h3><li>vrBrowser* m_BoundTo;</li></h3></a>
+</ul>
+</ul>	  <dd>The vrBrowser to which this vrBindable node is bound.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_IsBound$"><ul><h3><li>SFBool m_IsBound;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'isBound' eventOut.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> FALSE</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_Bind$"><ul><h3><li>SFBool m_Bind;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'bind' eventIn.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> FALSE</strong>
+<p>
+</dl></dl>
+<a name="vrBindable(void)$"><ul><h3><li>vrBindable(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrBindable(const_vrBindable&amp;_v)$"><ul><h3><li>vrBindable(const vrBindable&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrBindable(void)$"><ul><h3><li>~vrBindable(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrBindable&amp;_operator$(const_vrBindable&amp;_v)$"><ul><h3><li>vrBindable&amp; operator=(const vrBindable&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_SetBoundTo(const_vrBrowser*_boundto)$"><ul><h3><li>void SetBoundTo(const vrBrowser* boundto);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_BoundTo member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> boundto:</strong>
+<dd>The boundto value.
+<p>
+</dl></dl>
+<a name="vrBrowser*_GetBoundTo(void)_const$"><ul><h3><li>vrBrowser* GetBoundTo(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_BoundTo member.
+<p>
+<a name="void_SetIsBound(SFBool_isbound)$"><ul><h3><li>void SetIsBound(SFBool isbound);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_IsBound member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> isbound:</strong>
+<dd>The isbound value.
+<p>
+</dl></dl>
+<a name="SFBool_IsBound(void)_const$"><ul><h3><li>SFBool IsBound(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_IsBound member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vrbindable.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="void_ReceiveEventIn(vrEvent_*event)$"><ul><h3><li>void ReceiveEventIn(vrEvent *event);</li></h3></a>
+</ul>
+</ul>	   <dd>Receive an event during an event cascade or directly from caller.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> event:</strong>
+<dd>The <a href="vrEvent.htm">vrEvent</a> to be processed.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrBindable)$"><ul><h3><li>DECLARE_NODE(vrBindable);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrBindable:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrBackground.htm">vrBackground</a>
+<li><a href="vrFog.htm">vrFog</a>
+<li><a href="vrNavigationInfo.htm">vrNavigationInfo</a>
+<li><a href="vrViewpoint.htm">vrViewpoint</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:49 1999
+.<p>
+</body></html>

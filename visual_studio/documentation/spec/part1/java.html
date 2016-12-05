@@ -1,0 +1,2215 @@
+<html>
+<head>
+  <meta NAME="GENERATOR" CONTENT="Adobe PageMill 2.0 Win">
+  <title>VRML97, ISO/IEC 14772-1:1997 -- Annex B, Java Platform Scripting Reference</title>
+</head>
+<body>
+
+<h1><center><img SRC="../Images/vrml97.gif" ALT="VRML97 logo" ALIGN="BOTTOM" WIDTH="470" HEIGHT="85" NATURALSIZEFLAG="0"></center></h1>
+
+<h1><center>The Virtual Reality Modeling Language</center></h1>
+
+<h1><center>Annex B<br>
+<font SIZE="+1">(normative)</font></center></h1>
+
+<h1><center>Java platform scripting reference</center></h1>
+
+<h3><center>&nbsp;</center></h3>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" ALT="--- separator bar ---" ALIGN="BOTTOM" NATURALSIZEFLAG="0"></p>
+
+<h2><a NAME="B.1"></a><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" ALT="+" NATURALSIZEFLAG="0" ALIGN="BOTTOM"> B.1 Introduction</h2>
+
+<p>This annex describes the Java platform classes and methods that enable
+Script nodes (see <a HREF="nodesRef.html#Script">6.40,&nbsp;Script</a>)
+to interact with VRML scenes. See <a HREF="concepts.html#4.12">4.12, Scripting</a>,
+for a general description of scripting languages in ISO/IEC 14772. Note
+that support for the Java platform is not required by ISO/IEC 14772, but
+any access of the Java platform from within VRML Script nodes shall conform
+with the requirements specified in this annex.</p>
+
+<p><a HREF="java.html#B.1">B.1 Introduction</a> <br>
+<a HREF="java.html#B.2">B.2 Platform</a> <br>
+<a HREF="java.html#B.3">B.3 Supported protocol in the Script node's <i>url</i> field</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.3.1">B.3.1 <i>url</i>
+field</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.3.2">B.3.2 File extension</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.3.3">B.3.3 MIME type</a>
+<br>
+<a HREF="java.html#B.4">B.4 EventIn handling</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.4.1">B.4.1 Description</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.4.2">B.4.2 Parameter
+passing with event objects</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.4.3">B.4.3 processEvents()
+and processEvent() methods</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.4.3.1">B.4.3.1 processEvents() method</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.4.3.2">B.4.3.2 processEvent() method</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.4.4">B.4.4 eventsProcessed()
+method</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.4.5">B.4.5 shutdown()
+method</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.4.6">B.4.6 initialize()
+method </a><br>
+<a HREF="java.html#B.5">B.5 Accessing fields and events</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.5.1">B.5.1 Accessing
+fields, eventIns and eventOuts of the script</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.5.2">B.5.2 Accessing
+fields, eventIns and eventOuts of other nodes</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.5.3">B.5.3 Sending
+eventOuts or eventIns</a><br>
+<a HREF="java.html#B.6">B.6 Exposed classes and methods for nodes and fields</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.6.1">B.6.1 Introduction</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.6.2">B.6.2 Field class
+and ConstField class</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.6.3">B.6.3 Array handling</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.6.3.1">B.6.3.1 Format</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.6.3.2">B.6.3.2 Constructors and methods</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.6.4">B.6.4 Node class</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.6.5">B.6.5 Browser
+class</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.6.6">B.6.6 User-defined
+classes and packages</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.6.7">B.6.7 Standard
+Java platform packages</a> <br>
+<a HREF="java.html#B.7">B.7 Exceptions</a> <br>
+<a HREF="java.html#B.8">B.8 Examples</a><br>
+<a HREF="java.html#B.9">B.9 Class definitions</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.9.1">B.9.1 Class hierarchy</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.9.2">B.9.2 VRML packages</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.9.2.1">B.9.2.1 vrml package</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.9.2.2">B.9.2.2 vrml.field package</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="java.html#B.9.2.3">B.9.2.3 vrml.node package</a><br>
+<a HREF="java.html#B.10">B.10 Example of exception class</a></p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" ALT="--- separator bar ---" NATURALSIZEFLAG="0" ALIGN="BOTTOM"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" ALT="+" NATURALSIZEFLAG="0" ALIGN="BOTTOM"> <a NAME="B.2"></a>B.2 Platform</h2>
+
+<p>The <a HREF="http://java.sun.com/">Java<font SIZE="-2">tm</font> platform</a>
+is an object-oriented, hardware and operating system independent, multi-threaded,
+general-purpose application environment developed by <a HREF="http://www.sun.com/">Sun
+Microsystems, Inc</a>. The Java platform consists of the language, the virtual
+machine, and a set of core class libraries. A conforming Java platform implements
+all three components according to their specifications. See <a HREF="references.html#[JAVA]">2.[JAVA]</a>
+for a description of the language, the virtual machine, and the three core
+classes java.lang, java.util, and java.io. The other core class libraries,
+which are not used in this annex, are described in <a HREF="bibliography.html#[JAPI]">E.[JAPI]</a>.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" ALT="--- separator bar ---" NATURALSIZEFLAG="0" ALIGN="BOTTOM"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" ALT="+" NATURALSIZEFLAG="0" ALIGN="BOTTOM"> <a NAME="B.3"></a>B.3 Supported protocol in the script
+node's <i>url</i> field</h2>
+
+<h3><a NAME="B.3.1"></a>B.3.1 <i>url</i> field</h3>
+
+<p>The <i>url</i> field of the Script node may contain <a HREF="references.html#[URL]">URL</a>
+references to Java bytecode as illustrated below:</p>
+
+<pre>
+<b>    Script {</b>
+<b>      url &quot;http://foo.co.jp/Example.class&quot;</b>
+<b>      eventIn SFBool start</b>
+<b>    }</b></pre>
+
+<h3><a NAME="B.3.2"></a>B.3.2 File extension</h3>
+
+<p>The file extension for Java bytecode is <b><tt>.class</tt></b>.</p>
+
+<h3><a NAME="B.3.3"></a>B.3.3 MIME type</h3>
+
+<p>The MIME type for Java bytecode is defined as follows:</p>
+
+<pre>
+<b>    application/x-java</b></pre>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" ALT="--- separator bar ---" NATURALSIZEFLAG="0" ALIGN="BOTTOM"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" ALT="+" NATURALSIZEFLAG="0" ALIGN="BOTTOM"> <a NAME="B.4"></a>B.4 EventIn handling</h2>
+
+<h3><a NAME="B.4.1"></a>B.4.1 Description</h3>
+
+<p>Events to the Script node are passed to the corresponding Java platform
+method (<a HREF="java.html#B.4.3.1">processEvents()</a> or <a HREF="java.html#B.4.3.2">processEvent()</a>)
+in the script. The script is specified in the <i>url</i> field of the Script
+node.</p>
+
+<p>For a Java bytecode file specified in the <i>url</i> field, the following
+three conditions hold:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>it shall contain the class definition whose name is exactly the same
+  as the body of the file name
+  <li>it shall be a subclass of the Script class (see <a HREF="java.html#B.9.2.3">B.9.2.3,&nbsp;vrml.node&nbsp;package</a>)
+  <li>it shall be declared as a &quot;public&quot; class
+</ol><!--/NOEDIT--></p>
+
+<p>For example, the following Script node has one eventIn whose name is
+<i>start</i>.</p>
+
+<pre>
+<b>    Script {</b>
+<b>      url &quot;http://foo.co.jp/Example1.class&quot;</b>
+<b>      eventIn SFBool start</b>
+<b>    }</b></pre>
+
+<p>This node points to the script file Example1.class. Its source (Example1.java)
+looks like this:</p>
+
+<pre>
+    import vrml.*;
+    import vrml.field.*;
+    import vrml.node.*;
+
+    public class Example1 extends <a HREF="java.html#ScriptClass">Script</a> {
+        ...
+        // This method is called when any event is received
+        public void processEvent(Event e){
+           // ... perform some operation ...
+        }
+    }</pre>
+
+<p>In the above example, when the <i>start</i> eventIn is sent the processEvent()
+method receives the eventIn and is executed.</p>
+
+<h3><a NAME="B.4.2"></a>B.4.2 Parameter passing with Event objects</h3>
+
+<p>When a Script node receives an eventIn, a processEvent() or processEvents()
+method in the file specified in the url field of the Script node is called,
+which receives the eventIn as a Java platform object (Event object, see
+<a HREF="java.html#B.4.3">B.4.3,&nbsp;processEvents()&nbsp;and&nbsp;processEvent()&nbsp;methods</a>).</p>
+
+<p>The Event object has three fields of information associated with it:
+name, value, and timestamp, whose values are passed by the eventIn. These
+can be retrieved using the corresponding method on the Event object.</p>
+
+<pre>
+   public class Event implements Cloneable {
+      public String getName();
+      public ConstField getValue();
+      public double getTimeStamp();
+      // other methods ...
+   }</pre>
+
+<p>Suppose that the eventIn type is SFXXX and eventIn name is eventInYYY,
+then</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>getName() shall return the string &quot;eventInYYY &quot;
+  <li>getValue() shall return ConstField containing the value of the eventIn
+  <li>getTimeStamp() shall return a double (in seconds) containing the timestamp
+  when the eventIn occurred (see <a HREF="concepts.html#4.11">4.11,&nbsp;Time</a>)
+</ol><!--/NOEDIT--></p>
+
+<p>In the example below, the eventIn name is <i>start</i> and the eventIn
+value is cast to ConstSFBool. Also, the timestamp for the time when the
+eventIn occurred is available as a double. These are passed as an Event
+object to the processEvent() method:</p>
+
+<pre>
+    public void processEvent(Event e){
+        if(e.getName().equals(&quot;start&quot;)){
+              ConstSFBool v = (ConstSFBool)e.getValue();
+              if(v.getValue()==true){
+                   // ... perform some operation with e.getTimeStamp()...
+              }
+         }
+    }</pre>
+
+<h3><a NAME="B.4.3"></a>B.4.3 processEvents() and processEvent() methods</h3>
+
+<h4><a NAME="B.4.3.1"></a>B.4.3.1 processEvents() method</h4>
+
+<p>Authors can define a processEvents() method within a class that is called
+when the script receives some set of events. The prototype of the processEvents()
+method is <b><tt>public&nbsp;void&nbsp;processEvents(int count,&nbsp;Event&nbsp;events[]);</tt></b></p>
+
+<p><i>count</i> indicates the number of events delivered. <i>events</i>
+is the array of events delivered. Its default behaviour is to iterate over
+each event, calling processEvent() on each one as follows:</p>
+
+<pre>
+    public void processEvents(int count, Event events[])
+    {
+        for (int i = 0; i &lt; count; i++){
+            processEvent(events[i]);
+        }
+    }</pre>
+
+<p>Although authors might change this operation by giving a user-defined
+processEvents() method, in most cases, they only change the processEvent()
+method and the eventsProcessed() method as described below.</p>
+
+<p>When multiple eventIns are routed from a single node to a single Script
+node and eventIns which have the same timestamp are received, processEvents()
+receives multiple events as an event array. Otherwise, each incoming event
+invokes separate processEvents().</p>
+
+<p>For example, the processEvents() method receives two events in the following
+case, when the TouchSensor is activated:</p>
+
+<pre>
+<b>    Transform {</b>
+<b>      children [</b>
+<b>        DEF TS TouchSensor {}</b>
+<b>        Shape { geometry Cone {} }</b>
+<b>      ]</b>
+<b>    }</b>
+<b>    DEF SC Script {</b>
+<b>      url &quot;Example.class&quot;</b>
+<b>      eventIn SFBool isActive</b>
+<b>      eventIn SFTime touchTime</b>
+<b>    }</b>
+<b>    ROUTE TS.isActive  TO SC.isActive</b>
+<b>    ROUTE TS.touchTime TO SC.touchTime</b></pre>
+
+<h4><a NAME="B.4.3.2"></a>B.4.3.2 processEvent() method</h4>
+
+<p>Authors can define a processEvent() method within a class. The prototype
+of the processEvent() is <b><tt>public&nbsp;void&nbsp;processEvent(Event&nbsp;event);</tt></b></p>
+
+<p>Its default behaviour is no operation.</p>
+
+<h3><a NAME="B.4.4"></a>B.4.4 eventsProcessed() method</h3>
+
+<p>Authors may define an eventsProcessed() method within a class that is
+called after some set of events has been received. This allows Script nodes
+that do not rely on the ordering of events received to generate fewer events
+than an equivalent Script node that generates events whenever events are
+received (see <a HREF="java.html#B.4.3.1">B.4.3.1,&nbsp;processEvents()&nbsp;method</a>).</p>
+
+<p>The prototype of the eventsProcessed() method is <b><tt>public void eventsProcessed();</tt></b></p>
+
+<p>Its default behaviour is no operation.</p>
+
+<h3><a NAME="B.4.5"></a>B.4.5 shutdown() method</h3>
+
+<p>Authors may define a shutdown() method within the Script class that is
+called when the corresponding Script node is deleted or the world containing
+the Script node is unloaded or replaced by another world (see&nbsp;<a HREF="concepts.html#4.12.3">4.12.3,&nbsp;Initialize()&nbsp;and&nbsp;shutdown()</a>).</p>
+
+<p>The prototype of the shutdown() method is <b><tt>public void shutdown();</tt></b></p>
+
+<p>Its default behaviour is no operation.</p>
+
+<h3><a NAME="B.4.6"></a>B.4.6 initialize() method</h3>
+
+<p>Authors may define an initialize() method within the Script class that
+is called before the browser presents the world to the user and before any
+events are processed by any nodes in the same VRML file as the Script node
+containing this script (see&nbsp;<a HREF="concepts.html#4.12.3">4.12.3,&nbsp;Initialize()&nbsp;and&nbsp;shutdown()</a>).
+The various methods of the Script class such as getEventIn(), getEventOut(),
+getExposedField(), and getField() are not guaranteed to return correct values
+before the initialize() method has been executed. The initialize() method
+is called once during the life of the Script object.</p>
+
+<p>The prototype of the initialize() method is <b><tt>public void initialize();</tt></b></p>
+
+<p>Its default behaviour is no operation. See <a HREF="java.html#Example2.class">Example2.java</a>
+in B.5.1 for an example of a user-specified initialize() method.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" ALT="--- separator bar ---" NATURALSIZEFLAG="0" ALIGN="BOTTOM"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" ALT="+" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="B.5"></a> B.5 Accessing fields and events</h2>
+
+<h3><a NAME="B.5.1"></a>B.5.1 Accessing fields, eventIns and eventOuts of
+the script</h3>
+
+<p>The fields, eventIns, and eventOuts of a Script node are accessible from
+its corresponding Script class. Each field defined in the Script node is
+available to the Script class by using its name. Its value can be read-from
+or written-into. This value is persistent across function calls. EventOuts
+defined in the Script node can be read. EventIns defined in the Script node
+can be written to.</p>
+
+<p>Accessing the fields of the Script node can be done by using the following
+three types of Script class methods:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li><b><tt>Field getField(String fieldName)</tt></b><br>
+  is the method to get the reference to the Script node's field whose name
+  is <i>fieldName</i>. The return value can be converted to the appropriate
+  subclass of the Field class, (see <a HREF="java.html#B.6.2">B.6.2,&nbsp;Field&nbsp;class&nbsp;and&nbsp;ConstField&nbsp;class</a>).
+  <br>
+  
+  <li><b><tt>Field getEventOut(String eventOutName)</tt></b><br>
+  is the method to get the reference to the Script node's eventOut whose
+  name is <i>eventOutName</i>. The return value can be converted to the appropriate
+  subclass of the Field class, (see <a HREF="java.html#B.6.2">B.6.2,&nbsp;Field&nbsp;class&nbsp;and&nbsp;ConstField&nbsp;class</a>).
+  <br>
+  
+  <li><b><tt>Field getEventIn(String eventInName)</tt></b><br>
+  is the method to get the reference to the Script node's eventIn whose name
+  is <i>eventInName</i>. The return value can be converted to the appropriate
+  subclass of the Field class, (see <a HREF="java.html#B.6.2">B.6.2,&nbsp;Field&nbsp;class&nbsp;and&nbsp;ConstField&nbsp;class</a>).
+  EventIn is a write-only field. When the getValue() method is invoked on
+  a Field object obtained by the getEventIn() method, the return value is
+  unspecified.
+</ol><!--/NOEDIT--></p>
+
+<p>When the setValue(), set1Value(), addValue(), insertValue(), delete()
+or clear() methods are invoked on a Field object obtained by the <b>getField()</b>
+method, the new value is stored in the corresponding VRML node's field (see
+also <a HREF="java.html#B.6.2">B.6.2,&nbsp;Field&nbsp;class&nbsp;and&nbsp;ConstField&nbsp;class</a>,
+and <a HREF="java.html#B.6.3">B.6.3,&nbsp;Array&nbsp;handling</a>). In the case of
+the set1Value(), addValue(), insertValue() or delete() methods, all elements
+of the VRML node's field are retrieved, then the value specified as an argument
+is set, added, inserted, deleted (as appropriate) to/from the elements,
+and then stored as the elements in the corresponding VRML node's field.
+In the case of the clear() method, all elements of a VRML node's field are
+cleared (see <a HREF="java.html#clearMethod">the definition of the clear() method</a>).</p>
+
+<p>When the setValue(), set1Value(), addValue(), insertValue(), delete()
+or clear() methods are invoked on a Field object obtained by the <b>getEventOut()</b>
+method, the call generates an eventOut in the VRML scene (see also <a HREF="java.html#B.6.2">B.6.2,&nbsp;Field&nbsp;class&nbsp;and&nbsp;ConstField&nbsp;class</a>,
+and <a HREF="java.html#B.6.3">B.6.3,&nbsp;Array&nbsp;handling</a>). The effect of
+this eventOut is specified by the associated Route(s) in the VRML scene.
+In the case of the set1Value(), addValue(), insertValue() or delete() methods,
+all elements of the VRML node's eventOut are retrieved, then the value specified
+as an argument is set, added, inserted or deleted (as appropriate) to/from
+the elements, then stored as the elements in the corresponding VRML node's
+eventOut, and then the eventOut is sent. In the case of the clear() method,
+all elements of VRML node's eventOut are cleared and an eventOut with zero
+elements is sent (see <a HREF="java.html#clearMethod">the definition of the clear()
+method</a>).</p>
+
+<p>When the setValue() or clear() methods are invoked on a Field object
+obtained by the <b>getEventIn() </b>method, the call generates an eventIn
+to the Script node. When the set1Value(), addValue(), insertValue() or delete()
+methods are invoked on a Field object obtained by the getEventIn() method,
+the exception (InvalidFieldChangeException) is thrown.</p>
+
+<p>For example, the following Script node (Example2) defines an eventIn
+<i>start</i>, a field <i>state</i>, and an eventOut <i>on</i>. The method
+initialize() is invoked before any events are received, and the method processEvent()
+is invoked when <i>start</i> receives an event:</p>
+
+<pre>
+<b>    Script {</b>
+<b>      url      &quot;Example2.class&quot;</b>
+<b>      eventIn  SFBool start</b>
+<b>      field    SFBool state TRUE  </b>
+<b>      eventOut SFBool on</b>
+<b>    }</b></pre>
+
+<p><a NAME="Example2.class"></a><u>Example2.java:</u></p>
+
+<pre>
+&nbsp;&nbsp;&nbsp;&nbsp;// Example2 toggles a persistent field variable &quot;state&quot; in the VRML
+&nbsp;&nbsp;&nbsp;&nbsp;// Script node each time an eventIn &quot;start&quot; is received, then sets
+&nbsp;&nbsp;&nbsp;&nbsp;// eventOut &quot;on&quot; equal to the value of &quot;state&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;import vrml.*;
+    import vrml.field.*;
+    import vrml.node.*;
+
+    public class Example2 extends <a HREF="java.html#ScriptClass">Script</a> {
+        private SFBool state; // field
+        private SFBool on;    // eventOut
+
+        public void initialize(){
+            state = (SFBool) getField(&quot;state&quot;);
+            on = (SFBool) getEventOut(&quot;on&quot;);
+        }
+
+        public void processEvent(Event e){
+            if(state.getValue()==true){
+                on.setValue(false); // set false to eventOut 'on'
+                state.setValue(false);
+            }
+            else {
+                on.setValue(true);  // set true to eventOut 'on'
+                state.setValue(true);
+            }
+        }
+    }</pre>
+
+<h3><a NAME="B.5.2"></a>B.5.2 Accessing fields, eventIns and eventOuts of
+other nodes</h3>
+
+<p>If a script program has an access to a node, any eventIn, eventOut or
+exposedField of that node is accessible by using the getEventIn(), getEventOut()
+or getExposedField() method defined in the node's class (see <a HREF="java.html#B.6.4">B.6.4,
+Node class</a>).</p>
+
+<p>The typical way for a Script node to have an access to another VRML node
+is to have an SFNode field which provides a reference to the other node.
+The following Example3 shows how this is done:</p>
+
+<pre>
+<b>    DEF SomeNode Transform {}</b>
+<b>    Script {</b>
+<b>      field SFNode node USE SomeNode # SomeNode is a Transform node</b>
+<b>      eventIn SFVec3f pos            # new value to be inserted in </b>
+<b>                                     #   SomeNode's translation field</b>
+<b>      url &quot;Example3.class&quot;</b>
+<b>    }</b></pre>
+
+<p><u>Example3.java:</u></p>
+
+<pre>
+    import vrml.*;
+    import vrml.field.*;
+    import vrml.node.*;
+
+    public class Example3 extends <a HREF="java.html#ScriptClass">Script</a> {
+        private SFNode node;   // field
+        private SFVec3f trans; // translation field captured from remote
+                               // Transform node
+
+        public void initialize(){
+            node = (SFNode) getField(&quot;node&quot;);
+        }
+
+        public void processEvent(Event e){
+            // get the reference to the 'translation' field of the Transform node
+            trans = (SFVec3f)((Node) node.getValue()).getExposedField(&quot;translation&quot;);
+            // reset translation to value given in Event e, which is eventIn pos
+            // in the VRML Script node.
+            trans.setValue((ConstSFVec3f)e.getValue());
+        }
+    }</pre>
+
+<h3><a NAME="B.5.3"></a>B.5.3 Sending eventOuts or eventIns</h3>
+
+<p>Assume that the thread which executes processEvent() (or processEvents())
+is called 'main' thread and any other thread spawned by the Script, except
+for the 'main' thread, is called 'sub' thread. Sending eventOuts/eventIns
+in the 'main' thread follows the model described in <a HREF="concepts.html#4.10.3">4.10.3,&nbsp;Execution&nbsp;model</a>,
+and sending eventOuts/eventIns in any 'sub' thread follows the model described
+in <a HREF="concepts.html#4.12.6">4.12.6,&nbsp;Asynchronous&nbsp;scripts</a>.</p>
+
+<p><b>In the 'main' thread:</b> Calling one of the setValue(), set1Value,
+addValue(), insertValue(), clear() or delete() methods on an eventOut/eventIn
+sends that event at that time. Calling the methods multiple times during
+one execution of the thread still only sends one event which corresponds
+to the first call of the method. All other calls are ignored. The event
+is assigned the same timestamp as the initial event which caused the main
+thread to execute.</p>
+
+<p><b>In the 'sub' thread:</b> Calling one of the setValue(), set1Value,
+addValue(), insertValue(), clear() or delete() method on an eventOut/eventIn
+sends that event at that time. Calling the methods multiple times during
+one execution of the thread sends one event per call of the method. The
+browser assigns the timestamp to the event.</p>
+
+<p><b>Note:</b> sending eventIns is ordinarily performed by the VRML scene,
+not by Java platform scripts. Exceptions are possible as specified in <a HREF="java.html#B.5.1">B.5.1,&nbsp;Accessing&nbsp;fields,&nbsp;eventIns&nbsp;and
+eventOuts&nbsp;of&nbsp;the&nbsp;script</a>.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" ALT="--- separator bar ---" NATURALSIZEFLAG="0" ALIGN="BOTTOM"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" ALT="+" NATURALSIZEFLAG="0" ALIGN="BOTTOM"> <a NAME="B.6"></a>B.6 Exposed classes and methods for
+nodes and fields</h2>
+
+<h3><a NAME="B.6.1"></a>B.6.1 Introduction</h3>
+
+<p>Java platform classes for VRML are defined in the packages: <i>vrml,
+vrml.node</i> and<i> vrml.field</i>.</p>
+
+<p>The Field class extends the Java platform's <a HREF="http://java.sun.com/books/Series/Tutorial/java/javaOO/objectclass.html">Object
+class</a> by default; thus, Field has the full functionality of the Object
+class, including the <a HREF="http://java.sun.com/books/Series/Tutorial/java/javaOO/objectclass.html">getClass()</a>
+method. The rest of the package defines a &quot;Const&quot; read-only class
+for each VRML <a HREF="fieldsRef.html">field type</a>, with a getValue()
+method for each class; and another read/write class for each VRML field
+type, with both getValue() and setValue() methods for each class. A getValue()
+method converts a VRML type value into a Java platform type value. A setValue()
+method converts a Java platform type value into a VRML type value and sets
+it to the VRML field.</p>
+
+<p>Some methods are listed as &quot;<a HREF="http://java.sun.com/tutorial/java/exceptions/index.html">throws
+exception</a>,&quot; meaning that errors are possible. It may be necessary
+to write exception handlers (using the Java platform's <b>catch()</b> method)
+when those methods are used. Any method not listed as &quot;throws exception&quot;
+is guaranteed to generate no exceptions. Each method that throws an exception
+includes a prototype showing which exception(s) can be thrown.</p>
+
+<h3><a NAME="B.6.2"></a>B.6.2 Field class and ConstField class</h3>
+
+<p>All VRML data types have equivalent Java platform classes. The Field
+class is the root of all field types.</p>
+
+<pre>
+    public abstract class <b>Field</b> implements Cloneable {
+        // methods
+    }</pre>
+
+<p>This class has two types of subclasses: read-only classes and read/write
+classes</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li><b>Read-only classes</b><br>
+  These classes support the getValue() method. Some classes support additional
+  convenience methods to get value(s) from the object.<br>
+  <br>
+  <a HREF="java.html#ConstSFBoolClass">ConstSFBool</a>, <a HREF="java.html#ConstSFColorClass">ConstSFColor</a>,
+  <a HREF="java.html#ConstMFColorClass">ConstMFColor</a>, <a HREF="java.html#ConstSFFloatClass">ConstSFFloat</a>,
+  <a HREF="java.html#ConstMFFloatClass">ConstMFFloat</a>, <a HREF="java.html#ConstSFImageClass">ConstSFImage</a>,
+  <a HREF="java.html#ConstSFInt32Class">ConstSFInt32</a>, <a HREF="java.html#ConstMFInt32Class">ConstMFInt32</a>,
+  <a HREF="java.html#ConstSFNodeClass">ConstSFNode</a>, <a HREF="java.html#ConstMFNodeClass">ConstMFNode</a>,
+  <a HREF="java.html#ConstSFRotationClass">ConstSFRotation</a>, <a HREF="java.html#ConstMFRotationClass">ConstMFRotation</a>,
+  <a HREF="java.html#ConstSFStringClass">ConstSFString</a>, <a HREF="java.html#ConstMFStringClass">ConstMFString</a>,
+  <a HREF="java.html#ConstSFVec2fClass">ConstSFVec2f</a>, <a HREF="java.html#ConstMFVec2fClass">ConstMFVec2f</a>,
+  <a HREF="java.html#ConstSFVec3fClass">ConstSFVec3f</a>, <a HREF="java.html#ConstMFVec3fClass">ConstMFVec3f</a>,
+  <a HREF="java.html#ConstSFTimeClass">ConstSFTime</a>, <a HREF="java.html#ConstMFTimeClass">ConstMFTime</a>
+  <br>
+  <br>
+  
+  <li><b>Read/write classes</b><br>
+  These classes support both getValue() and setValue() methods. If the class
+  name is prefixed with <b>MF</b> (meaning that it is a multiple valued field
+  class), the class also supports the set1Value(), addValue() and insertValue()
+  methods. Some classes support additional convenience methods to get and
+  set value(s) from the object.
+  <p><a HREF="java.html#SFBoolClass">SFBool</a>, <a HREF="java.html#SFColorClass">SFColor</a>,
+  <a HREF="java.html#MFColorClass">MFColor</a>, <a HREF="java.html#SFFloatClass">SFFloat</a>,
+  <a HREF="java.html#MFFloatClass">MFFloat</a>, <a HREF="java.html#SFImageClass">SFImage</a>,
+  <a HREF="java.html#SFInt32Class">SFInt32</a>, <a HREF="java.html#MFInt32Class">MFInt32</a>,
+  <a HREF="java.html#SFNodeClass">SFNode</a>, <a HREF="java.html#MFNodeClass">MFNode</a>, <a HREF="java.html#SFRotationClass">SFRotation</a>, <a HREF="java.html#MFRotationClass">MFRotation</a>,
+  <a HREF="java.html#SFStringClass">SFString</a>, <a HREF="java.html#MFStringClass">MFString</a>,
+  <a HREF="java.html#SFVec2fClass">SFVec2f</a>, <a HREF="java.html#MFVec2fClass">MFVec2f</a>,
+  <a HREF="java.html#SFVec3fClass">SFVec3f</a>, <a HREF="java.html#MFVec3fClass">MFVec3f</a>,
+  <a HREF="java.html#SFTimeClass">SFTime</a>, <a HREF="java.html#MFTimeClass">MFTime</a>
+</ol><!--/NOEDIT--></p>
+
+<p>The VRML Field class and its subclasses have several methods to get and
+set value(s): getSize(), getValue(), get1Value(), setValue(), set1Value(),
+addValue(), insertValue(), clear(), delete() and toString(). In these methods,
+getSize(), get1Value(), set1Value(), addValue(), insertValue(), clear()
+and delete() are only available for multiple value field classes (MF classes).</p>
+
+<p><!--NOEDIT--><ol START="3" TYPE="a">
+  <li><a NAME="getSizeMethod"></a><b><tt>getSize()</tt></b><br>
+  is the method to return the number of elements of each multiple value field
+  class (MF class).
+  <li><b><tt>getValue()</tt></b><br>
+  is the method to convert a VRML type value into a Java platform type value
+  and return it.
+  <li><b><tt>get1Value(int index)</tt></b><br>
+  is the method to convert a single VRML type value (<i>index</i>-th element
+  of an array) and return it as a single Java platform type value. The index
+  of the first element is 0. Attempting to get an element beyond the length
+  of the element array throws an exception (ArrayIndexOutOfBoundsException).
+  <li><b><tt>setValue(value)</tt></b><br>
+  is the method to convert a Java platform type <i>value</i> into a VRML
+  type value and copy it to the target object.
+  <li><b><tt>set1Value(int index, value)</tt></b><br>
+  is the method to convert from a Java platform type <i>value</i> to a VRML
+  type value and copy it to the <i>index</i>-th element of the target object.
+  The index of the first element is 0. Attempting to set an element beyond
+  the length of the element array throws an exception (ArrayIndexOutOfBoundsException).
+  <li><b><tt>addValue(value)</tt></b><br>
+  is the method to convert from a Java platform type <i>value</i> to a VRML
+  type value and append it to the target object, thus adding an element.
+  <li><b><tt>insertValue(int index, value)</tt></b><br>
+  is the method to convert from a Java platform type <i>value</i> to a VRML
+  type value and insert it as a new element at the <i>index</i>-th position,
+  thus adding an element. The index of the first element is 0. Attempting
+  to insert the element beyond the length of the element array throws an
+  exception (ArrayIndexOutOfBoundsException).
+  <li><a NAME="clearMethod"></a><b><tt>clear()</tt></b><br>
+  is the method to clear all elements in the target object so that it has
+  no more elements in it.
+  <li><b><tt>delete(int index)</tt></b><br>
+  is the method to delete the <i>index</i>-th element from the target object,
+  thus decreasing the length of the element array by one. The index of the
+  first element is 0. Attempting to delete the element beyond the length
+  of the element array throws an exception (ArrayIndexOutOfBoundsException).
+  <li><a NAME="toStringMethod"></a><b><tt>toString()</tt></b><br>
+  is the method to return a String containing the VRML utf8 encoded value
+  (or values) of the equivalent of the field. In the case of the SFNode(ConstSFNode)
+  and MFNode (ConstMFNode),
+  <ul>
+    <li><b>SFNode(ConstSFNode)</b>: the method returns the VRML utf8 string
+    that, if parsed as the value of an SFNode field, would produce this node.
+    If the browser is unable to reproduce this node, the name of the node followed
+    by the open brace and close brace shall be returned. Additional information
+    may be included as one or more VRML comment strings.
+    <li><b>MFNode(ConstMFNode)</b>: the method returns the VRML utf8 string
+    that, if parsed as the value of a MFNode field, would produce this array
+    of nodes. If the browser is unable to reproduce this node, the name of
+    the nodes followed by the open brace and close brace shall be returned.
+    Additional information may be included as one or more VRML comment strings
+  </ul>
+</ol><!--/NOEDIT--></p>
+
+<p>See also <a HREF="java.html#B.5.1">B.5.1,&nbsp;Accessing&nbsp;fields,&nbsp;eventIns&nbsp;and&nbsp;eventOuts&nbsp;of&nbsp;the&nbsp;Script</a>,
+<a HREF="java.html#B.6.3">B.6.3,&nbsp;Array&nbsp;handling</a>, <a HREF="java.html#B.6.4">B.6.4,&nbsp;Node&nbsp;class</a>,
+and <a HREF="java.html#B.9.2.1">B.9.2.1,&nbsp;vrml&nbsp;package</a>, for each class'
+methods definition.</p>
+
+<h3><a NAME="B.6.3"></a>B.6.3 Array handling</h3>
+
+<h4><a NAME="B.6.3.1"></a>B.6.3.1 Format</h4>
+
+<p>Some constructors and other methods of the field classes take an array
+as an argument.</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li><a NAME="RulesForSingleDimensionalArray"></a><b>A single-dimensional
+  array</b>
+  <p>Some constructors and other methods of the following classes take a
+  single-dimensional array as an argument. The array is treated as follows:</p>
+  <ol START="1" TYPE="1">
+    <li><b>ConstSFColor, ConstMFColor, SFColor and MFColor</b> <pre>float colors[]
+    </pre>
+    <p>colors[] consists of a set of three float-values (representing red,
+    green and blue).</p>
+    <li><b>ConstSFRotation, ConstMFRotation, SFRotation and MFRotation</b>
+    <pre>float rotations[] </pre>
+    <p>rotations[] consists of a set of four float-values (representing axisX,
+    axisY, axisZ and angle).</p>
+    <li><b>ConstSFVec2f, ConstMFVec2f, SFVec2f and MFVec2f</b> <pre>float vec2s[]
+    </pre>
+    <p>vec2s[] consists of a set of two float-values (representing x and y).</p>
+    <li><b>ConstSFVec3f, ConstMFVec3f, SFVec3f and MFVec3f</b> <pre>float vec3s[]</pre>
+    <p>vec3s[] consists of a set of three float-values (representing x, y and
+    z).</p>
+    <li><b>ConstSFImage and SFImage</b> <pre>byte pixels[]</pre>
+    <p>pixels[] consists of 2-dimensional pixel image. The ordering of the
+    individual components for an individual pixel within the array of bytes
+    will be as follows:</p>
+<pre>
+ # Comp.   byte[i]  byte[i + 1] byte[i + 2] byte[i + 3]<br>
+ ------- ---------- ---------- ----------- -----------<br>
+    1    intensity1 intensity2  intensity3 intensity4<br>
+    2    intensity1   alpha1    intensity2  alpha2  <br>
+    3       red1      green1      blue1      red2<br>
+    4       red1      green1      blue1     alpha1<br>
+</pre>
+    <p>The order of pixels in the array are to follow that defined in <a HREF="fieldsRef.html#SFImage">5.5,&nbsp;SFImage</a>. byte 0 is pixel
+    0, starting from the bottom left corner.</p>
+  </ol>
+  <li><b>A single integer and a single-dimensional array</b>
+  <p>Some constructors and other methods take a single integer value (called
+  <i>size</i>) and a single-dimensional array as arguments: for example,
+  MFFloat(int size, float values[]). The <i>size</i> parameter specifies
+  the number of valid elements in the array, from 0-th element to (<i>size</i>
+  - 1)-th element, all other values are ignored. This means that the method
+  may be passed an array of length <i>size</i> or larger. The same <a HREF="java.html#RulesForSingleDimensionalArray">rule for a single-dimensional array</a>
+  is applied to the valid elements.</p>
+  <li><b>An array of arrays</b>
+  <p>Some constructors and other methods alternatively take an array of arrays
+  as an argument. The array is treated as follows:</p>
+  <ol START="1" TYPE="1">
+    <li><b>ConstMFColor and MFColor</b> <pre>float colors[][] </pre>
+    <p>colors[][] consists of an array of sets of three float-values (representing
+    red, green and blue).</p>
+    <li><b>ConstMFRotation and MFRotation</b> <pre>float rotations[][] </pre>
+    <p>rotations[][] consists of an array of sets of four float-values (representing
+    axisX, axisY, axisZ and angle).</p>
+    <li><b>ConstMFVec2f and MFVec2f</b> <pre>float vec2s[][] </pre>
+    <p>vec2s[][] consists of an array of sets of two float-values (representing
+    x and y).</p>
+    <li><b>ConstMFVec3f and MFVec3f</b> <pre>float vec3s[][] </pre>
+    <p>vec3s[][] consists of an array of sets of three float-values (representing
+    x, y and z).</p>
+  </ol>
+</ol><!--/NOEDIT--></p>
+
+<h4><a NAME="B.6.3.2"></a>B.6.3.2 Constructors and methods</h4>
+
+<p>The following describes how arrays are interpreted in detail for each
+constructor and method.</p>
+
+<p>Suppose <i>NA</i> represents the number of elements in the array specified
+as an argument of some constructors and other methods, and <i>NT</i> represents
+the number of elements which the target object requires or has. For example,
+if the target object is SFColor, it requires exactly 3 float values.</p>
+
+<p>In the following description, suppose SF* represents subclasses of Field
+class, ConstSF* represents subclasses of ConstField class, MF* represents
+subclasses of MField class and ConstMF* represents subclasses of ConstMField
+class.</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li><a NAME="RulesForSingleDimensionalArrayInMethod"></a><b>A single-dimensional
+  array</b>
+  <p>In the following description, if the target object is:</p>
+  
+  <ul>
+    <li>ConstSFColor and SFColor, <i>NT</i> is exactly 3
+    <li>ConstMFColor and MFColor, <i>NT</i> is a multiple of 3, and <i>NA</i>
+    is rounded down to a multiple of 3
+    <li>ConstSFRotation and SFRotation, <i>NT</i> is exactly 4
+    <li>ConstMFRotation and MFRotation, <i>NT</i> is a multiple of 4, and <i>NA</i>
+    is rounded down to a multiple of 4
+    <li>ConstSFVec2f and SFVec2f, <i>NT</i> is exactly 2
+    <li>ConstMFVec2f and MFVec2f, <i>NT</i> is a multiple of 2, and <i>NA</i>
+    is rounded down to a multiple of 2
+    <li>ConstSFVec3f and SFVec3f, <i>NT</i> is exactly 3
+    <li>ConstMFVec3f and MFVec3f, <i>NT</i> is a multiple of 3, and <i>NA</i>
+    is rounded down to a multiple of 3
+    <li>ConstSFImage and SFImage, <i>NT</i> is exactly <i>width</i>*<i>height</i>*<i>components</i>
+    (<i>width</i>, <i>height</i> and number of <i>components</i> in the image,
+    see <a HREF="fieldsRef.html#SFImage">5.5, SFImage</a>)<br>
+    <br>
+    
+  </ul>
+  <ol START="1" TYPE="1">
+    <li><a NAME="SingleArrayRuleForSFAndConstSFObject"></a><b>For ConstSF*
+    objects and SF* objects</b><br>
+    <br>
+    For all constructors and methods which take a single-dimensional array
+    as an argument, the following rules are applied.<i>
+    <br>
+    NA</i> shall be larger than or equal to <i>NT</i>. If <i>NA</i> is larger
+    than <i>NT</i>, the elements from the 0-th to the (<i>NT</i> - 1)-th element
+    are used and remaining elements are ignored. Otherwise, an exception(ArrayIndexOutOfBoundsException)
+    is thrown.
+    <p>For example, when the array is used as an argument of the setValue()
+    for SFColor, the array shall contain at least 3 float values. If the array
+    contains more than 3 float values, the first 3 values are used.</p>
+    
+    <li><b>For ConstMF* objects and MF* objects</b>
+    <ul>
+      <li><b>For constructor.</b>
+      <p>The same <a HREF="java.html#SingleArrayRuleForSFAndConstSFObject">rule for ConstSF*
+      and SF* objects</a> is applied.</p>
+      <p>For example, when the array is used as an argument of the constructor
+      for MFColor, the array shall contain at least 3 float values. If the array
+      contains 3N, 3N +1 or 3N + 2 float values, the first 3N values are used.</p>
+      
+      <li><b>For setValue() method.</b>
+      <p>If <i>NT</i> is smaller than or equal to <i>NA</i>, <i>NT</i> is increased
+      to <i>NA</i> and then all elements of the array are copied into the target
+      object. If <i>NT</i> is larger than <i>NA</i>, <i>NT</i> is decreased to
+      <i>NA</i> and then all elements of the array are copied into the target
+      object. </p>
+      
+      <li><b>For getValue() method.</b>
+      <p>If <i>NT</i> is smaller than or equal to <i>NA</i>, all elements of
+      the target object are copied into the first <i>NT</i> elemets of the array.
+      If <i>NT</i> is larger than <i>NA</i>, an exception (ArrayIndexOutOfBoundsException)
+      is thrown.</p>
+      
+      <li>F<b>or set1Value() method.</b>
+      <p>The target element (the <i>index</i>-th element) is treated as an SF*
+      object. So the same <a HREF="java.html#SingleArrayRuleForSFAndConstSFObject">rule
+      for ConstSF* and SF* objects</a> is applied.</p>
+      <li><b>For get1Value() method.</b>
+      <p>The target element (the <i>index</i>-th element) is treated as an SF*
+      (or ConstSF*) object. So the same <a HREF="java.html#SingleArrayRuleForSFAndConstSFObject">rule
+      for ConstSF* and SF* objects</a> is applied.</p>
+      <li><b>For addValue() and insertValue() method.</b>
+      <p>The corresponding SF* object is created using the argument, and then
+      added to the target object or inserted into the target object.</p>
+      
+    </ul>
+  </ol>
+  <li><b>A single integer and a single-dimensional array</b>
+  <p>For all constructors and methods which take a single integer value (called
+  <i>size</i>) and a single-dimensional array as arguments, for example,
+  MFFloat(int size, float values[]), the following rule is applied.</p>
+
+  The <i>size</i> parameter specifies the number of valid elements in the
+  array from the 0-th element to the (<i>size</i>&nbsp;-&nbsp;1)-th element;
+  all other values are ignored. This means that the method may be passed
+  an array of length <i>size</i> or larger.
+  <p>The valid elements are copied to a new array and <a HREF="java.html#RulesForSingleDimensionalArrayInMethod">the
+  rules for a single-dimensional array</a> are applied to the new array for
+  all methods. </p>
+  
+  <li><b>An array of arrays </b>
+  <p>This argument is used only for MF* objects and ConstMF* objects. In
+  the following case, suppose <i>NA</i> is the number of arrays (for example
+  float f[4][3], <i>NA</i> is 4) specified as an argument of some constructors
+  and other methods and <i>NT</i> is the return value of <a HREF="java.html#getSizeMethod">getSize()</a>
+  method of each object.</p>
+  <ul>
+    <li><b>For constructor.</b><br>
+    The object which has <i>NA</i> elements is created.
+    <li><b>For setValue() method.</b><br>
+    If <i>NT</i> is smaller than or equal to <i>NA</i>, <i>NT</i> is increased
+    to <i>NA</i> and then all elements of the array are copied into the target
+    object. If <i>NT</i> is larger than <i>NA</i>, <i>NT</i> is decreased to
+    <i>NA</i> and then all elements of the array are copied into the target
+    object.
+    <li><b>For getValue() method.</b><br>
+    If <i>NT</i> is smaller than or equal to <i>NA</i>, all elements of the
+    target object are copied into the array. If <i>NT</i> is larger than <i>NA</i>,
+    an exception(ArrayIndexOutOfBoundsException) is thrown.
+  </ul>
+</ol><!--/NOEDIT--></p>
+
+<h3><a NAME="B.6.4"></a>B.6.4 Node class</h3>
+
+<p>The<i> <a HREF="java.html#NodeClass">Node</a></i> class has several methods:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li><b><tt>String getType()</tt></b><br>
+  is the method to return the type of the node.
+  <li><b><tt>ConstField getEventOut(String eventOutName)</tt></b><br>
+  is the method to get the reference to the node's eventOut whose name is
+  <i>eventOutName</i>. The return value can be converted to the appropriate
+  subclass of the Field class, (see <a HREF="java.html#B.6.2">B.6.2,&nbsp;Field&nbsp;class&nbsp;and&nbsp;ConstField&nbsp;class</a>).
+  <li><b><tt>Field getEventIn(String eventInName)</tt></b><br>
+  is the method to get the reference to the node's eventIn whose name is
+  <i>eventInName</i>. The return value can be converted to the appropriate
+  subclass of the Field class, (see <a HREF="java.html#B.6.2">B.6.2,&nbsp;Field&nbsp;class&nbsp;and&nbsp;ConstField&nbsp;class</a>).
+  EventIn is a write-only field. When the getValue() method is invoked on
+  a Field object obtained by the getEventIn() method, the return value is
+  unspecified.
+  <li><b><tt>Field getExposedField(String exposedFieldName)</tt></b><br>
+  is the method to get the reference to the node's exposedField whose name
+  is <i>exposedFieldName</i>. The return value can be converted to the appropriate
+  subclass of the Field class, (see <a HREF="java.html#B.6.2">B.6.2,&nbsp;Field&nbsp;class&nbsp;and&nbsp;ConstField&nbsp;class</a>).
+  <li><b><tt>Browser getBrowser()</tt></b><br>
+  is the method to get the browser object that this node is contained in
+  (see <a HREF="java.html#B.6.5">B.6.5,&nbsp;Browser&nbsp;class</a>).
+  <li><b><tt>String toString()</tt></b><br>
+  is the same as the <a HREF="java.html#toStringMethod">toString()</a> method of SFNode
+  (ConstSFNode).
+</ol><!--/NOEDIT--></p>
+
+<p>When the setValue(), set1Value(), addValue(), insertValue(), delete()
+or clear() methods are invoked on a Field object obtained by the <b>getExposedField()</b>
+method, the call generates an eventOut in the VRML scene (see also <a HREF="java.html#B.6.2">B.6.2,&nbsp;Field&nbsp;class&nbsp;and&nbsp;ConstField&nbsp;class</a>,
+and <a HREF="java.html#B.6.3">B.6.3,&nbsp;Array&nbsp;handling</a>). The effect of
+this eventOut is specified by the associated Route(s) in the VRML scene.
+In the case of the set1Value(), addValue(), insertValue() or delete() methods,
+all elements of the VRML node's exposedField are retrieved, then the value
+specified as an argument is set, added, inserted or deleted (as appropriate)
+to/from the elements, then stored as the elements in the corresponding VRML
+node's exposedField, and then the eventOut is sent. In the case of the clear()
+method, all elements of VRML node's exposedField are cleared and an eventOut
+with zero elements is sent (see <a HREF="java.html#clearMethod">the definition of
+the clear() method</a>).</p>
+
+<p>When the setValue() or clear() methods are invoked on a Field object
+obtained by the <b>getEventIn()</b> method, the call generates an eventIn
+in the VRML scene. When the set1Value(), addValue(), insertValue() or delete()
+methods are invoked on the Field object, an exception (InvalidFieldChangeException)
+is thrown.</p>
+
+<h3><a NAME="B.6.5"></a>B.6.5 Browser class</h3>
+
+<p>This section lists the public Java platform interfaces to the <i><a HREF="java.html#BrowserClass">Browser</a></i> class, which allows scripts to get
+and set browser information. For descriptions of the following methods,
+see <a HREF="concepts.html#4.12.10">4.12.10,&nbsp;Browser&nbsp;script&nbsp;interface</a>.
+<a HREF="java.html#TableB.1">Table B.1</a> lists the Browser class methods.</p>
+
+<h4><center><a NAME="TableB.1"></a>Table B.1 -- Browser class methods</center></h4>
+
+<p><center><table BORDER="1" CELLPADDING="4" CELLSPACING="4" WIDTH="100%">
+<tr>
+<td WIDTH="20%"><b><font SIZE="+1">Return&nbsp;value</font></b></td>
+<td WIDTH="80%"><b><font SIZE="+1">Method name</font></b></td></tr>
+<tr>
+<td><tt>String</tt></td>
+<td><b><tt>getName</tt></b><tt>()</tt></td></tr>
+<tr>
+<td><tt>String</tt></td>
+<td><b><tt>getVersion</tt></b><tt>()</tt></td></tr>
+<tr>
+<td><tt>float</tt></td>
+<td><b><tt>getCurrentSpeed</tt></b><tt>()</tt></td></tr>
+<tr>
+<td><tt>float</tt></td>
+<td><b><tt>getCurrentFrameRate</tt></b><tt>()</tt></td></tr>
+<tr>
+<td><tt>String</tt></td>
+<td><b><tt>getWorldURL</tt></b><tt>()</tt></td></tr>
+<tr>
+<td><tt>void</tt></td>
+<td><b><tt>replaceWorld</tt></b><tt>(BaseNode[] nodes)</tt></td></tr>
+<tr>
+<td><tt>BaseNode[]</tt></td>
+<td><b><tt>createVrmlFromString</tt></b><tt>(String vrmlSyntax)</tt></td></tr>
+<tr>
+<td><tt>void</tt></td>
+<td><b><tt>createVrmlFromURL</tt></b><tt>(String[] url, BaseNode node,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String
+event)</tt></td></tr>
+<tr>
+<td><tt>void</tt></td>
+<td><b><tt>addRoute</tt></b><tt>(BaseNode fromNode, String fromEventOut, </tt><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tt>BaseNode
+toNode, String toEventIn)</tt></td></tr>
+<tr>
+<td><tt>void</tt></td>
+<td><b><tt>deleteRoute</tt></b><tt>(BaseNode fromNode,</tt> <tt>&nbsp;String
+fromEventOut,&nbsp;</tt><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tt>BaseNode
+toNode, String toEventIn)</tt></td></tr>
+<tr>
+<td><tt>void</tt></td>
+<td><b><tt>loadURL</tt></b><tt>(String[] url, String[] parameter)</tt></td></tr>
+<tr>
+<td><tt>void</tt></td>
+<td><b><tt>setDescription</tt></b><tt>(String description)</tt></td></tr>
+</table>
+</center></p>
+
+<p>See <a HREF="java.html#B.9.2.1">B.9.2.1,&nbsp;vrml&nbsp;package</a>, for each
+method's definition.</p>
+
+<p><a HREF="java.html#TableB.2">Table B.2</a> contains conversions from the types
+used in Browser class to Java platform types.</p>
+
+<p><center><a NAME="TableB.2"></a> <table BORDER="1" CELLPADDING="4" CELLSPACING="4" WIDTH="50%" HEIGHT="205">
+<caption ALIGN="TOP"><h4>Table&nbsp;B.2&nbsp;--&nbsp;VRML&nbsp;and&nbsp;Java&nbsp;platform&nbsp;types</h4>
+</caption>
+<tr>
+<th WIDTH="41%" HEIGHT="52"><b>VRML type</b></th>
+<th WIDTH="59%"><b>Java platform type</b></th></tr>
+<tr ALIGN="CENTER" VALIGN="MIDDLE">
+<td HEIGHT="32"><p><center>SFString</center></td>
+<td><p><center>String</center></td></tr>
+<tr ALIGN="CENTER" VALIGN="MIDDLE">
+<td HEIGHT="32"><p><center>SFFloat</center></td>
+<td><p><center>float</center></td></tr>
+<tr ALIGN="CENTER" VALIGN="MIDDLE">
+<td HEIGHT="32"><p><center>MFString</center></td>
+<td><p><center>String[]</center></td></tr>
+<tr ALIGN="CENTER" VALIGN="MIDDLE">
+<td HEIGHT="32"><p><center>MFNode</center></td>
+<td><p><center>BaseNode[]</center></td></tr>
+</table>
+</center></p>
+
+<p>When a relative URL is specified as an argument of the loadURL() and
+createVrmlFromURL() method, the path is relative to the script file containing
+these methods (see <a HREF="concepts.html#4.5.2">4.5.3,&nbsp;Relative&nbsp;URLs</a>).</p>
+
+<h3><a NAME="B.6.6"></a>B.6.6 User-defined classes and packages</h3>
+
+<p>The Java platform classes defined by a user can be used in the Java program.
+They are first searched from the directories specified in the CLASSPATH
+environment variable and then the directory where the Java program's class
+file is placed.</p>
+
+<p>If the Java platform class is in a package, this package is searched
+from the directories specified in the CLASSPATH environment variable and
+then the directory where the Java program's class file is placed.</p>
+
+<h3><a NAME="B.6.7"></a>B.6.7 Standard Java platform packages</h3>
+
+<p>Java programs have access to the full set of classes available in <tt>java.*</tt>.
+All parts of the Java platform are required to work as &quot;normal&quot;
+for the Java platform. So all methods specified in this annex are required
+to be thread-safe. The security model is browser specific.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" ALT="--- separator bar ---" NATURALSIZEFLAG="0" ALIGN="BOTTOM"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" ALT="+" NATURALSIZEFLAG="0" ALIGN="BOTTOM"> <a NAME="B.7"></a>B.7 Exceptions</h2>
+
+<p>Java platform methods may throw the following exceptions:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li><b>InvalidFieldException</b><br>
+  is thrown at the time getField() is executed and the field name is invalid.
+  <li><b>InvalidEventInException</b><br>
+  is thrown at the time getEventIn() is executed and the eventIn name is
+  invalid.
+  <li><b>InvalidEventOutException</b><br>
+  is thrown at the time getEventOut() is executed and the eventOut name is
+  invalid.
+  <li><b>InvalidExposedFieldException</b><br>
+  is thrown at the time getExposedField() is executed and the exposedField
+  name is invalid.
+  <li><b>InvalidVRMLSyntaxException</b><br>
+  is thrown at the time createVrmlFromString(), createVrmlFromURL() or loadURL()
+  is executed and the vrml syntax is invalid.
+  <li><b>InvalidRouteException</b><br>
+  is thrown at the time addRoute() or deleteRoute() is executed and one or
+  more of the arguments is invalid.
+  <li><b>InvalidFieldChangeException</b><br>
+  may be thrown as a result of all sorts of illegal field changes, for example:
+  <ol START="1" TYPE="1">
+    <li>Adding a node from one World as the child of a node in another World.
+    <li>Creating a circularity in a scene graph.
+    <li>Setting an invalid string on enumerated fields, such as the fogType
+    field of the Fog node.
+    <li>Calling the set1Value(), addValue() or delete() on a Field object obtained
+    by the getEventIn() method.
+  </ol>
+  <li><b>ArrayIndexOutOfBoundsException</b><br>
+  is generated at the time getValue(), set1Value(), insertValue() or delete()
+  is executed and the index is out of bound 
+  (see <a HREF="java.html#B.6.2">B.6.2,&nbsp;Field class and ConstField class</a>). This is the standard exception
+  defined in the Java platform Array class.
+  <li><b>IllegalArgumentException</b><br>
+  is generated at the time loadURL() or createVrmlFromURL() is executed and
+  an error is occurred before retrieving the content of the url (see <a HREF="java.html#B.6.5">B.6.5, Browser class</a>). This is the standard exception
+  defined by the Java platform.
+</ol><!--/NOEDIT--></p>
+
+<p>If exceptions are not caught by authors, a browser's behaviour is unspecified
+(see <a HREF="java.html#B.10">B.10,&nbsp;Example&nbsp;of&nbsp;exception&nbsp;class</a>).</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" ALT="--- separator bar ---" NATURALSIZEFLAG="0" ALIGN="BOTTOM"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" ALT="+" NATURALSIZEFLAG="0" ALIGN="BOTTOM"> <a NAME="B.8"></a>B.8 Examples</h2>
+
+<p>The following is an example of a <a HREF="nodesRef.html#Script">Script</a>
+node which determines whether a given color contains a lot of red. The Script
+node exposes a field, an eventIn, and an eventOut:</p>
+
+<pre>
+<b>    Script {</b>
+<b>      field    SFColor currentColor 0 0 0</b>
+<b>      eventIn  SFColor colorIn</b>
+<b>      eventOut SFBool  isRed</b>
+<b>      url      &quot;Example4.class&quot;</b>
+<b>    }</b></pre>
+
+<p>The following is the source code for the Example4.java file that gets
+called every time an eventIn is routed to the above Script node:</p>
+
+<p><u>Example4.java:</u></p>
+
+<pre>
+import vrml.*;
+import vrml.field.*;
+import vrml.node.*;
+
+public class Example4 extends <a HREF="java.html#ScriptClass">Script</a> {
+    // Declare field(s)
+    private SFColor currentColor;
+
+    // Declare eventOut
+    private SFBool isRed;
+
+    // buffer for  SFColor.getValue().
+    private float colorBuff[] = new float[3];
+
+    public void initialize(){
+       currentColor = (SFColor) getField(&quot;currentColor&quot;);
+       isRed = (SFBool) getEventOut(&quot;isRed&quot;);
+    }
+
+    public void processEvent(Event e){
+        // This method is called when a colorIn event is received
+        currentColor.setValue((ConstSFColor)e.getValue());
+    }
+
+    public void eventsProcessed(){
+        currentColor.getValue(colorBuff);
+        if (colorBuff[0] &gt;= 0.5) // if red is at or above 50%
+            isRed.setValue(true);
+    }
+}</pre>
+
+<p>Details on when the methods defined in Example4.java are called may be
+found in <a HREF="concepts.html#4.10.3">4.10.3,&nbsp;Execution&nbsp;model</a>.</p>
+
+<p><hr ALIGN="LEFT"></p>
+
+<h4><a HREF="java.html#B.6.5">Example5: createVrmlFromUrl()</a></h4>
+
+<pre>
+<b>    Script {</b>
+<b>      url &quot;Example5.class&quot;</b>
+<b>      field   MFString target_url &quot;foo.wrl&quot;</b>
+<b>      eventIn MFNode   nodesLoaded</b>
+<b>      eventIn SFBool   trigger_event</b>
+<b>    }</b>
+
+<u>Example5.java:</u>
+  import vrml.*;
+  import vrml.field.*;
+  import vrml.node.*;
+
+  public class Example5 extends <a HREF="java.html#ScriptClass">Script</a> {
+      private MFString target_url; // field
+      private Browser browser;
+
+      public void initialize(){
+          target_url = (MFString)getField(&quot;target_url&quot;);
+          browser = this.getBrowser();
+      }
+
+      public void processEvent(Event e){
+          if(e.getName().equals(&quot;trigger_event&quot;)){
+               // do something and then fetch values
+               String[] urls;
+               urls = new String[target_url.getSize()];
+               target_url.getValue(urls);
+               browser.<b>createVrmlFromURL</b>(urls, this, &quot;nodesLoaded&quot;);
+          }
+          if(e.getName().equals(&quot;nodesLoaded&quot;)){
+              // do something
+          }
+      }
+  }</pre>
+
+<p><hr ALIGN="LEFT"></p>
+
+<h4><a HREF="java.html#B.6.5">Example6: addRoute()</a></h4>
+
+<pre>
+<b>    DEF TS TouchSensor {}</b>
+<b>    Script {</b>
+<b>      url     &quot;Example6.class&quot;</b>
+<b>      field   SFNode fromNode USE TS</b>
+<b>      eventIn SFBool clicked</b>
+<b>      eventIn SFBool trigger_event</b>
+<b>    }</b></pre>
+
+<p><u>Example6.java:</u></p>
+
+<pre>
+  import vrml.*;
+  import vrml.field.*;
+  import vrml.node.*;
+
+  public class Example6 extends <a HREF="java.html#ScriptClass">Script</a> {
+ 
+      private SFNode fromNode;
+      private Browser browser;
+
+      public void initialize(){
+          fromNode = (SFNode) getField(&quot;fromNode&quot;);
+          browser = this.getBrowser();
+      }
+
+      public void processEvent(Event e){
+          if(e.getName().equals(&quot;trigger_event&quot;)){
+              // do something and then add routing
+              browser.<b>addRoute</b>(fromNode.getValue(), &quot;isActive&quot;, this, &quot;clicked&quot;);
+          }
+          if(e.getName().equals(&quot;clicked&quot;)){
+              // do something
+          }
+      }
+  }</pre>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" ALT="--- separator bar ---" NATURALSIZEFLAG="0" ALIGN="BOTTOM"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" ALT="+" NATURALSIZEFLAG="0" ALIGN="BOTTOM"> <a NAME="B.9"></a>B.9 Class definitions</h2>
+
+<h3><a NAME="B.9.1"></a>B.9.1 Class hierarchy</h3>
+
+<p>The classes are divided into three packages: <a HREF="java.html#B.9.2.1">vrml</a>,
+<a HREF="java.html#B.9.2.2">vrml.field</a> and <a HREF="java.html#B.9.2.3">vrml.node</a>.</p>
+
+<pre>
+java.lang.Object
+     |
+     +- vrml.<a HREF="java.html#EventClass">Event</a>
+     +- vrml.<a HREF="java.html#BrowserClass">Browser</a>
+     +- vrml.<a HREF="java.html#FieldClass">Field</a>
+     |       +- vrml.field.<a HREF="java.html#SFBoolClass">SFBool</a>
+     |       +- vrml.field.<a HREF="java.html#SFColorClass">SFColor</a>
+     |       +- vrml.field.<a HREF="java.html#SFFloatClass">SFFloat</a>
+     |       +- vrml.field.<a HREF="java.html#SFImageClass">SFImage</a>
+     |       +- vrml.field.<a HREF="java.html#SFInt32Class">SFInt32</a>
+     |       +- vrml.field.<a HREF="java.html#SFNodeClass">SFNode</a>
+     |       +- vrml.field.<a HREF="java.html#SFRotationClass">SFRotation</a>
+     |       +- vrml.field.<a HREF="java.html#SFStringClass">SFString</a>
+     |       +- vrml.field.<a HREF="java.html#SFTimeClass">SFTime</a>
+     |       +- vrml.field.<a HREF="java.html#SFVec2fClass">SFVec2f</a>
+     |       +- vrml.field.<a HREF="java.html#SFVec3fClass">SFVec3f</a>
+     |       |
+     |       +- vrml.<a HREF="java.html#MFieldClass">MField</a>
+     |       |       +- vrml.field.<a HREF="java.html#MFColorClass">MFColor</a>
+     |       |       +- vrml.field.<a HREF="java.html#MFFloatClass">MFFloat</a>
+     |       |       +- vrml.field.<a HREF="java.html#MFInt32Class">MFInt32</a>
+     |       |       +- vrml.field.<a HREF="java.html#MFNodeClass">MFNode</a>
+     |       |       +- vrml.field.<a HREF="java.html#MFRotationClass">MFRotation</a>
+     |       |       +- vrml.field.<a HREF="java.html#MFStringClass">MFString</a>
+     |       |       +- vrml.field.<a HREF="java.html#MFTimeClass">MFTime</a>
+     |       |       +- vrml.field.<a HREF="java.html#MFVec2fClass">MFVec2f</a>
+     |       |       +- vrml.field.<a HREF="java.html#MFVec3fClass">MFVec3f</a>
+     |       |
+     |       +- vrml.<a HREF="java.html#ConstFieldClass">ConstField</a>
+     |               +- vrml.field.<a HREF="java.html#ConstSFBoolClass">ConstSFBool</a>
+     |               +- vrml.field.<a HREF="java.html#ConstSFColorClass">ConstSFColor</a>
+     |               +- vrml.field.<a HREF="java.html#ConstSFFloatClass">ConstSFFloat</a>
+     |               +- vrml.field.<a HREF="java.html#ConstSFImageClass">ConstSFImage</a>
+     |               +- vrml.field.<a HREF="java.html#ConstSFInt32Class">ConstSFInt32</a>
+     |               +- vrml.field.<a HREF="java.html#ConstSFNodeClass">ConstSFNode</a>
+     |               +- vrml.field.<a HREF="java.html#ConstSFRotationClass">ConstSFRotation</a>
+     |               +- vrml.field.<a HREF="java.html#ConstSFStringClass">ConstSFString</a>
+     |               +- vrml.field.<a HREF="java.html#ConstSFTimeClass">ConstSFTime</a>
+     |               +- vrml.field.<a HREF="java.html#ConstSFVec2fClass">ConstSFVec2f</a>
+     |               +- vrml.field.<a HREF="java.html#ConstSFVec3fClass">ConstSFVec3f</a>
+     |               |
+     |               +- vrml.<a HREF="java.html#ConstMFieldClass">ConstMField</a>
+     |                       +- vrml.field.<a HREF="java.html#ConstMFColorClass">ConstMFColor</a>
+     |                       +- vrml.field.<a HREF="java.html#ConstMFFloatClass">ConstMFFloat</a>
+     |                       +- vrml.field.<a HREF="java.html#ConstMFInt32Class">ConstMFInt32</a>
+     |                       +- vrml.field.<a HREF="java.html#ConstMFNodeClass">ConstMFNode</a>
+     |                       +- vrml.field.<a HREF="java.html#ConstMFRotationClass">ConstMFRotation</a>
+     |                       +- vrml.field.<a HREF="java.html#ConstMFStringClass">ConstMFString</a>
+     |                       +- vrml.field.<a HREF="java.html#ConstMFTimeClass">ConstMFTime</a>
+     |                       +- vrml.field.<a HREF="java.html#ConstMFVec2fClass">ConstMFVec2f</a>
+     |                       +- vrml.field.<a HREF="java.html#ConstMFVec3fClass">ConstMFVec3f</a>
+     |
+     +- vrml.<a HREF="java.html#BaseNodeClass">BaseNode</a>
+             +- vrml.node.<a HREF="java.html#NodeClass">Node</a>
+             +- vrml.node.<a HREF="java.html#ScriptClass">Script</a>
+
+java.lang.Exception
+     |
+     +- java.lang.RuntimeException
+     |       +- java.lang.IllegalArgumentException
+     |               +- vrml.<a HREF="java.html#InvalidEventInExceptionClass">InvalidEventInException</a>
+     |               +- vrml.<a HREF="java.html#InvalidEventOutExceptionClass">InvalidEventOutException</a>
+     |               +- vrml.<a HREF="java.html#InvalidExposedFieldExceptionClass">InvalidExposedFieldException</a>
+     |               +- vrml.<a HREF="java.html#InvalidFieldChangeExceptionClass">InvalidFieldChangeException</a>
+     |               +- vrml.<a HREF="java.html#InvalidFieldExceptionClass">InvalidFieldException</a>
+     |               +- vrml.<a HREF="java.html#InvalidRouteExceptionClass">InvalidRouteException</a>
+     |
+     +- vrml.<a HREF="java.html#InvalidVRMLSyntaxExceptionClass">InvalidVRMLSyntaxException</a></pre>
+
+<h3><a NAME="B.9.2"></a>B.9.2 VRML packages</h3>
+
+<h4><a NAME="B.9.2.1"></a>B.9.2.1 vrml package</h4>
+
+<pre>
+package <b>vrml</b>;
+
+<a NAME="EventClass"></a>public class <b>Event</b> implements Cloneable 
+{
+   public String getName();
+   public double getTimeStamp();
+   public ConstField getValue();
+   public Object clone();
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="BrowserClass"></a>public class <b>Browser</b> 
+{
+   private Browser();
+   public String toString();   // This overrides a method in Object
+
+   // Browser interface
+   public String <b>getName</b>();    
+   public String <b>getVersion</b>();    
+
+   public float <b>getCurrentSpeed</b>();
+
+   public float <b>getCurrentFrameRate</b>();
+
+   public String <b>getWorldURL</b>();
+   public void <b>replaceWorld</b>(BaseNode[] nodes);
+
+   public BaseNode[] <b>createVrmlFromString</b>(String vrmlSyntax)
+     throws InvalidVRMLSyntaxException;
+
+   public void <b>createVrmlFromURL</b>(String[] url, BaseNode node, String event)
+     throws InvalidVRMLSyntaxException;
+
+   public void <b>addRoute</b>(BaseNode fromNode, String fromEventOut,
+                        BaseNode toNode, String toEventIn);
+
+   public void <b>deleteRoute</b>(BaseNode fromNode, String fromEventOut,
+                           BaseNode toNode, String toEventIn);
+
+   public void <b>loadURL</b>(String[] url, String[] parameter)
+     throws InvalidVRMLSyntaxException;
+
+   public void <b>setDescription</b>(String description);
+}
+
+<a NAME="FieldClass"></a>public abstract class <b>Field</b> implements Cloneable
+{
+   public Object clone();
+}
+
+<a NAME="MFieldClass"></a>public abstract class <b>MField</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+   public abstract int getSize();
+   public abstract void clear();
+   public abstract void delete(int index);
+}
+
+<a NAME="ConstFieldClass"></a>public abstract class <b>ConstField</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+}
+
+<a NAME="ConstMFieldClass"></a>public abstract class <b>ConstMField</b> extends <a HREF="java.html#ConstFieldClass">ConstField</a>
+{
+   public abstract int getSize();
+}
+
+//
+// This is the general BaseNode class
+// 
+<a NAME="BaseNodeClass"></a>public abstract class <b>BaseNode</b> 
+{
+   // Returns the type of the node.  If the node is a prototype
+   // it returns the name of the prototype.
+   public String <b>getType</b>();
+
+   // Get the Browser that this node is contained in.
+   public Browser <b>getBrowser</b>();
+}</pre>
+
+<h4><a NAME="B.9.2.2"></a>B.9.2.2 vrml.field package</h4>
+
+<pre>
+<a NAME="VrmlFieldPackage"></a>package <b>vrml.field</b>;
+
+<a NAME="SFBoolClass"></a>public class <b>SFBool</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+   public SFBool();
+   public SFBool(boolean value);
+
+   public boolean getValue();
+
+   public void setValue(boolean b);
+   public void setValue(ConstSFBool b);
+   public void setValue(SFBool b);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="SFColorClass"></a>public class <b>SFColor</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+   public SFColor();
+   public SFColor(float red, float green, float blue);
+
+   public void getValue(float colors[]);
+   public float getRed();
+   public float getGreen();
+   public float getBlue();
+
+   public void setValue(float colors[]);
+   public void setValue(float red, float green, float blue);
+   public void setValue(ConstSFColor color);
+   public void setValue(SFColor color);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="SFFloatClass"></a>public class <b>SFFloat</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+   public SFFloat();
+   public SFFloat(float f);
+
+   public float getValue();
+
+   public void setValue(float f);
+   public void setValue(ConstSFFloat f);
+   public void setValue(SFFloat f);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="SFImageClass"></a>public class <b>SFImage</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+   public SFImage();
+   public SFImage(int width, int height, int components, byte pixels[]);
+
+   public int getWidth();
+   public int getHeight();
+   public int getComponents();
+   public void getPixels(byte pixels[]);
+
+   public void setValue(int width, int height, int components,
+                        byte pixels[]);
+   public void setValue(ConstSFImage image);
+   public void setValue(SFImage image);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="SFInt32Class"></a>public class <b>SFInt32</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+   public SFInt32();
+   public SFInt32(int value);
+
+   public int getValue();
+
+   public void setValue(int i);
+   public void setValue(ConstSFInt32 i);
+   public void setValue(SFInt32 i);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="SFNodeClass"></a>public class <b>SFNode</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+   public SFNode();
+   public SFNode(BaseNode node);
+
+   public BaseNode getValue();
+
+   public void setValue(BaseNode node);
+   public void setValue(ConstSFNode node);
+   public void setValue(SFNode node);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="SFRotationClass"></a>public class <b>SFRotation</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+   public SFRotation();
+   public SFRotation(float axisX, float axisY, float axisZ, float angle);
+
+   public void getValue(float rotations[]);
+
+   public void setValue(float rotations[]);
+   public void setValue(float axisX, float axisY, float axisZ,
+                        float angle);
+   public void setValue(ConstSFRotation rotation);
+   public void setValue(SFRotation rotation);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="SFStringClass"></a>public class <b>SFString</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+   public SFString();
+   public SFString(String s);
+
+   public String getValue();
+
+   public void setValue(String s);
+   public void setValue(ConstSFString s);
+   public void setValue(SFString s);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="SFTimeClass"></a>public class <b>SFTime</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+   public SFTime();
+   public SFTime(double time);
+
+   public double getValue();
+
+   public void setValue(double time);
+   public void setValue(ConstSFTime time);
+   public void setValue(SFTime time);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="SFVec2fClass"></a>public class <b>SFVec2f</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+   public SFVec2f();
+   public SFVec2f(float x, float y);
+
+   public void getValue(float vec2s[]);
+   public float getX();
+   public float getY();
+
+   public void setValue(float vec2s[]);
+   public void setValue(float x, float y);
+   public void setValue(ConstSFVec2f vec);
+   public void setValue(SFVec2f vec);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="SFVec3fClass"></a>public class <b>SFVec3f</b> extends <a HREF="java.html#FieldClass">Field</a>
+{
+   public SFVec3f();
+   public SFVec3f(float x, float y, float z);
+
+   public void getValue(float vec3s[]);
+   public float getX();
+   public float getY();
+   public float getZ();
+
+   public void setValue(float vec3s[]);
+   public void setValue(float x, float y, float z);
+   public void setValue(ConstSFVec3f vec);
+   public void setValue(SFVec3f vec);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="MFColorClass"></a>public class <b>MFColor</b> extends <a HREF="java.html#MFieldClass">MField</a>
+{
+   public MFColor();
+   public MFColor(float colors[][]);
+   public MFColor(float colors[]);
+   public MFColor(int size, float colors[]);
+
+   public void getValue(float colors[][]);
+   public void getValue(float colors[]);
+
+   public void get1Value(int index, float colors[]);
+   public void get1Value(int index, SFColor color);
+
+   public void setValue(float colors[][]);
+   public void setValue(float colors[]);
+   public void setValue(int size, float colors[]);
+   /****************************************************
+    color[0] ... color[size - 1] are used as color data
+    in the way that color[0], color[1], and color[2] 
+    represent the first color. The number of colors
+    is defined as &quot;size / 3&quot;.
+    ***************************************************/
+   public void setValue(MFColor colors);
+   public void setValue(ConstMFColor colors);
+
+   public void set1Value(int index, ConstSFColor color);
+   public void set1Value(int index, SFColor color);
+   public void set1Value(int index, float red, float green, float blue);
+
+   public void addValue(ConstSFColor color);
+   public void addValue(SFColor color);
+   public void addValue(float red, float green, float blue);
+
+   public void insertValue(int index, ConstSFColor color);
+   public void insertValue(int index, SFColor color);
+   public void insertValue(int index, float red, float green, float blue);
+
+   public String toString();   // This overrides a method in Object
+}
+
+
+<a NAME="MFFloatClass"></a>public class <b>MFFloat</b> extends <a HREF="java.html#MFieldClass">MField</a>
+{
+   public MFFloat();
+   public MFFloat(int size, float values[]);
+   public MFFloat(float values[]);
+
+   public void getValue(float values[]);
+
+   public float get1Value(int index);
+
+   public void setValue(float values[]);
+   public void setValue(int size, float values[]);
+   public void setValue(MFFloat value);
+   public void setValue(ConstMFFloat value);
+
+   public void set1Value(int index, float f);
+   public void set1Value(int index, ConstSFFloat f);
+   public void set1Value(int index, SFFloat f);
+
+   public void addValue(float f);
+   public void addValue(ConstSFFloat f);
+   public void addValue(SFFloat f);
+
+   public void insertValue(int index, float f);
+   public void insertValue(int index, ConstSFFloat f);
+   public void insertValue(int index, SFFloat f);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="MFInt32Class"></a>public class <b>MFInt32</b> extends <a HREF="java.html#MFieldClass">MField</a>
+{
+   public MFInt32();
+   public MFInt32(int size, int values[]);
+   public MFInt32(int values[]);
+
+   public void getValue(int values[]);
+
+   public int get1Value(int index);
+
+   public void setValue(int values[]);
+   public void setValue(int size, int values[]);
+   public void setValue(MFInt32 value);
+   public void setValue(ConstMFInt32 value);
+
+   public void set1Value(int index, int i);
+   public void set1Value(int index, ConstSFInt32 i);
+   public void set1Value(int index, SFInt32 i);
+
+   public void addValue(int i);
+   public void addValue(ConstSFInt32 i);
+   public void addValue(SFInt32 i);
+
+   public void insertValue(int index, int i);
+   public void insertValue(int index, ConstSFInt32 i);
+   public void insertValue(int index, SFInt32 i);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="MFNodeClass"></a>public class <b>MFNode</b> extends <a HREF="java.html#MFieldClass">MField</a>
+{
+   public MFNode();
+   public MFNode(int size, BaseNode node[]);
+   public MFNode(BaseNode node[]);
+
+   public void getValue(BaseNode node[]);
+
+   public BaseNode get1Value(int index);
+
+   public void setValue(BaseNode node[]);
+   public void setValue(int size, BaseNode node[]);
+   public void setValue(MFNode node);
+   public void setValue(ConstMFNode node);
+
+   public void set1Value(int index, BaseNode node);
+   public void set1Value(int index, ConstSFNode node);
+   public void set1Value(int index, SFNode node);
+
+   public void addValue(BaseNode node);
+   public void addValue(ConstSFNode node);
+   public void addValue(SFNode node);
+
+   public void insertValue(int index, BaseNode node);
+   public void insertValue(int index, ConstSFNode node);
+   public void insertValue(int index, SFNode node);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="MFRotationClass"></a>public class <b>MFRotation</b> extends <a HREF="java.html#MFieldClass">MField</a>
+{
+   public MFRotation();
+   public MFRotation(float rotations[][]);
+   public MFRotation(float rotations[]);
+   public MFRotation(int size, float rotations[]);
+
+   public void getValue(float rotations[][]);
+   public void getValue(float rotations[]);
+
+   public void get1Value(int index, float rotations[]);
+   public void get1Value(int index, SFRotation rotation);
+
+   public void setValue(float rotations[][]);
+   public void setValue(float rotations[]);
+   public void setValue(int size, float rotations[]);
+   public void setValue(MFRotation rotations);
+   public void setValue(ConstMFRotation rotations);
+
+   public void set1Value(int index, ConstSFRotation rotation);
+   public void set1Value(int index, SFRotation rotation);
+   public void set1Value(int index, float axisX, float axisY, float axisZ, float angle);
+
+   public void addValue(ConstSFRotation rotation);
+   public void addValue(SFRotation rotation);
+   public void addValue(float axisX, float axisY, float axisZ, float angle);
+
+   public void insertValue(int index, ConstSFRotation rotation);
+   public void insertValue(int index, SFRotation rotation);
+   public void insertValue(int index, float axisX, float axisY, float axisZ, float angle);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="MFStringClass"></a>public class <b>MFString</b> extends <a HREF="java.html#MFieldClass">MField</a>
+{
+   public MFString();
+   public MFString(int size, String s[]);
+   public MFString(String s[]);
+
+   public void getValue(String s[]);
+
+   public String get1Value(int index);
+
+   public void setValue(String s[]);
+   public void setValue(int size, String s[]);
+   public void setValue(MFString s);
+   public void setValue(ConstMFString s);
+
+   public void set1Value(int index, String s);
+   public void set1Value(int index, ConstSFString s);
+   public void set1Value(int index, SFString s);
+
+   public void addValue(String s);
+   public void addValue(ConstSFString s);
+   public void addValue(SFString s);
+
+   public void insertValue(int index, String s);
+   public void insertValue(int index, ConstSFString s);
+   public void insertValue(int index, SFString s);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="MFTimeClass"></a>public class <b>MFTime</b> extends <a HREF="java.html#MFieldClass">MField</a>
+{
+   public MFTime();
+   public MFTime(int size, double times[]);
+   public MFTime(double times[]);
+
+   public void getValue(double times[]);
+
+   public double get1Value(int index);
+
+   public void setValue(double times[]);
+   public void setValue(int size, double times[]);
+   public void setValue(MFTime times);
+   public void setValue(ConstMFTime times);
+
+   public void set1Value(int index, double time);
+   public void set1Value(int index, ConstSFTime time);
+   public void set1Value(int index, SFTime time);
+
+   public void addValue(double time);
+   public void addValue(ConstSFTime time);
+   public void addValue(SFTime time);
+
+   public void insertValue(int index, double time);
+   public void insertValue(int index, ConstSFTime time);
+   public void insertValue(int index, SFTime time);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="MFVec2fClass"></a>public class <b>MFVec2f</b> extends <a HREF="java.html#MFieldClass">MField</a>
+{
+   public MFVec2f();
+   public MFVec2f(float vec2s[][]);
+   public MFVec2f(float vec2s[]);
+   public MFVec2f(int size, float vec2s[]);
+
+   public void getValue(float vec2s[][]);
+   public void getValue(float vec2s[]);
+
+   public void get1Value(int index, float vec2s[]);
+   public void get1Value(int index, SFVec2f vec);
+
+   public void setValue(float vec2s[][]);
+   public void setValue(float vec2s[]);
+   public void setValue(int size, float vec2s[]);
+   public void setValue(MFVec2f vecs);
+   public void setValue(ConstMFVec2f vecs);
+
+   public void set1Value(int index, float x, float y);
+   public void set1Value(int index, ConstSFVec2f vec);
+   public void set1Value(int index, SFVec2f vec);
+
+   public void addValue(float x, float y);
+   public void addValue(ConstSFVec2f vec);
+   public void addValue(SFVec2f vec);
+
+   public void insertValue(int index, float x, float y);
+   public void insertValue(int index, ConstSFVec2f vec);
+   public void insertValue(int index, SFVec2f vec);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="MFVec3fClass"></a>public class <b>MFVec3f</b> extends <a HREF="java.html#MFieldClass">MField</a>
+{
+   public MFVec3f();
+   public MFVec3f(float vec3s[][]);
+   public MFVec3f(float vec3s[]);
+   public MFVec3f(int size, float vec3s[]);
+
+   public void getValue(float vec3s[][]);
+   public void getValue(float vec3s[]);
+
+   public void get1Value(int index, float vec3s[]);
+   public void get1Value(int index, SFVec3f vec);
+
+   public void setValue(float vec3s[][]);
+   public void setValue(float vec3s[]);
+   public void setValue(int size, float vec3s[]);
+   public void setValue(MFVec3f vecs);
+   public void setValue(ConstMFVec3f vecs);
+
+   public void set1Value(int index, float x, float y, float z);
+   public void set1Value(int index, ConstSFVec3f vec);
+   public void set1Value(int index, SFVec3f vec);
+
+   public void addValue(float x, float y, float z);
+   public void addValue(ConstSFVec3f vec);
+   public void addValue(SFVec3f vec);
+
+   public void insertValue(int index, float x, float y, float z);
+   public void insertValue(int index, ConstSFVec3f vec);
+   public void insertValue(int index, SFVec3f vec);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstSFBoolClass"></a>public class <b>ConstSFBool</b> extends <a HREF="java.html#ConstFieldClass">ConstField</a>
+{
+   public ConstSFBool(boolean value);
+
+   public boolean getValue();
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstSFColorClass"></a>public class <b>ConstSFColor</b> extends <a HREF="java.html#ConstFieldClass">ConstField</a>
+{
+   public ConstSFColor(float red, float green, float blue);
+
+   public void getValue(float colors[]);
+   public float getRed();
+   public float getGreen();
+   public float getBlue();
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstSFFloatClass"></a>public class <b>ConstSFFloat</b> extends <a HREF="java.html#ConstFieldClass">ConstField</a>
+{
+   public ConstSFFloat(float value);
+
+   public float getValue();
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstSFImageClass"></a>public class <b>ConstSFImage</b> extends <a HREF="java.html#ConstFieldClass">ConstField</a>
+{
+   public ConstSFImage(int width, int height, int components, byte pixels[]);
+
+   public int getWidth();
+   public int getHeight();
+   public int getComponents();
+   public void getPixels(byte pixels[]);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstSFInt32Class"></a>public class <b>ConstSFInt32</b> extends <a HREF="java.html#ConstFieldClass">ConstField</a>
+{
+   public ConstSFInt32(int value);
+
+   public int getValue();
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstSFNodeClass"></a>public class <b>ConstSFNode</b> extends <a HREF="java.html#ConstFieldClass">ConstField</a>
+{
+   public ConstSFNode(BaseNode node);
+
+   public BaseNode getValue();
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstSFRotationClass"></a>public class <b>ConstSFRotation</b> extends <a HREF="java.html#ConstFieldClass">ConstField</a>
+{
+   public ConstSFRotation(float axisX, float axisY, float axisZ, float angle);
+
+   public void getValue(float rotations[]);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstSFStringClass"></a>public class <b>ConstSFString</b> extends <a HREF="java.html#ConstFieldClass">ConstField</a>
+{
+   public ConstSFString(String value);
+
+   public String getValue();
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstSFTimeClass"></a>public class <b>ConstSFTime</b> extends <a HREF="java.html#ConstFieldClass">ConstField</a>
+{
+   public ConstSFTime(double time);
+
+   public double getValue();
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstSFVec2fClass"></a>public class <b>ConstSFVec2f</b> extends <a HREF="java.html#ConstFieldClass">ConstField</a>
+{
+   public ConstSFVec2f(float x, float y);
+
+   public void getValue(float vec2s[]);
+   public float getX();
+   public float getY();
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstSFVec3fClass"></a>public class <b>ConstSFVec3f</b> extends <a HREF="java.html#ConstFieldClass">ConstField</a>
+{
+   public ConstSFVec3f(float x, float y, float z);
+
+   public void getValue(float vec3s[]);
+   public float getX();
+   public float getY();
+   public float getZ();
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstMFColorClass"></a>public class <b>ConstMFColor</b> extends <a HREF="java.html#ConstMFieldClass">ConstMField</a>
+{
+   public ConstMFColor(float colors[][]);
+   public ConstMFColor(float colors[]);
+   public ConstMFColor(int size, float colors[]);
+
+   public void getValue(float colors[][]);
+   public void getValue(float colors[]);
+
+   public void get1Value(int index, float colors[]);
+   public void get1Value(int index, SFColor color);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstMFFloatClass"></a>public class <b>ConstMFFloat</b> extends <a HREF="java.html#ConstMFieldClass">ConstMField</a>
+{
+   public ConstMFFloat(int size, float values[]);
+   public ConstMFFloat(float values[]);
+
+   public void getValue(float values[]);
+
+   public float get1Value(int index);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstMFInt32Class"></a>public class <b>ConstMFInt32</b> extends <a HREF="java.html#ConstMFieldClass">ConstMField</a>
+{
+   public ConstMFInt32(int size, int values[]);
+   public ConstMFInt32(int values[]);
+
+   public void getValue(int values[]);
+
+   public int get1Value(int index);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstMFNodeClass"></a>public class <b>ConstMFNode</b> extends <a HREF="java.html#ConstMFieldClass">ConstMField</a>
+{
+   public ConstMFNode(int size, BaseNode node[]);
+   public ConstMFNode(BaseNode node[]);
+
+   public void getValue(BaseNode node[]);
+
+   public BaseNode get1Value(int index);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstMFRotationClass"></a>public class <b>ConstMFRotation</b> extends <a HREF="java.html#ConstMFieldClass">ConstMField</a>
+{
+   public ConstMFRotation(float rotations[][]);
+   public ConstMFRotation(float rotations[]);
+   public ConstMFRotation(int size, float rotations[]);
+
+   public void getValue(float rotations[][]);
+   public void getValue(float rotations[]);
+
+   public void get1Value(int index, float rotations[]);
+   public void get1Value(int index, SFRotation rotation);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstMFStringClass"></a>public class <b>ConstMFString</b> extends <a HREF="java.html#ConstMFieldClass">ConstMField</a>
+{
+   public ConstMFString(int size, String s[]);
+   public ConstMFString(String s[]);
+
+   public void getValue(String values[]);
+
+   public String get1Value(int index);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstMFTimeClass"></a>public class <b>ConstMFTime</b> extends <a HREF="java.html#ConstMFieldClass">ConstMField</a>
+{
+   public ConstMFTime(int size, double times[]);
+   public ConstMFTime(double times[]);
+
+   public void getValue(double times[]);
+
+   public double get1Value(int index);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstMFVec2fClass"></a>public class <b>ConstMFVec2f</b> extends <a HREF="java.html#ConstMFieldClass">ConstMField</a>
+{
+   public ConstMFVec2f(float vec2s[][]);
+   public ConstMFVec2f(float vec2s[]);
+   public ConstMFVec2f(int size, float vec2s[]);
+
+   public void getValue(float vec2s[][]);
+   public void getValue(float vec2s[]);
+
+   public void get1Value(int index, float vec2s[]);
+   public void get1Value(int index, SFVec2f vec);
+
+   public String toString();   // This overrides a method in Object
+}
+
+<a NAME="ConstMFVec3fClass"></a>public class <b>ConstMFVec3f</b> extends <a HREF="java.html#ConstMFieldClass">ConstMField</a>
+{
+   public ConstMFVec3f(float vec3s[][]);
+   public ConstMFVec3f(float vec3s[]);
+   public ConstMFVec3f(int size, float vec3s[]);
+
+   public void getValue(float vec3s[][]);
+   public void getValue(float vec3s[]);
+
+   public void get1Value(int index, float vec3s[]);
+   public void get1Value(int index, SFVec3f vec);
+
+   public String toString();   // This overrides a method in Object
+}</pre>
+
+<h4><a NAME="B.9.2.3"></a>B.9.2.3 vrml.node package</h4>
+
+<pre>
+package <b>vrml.node</b>; 
+
+//
+// This is the general Node class
+// 
+<a NAME="NodeClass"></a>public abstract class <b>Node</b> extends <a HREF="java.html#BaseNodeClass">BaseNode</a>
+{ 
+   // Get an EventIn by name. Return value is write-only.
+   //   Throws an InvalidEventInException if eventInName isn't a valid
+   //   eventIn name for a node of this type.
+   public final Field <b>getEventIn</b>(String eventInName);
+
+   // Get an EventOut by name. Return value is read-only.
+   //   Throws an InvalidEventOutException if eventOutName isn't a valid
+   //   eventOut name for a node of this type.
+   public final ConstField <b>getEventOut</b>(String eventOutName);
+
+   // Get an exposed field by name. 
+   //   Throws an InvalidExposedFieldException if exposedFieldName isn't a valid
+   //   exposedField name for a node of this type.
+   public final Field <b>getExposedField</b>(String exposedFieldName);
+
+   public String toString();   // This overrides a method in Object
+}
+
+//
+// This is the general Script class, to be subclassed by all scripts.
+// Note that the provided methods allow the script author to explicitly
+// throw tailored exceptions in case something goes wrong in the
+// script.
+//
+<a NAME="ScriptClass"></a>public abstract class <b>Script</b> extends <a HREF="java.html#BaseNodeClass">BaseNode</a>
+{ 
+   // This method is called before any event is generated
+   public void <b>initialize</b>();
+
+   // Get a Field by name.
+   //   Throws an InvalidFieldException if fieldName isn't a valid
+   //   field name for a node of this type.
+   protected final Field <b>getField</b>(String fieldName);
+
+   // Get an EventOut by name.
+   //   Throws an InvalidEventOutException if eventOutName isn't a valid
+   //   eventOut name for a node of this type.
+   protected final Field <b>getEventOut</b>(String eventOutName);
+
+   // Get an EventIn by name.
+   //   Throws an InvalidEventInException if eventInName isn't a valid
+   //   eventIn name for a node of this type.
+   protected final Field <b>getEventIn</b>(String eventInName);
+
+   // processEvents() is called automatically when the script receives 
+   //   some set of events. It shall not be called directly except by its subclass.
+   //   count indicates the number of events delivered.
+   public void <b>processEvents</b>(int count, Event events[]);
+
+   // processEvent() is called automatically when the script receives 
+   // an event. 
+   public void <b>processEvent</b>(Event event);
+
+   // eventsProcessed() is called after every invocation of processEvents().
+   public void <b>eventsProcessed</b>()
+
+   // shutdown() is called when this Script node is deleted.
+   public void <b>shutdown</b>();
+
+   public String toString();   // This overrides a method in Object
+}</pre>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" ALT="--- separator bar ---" NATURALSIZEFLAG="0" ALIGN="BOTTOM"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" ALT="+" NATURALSIZEFLAG="0" ALIGN="BOTTOM"> <a NAME="B.10"></a>B.10 Example of exception class</h2>
+
+<p><a NAME="InvalidEventInExceptionClass"></a>public class <b>InvalidEventInException</b>
+extends IllegalArgumentException</p>
+
+<pre>
+{
+   /**
+    * Constructs an InvalidEventInException with no detail message.
+    */
+   public InvalidEventInException(){
+      super();
+   }
+   /**
+    * Constructs an InvalidEventInException with the specified detail message.
+    * A detail message is a String that describes this particular exception.
+    * @param s the detail message
+    */
+   public InvalidEventInException(String s){
+      super(s);
+   }
+}
+
+<a NAME="InvalidEventOutExceptionClass"></a>public class <b>InvalidEventOutException</b> extends IllegalArgumentException
+{
+   public InvalidEventOutException(){
+      super();
+   }
+   public InvalidEventOutException(String s){
+      super(s);
+   }
+}
+
+<a NAME="InvalidExposedFieldExceptionClass"></a>public class <b>InvalidExposedFieldException</b> extends IllegalArgumentException
+{
+   public InvalidExposedFieldException(){
+      super();
+   }
+   public InvalidExposedFieldException(String s){
+      super(s);
+   }
+}
+
+<a NAME="InvalidFieldChangeExceptionClass"></a>public class <b>InvalidFieldChangeException</b> extends IllegalArgumentException
+{
+   public InvalidFieldChangeException(){
+      super();
+   }
+   public InvalidFieldChangeException(String s){
+      super(s);
+   }
+}
+
+<a NAME="InvalidFieldExceptionClass"></a>public class <b>InvalidFieldException</b> extends IllegalArgumentException
+{
+   public InvalidFieldException(){
+      super();
+   }
+   public InvalidFieldException(String s){
+      super(s);
+   }
+}
+
+<a NAME="InvalidRouteExceptionClass"></a>public class <b>InvalidRouteException</b> extends IllegalArgumentException
+{
+   public InvalidRouteException(){
+      super();
+   }
+   public InvalidRouteException(String s){
+      super(s);
+   }
+}
+
+<a NAME="InvalidVRMLSyntaxExceptionClass"></a>public class <b>InvalidVRMLSyntaxException</b> extends Exception
+{
+   public InvalidVRMLSyntaxException(){
+      super();
+   }
+   public InvalidVRMLSyntaxException(String s){
+      super(s);
+   }
+
+   public String getMessage();  // This overrides a method in Exception
+}</pre>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" ALT="--- separator bar ---" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><br>
+<font SIZE="-1"><a HREF="mailto:rikk@wasabisoft.com,gavin@wasabisoft.com,chris@marrin.com">Questions
+or comments.</a></font><br>
+<font SIZE="-1"><a HREF="../copyright.html">Copyright</a> &amp;COPY; 1997 The
+VRML Consortium Incorporated.<br>
+<tt>http://www.vrml.org/Specifications/VRML97/part1/java.html</tt></font>
+</body>
+</html>

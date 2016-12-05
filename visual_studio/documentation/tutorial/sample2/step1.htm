@@ -1,0 +1,151 @@
+<html>
+
+<head>
+<title>Step 1</title>
+
+<meta name="Microsoft Theme" content="sumipntg 011"></head>
+
+<body background="../../../../_themes/sumipntg/sumtextb.jpg" bgcolor="#FFFFFF" text="#808080" link="#3333CC" vlink="#666699" alink="#990099"><!--mstheme--><font face="verdana, arial, helvetica">
+<font face="book antiqua">
+
+<!--mstheme--></font><table border="0" width="100%" height="97">
+  <tr>
+    <td width="12%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><img src="../../logo.gif" alt="[Logo]" border="0" start="fileopen" width="100" height="110"><!--mstheme--></font></td>
+    <td width="88%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><em><br>
+    <big><big><big>Great Hill Corporation</big></big></big></em><br>
+    <em>Step 1: Getting Started</em><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="verdana, arial, helvetica"><a HREF="step2.htm">[Next]</a> <a HREF="../sample2.htm">[Tutorial2]</a><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+<!--commentbeg------------------------------------------>
+<!--commentbeg------------------------------------------>
+
+<p>The first step in building a VRaniML&#153; program is to start with a simple Windows
+program.</p>
+
+<p>The code below does nothing more than open a window and wait. This program will be the
+basis for this tutorial.</p>
+
+<p>To do this complete the following steps from the MS Visual C++ IDE (<i>Note: these
+instructions assume that you are using version 5.0 of Visual C++.</i>): </p>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <ol>
+    <li>From the 'File' menu choose 'New'. From the 'Projects' tab choose 'Win32 Application'</li>
+    <li><br>
+      <br>
+      <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../../_themes/sumipntg/sumbul3a.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica">Name your program <b>sample2</b>.<!--mstheme--></font><!--msthemelist--></td></tr>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../../_themes/sumipntg/sumbul3a.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica"><br>
+          <br>
+        <!--mstheme--></font><!--msthemelist--></td></tr>
+      <!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+    </li>
+    <li>From the 'File' menu choose 'New'. From the 'Files' tab choose 'C++ Source File'</li>
+    <li><br>
+      <br>
+      <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../../_themes/sumipntg/sumbul3a.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica">Call the file <b>sample2.cpp</b>.<!--mstheme--></font><!--msthemelist--></td></tr>
+      <!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+      <p><br>
+      </p>
+    </li>
+    <li>Copy the code below into the sample2.cpp file.</li>
+    <li><br>
+      <br>
+    </li>
+    <li>Compile and run the program. You should see black window, 640x480 pixels big. Kill the
+      program.<br>
+      <br>
+    </li>
+  </ol>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p>In the <a href="step2.htm">next step</a> we will link to the VRaniML&#153; library and
+prepare for creating our first image.</p>
+
+<p><img SRC="../bar.jpg" width="100%" height="3" alt="bar.jpg (730 bytes)" start="fileopen"> </p>
+
+<!--mstheme--></font><pre>
+#include &quot;windows.h&quot;
+
+LRESULT APIENTRY WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	switch (message)
+	{
+	case WM_DESTROY:
+		PostQuitMessage( 0 );
+		break;
+	}
+	
+	return DefWindowProc(hWnd, message, wParam, lParam);
+}
+
+HWND InitWindow(HINSTANCE hCurrentInst, char *className, char *windowName)
+{
+	WNDCLASS wndClass;
+	HWND hWnd;
+
+	/* register window class */
+	wndClass.style         = CS_HREDRAW | CS_VREDRAW;
+	wndClass.lpfnWndProc   = WindowProc;
+	wndClass.cbClsExtra    = 0;
+	wndClass.cbWndExtra    = 0;
+	wndClass.hInstance     = hCurrentInst;
+	wndClass.hIcon         = LoadIcon(NULL, IDI_APPLICATION);
+	wndClass.hCursor       = LoadCursor(NULL, IDC_ARROW);
+	wndClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
+	wndClass.lpszMenuName  = NULL;
+	wndClass.lpszClassName = className;
+	RegisterClass(&amp;wndClass);
+
+	/* create window */
+	hWnd = CreateWindow(className, 
+		windowName,
+		WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS,
+		0, 0, 640, 480,
+		NULL, NULL, hCurrentInst, NULL);
+
+
+	ShowWindow(hWnd, SW_SHOW);
+	UpdateWindow(hWnd);
+
+	return hWnd;
+}
+
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPreviousInst, LPSTR lpszCmdLine, int nCmdShow)
+{
+	HWND hWnd = InitWindow(hInstance, &quot;VRaniML&quot;, &quot;VRaniML Sample Program 2&quot;);
+
+	while (1)
+	{
+		MSG msg;
+		if (PeekMessage(&amp;msg, NULL, 0, 0, PM_NOREMOVE))
+		{
+			if (GetMessage(&amp;msg, NULL, 0, 0) != TRUE)
+			{
+				return msg.wParam;
+			}
+
+			TranslateMessage(&amp;msg);
+			DispatchMessage(&amp;msg);
+		}
+	}
+
+	return FALSE;
+}
+  </pre><!--mstheme--><font face="verdana, arial, helvetica">
+<!--commentend------------------------------------------>
+<!--commentend------------------------------------------>
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+
+<h5><!--mstheme--><font color="#003366"><font COLOR="#660033">Send mail to <a HREF="mailto:webmaster@greathill.com">webmaster@greathill.com</a>
+with questions or comments about this web site.<br>
+Copyright © 1997 Great Hill Corporation<br>
+Last modified: December 17, 1997&nbsp;</font><!--mstheme--></font></h5>
+</font>
+<!--mstheme--></font></body>
+</html>

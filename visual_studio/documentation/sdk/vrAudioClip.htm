@@ -1,0 +1,396 @@
+<html><head><title>vrAudioClip Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrAudioClip</a></h1>
+<dl>
+<dd>
+	This class corresponds to the AudioClip node in VRML.  
+	<a href="../spec/part1/nodesRef.html#AudioClip">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vraudioclip.htm#aag">Summary</a> | </a>
+<a href="vraudioclip.htm#DESCRIPTION">Description</a> | 
+<a href="vraudioclip.htm#NOTES">Notes</a> | 
+<a href="vraudioclip.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vraudioclip.htm#MEMBERS">Members</a> | 
+<a href="vraudioclip.htm#parents">Ancestors</a> | <a href="vraudioclip.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrAudioClip : public <a href="vrNode.htm">vrNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrAudioClip.htm#vrAudioClip(void)$">vrAudioClip</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrAudioClip.htm#vrAudioClip(const_vrAudioClip&amp;_v)$">vrAudioClip</a>(const vrAudioClip&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrAudioClip.htm#~vrAudioClip(void)$">vrAudioClip</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrAudioClip&amp; </td><td><a href="vrAudioClip.htm#vrAudioClip&amp;_operator$(const_vrAudioClip&amp;_v)$">operator=</a>(const vrAudioClip&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrAudioClip.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrAudioClip.htm#void_AddOrigUrl(const_SFString&amp;_origurl)$">AddOrigUrl</a>(const <a href="SFString.htm">SFString</a>&amp; origurl);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrAudioClip.htm#void_SetOrigUrl(const_MFString&amp;_origurl)$">SetOrigUrl</a>(const <a href="MFString.htm">MFString</a>&amp; origurl);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrAudioClip.htm#SFInt32_GetNOrigUrls(void)_const$">GetNOrigUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrAudioClip.htm#SFString_GetOrigUrl(SFInt32_n)_const$">GetOrigUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrAudioClip.htm#const_MFString&amp;_GetOrigUrlArray(void)_const$">GetOrigUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrAudioClip.htm#void_SetDescription(const_SFString&amp;_description)$">SetDescription</a>(const <a href="SFString.htm">SFString</a>&amp; description);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrAudioClip.htm#void_SetLoop(SFBool_loop)$">SetLoop</a>(SFBool loop);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrAudioClip.htm#void_SetPitch(SFFloat_pitch)$">SetPitch</a>(SFFloat pitch);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrAudioClip.htm#void_SetStartTime(SFTime_starttime)$">SetStartTime</a>(SFTime starttime);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrAudioClip.htm#void_SetStopTime(SFTime_stoptime)$">SetStopTime</a>(SFTime stoptime);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrAudioClip.htm#void_AddUrl(const_SFString&amp;_url)$">AddUrl</a>(const <a href="SFString.htm">SFString</a>&amp; url);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrAudioClip.htm#void_SetUrl(const_MFString&amp;_url)$">SetUrl</a>(const <a href="MFString.htm">MFString</a>&amp; url);</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrAudioClip.htm#SFString_GetDescription(void)_const$">GetDescription</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrAudioClip.htm#SFBool_GetLoop(void)_const$">GetLoop</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrAudioClip.htm#SFFloat_GetPitch(void)_const$">GetPitch</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFTime">SFTime </a> </td><td><a href="vrAudioClip.htm#SFTime_GetStartTime(void)_const$">GetStartTime</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFTime">SFTime </a> </td><td><a href="vrAudioClip.htm#SFTime_GetStopTime(void)_const$">GetStopTime</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrAudioClip.htm#SFInt32_GetNUrls(void)_const$">GetNUrls</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrAudioClip.htm#SFString_GetUrl(SFInt32_n)_const$">GetUrl</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrAudioClip.htm#const_MFString&amp;_GetUrlArray(void)_const$">GetUrlArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrAudioClip.htm#void_SetDuration(SFTime_duration)$">SetDuration</a>(SFTime duration);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrAudioClip.htm#void_SetIsActive(SFBool_isactive)$">SetIsActive</a>(SFBool isactive);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFTime">SFTime </a> </td><td><a href="vrAudioClip.htm#SFTime_GetDuration(void)_const$">GetDuration</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrAudioClip.htm#SFBool_IsActive(void)_const$">IsActive</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrAudioClip.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrAudioClip.htm#void_ReceiveEventIn(vrEvent_*event)$">ReceiveEventIn</a></i>(<a href="vrEvent.htm">vrEvent</a> *event);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrAudioClip.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrAudioClip.htm#DECLARE_NODE(vrAudioClip)$">DECLARE_NODE</a>(vrAudioClip);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrAudioClip.htm#MFString_m_OrigUrl$">m_OrigUrl</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrAudioClip.htm#SFString_m_Description$">m_Description</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrAudioClip.htm#SFBool_m_Loop$">m_Loop</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrAudioClip.htm#SFFloat_m_Pitch$">m_Pitch</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFTime">SFTime </a> </td><td><a href="vrAudioClip.htm#SFTime_m_StartTime$">m_StartTime</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFTime">SFTime </a> </td><td><a href="vrAudioClip.htm#SFTime_m_StopTime$">m_StopTime</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrAudioClip.htm#MFString_m_Url$">m_Url</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFTime">SFTime </a> </td><td><a href="vrAudioClip.htm#SFTime_m_Duration$">m_Duration</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrAudioClip.htm#SFBool_m_IsActive$">m_IsActive</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the AudioClip node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#AudioClip">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="MFString_m_OrigUrl$"><ul><h3><li>MFString m_OrigUrl;</li></h3></a>
+</ul>
+</ul>	  <dd>The original Url as read from the .wrl file.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="SFString_m_Description$"><ul><h3><li>SFString m_Description;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'description' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_Loop$"><ul><h3><li>SFBool m_Loop;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'loop' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> FALSE</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_Pitch$"><ul><h3><li>SFFloat m_Pitch;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'pitch' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 1.0</strong>
+<p>
+</dl></dl>
+<a name="SFTime_m_StartTime$"><ul><h3><li>SFTime m_StartTime;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'startTime' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0.0</strong>
+<p>
+</dl></dl>
+<a name="SFTime_m_StopTime$"><ul><h3><li>SFTime m_StopTime;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'stopTime' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0.0</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_Url$"><ul><h3><li>MFString m_Url;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'url' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="SFTime_m_Duration$"><ul><h3><li>SFTime m_Duration;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'duration' eventOut.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0.0</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_IsActive$"><ul><h3><li>SFBool m_IsActive;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'isActive' eventOut.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> FALSE</strong>
+<p>
+</dl></dl>
+<a name="vrAudioClip(void)$"><ul><h3><li>vrAudioClip(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrAudioClip(const_vrAudioClip&amp;_v)$"><ul><h3><li>vrAudioClip(const vrAudioClip&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrAudioClip(void)$"><ul><h3><li>~vrAudioClip(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrAudioClip&amp;_operator$(const_vrAudioClip&amp;_v)$"><ul><h3><li>vrAudioClip&amp; operator=(const vrAudioClip&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_AddOrigUrl(const_SFString&amp;_origurl)$"><ul><h3><li>void AddOrigUrl(const SFString&amp; origurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_OrigUrl array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origurl:</strong>
+<dd>The value to add to the m_OrigUrl array.
+<p>
+</dl></dl>
+<a name="void_SetOrigUrl(const_MFString&amp;_origurl)$"><ul><h3><li>void SetOrigUrl(const MFString&amp; origurl);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_OrigUrl member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> origurl:</strong>
+<dd>The m_OrigUrl array.
+<p>
+</dl></dl>
+<a name="SFInt32_GetNOrigUrls(void)_const$"><ul><h3><li>SFInt32 GetNOrigUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_OrigUrl member.
+<p>
+<a name="SFString_GetOrigUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetOrigUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_OrigUrl member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetOrigUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetOrigUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_OrigUrl member.
+<p>
+<a name="void_SetDescription(const_SFString&amp;_description)$"><ul><h3><li>void SetDescription(const SFString&amp; description);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Description member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> description:</strong>
+<dd>The description value.
+<p>
+</dl></dl>
+<a name="void_SetLoop(SFBool_loop)$"><ul><h3><li>void SetLoop(SFBool loop);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Loop member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> loop:</strong>
+<dd>The loop value.
+<p>
+</dl></dl>
+<a name="void_SetPitch(SFFloat_pitch)$"><ul><h3><li>void SetPitch(SFFloat pitch);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Pitch member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pitch:</strong>
+<dd>The pitch value.
+<p>
+</dl></dl>
+<a name="void_SetStartTime(SFTime_starttime)$"><ul><h3><li>void SetStartTime(SFTime starttime);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_StartTime member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> starttime:</strong>
+<dd>The starttime value.
+<p>
+</dl></dl>
+<a name="void_SetStopTime(SFTime_stoptime)$"><ul><h3><li>void SetStopTime(SFTime stoptime);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_StopTime member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> stoptime:</strong>
+<dd>The stoptime value.
+<p>
+</dl></dl>
+<a name="void_AddUrl(const_SFString&amp;_url)$"><ul><h3><li>void AddUrl(const SFString&amp; url);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_Url array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> url:</strong>
+<dd>The value to add to the m_Url array.
+<p>
+</dl></dl>
+<a name="void_SetUrl(const_MFString&amp;_url)$"><ul><h3><li>void SetUrl(const MFString&amp; url);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_Url member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> url:</strong>
+<dd>The m_Url array.
+<p>
+</dl></dl>
+<a name="SFString_GetDescription(void)_const$"><ul><h3><li>SFString GetDescription(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Description member.
+<p>
+<a name="SFBool_GetLoop(void)_const$"><ul><h3><li>SFBool GetLoop(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Loop member.
+<p>
+<a name="SFFloat_GetPitch(void)_const$"><ul><h3><li>SFFloat GetPitch(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Pitch member.
+<p>
+<a name="SFTime_GetStartTime(void)_const$"><ul><h3><li>SFTime GetStartTime(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_StartTime member.
+<p>
+<a name="SFTime_GetStopTime(void)_const$"><ul><h3><li>SFTime GetStopTime(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_StopTime member.
+<p>
+<a name="SFInt32_GetNUrls(void)_const$"><ul><h3><li>SFInt32 GetNUrls(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_Url member.
+<p>
+<a name="SFString_GetUrl(SFInt32_n)_const$"><ul><h3><li>SFString GetUrl(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_Url member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetUrlArray(void)_const$"><ul><h3><li>const MFString&amp; GetUrlArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_Url member.
+<p>
+<a name="void_SetDuration(SFTime_duration)$"><ul><h3><li>void SetDuration(SFTime duration);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Duration member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> duration:</strong>
+<dd>The duration value.
+<p>
+</dl></dl>
+<a name="void_SetIsActive(SFBool_isactive)$"><ul><h3><li>void SetIsActive(SFBool isactive);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_IsActive member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> isactive:</strong>
+<dd>The isactive value.
+<p>
+</dl></dl>
+<a name="SFTime_GetDuration(void)_const$"><ul><h3><li>SFTime GetDuration(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Duration member.
+<p>
+<a name="SFBool_IsActive(void)_const$"><ul><h3><li>SFBool IsActive(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_IsActive member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vraudioclip.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="void_ReceiveEventIn(vrEvent_*event)$"><ul><h3><li>void ReceiveEventIn(vrEvent *event);</li></h3></a>
+</ul>
+</ul>	   <dd>Receive an event during an event cascade or directly from caller.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> event:</strong>
+<dd>The <a href="vrEvent.htm">vrEvent</a> to be processed.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrAudioClip)$"><ul><h3><li>DECLARE_NODE(vrAudioClip);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed and dynamically created. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrAudioClip:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:49 1999
+.<p>
+</body></html>

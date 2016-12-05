@@ -1,0 +1,699 @@
+# The file format for this is very simple.
+#
+# 1. Any lines starting with '#' are comments
+# 3. Lines starting with 'on' turn on groups of files
+# 4. Lines starting with 'off' turn off groups of files
+# 5. Lines starting with 'group' describes a group of files and
+#				also allows you to point to the root directory of the .wrl
+#				files (which may change)
+# 6. Lines starting with 'pretty' are parsed.
+# 7. 'outputDir' points to the top level directory for output
+# 8. #if 0 and #endif have familiar meanings
+#
+
+# Where to put the output
+outputDir d:\worlds0
+
+# Turn all the sources on
+on SOURCE0
+on SOURCE1
+on SOURCE2
+on SOURCE3
+on SOURCE4
+
+# Point to the files
+group SOURCE0 d:\worlds
+group SOURCE1 d:\worlds
+group SOURCE2 d:\3dapps\Sample Browser
+group SOURCE3 d:\worlds
+group SOURCE4 d:\testscr
+
+# parse files (lines with no .wrl in them will create a directory for the output
+pretty SOURCE0\
+pretty SOURCE0\egs\
+pretty SOURCE0\egs\adclip.wrl
+pretty SOURCE0\egs\anchor.wrl
+pretty SOURCE0\egs\appr.wrl
+pretty SOURCE0\egs\bckgd.wrl
+pretty SOURCE0\egs\blbrd.wrl
+pretty SOURCE0\egs\box.wrl
+pretty SOURCE0\egs\cllson.wrl
+pretty SOURCE0\egs\clrnter.wrl
+pretty SOURCE0\egs\color.wrl
+pretty SOURCE0\egs\cone.wrl
+pretty SOURCE0\egs\crdntrp.wrl
+pretty SOURCE0\egs\cylinder.wrl
+pretty SOURCE0\egs\cylnsen.wrl
+pretty SOURCE0\egs\drlt.wrl
+pretty SOURCE0\egs\elgrid.wrl
+pretty SOURCE0\egs\extrsn.wrl
+pretty SOURCE0\egs\fntsty.wrl
+pretty SOURCE0\egs\fog.wrl
+pretty SOURCE0\egs\grndplne.wrl
+pretty SOURCE0\egs\group.wrl
+pretty SOURCE0\egs\imgtexe.wrl
+pretty SOURCE0\egs\indxfst.wrl
+pretty SOURCE0\egs\indxlst.wrl
+pretty SOURCE0\egs\inline.wrl
+pretty SOURCE0\egs\lod.wrl
+pretty SOURCE0\egs\material.wrl
+pretty SOURCE0\egs\mvtexe.wrl
+pretty SOURCE0\egs\navinfo.wrl
+pretty SOURCE0\egs\normal.wrl
+pretty SOURCE0\egs\nrmlntr.wrl
+pretty SOURCE0\egs\orntrpl.wrl
+pretty SOURCE0\egs\pixtexe.wrl
+pretty SOURCE0\egs\plansnb.wrl
+pretty SOURCE0\egs\pntlt.wrl
+pretty SOURCE0\egs\pointst.wrl
+pretty SOURCE0\egs\posntrp.wrl
+pretty SOURCE0\egs\proxsn.wrl
+pretty SOURCE0\egs\scalntp.wrl
+pretty SOURCE0\egs\shape.wrl
+pretty SOURCE0\egs\sound.wrl
+pretty SOURCE0\egs\sphrb.wrl
+pretty SOURCE0\egs\sphrsnb.wrl
+pretty SOURCE0\egs\sptlt.wrl
+pretty SOURCE0\egs\switch.wrl
+pretty SOURCE0\egs\texcrdb.wrl
+pretty SOURCE0\egs\text.wrl
+pretty SOURCE0\egs\texxf.wrl
+pretty SOURCE0\egs\timesnb.wrl
+pretty SOURCE0\egs\transfrm.wrl
+pretty SOURCE0\egs\viewpnt.wrl
+pretty SOURCE0\egs\vissn.wrl
+pretty SOURCE0\egs\wrldnfo.wrl
+
+pretty SOURCE0\samples\
+pretty SOURCE0\samples\chpbdy.wrl
+pretty SOURCE0\samples\chprtr.wrl
+pretty SOURCE0\samples\ex10.wrl
+pretty SOURCE0\samples\ex11.wrl
+pretty SOURCE0\samples\ex12.wrl
+pretty SOURCE0\samples\ex13.wrl
+pretty SOURCE0\samples\ex17.wrl
+pretty SOURCE0\samples\ex18.wrl
+pretty SOURCE0\samples\ex2.wrl
+pretty SOURCE0\samples\ex3.wrl
+pretty SOURCE0\samples\ex4.wrl
+pretty SOURCE0\samples\ex5.wrl
+pretty SOURCE0\samples\ex6.wrl
+pretty SOURCE0\samples\ex9.wrl
+pretty SOURCE0\samples\rfrmtl.wrl
+pretty SOURCE0\samples\rotor.wrl
+
+pretty SOURCE1\
+pretty SOURCE1\book\
+pretty SOURCE1\book\win\
+pretty SOURCE1\book\win\ch02\
+pretty SOURCE1\book\win\ch02\02fig01.wrl
+pretty SOURCE1\book\win\ch03\
+pretty SOURCE1\book\win\ch03\03fig01.wrl
+pretty SOURCE1\book\win\ch03\03fig02.wrl
+pretty SOURCE1\book\win\ch03\03fig03.wrl
+pretty SOURCE1\book\win\ch03\03fig04.wrl
+pretty SOURCE1\book\win\ch03\03fig05.wrl
+pretty SOURCE1\book\win\ch03\03fig06.wrl
+pretty SOURCE1\book\win\ch03\03fig07.wrl
+pretty SOURCE1\book\win\ch03\03fig08.wrl
+pretty SOURCE1\book\win\ch03\03fig09.wrl
+pretty SOURCE1\book\win\ch03\03fig10.wrl
+pretty SOURCE1\book\win\ch04\
+pretty SOURCE1\book\win\ch04\04fig01.wrl
+pretty SOURCE1\book\win\ch04\04fig02.wrl
+pretty SOURCE1\book\win\ch04\04fig03.wrl
+pretty SOURCE1\book\win\ch04\04fig04.wrl
+pretty SOURCE1\book\win\ch04\04fig05.wrl
+pretty SOURCE1\book\win\ch04\04fig06a.wrl
+pretty SOURCE1\book\win\ch04\04fig06b.wrl
+pretty SOURCE1\book\win\ch04\04fig07.wrl
+pretty SOURCE1\book\win\ch04\04fig08a.wrl
+pretty SOURCE1\book\win\ch04\04fig08b.wrl
+pretty SOURCE1\book\win\ch04\04fig09.wrl
+pretty SOURCE1\book\win\ch04\04fig10.wrl
+pretty SOURCE1\book\win\ch04\04fig11.wrl
+pretty SOURCE1\book\win\ch05\
+pretty SOURCE1\book\win\ch05\05fig03b.wrl
+pretty SOURCE1\book\win\ch05\05fig04b.wrl
+pretty SOURCE1\book\win\ch05\05fig05b.wrl
+pretty SOURCE1\book\win\ch05\05fig06b.wrl
+pretty SOURCE1\book\win\ch05\05fig07b.wrl
+pretty SOURCE1\book\win\ch05\05fig08.wrl
+pretty SOURCE1\book\win\ch05\05fig10.wrl
+pretty SOURCE1\book\win\ch05\05fig11.wrl
+pretty SOURCE1\book\win\ch06\
+pretty SOURCE1\book\win\ch06\06fig04b.wrl
+pretty SOURCE1\book\win\ch06\06fig05b.wrl
+pretty SOURCE1\book\win\ch06\06fig06b.wrl
+pretty SOURCE1\book\win\ch06\06fig07b.wrl
+pretty SOURCE1\book\win\ch06\06fig08.wrl
+pretty SOURCE1\book\win\ch06\06fig09.wrl
+pretty SOURCE1\book\win\ch06\06fig10.wrl
+pretty SOURCE1\book\win\ch06\06fig11.wrl
+pretty SOURCE1\book\win\ch06\06fig12.wrl
+pretty SOURCE1\book\win\ch07\
+pretty SOURCE1\book\win\ch07\07fig04b.wrl
+pretty SOURCE1\book\win\ch07\07fig05b.wrl
+pretty SOURCE1\book\win\ch07\07fig06b.wrl
+pretty SOURCE1\book\win\ch07\07fig07b.wrl
+pretty SOURCE1\book\win\ch07\07fig08b.wrl
+pretty SOURCE1\book\win\ch07\07fig09.wrl
+pretty SOURCE1\book\win\ch07\07fig10.wrl
+pretty SOURCE1\book\win\ch07\07fig11.wrl
+pretty SOURCE1\book\win\ch07\07fig12a.wrl
+pretty SOURCE1\book\win\ch07\07fig12b.wrl
+pretty SOURCE1\book\win\ch07\07fig13.wrl
+pretty SOURCE1\book\win\ch08\
+pretty SOURCE1\book\win\ch08\08fig03.wrl
+pretty SOURCE1\book\win\ch08\08fig04.wrl
+pretty SOURCE1\book\win\ch08\08fig05.wrl
+pretty SOURCE1\book\win\ch08\08fig06.wrl
+pretty SOURCE1\book\win\ch08\08fig07.wrl
+pretty SOURCE1\book\win\ch08\08fig08.wrl
+pretty SOURCE1\book\win\ch09\
+pretty SOURCE1\book\win\ch09\09fig01.wrl
+pretty SOURCE1\book\win\ch09\09fig02.wrl
+pretty SOURCE1\book\win\ch09\09fig03.wrl
+pretty SOURCE1\book\win\ch09\09fig04.wrl
+pretty SOURCE1\book\win\ch09\09fig05.wrl
+pretty SOURCE1\book\win\ch09\09fig06.wrl
+pretty SOURCE1\book\win\ch09\09fig07.wrl
+pretty SOURCE1\book\win\ch09\09fig08.wrl
+pretty SOURCE1\book\win\ch09\09fig09.wrl
+pretty SOURCE1\book\win\ch10\
+pretty SOURCE1\book\win\ch10\10fig04.wrl
+pretty SOURCE1\book\win\ch10\10fig05.wrl
+pretty SOURCE1\book\win\ch10\10fig06.wrl
+pretty SOURCE1\book\win\ch10\10fig07.wrl
+pretty SOURCE1\book\win\ch10\10fig08.wrl
+pretty SOURCE1\book\win\ch10\10fig09.wrl
+pretty SOURCE1\book\win\ch10\10fig10.wrl
+pretty SOURCE1\book\win\ch10\10fig11.wrl
+pretty SOURCE1\book\win\ch10\10fig12.wrl
+pretty SOURCE1\book\win\ch11\
+pretty SOURCE1\book\win\ch11\11fig01a.wrl
+pretty SOURCE1\book\win\ch11\11fig01b.wrl
+pretty SOURCE1\book\win\ch11\11fig01c.wrl
+pretty SOURCE1\book\win\ch11\11fig02.wrl
+pretty SOURCE1\book\win\ch11\11fig03.wrl
+pretty SOURCE1\book\win\ch11\11fig04.wrl
+pretty SOURCE1\book\win\ch12\
+pretty SOURCE1\book\win\ch12\12fig01.wrl
+pretty SOURCE1\book\win\ch12\12fig02.wrl
+pretty SOURCE1\book\win\ch12\12fig03.wrl
+pretty SOURCE1\book\win\ch12\arch.wrl
+pretty SOURCE1\book\win\ch12\archrow.wrl
+pretty SOURCE1\book\win\ch13\
+pretty SOURCE1\book\win\ch13\13fig10.wrl
+pretty SOURCE1\book\win\ch13\13fig11.wrl
+pretty SOURCE1\book\win\ch13\13fig12.wrl
+pretty SOURCE1\book\win\ch13\13fig13.wrl
+pretty SOURCE1\book\win\ch13\13fig14.wrl
+pretty SOURCE1\book\win\ch13\13fig15.wrl
+pretty SOURCE1\book\win\ch13\13fig16.wrl
+pretty SOURCE1\book\win\ch13\13fig17.wrl
+pretty SOURCE1\book\win\ch13\vault.wrl
+pretty SOURCE1\book\win\ch14\
+pretty SOURCE1\book\win\ch14\14fig02.wrl
+pretty SOURCE1\book\win\ch14\14fig03.wrl
+pretty SOURCE1\book\win\ch14\14fig04a.wrl
+pretty SOURCE1\book\win\ch14\14fig04b.wrl
+pretty SOURCE1\book\win\ch14\14fig05.wrl
+pretty SOURCE1\book\win\ch14\14fig06.wrl
+pretty SOURCE1\book\win\ch14\ribbon.wrl
+pretty SOURCE1\book\win\ch15\
+pretty SOURCE1\book\win\ch15\15fig07.wrl
+pretty SOURCE1\book\win\ch15\15fig08.wrl
+pretty SOURCE1\book\win\ch15\15fig09.wrl
+pretty SOURCE1\book\win\ch15\15fig10.wrl
+pretty SOURCE1\book\win\ch15\15fig11.wrl
+pretty SOURCE1\book\win\ch15\15fig12.wrl
+pretty SOURCE1\book\win\ch15\15fig13.wrl
+pretty SOURCE1\book\win\ch15\15fig14.wrl
+pretty SOURCE1\book\win\ch15\15fig15.wrl
+pretty SOURCE1\book\win\ch15\15fig16.wrl
+pretty SOURCE1\book\win\ch15\15fig17.wrl
+pretty SOURCE1\book\win\ch16\
+pretty SOURCE1\book\win\ch16\16fig01.wrl
+pretty SOURCE1\book\win\ch16\16fig02.wrl
+pretty SOURCE1\book\win\ch16\16fig03.wrl
+pretty SOURCE1\book\win\ch16\16fig04.wrl
+pretty SOURCE1\book\win\ch16\16fig05.wrl
+pretty SOURCE1\book\win\ch16\16fig06.wrl
+pretty SOURCE1\book\win\ch16\16fig07.wrl
+pretty SOURCE1\book\win\ch17\
+pretty SOURCE1\book\win\ch17\17fig04a.wrl
+pretty SOURCE1\book\win\ch17\17fig04b.wrl
+pretty SOURCE1\book\win\ch17\17fig04c.wrl
+pretty SOURCE1\book\win\ch17\17fig04d.wrl
+pretty SOURCE1\book\win\ch17\17fig05d.wrl
+pretty SOURCE1\book\win\ch17\17fig06b.wrl
+pretty SOURCE1\book\win\ch17\17fig07b.wrl
+pretty SOURCE1\book\win\ch17\17fig08b.wrl
+pretty SOURCE1\book\win\ch17\17fig09b.wrl
+pretty SOURCE1\book\win\ch17\17fig10c.wrl
+pretty SOURCE1\book\win\ch17\17fig11b.wrl
+pretty SOURCE1\book\win\ch17\17fig12b.wrl
+pretty SOURCE1\book\win\ch17\17fig13.wrl
+pretty SOURCE1\book\win\ch17\17fig14b.wrl
+pretty SOURCE1\book\win\ch18\
+pretty SOURCE1\book\win\ch18\18fig19b.wrl
+pretty SOURCE1\book\win\ch18\18fig20b.wrl
+pretty SOURCE1\book\win\ch18\18fig21.wrl
+pretty SOURCE1\book\win\ch18\18fig22b.wrl
+pretty SOURCE1\book\win\ch18\18fig23b.wrl
+pretty SOURCE1\book\win\ch18\18fig24.wrl
+pretty SOURCE1\book\win\ch18\18fig25b.wrl
+pretty SOURCE1\book\win\ch18\18fig26b.wrl
+pretty SOURCE1\book\win\ch18\18fig26c.wrl
+pretty SOURCE1\book\win\ch18\18fig27.wrl
+pretty SOURCE1\book\win\ch19\
+pretty SOURCE1\book\win\ch19\19fig21.wrl
+pretty SOURCE1\book\win\ch19\19fig22.wrl
+pretty SOURCE1\book\win\ch19\19fig23.wrl
+pretty SOURCE1\book\win\ch19\19fig24a.wrl
+pretty SOURCE1\book\win\ch19\19fig24b.wrl
+pretty SOURCE1\book\win\ch19\19fig25a.wrl
+pretty SOURCE1\book\win\ch19\19fig25b.wrl
+pretty SOURCE1\book\win\ch19\19fig26.wrl
+pretty SOURCE1\book\win\ch19\19fig27.wrl
+pretty SOURCE1\book\win\ch19\colca1.wrl
+pretty SOURCE1\book\win\ch19\colsmth.wrl
+pretty SOURCE1\book\win\ch20\
+pretty SOURCE1\book\win\ch20\20fig04.wrl
+pretty SOURCE1\book\win\ch20\20fig05.wrl
+pretty SOURCE1\book\win\ch20\20fig06a.wrl
+pretty SOURCE1\book\win\ch20\20fig06b.wrl
+pretty SOURCE1\book\win\ch20\20fig07.wrl
+pretty SOURCE1\book\win\ch20\20fig08.wrl
+pretty SOURCE1\book\win\ch20\20fig09.wrl
+pretty SOURCE1\book\win\ch20\20fig10.wrl
+pretty SOURCE1\book\win\ch20\20fig11a.wrl
+pretty SOURCE1\book\win\ch20\20fig11b.wrl
+pretty SOURCE1\book\win\ch20\20fig12.wrl
+pretty SOURCE1\book\win\ch20\20fig13a.wrl
+pretty SOURCE1\book\win\ch20\20fig13b.wrl
+pretty SOURCE1\book\win\ch20\20fig13c.wrl
+pretty SOURCE1\book\win\ch20\20fig14.wrl
+pretty SOURCE1\book\win\ch20\20fig15a.wrl
+pretty SOURCE1\book\win\ch20\20fig15b.wrl
+pretty SOURCE1\book\win\ch20\20fig16a.wrl
+pretty SOURCE1\book\win\ch20\20fig16b.wrl
+pretty SOURCE1\book\win\ch20\20fig16c.wrl
+pretty SOURCE1\book\win\ch20\20fig17a.wrl
+pretty SOURCE1\book\win\ch20\20fig17b.wrl
+pretty SOURCE1\book\win\ch20\mesh.wrl
+pretty SOURCE1\book\win\ch20\spheres.wrl
+pretty SOURCE1\book\win\ch20\vault.wrl
+pretty SOURCE1\book\win\ch20\vaulted.wrl
+pretty SOURCE1\book\win\ch21\
+pretty SOURCE1\book\win\ch21\21fig04a.wrl
+pretty SOURCE1\book\win\ch21\21fig04b.wrl
+pretty SOURCE1\book\win\ch21\21fig04c.wrl
+pretty SOURCE1\book\win\ch21\21fig04d.wrl
+pretty SOURCE1\book\win\ch21\21fig05.wrl
+pretty SOURCE1\book\win\ch22\
+pretty SOURCE1\book\win\ch22\22fig01.wrl
+pretty SOURCE1\book\win\ch22\22fig02.wrl
+pretty SOURCE1\book\win\ch22\22fig03c.wrl
+pretty SOURCE1\book\win\ch22\22fig04.wrl
+pretty SOURCE1\book\win\ch23\
+pretty SOURCE1\book\win\ch23\23fig01.wrl
+pretty SOURCE1\book\win\ch23\23fig02a.wrl
+pretty SOURCE1\book\win\ch23\23fig02b.wrl
+pretty SOURCE1\book\win\ch23\23fig02c.wrl
+pretty SOURCE1\book\win\ch23\23fig02d.wrl
+pretty SOURCE1\book\win\ch23\23fig03a.wrl
+pretty SOURCE1\book\win\ch23\23fig03b.wrl
+pretty SOURCE1\book\win\ch23\23fig03c.wrl
+pretty SOURCE1\book\win\ch23\23fig04.wrl
+pretty SOURCE1\book\win\ch23\23fig05.wrl
+pretty SOURCE1\book\win\ch23\fogworld.wrl
+pretty SOURCE1\book\win\ch24\
+pretty SOURCE1\book\win\ch24\24fig01.wrl
+pretty SOURCE1\book\win\ch24\24fig02.wrl
+pretty SOURCE1\book\win\ch24\24fig03.wrl
+pretty SOURCE1\book\win\ch24\24fig04.wrl
+pretty SOURCE1\book\win\ch24\24fig05.wrl
+pretty SOURCE1\book\win\ch24\24fig06.wrl
+pretty SOURCE1\book\win\ch24\sndmark.wrl
+pretty SOURCE1\book\win\ch25\
+pretty SOURCE1\book\win\ch25\25fig01.wrl
+pretty SOURCE1\book\win\ch25\25fig02.wrl
+pretty SOURCE1\book\win\ch25\25fig03.wrl
+pretty SOURCE1\book\win\ch25\25fig04.wrl
+pretty SOURCE1\book\win\ch25\25fig05.wrl
+pretty SOURCE1\book\win\ch25\25fig06.wrl
+pretty SOURCE1\book\win\ch25\25fig07.wrl
+pretty SOURCE1\book\win\ch25\25fig08.wrl
+pretty SOURCE1\book\win\ch25\25fig09.wrl
+pretty SOURCE1\book\win\ch25\25fig10.wrl
+pretty SOURCE1\book\win\ch25\25fig11.wrl
+pretty SOURCE1\book\win\ch25\25fig12.wrl
+pretty SOURCE1\book\win\ch25\ddoor.wrl
+pretty SOURCE1\book\win\ch25\dfloor.wrl
+pretty SOURCE1\book\win\ch25\droom.wrl
+pretty SOURCE1\book\win\ch25\dwall.wrl
+pretty SOURCE1\book\win\ch25\dwall2.wrl
+pretty SOURCE1\book\win\ch25\torch1.wrl
+pretty SOURCE1\book\win\ch25\torch2.wrl
+pretty SOURCE1\book\win\ch25\torch3.wrl
+pretty SOURCE1\book\win\ch25\torches.wrl
+pretty SOURCE1\book\win\ch26\
+pretty SOURCE1\book\win\ch26\26fig04.wrl
+pretty SOURCE1\book\win\ch26\26fig05.wrl
+pretty SOURCE1\book\win\ch26\26fig06a.wrl
+pretty SOURCE1\book\win\ch26\26fig06b.wrl
+pretty SOURCE1\book\win\ch26\26fig07.wrl
+pretty SOURCE1\book\win\ch26\ddoor.wrl
+pretty SOURCE1\book\win\ch26\dfloor.wrl
+pretty SOURCE1\book\win\ch26\droom.wrl
+pretty SOURCE1\book\win\ch26\dungeon.wrl
+pretty SOURCE1\book\win\ch26\dwall.wrl
+pretty SOURCE1\book\win\ch26\dwall2.wrl
+pretty SOURCE1\book\win\ch26\torch1.wrl
+pretty SOURCE1\book\win\ch26\torch2.wrl
+pretty SOURCE1\book\win\ch26\torch3.wrl
+pretty SOURCE1\book\win\ch26\torches.wrl
+pretty SOURCE1\book\win\ch27\
+pretty SOURCE1\book\win\ch27\27fig01.wrl
+pretty SOURCE1\book\win\ch27\27fig02.wrl
+pretty SOURCE1\book\win\ch27\27fig03.wrl
+pretty SOURCE1\book\win\ch27\ddoor.wrl
+pretty SOURCE1\book\win\ch27\dfloor.wrl
+pretty SOURCE1\book\win\ch27\droom.wrl
+pretty SOURCE1\book\win\ch27\dwall.wrl
+pretty SOURCE1\book\win\ch27\dwall2.wrl
+pretty SOURCE1\book\win\ch27\torch1.wrl
+pretty SOURCE1\book\win\ch27\torch2.wrl
+pretty SOURCE1\book\win\ch27\torch3.wrl
+pretty SOURCE1\book\win\ch27\torches.wrl
+pretty SOURCE1\book\win\ch28\
+pretty SOURCE1\book\win\ch28\28fig01.wrl
+pretty SOURCE1\book\win\ch28\28fig02.wrl
+pretty SOURCE1\book\win\ch28\ddoor.wrl
+pretty SOURCE1\book\win\ch28\dfloor.wrl
+pretty SOURCE1\book\win\ch28\dngnwrld.wrl
+pretty SOURCE1\book\win\ch28\droom.wrl
+pretty SOURCE1\book\win\ch28\dungeon.wrl
+pretty SOURCE1\book\win\ch28\dwall.wrl
+pretty SOURCE1\book\win\ch28\dwall2.wrl
+pretty SOURCE1\book\win\ch28\torch1.wrl
+pretty SOURCE1\book\win\ch28\torch2.wrl
+pretty SOURCE1\book\win\ch28\torch3.wrl
+pretty SOURCE1\book\win\ch28\torches.wrl
+pretty SOURCE1\book\win\ch29\
+pretty SOURCE1\book\win\ch29\29fig01.wrl
+pretty SOURCE1\book\win\ch29\ddoor.wrl
+pretty SOURCE1\book\win\ch29\dfloor.wrl
+pretty SOURCE1\book\win\ch29\droom.wrl
+pretty SOURCE1\book\win\ch29\dungeon.wrl
+pretty SOURCE1\book\win\ch29\dwall.wrl
+pretty SOURCE1\book\win\ch29\dwall2.wrl
+pretty SOURCE1\book\win\ch29\torch1.wrl
+pretty SOURCE1\book\win\ch29\torch2.wrl
+pretty SOURCE1\book\win\ch29\torch3.wrl
+pretty SOURCE1\book\win\ch29\torches.wrl
+pretty SOURCE1\book\win\ch30\
+pretty SOURCE1\book\win\ch30\30fig01.wrl
+pretty SOURCE1\book\win\ch30\30fig02.wrl
+pretty SOURCE1\book\win\ch30\30fig03.wrl
+pretty SOURCE1\book\win\ch30\30fig04.wrl
+pretty SOURCE1\book\win\ch30\30fig05.wrl
+pretty SOURCE1\book\win\ch31\
+pretty SOURCE1\book\win\ch31\31fig01.wrl
+pretty SOURCE1\book\win\ch31\31fig02.wrl
+pretty SOURCE1\book\win\ch31\31fig02.wrl
+pretty SOURCE1\book\win\ch31\31fig03.wrl
+pretty SOURCE1\book\win\ch31\31fig04.wrl
+pretty SOURCE1\book\win\ch31\31fig06.wrl
+pretty SOURCE1\book\win\ch31\31fig08.wrl
+pretty SOURCE1\book\win\ch31\31fig09.wrl
+pretty SOURCE1\book\win\ch31\applib.wrl
+pretty SOURCE1\book\win\ch31\donutpro.wrl
+pretty SOURCE1\book\win\ch31\matlib.wrl
+
+pretty SOURCE1\software\
+pretty SOURCE1\software\3name3d\
+pretty SOURCE1\software\3name3d\objects\
+pretty SOURCE1\software\3name3d\objects\win\
+pretty SOURCE1\software\3name3d\objects\win\03couch2.wrl
+pretty SOURCE1\software\3name3d\objects\win\03hamer1.wrl
+pretty SOURCE1\software\3name3d\objects\win\03trunk1.wrl
+pretty SOURCE1\software\3name3d\objects\win\03wlamp4.wrl
+pretty SOURCE1\software\3name3d\objects\win\04frplc2.wrl
+pretty SOURCE1\software\3name3d\objects\win\05sword3.wrl
+pretty SOURCE1\software\3name3d\objects\win\06door1.wrl
+pretty SOURCE1\software\3name3d\objects\win\07mtlstr.wrl
+pretty SOURCE1\software\3name3d\objects\win\08pilstr.wrl
+pretty SOURCE1\software\3rddim\
+pretty SOURCE1\software\3rddim\win\
+pretty SOURCE1\software\3rddim\win\autos\
+pretty SOURCE1\software\3rddim\win\autos\jetta\
+pretty SOURCE1\software\3rddim\win\autos\jetta\jetta_2.wrl
+pretty SOURCE1\software\3rddim\win\autos\lincoln\
+pretty SOURCE1\software\3rddim\win\autos\lincoln\lincln_2.wrl
+pretty SOURCE1\software\3rddim\win\autos\ls400\
+pretty SOURCE1\software\3rddim\win\autos\ls400\ls400_2.wrl
+pretty SOURCE1\software\3rddim\win\avatars\
+pretty SOURCE1\software\3rddim\win\avatars\damon\
+pretty SOURCE1\software\3rddim\win\avatars\damon\dam_m_2.wrl
+pretty SOURCE1\software\3rddim\win\avatars\damon\damon_2.wrl
+pretty SOURCE1\software\3rddim\win\avatars\female\
+pretty SOURCE1\software\3rddim\win\avatars\female\ruth_2.wrl
+pretty SOURCE1\software\3rddim\win\avatars\frank\
+pretty SOURCE1\software\3rddim\win\avatars\frank\frankm_2.wrl
+pretty SOURCE1\software\3rddim\win\avatars\male\
+pretty SOURCE1\software\3rddim\win\avatars\male\dmnbod_2.wrl
+pretty SOURCE1\software\3rddim\win\avatars\ray\
+pretty SOURCE1\software\3rddim\win\avatars\ray\ray_2.wrl
+pretty SOURCE1\software\3rddim\win\products\
+pretty SOURCE1\software\3rddim\win\products\amp\
+pretty SOURCE1\software\3rddim\win\products\amp\amptst_2.wrl
+pretty SOURCE1\software\3rddim\win\products\bigscrn\
+pretty SOURCE1\software\3rddim\win\products\bigscrn\bigtvm_2.wrl
+pretty SOURCE1\software\3rddim\win\products\hp4\
+pretty SOURCE1\software\3rddim\win\products\hp4\hp4_2.wrl
+
+pretty SOURCE2\
+pretty SOURCE2\appearance\
+pretty SOURCE2\appearance\appearance.wrl
+pretty SOURCE2\appearance\appearance2.wrl
+pretty SOURCE2\appearance\material.wrl
+pretty SOURCE2\appearance\texturedbox.wrl
+pretty SOURCE2\appearance\texturetransform.wrl
+pretty SOURCE2\appearance\texturetransform1.wrl
+pretty SOURCE2\appearance\texturetransform2.wrl
+pretty SOURCE2\bindable\
+pretty SOURCE2\bindable\background.wrl
+pretty SOURCE2\bindable\fog.wrl
+pretty SOURCE2\bindable\viewpoints.wrl
+pretty SOURCE2\bindable\viewpoints1.wrl
+pretty SOURCE2\common\
+pretty SOURCE2\common\pointlight.wrl
+pretty SOURCE2\common\shape.wrl
+pretty SOURCE2\common\sound.wrl
+pretty SOURCE2\common\spotlight1.wrl
+pretty SOURCE2\common\spotlight2.wrl
+pretty SOURCE2\common\worldinfo.wrl
+pretty SOURCE2\defuse\
+pretty SOURCE2\defuse\defuse1.wrl
+pretty SOURCE2\defuse\defuse2.wrl
+pretty SOURCE2\defuse\defuse3.wrl
+pretty SOURCE2\geometry\
+pretty SOURCE2\geometry\box.wrl
+pretty SOURCE2\geometry\box1.wrl
+pretty SOURCE2\geometry\box2.wrl
+pretty SOURCE2\geometry\box3.wrl
+pretty SOURCE2\geometry\cone.wrl
+pretty SOURCE2\geometry\cone1.wrl
+pretty SOURCE2\geometry\cylinder.wrl
+pretty SOURCE2\geometry\cylinder1.wrl
+pretty SOURCE2\geometry\elevationgrid.wrl
+pretty SOURCE2\geometry\faceset1.wrl
+pretty SOURCE2\geometry\inline.wrl
+pretty SOURCE2\geometry\lineset.wrl
+pretty SOURCE2\geometry\lineset1.wrl
+pretty SOURCE2\geometry\pointset.wrl
+pretty SOURCE2\geometry\pointset1.wrl
+pretty SOURCE2\geometry\sphere.wrl
+pretty SOURCE2\geometry\sphere1.wrl
+pretty SOURCE2\geometry\sphere2.wrl
+pretty SOURCE2\geometry\textures.wrl
+pretty SOURCE2\grouping\
+pretty SOURCE2\grouping\anchor.wrl
+pretty SOURCE2\grouping\anchor1.wrl
+pretty SOURCE2\grouping\anchor2.wrl
+pretty SOURCE2\grouping\anchor3.wrl
+pretty SOURCE2\grouping\anchor4.wrl
+pretty SOURCE2\grouping\billboard.wrl
+pretty SOURCE2\grouping\billboard1.wrl
+pretty SOURCE2\grouping\billboard2.wrl
+pretty SOURCE2\grouping\lod.wrl
+pretty SOURCE2\grouping\switch.wrl
+pretty SOURCE2\interpolator\
+pretty SOURCE2\interpolator\coordinterpolator.wrl
+pretty SOURCE2\interpolator\interpolators.wrl
+pretty SOURCE2\interpolator\orientationinterpolator.wrl
+pretty SOURCE2\interpolator\positioninterpolator.wrl
+pretty SOURCE2\interpolator\scalarinterpolator.wrl
+pretty SOURCE2\proto\
+pretty SOURCE2\proto\prototest1.wrl
+pretty SOURCE2\proto\prototest2.wrl
+pretty SOURCE2\proto\prototest3.wrl
+pretty SOURCE2\sensor\
+pretty SOURCE2\sensor\planesensor1.wrl
+pretty SOURCE2\sensor\planesensor2.wrl
+pretty SOURCE2\sensor\planesensor3.wrl
+pretty SOURCE2\sensor\proximitysensor.wrl
+pretty SOURCE2\sensor\timesensor.wrl
+pretty SOURCE2\sensor\touchsensor.wrl
+pretty SOURCE2\sensor\touchsensor1.wrl
+
+pretty SOURCE3\
+pretty SOURCE3\add.wrl
+pretty SOURCE3\add1.wrl
+pretty SOURCE3\anchor.wrl
+pretty SOURCE3\bimos_00.wrl
+pretty SOURCE3\colourme.wrl
+pretty SOURCE3\complica.wrl
+pretty SOURCE3\crock.wrl
+pretty SOURCE3\demon.wrl
+pretty SOURCE3\elmo.wrl
+pretty SOURCE3\harp.wrl
+pretty SOURCE3\hud.wrl
+pretty SOURCE3\hud_exam.wrl
+pretty SOURCE3\hud3.wrl
+pretty SOURCE3\outsidet.wrl
+pretty SOURCE3\pie3.wrl
+pretty SOURCE3\pointset.wrl
+pretty SOURCE3\renderbu.wrl
+pretty SOURCE3\sateli~1.wrl
+pretty SOURCE3\scene.wrl
+pretty SOURCE3\sham.wrl
+pretty SOURCE3\simple2.wrl
+pretty SOURCE3\sphere.wrl
+pretty SOURCE3\sphere_j.wrl
+pretty SOURCE3\spotligh.wrl
+pretty SOURCE3\waterf~1.wrl
+pretty SOURCE3\bugs\
+pretty SOURCE3\bugs\billbo~1.wrl
+pretty SOURCE3\bugs\defuse.wrl
+pretty SOURCE3\bugs\test.wrl
+pretty SOURCE3\bugs\test1.wrl
+pretty SOURCE3\bugs\viewpo~1.wrl
+pretty SOURCE3\net\
+pretty SOURCE3\net\bb.wrl
+pretty SOURCE3\net\birdca~1.wrl
+pretty SOURCE3\net\birdca~2.wrl
+pretty SOURCE3\net\birdcage.wrl
+pretty SOURCE3\net\boxerb~1.wrl
+pretty SOURCE3\net\cabin.wrl
+pretty SOURCE3\net\crash.wrl
+pretty SOURCE3\net\cwgp.wrl
+pretty SOURCE3\net\door.wrl
+pretty SOURCE3\net\door1.wrl
+pretty SOURCE3\net\door2.wrl
+pretty SOURCE3\net\elevator.wrl
+pretty SOURCE3\net\face1.wrl
+pretty SOURCE3\net\face2.wrl
+pretty SOURCE3\net\face3.wrl
+pretty SOURCE3\net\las.wrl
+pretty SOURCE3\net\monduck.wrl
+pretty SOURCE3\net\planesen.wrl
+pretty SOURCE3\net\proxsn.wrl
+pretty SOURCE3\net\seed.wrl
+pretty SOURCE3\net\seed1.wrl
+pretty SOURCE3\net\solar.wrl
+pretty SOURCE3\net\switch.wrl
+pretty SOURCE3\net\test.wrl
+pretty SOURCE3\net\touchme.wrl
+
+pretty SOURCE4\
+pretty SOURCE4\30fig01.wrl
+pretty SOURCE4\30fig02.wrl
+pretty SOURCE4\30fig03.wrl
+pretty SOURCE4\30fig04.wrl
+pretty SOURCE4\30fig05.wrl
+pretty SOURCE4\31fig01.wrl
+pretty SOURCE4\31fig02.wrl
+pretty SOURCE4\31fig03.wrl
+pretty SOURCE4\31fig04.wrl
+pretty SOURCE4\31fig06.wrl
+pretty SOURCE4\31fig08.wrl
+pretty SOURCE4\31fig09.wrl
+pretty SOURCE4\applib.wrl
+pretty SOURCE4\donutpro.wrl
+pretty SOURCE4\ex4.wrl
+pretty SOURCE4\ex5.wrl
+pretty SOURCE4\matlib.wrl
+pretty SOURCE4\protot~2.wrl
+pretty SOURCE4\protot~3.wrl
+pretty SOURCE4\rfrmtl.wrl
+pretty SOURCE4\rotor.wrl
+pretty SOURCE4\switch.wrl
+
+# The following files have some sort of bug when parsed
+#B1 Texture maps read in (or written out) incorrectly
+#B1 pretty SOURCE2\appearance\pixeltexture.wrl
+
+#B2 pretty SOURCE1\book\win\ch31\31fig07.wrl
+#B2 pretty SOURCE4\31fig07.wrl
+#B2 UNKNOWN!
+
+#B3 PROTO field not found for ROUTE
+#B3	pretty SOURCE0\egs\script.wrl
+#B3	pretty SOURCE0\egs\touchsn.wrl
+#B3	pretty SOURCE4\script.wrl
+#B3	pretty SOURCE4\touchsn.wrl
+
+#B4 PROTO Field used in script but nowhere else
+#B4	pretty SOURCE0\samples\ex14.wrl
+#B4	pretty SOURCE4\ex14.wrl
+
+#B5 Core Dump
+#B5	pretty SOURCE1\book\win\ch31\31fig05.wrl
+#B5	pretty SOURCE4\31fig05.wrl
+
+#B6 Nested PROTO
+#B6	pretty SOURCE2\proto\prototest1.wrl
+#B6	pretty SOURCE4\protot~1.wrl
+
+#B7 No carrage return with new line (or something like that)
+#B7	pretty SOURCE0\samples\ex15.wrl
+#B7	pretty SOURCE0\samples\ex16.wrl
+#B7	pretty SOURCE0\samples\ex7.wrl
+#B7	pretty SOURCE4\ex15.wrl
+#B7	pretty SOURCE4\ex16.wrl
+#B7	pretty SOURCE4\ex7.wrl
+
+#B8 Untested
+#B8 pretty SOURCE3\vcrcon~1.wrl
+#B8	pretty SOURCE3\alien.wrl
+#B8	pretty SOURCE3\bugs/headli~1.wrl
+#B8	pretty SOURCE3\bugs/noparse.wrl
+#B8	pretty SOURCE3\conetree.wrl
+#B8	pretty SOURCE3\cosmo.wrl
+#B8	pretty SOURCE3\hud31.wrl
+#B8	pretty SOURCE3\net/anchorcp.wrl
+#B8	pretty SOURCE3\net/face.wrl
+#B8	pretty SOURCE3\net/facez.wrl
+#B8	pretty SOURCE3\net/ik.wrl
+#B8	pretty SOURCE3\net/ik2.wrl
+#B8	pretty SOURCE3\net/kids.wrl
+#B8	pretty SOURCE3\net/nancy_~1.wrl
+#B8	pretty SOURCE3\net/poke.wrl
+#B8	pretty SOURCE3\net/script.wrl
+#B8	pretty SOURCE3\net/testtr~1.wrl
+#B8	pretty SOURCE3\net/touch.wrl
+#B8	pretty SOURCE3\net/touch1.wrl
+#B8	pretty SOURCE3\organiz.wrl
+#B8	pretty SOURCE3\overlay.wrl
+#B8	pretty SOURCE3\pmenu.wrl
+#B8	pretty SOURCE3\puzzle.wrl
+#B8	pretty SOURCE3\rfn.wrl
+#B8	pretty SOURCE3\testprot.wrl
+#B8	pretty SOURCE3\thing.wrl
+#B8	pretty SOURCE3\tigr7.wrl
+#B8	pretty SOURCE3\vcrcontr.wrl
+#B8	pretty SOURCE3\wtetra.wrl

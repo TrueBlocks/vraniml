@@ -1,0 +1,291 @@
+<html><head><title>vrPixelTexture Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrPixelTexture</a></h1>
+<dl>
+<dd>
+	This class corresponds to the PixelTexture node in VRML.  
+	<a href="../spec/part1/nodesRef.html#PixelTexture">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrpixeltexture.htm#aag">Summary</a> | </a>
+<a href="vrpixeltexture.htm#DESCRIPTION">Description</a> | 
+<a href="vrpixeltexture.htm#NOTES">Notes</a> | 
+<a href="vrpixeltexture.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrpixeltexture.htm#MEMBERS">Members</a> | 
+<a href="vrpixeltexture.htm#parents">Ancestors</a> | <a href="vrpixeltexture.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrPixelTexture : public <a href="vrNode.htm">vrNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrPixelTexture.htm#vrPixelTexture(void)$">vrPixelTexture</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrPixelTexture.htm#vrPixelTexture(const_vrPixelTexture&amp;_v)$">vrPixelTexture</a>(const vrPixelTexture&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrPixelTexture.htm#~vrPixelTexture(void)$">vrPixelTexture</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrPixelTexture&amp; </td><td><a href="vrPixelTexture.htm#vrPixelTexture&amp;_operator$(const_vrPixelTexture&amp;_v)$">operator=</a>(const vrPixelTexture&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrPixelTexture.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrPixelTexture.htm#void_SetRepeatS(SFBool_repeats)$">SetRepeatS</a>(SFBool repeats);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrPixelTexture.htm#void_SetRepeatT(SFBool_repeatt)$">SetRepeatT</a>(SFBool repeatt);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrPixelTexture.htm#void_SetWidth(SFInt32_width)$">SetWidth</a>(SFInt32 width);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrPixelTexture.htm#void_SetHeight(SFInt32_height)$">SetHeight</a>(SFInt32 height);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrPixelTexture.htm#void_SetNComponents(SFInt32_ncomponents)$">SetNComponents</a>(SFInt32 ncomponents);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrPixelTexture.htm#void_SetFormat(SFInt32_format)$">SetFormat</a>(SFInt32 format);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrPixelTexture.htm#void_SetColorBuffer(const_SFImage&amp;_colorbuffer)$">SetColorBuffer</a>(const <a href="SFImage.htm">SFImage</a>&amp; colorbuffer);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrPixelTexture.htm#SFBool_GetRepeatS(void)_const$">GetRepeatS</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrPixelTexture.htm#SFBool_GetRepeatT(void)_const$">GetRepeatT</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrPixelTexture.htm#SFInt32_GetWidth(void)_const$">GetWidth</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrPixelTexture.htm#SFInt32_GetHeight(void)_const$">GetHeight</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrPixelTexture.htm#SFInt32_GetNComponents(void)_const$">GetNComponents</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrPixelTexture.htm#SFInt32_GetFormat(void)_const$">GetFormat</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">char *</td><td><a href="vrPixelTexture.htm#char_*GetColorBuffer(void)_const$">GetColorBuffer</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrPixelTexture.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrPixelTexture.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrPixelTexture.htm#DECLARE_NODE(vrPixelTexture)$">DECLARE_NODE</a>(vrPixelTexture);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrPixelTexture.htm#SFBool_m_RepeatS$">m_RepeatS</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrPixelTexture.htm#SFBool_m_RepeatT$">m_RepeatT</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrPixelTexture.htm#SFInt32_m_Width$">m_Width</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrPixelTexture.htm#SFInt32_m_Height$">m_Height</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrPixelTexture.htm#SFInt32_m_NComponents$">m_NComponents</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrPixelTexture.htm#SFInt32_m_Format$">m_Format</a>;</td></tr>
+<tr><td align="right" valign="top">char *</td><td><a href="vrPixelTexture.htm#char_*m_ColorBuffer$">m_ColorBuffer</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the PixelTexture node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#PixelTexture">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFBool_m_RepeatS$"><ul><h3><li>SFBool m_RepeatS;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'repeatS' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_RepeatT$"><ul><h3><li>SFBool m_RepeatT;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'repeatT' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_Width$"><ul><h3><li>SFInt32 m_Width;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'width' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_Height$"><ul><h3><li>SFInt32 m_Height;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'height' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_NComponents$"><ul><h3><li>SFInt32 m_NComponents;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'nComponents' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_Format$"><ul><h3><li>SFInt32 m_Format;</li></h3></a>
+</ul>
+</ul>	  <dd>Format of the color data buffer.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0x1908</strong>
+<p>
+</dl></dl>
+<a name="char_*m_ColorBuffer$"><ul><h3><li>char *m_ColorBuffer;</li></h3></a>
+</ul>
+</ul>	  <dd>Color data buffer.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="vrPixelTexture(void)$"><ul><h3><li>vrPixelTexture(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrPixelTexture(const_vrPixelTexture&amp;_v)$"><ul><h3><li>vrPixelTexture(const vrPixelTexture&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrPixelTexture(void)$"><ul><h3><li>~vrPixelTexture(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrPixelTexture&amp;_operator$(const_vrPixelTexture&amp;_v)$"><ul><h3><li>vrPixelTexture&amp; operator=(const vrPixelTexture&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_SetRepeatS(SFBool_repeats)$"><ul><h3><li>void SetRepeatS(SFBool repeats);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_RepeatS member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> repeats:</strong>
+<dd>The repeats value.
+<p>
+</dl></dl>
+<a name="void_SetRepeatT(SFBool_repeatt)$"><ul><h3><li>void SetRepeatT(SFBool repeatt);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_RepeatT member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> repeatt:</strong>
+<dd>The repeatt value.
+<p>
+</dl></dl>
+<a name="void_SetWidth(SFInt32_width)$"><ul><h3><li>void SetWidth(SFInt32 width);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Width member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> width:</strong>
+<dd>The width value.
+<p>
+</dl></dl>
+<a name="void_SetHeight(SFInt32_height)$"><ul><h3><li>void SetHeight(SFInt32 height);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Height member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> height:</strong>
+<dd>The height value.
+<p>
+</dl></dl>
+<a name="void_SetNComponents(SFInt32_ncomponents)$"><ul><h3><li>void SetNComponents(SFInt32 ncomponents);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_NComponents member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> ncomponents:</strong>
+<dd>The ncomponents value.
+<p>
+</dl></dl>
+<a name="void_SetFormat(SFInt32_format)$"><ul><h3><li>void SetFormat(SFInt32 format);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Format member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> format:</strong>
+<dd>The format value.
+<p>
+</dl></dl>
+<a name="void_SetColorBuffer(const_SFImage&amp;_colorbuffer)$"><ul><h3><li>void SetColorBuffer(const SFImage&amp; colorbuffer);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_ColorBuffer member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> colorbuffer:</strong>
+<dd>The colorbuffer value.
+<p>
+</dl></dl>
+<a name="SFBool_GetRepeatS(void)_const$"><ul><h3><li>SFBool GetRepeatS(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_RepeatS member.
+<p>
+<a name="SFBool_GetRepeatT(void)_const$"><ul><h3><li>SFBool GetRepeatT(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_RepeatT member.
+<p>
+<a name="SFInt32_GetWidth(void)_const$"><ul><h3><li>SFInt32 GetWidth(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Width member.
+<p>
+<a name="SFInt32_GetHeight(void)_const$"><ul><h3><li>SFInt32 GetHeight(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Height member.
+<p>
+<a name="SFInt32_GetNComponents(void)_const$"><ul><h3><li>SFInt32 GetNComponents(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_NComponents member.
+<p>
+<a name="SFInt32_GetFormat(void)_const$"><ul><h3><li>SFInt32 GetFormat(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Format member.
+<p>
+<a name="char_*GetColorBuffer(void)_const$"><ul><h3><li>char *GetColorBuffer(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_ColorBuffer member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vrpixeltexture.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrPixelTexture)$"><ul><h3><li>DECLARE_NODE(vrPixelTexture);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed and dynamically created. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrPixelTexture:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrImageTexture.htm">vrImageTexture</a>
+<li><a href="vrMovieTexture.htm">vrMovieTexture</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:01 1999
+.<p>
+</body></html>

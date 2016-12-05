@@ -1,0 +1,47 @@
+Changes for Beta version 0.9.04
+2/2/99
+=========================================================
+Exposed vrSolid class and solid modeling operations to SDK users.
+Fixed a bug when opening URL's not in current working directory.
+Changes defeins of colro by adding 'vr' to them to avoid complaint from VC 6.0
+TimeSensor node played one too many ticks when not looping.
+Move some function to two new files: boolean.cpp and show.cpp
+Removasl of leadtools.dlls and fix to imglib.lib
+
+
+Changes for Beta version 0.9.03
+12/14/98
+=========================================================
+Most of the changes in this release of
+VRaniML involve upgrading and fixing
+the VRML 2.0 parser.  These changes
+should be transparent.
+
+Also, a lot of code was extracted out into
+a new .dll and .lib file called vrutils.lib.
+This library contains the basic classes including
+vector, matrix, container, and base node classes
+used by the vraniml.lib.  The source code for this
+library is now made freely available.
+
+Also, the previous image file format library was
+replaced with a freely available library called
+imglib.lib.  There are a few bugs remaining in
+this code so textures are kind of messed up but
+some formats (i.e. JPEG) should work OK.
+
+Also, the SFString class (which in previous versions
+was just a #define for a char*) has been replaced
+with full fledged String class.  This is the
+only change that we know of that will have an
+effect on already existing source code.  You should
+carefully search for any occurances of SFString in
+your existing application source code and replace
+it with char*.  Then re-build the application with
+the new definition of SFString.
+
+Finally, some function and variable names have
+changed. These are all documented in the file
+OldNames.h which you can include by #defining
+VR_INCLUDE_OLD_NAMES before including vraniml.h.
+

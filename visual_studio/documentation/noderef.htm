@@ -1,0 +1,72 @@
+<html>
+
+<head>
+<title>Node Classes</title>
+</head>
+
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF">
+
+<h1><img src="logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">VRML97 Node Classes</a></h1>
+
+<p>Each VRML97 Node as defined in the <a href="spec/index.html">VRML97 specification</a>
+has a corresponding VRaniML C++ class.&nbsp; This section of the manual describes each
+class in detail.&nbsp; Some classes are derived from base classes which are defined <a href="nodes.htm#BASES">here</a>. &nbsp; All VRML97 nodes are ultimately derived from the <a href="sdk/vrNode.htm">vrNode class</a>.</p>
+
+<hr>
+
+<p><strong>[ <a href="index.htm">Index </a>| <a href="Types.htm">Data Types</a> | <a href="../Documentation/define.htm">Defines</a> | <a href="functions.htm">Utility Functions</a> ]</strong></p>
+
+<hr>
+
+<h4><a name="Classes"><em>Appearance Nodes</em></a></h4>
+
+<p>&nbsp;&nbsp;&nbsp; <a href="sdk/vrAppearance.htm">vrAppearance</a>, <a href="sdk/vrFontStyle.htm">vrFontStyle</a>, <a href="sdk/vrImageTexture.htm">vrImageTexture</a>, <a href="sdk/vrMaterial.htm">vrMaterial</a>, <a href="sdk/vrMovieTexture.htm">vrMovieTexture</a>, <a href="sdk/vrPixelTexture.htm">vrPixelTexture</a>, <a href="sdk/vrTextureTransform.htm">vrTextureTransform</a></p>
+
+<h4><em>Bindable Nodes</em> </h4>
+
+<dl>
+  <dt>&nbsp;&nbsp;&nbsp; <a href="sdk/vrBackground.htm">vrBackground</a>, <a href="sdk/vrFog.htm">vrFog</a>,
+    <a href="sdk/vrNavigationInfo.htm">vrNavigationInfo</a>, <a href="sdk/vrViewpoint.htm">vrViewpoint</a></dt>
+</dl>
+
+<h4><em>Common Nodes</em></h4>
+
+<p>&nbsp;&nbsp;&nbsp; <a href="sdk/vrAudioClip.htm">vrAudioClip</a>, <a href="sdk/vrDirectionalLight.htm">vrDirectionalLight</a>, <a href="sdk/vrPointLight.htm">vrPointLight</a>,
+<a href="sdk/vrScript.htm">vrScript</a>, <a href="sdk/vrShape.htm">vrShape</a>, <a href="sdk/vrSound.htm">vrSound</a>, <a href="sdk/vrSpotLight.htm">vrSpotLight</a>, <a href="sdk/vrWorldInfo.htm">vrWorldInfo</a></p>
+
+<h4><em>Geometry Nodes</em></h4>
+
+<p>&nbsp;&nbsp;&nbsp; <a href="sdk/vrBox.htm">vrBox</a>, <a href="sdk/vrColor.htm">vrColor</a>, <a href="sdk/vrCone.htm">vrCone</a>, <a href="sdk/vrCoordinate.htm">vrCoordinate</a>, <a href="sdk/vrCylinder.htm">vrCylinder</a>, <a href="sdk/vrElevationGrid.htm">vrElevationGrid</a>, <a href="sdk/vrExtrusion.htm">vrExtrusion</a>, <a href="sdk/vrIndexedFaceSet.htm">vrIndexedFaceSet</a>,<br>
+&nbsp;&nbsp;&nbsp; <a href="sdk/vrIndexedLineSet.htm">vrIndexedLineSet</a>, <a href="sdk/vrNormal.htm">vrNormal</a>, <a href="sdk/vrPointSet.htm">vrPointSet</a>, <a href="sdk/vrSphere.htm">vrSphere</a>, <a href="sdk/vrText.htm">vrText</a>, <a href="sdk/vrTextureCoordinate.htm">vrTextureCoordinate</a></p>
+
+<h4><em>Grouping Nodes</em></h4>
+
+<p>&nbsp;&nbsp;&nbsp; <a href="sdk/vrAnchor.htm">vrAnchor</a>, <a href="sdk/vrBillboard.htm">vrBillboard</a>,
+<a href="sdk/vrCollision.htm">vrCollision</a>, <a href="sdk/vrGroup.htm">vrGroup</a>, <a href="sdk/vrInline.htm">vrInline</a>, <a href="sdk/vrLod.htm">vrLOD</a>, <a href="sdk/vrSwitch.htm">vrSwitch</a>,
+<a href="sdk/vrTransform.htm">vrTransform</a></p>
+
+<h4><em>Interpolator Nodes</em><a name="functions"></h4>
+
+<p></a>&nbsp;&nbsp;&nbsp; <a href="sdk/vrColorInterpolator.htm">vrColorInterpolator</a>, <a href="sdk/vrCoordinateInterpolator.htm">vrCoordinateInterpolator</a>, <a href="sdk/vrNormalInterpolator.htm">vrNormalInterpolator</a>, <a href="sdk/vrOrientationInterpolator.htm">vrOrientationInerpolator</a>,<br>
+&nbsp;&nbsp;&nbsp; <a href="sdk/vrPositionInterpolator.htm">vrPositionInterpolator</a>, <a href="sdk/vrScalarInterpolator.htm">vrScalarInterpolator</a><a name="functions"></p>
+</a>
+
+<h4><em>Sensor Nodes</em><a name="functions"></h4>
+
+<p></a>&nbsp;&nbsp;&nbsp; <a href="sdk/vrPointingDeviceSensor.htm">vrPointingDeviceSensor</a>,
+<a href="sdk/vrCylinderSensor.htm">vrCylinderSensor</a>, <a href="sdk/vrPlaneSensor.htm">vrPlaneSensor</a>,
+<a href="sdk/vrProximitySensor.htm">vrProximitySensor</a>, <a href="sdk/vrSphereSensor.htm">vrSphereSensor</a>,<br>
+&nbsp;&nbsp;&nbsp; <a href="sdk/vrTimeSensor.htm">vrTimeSensor</a>, <a href="sdk/vrTouchSensor.htm">vrTouchSensor</a>, <a href="sdk/vrVisibilitySensor.htm">vrVisibilitySensor</a><a name="functions"></p>
+</a>
+
+<h4><em><a name="BASES">Base Classes (non-VRML base classes for above)</a></em></h4>
+
+<p><em>&nbsp;&nbsp;&nbsp; </em><a href="sdk/vrNode.htm">vrNode</a>, <a href="sdk/vrGroupingNode.htm">vrGroupingNode</a>, <a href="sdk/vrBindable.htm">vrBindable</a>, <a href="sdk/vrLight.htm">vrLight</a>, <a href="sdk/vrGeometryNode.htm">vrGeometryNode</a>, <a href="sdk/vrDataSet.htm">vrDataSet</a>, <a href="sdk/vrInterpolator.htm">vrInterpolator</a>, <a href="sdk/vrSensor.htm">vrSensor</a></p>
+
+<h4><em><a name="OTHER">Other Classes</a></em></h4>
+
+<p><em>&nbsp;&nbsp;&nbsp; </em><a href="sdk/vrUserData.htm">vrUserData</a></p>
+
+<hr>
+</body>
+</html>

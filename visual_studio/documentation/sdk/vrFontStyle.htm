@@ -1,0 +1,361 @@
+<html><head><title>vrFontStyle Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrFontStyle</a></h1>
+<dl>
+<dd>
+	This class corresponds to the FontStyle node in VRML.  
+	<a href="../spec/part1/nodesRef.html#FontStyle">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrfontstyle.htm#aag">Summary</a> | </a>
+<a href="vrfontstyle.htm#DESCRIPTION">Description</a> | 
+<a href="vrfontstyle.htm#NOTES">Notes</a> | 
+<a href="vrfontstyle.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrfontstyle.htm#MEMBERS">Members</a> | 
+<a href="vrfontstyle.htm#parents">Ancestors</a> | <a href="vrfontstyle.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrFontStyle : public <a href="vrNode.htm">vrNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrFontStyle.htm#vrFontStyle(void)$">vrFontStyle</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrFontStyle.htm#vrFontStyle(const_vrFontStyle&amp;_v)$">vrFontStyle</a>(const vrFontStyle&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrFontStyle.htm#~vrFontStyle(void)$">vrFontStyle</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrFontStyle&amp; </td><td><a href="vrFontStyle.htm#vrFontStyle&amp;_operator$(const_vrFontStyle&amp;_v)$">operator=</a>(const vrFontStyle&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrFontStyle.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFontStyle.htm#void_SetFamily(const_SFString&amp;_family)$">SetFamily</a>(const <a href="SFString.htm">SFString</a>&amp; family);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFontStyle.htm#void_SetHorizontal(SFBool_horizontal)$">SetHorizontal</a>(SFBool horizontal);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFontStyle.htm#void_AddJustify(const_SFString&amp;_justify)$">AddJustify</a>(const <a href="SFString.htm">SFString</a>&amp; justify);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFontStyle.htm#void_SetJustify(const_MFString&amp;_justify)$">SetJustify</a>(const <a href="MFString.htm">MFString</a>&amp; justify);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFontStyle.htm#void_SetLanguage(const_SFString&amp;_language)$">SetLanguage</a>(const <a href="SFString.htm">SFString</a>&amp; language);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFontStyle.htm#void_SetLeftToRight(SFBool_lefttoright)$">SetLeftToRight</a>(SFBool lefttoright);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFontStyle.htm#void_SetSize(SFFloat_size)$">SetSize</a>(SFFloat size);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFontStyle.htm#void_SetSpacing(SFFloat_spacing)$">SetSpacing</a>(SFFloat spacing);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFontStyle.htm#void_SetStyle(const_SFString&amp;_style)$">SetStyle</a>(const <a href="SFString.htm">SFString</a>&amp; style);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFontStyle.htm#void_SetTopToBottom(SFBool_toptobottom)$">SetTopToBottom</a>(SFBool toptobottom);</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrFontStyle.htm#SFString_GetFamily(void)_const$">GetFamily</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFontStyle.htm#SFBool_GetHorizontal(void)_const$">GetHorizontal</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrFontStyle.htm#SFInt32_GetNJustifys(void)_const$">GetNJustifys</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrFontStyle.htm#SFString_GetJustify(SFInt32_n)_const$">GetJustify</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const <a href="MFString.htm">MFString</a>&amp; </td><td><a href="vrFontStyle.htm#const_MFString&amp;_GetJustifyArray(void)_const$">GetJustifyArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrFontStyle.htm#SFString_GetLanguage(void)_const$">GetLanguage</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFontStyle.htm#SFBool_GetLeftToRight(void)_const$">GetLeftToRight</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrFontStyle.htm#SFFloat_GetSize(void)_const$">GetSize</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrFontStyle.htm#SFFloat_GetSpacing(void)_const$">GetSpacing</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrFontStyle.htm#SFString_GetStyle(void)_const$">GetStyle</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFontStyle.htm#SFBool_GetTopToBottom(void)_const$">GetTopToBottom</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrFontStyle.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrFontStyle.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrFontStyle.htm#DECLARE_NODE(vrFontStyle)$">DECLARE_NODE</a>(vrFontStyle);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrFontStyle.htm#SFString_m_Family$">m_Family</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFontStyle.htm#SFBool_m_Horizontal$">m_Horizontal</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="MFString.htm">MFString</a> </td><td><a href="vrFontStyle.htm#MFString_m_Justify$">m_Justify</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrFontStyle.htm#SFString_m_Language$">m_Language</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFontStyle.htm#SFBool_m_LeftToRight$">m_LeftToRight</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrFontStyle.htm#SFFloat_m_Size$">m_Size</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrFontStyle.htm#SFFloat_m_Spacing$">m_Spacing</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrFontStyle.htm#SFString_m_Style$">m_Style</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFontStyle.htm#SFBool_m_TopToBottom$">m_TopToBottom</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the FontStyle node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#FontStyle">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFString_m_Family$"><ul><h3><li>SFString m_Family;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'family' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> &quot;SERIF&quot;</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_Horizontal$"><ul><h3><li>SFBool m_Horizontal;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'horizontal' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="MFString_m_Justify$"><ul><h3><li>MFString m_Justify;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'justify' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> &quot;BEGIN&quot;</strong>
+<p>
+</dl></dl>
+<a name="SFString_m_Language$"><ul><h3><li>SFString m_Language;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'language' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_LeftToRight$"><ul><h3><li>SFBool m_LeftToRight;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'leftToRight' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_Size$"><ul><h3><li>SFFloat m_Size;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'size' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 1.0</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_Spacing$"><ul><h3><li>SFFloat m_Spacing;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'spacing' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 1.0</strong>
+<p>
+</dl></dl>
+<a name="SFString_m_Style$"><ul><h3><li>SFString m_Style;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'style' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> &quot;PLAIN&quot;</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_TopToBottom$"><ul><h3><li>SFBool m_TopToBottom;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'topToBottom' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="vrFontStyle(void)$"><ul><h3><li>vrFontStyle(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrFontStyle(const_vrFontStyle&amp;_v)$"><ul><h3><li>vrFontStyle(const vrFontStyle&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrFontStyle(void)$"><ul><h3><li>~vrFontStyle(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrFontStyle&amp;_operator$(const_vrFontStyle&amp;_v)$"><ul><h3><li>vrFontStyle&amp; operator=(const vrFontStyle&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_SetFamily(const_SFString&amp;_family)$"><ul><h3><li>void SetFamily(const SFString&amp; family);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Family member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> family:</strong>
+<dd>The family value.
+<p>
+</dl></dl>
+<a name="void_SetHorizontal(SFBool_horizontal)$"><ul><h3><li>void SetHorizontal(SFBool horizontal);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Horizontal member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> horizontal:</strong>
+<dd>The horizontal value.
+<p>
+</dl></dl>
+<a name="void_AddJustify(const_SFString&amp;_justify)$"><ul><h3><li>void AddJustify(const SFString&amp; justify);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_Justify array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> justify:</strong>
+<dd>The value to add to the m_Justify array.
+<p>
+</dl></dl>
+<a name="void_SetJustify(const_MFString&amp;_justify)$"><ul><h3><li>void SetJustify(const MFString&amp; justify);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_Justify member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> justify:</strong>
+<dd>The m_Justify array.
+<p>
+</dl></dl>
+<a name="void_SetLanguage(const_SFString&amp;_language)$"><ul><h3><li>void SetLanguage(const SFString&amp; language);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Language member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> language:</strong>
+<dd>The language value.
+<p>
+</dl></dl>
+<a name="void_SetLeftToRight(SFBool_lefttoright)$"><ul><h3><li>void SetLeftToRight(SFBool lefttoright);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_LeftToRight member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> lefttoright:</strong>
+<dd>The lefttoright value.
+<p>
+</dl></dl>
+<a name="void_SetSize(SFFloat_size)$"><ul><h3><li>void SetSize(SFFloat size);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Size member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> size:</strong>
+<dd>The size value.
+<p>
+</dl></dl>
+<a name="void_SetSpacing(SFFloat_spacing)$"><ul><h3><li>void SetSpacing(SFFloat spacing);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Spacing member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> spacing:</strong>
+<dd>The spacing value.
+<p>
+</dl></dl>
+<a name="void_SetStyle(const_SFString&amp;_style)$"><ul><h3><li>void SetStyle(const SFString&amp; style);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Style member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> style:</strong>
+<dd>The style value.
+<p>
+</dl></dl>
+<a name="void_SetTopToBottom(SFBool_toptobottom)$"><ul><h3><li>void SetTopToBottom(SFBool toptobottom);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_TopToBottom member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> toptobottom:</strong>
+<dd>The toptobottom value.
+<p>
+</dl></dl>
+<a name="SFString_GetFamily(void)_const$"><ul><h3><li>SFString GetFamily(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Family member.
+<p>
+<a name="SFBool_GetHorizontal(void)_const$"><ul><h3><li>SFBool GetHorizontal(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Horizontal member.
+<p>
+<a name="SFInt32_GetNJustifys(void)_const$"><ul><h3><li>SFInt32 GetNJustifys(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_Justify member.
+<p>
+<a name="SFString_GetJustify(SFInt32_n)_const$"><ul><h3><li>SFString GetJustify(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_Justify member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFString&amp;_GetJustifyArray(void)_const$"><ul><h3><li>const MFString&amp; GetJustifyArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_Justify member.
+<p>
+<a name="SFString_GetLanguage(void)_const$"><ul><h3><li>SFString GetLanguage(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Language member.
+<p>
+<a name="SFBool_GetLeftToRight(void)_const$"><ul><h3><li>SFBool GetLeftToRight(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_LeftToRight member.
+<p>
+<a name="SFFloat_GetSize(void)_const$"><ul><h3><li>SFFloat GetSize(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Size member.
+<p>
+<a name="SFFloat_GetSpacing(void)_const$"><ul><h3><li>SFFloat GetSpacing(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Spacing member.
+<p>
+<a name="SFString_GetStyle(void)_const$"><ul><h3><li>SFString GetStyle(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Style member.
+<p>
+<a name="SFBool_GetTopToBottom(void)_const$"><ul><h3><li>SFBool GetTopToBottom(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_TopToBottom member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vrfontstyle.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrFontStyle)$"><ul><h3><li>DECLARE_NODE(vrFontStyle);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed and dynamically created. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrFontStyle:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:59 1999
+.<p>
+</body></html>

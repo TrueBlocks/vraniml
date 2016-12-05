@@ -1,0 +1,62 @@
+<html>
+
+<head>
+<title>Library Tutorial</title>
+</head>
+
+<body BACKGROUND="../../sumtextb.jpg" BGCOLOR="#FFFFFF">
+
+<h1><img src="../../logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">VRaniML Tutorials</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Step 6: Finishing Touches</h1>
+
+<p>This tutorial has taught us to create a very simple VRaniML Pretty Printer. </p>
+
+<hr>
+
+<p>It has demonstrated a number of important concepts:
+
+<ul>
+  <li>How to link to a VRaniML program and include the vraniml.h file.</li>
+</ul>
+
+<ul>
+  <li>The vrBrowser class is the top level of the VRML scene graph and provides the ability to
+    read VRML 2.0 files.</li>
+</ul>
+
+<ul>
+  <li>vrBrowser's are 'traversed' by vrTraverser classes to apply some action to each node in
+    the scene graph. We used a vrWriteTraverser.</li>
+</ul>
+
+<ul>
+  <li>The vrWriteTraverser is just one example of a vrTraverser derived class. There are a
+    number of other Traverser classes including:</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>vrOGLTraverser -- Draw the scene graph using OpenGL</li>
+    <li>vrD3DTraverser -- Draw the scene graph using D3D (not yet complete)</li>
+    <li>vrValidateTraverser -- Validate the scene graph</li>
+  </ul>
+</blockquote>
+
+<p>Of course, the program can be extended in many ways. For example:.
+
+<ul>
+  <li>Take command line input for the parameters of the Write Traverser. </li>
+</ul>
+
+<ul>
+  <li>Apply a ValidateTraverser to the scene graph looking for invalid data.</li>
+</ul>
+
+<ul>
+  <li>Write your own traverser to do anything you want, for example exporting to other file
+    formats.</li>
+</ul>
+
+<hr>
+</body>
+</html>

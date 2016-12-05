@@ -1,0 +1,149 @@
+<html><head><title>MFString Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">MFString</a></h1>
+<dl>
+<dd>
+	An array of SFStrings
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="mfstring.htm#aag">Summary</a> | </a>
+<a href="mfstring.htm#DESCRIPTION">Description</a> | 
+<a href="mfstring.htm#NOTES">Notes</a> | 
+<a href="mfstring.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="mfstring.htm#MEMBERS">Members</a> | 
+<a href="mfstring.htm#parents">Ancestors</a> | <a href="mfstring.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface MFString<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="MFString.htm#MFString(void)$">MFString</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="MFString.htm#MFString(const_MFString&amp;_ar)$">MFString</a>(const MFString&amp; ar);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="MFString.htm#~MFString(void)$">MFString</a>(void);</td></tr>
+<tr><td align="right" valign="top">MFString&amp; </td><td><a href="MFString.htm#MFString&amp;_operator$(const_MFString&amp;_ar)$">operator=</a>(const MFString&amp; ar);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="MFString.htm#void_Clear(void)$">Clear</a>(void);</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a>&amp; </td><td><a href="MFString.htm#SFString&amp;_operator[](SFInt32_index)$">operator[]</a>(SFInt32 index);</td></tr>
+<tr><td align="right" valign="top">const <a href="SFString.htm">SFString</a>&amp; </td><td><a href="MFString.htm#const_SFString&amp;_operator[](SFInt32_index)_const$">operator[]</a>(SFInt32 index) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="MFString.htm#SFInt32_GetCount(void)_const$">GetCount</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="MFString.htm#void_AddValue(SFString_val)$">AddValue</a>(<a href="SFString.htm">SFString</a> val);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="MFString.htm#SFInt32_m_nSize$">m_nSize</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="MFString.htm#SFInt32_m_nValues$">m_nValues</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> *</td><td><a href="MFString.htm#SFString_*m_Values$">m_Values</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	An array of SFStrings.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>None.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// This is an array of <a href="SFString.htm">SFString</a> objects
+	MFString *intArray = new MFString;
+
+	(*intArray)[0] = &quot;This&quot;;
+	(*intArray)[1] = <a href="SFString.htm">SFString</a>(&quot; is an array&quot;);
+	
+	for (int i=0;i<intarray-><a href="mfstring.htm#SFInt32_GetCount(void)_const$">GetCount</a>();i++)
+		dc << (*intArray)[i]; MFString copy="*intArray;" delete intArray; copy[1] +="." ; for (i="0;i&lt;copy.GetCount();i++)" dc << copy[i]; dc << endl; // OUTPUT // This is an array // This is an array. </pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFInt32_m_nSize$"><ul><h3><li>SFInt32 m_nSize;</li></h3></a>
+</ul>
+</ul>     <dd>The current size of the array -- will grow in CHUNK_SIZE increments as array fills up.
+<dl><dl>
+<dt><i>default:</i><strong> CHUNK_SIZE</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_nValues$"><ul><h3><li>SFInt32 m_nValues;</li></h3></a>
+</ul>
+</ul>     <dd>The number of values currently stored in the array.
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="SFString_*m_Values$"><ul><h3><li>SFString *m_Values;</li></h3></a>
+</ul>
+</ul>     <dd>The actual array of objects of type TYPE.
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="MFString(void)$"><ul><h3><li>MFString(void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="MFString(const_MFString&amp;_ar)$"><ul><h3><li>MFString(const MFString&amp; ar);</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="~MFString(void)$"><ul><h3><li>~MFString(void);</li></h3></a>
+</ul>
+</ul>     <dd>Desctructor.
+<p>
+<a name="MFString&amp;_operator$(const_MFString&amp;_ar)$"><ul><h3><li>MFString&amp; operator=(const MFString&amp; ar);</li></h3></a>
+</ul>
+</ul>     <dd>Equals operator.
+<p>
+<a name="void_Clear(void)$"><ul><h3><li>void Clear(void);</li></h3></a>
+</ul>
+</ul>     <dd>Clears the array -- deletes the stored SFStrings.
+<p>
+<a name="SFString&amp;_operator[](SFInt32_index)$"><ul><h3><li>SFString&amp; operator[](SFInt32 index);</li></h3></a>
+</ul>
+</ul>     <dd>Access the nth item from the array for assignment (will grow if necassary).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> index:</strong>
+<dd>The index of the requested item.
+<p>
+</dl></dl>
+<a name="const_SFString&amp;_operator[](SFInt32_index)_const$"><ul><h3><li>const SFString&amp; operator[](SFInt32 index) const;</li></h3></a>
+</ul>
+</ul>     <dd>Access the nth item from the array (read only).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> index:</strong>
+<dd>The index of the requested item.
+<p>
+</dl></dl>
+<a name="SFInt32_GetCount(void)_const$"><ul><h3><li>SFInt32 GetCount(void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns the number of items in the array.
+<p>
+<a name="void_AddValue(SFString_val)$"><ul><h3><li>void AddValue(SFString val);</li></h3></a>
+</ul>
+</ul>     <dd>Add a value to the array at the next available slot.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>The value to add to the array.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:01 1999
+.<p>
+</body></html>

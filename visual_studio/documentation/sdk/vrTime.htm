@@ -1,0 +1,210 @@
+<html><head><title>vrTime Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrTime</a></h1>
+<dl>
+<dd>
+	For doing time calculations.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrtime.htm#aag">Summary</a> | </a>
+<a href="vrtime.htm#DESCRIPTION">Description</a> | 
+<a href="vrtime.htm#NOTES">Notes</a> | 
+<a href="vrtime.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrtime.htm#MEMBERS">Members</a> | 
+<a href="vrtime.htm#parents">Ancestors</a> | <a href="vrtime.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface vrTime<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrTime.htm#vrTime(void)_$">vrTime</a>(void) ;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrTime.htm#vrTime(const_vrTime&amp;_t)_$">vrTime</a>(const vrTime&amp; t) ;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrTime.htm#vrTime(long_secs,_long_usecs)_$">vrTime</a>(long secs, long usecs) ;</td></tr>
+<tr><td align="right" valign="top">vrTime&amp; </td><td><a href="vrTime.htm#vrTime&amp;_operator$(const_vrTime&amp;_t)_$">operator=</a>(const vrTime&amp; t) ;</td></tr>
+<tr><td align="right" valign="top">vrTime&amp; </td><td><a href="vrTime.htm#vrTime&amp;_operator$(double_t)_$">operator=</a>(double t) ;</td></tr>
+<tr><td align="right" valign="top">friend vrTime UL_Interface </td><td><a href="vrTime.htm#friend_vrTime_UL_Interface_operator+(const_vrTime&amp;_t1,_const_vrTime&amp;_t2)">operator+</a>(const vrTime&amp; t1, const vrTime&amp; t2)</td></tr>
+<tr><td align="right" valign="top">friend vrTime UL_Interface </td><td><a href="vrTime.htm#friend_vrTime_UL_Interface_operator-(const_vrTime&amp;_t1,_const_vrTime&amp;_t2)">operator-</a>(const vrTime&amp; t1, const vrTime&amp; t2)</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrTime.htm#operator_double(void)_const_$">operator double</a>(void) const ;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrTime.htm#SFBool_operator&gt;(const_vrTime&amp;_q)_const_$">operator&gt;</a>(const vrTime&amp; q) const ;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrTime.htm#SFBool_operator&lt;(const_vrTime&amp;_q)_const_$">operator&lt;</a>(const vrTime&amp; q) const ;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrTime.htm#SFBool_operator&gt;$(const_vrTime&amp;_q)_const_$">operator&gt;=</a>(const vrTime&amp; q) const ;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrTime.htm#SFBool_operator&lt;$(const_vrTime&amp;_q)_const_$">operator&lt;=</a>(const vrTime&amp; q) const ;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrTime.htm#SFBool_operator$$(const_vrTime&amp;_q)_$">operator==</a>(const vrTime&amp; q) ;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrTime.htm#SFBool_operator!$(const_vrTime&amp;_q)_$">operator!=</a>(const vrTime&amp; q) ;</td></tr>
+<tr><td align="right" valign="top"><strong>static</strong> vrTime </td><td><a href="vrTime.htm#vrTime_Now(void)_$">Now</a>(void) ;</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">long </td><td><a href="vrTime.htm#long_m_Seconds$">m_Seconds</a>;</td></tr>
+<tr><td align="right" valign="top">long </td><td><a href="vrTime.htm#long_m_uSeconds$">m_uSeconds</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	The vrTime class manages the time.  This is used mostly
+	by the <a href="vrBrowser.htm">vrBrowser</a> class to initiate <a href="vrTimeSensor.htm">vrTimeSensor</a> events.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// This class allows calculations on time values:
+	vrTime time1 = vrNow();
+
+	// wait around a while....
+	
+	vrTime time2 = vrNow();
+
+	ASSERT(time2 &gt; time1); // comparison
+	ASSERT((time2-time1) &gt; 0.0); // subtraction, conversion to double
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="long_m_Seconds$"><ul><h3><li>long m_Seconds;</li></h3></a>
+</ul>
+</ul>     <dd>Number of seconds since 12:00am January 1, 1970.
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="long_m_uSeconds$"><ul><h3><li>long m_uSeconds;</li></h3></a>
+</ul>
+</ul>     <dd>Millionths of a second (only acurate to 1,000 of a second).
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="vrTime(void)_$"><ul><h3><li>vrTime(void) ;</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="vrTime(const_vrTime&amp;_t)_$"><ul><h3><li>vrTime(const vrTime&amp; t) ;</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="vrTime(long_secs,_long_usecs)_$"><ul><h3><li>vrTime(long secs, long usecs) ;</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> secs:</strong>
+<dd>Number of seconds since 1/1/1970.
+<dt><i>in</i><strong> usecs:</strong>
+<dd>Number of milliseconds.
+<p>
+</dl></dl>
+<a name="vrTime&amp;_operator$(const_vrTime&amp;_t)_$"><ul><h3><li>vrTime&amp; operator=(const vrTime&amp; t) ;</li></h3></a>
+</ul>
+</ul>     <dd>Equals operator.
+<p>
+<a name="vrTime&amp;_operator$(double_t)_$"><ul><h3><li>vrTime&amp; operator=(double t) ;</li></h3></a>
+</ul>
+</ul>     <dd>Equals operator.
+<p>
+<a name="friend_vrTime_UL_Interface_operator+(const_vrTime&amp;_t1,_const_vrTime&amp;_t2)"><ul><h3><li>friend vrTime UL_Interface operator+(const vrTime&amp; t1, const vrTime&amp; t2)</li></h3></a>
+</ul>
+</ul>     <dd>Adds two vrTime values together.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> t1:</strong>
+<dd>The first time.
+<dt><i>in</i><strong> t2:</strong>
+<dd>The second time.
+<p>
+</dl></dl>
+<a name="friend_vrTime_UL_Interface_operator-(const_vrTime&amp;_t1,_const_vrTime&amp;_t2)"><ul><h3><li>friend vrTime UL_Interface operator-(const vrTime&amp; t1, const vrTime&amp; t2)</li></h3></a>
+</ul>
+</ul>     <dd>Subtracts two vrTime values.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> t1:</strong>
+<dd>The first time.
+<dt><i>in</i><strong> t2:</strong>
+<dd>The second time.
+<p>
+</dl></dl>
+<a name="operator_double(void)_const_$"><ul><h3><li>operator double(void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Casts a vrTime value to a double.
+<p>
+<a name="SFBool_operator&gt;(const_vrTime&amp;_q)_const_$"><ul><h3><li>SFBool operator&gt;(const vrTime&amp; q) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if this object is earlier than the query time q.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> q:</strong>
+<dd>The query time.
+<p>
+</dl></dl>
+<a name="SFBool_operator&lt;(const_vrTime&amp;_q)_const_$"><ul><h3><li>SFBool operator&lt;(const vrTime&amp; q) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if this object is later than the query time q.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> q:</strong>
+<dd>The query time.
+<p>
+</dl></dl>
+<a name="SFBool_operator&gt;$(const_vrTime&amp;_q)_const_$"><ul><h3><li>SFBool operator&gt;=(const vrTime&amp; q) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if this object is earlier than or equal to the query time q.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> q:</strong>
+<dd>The query time.
+<p>
+</dl></dl>
+<a name="SFBool_operator&lt;$(const_vrTime&amp;_q)_const_$"><ul><h3><li>SFBool operator&lt;=(const vrTime&amp; q) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if this object is later than or equal to the query time q.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> q:</strong>
+<dd>The query time.
+<p>
+</dl></dl>
+<a name="SFBool_operator$$(const_vrTime&amp;_q)_$"><ul><h3><li>SFBool operator==(const vrTime&amp; q) ;</li></h3></a>
+</ul>
+</ul>     <dd>Equality operator.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> q:</strong>
+<dd>The query time.
+<p>
+</dl></dl>
+<a name="SFBool_operator!$(const_vrTime&amp;_q)_$"><ul><h3><li>SFBool operator!=(const vrTime&amp; q) ;</li></h3></a>
+</ul>
+</ul>     <dd>Inequality operator.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> q:</strong>
+<dd>The query time.
+<p>
+</dl></dl>
+<a name="vrTime_Now(void)_$"><ul><h3><li>vrTime Now(void) ;</li></h3></a>
+</ul>
+</ul>     <dd>Current time of day (in seconds since 12:00am January 1, 1970).
+<p>
+	   <dd><b><i>Note:</b></i> Syntactic sugar for vrTime::Now is <b>vrNow</b> macro.
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:04 1999
+.<p>
+</body></html>

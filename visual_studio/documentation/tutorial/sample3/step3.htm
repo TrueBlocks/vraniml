@@ -1,0 +1,79 @@
+<html>
+
+<head>
+<title>Step 3</title>
+
+<meta name="Microsoft Theme" content="sumipntg 011"></head>
+
+<body background="../../../../_themes/sumipntg/sumtextb.jpg" bgcolor="#FFFFFF" text="#808080" link="#3333CC" vlink="#666699" alink="#990099"><!--mstheme--><font face="verdana, arial, helvetica">
+<font face="book antiqua">
+
+<!--mstheme--></font><table border="0" width="100%" height="97">
+  <tr>
+    <td width="12%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><img src="../../logo.gif" alt="[Logo]" border="0" start="fileopen" width="100" height="110"><!--mstheme--></font></td>
+    <td width="88%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><em><br>
+    <big><big><big>Great Hill Corporation</big></big></big></em><br>
+    <em>Step 3: Adding a Scene Graph</em><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="verdana, arial, helvetica"><a HREF="step2.htm">[Prev]</a> <a HREF="step4.htm">[Next]</a> <a HREF="../sample3.htm">[Tutorial3]</a><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+<!--commentbeg------------------------------------------>
+<!--commentbeg------------------------------------------>
+
+<p>In this step we will add a <b>vrBrowser</b> to the Document class of our application.</p>
+
+<p>Follow these instructions to complete this step: </p>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <ol>
+    <li>Add a <b>vrBrowser</b> data member to the <b>CSample3Doc</b> class. Make sure this is a
+      public data member (to make following steps easier):<br>
+      <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--mstheme--></font><pre><font color="FF0000">vrBrowser *browser;</font></pre><!--mstheme--><font face="verdana, arial, helvetica">
+      <!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+    </li>
+    <li>Initialize the new data member in the <b>CSample3Doc</b> constructor. We will set the
+      browser pointer to NULL here. In the next step we will create the actual browser and
+      associate it with the CView class.<br>
+      <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--mstheme--></font><pre><font color="FF0000">CSample3Doc::CSample3Doc()
+{
+	browser = NULL;
+}</font></pre><!--mstheme--><font face="verdana, arial, helvetica">
+      <!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+    </li>
+    <li>To be complete, we want to properly cleanup the browser in the destructor of the
+      Document class (<i>note: deleting the browser will delete the entire scene graph it
+      contains as well as any <b>vrTraversers</b>)</i>:<br>
+      <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--mstheme--></font><pre><font color="FF0000">CSample3Doc::~CSample3Doc()
+{
+	if (browser)
+		delete browser;
+}</font></pre><!--mstheme--><font face="verdana, arial, helvetica">
+      <!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+    </li>
+    <li>Recompile and run the program. It should behave exactly as it did in Step 2. Kill the
+      program.<br>
+      <br>
+    </li>
+  </ol>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p>We now have a browser pointer but it will not render anything (we have not created the
+scene graph yet, nor have we associated the browser with a window). We will handle both of
+these things in the <a href="step4.htm">next tutorial step</a>.<br>
+<br>
+<!--commentend------------------------------------------><!--commentend------------------------------------------></p>
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+
+<h5><!--mstheme--><font color="#003366"><font COLOR="#660033">Send mail to <a HREF="mailto:webmaster@greathill.com">webmaster@greathill.com</a>
+with questions or comments about this web site.<br>
+Copyright © 1997 Great Hill Corporation<br>
+Last modified: December 17, 1997&nbsp;</font><!--mstheme--></font></h5>
+</font>
+<!--mstheme--></font></body>
+</html>

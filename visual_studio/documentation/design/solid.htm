@@ -1,0 +1,80 @@
+<html>
+
+<head>
+<title>Solid Modeling Library</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+
+
+<meta name="Microsoft Theme" content="neon 011, default"><meta name="Microsoft Border" content="b, default"></head>
+
+<body background="../../../_themes/neon/neobkgnd.gif" bgcolor="#000000" text="#FFFFFF" link="#FFFF66" vlink="#CCCC33" alink="#FFFF00"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top"><!--mstheme--><font face="verdana, arial, helvetica">
+
+<h1><!--mstheme--><font color="#CCCC00"><img src="../logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">VRaniML Design Documentation</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solid Modeling Classes<!--mstheme--></font></h1>
+
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/neon/neoarule.gif" width="300" height="10"></p>
+
+<p><font size="3">The solid modeling library is a collection of classes that implement an
+area of 3D computer graphics called solid modeling.&nbsp; This technology is the basis
+upon which all geometry nodes are built.&nbsp; This is a good design choice because of the
+possibility to support various important features (none of which are currently available
+through the current API, although some of which are implemented).&nbsp; These important
+features include Boolean Operations, Splitting Planes, Rotational Sweeps, Translation
+Sweeps, Extrusions, Progressive Meshes, Automatic Level of Detail generation.&nbsp; Each
+class is briefly described below.&nbsp; <a href="Solid.htm">For more information click
+here</a>.</font></p>
+
+<p align="center"><font SIZE="2"><img SRC="solid.gif" WIDTH="256" HEIGHT="419"></font></p>
+
+<p>&nbsp;</p>
+
+<p><strong>Solid class</strong>:&nbsp; This is the main class in the solid modeling
+library.&nbsp; This class represents a polygon based boundary representation of a
+geometric model.&nbsp; The class maintains a list of faces, edges and vertices which
+describe any given 3D model.&nbsp; The class defines interfaces for Boolean Operations,
+Splitting Plane Operations, Undo of modeling changes, among other things.</p>
+
+<p><strong>Face class</strong>: This class represents a polygon (possibly with holes). It
+is basically a list of Loops (which are lists of halfedges, which each point to one
+vertex).&nbsp; This class represents a single face in the model and may contain color,
+texture and normal information. </p>
+
+<p><strong>Edge class</strong>: This class represents an edge between two vertices. &nbsp;
+This class supports many operations making data access (for example from one face to
+another) very fast.</p>
+
+<p><strong>Vertex class: </strong>This class represents a point in space.&nbsp; It may
+also represent a color, texture coordinate or normal.&nbsp; Faces are basically lists of
+vertices.</p>
+
+<p><strong>Loop class</strong>: This class is a list of halfedges (which in turn point to
+a single vertex).&nbsp; This class is an item in a list of Loops that make up the face
+class.</p>
+
+<p><strong>HalfEdge class</strong>: A halfedge corresponds to a single vertex in a single
+face loop.&nbsp; This is the fundamental class (with the exception of the Solid class) in
+the Solid Modeling library.&nbsp; This class allows for linear time access to any other
+data member in the solid model (for example Find all vertices on this face, or find all
+face on this vertex, etc.).&nbsp; Low level operations performed on the Halfedge data
+structure are the basis of the Boolean Operation, Splitting plane and progressive mesh
+functionality.&nbsp; Halfedges may contain color, texture coordinates and normal data.</p>
+
+<p><strong>Boolean Operation classes</strong>:&nbsp; This collection of classes supports
+Boolean Operations on the solid models.&nbsp; This includes performing such operations as
+Union, Difference and Intersection of two solid models.&nbsp; This might be used in some
+future 3D modeling application or as the basis for interesting games for PC users.</p>
+
+<p><strong>Splitting Plane classes</strong>: This collection of classes supports Splitting
+Plane operations.&nbsp; In this algorithm a plane is passed through a solid model
+resulting in two solid models that are the result of cutting a single solid model in half
+with the plane.&nbsp; This algorithm could also support a 3D modeling application. </p>
+<!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><br>
+<img src="../../../_borders/bar.jpg" width="100%" height="3" alt="bar.jpg (730 bytes)" start="fileopen"></p>
+
+<h5><!--mstheme--><font color="#6633FF">Send mail to <a href="mailto:webmaster@greathill.com">webmaster@greathill.com</a> with questions or comments about this web site.<br>
+Copyright © 1998 Great Hill Corporation<br>
+Last modified: February 01, 1999 <!--mstheme--></font></h5>
+<!--mstheme--></font></td></tr><!--msnavigation--></table></body>
+</html>

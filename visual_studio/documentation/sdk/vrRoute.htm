@@ -1,0 +1,140 @@
+<html><head><title>vrRoute Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrRoute</a></h1>
+<dl>
+<dd>
+	The class represents a ROUTE from one field of the source node
+	to a field (of the exact same data type) of the destination node.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrroute.htm#aag">Summary</a> | </a>
+<a href="vrroute.htm#DESCRIPTION">Description</a> | 
+<a href="vrroute.htm#NOTES">Notes</a> | 
+<a href="vrroute.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrroute.htm#MEMBERS">Members</a> | 
+<a href="vrroute.htm#parents">Ancestors</a> | <a href="vrroute.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrRoute<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrRoute.htm#vrRoute(SFNode_src,_SFInt32_srcFieldID,_SFNode_dst,_SFInt32_dstFieldID,_int_intern_)$">vrRoute</a>(SFNode src, SFInt32 srcFieldID, SFNode dst, SFInt32 dstFieldID, int intern );</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrRoute.htm#~vrRoute(void)$">vrRoute</a>(void);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrRoute.htm#SFBool_IsValid_(void)_const$">IsValid</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrRoute.htm#SFString_GetFieldName_(SFInt32_which)_const$">GetFieldName</a> (SFInt32 which) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrRoute.htm#SFInt32_GetFieldType_(SFInt32_which)_const$">GetFieldType</a> (SFInt32 which) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrRoute.htm#SFString_GetNodeName_(SFInt32_which)_const$">GetNodeName</a> (SFInt32 which) const;</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	This class implements the idea of a VRML ROUTE statement.  More information
+	on ROUTE's is available <a href="../spec/part1/concepts.html">here</a>.
+	Routes are followed during an event cascade which can be initiated by
+	the user (for example by a mouse click over a pointing device sensor) or
+	by the system (for example from a TimeSensor).
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>vrRoute objects are created by the <a href="vrNode.htm">vrNode</a>::AddRoute command.  For this 
+	reason you will probably not use the class directly.</li>
+	<li>Default constructor, copy constructor and equals operator are private
+	so you may not make invalid copies of vrRoutes.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// The following...
+	<a href="vrTimeSensor.htm">vrTimeSensor</a> ts; 
+	ts.SetName(&quot;TS&quot;);
+	
+	<a href="vrOrientationInterpolator.htm">vrOrientationInterpolator</a> ori; 
+	ori.SetName(&quot;ORI&quot;);
+
+	<a href="vrTransform.htm">vrTransform</a> trans;
+	trans.SetName(&quot;TRANS&quot;);
+
+	ts.AddRoute(&quot;fraction_changed&quot;, &amp;ori, &quot;set_fraction&quot;);
+	ori.AddRoute(&quot;value_changed&quot;, &amp;trans, &quot;rotation&quot;);
+
+	// ...is equivilant to the VRML code:
+	// ROUTE TS.fraction_changed TO ORI.set_fraction
+	// ROUTE ORI.value_changed   TO TRANS.rotation
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="vrRoute(SFNode_src,_SFInt32_srcFieldID,_SFNode_dst,_SFInt32_dstFieldID,_int_intern_)$"><ul><h3><li>vrRoute(SFNode src, SFInt32 srcFieldID, SFNode dst, SFInt32 dstFieldID, int intern );</li></h3></a>
+</ul>
+</ul>	  <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> src:</strong>
+<dd>Source node.
+<dt><i>in</i><strong> srcFieldID:</strong>
+<dd>Source field ID.
+<dt><i>in</i><strong> dst:</strong>
+<dd>Destination node.
+<dt><i>in</i><strong> dstFieldID:</strong>
+<dd>Destination field ID.
+<dt><i>in</i><strong> intern:</strong>
+<dd>TRUE if this ROUTE is system defined (i.e. not defined in VRML spec).
+<p>
+</dl></dl>
+<a name="~vrRoute(void)$"><ul><h3><li>~vrRoute(void);</li></h3></a>
+</ul>
+</ul>	  <dd>Destructor.
+<p>
+<a name="SFBool_IsValid_(void)_const$"><ul><h3><li>SFBool IsValid (void) const;</li></h3></a>
+</ul>
+</ul>	  <dd>Returns TRUE if this is a valid route (as defined in VRML spec).
+<p>
+<a name="SFString_GetFieldName_(SFInt32_which)_const$"><ul><h3><li>SFString GetFieldName (SFInt32 which) const;</li></h3></a>
+</ul>
+</ul>	  <dd>Returns the human-readable name of the source or destination field.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> which:</strong>
+<dd>0 = return source field name, 1 = return destination field name
+<p>
+</dl></dl>
+<a name="SFInt32_GetFieldType_(SFInt32_which)_const$"><ul><h3><li>SFInt32 GetFieldType (SFInt32 which) const;</li></h3></a>
+</ul>
+</ul>	  <dd>Returns the data type of the source or destination field.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> which:</strong>
+<dd>0 = return source field name, 1 = return destination field name
+<p>
+</dl></dl>
+<a name="SFString_GetNodeName_(SFInt32_which)_const$"><ul><h3><li>SFString GetNodeName (SFInt32 which) const;</li></h3></a>
+</ul>
+</ul>	  <dd>Returns the name of the source or destination node.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> which:</strong>
+<dd>0 = return source node name, 1 = return destination node name
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:03 1999
+.<p>
+</body></html>

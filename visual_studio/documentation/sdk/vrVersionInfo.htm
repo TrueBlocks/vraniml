@@ -1,0 +1,116 @@
+<html><head><title>vrVersionInfo Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrVersionInfo</a></h1>
+<dl>
+<dd>
+	Used to return versioning information about the VRaniML library.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrversioninfo.htm#aag">Summary</a> | </a>
+<a href="vrversioninfo.htm#DESCRIPTION">Description</a> | 
+<a href="vrversioninfo.htm#NOTES">Notes</a> | 
+<a href="vrversioninfo.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrversioninfo.htm#MEMBERS">Members</a> | 
+<a href="vrversioninfo.htm#parents">Ancestors</a> | <a href="vrversioninfo.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface vrVersionInfo<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrVersionInfo.htm#SFString_product$">product</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrVersionInfo.htm#SFString_vendor$">vendor</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrVersionInfo.htm#SFInt32_majorNum$">majorNum</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrVersionInfo.htm#SFInt32_minorNum$">minorNum</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrVersionInfo.htm#SFInt32_releaseNum$">releaseNum</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrVersionInfo.htm#SFString_buildDate$">buildDate</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrVersionInfo.htm#SFString_buildTime$">buildTime</a>;</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	Use the vrGetVersion method to query the library about it's current version
+	number and other version information.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	None.
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	vrVersionInfo info;
+	vrGetVersion(&amp;info);
+
+	dc << "Product: " << info.product << "\n"; dc << "Vendor: " << info.vendor << "\n"; dc << "Version Num: " << info.majorNum << "." << info.minorNum << "." << info.releaseNum << "\n"; dc << "Build Date: " << info.buildDate << " " info.buildTime << "\n"; // OUTPUT Product: VRaniML Vendor: Great Hill Corporation Version Num: 0.9.3 Build Date: Nov 18, 1998 10:38am </pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFString_product$"><ul><h3><li>SFString product;</li></h3></a>
+</ul>
+</ul>     <dd>The name of this product.
+<dl><dl>
+<dt><i>default:</i><strong> &quot;VRaniML&quot;</strong>
+<p>
+</dl></dl>
+<a name="SFString_vendor$"><ul><h3><li>SFString vendor;</li></h3></a>
+</ul>
+</ul>     <dd>The vendor of this product.
+<dl><dl>
+<dt><i>default:</i><strong> &quot;Great</strong>
+<dd>Hill Corporation&quot;
+<p>
+</dl></dl>
+<a name="SFInt32_majorNum$"><ul><h3><li>SFInt32 majorNum;</li></h3></a>
+</ul>
+</ul>     <dd>The major number of this release (i.e. the XX in XX.NN.NN)
+<dl><dl>
+<dt><i>default:</i><strong> Current</strong>
+<dd>release
+<p>
+</dl></dl>
+<a name="SFInt32_minorNum$"><ul><h3><li>SFInt32 minorNum;</li></h3></a>
+</ul>
+</ul>     <dd>The minor number of this release (i.e. the XX in NN.XX.NN)
+<dl><dl>
+<dt><i>default:</i><strong> Current</strong>
+<dd>release
+<p>
+</dl></dl>
+<a name="SFInt32_releaseNum$"><ul><h3><li>SFInt32 releaseNum;</li></h3></a>
+</ul>
+</ul>     <dd>The release number of this release (i.e. the XX in NN.NN.XX)
+<dl><dl>
+<dt><i>default:</i><strong> Current</strong>
+<dd>release
+<p>
+</dl></dl>
+<a name="SFString_buildDate$"><ul><h3><li>SFString buildDate;</li></h3></a>
+</ul>
+</ul>     <dd>The date this release was created.
+<p>
+<a name="SFString_buildTime$"><ul><h3><li>SFString buildTime;</li></h3></a>
+</ul>
+</ul>     <dd>The time this release was created.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:05 1999
+.<p>
+</body></html>

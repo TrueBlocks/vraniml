@@ -1,0 +1,128 @@
+<html><head><title>SFImage Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">SFImage</a></h1>
+<dl>
+<dd>
+	A pixel image used mostly for texture mapping.  Corresponds to the 
+	VRML SFImage field type.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="sfimage.htm#aag">Summary</a> | </a>
+<a href="sfimage.htm#DESCRIPTION">Description</a> | 
+<a href="sfimage.htm#NOTES">Notes</a> | 
+<a href="sfimage.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="sfimage.htm#MEMBERS">Members</a> | 
+<a href="sfimage.htm#parents">Ancestors</a> | <a href="sfimage.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface SFImage<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="SFImage.htm#SFInt32_m_Width$">m_Width</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="SFImage.htm#SFInt32_m_Height$">m_Height</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="SFImage.htm#SFInt32_m_nComponents$">m_nComponents</a>;</td></tr>
+<tr><td align="right" valign="top">void *</td><td><a href="SFImage.htm#void_*m_ColorData$">m_ColorData</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFImage.htm#SFImage_(void)$">SFImage</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFImage.htm#SFImage_(long_width,_long_height,_long_nComponents_)$">SFImage</a> (long width, long height, long nComponents );</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="SFImage.htm#~SFImage_(void)$">SFImage</a> (void);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	A pixel image used for texture mapping.  Corresponds to the 
+	VRML SFImage field type.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>None.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// To read a texture file for example:
+	SFImage image(128, 128, 4);
+	if (vrReadTextureImage(image, &quot;test.jpg&quot;))
+	{
+		printf(&quot;Pixel    Red  Green   Blue\n&quot;);
+
+		unsigned char *p = (unsigned char *)image.m_ColorData;
+		for (int i=0; i <image.m_width; i++) { for (int j="0;" j<image.m_Height; j++) { SFColor color(*p, *(p+1), *(p+2)); printf("%d %d %d\n", ); printf("[%4d,%4d]> %05d %05d %05d\n&quot;, i, j, color.x, color.y, color.z);
+				p += image.m_nComponents;
+			}
+		}
+	}
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFInt32_m_Width$"><ul><h3><li>SFInt32 m_Width;</li></h3></a>
+</ul>
+</ul>     <dd>The width of the image in pixels.
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_Height$"><ul><h3><li>SFInt32 m_Height;</li></h3></a>
+</ul>
+</ul>     <dd>The height of the image in pixels.
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_nComponents$"><ul><h3><li>SFInt32 m_nComponents;</li></h3></a>
+</ul>
+</ul>     <dd>The number of components in the image.
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="void_*m_ColorData$"><ul><h3><li>void *m_ColorData;</li></h3></a>
+</ul>
+</ul>     <dd>Pointer to the color data.
+<dl><dl>
+<dt><i>default:</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="SFImage_(void)$"><ul><h3><li>SFImage (void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="SFImage_(long_width,_long_height,_long_nComponents_)$"><ul><h3><li>SFImage (long width, long height, long nComponents );</li></h3></a>
+</ul>
+</ul>     <dd>Constructor (allocates color buffer).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> width:</strong>
+<dd>Width of the image.
+<dt><i>in</i><strong> height:</strong>
+<dd>Height of the image.
+<dt><i>in</i><strong> nComponents:</strong>
+<dd>Number of components in the image.
+<p>
+</dl></dl>
+<a name="~SFImage_(void)$"><ul><h3><li>~SFImage (void);</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:59 1999
+.<p>
+</body></html>

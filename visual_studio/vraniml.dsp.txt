@@ -1,0 +1,603 @@
+# Microsoft Developer Studio Project File - Name="vraniml" - Package Owner=<4>
+# Microsoft Developer Studio Generated Build File, Format Version 5.00
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (x86) Dynamic-Link Library" 0x0102
+
+CFG=vraniml - Win32 Debug
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE use the Export Makefile command and run
+!MESSAGE 
+!MESSAGE NMAKE /f "vraniml.mak".
+!MESSAGE 
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "vraniml.mak" CFG="vraniml - Win32 Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "vraniml - Win32 Release" (based on\
+ "Win32 (x86) Dynamic-Link Library")
+!MESSAGE "vraniml - Win32 Debug" (based on "Win32 (x86) Dynamic-Link Library")
+!MESSAGE 
+
+# Begin Project
+# PROP Scc_ProjName ""
+# PROP Scc_LocalPath ""
+CPP=cl.exe
+MTL=midl.exe
+RSC=rc.exe
+
+!IF  "$(CFG)" == "vraniml - Win32 Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "Release"
+# PROP BASE Intermediate_Dir "Release"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "Runtime"
+# PROP Intermediate_Dir "/build3d"
+# PROP Ignore_Export_Lib 0
+# PROP Target_Dir ""
+# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /YX /FD /c
+# ADD CPP /nologo /MT /W4 /GX /O2 /I "src" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "LIB3D" /D "FULL_VERSION" /YX"kramer.h" /FD /c
+# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o NUL /win32
+# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o NUL /win32
+# ADD BASE RSC /l 0x409 /d "NDEBUG"
+# ADD RSC /l 0x409 /d "NDEBUG"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /machine:I386
+# ADD LINK32 opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib winmm.lib wsock32.lib /nologo /subsystem:windows /dll /machine:I386 /libpath:"Lib"
+# Begin Custom Build
+InputPath=.\Runtime\vraniml.dll
+SOURCE=$(InputPath)
+
+"..\Runtime\vraniml.dll" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+	shipstuff vraniml
+
+# End Custom Build
+
+!ELSEIF  "$(CFG)" == "vraniml - Win32 Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "Debug"
+# PROP BASE Intermediate_Dir "Debug"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "Runtime"
+# PROP Intermediate_Dir "/build3dD"
+# PROP Ignore_Export_Lib 0
+# PROP Target_Dir ""
+# ADD BASE CPP /nologo /MTd /W3 /Gm /GX /Zi /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /YX /FD /c
+# ADD CPP /nologo /MTd /W4 /Gm /GX /Zi /Od /I "src" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "LIB3D" /D "FULL_VERSION" /YX"kramer.h" /FD /c
+# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o NUL /win32
+# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o NUL /win32
+# ADD BASE RSC /l 0x409 /d "_DEBUG"
+# ADD RSC /l 0x409 /d "_DEBUG"
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /debug /machine:I386 /pdbtype:sept
+# ADD LINK32 opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib winmm.lib wsock32.lib /nologo /subsystem:windows /dll /debug /machine:I386 /out:"Runtime/vranimld.dll" /pdbtype:sept /libpath:"Lib"
+# Begin Custom Build
+InputPath=.\Runtime\vranimld.dll
+SOURCE=$(InputPath)
+
+"..\Runtime\vranimld.dll" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
+	shipstuff vranimld
+
+# End Custom Build
+
+!ENDIF 
+
+# Begin Target
+
+# Name "vraniml - Win32 Release"
+# Name "vraniml - Win32 Debug"
+# Begin Source File
+
+SOURCE=.\src\Traversers\ActionTraverser.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GROUPING\ANCHOR.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Appearance\Appearance.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\COMMON\AudioClip.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\BINDABLE\Background.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GROUPING\BillBoard.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\BINDABLE\Bindable.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\BOOL\BOOL.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\BOOL\BoolClassify.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\BOOL\BoolConnect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\BOOL\BoolCrossing.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Boolean.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\BOOL\BoolFaceClassify.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\BOOL\BoolFinish.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\BOOL\BoolGenerate.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\BOOL\BoolReclassify.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\BOOL\BoolSector.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\BOOL\BoolVertexClassify.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\BOX.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\BROWSER\BROWSER.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\Algorithms\COLINEAR.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GROUPING\Collision.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\Color.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\ColorData.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Interpolator\ColorInterpolator.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\CONE.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\Algorithms\CONTAINS.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\Coordinate.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Interpolator\CoordinateInterpolator.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\Algorithms\COPLANE.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\CYLINDER.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\SENSOR\CylinderSensor.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Traversers\D3dTraverser.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\DATASET.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\Algorithms\Degenerate.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\COMMON\DirectionalLight.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\dynacreate.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\EDGE.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\ElevationGrid.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\EULEROPS.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\BROWSER\Event.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\BROWSER\ExternProtoUtils.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\Extrusion.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\FACE.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\Algorithms\FaceContains.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\fieldDefs.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\BINDABLE\FOG.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Appearance\FontStyle.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\Algorithms\GEOMETRY.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\GeometryNode.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GROUPING\GROUP.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GroupingNode.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\HALFEDGE.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Appearance\ImageTexture.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\Algorithms\IMPORT.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\IndexedFaceSet.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\IndexedLineSet.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GROUPING\INLINE.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Interpolator\Interpolator.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\Algorithms\Intersect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\Algorithms\INVERT.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\KRAMER.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Parser\Lex.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Parser\Lex.l
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\COMMON\LIGHT.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GROUPING\LOD.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\LOOP.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\Algorithms\MAP.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Appearance\MATERIAL.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Appearance\MovieTexture.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\BINDABLE\NavigationInfo.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Node.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\NORMAL.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Interpolator\NormalInterpolator.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Traversers\OGLTraverser.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Traversers\OGLTraverserInit.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Traversers\OGLTraverseSolid.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Interpolator\OrientationInterpolator.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Parser\Parse.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Parser\Parse.y
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Parser\Parser.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Appearance\PixelTexture.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\SENSOR\PlaneSensor.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\SENSOR\PointingDeviceSensor.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\COMMON\PointLight.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\POINTSET.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Interpolator\PositionInterpolator.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\SENSOR\ProximitySensor.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Traversers\RenderTraverser.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\BROWSER\ROUTE.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Interpolator\ScalarInterpolator.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\COMMON\SCRIPT.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\SENSOR\SENSOR.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\COMMON\SHAPE.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Show.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\SOLID.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\COMMON\SOUND.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\SPHERE.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\SENSOR\SphereSensor.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\SPLIT\SPLIT.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\SPLIT\SplitClassify.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\SPLIT\SplitConnect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\SPLIT\SplitFinish.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\Src\SOLID\Algorithms\SPLIT\SplitGenerate.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\COMMON\SpotLight.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GROUPING\SWITCH.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\TEXT.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GEOMETRY\TextureCoordinate.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\Appearance\TextureTransform.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\SENSOR\TimeSensor.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\SENSOR\TouchSensor.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\GROUPING\Transform.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Traversers\Traverser.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\Algorithms\UNDO.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\BROWSER\UserData.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\BROWSER\UserData.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Traversers\ValidateTraverser.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\Algorithms\VERIFY.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\version.rc
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\SOLID\VERTEX.CPP
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\BINDABLE\Viewpoint.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\SENSOR\VisibilitySensor.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\NODES\COMMON\WorldInfo.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\src\Traversers\WriteTraverser.cpp
+# End Source File
+# End Target
+# End Project

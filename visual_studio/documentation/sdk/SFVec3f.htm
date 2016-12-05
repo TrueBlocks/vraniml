@@ -1,0 +1,506 @@
+<html><head><title>SFVec3f Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">SFVec3f</a></h1>
+<dl>
+<dd>
+	Represents a 3d vector.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="sfvec3f.htm#aag">Summary</a> | </a>
+<a href="sfvec3f.htm#DESCRIPTION">Description</a> | 
+<a href="sfvec3f.htm#NOTES">Notes</a> | 
+<a href="sfvec3f.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="sfvec3f.htm#MEMBERS">Members</a> | 
+<a href="sfvec3f.htm#parents">Ancestors</a> | <a href="sfvec3f.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface SFVec3f<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> x, y, </td><td><a href="SFVec3f.htm#SFFloat_x,_y,_z$">z</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFVec3f.htm#SFVec3f_(void)$">SFVec3f</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFVec3f.htm#SFVec3f_(const_SFVec3f&amp;_v)$">SFVec3f</a> (const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="SFVec3f.htm#~SFVec3f_(void)$">SFVec3f</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFVec3f.htm#SFVec3f_(SFFloat_f1,_SFFloat_f2,_SFFloat_f3)$">SFVec3f</a> (SFFloat f1, SFFloat f2, SFFloat f3);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFVec3f.htm#SFVec3f_(SFFloat_f)$">SFVec3f</a> (SFFloat f);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFVec3f.htm#SFVec3f_(const_SFVec2f&amp;_v)$">SFVec3f</a> (const <a href="SFVec2f.htm">SFVec2f</a>&amp; v);</td></tr>
+<tr><td align="right" valign="top">SFVec3f&amp; </td><td><a href="SFVec3f.htm#SFVec3f&amp;_operator$_(const_SFVec3f&amp;_v)$">operator=</a> (const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">SFFloat&amp; </td><td><a href="SFVec3f.htm#SFFloat&amp;_operator[]_(SFInt32_i)$">operator[]</a> (SFInt32 i);</td></tr>
+<tr><td align="right" valign="top">const SFFloat&amp; </td><td><a href="SFVec3f.htm#const_SFFloat&amp;_operator[]_(SFInt32_i)_const$">operator[]</a> (SFInt32 i) const;</td></tr>
+<tr><td align="right" valign="top">SFVec3f </td><td><a href="SFVec3f.htm#SFVec3f_operator+_(void)_const$">operator+</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">SFVec3f </td><td><a href="SFVec3f.htm#SFVec3f_operator-_(void)_const$">operator-</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">SFVec3f&amp; </td><td><a href="SFVec3f.htm#SFVec3f&amp;_operator+$_(const_SFVec3f&amp;_v)$">operator+=</a> (const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">SFVec3f&amp; </td><td><a href="SFVec3f.htm#SFVec3f&amp;_operator-$_(const_SFVec3f&amp;_v)$">operator-=</a> (const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">SFVec3f&amp; </td><td><a href="SFVec3f.htm#SFVec3f&amp;_operator*$_(const_SFVec3f&amp;_v)$">operator*=</a> (const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">SFVec3f&amp; </td><td><a href="SFVec3f.htm#SFVec3f&amp;_operator*$_(SFFloat_s)$">operator*=</a> (SFFloat s);</td></tr>
+<tr><td align="right" valign="top">SFVec3f&amp; </td><td><a href="SFVec3f.htm#SFVec3f&amp;_operator$$_(SFFloat_s)$">operator/=</a> (SFFloat s);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface void </td><td><a href="SFVec3f.htm#friend_UL_Interface_void_GetProjectedVerts_(const_SFVec3f&amp;_v,_SFFloat_*f1,_SFFloat_*f2,_SFInt32_which)$">GetProjectedVerts</a> (const SFVec3f&amp; v, SFFloat *f1, SFFloat *f2, SFInt32 which);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_Projection_(const_SFVec3f&amp;_v,_const_SFVec3f&amp;_u)$">Projection</a> (const SFVec3f&amp; v, const SFVec3f&amp; u);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_OrthoProjection_(const_SFVec3f&amp;_v,_const_SFVec3f&amp;_u)$">OrthoProjection</a> (const SFVec3f&amp; v, const SFVec3f&amp; u);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_operator+_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$">operator+</a> (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_operator-_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$">operator-</a> (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_operator*_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$">operator*</a> (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_operator*_(const_SFVec3f&amp;_v,_SFFloat_f)$">operator*</a> (const SFVec3f&amp; v, SFFloat f);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_operator*_(SFFloat_f,_const_SFVec3f&amp;_v)$">operator*</a> (SFFloat f, const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_operator*_(const_vrMatrix&amp;_m,_const_SFVec3f&amp;_v)$">operator*</a> (const <a href="vrMatrix.htm">vrMatrix</a>&amp; m, const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_operator$_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$">operator/</a> (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_operator$_(const_SFVec3f&amp;_v1,_SFFloat_f)$">operator/</a> (const SFVec3f&amp; v1, SFFloat f);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFBool </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFBool_operator$$_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$">operator==</a> (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFBool </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFBool_operator!$_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$">operator!=</a> (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_Normalize_(const_SFVec3f&amp;_v)$">Normalize</a> (const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFFloat </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFFloat_DotProduct_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$">DotProduct</a> (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_CrossProduct_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$">CrossProduct</a> (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFFloat </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFFloat_Distance_(const_SFVec3f&amp;_p1,_const_SFVec3f&amp;_p2)$">Distance</a> (const SFVec3f&amp; p1, const SFVec3f&amp; p2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFFloat </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFFloat_SignedDistance_(const_SFVec3f&amp;_p1,_const_SFVec3f&amp;_p2,_const_SFVec3f&amp;_dir)$">SignedDistance</a> (const SFVec3f&amp; p1, const SFVec3f&amp; p2, const SFVec3f&amp; dir);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFFloat </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFFloat_Magnitude_(const_SFVec3f&amp;_v)$">Magnitude</a> (const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFFloat </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFFloat_Length_(const_SFVec3f&amp;_v)$">Length</a> (const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_PlaneRotate_(const_vrMatrix&amp;_m,_const_SFVec3f&amp;_v)$">PlaneRotate</a> (const <a href="vrMatrix.htm">vrMatrix</a>&amp; m, const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec3f </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFVec3f_AbsoluteVal_(const_SFVec3f&amp;_v)$">AbsoluteVal</a> (const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface void </td><td><a href="SFVec3f.htm#friend_UL_Interface_void_Minimize_(SFVec3f&amp;_min,_const_SFVec3f&amp;_v)$">Minimize</a> (SFVec3f&amp; min, const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface void </td><td><a href="SFVec3f.htm#friend_UL_Interface_void_Maximize_(SFVec3f&amp;_max,_const_SFVec3f&amp;_v)$">Maximize</a> (SFVec3f&amp; max, const SFVec3f&amp; v);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFInt32 </td><td><a href="SFVec3f.htm#friend_UL_Interface_SFInt32_GetDominantComp_(const_SFVec3f&amp;_v)$">GetDominantComp</a> (const SFVec3f&amp; v);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	Represents the SFVec3f field as defined in VRML.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>None.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// This is just a simple vector class.  You can treat vectors (both
+	// 2D and 3D) as basic C++ types.  2D vectors are promoted to 3D vectors
+	// if need be.  Also, SFFloats are promoted to 2D or 3D vectors if needed.
+	
+	SFVec3f vec1(1.0, 1.0, 1.0);
+	// construct from a float
+	SFVec3f vec2(2.0);
+
+	SFVec3f vec3 = vec2 + vec1;
+	
+	// Treat them as a basic data type.
+	ASSERT((<a href="sfvec3f.htm#SFVec3f_(SFFloat_f)$">SFVec3f</a>(0) + <a href="sfvec3f.htm#SFVec3f_(SFFloat_f)$">SFVec3f</a>(1) / 2.0) == <a href="sfvec3f.htm#SFVec3f_(SFFloat_f)$">SFVec3f</a>(.5));
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFFloat_x,_y,_z$"><ul><h3><li>SFFloat x, y, z;</li></h3></a>
+</ul>
+</ul>     <dd>The x, y and z components of the vector.
+<dl><dl>
+<dt><i>default:</i><strong> (0.0,0.0,0.0)</strong>
+<p>
+</dl></dl>
+<a name="SFVec3f_(void)$"><ul><h3><li>SFVec3f (void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="SFVec3f_(const_SFVec3f&amp;_v)$"><ul><h3><li>SFVec3f (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="~SFVec3f_(void)$"><ul><h3><li>~SFVec3f (void);</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="SFVec3f_(SFFloat_f1,_SFFloat_f2,_SFFloat_f3)$"><ul><h3><li>SFVec3f (SFFloat f1, SFFloat f2, SFFloat f3);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f1:</strong>
+<dd>Value for x component.
+<dt><i>in</i><strong> f2:</strong>
+<dd>Value for y component.
+<dt><i>in</i><strong> f3:</strong>
+<dd>Value for z component.
+<p>
+</dl></dl>
+<a name="SFVec3f_(SFFloat_f)$"><ul><h3><li>SFVec3f (SFFloat f);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>Value for both x and y components.
+<p>
+</dl></dl>
+<a name="SFVec3f_(const_SFVec2f&amp;_v)$"><ul><h3><li>SFVec3f (const SFVec2f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>An <a href="SFVec2f.htm">SFVec2f</a> value promoted to 3 dimensions (z = 0.0)
+<p>
+</dl></dl>
+<a name="SFVec3f&amp;_operator$_(const_SFVec3f&amp;_v)$"><ul><h3><li>SFVec3f&amp; operator= (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Equals operator.
+<p>
+<a name="SFFloat&amp;_operator[]_(SFInt32_i)$"><ul><h3><li>SFFloat&amp; operator[] (SFInt32 i);</li></h3></a>
+</ul>
+</ul>     <dd>Access operator for component assignment.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> i:</strong>
+<dd>Index into the vector (0 = x, 1 = y, 2 = z).
+<p>
+</dl></dl>
+<a name="const_SFFloat&amp;_operator[]_(SFInt32_i)_const$"><ul><h3><li>const SFFloat&amp; operator[] (SFInt32 i) const;</li></h3></a>
+</ul>
+</ul>     <dd>Access operator for read only.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> i:</strong>
+<dd>Index into the vector (0 = x, 1 = y, 2 = z).
+<p>
+</dl></dl>
+<a name="SFVec3f_operator+_(void)_const$"><ul><h3><li>SFVec3f operator+ (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Unary addition.
+<p>
+<a name="SFVec3f_operator-_(void)_const$"><ul><h3><li>SFVec3f operator- (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Unary negation.
+<p>
+<a name="SFVec3f&amp;_operator+$_(const_SFVec3f&amp;_v)$"><ul><h3><li>SFVec3f&amp; operator+= (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Add given vector to this vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to add.
+<p>
+</dl></dl>
+<a name="SFVec3f&amp;_operator-$_(const_SFVec3f&amp;_v)$"><ul><h3><li>SFVec3f&amp; operator-= (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Subtract given vector to this vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to subtract.
+<p>
+</dl></dl>
+<a name="SFVec3f&amp;_operator*$_(const_SFVec3f&amp;_v)$"><ul><h3><li>SFVec3f&amp; operator*= (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Multiply given vector to this vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to multiply.
+<p>
+</dl></dl>
+<a name="SFVec3f&amp;_operator*$_(SFFloat_s)$"><ul><h3><li>SFVec3f&amp; operator*= (SFFloat s);</li></h3></a>
+</ul>
+</ul>     <dd>Multiply this vector by a scalar.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> s:</strong>
+<dd>The scalar to multiply by.
+<p>
+</dl></dl>
+<a name="SFVec3f&amp;_operator$$_(SFFloat_s)$"><ul><h3><li>SFVec3f&amp; operator/= (SFFloat s);</li></h3></a>
+</ul>
+</ul>     <dd>Divide this vector by a scalar.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> s:</strong>
+<dd>The scalar to divide by.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_void_GetProjectedVerts_(const_SFVec3f&amp;_v,_SFFloat_*f1,_SFFloat_*f2,_SFInt32_which)$"><ul><h3><li>friend UL_Interface void GetProjectedVerts (const SFVec3f&amp; v, SFFloat *f1, SFFloat *f2, SFInt32 which);</li></h3></a>
+</ul>
+</ul>     <dd>Project the given vector on the given plane returning values in floats.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to project.
+<dt><i>out</i><strong> f1:</strong>
+<dd>The first component of the result of the projection.
+<dt><i>out</i><strong> f2:</strong>
+<dd>The second component of the result of the projection.
+<dt><i>in</i><strong> which:</strong>
+<dd>One of 0, 1, or 2 representing X, Y and Z axis respectively.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_Projection_(const_SFVec3f&amp;_v,_const_SFVec3f&amp;_u)$"><ul><h3><li>friend UL_Interface SFVec3f Projection (const SFVec3f&amp; v, const SFVec3f&amp; u);</li></h3></a>
+</ul>
+</ul>     <dd>Return the projection of vector v onto vector u.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to project.
+<dt><i>in</i><strong> u:</strong>
+<dd>The vector to project onto.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_OrthoProjection_(const_SFVec3f&amp;_v,_const_SFVec3f&amp;_u)$"><ul><h3><li>friend UL_Interface SFVec3f OrthoProjection (const SFVec3f&amp; v, const SFVec3f&amp; u);</li></h3></a>
+</ul>
+</ul>     <dd>Return the orthographic projection of vector v onto vector u.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to project orthographically.
+<dt><i>in</i><strong> u:</strong>
+<dd>The vector to project orthographically onto.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_operator+_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$"><ul><h3><li>friend UL_Interface SFVec3f operator+ (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</li></h3></a>
+</ul>
+</ul>     <dd>Add two vectors.
+<p>
+<a name="friend_UL_Interface_SFVec3f_operator-_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$"><ul><h3><li>friend UL_Interface SFVec3f operator- (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</li></h3></a>
+</ul>
+</ul>     <dd>Subtract two vectors.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v1:</strong>
+<dd>The first vector.
+<dt><i>in</i><strong> v2:</strong>
+<dd>The second vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_operator*_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$"><ul><h3><li>friend UL_Interface SFVec3f operator* (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</li></h3></a>
+</ul>
+</ul>     <dd>Multiply two vectors.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v1:</strong>
+<dd>The first vector.
+<dt><i>in</i><strong> v2:</strong>
+<dd>The second vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_operator*_(const_SFVec3f&amp;_v,_SFFloat_f)$"><ul><h3><li>friend UL_Interface SFVec3f operator* (const SFVec3f&amp; v, SFFloat f);</li></h3></a>
+</ul>
+</ul>     <dd>Multiply a vector by a scalar.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector.
+<dt><i>in</i><strong> f:</strong>
+<dd>The scalar.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_operator*_(SFFloat_f,_const_SFVec3f&amp;_v)$"><ul><h3><li>friend UL_Interface SFVec3f operator* (SFFloat f, const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Multiply a vector by a scalar.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>The scalar.
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_operator*_(const_vrMatrix&amp;_m,_const_SFVec3f&amp;_v)$"><ul><h3><li>friend UL_Interface SFVec3f operator* (const vrMatrix&amp; m, const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Multiply a vector by a matrix - returns transformed vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> m:</strong>
+<dd>The matrix to transform the vector by.
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to be transformed.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_operator$_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$"><ul><h3><li>friend UL_Interface SFVec3f operator/ (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</li></h3></a>
+</ul>
+</ul>     <dd>Divide a vector componentwise by another vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v1:</strong>
+<dd>The first vector.
+<dt><i>in</i><strong> v2:</strong>
+<dd>The second vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_operator$_(const_SFVec3f&amp;_v1,_SFFloat_f)$"><ul><h3><li>friend UL_Interface SFVec3f operator/ (const SFVec3f&amp; v1, SFFloat f);</li></h3></a>
+</ul>
+</ul>     <dd>Divide a vector by a scalar.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector.
+<dt><i>in</i><strong> f:</strong>
+<dd>The scalar.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFBool_operator$$_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$"><ul><h3><li>friend UL_Interface SFBool operator== (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if two vectors are identical.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v1:</strong>
+<dd>The first vector.
+<dt><i>in</i><strong> v2:</strong>
+<dd>The second vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFBool_operator!$_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$"><ul><h3><li>friend UL_Interface SFBool operator!= (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if two vectors are different.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v1:</strong>
+<dd>The first vector.
+<dt><i>in</i><strong> v2:</strong>
+<dd>The second vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_Normalize_(const_SFVec3f&amp;_v)$"><ul><h3><li>friend UL_Interface SFVec3f Normalize (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Return a normalized version of the given vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to normalize.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFFloat_DotProduct_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$"><ul><h3><li>friend UL_Interface SFFloat DotProduct (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</li></h3></a>
+</ul>
+</ul>     <dd>Return the dot product of two vectors.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v1:</strong>
+<dd>The first vector.
+<dt><i>in</i><strong> v2:</strong>
+<dd>The second vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_CrossProduct_(const_SFVec3f&amp;_v1,_const_SFVec3f&amp;_v2)$"><ul><h3><li>friend UL_Interface SFVec3f CrossProduct (const SFVec3f&amp; v1, const SFVec3f&amp; v2);</li></h3></a>
+</ul>
+</ul>     <dd>Return the cross product of two vectors.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v1:</strong>
+<dd>The first vector.
+<dt><i>in</i><strong> v2:</strong>
+<dd>The second vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFFloat_Distance_(const_SFVec3f&amp;_p1,_const_SFVec3f&amp;_p2)$"><ul><h3><li>friend UL_Interface SFFloat Distance (const SFVec3f&amp; p1, const SFVec3f&amp; p2);</li></h3></a>
+</ul>
+</ul>     <dd>Return the distance between two points in 3-space (always positive).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> p1:</strong>
+<dd>The first point.
+<dt><i>in</i><strong> p2:</strong>
+<dd>The second point.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFFloat_SignedDistance_(const_SFVec3f&amp;_p1,_const_SFVec3f&amp;_p2,_const_SFVec3f&amp;_dir)$"><ul><h3><li>friend UL_Interface SFFloat SignedDistance (const SFVec3f&amp; p1, const SFVec3f&amp; p2, const SFVec3f&amp; dir);</li></h3></a>
+</ul>
+</ul>     <dd>Return the signed distance between the line represented by p1 and p2 and the point p3.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> p1:</strong>
+<dd>The start of the line.
+<dt><i>in</i><strong> p2:</strong>
+<dd>The end of the line.
+<dt><i>in</i><strong> p1:</strong>
+<dd>The point to measure to.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFFloat_Magnitude_(const_SFVec3f&amp;_v)$"><ul><h3><li>friend UL_Interface SFFloat Magnitude (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Return the magnitude (length) of the given vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to measure.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFFloat_Length_(const_SFVec3f&amp;_v)$"><ul><h3><li>friend UL_Interface SFFloat Length (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Return the magnitude (length) of the given vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to measure.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_PlaneRotate_(const_vrMatrix&amp;_m,_const_SFVec3f&amp;_v)$"><ul><h3><li>friend UL_Interface SFVec3f PlaneRotate (const vrMatrix&amp; m, const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Rotate a plane (represented by the plane's normal vector) by the given matrix.
+	   <dd>Returns the rotated normal.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> m:</strong>
+<dd>The matrix to transform the normal by.
+<dt><i>in</i><strong> v:</strong>
+<dd>The normal to be rotated.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec3f_AbsoluteVal_(const_SFVec3f&amp;_v)$"><ul><h3><li>friend UL_Interface SFVec3f AbsoluteVal (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Return the absolute value of the vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_void_Minimize_(SFVec3f&amp;_min,_const_SFVec3f&amp;_v)$"><ul><h3><li>friend UL_Interface void Minimize (SFVec3f&amp; min, const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Return the vector that is not larger than the candidate in any component.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> min:</strong>
+<dd>The minimum values for each of the three components of the candidate vector 'v'.
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_void_Maximize_(SFVec3f&amp;_max,_const_SFVec3f&amp;_v)$"><ul><h3><li>friend UL_Interface void Maximize (SFVec3f&amp; max, const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Return the vector that is not smaller than the candidate in any component.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> max:</strong>
+<dd>The minimum values for each of the three components of the candidate vector 'v'.
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFInt32_GetDominantComp_(const_SFVec3f&amp;_v)$"><ul><h3><li>friend UL_Interface SFInt32 GetDominantComp (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Return the component of the vector that is largest in absolute value.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="SFColor.htm">SFColor</a>
+<li><a href="SFRotation.htm">SFRotation</a>
+<li><a href="vrVertex.htm">vrVertex</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:05 1999
+.<p>
+</body></html>

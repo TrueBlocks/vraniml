@@ -1,0 +1,248 @@
+<html><head><title>vrBoundingBox Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrBoundingBox</a></h1>
+<dl>
+<dd>
+	A bounding box is used to calculate the axis-aligned space represented
+	by a set of <a href="SFVec3f.htm">SFVec3f</a> values.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrboundingbox.htm#aag">Summary</a> | </a>
+<a href="vrboundingbox.htm#DESCRIPTION">Description</a> | 
+<a href="vrboundingbox.htm#NOTES">Notes</a> | 
+<a href="vrboundingbox.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrboundingbox.htm#MEMBERS">Members</a> | 
+<a href="vrboundingbox.htm#parents">Ancestors</a> | <a href="vrboundingbox.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface vrBoundingBox<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBoundingBox.htm#vrBoundingBox(void)$">vrBoundingBox</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBoundingBox.htm#vrBoundingBox(const_vrBoundingBox&amp;_aBox)$">vrBoundingBox</a>(const vrBoundingBox&amp; aBox);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBoundingBox.htm#vrBoundingBox(const_SFVec3f&amp;_min,_const_SFVec3f&amp;_max)$">vrBoundingBox</a>(const <a href="SFVec3f.htm">SFVec3f</a>&amp; min, const <a href="SFVec3f.htm">SFVec3f</a>&amp; max);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrBoundingBox.htm#~vrBoundingBox(void)$">vrBoundingBox</a>(void);</td></tr>
+<tr><td align="right" valign="top">vrBoundingBox&amp; </td><td><a href="vrBoundingBox.htm#vrBoundingBox&amp;_operator$_(const_vrBoundingBox&amp;_aBox)$">operator=</a> (const vrBoundingBox&amp; aBox);</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrBoundingBox.htm#SFVec3f_GetMin_(void)_const$">GetMin</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrBoundingBox.htm#SFVec3f_GetMax_(void)_const$">GetMax</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrRect2D.htm">vrRect2D</a> </td><td><a href="vrBoundingBox.htm#vrRect2D_GetFront_(void)_const$">GetFront</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrRect2D.htm">vrRect2D</a> </td><td><a href="vrBoundingBox.htm#vrRect2D_GetTop_(void)_const$">GetTop</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrRect2D.htm">vrRect2D</a> </td><td><a href="vrBoundingBox.htm#vrRect2D_GetSide_(void)_const$">GetSide</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrBoundingBox.htm#SFVec3f_GetCenter_(void)_const_$">GetCenter</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrBoundingBox.htm#SFBool_IsDefault_(void)_const$">IsDefault</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBoundingBox.htm#void_Include_(const_SFVec3f&amp;_newPt)$">Include</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; newPt);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBoundingBox.htm#void_Include_(const_vrBoundingBox_&amp;_aBox)$">Include</a> (const vrBoundingBox &amp; aBox);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrBoundingBox.htm#SFBool_IsInside_(const_SFVec3f&amp;_v)_const$">IsInside</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; v) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBoundingBox.htm#SFInt32_Intersect_(const_vrRay&amp;_ray,_float_*tmin_,_float_*tmax_)_const$">Intersect</a> (const <a href="vrRay.htm">vrRay</a>&amp; ray, float *tmin , float *tmax ) const;</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrBoundingBox </td><td><a href="vrBoundingBox.htm#friend_UL_Interface_vrBoundingBox_Union_(const_vrBoundingBox&amp;_box1,_const_vrBoundingBox&amp;_box2)$">Union</a> (const vrBoundingBox&amp; box1, const vrBoundingBox&amp; box2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrBoundingBox </td><td><a href="vrBoundingBox.htm#friend_UL_Interface_vrBoundingBox_Intersect_(const_vrBoundingBox&amp;_box1,_const_vrBoundingBox&amp;_box2)$">Intersect</a> (const vrBoundingBox&amp; box1, const vrBoundingBox&amp; box2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFBool </td><td><a href="vrBoundingBox.htm#friend_UL_Interface_SFBool_Overlap_(const_vrBoundingBox&amp;_box1,_const_vrBoundingBox&amp;_box2)$">Overlap</a> (const vrBoundingBox&amp; box1, const vrBoundingBox&amp; box2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface vrBoundingBox </td><td><a href="vrBoundingBox.htm#friend_UL_Interface_vrBoundingBox_TransformBox(const_vrBoundingBox&amp;_box,_const_vrMatrix&amp;_tform)$">TransformBox</a>(const vrBoundingBox&amp; box, const <a href="vrMatrix.htm">vrMatrix</a>&amp; tform);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrBoundingBox.htm#SFVec3f_m_Min$">m_Min</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrBoundingBox.htm#SFVec3f_m_Max$">m_Max</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	Each VRML Grouping Node has a vrBoundingBox data member that represents
+	the space occupied by all the objects contained in the grouping node.  This
+	class represents that bounding box as two <a href="SFVec3f.htm">SFVec3f</a> values for the max and
+	min extents of the box.  Users may use this class as a standalone bounding box
+	utility also.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>The bounding box is represented as two <a href="SFVec3f.htm">SFVec3f</a> fields for the
+	min and max extents of the box.</li>
+	<li>The bounding box is axis aligned.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// To add values to a bounding box:
+	vrBoundingBox box;
+	box.<a href="vrboundingbox.htm#void_Include_(const_SFVec3f&amp;_newPt)$">Include</a>(<a href="SFVec3f.htm">SFVec3f</a>(-1.0));
+	box.<a href="vrboundingbox.htm#void_Include_(const_SFVec3f&amp;_newPt)$">Include</a>(<a href="SFVec3f.htm">SFVec3f</a>(1.0));
+
+	ASSERT(box.<a href="vrboundingbox.htm#SFBool_IsInside_(const_SFVec3f&amp;_v)_const$">IsInside</a>(<a href="SFVec3f.htm">SFVec3f</a>(0.0)) == TRUE);
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFVec3f_m_Min$"><ul><h3><li>SFVec3f m_Min;</li></h3></a>
+</ul>
+</ul>     <dd>Largest x, y and z components contained in the bounding box.
+<dl><dl>
+<dt><i>default:</i><strong> [-INFINITY]</strong>
+<p>
+</dl></dl>
+<a name="SFVec3f_m_Max$"><ul><h3><li>SFVec3f m_Max;</li></h3></a>
+</ul>
+</ul>     <dd>Smallest x, y and z components contained in the bounding box.
+<dl><dl>
+<dt><i>default:</i><strong> [+INFINITY]</strong>
+<p>
+</dl></dl>
+<a name="vrBoundingBox(void)$"><ul><h3><li>vrBoundingBox(void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="vrBoundingBox(const_vrBoundingBox&amp;_aBox)$"><ul><h3><li>vrBoundingBox(const vrBoundingBox&amp; aBox);</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="vrBoundingBox(const_SFVec3f&amp;_min,_const_SFVec3f&amp;_max)$"><ul><h3><li>vrBoundingBox(const SFVec3f&amp; min, const SFVec3f&amp; max);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> min:</strong>
+<dd>The minimum extent of the bounding box.
+<dt><i>in</i><strong> max:</strong>
+<dd>The maximum extent of the bounding box.
+<p>
+</dl></dl>
+<a name="~vrBoundingBox(void)$"><ul><h3><li>~vrBoundingBox(void);</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="vrBoundingBox&amp;_operator$_(const_vrBoundingBox&amp;_aBox)$"><ul><h3><li>vrBoundingBox&amp; operator= (const vrBoundingBox&amp; aBox);</li></h3></a>
+</ul>
+</ul>     <dd>Equals operator.
+<p>
+<a name="SFVec3f_GetMin_(void)_const$"><ul><h3><li>SFVec3f GetMin (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns the value of m_Min.
+<p>
+<a name="SFVec3f_GetMax_(void)_const$"><ul><h3><li>SFVec3f GetMax (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns the value of m_Max.
+<p>
+<a name="vrRect2D_GetFront_(void)_const$"><ul><h3><li>vrRect2D GetFront (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns a 2D rectangle represented by the front of the bounding box.
+<p>
+<a name="vrRect2D_GetTop_(void)_const$"><ul><h3><li>vrRect2D GetTop (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns a 2D rectangle represented by the top of the bounding box.
+<p>
+<a name="vrRect2D_GetSide_(void)_const$"><ul><h3><li>vrRect2D GetSide (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns a 2D rectangle represented by the side of the bounding box.
+<p>
+<a name="SFVec3f_GetCenter_(void)_const_$"><ul><h3><li>SFVec3f GetCenter (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Returns an <a href="SFVec3f.htm">SFVec3f</a> at the center of the bounding box.
+<p>
+<a name="SFBool_IsDefault_(void)_const$"><ul><h3><li>SFBool IsDefault (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if the bounding box is in it's default state.
+<p>
+<a name="void_Include_(const_SFVec3f&amp;_newPt)$"><ul><h3><li>void Include (const SFVec3f&amp; newPt);</li></h3></a>
+</ul>
+</ul>     <dd>Add an <a href="SFVec3f.htm">SFVec3f</a> to the bounding box, growing it if necessary.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> newPt:</strong>
+<dd>The point to add to the bounding box growing it if needed.
+<p>
+</dl></dl>
+<a name="void_Include_(const_vrBoundingBox_&amp;_aBox)$"><ul><h3><li>void Include (const vrBoundingBox &amp; aBox);</li></h3></a>
+</ul>
+</ul>     <dd>Add another bounding box to this bounding box, growing it if necessary.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> aBox:</strong>
+<dd>A vrBoundingBox to add to this box, growing it if needed.
+<p>
+</dl></dl>
+<a name="SFBool_IsInside_(const_SFVec3f&amp;_v)_const$"><ul><h3><li>SFBool IsInside (const SFVec3f&amp; v) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if the query vertex is inside the bounding box.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The query vertex.
+<p>
+</dl></dl>
+<a name="SFInt32_Intersect_(const_vrRay&amp;_ray,_float_*tmin_,_float_*tmax_)_const$"><ul><h3><li>SFInt32 Intersect (const vrRay&amp; ray, float *tmin , float *tmax ) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if the ray intersects the bounding box.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> ray:</strong>
+<dd>The query ray.
+<dt><i>out</i><strong> tmin:</strong>
+<dd>The value of 't' at which the ray is evaluted where it crosses 
+	               into the bounding box.  May be NULL.
+<dt><i>out</i><strong> tmax:</strong>
+<dd>The value of 't' at which the ray is evaluted where it crosses
+	               out of bounding box.  May be NULL.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrBoundingBox_Union_(const_vrBoundingBox&amp;_box1,_const_vrBoundingBox&amp;_box2)$"><ul><h3><li>friend UL_Interface vrBoundingBox Union (const vrBoundingBox&amp; box1, const vrBoundingBox&amp; box2);</li></h3></a>
+</ul>
+</ul>     <dd>Returns the union of two bounding boxes.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> box1:</strong>
+<dd>The first bounding box.
+<dt><i>in</i><strong> box2:</strong>
+<dd>The second bounding box.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrBoundingBox_Intersect_(const_vrBoundingBox&amp;_box1,_const_vrBoundingBox&amp;_box2)$"><ul><h3><li>friend UL_Interface vrBoundingBox Intersect (const vrBoundingBox&amp; box1, const vrBoundingBox&amp; box2);</li></h3></a>
+</ul>
+</ul>     <dd>Returns the intersection of two bounding boxes (empty bounding box if no intersection).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> box1:</strong>
+<dd>The first bounding box.
+<dt><i>in</i><strong> box2:</strong>
+<dd>The second bounding box.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFBool_Overlap_(const_vrBoundingBox&amp;_box1,_const_vrBoundingBox&amp;_box2)$"><ul><h3><li>friend UL_Interface SFBool Overlap (const vrBoundingBox&amp; box1, const vrBoundingBox&amp; box2);</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if the two bounding boxes intersect.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> box1:</strong>
+<dd>The first bounding box.
+<dt><i>in</i><strong> box2:</strong>
+<dd>The second bounding box.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_vrBoundingBox_TransformBox(const_vrBoundingBox&amp;_box,_const_vrMatrix&amp;_tform)$"><ul><h3><li>friend UL_Interface vrBoundingBox TransformBox(const vrBoundingBox&amp; box, const vrMatrix&amp; tform);</li></h3></a>
+</ul>
+</ul>     <dd>Transforms the bounding box to a different space.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> box:</strong>
+<dd>The bounding box to transform.
+<dt><i>in</i><strong> tform:</strong>
+<dd>The transformation to apply to the given bounding box.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:57 1999
+.<p>
+</body></html>

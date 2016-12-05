@@ -1,0 +1,218 @@
+<html>
+
+<head>
+<title>Step 6</title>
+
+<meta name="Microsoft Theme" content="sumipntg 011"></head>
+
+<body background="../../../../_themes/sumipntg/sumtextb.jpg" bgcolor="#FFFFFF" text="#808080" link="#3333CC" vlink="#666699" alink="#990099"><!--mstheme--><font face="verdana, arial, helvetica">
+<font face="book antiqua">
+
+<!--mstheme--></font><table border="0" width="100%" height="97">
+  <tr>
+    <td width="12%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><img src="../../logo.gif" alt="[Logo]" border="0" start="fileopen" width="100" height="110"><!--mstheme--></font></td>
+    <td width="88%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><em><br>
+    <big><big><big>Great Hill Corporation</big></big></big></em><br>
+    <em>Step 6: Making It Move</em><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="verdana, arial, helvetica"><a HREF="step5.htm">[Prev]</a> <a HREF="step7.htm">[Next]</a> <a HREF="../sample2.htm">[Tutorial2]</a><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+<!--commentbeg------------------------------------------>
+<!--commentbeg------------------------------------------>
+
+<p>In this tutorial step we will add two new items to the scene graph: </p>
+
+<ol>
+  <li>A TimeSensor </li>
+  <li>An OrientationInterpolator</li>
+</ol>
+
+<p>We will also ROUTE these new objects together to finally animate a scene.</p>
+
+<p>The TimeSensor will be routed to the OrientationInterpolator which will be routed to
+Transform nodes (these new Transform nodes called spinners will become children of the
+Transforms we've added in previous steps). This will make the objects spin. This is a
+simple way to animate objects.</p>
+
+<p>In exactly the same way as VRML 2.0, each time the scene is traversed, the TimeSensor
+will emit an event, which will cause the OrientationInterpolator to emit an event which
+will cause the Transform's orientation to change.&nbsp; Then the scene will be rendered.
+&nbsp; The effect will be an animated, spinning object.</p>
+
+<p>Make the changes marked in <font color="FF0000">red</font> in the file <i><b>sample2.cpp</b></i>
+(as it exists after step 5) and recompile and run the program.</p>
+
+<p>Now you are starting to see the power of VRaniML&#153;. </p>
+
+<p>In the <a href="step7.htm">final</a> tutorial step we will review what we have learned
+and point to some further improvements we could make to this sample program. </p>
+
+<p><img SRC="../bar.jpg" width="100%" height="3" alt="bar.jpg (730 bytes)" start="fileopen"> </p>
+
+<!--mstheme--></font><pre>
+#include &quot;windows.h&quot;
+
+#include &quot;vraniml.h&quot;
+
+LRESULT APIENTRY WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	switch (message)
+	{
+	case WM_DESTROY:
+		PostQuitMessage( 0 );
+		break;
+	}
+	
+	return DefWindowProc(hWnd, message, wParam, lParam);
+}
+
+HWND InitWindow(HINSTANCE hCurrentInst, char *className, char *windowName)
+{
+	WNDCLASS wndClass;
+	HWND hWnd;
+
+	/* register window class */
+	wndClass.style         = CS_HREDRAW | CS_VREDRAW;
+	wndClass.lpfnWndProc   = WindowProc;
+	wndClass.cbClsExtra    = 0;
+	wndClass.cbWndExtra    = 0;
+	wndClass.hInstance     = hCurrentInst;
+	wndClass.hIcon         = LoadIcon(NULL, IDI_APPLICATION);
+	wndClass.hCursor       = LoadCursor(NULL, IDC_ARROW);
+	wndClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
+	wndClass.lpszMenuName  = NULL;
+	wndClass.lpszClassName = className;
+	RegisterClass(&amp;wndClass);
+
+	/* create window */
+	hWnd = CreateWindow(className, 
+		windowName,
+		WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS,
+		0, 0, 640, 480,
+		NULL, NULL, hCurrentInst, NULL);
+
+
+	ShowWindow(hWnd, SW_SHOW);
+	UpdateWindow(hWnd);
+
+	return hWnd;
+}
+
+//
+// Create a shape object of the given color using the given geometry
+//
+vrShape *BuildShape(const SFColor&amp; color, vrGeometryNode *node)
+{
+	vrShape *shape = new vrShape;
+	vrAppearance *app = new vrAppearance;
+	vrMaterial *mat = new vrMaterial;
+	mat-&gt;SetDiffuseColor(color);
+	app-&gt;SetMaterial(mat);
+	shape-&gt;SetAppearance(app);
+	shape-&gt;SetGeometry(node);
+	return shape;
+}
+
+<font color="FF0000">
+//
+// Return an animated transform that spins the given shape about it's own axis
+//
+vrTransform *BuildSpinner(vrBrowser *browser, vrShape *shape)
+{
+	vrTransform *spinner = new vrTransform;
+	spinner-&gt;AddChild(shape);
+
+</font><font color="#8000FF">	// Notice that we make the TimeSensor and the OrientationInterpolator
+	// children of the Transform.  In this way the entire sub-assembly
+	// (from the Transform down) can be viewed as a single object.
+</font><font color="FF0000">	vrTimeSensor *timer = new vrTimeSensor;
+	timer-&gt;SetLoop(TRUE);
+	spinner-&gt;AddChild(timer);
+
+	vrOrientationInterpolator *ori = new vrOrientationInterpolator;
+	ori-&gt;AddKey(0.00); ori-&gt;AddKeyValue(SFRotation(zAxis, DEG2RAD(  0.0)));
+	ori-&gt;AddKey(0.25); ori-&gt;AddKeyValue(SFRotation(zAxis, DEG2RAD( 90.0)));
+	ori-&gt;AddKey(0.50); ori-&gt;AddKeyValue(SFRotation(zAxis, DEG2RAD(180.0)));
+	ori-&gt;AddKey(0.75); ori-&gt;AddKeyValue(SFRotation(zAxis, DEG2RAD(270.0)));
+	ori-&gt;AddKey(1.00); ori-&gt;AddKeyValue(SFRotation(zAxis, DEG2RAD(360.0)));
+	spinner-&gt;AddChild(ori);
+
+</font><font color="#8000FF">	// Now we ROUTE the timer to the interpolator to the transform to
+	// create the animation
+</font><font color="FF0000">	browser-&gt;AddRoute(timer, &quot;fraction_changed&quot;, ori,      &quot;set_fraction&quot;);
+	browser-&gt;AddRoute(ori,   &quot;value_changed&quot;,    spinner,  &quot;set_rotation&quot;);
+
+	return spinner;
+}
+</font>
+
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPreviousInst, LPSTR lpszCmdLine, int nCmdShow)
+{
+	HWND hWnd = InitWindow(hInstance, &quot;VRaniML&quot;, &quot;VRaniML Sample Program 2&quot;);
+
+	vrBrowser *browser = new vrBrowser(hWnd);
+
+	<font color="FF0000">vrTransform *spinner;</font>
+
+	<font color="#8000FF">// Note that the original Transforms are still used to
+	// separate the objects in space.  After building this
+	// scene graph we will have two top level Transforms each
+	// with a 'spinner' child.  The 'spinner' children each have
+	// a Shape, TimeSensor and Interpolator as children of their own,
+	// demonstrating the ability of VRML to encapsulate whole behaviors
+	// under a scene graph hierarchy.</font>
+	vrTransform *t = new vrTransform;
+	t-&gt;SetTranslation(SFVec3f(-1.0, 0.0, 0.0));     // move over in X
+<font color="FF0000">
+delete this line ---&gt; t-&gt;AddChild(BuildShape(Red, new vrCone));       // Add a red cone
+	// Add a spinning red cone
+	spinner = BuildSpinner(browser, BuildShape(Red, new vrCone));
+	t-&gt;AddChild(spinner);</font>
+	browser-&gt;AddChild(t);
+
+	t = new vrTransform;
+	t-&gt;SetTranslation(SFVec3f(1.0, 0.0, 0.0));      // move over the other way in X
+<font color="FF0000">delete this line ---&gt; t-&gt;AddChild(BuildShape(Green, new vrCylinder)); // Add a green cylinder
+</font><font color="#FF0000">	// Add a spinning green cylinder
+</font><font color="FF0000">	spinner = BuildSpinner(browser, BuildShape(Green, new vrCylinder));
+	t-&gt;AddChild(spinner);</font>
+	browser-&gt;AddChild(t);
+
+	while (1)
+	{
+		MSG msg;
+		if (PeekMessage(&amp;msg, NULL, 0, 0, PM_NOREMOVE))
+		{
+			if (GetMessage(&amp;msg, NULL, 0, 0) != TRUE)
+			{
+				delete browser;
+				return msg.wParam;
+			}
+
+			TranslateMessage(&amp;msg);
+			DispatchMessage(&amp;msg);
+		} else
+		{
+			if (browser-&gt;Tick())
+				browser-&gt;Traverse();
+		}
+	}
+
+	delete browser;
+	return FALSE;
+}
+</pre><!--mstheme--><font face="verdana, arial, helvetica">
+<!--commentend------------------------------------------>
+<!--commentend------------------------------------------>
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+
+<h5><!--mstheme--><font color="#003366"><font COLOR="#660033">Send mail to <a HREF="mailto:webmaster@greathill.com">webmaster@greathill.com</a>
+with questions or comments about this web site.<br>
+Copyright © 1997 Great Hill Corporation<br>
+Last modified: December 17, 1997&nbsp;</font><!--mstheme--></font></h5>
+</font>
+<!--mstheme--></font></body>
+</html>

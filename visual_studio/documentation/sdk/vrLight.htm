@@ -1,0 +1,278 @@
+<html><head><title>vrLight Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrLight</a></h1>
+<dl>
+<dd>
+	This class corresponds to the Light node in VRML.  
+	<a href="../spec/part1/nodesRef.html#Light">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrlight.htm#aag">Summary</a> | </a>
+<a href="vrlight.htm#DESCRIPTION">Description</a> | 
+<a href="vrlight.htm#NOTES">Notes</a> | 
+<a href="vrlight.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrlight.htm#MEMBERS">Members</a> | 
+<a href="vrlight.htm#parents">Ancestors</a> | <a href="vrlight.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrLight : public <a href="vrNode.htm">vrNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrLight.htm#vrLight(void)$">vrLight</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrLight.htm#vrLight(const_vrLight&amp;_v)$">vrLight</a>(const vrLight&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrLight.htm#~vrLight(void)$">vrLight</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrLight&amp; </td><td><a href="vrLight.htm#vrLight&amp;_operator$(const_vrLight&amp;_v)$">operator=</a>(const vrLight&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrLight.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLight.htm#void_SetLightID(SFInt32_lightid)$">SetLightID</a>(SFInt32 lightid);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrLight.htm#SFInt32_GetLightID(void)_const$">GetLightID</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLight.htm#void_SetOn(SFBool_on)$">SetOn</a>(SFBool on);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLight.htm#void_SetColor(const_SFColor&amp;_color)$">SetColor</a>(const <a href="SFColor.htm">SFColor</a>&amp; color);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLight.htm#void_SetIntensity(SFFloat_intensity)$">SetIntensity</a>(SFFloat intensity);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLight.htm#void_SetAmbientIntensity(SFFloat_ambientintensity)$">SetAmbientIntensity</a>(SFFloat ambientintensity);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrLight.htm#void_SetAttenuation(const_SFVec3f&amp;_attenuation)$">SetAttenuation</a>(const <a href="SFVec3f.htm">SFVec3f</a>&amp; attenuation);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrLight.htm#SFBool_GetOn(void)_const$">GetOn</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFColor.htm">SFColor</a> </td><td><a href="vrLight.htm#SFColor_GetColor(void)_const$">GetColor</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrLight.htm#SFFloat_GetIntensity(void)_const$">GetIntensity</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrLight.htm#SFFloat_GetAmbientIntensity(void)_const$">GetAmbientIntensity</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrLight.htm#SFVec3f_GetAttenuation(void)_const$">GetAttenuation</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrLight.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrLight.htm#void_ReceiveEventIn(vrEvent_*event)$">ReceiveEventIn</a></i>(<a href="vrEvent.htm">vrEvent</a> *event);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrLight.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrLight.htm#DECLARE_NODE(vrLight)$">DECLARE_NODE</a>(vrLight);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrLight.htm#SFInt32_m_LightID$">m_LightID</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrLight.htm#SFBool_m_On$">m_On</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFColor.htm">SFColor</a> </td><td><a href="vrLight.htm#SFColor_m_Color$">m_Color</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrLight.htm#SFFloat_m_Intensity$">m_Intensity</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrLight.htm#SFFloat_m_AmbientIntensity$">m_AmbientIntensity</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrLight.htm#SFVec3f_m_Attenuation$">m_Attenuation</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the Light node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#Light">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFInt32_m_LightID$"><ul><h3><li>SFInt32 m_LightID;</li></h3></a>
+</ul>
+</ul>	  <dd>A unique ID for this light (OpenGL specific).
+<p>
+<dl><dl>
+<dt><i>default</i><strong> -1</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_On$"><ul><h3><li>SFBool m_On;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'on' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="SFColor_m_Color$"><ul><h3><li>SFColor m_Color;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'color' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> White</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_Intensity$"><ul><h3><li>SFFloat m_Intensity;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'intensity' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 1.0</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_AmbientIntensity$"><ul><h3><li>SFFloat m_AmbientIntensity;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'ambientIntensity' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0.0</strong>
+<p>
+</dl></dl>
+<a name="SFVec3f_m_Attenuation$"><ul><h3><li>SFVec3f m_Attenuation;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'attenuation' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> xAxis</strong>
+<p>
+</dl></dl>
+<a name="vrLight(void)$"><ul><h3><li>vrLight(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrLight(const_vrLight&amp;_v)$"><ul><h3><li>vrLight(const vrLight&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrLight(void)$"><ul><h3><li>~vrLight(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrLight&amp;_operator$(const_vrLight&amp;_v)$"><ul><h3><li>vrLight&amp; operator=(const vrLight&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_SetLightID(SFInt32_lightid)$"><ul><h3><li>void SetLightID(SFInt32 lightid);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_LightID member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> lightid:</strong>
+<dd>The lightid value.
+<p>
+</dl></dl>
+<a name="SFInt32_GetLightID(void)_const$"><ul><h3><li>SFInt32 GetLightID(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_LightID member.
+<p>
+<a name="void_SetOn(SFBool_on)$"><ul><h3><li>void SetOn(SFBool on);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_On member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> on:</strong>
+<dd>The on value.
+<p>
+</dl></dl>
+<a name="void_SetColor(const_SFColor&amp;_color)$"><ul><h3><li>void SetColor(const SFColor&amp; color);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Color member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> color:</strong>
+<dd>The color value.
+<p>
+</dl></dl>
+<a name="void_SetIntensity(SFFloat_intensity)$"><ul><h3><li>void SetIntensity(SFFloat intensity);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Intensity member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> intensity:</strong>
+<dd>The intensity value.
+<p>
+</dl></dl>
+<a name="void_SetAmbientIntensity(SFFloat_ambientintensity)$"><ul><h3><li>void SetAmbientIntensity(SFFloat ambientintensity);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_AmbientIntensity member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> ambientintensity:</strong>
+<dd>The ambientintensity value.
+<p>
+</dl></dl>
+<a name="void_SetAttenuation(const_SFVec3f&amp;_attenuation)$"><ul><h3><li>void SetAttenuation(const SFVec3f&amp; attenuation);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Attenuation member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> attenuation:</strong>
+<dd>The attenuation value.
+<p>
+</dl></dl>
+<a name="SFBool_GetOn(void)_const$"><ul><h3><li>SFBool GetOn(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_On member.
+<p>
+<a name="SFColor_GetColor(void)_const$"><ul><h3><li>SFColor GetColor(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Color member.
+<p>
+<a name="SFFloat_GetIntensity(void)_const$"><ul><h3><li>SFFloat GetIntensity(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Intensity member.
+<p>
+<a name="SFFloat_GetAmbientIntensity(void)_const$"><ul><h3><li>SFFloat GetAmbientIntensity(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_AmbientIntensity member.
+<p>
+<a name="SFVec3f_GetAttenuation(void)_const$"><ul><h3><li>SFVec3f GetAttenuation(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Attenuation member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vrlight.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="void_ReceiveEventIn(vrEvent_*event)$"><ul><h3><li>void ReceiveEventIn(vrEvent *event);</li></h3></a>
+</ul>
+</ul>	   <dd>Receive an event during an event cascade or directly from caller.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> event:</strong>
+<dd>The <a href="vrEvent.htm">vrEvent</a> to be processed.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrLight)$"><ul><h3><li>DECLARE_NODE(vrLight);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrLight:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrDirectionalLight.htm">vrDirectionalLight</a>
+<li><a href="vrPointLight.htm">vrPointLight</a>
+<li><a href="vrSpotLight.htm">vrSpotLight</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:52 1999
+.<p>
+</body></html>

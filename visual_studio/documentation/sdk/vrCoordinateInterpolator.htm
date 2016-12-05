@@ -1,0 +1,238 @@
+<html><head><title>vrCoordinateInterpolator Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrCoordinateInterpolator</a></h1>
+<dl>
+<dd>
+	This class corresponds to the CoordinateInterpolator node in VRML.  
+	<a href="../spec/part1/nodesRef.html#CoordinateInterpolator">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrcoordinateinterpolator.htm#aag">Summary</a> | </a>
+<a href="vrcoordinateinterpolator.htm#DESCRIPTION">Description</a> | 
+<a href="vrcoordinateinterpolator.htm#NOTES">Notes</a> | 
+<a href="vrcoordinateinterpolator.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrcoordinateinterpolator.htm#MEMBERS">Members</a> | 
+<a href="vrcoordinateinterpolator.htm#parents">Ancestors</a> | <a href="vrcoordinateinterpolator.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrCoordinateInterpolator : public <a href="vrInterpolator.htm">vrInterpolator</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrCoordinateInterpolator.htm#vrCoordinateInterpolator(void)$">vrCoordinateInterpolator</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrCoordinateInterpolator.htm#vrCoordinateInterpolator(const_vrCoordinateInterpolator&amp;_v)$">vrCoordinateInterpolator</a>(const vrCoordinateInterpolator&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrCoordinateInterpolator.htm#~vrCoordinateInterpolator(void)$">vrCoordinateInterpolator</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrCoordinateInterpolator&amp; </td><td><a href="vrCoordinateInterpolator.htm#vrCoordinateInterpolator&amp;_operator$(const_vrCoordinateInterpolator&amp;_v)$">operator=</a>(const vrCoordinateInterpolator&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrCoordinateInterpolator.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrCoordinateInterpolator.htm#void_AddKeyValue(const_SFVec3f&amp;_keyvalue)$">AddKeyValue</a>(const <a href="SFVec3f.htm">SFVec3f</a>&amp; keyvalue);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrCoordinateInterpolator.htm#void_SetKeyValue(const_MFVec3f&amp;_keyvalue)$">SetKeyValue</a>(const MFVec3f&amp; keyvalue);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrCoordinateInterpolator.htm#SFInt32_GetNKeyValues(void)_const$">GetNKeyValues</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrCoordinateInterpolator.htm#SFVec3f_GetKeyValue(SFInt32_n)_const$">GetKeyValue</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const MFVec3f&amp; </td><td><a href="vrCoordinateInterpolator.htm#const_MFVec3f&amp;_GetKeyValueArray(void)_const$">GetKeyValueArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrCoordinateInterpolator.htm#void_AddValue(const_SFVec3f&amp;_value)$">AddValue</a>(const <a href="SFVec3f.htm">SFVec3f</a>&amp; value);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrCoordinateInterpolator.htm#void_SetValue(const_MFVec3f&amp;_value)$">SetValue</a>(const MFVec3f&amp; value);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrCoordinateInterpolator.htm#SFInt32_GetNValues(void)_const$">GetNValues</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrCoordinateInterpolator.htm#SFVec3f_GetValue(SFInt32_n)_const$">GetValue</a>(SFInt32 n) const;</td></tr>
+<tr><td align="right" valign="top">const MFVec3f&amp; </td><td><a href="vrCoordinateInterpolator.htm#const_MFVec3f&amp;_GetValueArray(void)_const$">GetValueArray</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrCoordinateInterpolator.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrCoordinateInterpolator.htm#void_ReceiveEventIn(vrEvent_*event)$">ReceiveEventIn</a></i>(<a href="vrEvent.htm">vrEvent</a> *event);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrCoordinateInterpolator.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrCoordinateInterpolator.htm#DECLARE_NODE(vrCoordinateInterpolator)$">DECLARE_NODE</a>(vrCoordinateInterpolator);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">MFVec3f </td><td><a href="vrCoordinateInterpolator.htm#MFVec3f_m_KeyValue$">m_KeyValue</a>;</td></tr>
+<tr><td align="right" valign="top">MFVec3f </td><td><a href="vrCoordinateInterpolator.htm#MFVec3f_m_Value$">m_Value</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrCoordinateInterpolator.htm#SFFloat_m_Fraction$">m_Fraction</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the CoordinateInterpolator node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#CoordinateInterpolator">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="MFVec3f_m_KeyValue$"><ul><h3><li>MFVec3f m_KeyValue;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'keyValue' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="MFVec3f_m_Value$"><ul><h3><li>MFVec3f m_Value;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'value' eventOut.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> []</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_Fraction$"><ul><h3><li>SFFloat m_Fraction;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'fraction' eventIn.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0.0</strong>
+<p>
+</dl></dl>
+<a name="vrCoordinateInterpolator(void)$"><ul><h3><li>vrCoordinateInterpolator(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrCoordinateInterpolator(const_vrCoordinateInterpolator&amp;_v)$"><ul><h3><li>vrCoordinateInterpolator(const vrCoordinateInterpolator&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrCoordinateInterpolator(void)$"><ul><h3><li>~vrCoordinateInterpolator(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrCoordinateInterpolator&amp;_operator$(const_vrCoordinateInterpolator&amp;_v)$"><ul><h3><li>vrCoordinateInterpolator&amp; operator=(const vrCoordinateInterpolator&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_AddKeyValue(const_SFVec3f&amp;_keyvalue)$"><ul><h3><li>void AddKeyValue(const SFVec3f&amp; keyvalue);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_KeyValue array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> keyvalue:</strong>
+<dd>The value to add to the m_KeyValue array.
+<p>
+</dl></dl>
+<a name="void_SetKeyValue(const_MFVec3f&amp;_keyvalue)$"><ul><h3><li>void SetKeyValue(const MFVec3f&amp; keyvalue);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_KeyValue member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> keyvalue:</strong>
+<dd>The m_KeyValue array.
+<p>
+</dl></dl>
+<a name="SFInt32_GetNKeyValues(void)_const$"><ul><h3><li>SFInt32 GetNKeyValues(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_KeyValue member.
+<p>
+<a name="SFVec3f_GetKeyValue(SFInt32_n)_const$"><ul><h3><li>SFVec3f GetKeyValue(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_KeyValue member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFVec3f&amp;_GetKeyValueArray(void)_const$"><ul><h3><li>const MFVec3f&amp; GetKeyValueArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_KeyValue member.
+<p>
+<a name="void_AddValue(const_SFVec3f&amp;_value)$"><ul><h3><li>void AddValue(const SFVec3f&amp; value);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an item to the m_Value array (grow if needed).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> value:</strong>
+<dd>The value to add to the m_Value array.
+<p>
+</dl></dl>
+<a name="void_SetValue(const_MFVec3f&amp;_value)$"><ul><h3><li>void SetValue(const MFVec3f&amp; value);</li></h3></a>
+</ul>
+</ul>	   <dd>Replace the values of the m_Value member (copies values).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> value:</strong>
+<dd>The m_Value array.
+<p>
+</dl></dl>
+<a name="SFInt32_GetNValues(void)_const$"><ul><h3><li>SFInt32 GetNValues(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of values in the m_Value member.
+<p>
+<a name="SFVec3f_GetValue(SFInt32_n)_const$"><ul><h3><li>SFVec3f GetValue(SFInt32 n) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nth value in the m_Value member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The index into the array.
+<p>
+</dl></dl>
+<a name="const_MFVec3f&amp;_GetValueArray(void)_const$"><ul><h3><li>const MFVec3f&amp; GetValueArray(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the m_Value member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vrcoordinateinterpolator.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="void_ReceiveEventIn(vrEvent_*event)$"><ul><h3><li>void ReceiveEventIn(vrEvent *event);</li></h3></a>
+</ul>
+</ul>	   <dd>Receive an event during an event cascade or directly from caller.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> event:</strong>
+<dd>The <a href="vrEvent.htm">vrEvent</a> to be processed.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrCoordinateInterpolator)$"><ul><h3><li>DECLARE_NODE(vrCoordinateInterpolator);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed and dynamically created. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrCoordinateInterpolator:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+<li><a href="vrInterpolator.htm">vrInterpolator</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:50 1999
+.<p>
+</body></html>

@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<title>Reference Manual</title>
+</head>
+
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF">
+
+<h1><img src="logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">VRaniML</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reference Manuals</h1>
+
+<p>VRaniML contains three separate C++ class libraries.&nbsp; Two of these libraries
+provide implementations for basic 3D related operations (such as vector and matrix math)
+and a fundamental geometric data structure (called the <em>half edge</em>).&nbsp; The
+third library (the VRML97 Class Library) implements most of the functionality defined in
+the VRML97 spec.</p>
+
+<p>Each class library is documented in a separate reference manual.</p>
+
+<hr>
+
+<p><a href="Nodes1.htm"><strong>VRML97 Class Library</strong></a></p>
+
+<blockquote>
+  <p>This collection of C++ classes implements each of the VRML97 nodes, allows for the
+  reading and writing of VRML97 compliant files, implements the runtime environment as
+  defined in VRML97 as well as implementing a number of other VRML related concepts.&nbsp;
+  The library is based on the Utility and Solid Modeling Libraries below.</p>
+</blockquote>
+
+<p><a href="../Documentation/solids.htm"><strong>Solid Modeling Library</strong></a></p>
+
+<blockquote>
+  <p>The Solid Modeling Library implements the internal data representation for all geometry
+  related nodes.&nbsp; The use of this data structure (the <em>half edge</em>) allows us to
+  anticipate useful algorithms such as mesh decimation and boolean operations for future
+  versions of VRaniML.&nbsp; This library is also stand-alone and may be used for any
+  purpose.</p>
+</blockquote>
+
+<p><a href="../Documentation/utility.htm"><strong>Utility Class Library</strong></a></p>
+
+<blockquote>
+  <p>A collection of classes implementing functionality such as debugging support, time
+  management, file reading and fetching over the network, etc.&nbsp; Collection classes such
+  as lists and arrays as well as basic geometry data types such as matrix and vector classes
+  are also supported.&nbsp; This library may be used stand-alone.</p>
+</blockquote>
+
+<hr>
+</body>
+</html>

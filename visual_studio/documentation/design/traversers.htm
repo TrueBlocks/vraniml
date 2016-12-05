@@ -1,0 +1,84 @@
+<html>
+
+<head>
+<title>Traversers</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+
+
+<meta name="Microsoft Theme" content="neon 011, default"><meta name="Microsoft Border" content="b, default"></head>
+
+<body background="../../../_themes/neon/neobkgnd.gif" bgcolor="#000000" text="#FFFFFF" link="#FFFF66" vlink="#CCCC33" alink="#FFFF00"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top"><!--mstheme--><font face="verdana, arial, helvetica">
+
+<h1><!--mstheme--><font color="#CCCC00"><img src="../logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">VRaniML Design Documentation</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Traverser Classes<!--mstheme--></font></h1>
+
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/neon/neoarule.gif" width="300" height="10"></p>
+
+<p><font size="3">Traversers are classes that &quot;walk&quot; the scene graph maintain
+any state that is needed as part of the traversal.&nbsp; For example the WriteTraverser
+class maintains a FILE * which is the destination file of the export that is being
+performed by the Traverser.&nbsp; As another example, the OpenGLTraverser maintains a GLX
+context that represents the window into which the scene graph is being rendered. &nbsp;
+Every node class has a function called Traverse which takes a Traverser pointer as an
+argument and causes the Traverser to &quot;render&quot; that node (render in this sense
+may mean many things).&nbsp; <a href="Traversers.htm">For more information
+click here</a>.</font></p>
+
+<p><font size="3">Each Traverser class is defined further below.</font></p>
+
+<p align="center"><font SIZE="2"><img SRC="traverser.gif" WIDTH="272" HEIGHT="419"></font></p>
+
+<p>&nbsp;</p>
+
+<p><strong>ActionTraverser class</strong>: This class is fundamental to the <a href="vem.htm">VEM</a>.&nbsp; It provides for the generation of initial events that are
+then propagated to any nodes that it may be ROUTEd to.&nbsp; At every frame, an
+ActionTraverser is the first traverser in the browser's list of Traversers to be accessed.
+&nbsp; The ActionTraverser will cause any sensors that should initiate an event on this
+frame to fire.&nbsp; For example, a TimeSensor node encountered during the ActionTraversal
+will generate fractionChanged events at each frame.&nbsp; These events are what drives an
+animation.&nbsp; The ActionTraverser also converts user input (such as mouse movements)
+into events (for example if the mouse is clicked over an Anchor node a new file will be
+loaded).</p>
+
+<p><strong>D3DTraverser class</strong>: This class is a stand-in for a future traverser
+which will render the scene graph to a Direct 3D window.&nbsp; This class is not yet
+implemented.</p>
+
+<p><strong>OGLTraverser class</strong>: This class renders the scene graph to an OpenGL
+window.&nbsp; To support multiple views of a scene graph in a single application, the
+browser may have more than one OGLTraverser (each with it's own bound viewpoint).&nbsp; In
+essence an OGLTraverser (or for that matter any RenderTraverser) is associated with a
+single window.</p>
+
+<p><strong>RenderTraverser class</strong>: This is the base class for both the
+D3DTraverser and the OGLTraverser (and for that matter for any other traverser that will
+render the 3D scene).&nbsp; This class handles nodes that are common to all rendering, for
+example the Switch node is handled here by selecting which child to render (which is the
+same code regardless of the underlying graphics layer).</p>
+
+<p><strong>SerializeTraverser class</strong>:&nbsp; This un-implemented class will write
+the .wrl file to disc in a proprietary binary format.&nbsp; This might be used for example
+in a PC based game to protect 3D content from prying eyes.&nbsp; This would support both
+export and import of a .wrl file in this binary format.</p>
+
+<p><strong>Traverser class</strong>: This is the base class for all Traversers.&nbsp; It
+provides high level support for such things as traversing the children of grouping nodes.</p>
+
+<p><strong>ValidateTraverser class</strong>: This traverser &quot;walks&quot; the scene
+graph looking for (and possibly reporting on) invalid data in the scene graph.&nbsp; This
+class would be used primarily for debugging.</p>
+
+<p><strong>WriteTraverser class</strong>:&nbsp; This class exports a .wrl file in various
+formats.&nbsp; It could serve as the basis for a pretty printer for example.&nbsp; It also
+ensures that only non-default fields are written to the file, thus lessening the resulting
+file size. </p>
+<!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><br>
+<img src="../../../_borders/bar.jpg" width="100%" height="3" alt="bar.jpg (730 bytes)" start="fileopen"></p>
+
+<h5><!--mstheme--><font color="#6633FF">Send mail to <a href="mailto:webmaster@greathill.com">webmaster@greathill.com</a> with questions or comments about this web site.<br>
+Copyright © 1998 Great Hill Corporation<br>
+Last modified: February 01, 1999 <!--mstheme--></font></h5>
+<!--mstheme--></font></td></tr><!--msnavigation--></table></body>
+</html>

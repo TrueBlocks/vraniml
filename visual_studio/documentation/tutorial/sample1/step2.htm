@@ -1,0 +1,63 @@
+<html>
+
+<head>
+<title>Library Tutorial</title>
+</head>
+
+<body BACKGROUND="../../sumtextb.jpg" BGCOLOR="#FFFFFF">
+
+<h1><img src="../../logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">VRaniML Tutorials</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Step 2: Linking in the Library</h1>
+
+<p>In this step we will change the project's build settings to link the VRaniML&#153;
+library. At the same time we will add the VRaniML&#153; header file directory to the
+include search path and copy the VRaniML&#153; DLLs to your program directory. Finally, we
+will add the vraniml.h file to our project.</p>
+
+<hr>
+
+<ul>
+  <li>Open the Project Settings dialog box</li>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <p>on the C++ Page [Preprocessor Category]: </p>
+    <blockquote>
+      <p>add '<i><b>[install_dir]</b></i>/sdk/include' to the list of additional include
+      directories <em>(where '<b>[install_dir]</b>' is the directory into which you installed
+      the VRaniML&#153; library (c:/program files/great hill corporation/vraniml by default)).</em></p>
+    </blockquote>
+    <p>on the Link Page [Input Category]:</p>
+    <blockquote>
+      <p>add '<i><b>[install_dir]</b></i>/sdk/lib' to the list of additional library directories</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <li>Close the Project Settings dialog box</li>
+</ul>
+
+<ul>
+  <li>Copy <i><b>[install_dir]</b></i>/runtime/*.dll to your program directory</li>
+</ul>
+
+<ul>
+  <li>Add the following line to the file <b>sample1.cpp</b>:<br>
+  </li>
+  <blockquote>
+    <font COLOR="#FF0000"><pre>#include &quot;vraniml.h&quot;</pre>
+    </font>
+  </blockquote>
+  <li>Recompile and run the program.</li>
+</ul>
+
+<p>This program should behave exactly as it did in Step 1.&nbsp; In <a href="step3.htm">Step
+3</a> we will actually open a VRML file.</p>
+
+<hr>
+
+<p>&nbsp;</p>
+</body>
+</html>

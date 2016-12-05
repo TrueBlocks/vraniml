@@ -1,0 +1,160 @@
+<html><head><title>vrArrayBase Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrArrayBase</a></h1>
+<dl>
+<dd>
+	Base class for array classes.
+
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrarraybase.htm#aag">Summary</a> | </a>
+<a href="vrarraybase.htm#DESCRIPTION">Description</a> | 
+<a href="vrarraybase.htm#NOTES">Notes</a> | 
+<a href="vrarraybase.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrarraybase.htm#MEMBERS">Members</a> | 
+<a href="vrarraybase.htm#parents">Ancestors</a> | <a href="vrarraybase.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class vrArrayBase<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrArrayBase.htm#vrArrayBase_(void)_$">vrArrayBase</a> (void) ;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrArrayBase.htm#vrArrayBase_(const_vrArrayBase&amp;_ar)_$">vrArrayBase</a> (const vrArrayBase&amp; ar) ;</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrArrayBase.htm#~vrArrayBase_(void)_$">vrArrayBase</a> (void) ;</td></tr>
+<tr><td align="right" valign="top">vrArrayBase&amp; </td><td><a href="vrArrayBase.htm#vrArrayBase&amp;_operator$_(const_vrArrayBase&amp;_ar)">operator=</a> (const vrArrayBase&amp; ar)</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrArrayBase.htm#void_Clear(void)_$">Clear</a>(void) ;</td></tr>
+<tr><td align="right" valign="top">TYPE&amp; </td><td><a href="vrArrayBase.htm#TYPE&amp;_operator[]_(SFInt32_index)_$">operator[]</a> (SFInt32 index) ;</td></tr>
+<tr><td align="right" valign="top">const TYPE&amp; </td><td><a href="vrArrayBase.htm#const_TYPE&amp;_operator[]_(SFInt32_index)_const_$">operator[]</a> (SFInt32 index) const ;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrArrayBase.htm#SFInt32_GetCount_(void)_const_$">GetCount</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrArrayBase.htm#void_AddValue_(TYPE_val)_$">AddValue</a> (TYPE val) ;</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrArrayBase.htm#SFInt32_m_nSize$">m_nSize</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrArrayBase.htm#SFInt32_m_nValues$">m_nValues</a>;</td></tr>
+<tr><td align="right" valign="top">TYPE *</td><td><a href="vrArrayBase.htm#TYPE_*m_Values$">m_Values</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	This class supports the <a href="vrArray.htm">vrArray</a> classes but does not implement the
+	+, - or * operators since user may sometimes wish to store items in
+	an array for which these operations are not defined (for example strings).
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>This is a templated class.</li>
+	<li>The array will grow in chunks of CHUNK_SIZE items (now defined at
+			30 items) whenever necassary.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// This is a basic array class.
+	vrArrayBase&lt;SFInt32&gt; intArray;
+
+	intArray[0] = 1;
+	intArray[1] = 2;
+	intArray[2] = 3;
+	for (int i=0;i&lt;intArray.<a href="vrarraybase.htm#SFInt32_GetCount_(void)_const_$">GetCount</a>();i++)
+		printf(&quot;%d &quot;, intArray[i]);
+	printf(&quot;\n&quot;);
+
+	// OUTPUT: 1 2 3
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFInt32_m_nSize$"><ul><h3><li>SFInt32 m_nSize;</li></h3></a>
+</ul>
+</ul>     <dd>The current size of the array -- will grow in CHUNK_SIZE increments as array fills up.
+<dl><dl>
+<dt><i>default:</i><strong> CHUNK_SIZE</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_nValues$"><ul><h3><li>SFInt32 m_nValues;</li></h3></a>
+</ul>
+</ul>     <dd>The number of values currently stored in the array.
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="TYPE_*m_Values$"><ul><h3><li>TYPE *m_Values;</li></h3></a>
+</ul>
+</ul>     <dd>The actual array of objects of type TYPE.
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="vrArrayBase_(void)_$"><ul><h3><li>vrArrayBase (void) ;</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="vrArrayBase_(const_vrArrayBase&amp;_ar)_$"><ul><h3><li>vrArrayBase (const vrArrayBase&amp; ar) ;</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="~vrArrayBase_(void)_$"><ul><h3><li>~vrArrayBase (void) ;</li></h3></a>
+</ul>
+</ul>     <dd>Desctructor.
+<p>
+<a name="vrArrayBase&amp;_operator$_(const_vrArrayBase&amp;_ar)"><ul><h3><li>vrArrayBase&amp; operator= (const vrArrayBase&amp; ar)</li></h3></a>
+</ul>
+</ul>     <dd>Equals operator.
+<p>
+<a name="void_Clear(void)_$"><ul><h3><li>void Clear(void) ;</li></h3></a>
+</ul>
+</ul>     <dd>Clears the array -- does not delete the stored items.
+<p>
+<a name="TYPE&amp;_operator[]_(SFInt32_index)_$"><ul><h3><li>TYPE&amp; operator[] (SFInt32 index) ;</li></h3></a>
+</ul>
+</ul>     <dd>Access the nth item from the array for assignment (will grow if necassary).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> index:</strong>
+<dd>The index of the requested item.
+<p>
+</dl></dl>
+<a name="const_TYPE&amp;_operator[]_(SFInt32_index)_const_$"><ul><h3><li>const TYPE&amp; operator[] (SFInt32 index) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Access the nth item from the array (read only).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> index:</strong>
+<dd>The index of the requested item.
+<p>
+</dl></dl>
+<a name="SFInt32_GetCount_(void)_const_$"><ul><h3><li>SFInt32 GetCount (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Returns the number of items in the array.
+<p>
+<a name="void_AddValue_(TYPE_val)_$"><ul><h3><li>void AddValue (TYPE val) ;</li></h3></a>
+</ul>
+</ul>     <dd>Add a value to the array at the next available slot.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> val:</strong>
+<dd>The value to add to the array.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrArray.htm">vrArray</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:57 1999
+.<p>
+</body></html>

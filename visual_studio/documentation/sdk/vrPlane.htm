@@ -1,0 +1,211 @@
+<html><head><title>vrPlane Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrPlane</a></h1>
+<dl>
+<dd>
+	Represents a plane in 3-space.  Used as the basis of a polygon.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrplane.htm#aag">Summary</a> | </a>
+<a href="vrplane.htm#DESCRIPTION">Description</a> | 
+<a href="vrplane.htm#NOTES">Notes</a> | 
+<a href="vrplane.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrplane.htm#MEMBERS">Members</a> | 
+<a href="vrplane.htm#parents">Ancestors</a> | <a href="vrplane.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface vrPlane<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrPlane.htm#vrPlane_(void)$">vrPlane</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrPlane.htm#vrPlane_(const_vrPlane&amp;_p)$">vrPlane</a> (const vrPlane&amp; p);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrPlane.htm#vrPlane_(SFFloat_A,_SFFloat_B,_SFFloat_C,_SFFloat_D)$">vrPlane</a> (SFFloat A, SFFloat B, SFFloat C, SFFloat D);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrPlane.htm#vrPlane_(const_SFVec3f&amp;_normal,_SFFloat_D)$">vrPlane</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; normal, SFFloat D);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrPlane.htm#~vrPlane_(void)$">vrPlane</a> (void);</td></tr>
+<tr><td align="right" valign="top">vrPlane&amp; </td><td><a href="vrPlane.htm#vrPlane&amp;_operator$_(const_vrPlane&amp;_p)$">operator=</a> (const vrPlane&amp; p);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrPlane.htm#SFFloat_GetDistance_(const_SFVec3f&amp;_v)_const$">GetDistance</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; v) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrPlane.htm#SFVec3f_GetNormal_(void)_const$">GetNormal</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrPlane.htm#SFFloat_GetD_(void)_const$">GetD</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">vrLine </td><td><a href="vrPlane.htm#vrLine_Intersect_(const_vrPlane&amp;_p)_const$">Intersect</a> (const vrPlane&amp; p) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrPlane.htm#SFBool_Intersect_(const_vrLine&amp;_line,_SFFloat&amp;_t,_SFFloat_maxt)_const$">Intersect</a> (const vrLine&amp; line, SFFloat&amp; t, SFFloat maxt) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrPlane.htm#SFBool_XIntercept_(SFVec3f_*pt)_const$">XIntercept</a> (<a href="SFVec3f.htm">SFVec3f</a> *pt) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrPlane.htm#SFBool_YIntercept_(SFVec3f_*pt)_const$">YIntercept</a> (<a href="SFVec3f.htm">SFVec3f</a> *pt) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrPlane.htm#SFBool_ZIntercept_(SFVec3f_*pt)_const$">ZIntercept</a> (<a href="SFVec3f.htm">SFVec3f</a> *pt) const;</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrPlane.htm#SFVec3f_m_Normal$">m_Normal</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrPlane.htm#SFFloat_m_D$">m_D</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	Utility class for representing 3d plane.  Used in 
+	various places for calculation intersections and as the
+	basis for a polygon.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>None.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// Can be used for various calculations:
+
+	vrPlane plane1(xAxis, 1.0);
+	vrPlane plane2(yAxis, 1.0);
+
+	// The intersection of two planes is a ray:
+	<a href="vrRay.htm">vrRay</a> intersection = plane1.<a href="vrplane.htm#SFBool_Intersect_(const_vrLine&amp;_line,_SFFloat&amp;_t,_SFFloat_maxt)_const$">Intersect</a>(plane2);
+
+	// The distance of a point to a plane:
+	SFFloat distance = plane1.<a href="vrplane.htm#SFFloat_GetDistance_(const_SFVec3f&amp;_v)_const$">GetDistance</a>(origin);
+	ASSERT(distance == 1.0);
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFVec3f_m_Normal$"><ul><h3><li>SFVec3f m_Normal;</li></h3></a>
+</ul>
+</ul>     <dd>The normal of the plane.
+<dl><dl>
+<dt><i>default:</i><strong> xAxis</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_D$"><ul><h3><li>SFFloat m_D;</li></h3></a>
+</ul>
+</ul>     <dd>The distance of the plane.
+<dl><dl>
+<dt><i>default:</i><strong> 0.0</strong>
+<p>
+</dl></dl>
+<a name="vrPlane_(void)$"><ul><h3><li>vrPlane (void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="vrPlane_(const_vrPlane&amp;_p)$"><ul><h3><li>vrPlane (const vrPlane&amp; p);</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="vrPlane_(SFFloat_A,_SFFloat_B,_SFFloat_C,_SFFloat_D)$"><ul><h3><li>vrPlane (SFFloat A, SFFloat B, SFFloat C, SFFloat D);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> A:</strong>
+<dd>A value for the plane.
+<dt><i>in</i><strong> B:</strong>
+<dd>B value for the plane.
+<dt><i>in</i><strong> C:</strong>
+<dd>C value for the plane.
+<dt><i>in</i><strong> D:</strong>
+<dd>D value for the plane.
+<p>
+</dl></dl>
+<a name="vrPlane_(const_SFVec3f&amp;_normal,_SFFloat_D)$"><ul><h3><li>vrPlane (const SFVec3f&amp; normal, SFFloat D);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> normal:</strong>
+<dd>normal to the plane.
+<dt><i>in</i><strong> D:</strong>
+<dd>Distance of the plane.
+<p>
+</dl></dl>
+<a name="~vrPlane_(void)$"><ul><h3><li>~vrPlane (void);</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="vrPlane&amp;_operator$_(const_vrPlane&amp;_p)$"><ul><h3><li>vrPlane&amp; operator= (const vrPlane&amp; p);</li></h3></a>
+</ul>
+</ul>     <dd>Equal operator.
+<p>
+<a name="SFFloat_GetDistance_(const_SFVec3f&amp;_v)_const$"><ul><h3><li>SFFloat GetDistance (const SFVec3f&amp; v) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return the distance of the vector to the plane.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd><a href="SFVec3f.htm">SFVec3f</a> value which to calculate the distance to.
+<p>
+</dl></dl>
+<a name="SFVec3f_GetNormal_(void)_const$"><ul><h3><li>SFVec3f GetNormal (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return the plane's normal.
+<p>
+<a name="SFFloat_GetD_(void)_const$"><ul><h3><li>SFFloat GetD (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return the plane's distance.
+<p>
+<a name="vrLine_Intersect_(const_vrPlane&amp;_p)_const$"><ul><h3><li>vrLine Intersect (const vrPlane&amp; p) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return the line that represents the intersection of this plane with the given plane.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> plane:</strong>
+<dd>The plane to intersect with this plane.
+<p>
+</dl></dl>
+<a name="SFBool_Intersect_(const_vrLine&amp;_line,_SFFloat&amp;_t,_SFFloat_maxt)_const$"><ul><h3><li>SFBool Intersect (const vrLine&amp; line, SFFloat&amp; t, SFFloat maxt) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if the given ray intersects this plane.
+<p>
+<dl><dl>
+<dt><i>in</i><strong>  line:</strong>
+<dd>The query line.
+<dt><i>out</i><strong> t:</strong>
+<dd>the value of 't' at which the query line would be evaluated where it intersects the plane.
+<dt><i>in</i><strong>  tmax:</strong>
+<dd>The maximum value of 't' at which an intersection can occur.
+<p>
+</dl></dl>
+<a name="SFBool_XIntercept_(SFVec3f_*pt)_const$"><ul><h3><li>SFBool XIntercept (SFVec3f *pt) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if the plane crosses the X axis.
+<p>
+<dl><dl>
+<dt><i>out</i><strong> pt:</strong>
+<dd>The point at which the plane crosses the X axis.
+<p>
+</dl></dl>
+<a name="SFBool_YIntercept_(SFVec3f_*pt)_const$"><ul><h3><li>SFBool YIntercept (SFVec3f *pt) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if the plane crosses the Y axis.
+<p>
+<dl><dl>
+<dt><i>out</i><strong> pt:</strong>
+<dd>The point at which the plane crosses the Y axis.
+<p>
+</dl></dl>
+<a name="SFBool_ZIntercept_(SFVec3f_*pt)_const$"><ul><h3><li>SFBool ZIntercept (SFVec3f *pt) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if the plane crosses the Z axis.
+<p>
+<dl><dl>
+<dt><i>out</i><strong> pt:</strong>
+<dd>The point at which the plane crosses the Z axis.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrFace.htm">vrFace</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:02 1999
+.<p>
+</body></html>

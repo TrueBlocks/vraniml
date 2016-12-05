@@ -1,0 +1,2987 @@
+<html>
+<head>
+  <meta NAME="GENERATOR" CONTENT="Adobe PageMill 2.0 Win">
+  <title>VRML97, ISO/IEC 14772-1:1997 -- 4 Concepts</title>
+  <x-sas-window TOP="0" BOTTOM="715" LEFT="0" RIGHT="930">
+  
+</head>
+<body>
+
+<p><center><img SRC="../Images/vrml97.gif" ALIGN="TOP" WIDTH="470" HEIGHT="85" NATURALSIZEFLAG="3" ALT="VRML97 logo"></center></p>
+
+<h1><center>The Virtual Reality Modeling Language</center></h1>
+
+<h1><center><a NAME="KeyConcepts"></a>4 Concepts</center></h1>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ----"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.1"></a>4.1 Introduction and table of contents</h2>
+
+<h3><a NAME="4.1.1"></a>4.1.1 Introduction</h3>
+
+<p>This clause describes key concepts in ISO/IEC 14772. This includes how
+nodes are combined into scene graphs, how nodes receive and generate events,
+how to create node types using prototypes, how to add node types to VRML
+and export them for use by others, how to incorporate scripts into a <i>VRML
+file</i>, and various general topics on nodes.</p>
+
+<h3><a NAME="4.1.2"></a>4.1.2 Table of contents</h3>
+
+<p>See <a HREF="concepts.html#Table4.1">Table 4.1</a> for the table of contents for this
+clause.</p>
+
+<h4><center><a NAME="Table4.1"></a>Table 4.1 -- Table of contents, Concepts</center></h4>
+
+<p><table BORDER="1" CELLSPACING="2" CELLPADDING="0">
+<tr>
+<td><p><b><a HREF="concepts.html#4.1">4.1 Introduction and table of contents</a></b><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.1.1">4.1.1 Introduction</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.1.2">4.1.2 Table of contents</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.1.3">4.1.3 Conventions used</a></p>
+
+<p><a HREF="concepts.html#4.2"><b>4.2 Overview</b></a> <br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.2.1">4.2.1 The structure of a VRML file</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.2.2">4.2.2 Header</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.2.3">4.2.3 Scene graph</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.2.4">4.2.4 Prototypes</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.2.5">4.2.5 Event routing</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.2.6">4.2.6 Generating VRML files</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.2.7">4.2.7 Presentation and interaction</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.2.8">4.2.8 Profiles</a></p>
+
+<p><a HREF="concepts.html#4.3"><b>4.3 UTF-8 file syntax</b></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.3.1">4.3.1 Clear text (UTF-8) encoding</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.3.2">4.3.2 Statements</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.3.3">4.3.3 Node statement syntax</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.3.4">4.3.4 Field statement syntax</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.3.5">4.3.5 PROTO statement syntax</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.3.6">4.3.6 IS statement syntax</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.3.7">4.3.7 EXTERNPROTO statement syntax</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.3.8">4.3.8 USE statement syntax</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.3.9">4.3.9 ROUTE statement syntax</a></p>
+
+<p><a HREF="concepts.html#4.4"><b>4.4 Scene graph structure</b></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.4.1">4.4.1 Root nodes</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.4.2">4.4.2 Scene graph hierarchy</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.4.3">4.4.3 Descendant and ancestor nodes</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.4.4">4.4.4 Transformation hierarchy</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.4.5">4.4.5 Standard units and coordinate system<br>
+</a>&nbsp;&nbsp;<a HREF="concepts.html#4.4.6">4.4.6&nbsp;Run-time name scope</a></p>
+
+<p><a HREF="concepts.html#4.5"><b>4.5 VRML and the World Wide Web</b></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.5.1">4.5.1 File extension and MIME type</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.5.2">4.5.2 URLs</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.5.3">4.5.3 Relative URLs</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.5.4">4.5.4 Scripting language protocols</a></p>
+
+<p><a HREF="concepts.html#4.6"><b>4.6 Node semantics</b></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.6.1">4.6.1 Introduction</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.6.2">4.6.2 DEF/USE semantics</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.6.3">4.6.3 Shapes and geometry</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.6.4">4.6.4 Bounding boxes</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.6.5">4.6.5 Grouping and children nodes</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.6.6">4.6.6 Light sources</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.6.7">4.6.7 Sensor nodes</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.6.8">4.6.8 Interpolator nodes</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.6.9">4.6.9 Time-dependent nodes</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.6.10">4.6.10 Bindable children nodes</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.6.11">4.6.11 Texture maps</a></td>
+<td VALIGN="TOP"><p><b><a HREF="concepts.html#4.7">4.7 Field, eventIn, and eventOut semantics</a></b></p>
+
+<p><a HREF="concepts.html#4.8"><b>4.8 Prototype semantics</b></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.8.1">4.8.1 Introduction<br>
+</a>&nbsp;&nbsp;<a HREF="concepts.html#4.8.2">4.8.2 PROTO interface declaration semantics</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.8.3">4.8.3 PROTO definition semantics</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.8.4">4.8.4 Prototype scoping rules</a></p>
+
+<p><a HREF="concepts.html#4.9"><b>4.9 External prototype semantics</b></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.9.1">4.9.1 Introduction<br>
+</a>&nbsp;&nbsp;<a HREF="concepts.html#4.9.2">4.9.2 EXTERNPROTO interface semantics</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.9.3">4.9.3 EXTERNPROTO URL semantics</a></p>
+
+<p><a HREF="concepts.html#4.10"><b>4.10 Event processing</b></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.10.1">4.10.1 Introduction</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.10.2">4.10.2 Route semantics</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.10.3">4.10.3 Execution model</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.10.4">4.10.4 Loops</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.10.5">4.10.5 Fan-in and fan-out</a></p>
+
+<p><a HREF="concepts.html#4.11"><b>4.11 Time</b></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.11.1">4.11.1 Introduction</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.11.2">4.11.2 Time origin</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.11.3">4.11.3 Discrete and continuous changes</a></p>
+
+<p><a HREF="concepts.html#4.12"><b>4.12 Scripting</b></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.12.1">4.12.1 Introduction</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.12.2">4.12.2 Script execution</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.12.3">4.12.3 <i>Initialize()</i> and s<i>hutdown()</i></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.12.4">4.12.4 <i>eventsProcessed()</i></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.12.5">4.12.5 Scripts with direct outputs</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.12.6">4.12.6 Asynchronous scripts</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.12.7">4.12.7 Script languages</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.12.8">4.12.8 EventIn handling</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.12.9">4.12.9 Accessing fields and events</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.12.10">4.12.10 Browser script interface</a></p>
+
+<p><a HREF="concepts.html#4.13"><b>4.13 Navigation</b></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.13.1">4.13.1 Introduction</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.13.2">4.13.2 Navigation paradigms</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.13.3">4.13.3 Viewing model</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.13.4">4.13.4 Collision detection and terrain following</a></p>
+
+<p><a HREF="concepts.html#4.14"><b>4.14 Lighting model</b></a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.14.1">4.14.1 Introduction</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.14.2">4.14.2 Lighting 'off'</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.14.3">4.14.3 Lighting 'on'</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.14.4">4.14.4 Lighting equations</a><br>
+&nbsp;&nbsp;<a HREF="concepts.html#4.14.5">4.14.5 References</a></td></tr>
+</table>
+</p>
+
+<h3><a NAME="4.1.3"></a>4.1.3 Conventions used</h3>
+
+<p>The following conventions are used throughout this part of ISO/IEC 14772:</p>
+
+<p><i>Italics</i> are used for event and field names, and are also used
+when new terms are introduced and equation variables are referenced.</p>
+
+<p>A <code>fixed-space</code> font is used for URL addresses and source
+code examples. ISO/IEC 14772 UTF-8 encoding examples appear in <b><code>bold,</code>
+<code>fixed-space</code></b> font.</p>
+
+<p>Node type names are appropriately capitalized (e.g., &quot;The Billboard
+node is a grouping node...&quot;). However, the concept of the node is often
+referred to in lower case in order to refer to the semantics of the node,
+not the node itself (e.g.,&nbsp;&quot;To rotate the billboard...&quot;).</p>
+
+<p>The form &quot;0xhh&quot; expresses a byte as a hexadecimal number representing
+the bit configuration for that byte.</p>
+
+<p>Throughout this part of ISO/IEC 14772, references are denoted using the
+&quot;x.[ABCD]&quot; notation, where &quot;x&quot; denotes which clause
+or annex the reference is described in and &quot;[ABCD]&quot; is an abbreviation
+of the reference title. For example, 2.[ABCD] refers to a reference described
+in clause 2 and E.[ABCD] refers to a reference described in annex E.</p>
+
+<h4><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM"></h4>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.2"></a>4.2 Overview</h2>
+
+<h3><a NAME="4.2.1"></a>4.2.1 The structure of a VRML file</h3>
+
+<p>A <i>VRML file</i> consists of the following major functional components:
+the header, the <i>scene graph</i>, the prototypes, and <i>event</i> <i>routing</i>.
+The contents of this file are processed for presentation and interaction
+by a program known as a <i>browser</i>.</p>
+
+<h3><a NAME="4.2.2"></a>4.2.2 Header</h3>
+
+<p>For easy identification of VRML files, every VRML file shall begin with:</p>
+
+<pre><b>#VRML V2.0 </b>&lt;encoding type&gt;<b> </b>[optional comment]<b> </b>&lt;line terminator&gt;</pre>
+
+<p>The header is a single line of UTF-8 text identifying the file as a VRML
+file and identifying the encoding type of the file. It may also contain
+additional semantic information. There shall be exactly one space separating
+&quot;<b><tt>#VRML</tt></b>&quot; from &quot;<b><tt>V2.0</tt></b>&quot;
+and &quot;<b><tt>V2.0</tt></b>&quot; from &quot;&lt;<tt>encoding&nbsp;type</tt>&gt;&quot;.
+Also, the &quot;&lt;<tt>encoding&nbsp;type</tt>&gt;&quot; shall be followed
+by a linefeed (0x0a) or carriage-return (0x0d) character, or by one or more
+space (0x20) or tab (0x09) characters followed by any other characters,
+which are treated as a comment, and terminated by a linefeed or carriage-return
+character.</p>
+
+<p>The &lt;<tt>encoding type</tt>&gt; is either &quot;<b><tt>utf8</tt></b>&quot;
+or any other authorized values defined in other parts of ISO/IEC 14772.
+The identifier &quot;<b><tt><font FACE="Courier New">utf8</font></tt></b><font FACE="Courier New">&quot;</font> indicates a clear text encoding that allows
+for international characters to be displayed in ISO/IEC 14772 using the
+UTF-8 encoding defined in ISO/IEC 10646-1 (otherwise known as Unicode);
+see <a HREF="references.html#[UTF8]">2.[UTF8]</a>. The usage of UTF-8 is
+detailed in <a HREF="nodesRef.html#Text">6.47,&nbsp;Text</a>, node. The
+header for a UTF-8 encoded VRML file is</p>
+
+<pre><b>#VRML V2.0 utf8 </b>[optional comment]<b> </b>&lt;line terminator&gt;</pre>
+
+<p>Any characters after the <tt>&lt;encoding type&gt;</tt> on the first
+line may be ignored by a browser. The header line ends at the occurrence
+of a <code>&lt;line terminator&gt;</code>. A <code>&lt;line terminator&gt;</code>
+is a linefeed character (0x0a) or a carriage-return character (0x0d) .</p>
+
+<h3><a NAME="4.2.3"></a>4.2.3 Scene graph</h3>
+
+<p>The scene graph contains nodes which describe objects and their properties.
+It contains hierarchically grouped geometry to provide an audio-visual representation
+of objects, as well as nodes that participate in the event generation and
+routing mechanism.</p>
+
+<h3><a NAME="4.2.4"></a>4.2.4 Prototypes</h3>
+
+<p>Prototypes allow the set of VRML node types to be extended by the user.
+Prototype definitions can be included in the file in which they are used
+or defined externally. Prototypes may be defined in terms of other VRML
+nodes or may be defined using a browser-specific extension mechanism. While
+ISO/IEC 14772 has a standard format for identifying such extensions, their
+implementation is browser-dependent.</p>
+
+<h3><a NAME="4.2.5"></a>4.2.5 Event routing</h3>
+
+<p>Some VRML nodes generate events in response to environmental changes
+or user interaction. Event routing gives authors a mechanism, separate from
+the scene graph hierarchy, through which these events can be propagated
+to effect changes in other nodes. Once generated, events are sent to their
+routed destinations in time order and processed by the receiving node. This
+processing can change the state of the node, generate additional events,
+or change the structure of the scene graph.</p>
+
+<p>Script nodes allow arbitrary, author-defined event processing. An event
+received by a Script node causes the execution of a function within a script
+which has the ability to send events through the normal event routing mechanism,
+or bypass this mechanism and send events directly to any node to which the
+Script node has a reference. Scripts can also dynamically add or delete
+routes and thereby changing the event-routing topology.</p>
+
+<p>The ideal event model processes all events instantaneously in the order
+that they are generated. A timestamp serves two purposes. First, it is a
+conceptual device used to describe the chronological flow of the event mechanism.
+It ensures that deterministic results can be achieved by real-world implementations
+that address processing delays and asynchronous interaction with external
+devices. Second, timestamps are also made available to Script nodes to allow
+events to be processed based on the order of user actions or the elapsed
+time between events.</p>
+
+<h3><a NAME="4.2.6"></a>4.2.6 Generating VRML files</h3>
+
+<p>A <i>generator</i> is a human or computerized creator of VRML files.
+It is the responsibility of the generator to ensure the correctness of the
+VRML file and the availability of supporting assets (e.g.,&nbsp;images,
+audio clips, other VRML files) referenced therein.</p>
+
+<h3><a NAME="4.2.7"></a>4.2.7 Presentation and interaction</h3>
+
+<p>The interpretation, execution, and presentation of VRML files will typically
+be undertaken by a mechanism known as a browser, which displays the shapes
+and sounds in the scene graph. This presentation is known as a <i>virtual
+world</i> and is navigated in the browser by a human or mechanical entity,
+known as a <i>user</i>. The world is displayed as if experienced from a
+particular location; that position and orientation in the world is known
+as the <i>viewer</i>. The browser provides navigation paradigms (such as
+walking or flying) that enable the user to move the viewer through the virtual
+world.</p>
+
+<p>In addition to navigation, the browser provides a mechanism allowing
+the user to interact with the world through sensor nodes in the scene graph
+hierarchy. Sensors respond to user interaction with geometric objects in
+the world, the movement of the user through the world, or the passage of
+time.</p>
+
+<p>The visual presentation of geometric objects in a VRML world follows
+a conceptual model designed to resemble the physical characteristics of
+light. The VRML lighting model describes how appearance properties and lights
+in the world are combined to produce displayed colours (see <a HREF="concepts.html#4.14">4.14,&nbsp;Lighting&nbsp;Model</a>,
+for details).</p>
+
+<p><a HREF="concepts.html#Figure4.1">Figure 4.1</a> illustrates a conceptual model of
+a VRML browser. The browser is portrayed as a presentation application that
+accepts user input in the forms of file selection (explicit and implicit)
+and user interface gestures (e.g.,&nbsp;manipulation and navigation using
+an input device). The three main components of the browser are: Parser,
+Scene Graph, and Audio/Visual Presentation. The Parser component reads the
+VRML file and creates the Scene Graph. The Scene Graph component consists
+of the Transformation Hierarchy (the nodes) and the Route Graph. The Scene
+Graph also includes the Execution Engine that processes events, reads and
+edits the Route Graph, and makes changes to the Transform Hierarchy (nodes).
+User input generally affects sensors and navigation, and thus is wired to
+the Route Graph component (sensors) and the Audio/Visual Presentation component
+(navigation). The Audio/Visual Presentation component performs the graphics
+and audio rendering of the Transform Hierarchy that feeds back to the user.</p>
+
+<p><center><a NAME="Figure4.1"></a><img SRC="../Images/Concepts1.gif" WIDTH="427" HEIGHT="588" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="VRML browser conceptual model"></center></p>
+
+<h4><center>Figure 4.1 -- Conceptual model of a VRML browser<br>
+<br>
+</center></h4>
+
+<h3><a NAME="4.2.8"></a>4.2.8 Profiles</h3>
+
+<p>ISO/IEC 14772 supports the concept of profiles. A profile is a named
+collection of functionality and requirements which shall be supported in
+order for an implementation to conform to that profile. Only one profile
+is defined in this part of ISO/IEC 14772. The functionality and minimum
+support requirements described in ISO/IEC 14772-1 form the <i>Base</i> profile.
+Additional profiles may be defined in other parts of ISO/IEC 14772. Such
+profiles shall incorporate the entirety of the Base profile.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.3"></a>4.3 UTF-8 file syntax</h2>
+
+<h3><a NAME="4.3.1"></a>4.3.1 Clear text (UTF-8) encoding</h3>
+
+<p>This section describes the syntax of UTF-8-encoded, human-readable VRML
+files. A more formal description of the syntax may be found in <a HREF="grammar.html">annex A, Grammar definition</a>. The semantics of VRML in
+terms of the UTF-8 encoding are presented in this part of ISO/IEC 14772.
+Other encodings may be defined in other parts of ISO/IEC 14772. Such encodings
+shall describe how to map the UTF-8 descriptions to and from the corresponding
+encoding elements.</p>
+
+<p>For the UTF-8 encoding, the # character begins a comment. The first line
+of the file, the header, also starts with a &quot;#&quot; character. Otherwise,
+all characters following a &quot;#&quot;, until the next line terminator,
+are ignored. The only exception is within double-quoted SFString and MFString
+fields where the &quot;#&quot; character is defined to be part of the string.</p>
+
+<p>Commas, spaces, tabs, linefeeds, and carriage-returns are separator characters
+wherever they appear outside of string fields. Separator characters and
+comments are collectively termed&nbsp;<i>whitespace</i>.</p>
+
+<p>A VRML document server may strip comments and extra separators including
+the comment portion of the header line from a VRML file before transmitting
+it. <a HREF="nodesRef.html#WorldInfo">WorldInfo</a> nodes should be used
+for persistent information such as copyrights or author information.</p>
+
+<p>Field, event, PROTO, EXTERNPROTO, and node names shall not contain control
+characters (0x0-0x1f, 0x7f), space (0x20), double or single quotes (0x22:&nbsp;&quot;,
+0x27:&nbsp;'), sharp (0x23:&nbsp;#), comma (0x2c:&nbsp;,), period (0x2e:&nbsp;.),
+brackets (0x5b, 0x5d: []), backslash (0x5c:&nbsp;\) or braces (0x7b,&nbsp;0x7d:&nbsp;{}).
+Further, their first character shall not be a digit (0x30-0x39), plus (0x2b:&nbsp;+),
+or minus (0x2d:&nbsp;-) character. Otherwise, names may contain any ISO
+10646 character encoded using UTF-8. VRML is case-sensitive; &quot;Sphere&quot;
+is different from &quot;sphere&quot; and &quot;BEGIN&quot; is different
+from &quot;begin.&quot;</p>
+
+<p>The following reserved keywords shall not be used for field, event, PROTO,
+EXTERNPROTO, or node names:</p>
+
+<ul>
+  <li>DEF
+  <li>EXTERNPROTO
+  <li>FALSE
+  <li>IS
+  <li>NULL
+  <li>PROTO
+  <li>ROUTE
+  <li>TO
+  <li>TRUE
+  <li>USE
+  <li>eventIn
+  <li>eventOut
+  <li>exposedField
+  <li>field
+</ul>
+
+<h3><a NAME="4.3.2"></a>4.3.2 Statements</h3>
+
+<p>After the required header, a VRML file may contain any combination of
+the following:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>Any number of PROTO or EXTERNPROTO statements (see <a HREF="concepts.html#4.8">4.8,&nbsp;Prototype&nbsp;semantics</a>);
+  <li>Any number of root node statements (see <a HREF="concepts.html#4.4.1">4.4.1,&nbsp;Root&nbsp;nodes</a>);
+  <li>Any number of USE statements (see <a HREF="concepts.html#4.6.2">4.6.2,&nbsp;DEF/USE&nbsp;semantics</a>);
+  <li>Any number of ROUTE statements (see <a HREF="concepts.html#4.10.2">4.10.2,&nbsp;Route&nbsp;semantics</a>).
+</ol><!--/NOEDIT--></p>
+
+<h3><a NAME="4.3.3"></a>4.3.3 Node statement syntax</h3>
+
+<p>A node statement consists of an optional name for the node followed by
+the node's type and then the body of the node. A node is given a name using
+the keyword DEF followed by the name of the node. The node's body is enclosed
+in matching braces (&quot;<b><tt>{</tt>&nbsp;<tt>}</tt></b>&quot;). Whitespace
+shall separate the DEF, name of the node, and node type, but is not required
+before or after the curly braces that enclose the node's body. See <a HREF="grammar.html#Nodes">A.3, Nodes</a>, for details on node grammar rules.</p>
+
+<pre>
+    [<b>DEF</b> &lt;name&gt;] &lt;nodeType&gt; <b>{ </b>&lt;body&gt; <b>}</b></pre>
+
+<p>A node's body consists of any number of field statements, IS statements,
+ROUTE statements, PROTO statements or EXTERNPROTO statements, in any order.</p>
+
+<p>See <a HREF="concepts.html#4.6.2">4.6.2,&nbsp;DEF/USE</a>,&nbsp;sematnics for more
+details on node naming. See <a HREF="concepts.html#4.3.4">4.3.4,&nbsp;Field&nbsp;statement&nbsp;syntax</a>,
+for a description of field statement syntax and <a HREF="concepts.html#4.7">4.7,&nbsp;Field,&nbsp;eventIn,&nbsp;and&nbsp;eventOut&nbsp;semantics</a>,
+for a description of field statement semantics. See <a HREF="concepts.html#4.6">4.6,&nbsp;Node&nbsp;semantics</a>,
+for a description of node statement semantics.</p>
+
+<h3><a NAME="4.3.4"></a>4.3.4 Field statement syntax</h3>
+
+<p>A field statement consists of the name of the field followed by the field's
+value(s). The following illustrates the syntax for a single-valued field:</p>
+
+<pre>
+    &lt;fieldName&gt; &lt;fieldValue&gt;</pre>
+
+<p>The following illustrates the syntax for a multiple-valued field:</p>
+
+<pre>
+    &lt;fieldName&gt; <b>[ </b>&lt;fieldValues&gt; <b>]</b></pre>
+
+<p>See <a HREF="grammar.html#Fields">A.4, Fields</a>, for details on field
+statement grammar rules.</p>
+
+<p>Each node type defines the names and types of the fields that each node
+of that type contains. The same field name may be used by multiple node
+types. See <a HREF="fieldsRef.html">5, Field and event reference</a>, for
+the definition and syntax of specific field types.</p>
+
+<p>See <a HREF="concepts.html#4.7">4.7, Field, eventIn, and eventOut semantics</a>, for
+a description of field statement semantics.</p>
+
+<h3><a NAME="4.3.5"></a>4.3.5 PROTO statement syntax</h3>
+
+<p>A PROTO statement consists of the PROTO keyword, followed in order by
+the prototype name, prototype interface declaration, and prototype definition:</p>
+
+<pre>
+<b>    PROTO </b>&lt;name&gt;<b> [ </b>&lt;declaration&gt;<b> ] { </b>&lt;definition&gt;<b> }</b></pre>
+
+<p>See <a HREF="grammar.html#General">A.2, General</a>, for details on prototype
+statement grammar rules.</p>
+
+<p>A prototype interface declaration consists of eventIn, eventOut, field,
+and exposedField declarations (see <a HREF="concepts.html#4.7">4.7, Field, eventIn, and
+eventOut semantics</a>) enclosed in square brackets. Whitespace is not required
+before or after the brackets.</p>
+
+<p>EventIn declarations consist of the keyword &quot;eventIn&quot; followed
+by an event type and a name:</p>
+
+<pre>
+<b>    eventIn&nbsp;</b>&lt;eventType&gt;&nbsp;&lt;name&gt;</pre>
+
+<p>EventOut declarations consist of the keyword &quot;eventOut&quot; followed
+by an event type and a name:</p>
+
+<pre>
+<b>    eventOut&nbsp;</b>&lt;eventType&gt;&nbsp;&lt;name&gt;</pre>
+
+<p>Field and exposedField declarations consist of either the keyword &quot;field&quot;
+or &quot;exposedField&quot; followed by a field type, a name, and an initial
+field value of the given field type.</p>
+
+<pre>
+<b>    field&nbsp;</b>&lt;fieldType&gt;&nbsp;&lt;name&gt;&nbsp;&lt;initial field value&gt;
+
+<b>    exposedField&nbsp;</b>&lt;fieldType&gt;&nbsp;&lt;name&gt;&nbsp;&lt;initial field value&gt;</pre>
+
+<p>Field, eventIn, eventOut, and exposedField names shall be unique in each
+PROTO statement, but are not required to be unique between different PROTO
+statements. If a PROTO statement contains an exposedField with a given name
+(e.g.,&nbsp;<i>zzz</i>), it shall not contain eventIns or eventOuts with
+the prefix <i>set_</i> or the suffix <i>_changed</i> and the given name
+(e.g.,&nbsp;<i>set_zzz</i> or <i>zzz_changed</i>).</p>
+
+<p>A prototype definition consists of at least one node statement and any
+number of ROUTE statements, PROTO statements, and EXTERNPROTO statements
+in any order.</p>
+
+<p>See <a HREF="concepts.html#4.8">4.8, Prototype semantics</a>, for a description of
+prototype semantics.</p>
+
+<h3><a NAME="4.3.6"></a>4.3.6 IS statement syntax</h3>
+
+<p>The body of a node statement that is inside a prototype definition may
+contain IS statements. An IS statement consists of the name of a field,
+exposedField, eventIn or eventOut from the node's public interface followed
+by the keyword IS followed by the name of a field, exposedField, eventIn
+or eventOut from the prototype's interface declaration:</p>
+
+<pre>
+    &lt;field/eventName&gt; <b>IS</b> &lt;field/eventName&gt;</pre>
+
+<p>See <a HREF="grammar.html#Nodes">A.3, Nodes</a>, for details on prototype
+node body grammar rules. See <a HREF="concepts.html#4.8">4.8, Prototype semantics</a>,
+for a description of IS statement semantics.</p>
+
+<h3><a NAME="4.3.7"></a>4.3.7 EXTERNPROTO statement syntax</h3>
+
+<p>An EXTERNPROTO statement consists of the EXTERNPROTO keyword followed
+in order by the prototype's name, its interface declaration, and a list
+(possibly empty) of double-quoted strings enclosed in square brackets. If
+there is only one member of the list, the brackets are optional.</p>
+
+<pre>
+<b>    EXTERNPROTO </b>&lt;name&gt; <b>[ </b>&lt;external declaration&gt;<b> ] </b>URL or [ URLs ]</pre>
+
+<p>See <a HREF="grammar.html#General">A.2, General</a>, for details on external
+prototype statement grammar rules.</p>
+
+<p>An EXTERNPROTO interface declaration is the same as a PROTO interface
+declaration, with the exception that field and exposedField initial values
+are not specified and the prototype definition is specified in a separate
+VRML file to which the URL(s) refer.</p>
+
+<h3><a NAME="4.3.8"></a>4.3.8 USE statement syntax</h3>
+
+<p>A USE statement consists of the USE keyword followed by a node name:</p>
+
+<pre>
+<b>    USE</b> &lt;name&gt;</pre>
+
+<p>See <a HREF="grammar.html#General">A.2, General</a>, for details on USE
+statement grammar rules.</p>
+
+<h3><a NAME="4.3.9"></a>4.3.9 ROUTE statement syntax</h3>
+
+<p>A ROUTE statement consists of the ROUTE keyword followed in order by
+a node name, a period character, a field name, the TO keyword, a node name,
+a period character, and a field name. Whitespace is allowed but not required
+before or after the period characters:</p>
+
+<pre>
+<b>    ROUTE </b>&lt;name&gt;<b>.</b>&lt;field/eventName&gt;<b> TO </b>&lt;name&gt;<b>.</b>&lt;field/eventName&gt;</pre>
+
+<p>See <a HREF="grammar.html#General">A.2, General</a>, for details on ROUTE
+statement grammar rules.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.4"></a>4.4 Scene graph structure</h2>
+
+<h3><a NAME="4.4.1"></a>4.4.1 Root nodes</h3>
+
+<p>A VRML file contains zero or more root nodes. The root nodes for a VRML
+file are those nodes defined by the node statements or USE statements that
+are not contained in other node or PROTO statements. Root nodes shall be
+children nodes (see <a HREF="concepts.html#4.6.5">4.6.5,&nbsp;Grouping&nbsp;and&nbsp;children&nbsp;nodes</a>).</p>
+
+<h3><a NAME="4.4.2"></a>4.4.2 Scene graph hierarchy</h3>
+
+<p>A VRML file contains a directed acyclic graph. Node statements can contain
+SFNode or MFNode field statements that, in turn, contain node (or USE) statements.
+This hierarchy of nodes is called the <i>scene graph</i>. Each arc in the
+graph from A to B means that node A has an SFNode or MFNode field whose
+value directly contains node B. See <a HREF="bibliography.html#[FOLE]">E.[FOLE]</a>
+for details on hierarchical scene graphs.</p>
+
+<h3><a NAME="4.4.3"></a>4.4.3 Descendant and ancestor nodes</h3>
+
+<p>The <i>descendants</i> of a node are all of the nodes in its SFNode or
+MFNode fields, as well as all of those nodes' descendants. The <i>ancestors</i>
+of a node are all of the nodes that have the node as a descendant.</p>
+
+<h3><a NAME="4.4.4"></a>4.4.4 Transformation hierarchy</h3>
+
+<p>The transformation hierarchy includes all of the root nodes and root
+node descendants that are considered to have one or more particular locations
+in the virtual world. VRML includes the notion of <i>local coordinate systems</i>,
+defined in terms of transformations from ancestor coordinate systems (using
+Transform or Billboard nodes). The coordinate system in which the root nodes
+are displayed is called the <i>world coordinate system</i>.</p>
+
+<p>A VRML browser's task is to present a VRML file to the user; it does
+this by presenting the transformation hierarchy to the user. The transformation
+hierarchy describes the directly perceptible parts of the virtual world.</p>
+
+<p>The following node types are in the scene graph but not affected by the
+transformation hierarchy: ColorInterpolator, CoordinateInterpolator, NavigationInfo,
+NormalInterpolator, OrientationInterpolator, PositionInterpolator, Script,
+ScalarInterpolator, TimeSensor, and WorldInfo. Of these, only Script nodes
+may have descendants. A descendant of a Script node is not part of the transformation
+hierarchy unless it is also the descendant of another node that is part
+of the transformation hierarchy or is a root node.</p>
+
+<p>Nodes that are descendants of LOD or Switch nodes are affected by the
+transformation hierarchy, even if the settings of a Switch node's <i>whichChoice</i>
+field or the position of the viewer with respect to a LOD node makes them
+imperceptible.</p>
+
+<p>The transformation hierarchy shall be a directed acyclic graph; results
+are undefined if a node in the transformation hierarchy is its own ancestor.</p>
+
+<h3><a NAME="4.4.5"></a>4.4.5 Standard units and coordinate system</h3>
+
+<p>ISO/IEC 14772 defines the unit of measure of the world coordinate system
+to be metres. All other coordinate systems are built from transformations
+based from the world coordinate system. <a HREF="concepts.html#Table4.2">Table&nbsp;4.2</a>
+lists standard units for ISO/IEC 14772.</p>
+
+<h4><center><a NAME="Table4.2"></a>Table 4.2 -- Standard units</center></h4>
+
+<p><center><table BORDER="1" CELLPADDING="4" CELLSPACING="4">
+<tr ALIGN="CENTER" VALIGN="BASELINE">
+<th><b><font SIZE="+1">Category</font></b></th>
+<th><b><font SIZE="+1">Unit</font></b></th></tr>
+<tr ALIGN="CENTER" VALIGN="MIDDLE">
+<td>Linear distance</td>
+<td>Metres</td></tr>
+<tr ALIGN="CENTER" VALIGN="MIDDLE">
+<td>Angles</td>
+<td>Radians</td></tr>
+<tr ALIGN="CENTER" VALIGN="MIDDLE">
+<td>Time</td>
+<td>Seconds</td></tr>
+<tr ALIGN="CENTER" VALIGN="MIDDLE">
+<td>Colour space</td>
+<td>RGB ([0.,1.], [0.,1.], [0., 1.])</td></tr>
+</table>
+</center></p>
+
+<p><br>
+</p>
+
+<p>ISO/IEC 14772 uses a Cartesian, right-handed, three-dimensional coordinate
+system. By default, the viewer is on the Z-axis looking down the -Z-axis
+toward the origin with +X to the right and +Y straight up. A modelling transformation
+(see <a HREF="nodesRef.html#Transform">6.52, Transform</a>, and <a HREF="nodesRef.html#Billboard">6.6, Billboard</a>) or viewing transformation
+(see&nbsp;<a HREF="nodesRef.html#Viewpoint">6.53,&nbsp;Viewpoint</a>) can
+be used to alter this default projection.</p>
+
+<h3><a NAME="4.4.6"></a>4.4.6 Run-time name scope</h3>
+
+<p>Each VRML file defines a run-time name scope that contains all of the
+root nodes of the file and all of the descendent nodes of the root nodes,
+with the exception of:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>descendent nodes that are inside Inline nodes;
+  <li>descendent nodes that are inside a prototype instance and are not part
+  of the prototype's interface (i.e.,&nbsp;are not in an SF/MFNode field
+  or eventOut of the prototype).
+</ol><!--/NOEDIT--></p>
+
+<p>Each Inline node and prototype instance also defines a run-time name
+scope, consisting of all of the root nodes of the file referred to by the
+Inline node or all of the root nodes of the prototype definition, restricted
+as above.</p>
+
+<p>Nodes created dynamically (using a Script node invoking the Browser.createVrml
+methods) are not part of any name scope, until they are added to the scene
+graph, at which point they become part of the same name scope of their parent
+node(s). A node may be part of more than one run-time name scope. A node
+shall be removed from a name scope when it is removed from the scene graph.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.5"></a>4.5 VRML and the World Wide Web</h2>
+
+<h3><a NAME="4.5.1"></a>4.5.1 File extension and MIME types</h3>
+
+<p>The file extension for VRML files is <tt>.wrl</tt> (for <i>world</i>).</p>
+
+<p>The official MIME type for VRML files is defined as:</p>
+
+<pre>
+<b><tt>    model/vrml</tt></b></pre>
+
+<p>where the MIME major type for 3D data descriptions is <tt>model,</tt>
+and the minor type for VRML documents is <tt>vrml</tt>.</p>
+
+<p>For compatibility with earlier versions of VRML, the following MIME type
+shall also be supported:</p>
+
+<pre>
+<b><tt>    x-world/x-vrml</tt></b></pre>
+
+<p>where the MIME major type is <tt>x-world,</tt> and the minor type for
+VRML documents is <tt>x-vrml</tt>.</p>
+
+<p>See <a HREF="bibliography.html#[MIME]">E.[MIME]</a> for details.</p>
+
+<h3><a NAME="4.5.2"></a>4.5.2 URLs</h3>
+
+<p>A <i>URL</i> (Uniform Resource Locator), described in <a HREF="references.html#[URL]">2.[URL]</a>,
+specifies a file located on a particular server and accessed through a specified
+protocol (e.g.,&nbsp;http). In ISO/IEC 14772, the upper-case term URL&nbsp;refers
+to a Uniform Resource Locator, while the italicized lower-case version <i>url</i>
+refers to a field which may contain URLs or in-line encoded data.</p>
+
+<p>All <i>url </i>fields are of type MFString. The strings in these fields
+indicate multiple locations to search for data in decreasing order of preference.
+If the browser cannot locate or interpret the data specified by the first
+location, it shall try the second and subsequent locations in order until
+a URL containing interpretable data is encountered. If no interpretable
+URL's are located, the node type defines the resultant default behaviour.
+The <i>url</i> field entries are delimited by double quotation marks &quot;&nbsp;&quot;.
+Due to <a HREF="concepts.html#4.5.4">4.5.4,&nbsp;Scripting&nbsp;language&nbsp;protocols</a>,
+<i>url</i> fields use a superset of the standard URL syntax defined in <a HREF="references.html#[URL]">2.[URL]</a>. Details on the string field are
+located in <a HREF="fieldsRef.html#SFString">5.9,&nbsp;SFString&nbsp;and
+MFString</a>.</p>
+
+<p>More general information on URLs is described in <a HREF="references.html#[URL]">2.[URL]</a>.</p>
+
+<h3><a NAME="4.5.3"></a>4.5.3 Relative URLs</h3>
+
+<p>Relative URLs are handled as described in <a HREF="references.html#[RURL]">2.[RURL]</a>.
+The base document for EXTERNPROTO statements or nodes that contain URL fields
+is:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>The VRML file in which the prototype is instantiated, if the statement
+  is part of a prototype definition.
+  <li>The file containing the script code, if the statement is part of a
+  string passed to the createVrmlFromURL() or createVrmlFromString() browser
+  calls in a Script node.
+  <li>Otherwise, the VRML file from which the statement is read, in which
+  case the RURL information provides the data itself.
+</ol><!--/NOEDIT--></p>
+
+<h3><a NAME="4.5.4"></a>4.5.4 Scripting language protocols</h3>
+
+<p>The Script node's <i>url </i>field may also support custom protocols
+for the various scripting languages. For example, a script <i>url </i>prefixed
+with <i>javascript:</i> shall contain ECMAScript source, with line terminators
+allowed in the string. The details of each language protocol are defined
+in the annex for each language. Browsers are not required to support any
+specific scripting language. However, browsers shall adhere to the protocol
+defined in the corresponding annex of ISO/IEC 14772 for any scripting language
+which is supported. The following example illustrates the use of mixing
+custom protocols and standard protocols in a single <i>url</i> field (order
+of precedence determines priority):</p>
+
+<pre>
+<b>    #VRML V2.0 utf8 </b>
+<b>    Script {</b>
+<b>        url [ &quot;javascript: ...&quot;,           # custom protocol ECMAScript</b>
+<b>              &quot;http://bar.com/foo.js&quot;,     # std protocol ECMAScript</b>
+    <b>          &quot;http://bar.com/foo.class&quot; ] # std protocol Java platform bytecode</b>
+<b>    }</b></pre>
+
+<p>In the example above, the &quot;...&quot; represents in-line ECMAScript
+source code.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.6"></a>4.6 Node semantics</h2>
+
+<h3><a NAME="4.6.1"></a>4.6.1 Introduction</h3>
+
+<p>Each node has the following characteristics:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li><b>A type name.</b> Examples include Box, Color, Group, Sphere, Sound,
+  or SpotLight.
+  <li><b>Zero or more fields that define how each node differs from other
+  nodes of the same type.</b> Field values are stored in the VRML file along
+  with the nodes, and encode the state of the virtual world.
+  <li><b>A set of events that it can receive and send.</b> Each node may
+  receive zero or more different kinds of events which will result in some
+  change to the node's state. Each node may also generate zero or more different
+  kinds of events to report changes in the node's state.
+  <li><b>An implementation.</b> The implementation of each node defines how
+  it reacts to events it can receive, when it generates events, and its visual
+  or auditory appearance in the virtual world (if any). The VRML standard
+  defines the semantics of built-in nodes (i.e.,&nbsp;nodes with implementations
+  that are provided by the VRML browser). The PROTO statement may be used
+  to define new types of nodes, with behaviours defined in terms of the behaviours
+  of other nodes.
+  <li><b>A name.</b> Nodes can be named. This is used by other statements
+  to reference a specific instantiation of a node.
+</ol><!--/NOEDIT--></p>
+
+<h3><a NAME="4.6.2"></a>4.6.2 DEF/USE semantics</h3>
+
+<p>A node given a name using the DEF keyword may be referenced by name later
+in the same file with USE or ROUTE statements. The USE statement does not
+create a copy of the node. Instead, the same node is inserted into the scene
+graph a second time, resulting in the node having multiple parents. Using
+an instance of a node multiple times is called <i>instantiation</i>.</p>
+
+<p>Node names are limited in scope to a single VRML file, prototype definition,
+or string submitted to either the CreateVrmlFromString browser extension
+or a construction mechanism for SFNodes within a script. Given a node named
+&quot;NewNode&quot; (i.e.,&nbsp;<code>DEF NewNode</code>), any &quot;<code>USE&nbsp;NewNode</code>&quot;
+statements in SFNode or MFNode fields inside NewNode's scope refer to NewNode
+(see <a HREF="concepts.html#4.4.4">4.4.4,&nbsp;Transformation&nbsp;hierarchy</a>, for
+restrictions on self-referential nodes).</p>
+
+<p>If multiple nodes are given the same name, each USE statement refers
+to the closest node with the given name preceding it in either the VRML
+file or prototype definition.</p>
+
+<h3><a NAME="4.6.3"></a>4.6.3 Shapes and geometry</h3>
+
+<h4>4.6.3.1 Introduction</h4>
+
+<p>The <a HREF="nodesRef.html#Shape">Shape</a> node associates a geometry
+node with nodes that define that geometry's appearance. Shape nodes shall
+be part of the transformation hierarchy to have any visible result, and
+the transformation hierarchy shall contain Shape nodes for any geometry
+to be visible (the only nodes that render visible results are Shape nodes
+and the <a HREF="nodesRef.html#Background">Background</a> node). A Shape
+node contains exactly one geometry node in its <i>geometry</i> field. The
+following node types are <i>geometry</i> nodes:</p>
+
+<ul>
+  <li><a HREF="nodesRef.html#Box">Box</a>
+  <li><a HREF="nodesRef.html#Cone">Cone</a>
+  <li><a HREF="nodesRef.html#Cylinder">Cylinder</a>
+  <li><a HREF="nodesRef.html#ElevationGrid">ElevationGrid</a>
+  <li><a HREF="nodesRef.html#Extrusion">Extrusion</a>
+  <li><a HREF="nodesRef.html#IndexedFaceSet">IndexedFaceSet</a>
+  <li><a HREF="nodesRef.html#IndexedLineSet">IndexedLineSet</a>
+  <li><a HREF="nodesRef.html#PointSet">PointSet</a>
+  <li><a HREF="nodesRef.html#Sphere">Sphere</a>
+  <li><a HREF="nodesRef.html#Text">Text</a>
+</ul>
+
+<h4><a NAME="4.6.3.2"></a>4.6.3.2 Geometric property nodes</h4>
+
+<p>Several geometry nodes contain <a HREF="nodesRef.html#Coordinate">Coordinate</a>,
+<a HREF="nodesRef.html#Color">Color</a>, <a HREF="nodesRef.html#Normal">Normal</a>,
+and <a HREF="nodesRef.html#TextureCoordinate">TextureCoordinate</a> as geometric
+property nodes. The geometric property nodes are defined as individual nodes
+so that instancing and sharing is possible between different geometry nodes.</p>
+
+<h4><a NAME="4.6.3.3"></a>4.6.3.3 Appearance nodes</h4>
+
+<p>Shape nodes may specify an <a HREF="nodesRef.html#Appearance">Appearance</a>
+node that describes the appearance properties (material and texture) to
+be applied to the Shape's geometry. Nodes of the following type may be specified
+in the <i>material</i> field of the Appearance node:</p>
+
+<ul>
+  <li><a HREF="nodesRef.html#Material">Material</a>
+</ul>
+
+<p>Nodes of the following types may be specified by the <i>texture</i> field
+of the Appearance node:</p>
+
+<ul>
+  <li><a HREF="nodesRef.html#ImageTexture">ImageTexture</a>
+  <li><a HREF="nodesRef.html#PixelTexture">PixelTexture</a>
+  <li><a HREF="nodesRef.html#MovieTexture">MovieTexture</a>
+</ul>
+
+<p>Nodes of the following types may be specified in the <i>textureTransform</i>
+field of the Appearance node:</p>
+
+<ul>
+  <li><a HREF="nodesRef.html#TextureTransform">TextureTransform</a>
+</ul>
+
+<p>The interaction between such appearance nodes and the Color node is described
+in <a HREF="concepts.html#4.14">4.14,&nbsp;Lighting&nbsp;Model</a>.</p>
+
+<h4><a NAME="4.6.3.4"></a>4.6.3.4 Shape hint fields</h4>
+
+<p>The Extrusion and IndexedFaceSet nodes each have three SFBool fields
+that provide hints about the geometry. These hints specify the vertex ordering,
+if the shape is solid, and if the shape contains convex faces. These fields
+are <i>ccw</i>, <i>solid</i>, and <i>convex</i>, respectively. The ElevationGrid
+node has the <i>ccw</i> and <i>solid</i> fields.</p>
+
+<p>The <i>ccw</i> field defines the ordering of the vertex coordinates of
+the geometry with respect to user-given or automatically generated normal
+vectors used in the lighting model equations. If <i>ccw</i> is TRUE, the
+normals shall follow the right hand rule; the orientation of each normal
+with respect to the vertices (taken in order) shall be such that the vertices
+appear to be oriented in a counterclockwise order when the vertices are
+viewed (in the local coordinate system of the Shape) from the opposite direction
+as the normal. If <i>ccw</i> is FALSE, the normals shall be oriented in
+the opposite direction. If normals are not generated but are supplied using
+a Normal node, and the orientation of the normals does not match the setting
+of the <i>ccw</i> field, results are undefined.</p>
+
+<p>The <i>solid</i> field determines whether one or both sides of each polygon
+shall be displayed. If <i>solid</i> is FALSE, each polygon shall be visible
+regardless of the viewing direction (i.e.,&nbsp;no backface culling shall
+be done, and two-sided lighting shall be performed to illuminate both sides
+of lit surfaces). If <i>solid</i> is TRUE, the visibility of each polygon
+shall be determined as follows: Let <b><i>V</i></b> be the position of the
+viewer in the local coordinate system of the geometry. Let <b><i>N</i></b>
+be the geometric normal vector of the polygon, and let <b><i>P</i></b> be
+any point (besides the local origin) in the plane defined by the polygon's
+vertices. Then if (<b><i>V</i></b> dot <b><i>N</i></b>) - (<b><i>N</i></b>
+dot <b><i>P</i></b>) is greater than zero, the polygon shall be visible;
+if it is less than or equal to zero, the polygon shall be invisible (backface
+culled).</p>
+
+<p>The <i>convex</i> field indicates whether all polygons in the shape are
+convex (TRUE). A polygon is convex if it is planar, does not intersect itself,
+and all of the interior angles at its vertices are less than 180 degrees.
+Non-planar and self-intersecting polygons may produce undefined results
+even if the <i>convex</i> field is FALSE.</p>
+
+<h4><a NAME="4.6.3.5"></a>4.6.3.5 Crease angle field</h4>
+
+<p>The <i>creaseAngle</i> field, used by the ElevationGrid, Extrusion, and
+IndexedFaceSet nodes, affects how default normals are generated. If the
+angle between the geometric normals of two adjacent faces is less than the
+crease angle, normals shall be calculated so that the faces are smooth-shaded
+across the edge; otherwise, normals shall be calculated so that a lighting
+discontinuity across the edge is produced. For example, a crease angle of
+0.5 radians means that an edge between two adjacent polygonal faces will
+be smooth shaded if the geometric normals of the two faces form an angle
+that is less than 0.5 radians. Otherwise, the faces will appear faceted.
+Crease angles shall be greater than or equal to 0.0.</p>
+
+<h3><a NAME="4.6.4"></a>4.6.4 Bounding boxes</h3>
+
+<p>Several of the nodes include a bounding box specification comprised of
+two fields, <i>bboxSize </i>and <i>bboxCenter</i>. A bounding box is a rectangular
+parallelepiped of dimension <i>bboxSize </i>centred on the location <i>bboxCenter
+</i>in the local coordinate system. This is typically used by grouping nodes
+to provide a hint to the browser on the group's approximate size for culling
+optimizations. The default size for bounding boxes (-1,&nbsp;-1,&nbsp;-1)
+indicates that the user did not specify the bounding box and the effect
+shall be as if the bounding box were infinitely large. A <i>bboxSize</i>
+value of (0,&nbsp;0,&nbsp;0) is valid and represents a point in space (i.e.,&nbsp;an<i>
+</i>infinitely small box). Specified <i>bboxSize</i> field values shall
+be &gt;= 0.0 or equal to (-1,&nbsp;-1,&nbsp;-1). The <i>bboxCenter</i> fields
+specify a position offset from the local coordinate system.</p>
+
+<p>The <i>bboxCenter</i> and <i>bboxSize</i> fields may be used to specify
+a maximum possible bounding box for the objects inside a grouping node (e.g.,&nbsp;Transform).
+These are used as hints to optimize certain operations such as determining
+whether or not the group needs to be drawn. The bounding box shall be large
+enough at all times to enclose the union of the group's children's bounding
+boxes; it shall not include any transformations performed by the group itself
+(i.e., the bounding box is defined in the local coordinate system of the
+children). Results are undefined if the specified bounding box is smaller
+than the true bounding box of the group.</p>
+
+<h3><a NAME="4.6.5"></a>4.6.5 Grouping and children nodes</h3>
+
+<p>Grouping nodes have a field that contains a list of children nodes. Each
+grouping node defines a coordinate space for its children. This coordinate
+space is relative to the coordinate space of the node of which the group
+node is a child. Such a node is called a <i>parent</i> node. This means
+that transformations accumulate down the scene graph hierarchy.</p>
+
+<p>The following node types are grouping nodes:</p>
+
+<ul>
+  <li><a HREF="nodesRef.html#Anchor">Anchor</a>
+  <li><a HREF="nodesRef.html#Billboard">Billboard</a>
+  <li><a HREF="nodesRef.html#Collision">Collision</a>
+  <li><a HREF="nodesRef.html#Group">Group</a>
+  <li><a HREF="nodesRef.html#Inline">Inline</a>
+  <li><a HREF="nodesRef.html#LOD">LOD</a>
+  <li><a HREF="nodesRef.html#Switch">Switch</a>
+  <li><a HREF="nodesRef.html#Transform">Transform</a>
+</ul>
+
+<p>The following node types are children nodes:</p>
+
+<p><table BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="92%" HEIGHT="223">
+<tr>
+<td WIDTH="31%" HEIGHT="222" VALIGN="TOP"><ul>
+  <li><a HREF="nodesRef.html#Anchor">Anchor</a>
+  <li><a HREF="nodesRef.html#Background">Background</a>
+  <li><a HREF="nodesRef.html#Billboard">Billboard</a>
+  <li><a HREF="nodesRef.html#Collision">Collision</a>
+  <li><a HREF="nodesRef.html#ColorInterpolator">ColorInterpolator</a>
+  <li><a HREF="nodesRef.html#CoordinateInterpolator">CoordinateInterpolator</a>
+  <li><a HREF="nodesRef.html#CylinderSensor">CylinderSensor</a>
+  <li><a HREF="nodesRef.html#DirectionalLight">DirectionalLight</a>
+  <li><a HREF="nodesRef.html#Fog">Fog</a>
+  <li><a HREF="nodesRef.html#Group">Group</a>
+  <li><a HREF="nodesRef.html#Inline">Inline</a>
+</ul>
+</td>
+<td WIDTH="31%" VALIGN="TOP"><ul>
+  <li><a HREF="nodesRef.html#LOD">LOD</a>
+  <li><a HREF="nodesRef.html#NavigationInfo">NavigationInfo</a>
+  <li><a HREF="nodesRef.html#NormalInterpolator">NormalInterpolator</a>
+  <li><a HREF="nodesRef.html#OrientationInterpolator">OrientationInterpolator</a>
+  <li><a HREF="nodesRef.html#PlaneSensor">PlaneSensor</a>
+  <li><a HREF="nodesRef.html#PointLight">PointLight</a>
+  <li><a HREF="nodesRef.html#PositionInterpolator">PositionInterpolator</a>
+  <li><a HREF="nodesRef.html#ProximitySensor">ProximitySensor</a>
+  <li><a HREF="nodesRef.html#ScalarInterpolator">ScalarInterpolator</a>
+  <li><a HREF="nodesRef.html#Script">Script</a>
+  <li><a HREF="nodesRef.html#Shape">Shape</a>
+</ul>
+</td>
+<td WIDTH="38%" VALIGN="TOP"><ul>
+  <li><a HREF="nodesRef.html#Sound">Sound</a>
+  <li><a HREF="nodesRef.html#SpotLight">SpotLight</a>
+  <li><a HREF="nodesRef.html#SphereSensor">SphereSensor</a>
+  <li><a HREF="nodesRef.html#Switch">Switch</a>
+  <li><a HREF="nodesRef.html#TimeSensor">TimeSensor</a>
+  <li><a HREF="nodesRef.html#TouchSensor">TouchSensor</a>
+  <li><a HREF="nodesRef.html#Transform">Transform</a>
+  <li><a HREF="nodesRef.html#Viewpoint">Viewpoint</a>
+  <li><a HREF="nodesRef.html#VisibilitySensor">VisibilitySensor</a>
+  <li><a HREF="nodesRef.html#WorldInfo">WorldInfo</a>
+</ul>
+</td></tr>
+</table>
+</p>
+
+<p>The following node types are not valid as children nodes:</p>
+
+<p><table BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="70%" HEIGHT="143">
+<tr>
+<td WIDTH="29%" VALIGN="TOP"><ul>
+  <li><a HREF="nodesRef.html#Appearance">Appearance</a>
+  <li><a HREF="nodesRef.html#AudioClip">AudioClip</a>
+  <li><a HREF="nodesRef.html#Box">Box</a>
+  <li><a HREF="nodesRef.html#Color">Color</a>
+  <li><a HREF="nodesRef.html#Cone">Cone</a>
+  <li><a HREF="nodesRef.html#Coordinate">Coordinate</a>
+  <li><a HREF="nodesRef.html#Cylinder">Cylinder</a>
+</ul>
+</td>
+<td WIDTH="34%" VALIGN="TOP"><ul>
+  <li><a HREF="nodesRef.html#ElevationGrid">ElevationGrid</a>
+  <li><a HREF="nodesRef.html#Extrusion">Extrusion</a>
+  <li><a HREF="nodesRef.html#ImageTexture">ImageTexture</a>
+  <li><a HREF="nodesRef.html#IndexedFaceSet">IndexedFaceSet</a>
+  <li><a HREF="nodesRef.html#IndexedLineSet">IndexedLineSet</a>
+  <li><a HREF="nodesRef.html#Material">Material</a>
+  <li><a HREF="nodesRef.html#MovieTexture">MovieTexture</a>
+</ul>
+</td>
+<td WIDTH="37%" VALIGN="TOP"><ul>
+  <li><a HREF="nodesRef.html#Normal">Normal</a>
+  <li><a HREF="nodesRef.html#PointSet">PointSet</a>
+  <li><a HREF="nodesRef.html#Sphere">Sphere</a>
+  <li><a HREF="nodesRef.html#Text">Text</a>
+  <li><a HREF="nodesRef.html#TextureCoordinate">TextureCoordinate</a>
+  <li><a HREF="nodesRef.html#TextureTransform">TextureTransform</a>
+</ul>
+</td></tr>
+</table>
+</p>
+
+<p>All grouping nodes except <a HREF="nodesRef.html#Inline">Inline</a>,
+<a HREF="nodesRef.html#LOD">LOD</a>, and <a HREF="nodesRef.html#Switch">Switch</a>
+also have <i>addChildren</i> and <i>removeChildren</i> eventIn definitions.
+The <i>addChildren</i> event appends nodes to the grouping node's <i>children</i>
+field. Any nodes passed to the <i>addChildren</i> event that are already
+in the group's children list are ignored. For example, if the <i>children</i>
+field contains the nodes Q, L and S (in order) and the group receives an
+<i>addChildren</i> eventIn containing (in order) nodes A, L, and Z, the
+result is a <i>children</i> field containing (in order) nodes Q, L, S, A,
+and Z.</p>
+
+<p>The <i>removeChildren</i> event removes nodes from the grouping node's
+<i>children</i> field. Any nodes in the <i>removeChildren</i> event that
+are not in the grouping node's <i>children</i> list are ignored. If the
+<i>children</i> field contains the nodes Q, L, S, A and Z and it receives
+a <i>removeChildren</i> eventIn containing nodes A, L, and Z, the result
+is Q, S.</p>
+
+<p>Note that a variety of node types reference other node types through
+fields. Some of these are parent-child relationships, while others are not
+(there are node-specific semantics). <a HREF="concepts.html#Table4.3">Table 4.3</a> lists
+all node types that reference other nodes through fields.</p>
+
+<h4><center><a NAME="Table4.3"></a>Table 4.3 -- Nodes with SFNode or MFNode
+fields</center></h4>
+
+<p><center><table BORDER="1" CELLPADDING="6" CELLSPACING="6">
+<tr>
+<th><b>Node Type</b></th>
+<th><b>Field</b></th>
+<th><b>Valid Node Types for Field</b></th></tr>
+<tr>
+<td>Anchor</td>
+<td><i>children</i></td>
+<td>Valid children nodes</td></tr>
+<tr>
+<td>Appearance</td>
+<td><i>material</i></td>
+<td>Material</td></tr>
+<tr>
+<td></td>
+<td><i>texture</i></td>
+<td>ImageTexture, MovieTexture, Pixel Texture</td></tr>
+<tr>
+<td>Billboard</td>
+<td><i>children</i></td>
+<td>Valid children nodes</td></tr>
+<tr>
+<td>Collision</td>
+<td><i>children</i></td>
+<td>Valid children nodes</td></tr>
+<tr>
+<td>ElevationGrid</td>
+<td><i>color</i></td>
+<td>Color</td></tr>
+<tr>
+<td></td>
+<td><i>normal</i></td>
+<td>Normal</td></tr>
+<tr>
+<td></td>
+<td><i>texCoord</i></td>
+<td>TextureCoordinate</td></tr>
+<tr>
+<td>Group</td>
+<td><i>children</i></td>
+<td>Valid children nodes</td></tr>
+<tr>
+<td>IndexedFaceSet</td>
+<td><i>color</i></td>
+<td>Color</td></tr>
+<tr>
+<td></td>
+<td><i>coord</i></td>
+<td>Coordinate</td></tr>
+<tr>
+<td></td>
+<td><i>normal</i></td>
+<td>Normal</td></tr>
+<tr>
+<td></td>
+<td><i>texCoord</i></td>
+<td>TextureCoordinate</td></tr>
+<tr>
+<td>IndexedLineSet</td>
+<td><i>color</i></td>
+<td>Color</td></tr>
+<tr>
+<td></td>
+<td><i>coord</i></td>
+<td>Coordinate</td></tr>
+<tr>
+<td>LOD</td>
+<td><i>level</i></td>
+<td>Valid children nodes</td></tr>
+<tr>
+<td>Shape</td>
+<td><i>appearance</i></td>
+<td>Appearance</td></tr>
+<tr>
+<td></td>
+<td><i>geometry</i></td>
+<td>Box, Cone, Cylinder, ElevationGrid, Extrusion, IndexedFaceSet, IndexedLineSet,
+PointSet, Sphere, Text</td></tr>
+<tr>
+<td>Sound</td>
+<td><i>source</i></td>
+<td>AudioClip, MovieTexture</td></tr>
+<tr>
+<td>Switch</td>
+<td><i>choice</i></td>
+<td>Valid children nodes</td></tr>
+<tr>
+<td>Text</td>
+<td><i>fontStyle</i></td>
+<td>FontStyle</td></tr>
+<tr>
+<td>Transform</td>
+<td><i>children</i></td>
+<td>Valid children nodes</td></tr>
+</table>
+</center></p>
+
+<h3><a NAME="4.6.6"></a>4.6.6 Light sources</h3>
+
+<p>Shape nodes are illuminated by the sum of all of the lights in the world
+that affect them. This includes the contribution of both the direct and
+ambient illumination from light sources. Ambient illumination results from
+the scattering and reflection of light originally emitted directly by light
+sources. The amount of ambient light is associated with the individual lights
+in the scene. This is a gross approximation to how ambient reflection actually
+occurs in nature.</p>
+
+<p>The following node types are light source nodes:</p>
+
+<ul>
+  <li><a HREF="nodesRef.html#DirectionalLight">DirectionalLight</a>
+  <li><a HREF="nodesRef.html#PointLight">PointLight</a>
+  <li><a HREF="nodesRef.html#SpotLight">SpotLight</a>
+</ul>
+
+<p>All light source nodes contain an <i>intensity</i>, a <i>color</i>, and
+an <i>ambientIntensity</i> field. The <i>intensity</i> field specifies the
+brightness of the direct emission from the light, and the <i>ambientIntensity</i>
+specifies the intensity of the ambient emission from the light. Light intensity
+may range from 0.0 (no light emission) to 1.0 (full intensity). The <i>color
+</i>field specifies the spectral colour properties of both the direct and
+ambient light emission as an RGB value.</p>
+
+<p>PointLight and SpotLight illuminate all objects in the world that fall
+within their volume of lighting influence regardless of location within
+the transformation hierarchy. PointLight defines this volume of influence
+as a sphere centred at the light (defined by a radius). SpotLight defines
+the volume of influence as a solid angle defined by a radius and a cutoff
+angle. DirectionalLight nodes illuminate only the objects descended from
+the light's parent grouping node, including any descendent children of the
+parent grouping nodes.</p>
+
+<h3><a NAME="4.6.7"></a>4.6.7 Sensor nodes</h3>
+
+<h4><a NAME="4.6.7.1"></a>4.6.7.1 Introduction to sensors</h4>
+
+<p>The following node types are sensor nodes:</p>
+
+<ul>
+  <li><a HREF="nodesRef.html#Anchor">Anchor</a>
+  <li><a HREF="nodesRef.html#Collision">Collision</a>
+  <li><a HREF="nodesRef.html#CylinderSensor">CylinderSensor</a>
+  <li><a HREF="nodesRef.html#PlaneSensor">PlaneSensor</a>
+  <li><a HREF="nodesRef.html#ProximitySensor">ProximitySensor</a>
+  <li><a HREF="nodesRef.html#SphereSensor">SphereSensor</a>
+  <li><a HREF="nodesRef.html#TimeSensor">TimeSensor</a>
+  <li><a HREF="nodesRef.html#TouchSensor">TouchSensor</a>
+  <li><a HREF="nodesRef.html#VisibilitySensor">VisibilitySensor</a>
+</ul>
+
+<p>Sensors are children nodes in the hierarchy and therefore may be parented
+by grouping nodes as described in <a HREF="concepts.html#4.6.5">4.6.5,&nbsp;Grouping&nbsp;and&nbsp;children
+nodes</a>.</p>
+
+<p>Each type of sensor defines when an event is generated. The state of
+the scene graph after several sensors have generated events shall be as
+if each event is processed separately, in order. If sensors generate events
+at the same time, the state of the scene graph will be undefined if the
+results depend on the ordering of the events.</p>
+
+<p>It is possible to create dependencies between various types of sensors.
+For example, a TouchSensor may result in a change to a VisibilitySensor
+node's transformation, which in turn may cause the VisibilitySensor node's
+visibility status to change.</p>
+
+<p>The following two sections classify sensors into two categories: <i>environmental
+sensors</i> and <i>pointing-device sensors</i>.</p>
+
+<h4><a NAME="4.6.7.2"></a>4.6.7.2 Environmental sensors</h4>
+
+<p>The following node types are environmental sensors:</p>
+
+<ul>
+  <li><a HREF="nodesRef.html#Collision">Collision</a>
+  <li><a HREF="nodesRef.html#ProximitySensor">ProximitySensor</a>
+  <li><a HREF="nodesRef.html#TimeSensor">TimeSensor</a>
+  <li><a HREF="nodesRef.html#VisibilitySensor">VisibilitySensor</a>
+</ul>
+
+<p>The <a HREF="nodesRef.html#ProximitySensor">ProximitySensor</a> detects
+when the user navigates into a specified region in the world. The ProximitySensor
+itself is not visible. The <a HREF="nodesRef.html#TimeSensor">TimeSensor</a>
+is a clock that has no geometry or location associated with it; it is used
+to start and stop time-based nodes such as interpolators. The <a HREF="nodesRef.html#VisibilitySensor">VisibilitySensor</a>
+detects when a specific part of the world becomes visible to the user. The
+<a HREF="nodesRef.html#Collision">Collision</a> grouping node detects when
+the user collides with objects in the virtual world. Proximity, time, collision,
+and visibility sensors are each processed independently of whether others
+exist or overlap.</p>
+
+<p>When environmental sensors are inserted into the transformation hierarchy
+and before the presentation is updated (i.e.,&nbsp;read from file or created
+by a script), they shall generate events indicating any conditions which
+the sensor is intended to detect (see <a HREF="concepts.html#4.10.3">4.10.3,&nbsp;Execution&nbsp;model</a>).
+The conditions for individual sensor types to generate these initial events
+are defined in the individual node specifications in <a HREF="nodesRef.html">6,
+Node reference</a>.</p>
+
+<h4><a NAME="4.6.7.3"></a>4.6.7.3 Pointing-device sensors</h4>
+
+<p>Pointing-device sensors detect user pointing events such as the user
+clicking on a piece of geometry (i.e.,&nbsp;TouchSensor). The following
+node types are pointing-device sensors:</p>
+
+<ul>
+  <li><a HREF="nodesRef.html#Anchor">Anchor</a>
+  <li><a HREF="nodesRef.html#CylinderSensor">CylinderSensor</a>
+  <li><a HREF="nodesRef.html#PlaneSensor">PlaneSensor</a>
+  <li><a HREF="nodesRef.html#SphereSensor">SphereSensor</a>
+  <li><a HREF="nodesRef.html#TouchSensor">TouchSensor</a>
+</ul>
+
+<p>A pointing-device sensor is activated when the user locates the pointing
+device over geometry that is influenced by that specific pointing-device
+sensor. Pointing-device sensors have influence over all geometry that is
+descended from the sensor's parent groups. In the case of the Anchor node,
+the Anchor node itself is considered to be the parent group. Typically,
+the pointing-device sensor is a sibling to the geometry that it influences.
+In other cases, the sensor is a sibling to groups which contain geometry
+(i.e.,&nbsp;are influenced by the pointing-device sensor).</p>
+
+<p>The appearance properties of the geometry do not affect activation of
+the sensor. In particular, transparent materials or textures shall be treated
+as opaque with respect to activation of pointing-device sensors.</p>
+
+<p>For a given user activation, the lowest enabled pointing-device sensor
+in the hierarchy is activated. All other pointing-device sensors above the
+lowest enabled pointing-device sensor are ignored. The hierarchy is defined
+by the geometry node over which the pointing-device sensor is located and
+the entire hierarchy upward. If there are multiple pointing-device sensors
+tied for lowest, each of these is activated simultaneously and independently,
+possibly resulting in multiple sensors activating and generating output
+simultaneously. This feature allows combinations of pointing-device sensors
+(e.g.,&nbsp;TouchSensor and PlaneSensor). If a pointing-device sensor appears
+in the transformation hierarchy multiple times (DEF/USE), it shall be tested
+for activation in all of the coordinate systems in which it appears.</p>
+
+<p>If a pointing-device sensor is not enabled when the pointing-device button
+is activated, it will not generate events related to the pointing device
+until after the pointing device is deactivated and the sensor is enabled
+(i.e.,&nbsp;enabling a sensor in the middle of dragging does not result
+in the sensor activating immediately).</p>
+
+<p>The <a HREF="nodesRef.html#Anchor">Anchor</a> node is considered to be
+a pointing-device sensor when trying to determine which sensor (or Anchor
+node) to activate. For example, a click on <i>Shape3</i> is handled by <i>SensorD</i>,
+a click on <i>Shape2</i> is handled by <i>SensorC</i> and the <i>AnchorA</i>,
+and a click on <i>Shape1</i> is handled by <i>SensorA</i> and <i>SensorB</i>:</p>
+
+<pre>
+<b>    Group {</b>
+<b>      children [</b>
+<b>        DEF Shape1  Shape       { ... }</b>
+<b>        DEF SensorA TouchSensor { ... }</b>
+<b>        DEF SensorB PlaneSensor { ... }</b>
+<b>        DEF AnchorA Anchor {</b>
+<b>          url &quot;...&quot;</b>
+<b>          children [</b>
+<b>            DEF Shape2  Shape { ... }</b>
+<b>            DEF SensorC TouchSensor { ... }</b>
+<b>            Group {</b>
+<b>              children [</b>
+<b>                DEF Shape3  Shape { ... }</b>
+<b>                DEF SensorD TouchSensor { ... }</b>
+<b>              ]</b>
+<b>            }</b>
+<b>          ]</b>
+ <b>       }</b>
+<b>      ]</b>
+<b>    }</b></pre>
+
+<h4><a NAME="4.6.7.4"></a>4.6.7.4 Drag sensors</h4>
+
+<p><i>Drag sensors</i> are a subset of pointing-device sensors. There are
+three types of drag sensors: <a HREF="nodesRef.html#CylinderSensor">CylinderSensor</a>,
+<a HREF="nodesRef.html#PlaneSensor">PlaneSensor</a>, and <a HREF="nodesRef.html#SphereSensor">SphereSensor</a>.
+Drag sensors have two eventOuts in common, <i>trackPoint_changed</i> and
+<i>&lt;value&gt;_changed</i>. These eventOuts send events for each movement
+of the activated pointing device according to their &quot;virtual geometry&quot;
+(e.g., cylinder for CylinderSensor). The <i>trackPoint_changed</i> eventOut
+sends the intersection point of the <i>bearing</i> with the drag sensor's
+virtual geometry. The <i>&lt;value&gt;_changed</i> eventOut sends the sum
+of the relative change since activation plus the sensor's <i>offset</i>
+field. The type and name of <i>&lt;value&gt;_changed</i> depends on the
+drag sensor type: <i>rotation_changed</i> for CylinderSensor, <i>translation_changed</i>
+for PlaneSensor, and <i>rotation_changed</i> for SphereSensor.</p>
+
+<p>To simplify the application of these sensors, each node has an <i>offset</i>
+and an <i>autoOffset</i> exposed field. When the sensor generates events
+as a response to the activated pointing device motion, <i>&lt;value&gt;_changed</i>
+sends the sum of the relative change since the initial activation plus the
+<i>offset</i> field value. If <i>autoOffset</i> is TRUE when the pointing-device
+is deactivated, the <i>offset</i> field is set to the sensor's last <i>&lt;value&gt;_changed</i>
+value and <i>offset</i> sends an <i>offset_changed</i> eventOut. This enables
+subsequent grabbing operations to accumulate the changes. If <i>autoOffset</i>
+is FALSE, the sensor does not set the <i>offset</i> field value at deactivation
+(or any other time).</p>
+
+<h4><a NAME="4.6.7.5"></a>4.6.7.5 Activating and manipulating sensors</h4>
+
+<p>The pointing device controls a pointer in the virtual world. While activated
+by the pointing device, a sensor will generate events as the pointer moves.
+Typically the pointing device may be categorized as either 2D (e.g., conventional
+mouse) or 3D (e.g., wand). It is suggested that the pointer controlled by
+a 2D device is mapped onto a plane a fixed distance from the viewer and
+perpendicular to the line of sight. The mapping of a 3D device may describe
+a 1:1 relationship between movement of the pointing device and movement
+of the pointer.</p>
+
+<p>The position of the pointer defines a bearing which is used to determine
+which geometry is being indicated. When implementing a 2D pointing device
+it is suggested that the bearing is defined by the vector from the viewer
+position through the location of the pointer. When implementing a 3D pointing
+device it is suggested that the bearing is defined by extending a vector
+from the current position of the pointer in the direction indicated by the
+pointer.</p>
+
+<p>In all cases the pointer is considered to be indicating a specific geometry
+when that geometry is intersected by the bearing. If the bearing intersects
+multiple sensors' geometries, only the sensor nearest to the pointer will
+be eligible for activation.</p>
+
+<h3><a NAME="4.6.8"></a>4.6.8 Interpolator nodes</h3>
+
+<p>Interpolator nodes are designed for linear keyframed animation. An interpolator
+node defines a piecewise-linear function, <i>f(t)</i>, on the interval (<i>-infinity,
++infinity).</i> The piecewise-linear function is defined by <i>n</i> values
+of <i>t</i>, called <i>key</i>, and the <i>n</i> corresponding values of
+<i>f(t)</i>, called <i>keyValue</i>. The keys shall be monotonically non-decreasing,
+otherwise the results are undefined. The keys are not restricted to any
+interval.</p>
+
+<p>An interpolator node evaluates <i>f(t)</i> given any value of <i>t</i>
+(via the <i>set_fraction</i><tt> </tt>eventIn) as follows: Let the <i>n</i>
+keys <i>t</i><sub><i>0</i></sub><i>, t</i><sub><i>1</i></sub><i>, t</i><sub><i>2</i></sub><i>,
+..., t</i><sub><i>n-1</i></sub> partition the domain (<i>-infinity, +infinity</i>)
+into the <i>n+</i>1 subintervals given by (-<i>infinity</i>, <i>t</i><sub><i>0</i></sub><i>),
+[t</i><sub><i>0</i></sub><i>, t</i><sub><i>1</i></sub><i>), [t</i><sub><i>1</i></sub><i>,
+t</i><sub><i>2</i></sub><i>), ... , [t</i><sub><i>n-1</i></sub><i>,&nbsp;+infinity)</i>.
+Also, let the <i>n</i> values <i>v</i><sub><i>0</i></sub><i>, v</i><sub><i>1</i></sub><i>,
+v</i><sub><i>2</i></sub><i>, ..., v</i><sub><i>n-1</i></sub> be the values
+of <i>f(t) </i>at the associated key values.<i> </i>The piecewise-linear
+interpolating function, <i>f(t)</i>, is defined to be</p>
+
+<pre>
+<i>     f(t)</i> =<i> v</i><sub><i>0</i></sub><i>, </i>if<i> t &lt;= t</i><sub><i>0</i></sub><i>,</i>
+<i>          </i>=<i> v</i><sub><i>n-1</i></sub><i>, </i>if<i> t &gt;= t</i><sub><i>n-1</i></sub><i>,</i> 
+          =<i> linterp(t, v</i><sub><i>i</i></sub><i>, v</i><sub><i>i+1</i></sub><i>), </i>if<i> t</i><sub><i>i</i></sub><i> &lt;= t &lt;= t</i><sub><i>i+1</i></sub>
+
+     where <i>linterp(t,x,y)</i> is the linear interpolant, <i>i</i> belongs to {0,1,..., n-2}.</pre>
+
+<p>The third conditional value of <i>f(t) </i>allows the defining of multiple
+values for a single key, (i.e.,&nbsp;limits from both the left and right
+at a discontinuity in <i>f(t))</i>. The first specified value is used as
+the limit of <i>f(t) </i>from the left, and the last specified value is
+used as the limit of <i>f(t) </i>from the right. The value of <i>f(t) </i>at
+a multiply defined key is indeterminate, but should be one of the associated
+limit values.</p>
+
+<p>The following node types are interpolator nodes, each based on the type
+of value that is interpolated:</p>
+
+<ul>
+  <li><a HREF="nodesRef.html#ColorInterpolator">ColorInterpolator</a>
+  <li><a HREF="nodesRef.html#CoordinateInterpolator">CoordinateInterpolator</a>
+  <li><a HREF="nodesRef.html#NormalInterpolator">NormalInterpolator</a>
+  <li><a HREF="nodesRef.html#OrientationInterpolator">OrientationInterpolator</a>
+  <li><a HREF="nodesRef.html#PositionInterpolator">PositionInterpolator</a>
+  <li><a HREF="nodesRef.html#ScalarInterpolator">ScalarInterpolator</a>
+</ul>
+
+<p>All interpolator nodes share a common set of fields and semantics:</p>
+
+<pre>
+    eventIn      SFFloat      set_fraction
+    exposedField MFFloat      <b>key           [...]</b>
+    exposedField MF&lt;type&gt;     <b>keyValue      [...]</b>
+    eventOut     [S|M]F&lt;type&gt; value_changed</pre>
+
+<p>The type of the<i> keyValue </i>field is dependent on the type of the
+interpolator (e.g.,&nbsp;the ColorInterpolator's <i>keyValue</i> field is
+of type MFColor).</p>
+
+<p>The <i>set_fraction</i> eventIn receives an SFFloat event and causes
+the interpolator function to evaluate, resulting in a <i>value_changed</i>
+eventOut with the same timestamp as the <i>set_fraction</i> event.</p>
+
+<p>ColorInterpolator, OrientationInterpolator, PositionInterpolator, and
+ScalarInterpolator output a single-value field to <i>value_changed</i>.
+Each value in the <i>keyValue</i> field corresponds in order to the parameter
+value in the <i>key</i> field. Results are undefined if the number of values
+in the <i>key</i> field of an interpolator is not the same as the number
+of values in the <i>keyValue</i> field.</p>
+
+<p>CoordinateInterpolator and NormalInterpolator send multiple-value results
+to <i>value_changed</i>. In this case, the <i>keyValue</i> field is an <i>n&nbsp;</i>x&nbsp;<i>m</i>
+array of values, where <i>n</i> is the number of values in the key field
+and <i>m</i> is the number of values at each keyframe. Each <i>m</i> values
+in the <i>keyValue</i> field correspond, in order, to a parameter value
+in the <i>key</i> field. Each <i>value_changed</i> event shall contain <i>m</i>
+interpolated values. Results are undefined if the number of values in the
+<i>keyValue</i> field divided by the number of values in the <i>key</i>
+field is not a positive integer.</p>
+
+<p>If an interpolator node's <i>value</i> eventOut is read before it receives
+any inputs, <i>keyValue</i>[0] is returned if <i>keyValue</i> is not empty.
+If <i>keyValue</i> is empty (i.e.,&nbsp;[&nbsp;]), the initial value for
+the eventOut type is returned (e.g.,&nbsp;(0,&nbsp;0,&nbsp;0) for SFVec3f);
+see <a HREF="fieldsRef.html">5, Field and event&nbsp;reference</a>, for
+initial event values.</p>
+
+<p>The location of an interpolator node in the transformation hierarchy
+has no effect on its operation. For example, if a parent of an interpolator
+node is a Switch node with <i>whichChoice</i> set to -1 (i.e.,&nbsp;ignore
+its children), the interpolator continues to operate as specified (receives
+and sends events).</p>
+
+<h3><a NAME="4.6.9"></a>4.6.9 Time-dependent nodes</h3>
+
+<p><a HREF="nodesRef.html#AudioClip">AudioClip</a>, <a HREF="nodesRef.html#MovieTexture">MovieTexture</a>,
+and <a HREF="nodesRef.html#TimeSensor">TimeSensor</a> are <i>time-dependent</i>
+nodes that activate and deactivate themselves at specified times. Each of
+these nodes contains the exposedFields: <i>startTime</i>, <i>stopTime</i>,
+and <i>loop, </i>and the eventOut: <i>isActive</i>. The values of the exposedFields
+are used to determine when the node becomes active or inactive Also, under
+certain conditions, these nodes ignore events to some of their exposedFields.
+A node ignores an eventIn by not accepting the new value and not generating
+an eventOut<i>_changed</i> event. In this subclause, an abstract time-dependent
+node can be any one of AudioClip, MovieTexture, or TimeSensor.</p>
+
+<p>Time-dependent nodes can execute for 0 or more cycles. A cycle is defined
+by field data within the node. If, at the end of a cycle, the value of <i>loop</i>
+is FALSE, execution is terminated (see below for events at termination).
+Conversely, if <i>loop</i> is TRUE at the end of a cycle, a time-dependent
+node continues execution into the next cycle. A time-dependent node with
+<i>loop</i> TRUE at the end of every cycle continues cycling forever if
+<i>startTime&nbsp;&gt;=&nbsp;stopTime</i>, or until <i>stopTime </i>if<i>
+&nbsp;startTime &lt; stopTime</i>.</p>
+
+<p>A time-dependent node generates an <i>isActive</i> TRUE event when it
+becomes active and generates an <i>isActive</i> FALSE event when it becomes
+inactive. These are the only times at which an <i>isActive</i> event is
+generated. In particular, <i>isActive </i>events are not sent at each tick
+of a simulation.</p>
+
+<p>A time-dependent node is inactive until its <i>startTime</i> is reached.
+When time <i>now</i> becomes greater than or equal to <i>startTime, </i>an
+<i>isActive</i> TRUE event is generated and the time-dependent node becomes
+active (<i>now</i> refers to the time at which the browser is simulating
+and displaying the virtual world). When a time-dependent node is read from
+a VRML file and the ROUTEs specified within the VRML file have been established,
+the node should determine if it is active and, if so, generate an <i>isActive</i>
+TRUE event and begin generating any other necessary events. However, if
+a node would have become inactive at any time before the reading of the
+VRML file, no events are generated upon the completion of the read.</p>
+
+<p>An active time-dependent node will become inactive when <i>stopTime</i>
+is reached if <i>stopTime&nbsp;&gt;&nbsp;startTime.</i> The value of<i>
+stopTime </i>is ignored if<i> stopTime&nbsp;&lt;=&nbsp;startTime</i>. Also,
+an active time-dependent node will become inactive at the end of the current
+cycle if <i>loop</i> is FALSE. If an active time-dependent node receives
+a <i>set_loop</i> FALSE event, execution continues until the end of the
+current cycle or until <i>stopTime</i> (if <i>stopTime&nbsp;&gt;&nbsp;startTime</i>),
+whichever occurs first. The termination at the end of cycle can be overridden
+by a subsequent <i>set_loop </i>TRUE event.</p>
+
+<p>Any <i>set_startTime</i> events to an active time-dependent node are
+ignored. Any <i>set_stopTime</i> event where <i>stopTime</i> &lt;= <i>startTime</i>
+sent to an active time-dependent node is also ignored. A <i>set_stopTime</i>
+event where <i>startTime&nbsp;&lt;&nbsp;stopTime&nbsp;&lt;=&nbsp;now</i>
+sent to an active time-dependent node results in events being generated
+as if <i>stopTime</i> has just been reached. That is, final events, including
+an <i>isActive </i>FALSE, are generated and the node becomes inactive. The
+<i>stopTime_changed</i> event will have the <i>set_stopTime</i> value. Other
+final events are node-dependent (c.f.,&nbsp;TimeSensor).</p>
+
+<p>A time-dependent node may be restarted while it is active by sending
+a <i>set_stopTime</i> event equal to the current time (which will cause
+the node to become inactive) and a <i>set_startTime</i> event, setting it
+to the current time or any time in the future. These events will have the
+same time stamp and should be processed as <i>set_stopTime, </i>then<i>
+set_startTime </i>to produce the correct behaviour.</p>
+
+<p>The default values for each of the time-dependent nodes are specified
+such that any node with default values is already inactive (and, therefore,
+will generate no events upon loading). A time-dependent node can be defined
+such that it will be active upon reading by specifying <i>loop</i> TRUE.
+This use of a non-terminating time-dependent node should be used with caution
+since it incurs continuous overhead on the simulation.</p>
+
+<p><a HREF="concepts.html#Figure4.2">Figure 4.2</a> illustrates the behavior of several
+common cases of time-dependent nodes. In each case, the initial conditions
+of <i>startTime</i>, <i>stopTime</i>, <i>loop</i>, and the time-dependent
+node's cycle interval are labelled, the red region denotes the time period
+during which the time-dependent node is active, the arrows represent eventIns
+received by and eventOuts sent by the time-dependent node, and the horizontal
+axis represents time.</p>
+
+<p><center><a NAME="Figure4.2"></a><img SRC="../Images/timeDep.gif" WIDTH="336" HEIGHT="668" ALIGN="BOTTOM" NATURALSIZEFLAG="0" ALT="Time dependent examples"></center></p>
+
+<h4><center>Figure 4.2 -- Examples of time-dependent node execution</center></h4>
+
+<h4><center>&nbsp;</center></h4>
+
+<h3><a NAME="4.6.10"></a>4.6.10 Bindable children nodes</h3>
+
+<p>The <a HREF="nodesRef.html#Background">Background</a>, <a HREF="nodesRef.html#Fog">Fog</a>,
+<a HREF="nodesRef.html#NavigationInfo">NavigationInfo</a>, and <a HREF="nodesRef.html#Viewpoint">Viewpoint</a> nodes have the unique behaviour
+that only one of each type can be bound (i.e.,&nbsp;affecting the user's
+experience) at any instant in time. The browser shall maintain an independent,
+separate stack for each type of bindable node. Each of these nodes includes
+a <i>set_bind</i> eventIn and an <i>isBound</i> eventOut. The <i>set_bind</i>
+eventIn is used to move a given node to and from its respective top of stack.
+A TRUE value sent to the <i>set_bind </i>eventIn moves the node to the top
+of the stack; sending a FALSE value removes it from the stack. The <i>isBound</i>
+event is output when a given node is:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>moved to the top of the stack;
+  <li>removed from the top of the stack;
+  <li>pushed down from the top of the stack by another node being placed
+  on top.
+</ol><!--/NOEDIT--></p>
+
+<p>That is, <i>isBound</i> events are sent when a given node becomes, or
+ceases to be, the active node. The node at the top of stack, (the most recently
+bound node), is the active node for its type and is used by the browser
+to set the world state. If the stack is empty (i.e.,&nbsp;either the VRML
+file has no bindable nodes for a given type or the stack has been popped
+until empty), the default field values for that node type are used to set
+world state. The results are undefined if a multiply instanced (DEF/USE)
+bindable node is bound.</p>
+
+<p>The following rules describe the behaviour of the binding stack for a
+node of type <i>&lt;bindable node&gt;, </i>(Background, Fog, NavigationInfo,
+or Viewpoint):</p>
+
+<p><!--NOEDIT--><ol START="4" TYPE="a">
+  <li>During read, the first encountered <i>&lt;bindable node&gt;</i> is
+  bound by pushing it to the top of the <i>&lt;bindable node&gt;</i> stack.
+  Nodes contained within <a HREF="nodesRef.html#Inline">Inlines</a>, within
+  the strings passed to the Browser.createVrmlFromString() method, or within
+  VRML files passed to the Browser.createVrmlFromURL() method (see <a HREF="concepts.html#4.12.10">4.12.10, Browser script interface</a>)are not candidates
+  for the first encountered <i>&lt;bindable node&gt;</i>. The first node
+  within a prototype instance is a valid candidate for the first encountered
+  <i>&lt;bindable node&gt;</i>. The first encountered <i>&lt;bindable node&gt;</i>
+  sends an <i>isBound </i>TRUE<i> </i>event.
+  <li>When a <i>set_bind</i> TRUE event is received by a <i>&lt;bindable
+  node&gt;</i>,
+  <ol START="1" TYPE="1">
+    <li>If it is <u>not</u> on the top of the stack: the current top of stack
+    node sends an <i>isBound</i> FALSE event. The new node is <u>moved</u>
+    to the top of the stack and becomes the currently bound <i>&lt;bindable
+    node&gt;</i>. The new <i>&lt;bindable node&gt;</i> (top of stack) sends
+    an <i>isBound </i>TRUE<i> </i>event.
+    <li>If the node is already at the top of the stack, this event has no effect.
+  </ol>
+  <li>When a <i>set_bind</i> FALSE event is received by a <i>&lt;bindable
+  node&gt;</i> in the stack, it is removed from the stack. If it was on the
+  top of the stack,
+  <ol START="1" TYPE="1">
+    <li>it sends an <i>isBound</i> FALSE event;
+    <li>the next node in the stack becomes the currently bound <i>&lt;bindable
+    node&gt; </i>(i.e.,&nbsp;pop)<i> </i>and issues an<i> isBound </i>TRUE<i>
+    </i>event.
+  </ol>
+  <li>If a <i>set_bind</i> FALSE event is received by a node not in the stack,
+  the event is ignored and <i>isBound</i> events are not sent.
+  <li>When a node replaces another node at the top of the stack, the <i>isBound</i>
+  TRUE and FALSE eventOuts from the two nodes are sent simultaneously (i.e.,&nbsp;with
+  identical timestamps).
+  <li>If a bound node is deleted, it behaves as if it received a <i>set_bind
+  </i>FALSE event (see f above).
+</ol><!--/NOEDIT--></p>
+
+<h3><a NAME="4.6.11"></a>4.6.11 Texture maps</h3>
+
+<h4>4.6.11.1 Texture map formats</h4>
+
+<p>Four node types specify texture maps: <a HREF="nodesRef.html#Background">Background</a>,
+<a HREF="nodesRef.html#ImageTexture">ImageTexture</a>, <a HREF="nodesRef.html#MovieTexture">MovieTexture</a>,
+and <a HREF="nodesRef.html#PixelTexture">PixelTexture</a>. In all cases,
+texture maps are defined by 2D images that contain an array of colour values
+describing the texture. The texture map values are interpreted differently
+depending on the number of components in the texture map and the specifics
+of the image format. In general, texture maps may be described using one
+of the following forms:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li><i>Intensity textures</i> (one-component)
+  <li><i>Intensity plus alpha opacity textures</i> (two-component)
+  <li><i>Full RGB textures</i> (three-component)
+  <li><i>Full RGB plus alpha opacity textures</i> (four-component)
+</ol><!--/NOEDIT--></p>
+
+<p>Note that most image formats specify an alpha opacity, not transparency
+(where alpha&nbsp;=&nbsp;1&nbsp;-&nbsp;transparency).</p>
+
+<p>See <a HREF="concepts.html#Table4.5">Table 4.5</a> and <a HREF="concepts.html#Table4.6">Table 4.6</a>
+for a description of how the various texture types are applied.</p>
+
+<h4>4.6.11.2 Texture map image formats</h4>
+
+<p>Texture nodes that require support for the PNG (see <a HREF="references.html#[PNG]">2.[PNG]</a>)
+image format (<a HREF="nodesRef.html#Background">6.5,&nbsp;Background</a>,
+and <a HREF="nodesRef.html#ImageTexture">6.22,&nbsp;ImageTexture</a>) shall
+interpret the PNG pixel formats in the following way:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>Greyscale pixels without alpha or simple transparency are treated as
+  intensity textures.
+  <li>Greyscale pixels with alpha or simple transparency are treated as intensity
+  plus alpha textures.
+  <li>RGB pixels without alpha channel or simple transparency are treated
+  as full RGB textures.
+  <li>RGB pixels with alpha channel or simple transparency are treated as
+  full RGB plus alpha textures.
+</ol><!--/NOEDIT--></p>
+
+<p>If the image specifies colours as indexed-colour (i.e.,&nbsp;palettes
+or colourmaps), the following semantics should be used (note that `greyscale'
+refers to a palette entry with equal red, green, and blue values):</p>
+
+<p><!--NOEDIT--><ol START="5" TYPE="a">
+  <li>If all the colours in the palette are greyscale and there is no transparency
+  chunk, it is treated as an intensity texture.
+  <li>If all the colours in the palette are greyscale and there is a transparency
+  chunk, it is treated as an intensity plus opacity texture.
+  <li>If any colour in the palette is not grey and there is no transparency
+  chunk, it is treated as a full RGB texture.
+  <li>If any colour in the palette is not grey and there is a transparency
+  chunk, it is treated as a full RGB plus alpha texture.
+</ol><!--/NOEDIT--></p>
+
+<p>Texture nodes that require support for JPEG files (see <a HREF="references.html#[JPEG]">2.[JPEG]</a>,
+<a HREF="nodesRef.html#Background">6.5,&nbsp;Background</a>, and <a HREF="nodesRef.html#ImageTexture">6.22,&nbsp;ImageTexture</a>) shall interpret
+JPEG files as follows:</p>
+
+<p><!--NOEDIT--><ol START="9" TYPE="a">
+  <li>Greyscale files (number of components equals 1) are treated as intensity
+  textures.
+  <li>YCbCr files are treated as full RGB textures.
+  <li>No other JPEG file types are required. It is recommended that other
+  JPEG files are treated as a full RGB textures.
+</ol><!--/NOEDIT--></p>
+
+<p>Texture nodes that support MPEG files (see <a HREF="references.html#[MPEG]">2.[MPEG]</a>
+and <a HREF="nodesRef.html#MovieTexture">6.28,&nbsp;MovieTexture</a>) shall
+treat MPEG files as full RGB textures.</p>
+
+<p>Texture nodes that recommend support for GIF files (see <a HREF="bibliography.html#[GIF]">E.[GIF]</a>,
+<a HREF="nodesRef.html#Background">6.5,&nbsp;Background</a>, and <a HREF="nodesRef.html#ImageTexture">6.22,&nbsp;ImageTexture</a>) shall follow the
+applicable semantics described above for the PNG format.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.7"></a>4.7 Field, eventIn, and eventOut semantics</h2>
+
+<p>Fields are placed inside node statements in a VRML file, and define the
+persistent state of the virtual world. Results are undefined if multiple
+values for the same field in the same node (e.g.,&nbsp;&nbsp;<b><code>Sphere&nbsp;{&nbsp;radius&nbsp;1.0&nbsp;radius&nbsp;2.0&nbsp;}</code></b>)
+are declared.</p>
+
+<p>EventIns and eventOuts define the types and names of events that each
+type of node may receive or generate. Events are transient and event values
+are not written to VRML files. Each node interprets the values of the events
+sent to it or generated by it according to its implementation.</p>
+
+<p>Field, eventIn, and eventOut types, and field encoding syntax, are described
+in <a HREF="fieldsRef.html">5,&nbsp;Field&nbsp;and&nbsp;event&nbsp;reference</a>.</p>
+
+<p>An <i>exposedField</i> can receive events like an eventIn, can generate
+events like an eventOut, and can be stored in VRML files like a field. An
+exposedField named <i>zzz</i> can be referred to as '<i>set_zzz</i>' and
+treated as an eventIn, and can be referred to as '<i>zzz_changed</i>' and
+treated as an eventOut. The initial value of an exposedField is its value
+in the VRML file, or the default value for the node in which it is contained,
+if a value is not specified. When an exposedField receives an event it shall
+generate an event with the same value and timestamp. The following sources,
+in precedence order, shall be used to determine the initial value of the
+exposedField:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>the user-defined value in the instantiation (if one is specified);
+  <li>the default value for that field as specified in the node or prototype
+  definition.
+</ol><!--/NOEDIT--></p>
+
+<p>The rules for naming fields, exposedFields, eventOuts, and eventIns for
+the built-in nodes are as follows:</p>
+
+<p><!--NOEDIT--><ol START="3" TYPE="a">
+  <li>All names containing multiple words start with a lower case letter,
+  and the first letter of all subsequent words is capitalized (e.g.,&nbsp;<i>addChildren</i>),
+  with the exception of s<i>et_</i> and <i>_changed</i>, as described below.
+  <li>All eventIns have the prefix &quot;<i>set_</i>&quot;, with the exception
+  of the <i>addChildren</i> and <i>removeChildren</i> eventIns.
+  <li>Certain eventIns and eventOuts of type SFTime do not use the &quot;<i>set_</i>&quot;
+  prefix or &quot;<i>_changed</i>&quot; suffix.
+  <li>All other eventOuts have the suffix &quot;<i>_changed</i>&quot; appended,
+  with the exception of eventOuts of type SFBool. Boolean eventOuts begin
+  with the word &quot;<i>is</i>&quot; (e.g.,&nbsp;<i>isFoo</i>) for better
+  readability.
+</ol><!--/NOEDIT--></p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.8"></a>4.8 Prototype semantics</h2>
+
+<h3><a NAME="4.8.1"></a>4.8.1 Introduction</h3>
+
+<p>The PROTO statement defines a new node type in terms of already defined
+(built-in or prototyped) node types. Once defined, prototyped node types
+may be instantiated in the scene graph exactly like the built-in node types.</p>
+
+<p>Node type names shall be unique in each VRML file. The results are undefined
+if a prototype is given the same name as a built-in node type or a previously
+defined prototype in the same scope.</p>
+
+<h3><a NAME="4.8.2"></a>4.8.2 PROTO interface declaration semantics</h3>
+
+<p>The prototype interface defines the fields, eventIns, and eventOuts for
+the new node type. The interface declaration includes the types and names
+for the eventIns and eventOuts of the prototype, as well as the types, names,
+and default values for the prototype's fields.</p>
+
+<p>The interface declaration may contain exposedField declarations, which
+are a convenient way of defining a field, eventIn, and eventOut at the same
+time. If an exposedField named <i>zzz</i> is declared, it is equivalent
+to declaring a field named <i>zzz</i>, an eventIn named <i>set_zzz</i>,
+and an eventOut named <i>zzz_changed</i>.</p>
+
+<p>Each prototype instance can be considered to be a complete copy of the
+prototype, with its own fields, events, and copy of the prototype definition.
+A prototyped node type is instantiated using standard node syntax. For example,
+the following prototype (which has an empty interface declaration):</p>
+
+<pre>
+<b>    PROTO Cube [ ] { Box { } }</b></pre>
+
+<p>may be instantiated as follows:</p>
+
+<pre>
+<b>    Shape { geometry Cube { } }</b></pre>
+
+<p>It is recommended that user-defined field or event names defined in PROTO
+interface declarations statements follow the naming conventions described
+in <a HREF="concepts.html#4.7">4.7,&nbsp;Field,&nbsp;eventIn,&nbsp;and&nbsp;eventOut&nbsp;semantics</a>.</p>
+
+<p>If an eventOut in the prototype declaration is associated with an exposedField
+in the prototype definition, the initial value of the eventOut shall be
+the initial value of the exposedField. If the eventOut is associated with
+multiple exposedFields, the results are undefined.</p>
+
+<h3><a NAME="4.8.3"></a>4.8.3 PROTO definition semantics</h3>
+
+<p>A prototype definition consists of one or more nodes, nested PROTO statements,
+and ROUTE statements. The first node type determines how instantiations
+of the prototype can be used in a VRML file. An instantiation is created
+by filling in the parameters of the prototype declaration and inserting
+copies of the first node (and its scene graph) wherever the prototype instantiation
+occurs. For example, if the first node in the prototype definition is a
+Material node, instantiations of the prototype can be used wherever a Material
+node can be used. Any other nodes and accompanying scene graphs are not
+part of the transformation hierarchy, but may be referenced by ROUTE statements
+or Script nodes in the prototype definition.</p>
+
+<p>Nodes in the prototype definition may have their fields, eventIns, or
+eventOuts associated with the fields, eventIns, and eventOuts of the prototype
+interface declaration. This is accomplished using IS statements in the body
+of the node. When prototype instances are read from a VRML file, field values
+for the fields of the prototype interface may be given. If given, the field
+values are used for all nodes in the prototype definition that have IS statements
+for those fields. Similarly, when a prototype instance is sent an event,
+the event is delivered to all nodes that have IS statements for that event.
+When a node in a prototype instance generates an event that has an IS statement,
+the event is sent to any eventIns connected (via ROUTE) to the prototype
+instance's eventOut.</p>
+
+<p>IS statements may appear inside the prototype definition wherever fields
+may appear. IS statements shall refer to fields or events defined in the
+prototype declaration. Results are undefined if an IS statement refers to
+a non-existent declaration. Results are undefined if the type of the field
+or event being associated by the IS statement does not match the type declared
+in the prototype's interface declaration. For example, it is illegal to
+associate an SFColor with an SFVec3f. It is also illegal to associate an
+SFColor with an MFColor or <i>vice versa</i>.</p>
+
+<p>Results are undefined if an IS statement:</p>
+
+<ul>
+  <li>eventIn is associated with a field or an eventOut;
+  <li>eventOut is associated with a field or eventIn;
+  <li>field is associated with an eventIn or eventOut.
+</ul>
+
+<p>An exposedField in the prototype interface may be associated only with
+an exposedField in the prototype definition, but an exposedField in the
+prototype definition may be associated with either a field, eventIn, eventOut
+or exposedField in the prototype interface. When associating an exposedField
+in a prototype definition with an eventIn or eventOut in the prototype declaration,
+it is valid to use either the shorthand exposedField name (e.g.,&nbsp;<i>translation</i>)
+or the explicit event name (e.g.,&nbsp;<i>set_translation</i> or <i>translation_changed</i>).
+<a HREF="concepts.html#Table4.4">Table 4.4</a> defines the rules for mapping between
+the prototype declarations and the primary scene graph's nodes (<i>yes </i>denotes
+a legal mapping, <i>no </i>denotes an error).</p>
+
+<h4><center><a NAME="Table4.4"></a>Table 4.4 -- Rules for mapping PROTOTYPE&nbsp;declarations
+to node instances</center></h4>
+
+<p><table BORDER="1" CELLPADDING="2" CELLSPACING="2">
+<tr ALIGN="CENTER">
+<td></td>
+<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prototype
+declaration</b></td></tr>
+<tr>
+<td ALIGN="CENTER"><p><b>Prototype</b></p>
+
+<p><b>definition</b></td>
+<td><p><center><table BORDER="1" CELLPADDING="6" CELLSPACING="6">
+<tr>
+<td></td>
+<td ALIGN="CENTER"><b><u>exposedField</u></b></td>
+<td ALIGN="CENTER"><b><u>field</u></b></td>
+<td ALIGN="CENTER"><b><u>eventIn</u></b></td>
+<td ALIGN="CENTER"><b><u>eventOut</u></b></td></tr>
+<tr>
+<td ALIGN="RIGHT"><b><u>exposedField</u></b></td>
+<td ALIGN="CENTER"><tt>yes</tt></td>
+<td ALIGN="CENTER"><tt>yes</tt></td>
+<td ALIGN="CENTER"><tt>yes</tt></td>
+<td ALIGN="CENTER"><tt>yes</tt></td></tr>
+<tr>
+<td ALIGN="RIGHT"><b><u>field</u></b></td>
+<td ALIGN="CENTER"><tt>no</tt></td>
+<td ALIGN="CENTER"><tt>yes</tt></td>
+<td ALIGN="CENTER"><tt>no</tt></td>
+<td ALIGN="CENTER"><tt>no</tt></td></tr>
+<tr>
+<td ALIGN="RIGHT"><b><u>eventIn</u></b></td>
+<td ALIGN="CENTER"><tt>no</tt></td>
+<td ALIGN="CENTER"><tt>no</tt></td>
+<td ALIGN="CENTER"><tt>yes</tt></td>
+<td ALIGN="CENTER"><tt>no</tt></td></tr>
+<tr>
+<td ALIGN="RIGHT"><b><u>eventOut</u></b></td>
+<td ALIGN="CENTER"><tt>no</tt></td>
+<td ALIGN="CENTER"><tt>no</tt></td>
+<td ALIGN="CENTER"><tt>no</tt></td>
+<td ALIGN="CENTER"><tt>yes</tt></td></tr>
+</table>
+</center></td></tr>
+</table>
+</p>
+
+<p>Results are undefined if a field, eventIn, or eventOut of a node in the
+prototype definition is associated with more than one field, eventIn, or
+eventOut in the prototype's interface (i.e.,&nbsp;multiple IS statements
+for a field, eventIn, and eventOut in a node in the prototype definition),
+but multiple IS statements for the fields, eventIns, and eventOuts in the
+prototype interface declaration is valid. Results are undefined if a field
+of a node in a prototype definition is both defined with initial values
+(i.e.,&nbsp;field statement) and associated by an IS statement with a field
+in the prototype's interface. If a prototype interface has an eventOut <i>E</i>
+associated with multiple eventOuts in the prototype definition <i>ED</i><sub>
+<i><font SIZE="-2">i</font></i></sub> , the value of <i>E</i> is the value
+of the eventOut that generated the event with the greatest timestamp. If
+two or more of the eventOuts generated events with identical timestamps,
+results are undefined.</p>
+
+<h3><a NAME="4.8.4"></a>4.8.4 Prototype scoping rules</h3>
+
+<p>Prototype definitions appearing inside a prototype definition (i.e.,&nbsp;nested)
+are local to the enclosing prototype. IS statements inside a nested prototype's
+implementation may refer to the prototype declarations of the innermost
+prototype.</p>
+
+<p>A PROTO statement establishes a DEF/USE name scope separate from the
+rest of the scene and separate from any nested PROTO statements. Nodes given
+a name by a DEF&nbsp;construct inside the prototype may not be referenced
+in a USE construct outside of the prototype's scope. Nodes given a name
+by a DEF&nbsp;construct outside the prototype scope may not be referenced
+in a USE&nbsp;construct inside the prototype scope.</p>
+
+<p>A prototype may be instantiated in a file anywhere after the completion
+of the prototype definition. A prototype may not be instantiated inside
+its own implementation <i>(</i>i.e.,&nbsp;recursive prototypes are illegal).</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.9"></a>4.9 External prototype semantics</h2>
+
+<h3><a NAME="4.9.1"></a>4.9.1 Introduction</h3>
+
+<p>The EXTERNPROTO statement defines a new node type. It is equivalent to
+the PROTO statement, with two exceptions. First, the implementation of the
+node type is stored externally, either in a VRML file containing an appropriate
+PROTO statement or using some other implementation-dependent mechanism.
+Second, default values for fields are not given since the implementation
+will define appropriate defaults.</p>
+
+<h3><a NAME="4.9.2"></a>4.9.2 EXTERNPROTO interface semantics</h3>
+
+<p>The semantics of the EXTERNPROTO are exactly the same as for a PROTO
+statement, except that default field and exposedField values are not specified
+locally. In addition, events sent to an instance of an externally prototyped
+node may be ignored until the implementation of the node is found.</p>
+
+<p>Until the definition has been loaded, the browser shall determine the
+initial value of exposedFields using the following rules (in order of precedence):</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>the user-defined value in the instantiation (if one is specified);
+  <li>the default value for that field type.
+</ol><!--/NOEDIT--></p>
+
+<p>For eventOuts, the initial value on startup will be the default value
+for that field type. During the loading of an EXTERNPROTO, if an initial
+value of an eventOut is found, that value is applied to the eventOut and
+no event is generated.</p>
+
+<p>The names and types of the fields, exposedFields, eventIns, and eventOuts
+of the interface declaration shall be a subset of those defined in the implementation.
+Declaring a field or event with a non-matching name is an error, as is declaring
+a field or event with a matching name but a different type.</p>
+
+<p>It is recommended that user-defined field or event names defined in EXTERNPROTO
+interface statements follow the naming conventions described in <a HREF="concepts.html#4.7">4.7,&nbsp;Field,&nbsp;eventIn,&nbsp;and&nbsp;eventOut&nbsp;semantics</a>.</p>
+
+<h3><a NAME="4.9.3"></a>4.9.3 EXTERNPROTO URL semantics</h3>
+
+<p>The string or strings specified after the interface declaration give
+the location of the prototype's implementation. If multiple strings are
+specified, the browser searches in the order of preference (see <a HREF="concepts.html#4.5.2">4.5.2, URLs</a>).</p>
+
+<p>If a URL in an EXTERNPROTO statement refers to a VRML file, the first
+PROTO statement found in the VRML file (excluding EXTERNPROTOs) is used
+to define the external prototype's definition. The name of that prototype
+does not need to match the name given in the EXTERNPROTO statement. Results
+are undefined if a URL in an EXTERNPROTO statement refers to a non-VRML
+file</p>
+
+<p>To enable the creation of libraries of reusable PROTO definitions, browsers
+shall recognize EXTERNPROTO URLs that end with &quot;<b>#</b><i>name</i>&quot;
+to mean the PROTO statement for &quot;name&quot; in the given VRML file.
+For example, a library of standard materials might be stored in a VRML file
+called &quot;materials.wrl&quot; that looks like:</p>
+
+<pre>
+<b>    #VRML V2.0 utf8</b>
+<b>    PROTO Gold   [] { Material { ... } }</b>
+<b>    PROTO Silver [] { Material { ... } }</b>
+<b>    ...etc.</b></pre>
+
+<p>A material from this library could be used as follows:</p>
+
+<pre>
+<b>    #VRML V2.0 utf8</b>
+<b>    EXTERNPROTO GoldFromLibrary [] &quot;http://.../materials.wrl#Gold&quot;</b>
+<b>    ...</b>
+<b>    Shape {</b>
+<b>        appearance Appearance { material GoldFromLibrary {} }</b>
+<b>        geometry   ...</b>
+<b>    }</b>
+<b>    ...</b></pre>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.10"></a>4.10 Event processing</h2>
+
+<h3><a NAME="4.10.1"></a>4.10.1 Introduction</h3>
+
+<p>Most node types have at least one eventIn definition and thus can receive
+<i>events.</i> Incoming events are data messages sent by other nodes to
+change some state within the receiving node. Some nodes also have eventOut
+definitions. These are used to send data messages to destination nodes that
+some state has changed within the source node.</p>
+
+<p>If an eventOut is read before it has sent any events, the <i>initial</i>
+<i>value</i> as specified in <a HREF="fieldsRef.html">5,&nbsp;Field&nbsp;and&nbsp;event&nbsp;reference</a>,
+for each field/event type is returned.</p>
+
+<h3><a NAME="4.10.2"></a>4.10.2 Route semantics</h3>
+
+<p>The connection between the node generating the event and the node receiving
+the event is called a <i>route</i>. Routes are not nodes. The ROUTE statement
+is a construct for establishing event paths between nodes. ROUTE statements
+may either appear at the top level of a VRML file, in a prototype definition,
+or inside a node wherever fields may appear. Nodes referenced in a ROUTE&nbsp;statement
+shall be defined before the ROUTE&nbsp;statement.</p>
+
+<p>The types of the eventIn and the eventOut shall match exactly. For example,
+it is illegal to route from an SFFloat to an SFInt32 or from an SFFloat
+to an MFFloat.</p>
+
+<p>Routes may be established only from eventOuts to eventIns. For convenience,
+when routing to or from an eventIn or eventOut (or the eventIn or eventOut
+part of an exposedField), the <i>set_</i> or <i>_changed</i> part of the
+event's name is optional. If the browser is trying to establish a ROUTE
+to an eventIn named <i>zzz</i> and an eventIn of that name is not found,
+the browser shall then try to establish the ROUTE to the eventIn named <i>set_zzz</i>.
+Similarly, if establishing a ROUTE from an eventOut named <i>zzz</i> and
+an eventOut of that name is not found, the browser shall try to establish
+the ROUTE from <i>zzz_changed</i>.</p>
+
+<p>Redundant routing is ignored. If a VRML file repeats a routing path,
+the second and subsequent identical routes are ignored. This also applies
+for routes created dynamically via a scripting language supported by the
+browser.</p>
+
+<h3><a NAME="4.10.3"></a>4.10.3 Execution model</h3>
+
+<p>Once a sensor or Script has generated an <i>initial event</i>, the event
+is propagated from the eventOut producing the event along any ROUTEs to
+other nodes. These other nodes may respond by generating additional events,
+continuing until all routes have been honoured. This process is called an
+<i>event cascade</i>. All events generated during a given event cascade
+are assigned the same timestamp as the initial event, since all are considered
+to happen instantaneously.</p>
+
+<p>Some sensors generate multiple events simultaneously. Similarly, it is
+possible that asynchronously generated events could arrive at the identical
+time as one or more sensor generated event. In these cases, all events generated
+are part of the same initial event cascade and each event has the same timestamp.</p>
+
+<p>After all events of the initial event cascade are honored, post-event
+processing performs actions stimulated by the event cascade. The entire
+sequence of events occuring in a single timestamp are:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>Perform event cascade evaluation.
+  <li>Call <i>shutdown( )</i> on scripts that have received <i>set_url</i>
+  events or are being removed from the scene.
+  <li>Send final events from environmental sensors being removed from the
+  transformation hierarchy.
+  <li>Add or remove routes specified in <i>addRoute( ) </i>or <i>deleteRoute(
+  )</i> from any script execution in the preceeding event cascade.
+  <li>Call <i>eventsProcessed( )</i> for scripts that have sent events in
+  the just ended event cascade.
+  <li>Send initial events from any dynamically created environmental sensors.
+  <li>Call <i>initialize( )</i> of newly loaded script code.
+  <li>If any events were generated from steps 2 through 7, go to step 2 and
+  continue.
+</ol><!--/NOEDIT--></p>
+
+<p><a HREF="concepts.html#Figure4.3">Figure 4.3</a> provides a conceptual illustration
+of the execution model.</p>
+
+<p><center><a NAME="Figure4.3"></a><img SRC="../Images/Concepts2.gif" WIDTH="467" HEIGHT="262" NATURALSIZEFLAG="0" ALIGN="BOTTOM"></center></p>
+
+<h4><center>Figure 4.3 -- Conceptual execution model</center></h4>
+
+<p>Nodes that contain eventOuts or exposedFields shall produce at most one
+event per timestamp. If a field is connected to another field via a ROUTE,
+an implementation shall send only one event per ROUTE per timestamp. This
+also applies to scripts where the rules for determining the appropriate
+action for sending eventOuts are defined in <a HREF="concepts.html#4.12.9.3">4.12.9.3,
+Sending eventOuts</a>.</p>
+
+<p><a HREF="examples.html#D.19">D.19, Execution model</a>, provides an example
+that demonstrates the execution model. <a HREF="concepts.html#Figure4.4">Figure 4.4</a>
+illustrates event processing for a single timestamp in example in <a HREF="examples.html#D.19">D.19, Execution model</a>:</p>
+
+<p><center><a NAME="Figure4.4"></a><img SRC="../Images/timestamp-order.gif" HEIGHT="205" WIDTH="400" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="Timestamp ordering example"></center></p>
+
+<h4><center>Figure 4.4 -- Example D.19, event processing order</center></h4>
+
+<p>&nbsp;<br>
+In <a HREF="concepts.html#Figure4.4">Figure 4.4</a>, arrows coming out of a script at
+<b>ep</b> are events generated during the <i>eventsProcessed()</i> call
+for the script. The other arrows are events sent during an eventIn method.
+One possible compliant order of execution is as follows:</p>
+
+<p><!--NOEDIT--><ol START="9" TYPE="a">
+  <li>User activates <b>TouchSensor</b>
+  <li>Run initial event cascade (step 1)
+  <ol START="1" TYPE="1">
+    <li><b>Script 1</b> runs, generates an event for <b>Script 2</b>
+    <li><b>Script 2</b> runs
+    <li>end of initial event cascade
+  </ol>
+  <li>Execute eventsProcessed calls (step 5)
+  <ol START="1" TYPE="1">
+    <li><i>eventsProcessed</i> for <b>Script 1</b> runs, sends event to <b>Script
+    3</b>
+    <li><b>Script 3</b> runs, generates events for <b>Script 5</b>
+    <li><b>Script 5</b> runs
+    <li><i>eventsProcessed</i> for <b>Script 2</b> runs, sends events to <b>Script
+    4</b>
+    <li><b>Script 4</b> runs
+    <li>end of <i>eventsProcessed</i> processing
+  </ol>
+  <li>Go to step 2 for generated events (step 8)
+  <li>Execute <i>eventsProcessed</i> calls (step 5)
+  <ol START="1" TYPE="1">
+    <li><i>eventsProcessed</i> for <b>Script 3</b> runs, sends event to <b>Script
+    6</b>
+    <li><b>Script 6</b> runs, sends event to <b>Script 7</b>
+    <li><b>Script 7</b> runs
+    <li><i>eventsProcessed</i> for <b>Script 4</b> runs, does not generate
+    any events
+    <li><i>eventsProcessed</i> for <b>Script 5</b> runs, does not generate
+    any events
+    <li>end of <i>eventsProcessed</i> processing
+  </ol>
+  <li>Go to step 2 for generated events (step 8)
+  <li>Execute <i>eventsProcessed</i> calls (step 5)
+  <ol START="1" TYPE="1">
+    <li><i>eventsProcessed</i> for <b>Script 6</b> runs, does not generate
+    any events
+    <li><i>eventsProcessed</i> for <b>Script 7</b> runs, does not generate
+    any events
+    <li>end of <i>eventsProcessed</i> processing
+  </ol>
+  <li>No more events to handle.
+</ol><!--/NOEDIT--></p>
+
+<p>The above is not the only possible compliant order of execution. If multiple
+<i>eventsProcessed()</i> methods are pending when step 4 is executed, the
+order in which these methods is called is not defined. For instance, in
+the third step of the example, the <i>eventsProcessed</i> method is pending
+for both <b>Script</b> 1 and <b>Script 2</b>. The order of execution in
+this case is not defined, so executing the <i>eventsProcessed</i> method
+of <b>Script 2</b> before that of <b>Script 1</b> would have been compliant.
+However, executing the <i>eventsProcessed</i> method for <b>Script 3</b>
+before that of <b>Script 2</b> would not have been compliant because any
+methods made pending during processing must wait until the next iteration
+of the event cascade for execution.</p>
+
+<h3><a NAME="4.10.4"></a>4.10.4 Loops</h3>
+
+<p>Event cascades may contain <i>loops</i> where an event <i>E</i> is routed
+to a node that generates an event that eventually results in <i>E</i> being
+generated again. See <a HREF="concepts.html#4.10.3">4.10.3, Execution model</a>, for
+the loop breaking rule that limits each eventOut to one event per timestamp.
+This rule shall also be used to break loops created by cyclic dependencies
+between different sensor nodes.<br>
+</p>
+
+<h3><a NAME="4.10.5"></a>4.10.5 Fan-in and fan-out</h3>
+
+<p><i>Fan-in</i> occurs when two or more routes write to the same eventIn.
+Events coming into an eventIn from different eventOuts with the same timestamp
+shall be processed, but the order of evaluation is implementation dependent.</p>
+
+<p><i>Fan-out</i> occurs when one eventOut routes to two or more eventIns.
+This results in sending any event generated by the eventOut to all of the
+eventIns.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.11"></a>4.11 Time</h2>
+
+<h3><a NAME="4.11.1"></a>4.11.1 Introduction</h3>
+
+<p>The browser controls the passage of time in a world by causing TimeSensors
+to generate events as time passes. Specialized browsers or authoring applications
+may cause time to pass more quickly or slowly than in the real world, but
+typically the times generated by TimeSensors will approximate &quot;real&quot;
+time. A world's creator should make no assumptions about how often a TimeSensor
+will generate events but can safely assume that each time event generated
+will have a timestamp greater than any previous time event.</p>
+
+<h3><a NAME="4.11.2"></a>4.11.2 Time origin</h3>
+
+<p>Time (0.0) is equivalent to 00:00:00 GMT January 1, 1970. Absolute times
+are specified in SFTime or MFTime fields as double-precision floating point
+numbers representing seconds. Negative absolute times are interpreted as
+happening before 1970.</p>
+
+<p>Processing an event with timestamp <i>t</i> may only result in generating
+events with timestamps greater than or equal to <i>t</i>.</p>
+
+<h3><a NAME="4.11.3"></a>4.11.3 Discrete and continuous changes</h3>
+
+<p>ISO/IEC 14772 does not distinguish between discrete events (such as those
+generated by a TouchSensor) and events that are the result of sampling a
+conceptually continuous set of changes (such as the fraction events generated
+by a TimeSensor). An ideal VRML implementation would generate an infinite
+number of samples for continuous changes, each of which would be processed
+infinitely quickly.</p>
+
+<p>Before processing a discrete event, all continuous changes that are occurring
+at the discrete event's timestamp shall behave as if they generate events
+at that same timestamp.</p>
+
+<p>Beyond the requirements that continuous changes be up-to-date during
+the processing of discrete changes, the sampling frequency of continuous
+changes is implementation dependent. Typically a TimeSensor affecting a
+visible (or otherwise perceptible) portion of the world will generate events
+once per <i>frame</i>, where a frame is a single rendering of the world
+or one time-step in a simulation.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.12"></a>4.12 Scripting</h2>
+
+<h3><a NAME="4.12.1"></a>4.12.1 Introduction</h3>
+
+<p>Authors often require that VRML worlds change dynamically in response
+to user inputs, external events, and the current state of the world. The
+proposition &quot;if the vault is currently closed AND the correct combination
+is entered, open the vault&quot; illustrates the type of problem which may
+need addressing. These kinds of decisions are expressed as Script nodes
+(see <a HREF="nodesRef.html#Script">6.40, Script</a>) that receive events
+from other nodes, process them, and send events to other nodes. A Script
+node can also keep track of information between subsequent executions (i.e.,&nbsp;retaining
+internal state over time).</p>
+
+<p>This subclause describes the general mechanisms and semantics of all
+scripting language access protocols. Note that no scripting language is
+required by ISO/IEC 14772. Details for two scripting languages are in <a HREF="java.html">annex&nbsp;B,&nbsp;Java&nbsp;platform scripting&nbsp;reference</a>,
+and <a HREF="javascript.html">annex&nbsp;C,&nbsp;ECMAScript&nbsp;scripting&nbsp;reference</a>,
+respectively. If either of these scripting languages are implemented, the
+Script node implementation shall conform with the definition described in
+the corresponding annex.</p>
+
+<p>Event processing is performed by a program or script contained in (or
+referenced by) the Script node's <i>url</i> field. This program or script
+may be written in any programming language that the browser supports.</p>
+
+<h3><a NAME="4.12.2"></a>4.12.2 Script execution</h3>
+
+<p>A Script node is activated when it receives an event. The browser shall
+then execute the program in the Script node's <i>url</i> field (passing
+the program to an external interpreter if necessary). The program can perform
+a wide variety of actions including sending out events (and thereby changing
+the scene), performing calculations, and communicating with servers elsewhere
+on the Internet. A detailed description of the ordering of event processing
+is contained in <a HREF="concepts.html#4.10">4.10, Event processing</a>.</p>
+
+<p>Script nodes may also be executed after they are created (see <a HREF="concepts.html#4.12.3">4.12.3, Initialize() and shutdown()</a>). Some scripting languages
+may allow the creation of separate processes from scripts, resulting in
+continuous execution (see <a HREF="concepts.html#4.12.6">4.12.6, Asynchronous scripts</a>).</p>
+
+<p>Script nodes receive events in timestamp order. Any events generated
+as a result of processing an event are given timestamps corresponding to
+the event that generated them. Conceptually, it takes no time for a Script
+node to receive and process an event, even though in practice it does take
+some amount of time to execute a Script.</p>
+
+<p>When a <i>set_url</i> event is received by a Script node that contains
+a script that has been previously initialized for a different URL, the <i>shutdown()</i>
+method of the current script is called (see&nbsp;<a HREF="concepts.html#4.12.3">4.12.3,&nbsp;Initialize()
+and shutdown()</a>). Until the new script becomes available, the script
+shall behave as though it has no executable content. When the new script
+becomes available, the <i>Initialize()</i> method is invoked as defined
+in <a HREF="concepts.html#4.10.3">4.10.3,&nbsp;Execution&nbsp;model</a>. The limiting
+case is when the URL contains inline code that can be immediately executed
+upon receipt of the <i>set_url</i> event (e.g.,&nbsp;javascript: protocol).
+In this case, it can be assumed that the old code is unloaded and the new
+code loaded instantaneously, after any dynamic route requests have been
+performed. <br>
+</p>
+
+<h3><a NAME="4.12.3"></a>4.12.3 <i>Initialize()</i> and <i>shutdown()</i></h3>
+
+<p>The scripting language binding may define an <i>initialize()</i> method.
+This method shall be invoked before the browser presents the world to the
+user and before any events are processed by any nodes in the same VRML file
+as the Script node containing this script. Events generated by the <i>initialize()</i>
+method shall have timestamps less than any other events generated by the
+Script node. This allows script initialization tasks to be performed prior
+to the user interacting with the world.</p>
+
+<p>Likewise, the scripting language binding may define a <i>shutdown()</i>
+method. This method shall be invoked when the corresponding Script node
+is deleted or the world containing the Script node is unloaded or replaced
+by another world. This method may be used as a clean-up operation, such
+as informing external mechanisms to remove temporary files. No other methods
+of the script may be invoked after the <i>shutdown()</i> method has completed,
+though the <i>shutdown()</i> method may invoke methods or send events while
+shutting down. Events generated by the <i>shutdown()</i> method that are
+routed to nodes that are being deleted by the same action that caused the
+<i>shutdown()</i> method to execute will not be delivered. The deletion
+of the Script node containing the <i>shutdown()</i> method is not complete
+until the execution of its <i>shutdown()</i> method is complete.</p>
+
+<h3><a NAME="4.12.4"></a>4.12.4 <i>EventsProcessed()</i></h3>
+
+<p>The scripting language binding may define an <i>eventsProcessed()</i>
+method that is called after one or more events are received. This method
+allows Scripts that do not rely on the order of events received to generate
+fewer events than an equivalent Script that generates events whenever events
+are received. If it is used in some other time-dependent way, <i>eventsProcessed()</i>
+may be nondeterministic, since different browser implementations may call
+<i>eventsProcessed()</i> at different times.</p>
+
+<p>For a single event cascade, a given Script node's eventsProcessed method
+shall be called at most once. Events generated from an <i>eventsProcessed()</i>
+method are given the timestamp of the last event processed.</p>
+
+<h3><a NAME="4.12.5"></a>4.12.5 Scripts with direct outputs</h3>
+
+<p>Scripts that have access to other nodes (via SFNode/MFNode fields or
+eventIns) and that have their <i>directOutput</i> field set to TRUE may
+directly post eventIns to those nodes. They may also read the last value
+sent from any of the node's eventOuts.</p>
+
+<p>When setting a value in another node, implementations are free to either
+immediately set the value or to defer setting the value until the Script
+is finished. When getting a value from another node, the value returned
+shall be up-to-date; that is, it shall be the value immediately before the
+time of the current timestamp (the current timestamp returned is the timestamp
+of the event that caused the Script node to execute).</p>
+
+<p>If multiple <i>directOutput</i> Scripts read from and/or write to the
+same node, the results are undefined.</p>
+
+<h3><a NAME="4.12.6"></a>4.12.6 Asynchronous scripts</h3>
+
+<p>Some languages supported by VRML browsers may allow Script nodes to spontaneously
+generate events, allowing users to create Script nodes that function like
+new Sensor nodes. In these cases, the Script is generating the initial events
+that causes the event cascade, and the scripting language and/or the browser
+shall determine an appropriate timestamp for that initial event. Such events
+are then sorted into the event stream and processed like any other event,
+following all of the same rules including those for looping.</p>
+
+<h3><a NAME="4.12.7"></a>4.12.7 Script languages</h3>
+
+<p>The Script node's <i>url</i> field may specify a URL which refers to
+a file (e.g.,&nbsp;using protocol http:) or incorporates scripting language
+code directly in-line. The MIME-type of the returned data defines the language
+type. Additionally, instructions can be included in-line using <a HREF="concepts.html#4.5.4">4.5.4,&nbsp;Scripting&nbsp;language&nbsp;protocol</a>, defined
+for the specific language (from which the language type is inferred).</p>
+
+<p>For example, the following Script node has one eventIn field named <i>start</i>
+and three different URL values specified in the <i>url</i> field: Java,
+ECMAScript, and inline ECMAScript:</p>
+
+<pre>
+<b>    Script {</b>
+<b>      eventIn SFBool start</b>
+<b>      url [ &quot;http://foo.com/fooBar.class&quot;,</b>
+<b>        &quot;http://foo.com/fooBar.js&quot;,</b>
+<b>        &quot;javascript:function start(value, timestamp) { ... }&quot;</b>
+    <b>  ]</b>
+<b>    }</b></pre>
+
+<p>In the above example when a <i>start</i> eventIn is received by the Script
+node, one of the scripts found in the <i>url</i> field is executed. The
+Java platform bytecode is the first choice, the ECMAScript code is the second
+choice, and the inline ECMAScript code the third choice. A description of
+order of preference for multiple valued URL fields may be found in <a HREF="concepts.html#4.5.2">4.5.2, URLs</a>.</p>
+
+<h3><a NAME="4.12.8"></a>4.12.8 EventIn handling</h3>
+
+<p>Events received by the Script node are passed to the appropriate scripting
+language method in the script. The method's name depends on the language
+type used. In some cases, it is identical to the name of the eventIn; in
+others, it is a general callback method for all eventIns (see the scripting
+language annexes for details). The method is passed two arguments: the event
+value and the event timestamp.</p>
+
+<h3><a NAME="4.12.9"></a>4.12.9 Accessing fields and events</h3>
+
+<p>The fields, eventIns, and eventOuts of a Script node are accessible from
+scripting language methods. Events can be routed to eventIns of Script nodes
+and the eventOuts of Script nodes can be routed to eventIns of other nodes.
+Another Script node with access to this node can access the eventIns and
+eventOuts just like any other node (see <a HREF="concepts.html#4.12.5">4.12.5, Scripts
+with direct outputs</a>).</p>
+
+<p>It is recommended that user-defined field or event names defined in Script
+nodes follow the naming conventions described in <a HREF="concepts.html#4.7">4.7,&nbsp;Field,
+eventIn,&nbsp;and eventOut semantics</a>.</p>
+
+<h4>4.12.9.1 Accessing fields and eventOuts of the script</h4>
+
+<p>Fields defined in the Script node are available to the script through
+a language-specific mechanism (e.g.,&nbsp;a variable is automatically defined
+for each field and event of the Script node). The field values can be read
+or written and are persistent across method calls. EventOuts defined in
+the Script node may also be read; the returned value is the last value sent
+to that eventOut.</p>
+
+<h4>4.12.9.2 Accessing eventIns and eventOuts of other nodes</h4>
+
+<p>The script can access any eventIn or eventOut of any node to which it
+has access. The syntax of this mechanism is language dependent. The following
+example illustrates how a Script node accesses and modifies an exposed field
+of another node (i.e.,&nbsp;sends a <i>set_translation</i> eventIn to the
+Transform node) using ECMAScript:</p>
+
+<pre>
+<b>    DEF SomeNode Transform { }</b>
+<b>    Script {</b>
+<b>      field   SFNode  tnode USE SomeNode</b>
+<b>      eventIn SFVec3f pos</b>
+    <b>  directOutput TRUE</b>
+<b>      url &quot;javascript:</b>
+<b>        function pos(value, timestamp) {</b>
+<b>          tnode.set_translation = value;</b>
+<b>        }&quot;</b>
+<b>    }</b></pre>
+
+<p>The language-dependent mechanism for accessing eventIns or eventOuts
+(or the eventIn or eventOut part of an exposedField) shall support accessing
+them without their &quot;<i>set_&quot;</i> or &quot;<i>_changed</i>&quot;
+prefix or suffix, to match the ROUTE statement semantics. When accessing
+an eventIn named &quot;<i>zzz</i>&quot; and an eventIn of that name is not
+found, the browser shall try to access the eventIn named &quot;<i>set_zzz</i>&quot;.
+Similarly, if accessing an eventOut named &quot;<i>zzz</i>&quot; and an
+eventOut of that name is not found, the browser shall try to access the
+eventOut named &quot;<i>zzz_changed</i>&quot;.</p>
+
+<h4><a NAME="4.12.9.3"></a>4.12.9.3 Sending eventOuts</h4>
+
+<p>Each scripting language provides a mechanism for allowing scripts to
+send a value through an eventOut defined by the Script node. For example,
+one scripting language may define an explicit method for sending each eventOut,
+while another language may use assignment statements to automatically defined
+eventOut variables to implicitly send the eventOut. Sending multiple values
+through an eventOut during a single script execution will result in the
+&quot;last&quot; event being sent, where &quot;last&quot; is determined
+by the semantics of the scripting language being used.</p>
+
+<h3><a NAME="4.12.10"></a>4.12.10 Browser script interface</h3>
+
+<h4>4.12.10.1 Introduction</h4>
+
+<p>The browser interface provides a mechanism for scripts contained by Script
+nodes to get and set browser state (e.g.,&nbsp;the URL of the current world).
+This subclause describes the semantics of methods that the browser interface
+supports. An arbitrary syntax is used to define the type of parameters and
+returned values. The specific annex for a language contains the actual syntax
+required. In this abstract syntax, types are given as VRML field types.
+Mapping of these types into those of the underlying language (as well as
+any type conversion needed) is described in the appropriate language annex.</p>
+
+<h4>4.12.10.2 SFString getName( ) and SFString getVersion( )</h4>
+
+<p>The <b>getName()</b> and <b>getVersion()</b> methods return a string
+representing the &quot;name&quot; and &quot;version&quot; of the browser
+currently in use. These values are defined by the browser writer, and identify
+the browser in some (unspecified) way. They are not guaranteed to be unique
+or to adhere to any particular format and are for information only. If the
+information is unavailable these methods return empty strings.</p>
+
+<h4>4.12.10.3 SFFloat getCurrentSpeed( )</h4>
+
+<p>The <b>getCurrentSpeed()</b> method returns the average navigation speed
+for the currently bound <a HREF="nodesRef.html#NavigationInfo">NavigationInfo</a>
+node in meters per second, in the coordinate system of the currently bound
+<a HREF="nodesRef.html#Viewpoint">Viewpoint</a> node. If speed of motion
+is not meaningful in the current navigation type, or if the speed cannot
+be determined for some other reason, 0.0 is returned.</p>
+
+<h4>4.12.10.4 SFFloat getCurrentFrameRate( )</h4>
+
+<p>The <b>getCurrentFrameRate()</b> method returns the current frame rate
+in frames per second. The way in which frame rate is measured and whether
+or not it is supported at all is browser dependent. If frame rate measurement
+is not supported or cannot be determined, 0.0 is returned.</p>
+
+<h4>4.12.10.5 SFString getWorldURL( )</h4>
+
+<p>The <b>getWorldURL()</b> method returns the URL for the root of the currently
+loaded world.</p>
+
+<h4>4.12.10.6 void replaceWorld( MFNode nodes )</h4>
+
+<p>The <b>replaceWorld()</b> method replaces the current world with the
+world represented by the passed nodes. An invocation of this method will
+usually not return since the world containing the running script is being
+replaced. Scripts that may call this method shall have <i>mustEvaluate</i>
+set to TRUE.</p>
+
+<h4>4.12.10.7 void loadURL( MFString url, MFString parameter )</h4>
+
+<p>The <b>loadURL()</b> method loads the first recognized URL from the specified<i>
+url</i> field with the passed parameters. The <i>parameter</i> and <i>url</i>
+arguments are treated identically to the Anchor node's <i>parameter</i>
+and <i>url</i> fields (see <a HREF="nodesRef.html#Anchor">6.2,&nbsp;Anchor</a>).
+This method returns immediately. However, if the URL is loaded into this
+browser window (e.g.,&nbsp;there is no TARGET parameter to redirect it to
+another frame), the current world will be terminated and replaced with the
+data from the specified URL at some time in the future. Scripts that may
+call this method shall set <i>mustEvaluate</i> to TRUE. If <b>loadUrl()</b>
+is invoked with a URL of the form &quot;#name&quot;, the Viewpoint node
+with the given name (&quot;name&quot;) in the Script' node's run-time name
+scope(s) shall be bound. However, if the Script node containing the script
+that invokes <b>loadURL(&quot;#name&quot;)</b> is not part of any run-time
+name scope or is part of more than one run-time name scope, results are
+undefined. See <a HREF="concepts.html#4.4.6">4.4.6,&nbsp;Run-time&nbsp;name&nbsp;scope</a>,
+for a description of run-time name scope.</p>
+
+<h4>4.12.10.8 void setDescription( SFString description )</h4>
+
+<p>The <b>setDescription()</b> method sets the passed string as the current
+description. This message is displayed in a browser dependent manner. An
+empty string clears the current description. Scripts that call this method
+shall have <i>mustEvaluate</i> set to TRUE.</p>
+
+<h4><a NAME="4.12.10.9"></a>4.12.10.9 MFNode createVrmlFromString( SFString
+vrmlSyntax )</h4>
+
+<p>The <b>createVrmlFromString</b>() method parses a string consisting of
+VRML statements, establishes any PROTO and EXTERNPROTO declarations and
+routes, and returns an MFNode value containing the set of nodes in those
+statements. The string shall be self-contained (i.e.,&nbsp;USE statements
+inside the string may refer only to nodes DEF'ed in the string, and non-built-in
+node types used by the string shall be prototyped using EXTERNPROTO or PROTO
+statements inside the string).</p>
+
+<h4>4.12.10.10 void createVrmlFromURL( MFString url, SFNode node, SFString
+event )</h4>
+
+<p>The <b>createVrmlFromURL()</b> instructs the browser to load a VRML scene
+description from the given URL or URLs. The VRML file referred to shall
+be self-contained (i.e.,&nbsp;USE statements inside the string may refer
+only to nodes DEF'ed in the string, and non-built-in node types used by
+the string shall be prototyped using EXTERNPROTO or PROTO statements inside
+the string). After the scene is loaded, <i>event</i> is sent to the passed
+<i>node</i> returning the root nodes of the corresponding VRML scene. The
+<i>event</i> parameter contains a string naming an MFNode eventIn on the
+passed node.</p>
+
+<h4>4.12.10.11 void addRoute(...) and void deleteRoute(...)</h4>
+
+<h4>void addRoute( SFNode fromNode, SFString fromEventOut,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFNode
+toNode, SFString toEventIn );</h4>
+
+<h4>void deleteRoute( SFNode fromNode, SFString fromEventOut,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SFNode
+toNode, SFString toEventIn );</h4>
+
+<p>These methods respectively add and delete a route between the given event
+names for the given nodes. Scripts that call this method shall have <i>directOutput</i>
+set to TRUE. Routes that are added and deleted shall obey the execution
+order defined in <a HREF="concepts.html#4.10.3">4.10.3,&nbsp;Execution&nbsp;model</a>.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.13"></a>4.13 Navigation</h2>
+
+<h3><a NAME="4.13.1"></a>4.13.1 Introduction</h3>
+
+<p>Conceptually speaking, every VRML world contains a <i>viewpoint </i>from
+which the world is currently being viewed. Navigation is the action taken
+by the user to change the position and/or orientation of this viewpoint
+thereby changing the user's view. This allows the user to move through a
+world or examine an object. The NavigationInfo node (see <a HREF="nodesRef.html#NavigationInfo">6.29,&nbsp;NavigationInfo</a>)
+specifies the characteristics of the desired navigation behaviour, but the
+exact user interface is browser-dependent. The Viewpoint node (see <a HREF="nodesRef.html#Viewpoint">6.53,&nbsp;Viewpoint</a>) specifies key locations
+and orientations in the world to which the user may be moved via scripts
+or browser-specific user interfaces.</p>
+
+<h3><a NAME="4.13.2"></a>4.13.2 Navigation paradigms</h3>
+
+<p>The browser may allow the user to modify the location and orientation
+of the viewer in the virtual world using a navigation paradigm. Many different
+navigation paradigms are possible, depending on the nature of the virtual
+world and the task the user wishes to perform. For instance, a walking paradigm
+would be appropriate in an architectural walkthrough application, while
+a flying paradigm might be better in an application exploring interstellar
+space. Examination is another common use for VRML, where the world is considered
+to be a single object which the user wishes to view from many angles and
+distances.</p>
+
+<p>The NavigationInfo node has a <i>type</i> field that specifies the navigation
+paradigm for this world. The actual user interface provided to accomplish
+this navigation is browser-dependent. See <a HREF="nodesRef.html#NavigationInfo">6.29,&nbsp;NavigationInfo</a>,
+for details.</p>
+
+<h3><a NAME="4.13.3"></a>4.13.3 Viewing model</h3>
+
+<p>The browser controls the location and orientation of the viewer in the
+world, based on input from the user (using the browser-provided navigation
+paradigm) and the motion of the currently bound Viewpoint node (and its
+coordinate system). The VRML author can place any number of viewpoints in
+the world at important places from which the user might wish to view the
+world. Each viewpoint is described by a <a HREF="nodesRef.html#Viewpoint">Viewpoint</a>
+node. Viewpoint nodes exist in their parent's coordinate system, and both
+the viewpoint and the coordinate system may be changed to affect the view
+of the world presented by the browser. Only one viewpoint is bound at a
+time. A detailed description of how the Viewpoint node operates is described
+in <a HREF="concepts.html#4.6.10">4.6.10,&nbsp;Bindable&nbsp;children&nbsp;nodes</a>,
+and <a HREF="nodesRef.html#Viewpoint">6.53,&nbsp;Viewpoint</a>.</p>
+
+<p>Navigation is performed relative to the Viewpoint's location and does
+not affect the location and orientation values of a Viewpoint node. The
+location of the viewer may be determined with a ProximitySensor node (see
+<a HREF="nodesRef.html#ProximitySensor">6.38,&nbsp;ProximitySensor</a>).</p>
+
+<h3><a NAME="4.13.4"></a>4.13.4 Collision detection and terrain following</h3>
+
+<p>A VRML file can contain Collision nodes (see <a HREF="nodesRef.html#Collision">6.8,&nbsp;Collision</a>)
+and NavigationInfo nodes that influence the browser's navigation paradigm.
+The browser is responsible for detecting collisions between the viewer and
+the objects in the virtual world, and is also responsible for adjusting
+the viewer's location when a collision occurs. Browsers shall not disable
+collision detection except for the special cases listed below. Collision
+nodes can be used to generate events when viewer and objects collide, and
+can be used to designate that certain objects should be treated as transparent
+to collisions. Support for inter-object collision is not specified. The
+NavigationInfo types of WALK, FLY, and NONE shall strictly support collision
+detection. However, the NavigationInfo types ANY and EXAMINE may temporarily
+disable collision detection during navigation, but shall not disable collision
+detection during the normal execution of the world. See <a HREF="nodesRef.html#NavigationInfo">6.29,&nbsp;NavigationInfo</a>,
+for details on the various navigation types.</p>
+
+<p>NavigationInfo nodes can be used to specify certain parameters often
+used by browser navigation paradigms. The size and shape of the viewer's
+avatar determines how close the avatar may be to an object before a collision
+is considered to take place. These parameters can also be used to implement
+<i>terrain following</i> by keeping the avatar a certain distance above
+the ground. They can additionally be used to determine how short an object
+must be for the viewer to automatically step up onto it instead of colliding
+with it.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"><a NAME="4.14"></a>4.14 Lighting model</h2>
+
+<h3><a NAME="4.14.1"></a>4.14.1 Introduction</h3>
+
+<p>The VRML lighting model provides detailed equations which define the
+colours to apply to each geometric object. For each object, the values of
+the Material node, Color node and texture currently being applied to the
+object are combined with the lights illuminating the object and the currently
+bound Fog node. These equations are designed to simulate the physical properties
+of light striking a surface.</p>
+
+<h3><a NAME="4.14.2"></a>4.14.2 Lighting 'off'</h3>
+
+<p>A Shape node is unlit if either of the following is true:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>The shape's <i>appearance</i> field is NULL (default).
+  <li>The <i>material</i> field in the Appearance node is NULL (default).
+</ol><!--/NOEDIT--></p>
+
+<p>Note the special cases of geometry nodes that do not support lighting
+(see <a HREF="nodesRef.html#IndexedLineSet">6.24,&nbsp;IndexedLineSet</a>,
+and <a HREF="nodesRef.html#PointSet">6.36,&nbsp;PointSet</a>, for details).</p>
+
+<p>If the shape is unlit, the colour (I<sub><font SIZE="-2">rgb</font></sub>)
+and alpha (A,&nbsp;1-transparency) of the shape at each point on the shape's
+geometry is given in <a HREF="concepts.html#Table4.5">Table 4.5</a>.</p>
+
+<h4><center><a NAME="Table4.5"></a>Table 4.5 -- Unlit colour and alpha mapping</center></h4>
+
+<p><center><table BORDER="1" WIDTH="100%" CELLSPACING="2" CELLPADDING="0">
+<tr>
+<td ALIGN="CENTER"><b>Texture type</b></td>
+<td ALIGN="CENTER"><b>Colour per-vertex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or per-face</b></td>
+<td ALIGN="CENTER"><b>Colour NULL</b></td></tr>
+<tr>
+<td ALIGN="CENTER">No texture</td>
+<td ALIGN="CENTER">I<sub><font SIZE="-2">rgb</font></sub>= I<sub><font SIZE="-1">C</font><font SIZE="-2">rgb</font><br>
+</sub>A = 1</td>
+<td ALIGN="CENTER">I<sub><font SIZE="-2">rgb</font></sub>= (1, 1, 1)<br>
+A = 1</td></tr>
+<tr>
+<td ALIGN="CENTER">Intensity<br>
+(one-component)</td>
+<td ALIGN="CENTER">I<sub><font SIZE="-2">rgb</font></sub>= I<sub><font SIZE="-1">T</font></sub>
+× I<sub><font SIZE="-1">C</font><font SIZE="-2">rgb</font><br>
+</sub>A = 1</td>
+<td ALIGN="CENTER">I<sub><font SIZE="-2">rgb</font></sub> = (I<sub><font SIZE="-1">T</font></sub>,I<sub><font SIZE="-1">T</font></sub>,I<sub><font SIZE="-1">T</font></sub> )<br>
+A = 1</td></tr>
+<tr>
+<td ALIGN="CENTER">Intensity+Alpha<br>
+(two-component)</td>
+<td ALIGN="CENTER">I<sub><font SIZE="-2">rgb</font></sub>= I<sub> <font SIZE="-1">T</font></sub>
+× I<sub><font SIZE="-1">C</font><font SIZE="-2">rgb</font><br>
+</sub>A = A<sub><font SIZE="-1">T</font></sub></td>
+<td ALIGN="CENTER">I<sub><font SIZE="-2">rgb</font></sub>= (I<sub><font SIZE="-1">T</font></sub>,I<sub><font SIZE="-1">T</font></sub>,I<sub><font SIZE="-1">T</font></sub> )<br>
+A = A<sub><font SIZE="-1">T</font></sub></td></tr>
+<tr>
+<td ALIGN="CENTER">RGB<br>
+(three-component)</td>
+<td ALIGN="CENTER">I<sub><font SIZE="-2">rgb</font></sub>= I<sub><font SIZE="-1">T</font><font SIZE="-2">rgb</font><br>
+</sub>A = 1</td>
+<td ALIGN="CENTER">I<sub><font SIZE="-2">rgb</font></sub>= I<sub><font SIZE="-1">T</font><font SIZE="-2">rgb</font><br>
+</sub>A = 1</td></tr>
+<tr>
+<td ALIGN="CENTER">RGBA<br>
+(four-component)</td>
+<td ALIGN="CENTER">I<sub><font SIZE="-2">rgb</font></sub>= I<sub><font SIZE="-1">T</font><font SIZE="-2">rgb</font><br>
+</sub>A = A<sub><font SIZE="-1">T</font></sub></td>
+<td ALIGN="CENTER">I<sub><font SIZE="-2">rgb</font></sub>= I<sub><font SIZE="-1">T</font><font SIZE="-2">rgb</font><br>
+</sub>A = A<sub><font SIZE="-1">T</font></sub></td></tr>
+</table>
+</center></p>
+
+<h4><center><br>
+<br>
+</center></h4>
+
+<p>where:</p>
+
+<p>A<sub><font SIZE="-1">T</font></sub> = normalized [0, 1] alpha value from
+2 or 4 component texture image<br>
+I<sub><font SIZE="-1">C</font><font SIZE="-2">rgb</font></sub> = interpolated
+per-vertex colour, or per-face colour, from Color node<br>
+I<sub><font SIZE="-1">T</font></sub> = normalized [0, 1] intensity from 1
+or 2 component texture image<br>
+I<sub><font SIZE="-1">T</font><font SIZE="-2">rgb</font></sub>= colour from
+3-4 component texture image</p>
+
+<h3><a NAME="4.14.3"></a>4.14.3 Lighting 'on'</h3>
+
+<p>If the shape is lit (i.e.,&nbsp;a Material and an Appearance node are
+specified for the Shape), the Color and Texture nodes determine the diffuse
+colour for the lighting equation as specified in <a HREF="concepts.html#Table4.6">Table&nbsp;4.6</a>.</p>
+
+<h4><center><a NAME="Table4.6"></a>Table 4.6 -- Lit colour and alpha mapping</center></h4>
+
+<p><center><table BORDER="1" WIDTH="100%" CELLSPACING="2" CELLPADDING="0">
+<tr>
+<td ALIGN="CENTER"><b>Texture type</b></td>
+<td ALIGN="CENTER"><b>Colour per-vertex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or per-face</b></td>
+<td ALIGN="CENTER"><b>Color node NULL</b></td></tr>
+<tr>
+<td ALIGN="CENTER">No texture</td>
+<td ALIGN="CENTER">O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = I<sub><font SIZE="-1">C</font><font SIZE="-2">rgb</font><br>
+</sub>A = 1-T<sub>M</sub></td>
+<td ALIGN="CENTER">O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = I<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font><br>
+</sub>A = 1-T<sub>M</sub></td></tr>
+<tr>
+<td ALIGN="CENTER">Intensity texture<br>
+(one-component)</td>
+<td ALIGN="CENTER">O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = I<sub><font SIZE="-1">T</font></sub> × I<sub><font SIZE="-1">C</font><font SIZE="-2">rgb</font><br>
+</sub>A = 1-T<sub>M</sub></td>
+<td ALIGN="CENTER">O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = I<sub><font SIZE="-1">T</font></sub> × I<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font><br>
+</sub>A = 1-T<sub>M</sub></td></tr>
+<tr>
+<td ALIGN="CENTER">Intensity+Alpha texture<br>
+(two-component)</td>
+<td ALIGN="CENTER">O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = I<sub><font SIZE="-1">T</font></sub> × I<sub><font SIZE="-1">C</font><font SIZE="-2">rgb</font><br>
+</sub>A = A<sub><font SIZE="-1">T</font></sub></td>
+<td ALIGN="CENTER">O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = I<sub><font SIZE="-1">T</font></sub> × I<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font><br>
+</sub>A = A<sub><font SIZE="-1">T</font></sub></td></tr>
+<tr>
+<td ALIGN="CENTER">RGB texture<br>
+(three-component)</td>
+<td ALIGN="CENTER">O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = I<sub><font SIZE="-1">T</font><font SIZE="-2">rgb</font><br>
+</sub>A = 1-T<sub>M</sub></td>
+<td ALIGN="CENTER">O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = I<sub><font SIZE="-1">T</font><font SIZE="-2">rgb</font><br>
+</sub>A = 1-T<sub>M</sub></td></tr>
+<tr>
+<td ALIGN="CENTER">RGBA texture<br>
+(four-component)</td>
+<td ALIGN="CENTER">O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = I<sub><font SIZE="-1">T</font><font SIZE="-2">rgb</font><br>
+</sub>A = A<sub><font SIZE="-1">T</font></sub></td>
+<td ALIGN="CENTER">O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = I<sub><font SIZE="-1">T</font><font SIZE="-2">rgb</font><br>
+</sub>A = A<sub>T</sub></td></tr>
+</table>
+</center></p>
+
+<h4><center><br>
+<br>
+</center></h4>
+
+<p>where:</p>
+
+<p>I<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = material
+<i>diffuseColor</i><br>
+O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = diffuse factor,
+used in lighting equations below<br>
+T<sub>M</sub> = material <i>transparency</i></p>
+
+<p>All other terms are as defined in <a HREF="concepts.html#4.14.2">4.14.2, Lighting
+`off'</a>.</p>
+
+<h3><a NAME="4.14.4"></a>4.14.4 Lighting equations</h3>
+
+<p>An ideal VRML implementation will evaluate the following lighting equation
+at each point on a lit surface. RGB intensities at each point on a geometry
+(I<sub><font SIZE="-2">rgb</font></sub>) are given by:</p>
+
+<p>I<sub><font SIZE="-2">rgb</font></sub> = I<sub><font SIZE="-1">F</font><font SIZE="-2">rgb</font></sub> × (1 -f<sub><font SIZE="-1">0</font></sub>)
++ f<sub><font SIZE="-1">0</font></sub> × (O<sub><font SIZE="-1">E</font><font SIZE="-2">rgb</font></sub> + SUM( on<sub><font SIZE="-1">i</font></sub><font SIZE="-2"> </font>×<font SIZE="-2"> </font>attenuation<sub><font SIZE="-1">i</font></sub>
+× spot<sub><font SIZE="-1">i</font></sub> × I<sub><font SIZE="-1">L</font><font SIZE="-2">rgb</font></sub><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;×
+(ambient<sub><font SIZE="-1">i</font></sub> + diffuse<sub><font SIZE="-1">i</font></sub>
++ specular<sub> <font SIZE="-1">i</font></sub>)))</p>
+
+<p>where:</p>
+
+<p>attenuation<sub><font SIZE="-1">i</font></sub> = 1 / max(c<sub><font SIZE="-2">1</font></sub>
++ c<sub><font SIZE="-2">2 </font></sub>× d<sub><font SIZE="-2">L</font></sub>
++ c<sub><font SIZE="-2">3 </font></sub>× d<sub><font SIZE="-2">L</font></sub><sup>²</sup>
+,&nbsp;1 )<br>
+ambient<sub><font SIZE="-1">i</font></sub> = I<sub><font SIZE="-1">ia</font></sub>
+× O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> ×
+O<sub><font SIZE="-1">a</font><br>
+</sub><br>
+diffuse<sub><font SIZE="-1">i</font></sub> = I<sub><font SIZE="-1">i</font></sub>
+× O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> ×
+( <b><tt><font SIZE="+1">N</font></tt></b> · <b><tt><font SIZE="+1">L</font></tt></b>
+)<br>
+specular<sub> <font SIZE="-1">i</font></sub> = I<sub><font SIZE="-1">i</font></sub>
+× O<sub><font SIZE="-1">S</font><font SIZE="-2">rgb</font></sub> ×
+( <b><tt><font SIZE="+1">N</font></tt></b> · ((<b><tt><font SIZE="+1">L</font></tt></b>
++ <b><tt>V</tt></b>) / |<b><tt><font SIZE="+1">L</font></tt></b> + <b><tt>V</tt></b>|))<sup>shininess
+× 128</sup></p>
+
+<p>and:</p>
+
+<dl>
+  <dt>· = modified vector dot product: if dot product &lt; 0, then
+  0.0, otherwise, dot product
+  <dt>c<sub><font SIZE="-2">1</font></sub> , c<sub><font SIZE="-2">2</font></sub>,
+  c<sub> <font SIZE="-2">3</font></sub> = light i <i>attenuation</i><br>
+  d<sub><font SIZE="-2">V</font></sub> = distance from point on geometry to
+  viewer's position, in coordinate system of current fog node<br>
+  d<sub><font SIZE="-2">L</font></sub> = distance from light to point on geometry,
+  in light's coordinate system<br>
+  f<sub><font SIZE="-1">0</font></sub> = Fog interpolant, see <a HREF="concepts.html#Table4.8">Table
+  4.8</a> for calculation<br>
+  I<sub><font SIZE="-1">F</font><font SIZE="-2">rgb</font></sub> = currently
+  bound fog's <i>color</i><br>
+  I<sub> <font SIZE="-1">L</font><font SIZE="-2">rgb</font></sub> = light i <i>color</i>
+  <dt>I<sub><font SIZE="-1">i</font></sub> = light i <i>intensity</i><br>
+  I<sub><font SIZE="-1">ia</font></sub> = light i <i>ambientIntensity<br>
+  </i><b><tt><font SIZE="+1">L</font></tt></b> = (Point/SpotLight) normalized
+  vector from point on geometry to light source i position<br>
+  <b><tt><font SIZE="+1">L</font></tt></b> = (DirectionalLight) -direction
+  of light source i<br>
+  <b><tt><font SIZE="+1">N</font></tt></b> = normalized normal vector at this
+  point on geometry (interpolated from vertex normals specified in Normal
+  node or calculated by browser)<br>
+  O<sub><font SIZE="-1">a</font></sub> = Material <i>ambientIntensity</i><br>
+  O<sub><font SIZE="-1">D</font><font SIZE="-2">rgb</font></sub> = diffuse colour,
+  from Material node, Color node, and/or texture node<br>
+  O<sub><font SIZE="-1">E</font><font SIZE="-2">rgb</font></sub> = Material <i>emissiveColor</i><br>
+  O<sub><font SIZE="-1">S</font><font SIZE="-2">rgb</font></sub> = Material <i>specularColor</i><br>
+  on<sub> <font SIZE="-1">i</font></sub> = 1, if light source i affects this
+  point on the geometry,
+  <dd>0, if light source i does not affect this geometry (if farther away
+  than <i>radius</i> for PointLight or SpotLight, outside of enclosing Group/Transform
+  for DirectionalLights, or <i>on</i> field is FALSE)
+  <dt>shininess = Material <i>shininess</i><br>
+  spotAngle = acos( <b><tt><font SIZE="+1">-L</font></tt></b><font SIZE="+1">
+  </font>· <b><tt>spotDir</tt></b><sub>i</sub>)<br>
+  spot<sub> BW</sub> = SpotLight i beamWidth<br>
+  spot<sub> CO</sub> = SpotLight i <i>cutOffAngle</i><br>
+  spot<sub> i</sub> = spotlight factor, see <a HREF="concepts.html#Table4.7">Table 4.7</a>
+  for calculation<br>
+  <b><tt>spotDir</tt></b><sub>i</sub> = normalized SpotLight i <i>direction</i><br>
+  SUM: sum over all light sources i<br>
+  <b><tt>V</tt></b> = normalized vector from point on geometry to viewer's
+  position <br>
+  
+</dl>
+
+<h4><center><a NAME="Table4.7"></a>Table 4.7 -- Calculation of the spotlight
+factor</center></h4>
+
+<p><center><table BORDER="1" CELLPADDING="6" CELLSPACING="4">
+<tr>
+<th><dl>
+  <dt><center><b>Condition (in order)</b></center>
+</dl>
+</th>
+<th><dd></dl><b>spot</b><sub><b>i</b></sub><b> =</b></th></tr>
+<tr>
+<td>light<sub>i</sub> is PointLight or DirectionalLight</td>
+<td ALIGN="CENTER">1</td></tr>
+<tr>
+<td>spotAngle &gt;= spot<sub>CO</sub></td>
+<td ALIGN="CENTER">0</td></tr>
+<tr>
+<td>spotAngle &lt;= spot<sub>BW</sub></td>
+<td ALIGN="CENTER">1</td></tr>
+<tr>
+<td>spot<sub>BW</sub> &nbsp;&lt;&nbsp;spotAngle&nbsp;&lt;&nbsp;spot<sub> CO</sub></td>
+<td>(spotAngle&nbsp;-&nbsp;spot<sub>CO</sub> )&nbsp;/&nbsp;(spot<sub>BW</sub>-spot<sub>CO</sub>)</td></tr>
+</table>
+</center></p>
+
+<h4><center><br>
+<br>
+<a NAME="Table4.8"></a>Table 4.8 -- Calculation of the fog interpolant</center></h4>
+
+<p><center><table BORDER="1" CELLPADDING="6" CELLSPACING="4">
+<tr>
+<th><b>Condition</b></th>
+<th><b>f</b><sub><b><font SIZE="-1">0</font></b></sub><b> =</b></th></tr>
+<tr>
+<td>no fog</td>
+<td ALIGN="CENTER">1</td></tr>
+<tr>
+<td>fogType &quot;LINEAR&quot;, d<sub><font SIZE="-2">V</font></sub> &lt; fogVisibility</td>
+<td>(fogVisibility-d<sub><font SIZE="-2">V</font></sub>) / fogVisibility</td></tr>
+<tr>
+<td>fogType &quot;LINEAR&quot;, d<sub><font SIZE="-2">V</font></sub> <u>&gt;</u>
+fogVisibility</td>
+<td ALIGN="CENTER">0</td></tr>
+<tr>
+<td>fogType &quot;EXPONENTIAL&quot;, d<sub><font SIZE="-2">V</font></sub> &lt;
+fogVisibility</td>
+<td>exp(-d<sub><font SIZE="-2">V</font></sub> / (fogVisibility-d<sub><font SIZE="-2">V</font></sub>
+) )</td></tr>
+<tr>
+<td>fogType &quot;EXPONENTIAL&quot;, d<sub><font SIZE="-2">V</font></sub> <u>&gt;</u>
+fogVisibility</td>
+<td ALIGN="CENTER">0</td></tr>
+</table>
+</center></p>
+
+<h4><center><br>
+</center></h4>
+
+<h3><a NAME="4.14.5"></a>4.14.5 References</h3>
+
+<p>The VRML lighting equations are based on the simple illumination equations
+given in <a HREF="bibliography.html#[FOLE]">E.[FOLE]</a> and <a HREF="bibliography.html#[OPEN]">E.[OPEN]</a>.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"><br>
+<font SIZE="-1"><a HREF="mailto:rikk@wasabisoft.com,gavin@wasabisoft.com,chris@marrin.com">Questions
+or comments.</a></font><br>
+<font SIZE="-1"><a HREF="../copyright.html">Copyright</a> &amp;COPY; 1997 The
+VRML Consortium Incorporated.<br>
+<tt>http://www.vrml.org/Specifications/VRML97/part1/concepts.html</tt></font>
+</body>
+</html>

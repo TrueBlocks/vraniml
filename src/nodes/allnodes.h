@@ -1,0 +1,76 @@
+#ifndef __ALLNODES_H3D
+#define __ALLNODES_H3D
+//-------------------------------------------------------------------------
+// Copyright (c) 1997-1998 Great Hill Corporation
+// All Rights Reserved.
+//-------------------------------------------------------------------------
+// WARNING: THIS FILE WAS CREATED AUTOMATICALLY
+//-------------------------------------------------------------------------
+#include "Nodes\Appearance\Appearance.h"
+#include "Nodes\Appearance\FontStyle.h"
+#include "Nodes\Appearance\ImageTexture.h"
+#include "Nodes\Appearance\Material.h"
+#include "Nodes\Appearance\MovieTexture.h"
+#include "Nodes\Appearance\PixelTexture.h"
+#include "Nodes\Appearance\TextureTransform.h"
+#include "Nodes\Bindable\Bindable.h"
+#include "Nodes\Bindable\Background.h"
+#include "Nodes\Bindable\Fog.h"
+#include "Nodes\Bindable\NavigationInfo.h"
+#include "Nodes\Bindable\Viewpoint.h"
+#include "Nodes\Common\AudioClip.h"
+#include "Nodes\Common\DirectionalLight.h"
+#include "Nodes\Common\Light.h"
+#include "Nodes\Common\PointLight.h"
+#include "Nodes\Common\Script.h"
+#include "Nodes\Common\Shape.h"
+#include "Nodes\Common\Sound.h"
+#include "Nodes\Common\SpotLight.h"
+#include "Nodes\Common\WorldInfo.h"
+#include "Nodes\Grouping\Anchor.h"
+#include "Nodes\Grouping\Billboard.h"
+#include "Nodes\Grouping\Collision.h"
+#include "Nodes\Grouping\Group.h"
+#include "Nodes\Grouping\Transform.h"
+#include "Nodes\Grouping\Inline.h"
+#include "Nodes\Grouping\LOD.h"
+#include "Nodes\Grouping\Switch.h"
+#include "Nodes\Geometry\GeometryNode.h"
+#include "Nodes\Geometry\Box.h"
+#include "Nodes\Geometry\Cone.h"
+#include "Nodes\Geometry\Cylinder.h"
+#include "Nodes\Geometry\Extrusion.h"
+#include "Nodes\Geometry\Sphere.h"
+#include "Nodes\Geometry\Text.h"
+#include "Nodes\Geometry\DataSet.h"
+#include "Nodes\Geometry\ElevationGrid.h"
+#include "Nodes\Geometry\IndexedFaceSet.h"
+#include "Nodes\Geometry\IndexedLineSet.h"
+#include "Nodes\Geometry\PointSet.h"
+#include "Nodes\Geometry\Color.h"
+#include "Nodes\Geometry\Coordinate.h"
+#include "Nodes\Geometry\Normal.h"
+#include "Nodes\Geometry\TextureCoordinate.h"
+#include "Nodes\Interpolator\Interpolator.h"
+#include "Nodes\Interpolator\ColorInterpolator.h"
+#include "Nodes\Interpolator\CoordinateInterpolator.h"
+#include "Nodes\Interpolator\NormalInterpolator.h"
+#include "Nodes\Interpolator\OrientationInterpolator.h"
+#include "Nodes\Interpolator\PositionInterpolator.h"
+#include "Nodes\Interpolator\ScalarInterpolator.h"
+#include "Nodes\Sensor\Sensor.h"
+#include "Nodes\Sensor\PointingDeviceSensor.h"
+#include "Nodes\Sensor\CylinderSensor.h"
+#include "Nodes\Sensor\PlaneSensor.h"
+#include "Nodes\Sensor\ProximitySensor.h"
+#include "Nodes\Sensor\SphereSensor.h"
+#include "Nodes\Sensor\TimeSensor.h"
+#include "Nodes\Sensor\TouchSensor.h"
+#include "Nodes\Sensor\VisibilitySensor.h"
+
+#include "Browser\Event.h"
+
+typedef SFNode (*PFNNV)(void);
+extern PFNNV LIBInterface FindCreateFunc(char *protoName);
+
+#endif

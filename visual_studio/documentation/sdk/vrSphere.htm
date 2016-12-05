@@ -1,0 +1,193 @@
+<html><head><title>vrSphere Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrSphere</a></h1>
+<dl>
+<dd>
+	This class corresponds to the Sphere node in VRML.  
+	<a href="../spec/part1/nodesRef.html#Sphere">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrsphere.htm#aag">Summary</a> | </a>
+<a href="vrsphere.htm#DESCRIPTION">Description</a> | 
+<a href="vrsphere.htm#NOTES">Notes</a> | 
+<a href="vrsphere.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrsphere.htm#MEMBERS">Members</a> | 
+<a href="vrsphere.htm#parents">Ancestors</a> | <a href="vrsphere.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrSphere : public <a href="vrGeometryNode.htm">vrGeometryNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrSphere.htm#vrSphere(void)$">vrSphere</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrSphere.htm#vrSphere(const_vrSphere&amp;_v)$">vrSphere</a>(const vrSphere&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrSphere.htm#~vrSphere(void)$">vrSphere</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrSphere&amp; </td><td><a href="vrSphere.htm#vrSphere&amp;_operator$(const_vrSphere&amp;_v)$">operator=</a>(const vrSphere&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrSphere.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSphere.htm#void_SetRadius(SFFloat_radius)$">SetRadius</a>(SFFloat radius);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSphere.htm#void_SetSlices(SFInt32_slices)$">SetSlices</a>(SFInt32 slices);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSphere.htm#void_SetStacks(SFInt32_stacks)$">SetStacks</a>(SFInt32 stacks);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSphere.htm#SFFloat_GetRadius(void)_const$">GetRadius</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrSphere.htm#SFInt32_GetSlices(void)_const$">GetSlices</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrSphere.htm#SFInt32_GetStacks(void)_const$">GetStacks</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrSphere.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrSphere.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrSphere.htm#DECLARE_NODE(vrSphere)$">DECLARE_NODE</a>(vrSphere);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSphere.htm#SFFloat_m_Radius$">m_Radius</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrSphere.htm#SFInt32_m_Slices$">m_Slices</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrSphere.htm#SFInt32_m_Stacks$">m_Stacks</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the Sphere node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#Sphere">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFFloat_m_Radius$"><ul><h3><li>SFFloat m_Radius;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'radius' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 1</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_Slices$"><ul><h3><li>SFInt32 m_Slices;</li></h3></a>
+</ul>
+</ul>	  <dd>Number of slices to use to create the geometry.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 16</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_Stacks$"><ul><h3><li>SFInt32 m_Stacks;</li></h3></a>
+</ul>
+</ul>	  <dd>Number of stacks to use to create the geometry.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 16</strong>
+<p>
+</dl></dl>
+<a name="vrSphere(void)$"><ul><h3><li>vrSphere(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrSphere(const_vrSphere&amp;_v)$"><ul><h3><li>vrSphere(const vrSphere&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrSphere(void)$"><ul><h3><li>~vrSphere(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrSphere&amp;_operator$(const_vrSphere&amp;_v)$"><ul><h3><li>vrSphere&amp; operator=(const vrSphere&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_SetRadius(SFFloat_radius)$"><ul><h3><li>void SetRadius(SFFloat radius);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Radius member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> radius:</strong>
+<dd>The radius value.
+<p>
+</dl></dl>
+<a name="void_SetSlices(SFInt32_slices)$"><ul><h3><li>void SetSlices(SFInt32 slices);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Slices member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> slices:</strong>
+<dd>The slices value.
+<p>
+</dl></dl>
+<a name="void_SetStacks(SFInt32_stacks)$"><ul><h3><li>void SetStacks(SFInt32 stacks);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Stacks member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> stacks:</strong>
+<dd>The stacks value.
+<p>
+</dl></dl>
+<a name="SFFloat_GetRadius(void)_const$"><ul><h3><li>SFFloat GetRadius(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Radius member.
+<p>
+<a name="SFInt32_GetSlices(void)_const$"><ul><h3><li>SFInt32 GetSlices(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Slices member.
+<p>
+<a name="SFInt32_GetStacks(void)_const$"><ul><h3><li>SFInt32 GetStacks(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Stacks member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vrsphere.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrSphere)$"><ul><h3><li>DECLARE_NODE(vrSphere);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed and dynamically created. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrSphere:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+<li><a href="vrGeometryNode.htm">vrGeometryNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:55 1999
+.<p>
+</body></html>

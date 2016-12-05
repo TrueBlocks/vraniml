@@ -1,0 +1,87 @@
+<html>
+
+<head>
+<title>Data Types</title>
+</head>
+
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF">
+
+<h1><img src="logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">Utility Class Library Reference Manual</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data Types</h1>
+
+<p>This document describes the data types defined in the Utility Library.&nbsp; These data
+types are defined to mimic the VRML specification.&nbsp; This has the effect of making
+VRaniML related source code look like VRML.&nbsp; This makes the learning curve for
+VRaniML shallow.</p>
+
+<p>As in VRML, there are single valued data types and multi valued data types.&nbsp; The
+multi valued types are basically arrays of single valued types.&nbsp; Each data types is
+full C++ classes with copy constructors and equals operators so they may be treated like
+any built in data type such as floating point or integer values.&nbsp; By this we mean
+that doing arithmetic (such as interpolation) is supported for each of these data types.</p>
+
+<hr>
+
+<h4><a name="single"><em>Single Valued Data Types</em></a></h4>
+
+<blockquote>
+  <p><a name="SFBool">SFBool</a><br>
+  &nbsp;&nbsp;&nbsp; #define SFBool int </p>
+  <p><a name="SFInt32">SFInt32</a><br>
+  &nbsp;&nbsp;&nbsp; #define SFInt32 long</p>
+  <p><a name="SFFloat">SFFloat</a><br>
+  &nbsp;&nbsp;&nbsp; #define SFFloat float</p>
+  <p><a name="SFVec2f">SFVec2f</a><br>
+  &nbsp;&nbsp;&nbsp; C++ class for 2d vectors [<a href="sdk/SFVec2f.htm">more...</a>]</p>
+  <p><a name="SFVec3f">SFVec3f</a><br>
+  &nbsp;&nbsp;&nbsp; C++ class for 3d vectors [<a href="sdk/SFVec3f.htm">more...</a>]</p>
+  <p><a name="SFColor">SFColor</a><br>
+  &nbsp;&nbsp;&nbsp; C++ class for RGBA colors [<a href="sdk/SFColor.htm">more...</a>]</p>
+  <p><a name="SFRotation">SFRotation</a><br>
+  &nbsp;&nbsp;&nbsp; C++ class for axis/angle rotations [<a href="sdk/SFRotation.htm">more...</a>]</p>
+  <p><a name="SFString">SFString</a><br>
+  &nbsp;&nbsp;&nbsp; C++ class for strings [<a href="sdk/SFString.htm">more...</a>]</p>
+  <p><a name="SFImage">SFImage</a><br>
+  &nbsp;&nbsp;&nbsp; C++ class for pixel images [<a href="sdk/SFImage.htm">more...</a>]</p>
+  <p><a name="SFTime">SFTime</a><br>
+  &nbsp;&nbsp;&nbsp; typedef double SFTime;</p>
+  <p><a name="SFNode">SFNode</a><br>
+  &nbsp;&nbsp;&nbsp; typedef vrNode *SFNode;</p>
+  <p><a name="PFNV">PFNV</a><br>
+  &nbsp;&nbsp;&nbsp; typedef vrBaseNode* (*PFNV)(void);<br>
+  &nbsp;&nbsp;&nbsp; <em>Pointer to function returning a vrBaseNode * and taking a void
+  argument</em>.</p>
+  <p><a name="LISTPOS">LISTPOS</a><br>
+  &nbsp;&nbsp;&nbsp; Exact equivilant of the POSITION define in the MFC. Used for iteration
+  over lists..</p>
+</blockquote>
+
+<h4><a name="multi"><em>Mulitple Valued Data Types</em></a></h4>
+
+<blockquote>
+  <p><a name="MFInt32">MFInt32</a><br>
+  &nbsp;&nbsp;&nbsp; typedef <a href="sdk/vrArray.htm">vrArray</a>&lt;SFInt32&gt; MFInt32;</p>
+  <p><a name="MFFloat">MFFloat</a><br>
+  &nbsp;&nbsp;&nbsp; typedef <a href="sdk/vrArray.htm">vrArray</a>&lt;SFFloat&gt; MFFloat;</p>
+  <p><a name="MFVec2f">MFVec2f</a><br>
+  &nbsp;&nbsp;&nbsp; typedef <a href="sdk/vrArray.htm">vrArray</a>&lt;SFVec2f&gt; MFVec2f;</p>
+  <p><a name="MFVec3f">MFVec3f</a><br>
+  &nbsp;&nbsp;&nbsp; typedef <a href="sdk/vrArray.htm">vrArray</a>&lt;SFVec3f&gt; MFVec3f;</p>
+  <p><a name="MFColor">MFColor</a><br>
+  &nbsp;&nbsp;&nbsp; typedef <a href="sdk/vrArray.htm">vrArray</a>&lt;SFColor&gt; MFColor;</p>
+  <p><a name="MFRotation">MFRotation</a><br>
+  &nbsp;&nbsp;&nbsp; typedef <a href="sdk/vrArray.htm">vrArray</a>&lt;SFRotation&gt; MFRotation;</p>
+  <p><a name="MFString">MFString</a><br>
+  &nbsp;&nbsp;&nbsp; typedef <a href="sdk/vrArrayBase.htm">vrArrayBase</a>&lt;SFString&gt;
+  MFString;</p>
+  <p><a name="MFNode">MFNode</a><br>
+  &nbsp;&nbsp;&nbsp; typedef <a href="sdk/vrArrayBase.htm">vrArrayBase</a>&lt;SFNode&gt; MFNode;</p>
+</blockquote>
+
+<hr>
+
+<p><strong>[ <a href="index.htm">Classes</a> | <a href="Types.htm#single">Single Valued
+Types</a> | <a href="Types.htm#multi">Multi Valued Types</a> | <a href="../Documentation/define.htm">Defines</a>
+| <a href="functions.htm">Utility Functions</a> ]</strong></p>
+</body>
+</html>

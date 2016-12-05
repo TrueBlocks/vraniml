@@ -1,0 +1,179 @@
+<html><head><title>vrPointLight Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrPointLight</a></h1>
+<dl>
+<dd>
+	This class corresponds to the PointLight node in VRML.  
+	<a href="../spec/part1/nodesRef.html#PointLight">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrpointlight.htm#aag">Summary</a> | </a>
+<a href="vrpointlight.htm#DESCRIPTION">Description</a> | 
+<a href="vrpointlight.htm#NOTES">Notes</a> | 
+<a href="vrpointlight.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrpointlight.htm#MEMBERS">Members</a> | 
+<a href="vrpointlight.htm#parents">Ancestors</a> | <a href="vrpointlight.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrPointLight : public <a href="vrLight.htm">vrLight</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrPointLight.htm#vrPointLight(void)$">vrPointLight</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrPointLight.htm#vrPointLight(const_vrPointLight&amp;_v)$">vrPointLight</a>(const vrPointLight&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrPointLight.htm#~vrPointLight(void)$">vrPointLight</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrPointLight&amp; </td><td><a href="vrPointLight.htm#vrPointLight&amp;_operator$(const_vrPointLight&amp;_v)$">operator=</a>(const vrPointLight&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrPointLight.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrPointLight.htm#void_SetLocation(const_SFVec3f&amp;_location)$">SetLocation</a>(const <a href="SFVec3f.htm">SFVec3f</a>&amp; location);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrPointLight.htm#void_SetRadius(SFFloat_radius)$">SetRadius</a>(SFFloat radius);</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrPointLight.htm#SFVec3f_GetLocation(void)_const$">GetLocation</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrPointLight.htm#SFFloat_GetRadius(void)_const$">GetRadius</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrPointLight.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrPointLight.htm#void_ReceiveEventIn(vrEvent_*event)$">ReceiveEventIn</a></i>(<a href="vrEvent.htm">vrEvent</a> *event);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrPointLight.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrPointLight.htm#DECLARE_NODE(vrPointLight)$">DECLARE_NODE</a>(vrPointLight);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrPointLight.htm#SFVec3f_m_Location$">m_Location</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrPointLight.htm#SFFloat_m_Radius$">m_Radius</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the PointLight node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#PointLight">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFVec3f_m_Location$"><ul><h3><li>SFVec3f m_Location;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'location' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> origin</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_Radius$"><ul><h3><li>SFFloat m_Radius;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'radius' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 100.0</strong>
+<p>
+</dl></dl>
+<a name="vrPointLight(void)$"><ul><h3><li>vrPointLight(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrPointLight(const_vrPointLight&amp;_v)$"><ul><h3><li>vrPointLight(const vrPointLight&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrPointLight(void)$"><ul><h3><li>~vrPointLight(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrPointLight&amp;_operator$(const_vrPointLight&amp;_v)$"><ul><h3><li>vrPointLight&amp; operator=(const vrPointLight&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_SetLocation(const_SFVec3f&amp;_location)$"><ul><h3><li>void SetLocation(const SFVec3f&amp; location);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Location member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> location:</strong>
+<dd>The location value.
+<p>
+</dl></dl>
+<a name="void_SetRadius(SFFloat_radius)$"><ul><h3><li>void SetRadius(SFFloat radius);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Radius member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> radius:</strong>
+<dd>The radius value.
+<p>
+</dl></dl>
+<a name="SFVec3f_GetLocation(void)_const$"><ul><h3><li>SFVec3f GetLocation(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Location member.
+<p>
+<a name="SFFloat_GetRadius(void)_const$"><ul><h3><li>SFFloat GetRadius(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Radius member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vrpointlight.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="void_ReceiveEventIn(vrEvent_*event)$"><ul><h3><li>void ReceiveEventIn(vrEvent *event);</li></h3></a>
+</ul>
+</ul>	   <dd>Receive an event during an event cascade or directly from caller.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> event:</strong>
+<dd>The <a href="vrEvent.htm">vrEvent</a> to be processed.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrPointLight)$"><ul><h3><li>DECLARE_NODE(vrPointLight);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed and dynamically created. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrPointLight:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+<li><a href="vrLight.htm">vrLight</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:54 1999
+.<p>
+</body></html>

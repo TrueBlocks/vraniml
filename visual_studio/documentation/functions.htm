@@ -1,0 +1,316 @@
+<html>
+
+<head>
+<title>Global Functions</title>
+</head>
+
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF">
+
+<h1><img src="logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">Utility Library Reference Manual<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Global Functions</a></h1>
+
+<p>The Utility Library contains a number of global utility functions which are described
+here.&nbsp; These functions may be used anywhere in your application.&nbsp; Most of them
+are defined inline for speed.&nbsp; The use of the word <strong><em>TYPE</em></strong> in
+the following interfaces implies that this function is a templated function and can be
+used with any data type.</p>
+
+<hr>
+
+<table width="810">
+  <tr>
+    <td align="right" valign="top" width="95">TYPE </td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#template&lt;class_TYPE&gt;_TYPE_MIN(TYPE_a,_TYPE_b)_$">MIN</a></td>
+    <td width="1048">(TYPE a, TYPE b) ;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95">TYPE </td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#template&lt;class_TYPE&gt;_TYPE_MAX(TYPE_a,_TYPE_b)_$">MAX</a></td>
+    <td width="1048">(TYPE a, TYPE b) ;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95">void </td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#template&lt;class_TYPE&gt;_void_vrSwap(TYPE&amp;_x,_TYPE&amp;_y)_$">vrSwap</a></td>
+    <td width="1048">(TYPE&amp; x, TYPE&amp; y) ;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95">TYPE </td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#template&lt;class_TYPE&gt;_TYPE_vrClamp(TYPE_val,_TYPE_min,_TYPE_max)_$">vrClamp</a></td>
+    <td width="1048">(TYPE val, TYPE min, TYPE max) ;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95"><a href="Types.htm#SFBool">SFBool</a> </td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#template_&lt;class_TYPE&gt;_SFBool_vrInRange(TYPE_val,_TYPE_start,_TYPE_stop)_$">vrInRange</a></td>
+    <td width="1048">(TYPE val, TYPE start, TYPE stop) ;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95">TYPE </td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#template&lt;class_TYPE&gt;_TYPE_vrInterpolate(TYPE_fromVal,_TYPE_toVal,_SFFloat_fromKey,_SFFloat_toKey,_SFFloat_t)_$">vrInterpolate</a></td>
+    <td width="1048">(TYPE f, TYPE t, SFFloat fK, SFFloat tK, SFFloat t) ;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95"><a href="Types.htm#SFInt32">SFInt32</a> </td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#SFInt32_vrCompare(SFFloat_a,_SFFloat_b,_SFFloat_tol_)_$">vrCompare</a></td>
+    <td width="1048">(SFFloat a, SFFloat b, SFFloat tol ) ;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95"><a href="Types.htm#SFBool">SFBool</a> </td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#SFBool_vrEquals(SFFloat_f1,_SFFloat_f2,_SFFloat_tol_)_$">vrEquals</a></td>
+    <td width="1048">(SFFloat f1, SFFloat f2, SFFloat tol ) ;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95"><a href="Types.htm#SFFloat">SFFloat</a> </td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#SFFloat_vrDeg2Rad(SFFloat_val)_$">vrDeg2Rad</a></td>
+    <td width="1048">(SFFloat val) ;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95"><a href="Types.htm#SFFloat">SFFloat</a> </td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#SFFloat_vrRad2Deg(SFFloat_val)_$">vrRad2Deg</a></td>
+    <td width="1048">(SFFloat val) ;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95"><a href="Types.htm#SFInt32">SFInt32</a> </td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#SFInt32_vrPow2LT(SFInt32_n,_SFInt32_max_)_$">vrPow2LT</a></td>
+    <td width="1048">(SFInt32 n, SFInt32 max ) ;</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95"><a href="Types.htm#SFBool">SFBool</a> <spc></td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#SFBool_UL_Interface_vrReadTextureImage(SFImage&amp;_image,_SFString_filename)$">vrReadTextureImage</a></td>
+    <td width="1048">(SFImage&amp; image, SFString filename);</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95"><a href="Types.htm#SFString">SFString</a> <spc></td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#SFString_UL_Interface_vrCacheFile(SFString_remoteFilename,_SFInt32_mode)$">vrCacheFile</a></td>
+    <td width="1048">(SFString remoteFilename, SFInt32 mode);</td>
+  </tr>
+  <tr>
+    <td align="right" valign="top" width="95"><a href="Types.htm#SFBool">SFBool</a> <spc></td>
+    <td width="79"></td>
+    <td width="248"><a href="functions.htm#SFBool_UL_Interface_vrIsNetworkFile(SFString_host)$">vrIsNetworkFile</a></td>
+    <td width="1048">(SFString host);</td>
+  </tr>
+</table>
+
+<hr>
+<a name="template&lt;class_TYPE&gt;_TYPE_MIN(TYPE_a,_TYPE_b)_$">
+
+<h4><em>TYPE MIN(TYPE a, TYPE b) ; </em></h4>
+</a>
+
+<blockquote>
+  <p>Return the minimum of two values.<dl>
+    <dt><i>in</i><strong> a:</strong> </dt>
+    <dd>The first value. </dd>
+    <dt><i>in</i><strong> b:</strong> </dt>
+    <dd>The second value. </dd>
+  </dl>
+</blockquote>
+<a name="template&lt;class_TYPE&gt;_TYPE_MAX(TYPE_a,_TYPE_b)_$">
+
+<h4><em>TYPE MAX(TYPE a, TYPE b) ;</em></h4>
+</a>
+
+<blockquote>
+  <p>Return the maximum of two values.<dl>
+    <dt><i>in</i><strong> a:</strong> </dt>
+    <dd>The first value. </dd>
+    <dt><i>in</i><strong> b:</strong> </dt>
+    <dd>The second value. </dd>
+  </dl>
+</blockquote>
+<a name="template&lt;class_TYPE&gt;_void_vrSwap(TYPE&amp;_x,_TYPE&amp;_y)_$">
+
+<h4><em>void vrSwap(TYPE&amp; a, TYPE&amp; b) ;</em></h4>
+</a>
+
+<blockquote>
+  <p>Swap two values.<a name="template&lt;class_TYPE&gt;_TYPE_vrClamp(TYPE_val,_TYPE_min,_TYPE_max)_$"></a><dl>
+    <dt><i>in/out</i><strong> a:</strong> </dt>
+    <dd>The first value. </dd>
+    <dt><i>in/out</i><strong> b:</strong> </dt>
+    <dd>The second value. </dd>
+  </dl>
+</blockquote>
+<a name="template&lt;class_TYPE&gt;_TYPE_vrClamp(TYPE_val,_TYPE_min,_TYPE_max)_$">
+
+<h4><em>TYPE vrClamp(TYPE val, TYPE min, TYPE max) ;</em></h4>
+</a>
+
+<blockquote>
+  <p>Returns 'val' clamped to the range min to max.<a name="template_&lt;class_TYPE&gt;_SFBool_vrInRange(TYPE_val,_TYPE_start,_TYPE_stop)_$"></a><dl>
+    <dt><i>in</i><strong> val:</strong> </dt>
+    <dd>The value to be clamped. </dd>
+    <dt><i>in</i><strong> min:</strong> </dt>
+    <dd>The minimum of the returned value. </dd>
+    <dt><i>in</i><strong> max:</strong> </dt>
+    <dd>The maximum of the returned value. </dd>
+  </dl>
+</blockquote>
+<a name="template_&lt;class_TYPE&gt;_SFBool_vrInRange(TYPE_val,_TYPE_start,_TYPE_stop)_$">
+
+<h4><em>SFBool vrInRange(TYPE val, TYPE start, TYPE stop) ;</em></h4>
+</a>
+
+<blockquote>
+  <p>Returns TRUE if val is between (inclusive) start and stop.<a name="template&lt;class_TYPE&gt;_TYPE_vrInterpolate(TYPE_fromVal,_TYPE_toVal,_SFFloat_fromKey,_SFFloat_toKey,_SFFloat_t)_$"></a><dl>
+    <dt><i>in</i><strong> val:</strong> </dt>
+    <dd>The value to be clamped. </dd>
+    <dt><i>in</i><strong> min:</strong> </dt>
+    <dd>The minimum of the returned value. </dd>
+    <dt><i>in</i><strong> max:</strong> </dt>
+    <dd>The maximum of the returned value. </dd>
+  </dl>
+</blockquote>
+<a name="template&lt;class_TYPE&gt;_TYPE_vrInterpolate(TYPE_fromVal,_TYPE_toVal,_SFFloat_fromKey,_SFFloat_toKey,_SFFloat_t)_$">
+
+<h4><em>TYPE vrInterpolate(TYPE fromVal, TYPE toVal, SFFloat fromKey, SFFloat toKey,
+SFFloat t) ;</em></h4>
+</a>
+
+<blockquote>
+  <p>For any class that implements the mathematical operators '+', '-', and '*' (which
+  includes all the <a href="Types.htm#single">Single Valued</a> and <a href="Types.htm#multi">Multi Valued</a> data types) this inline returns a linear
+  interpolation between fromVal and toVal based on the calculated ratio (t - fromKey) /
+  (toKey - fromKey).<dl>
+    <dt><i>in</i><strong> fromVal:</strong> </dt>
+    <dd>The beginning key frame value of the type being interpolated. </dd>
+    <dt><i>in</i><strong> toVal:</strong> </dt>
+    <dd>The ending key frame value of the type being interpolated.</dd>
+    <dt><i>in</i><strong> fromKey:</strong> </dt>
+    <dd>The start of the key frame. </dd>
+    <dt><i>in</i><strong> toKey:</strong> </dt>
+    <dd>The end of the key frame. </dd>
+    <dt><i>in</i><strong> t:</strong> </dt>
+    <dd>The position in the keyframe at which to make the interpolation. </dd>
+  </dl>
+</blockquote>
+<a name="SFInt32_vrCompare(SFFloat_a,_SFFloat_b,_SFFloat_tol_)_$">
+
+<h4><em>SFInt32 vrCompare(SFFloat f1, SFFloat f2, SFFloat tol ) ;</em></h4>
+</a>
+
+<blockquote>
+  <p>Compare two values to within a tolerance (for floating point compare).<a name="SFBool_vrEquals(SFFloat_f1,_SFFloat_f2,_SFFloat_tol_)_$"></a><dl>
+    <dt><i>in</i><strong> f1:</strong> </dt>
+    <dd>The first value. </dd>
+    <dt><i>in</i><strong> f2:</strong> </dt>
+    <dd>The second value. </dd>
+    <dt><i>in</i><strong> tol:</strong> </dt>
+    <dd>The value above which <em>(b-a)</em> is considered not equal to zero. </dd>
+  </dl>
+</blockquote>
+<a name="SFBool_vrEquals(SFFloat_f1,_SFFloat_f2,_SFFloat_tol_)_$">
+
+<h4><em>SFBool vrEquals(SFFloat f1, SFFloat f2, SFFloat tol ) ;</em></h4>
+</a>
+
+<blockquote>
+  <p>Returns TRUE if two values are equal to within a tolerance (for floating point
+  compare).<a name="SFFloat_vrDeg2Rad(SFFloat_val)_$"></a><dl>
+    <dt><i>in</i><strong> f1:</strong> </dt>
+    <dd>The first value. </dd>
+    <dt><i>in</i><strong> f2:</strong> </dt>
+    <dd>The second value. </dd>
+    <dt><i>in</i><strong> tol:</strong> </dt>
+    <dd>The value above which <em>(b-a)</em> is considered not equal to zero. </dd>
+  </dl>
+</blockquote>
+<a name="SFFloat_vrDeg2Rad(SFFloat_val)_$">
+
+<h4><em>SFFloat vrDeg2Rad(SFFloat val) ;</em></h4>
+</a>
+
+<blockquote>
+  <p>Convert degrees to radians.<a name="SFFloat_vrRad2Deg(SFFloat_val)_$"></a><dl>
+    <dt><i>in</i><strong> val:</strong> </dt>
+    <dd>The value in degrees to convert to radians. </dd>
+  </dl>
+</blockquote>
+<a name="SFFloat_vrRad2Deg(SFFloat_val)_$">
+
+<h4><em>SFFloat vrRad2Deg(SFFloat val) ;</em></h4>
+</a>
+
+<blockquote>
+  <p>Convert radians to degrees.<a name="SFInt32_vrPow2LT(SFInt32_n,_SFInt32_max_)_$"></a><dl>
+    <dt><i>in</i><strong> val:</strong> </dt>
+    <dd>The value in radians to convert to degrees. </dd>
+  </dl>
+</blockquote>
+<a name="SFInt32_vrPow2LT(SFInt32_n,_SFInt32_max_)_$">
+
+<h4><em>SFInt32 vrPow2LT(SFInt32 n, SFInt32 max) ;</em></h4>
+</a>
+
+<blockquote>
+  <p>Return the smallest power of 2 less than or equal to the given value (or max).<a name="SFBool_UL_Interface_vrReadTextureImage(SFImage&amp;_image,_SFString_filename)$"></a><dl>
+    <dt><i>in</i><strong> n:</strong> </dt>
+    <dd>The value below which the power of 2 is calculated. </dd>
+    <dt><i>in</i><strong> max:</strong> </dt>
+    <dd>The maximum return value regardless of n.</dd>
+  </dl>
+</blockquote>
+<a name="SFBool_UL_Interface_vrReadTextureImage(SFImage&amp;_image,_SFString_filename)$">
+
+<h4><em>SFBool vrReadTextureImage(SFImage&amp; image, SFString filename);</em></h4>
+</a>
+
+<blockquote>
+  <p>Returns TRUE if the given filename can be read. Also returns the image data in the <a href="sdk/SFImage.htm">SFImage</a> parameter.<a name="define_SFInt32_long"></a><dl>
+    <dt><i>out </i><strong>image:</strong> </dt>
+    <dd>Memory location in which to return the texture image data. </dd>
+    <dt><i>in</i><strong> filename:</strong> </dt>
+    <dd>Filename of texture image data.&nbsp; May be a remote file. </dd>
+    <dt>&nbsp;</dt>
+    <p><em><strong>Note</strong></em>: Some version of the library do not support this
+    function.</p>
+  </dl>
+</blockquote>
+
+<h4><em><a name="SFString_UL_Interface_vrCacheFile(SFString_remoteFilename,_SFInt32_mode)$">SFString
+vrCacheFile(SFString remoteFilename);</a></em></h4>
+
+<blockquote>
+  <p>Make sure the given 'remoteFilename' is on the local machine. Return the name of the
+  local file (which is created in the application's current working directory).<dl>
+    <dt><i>out </i><strong>remoteFilename:</strong> </dt>
+    <dd>Name of the file to fetch from the network (if necessary). </dd>
+  </dl>
+  <p><em><strong>Note</strong></em>: remoteFilename may already be local in which case this
+  function returns immediately.</p>
+  <p><em><strong>Note:</strong></em> The name CacheFile is currently a misnomer.&nbsp; The
+  function does not really cache the file on the local disc.&nbsp; All it does it copy the
+  file locally.&nbsp; In the future this function will indeed cache files making access to
+  remote internet files faster.</p>
+</blockquote>
+<a name="SFBool_UL_Interface_vrIsNetworkFile(SFString_host)$">
+
+<h4><em>SFBool vrIsNetworkFile(SFString remoteFilename);</em></a></h4>
+
+<blockquote>
+  <p>Returns TRUE if the given filename is a remote filename.<dl>
+    <dt><i>out </i><strong>remoteFilename:</strong> </dt>
+    <dd>Name of the file to check for 'remoteness'.</dd>
+  </dl>
+</blockquote>
+
+<hr>
+
+<p><strong>[ <a href="index.htm">Classes</a> | <a href="Types.htm">Data Types</a> | <a href="../Documentation/define.htm">Defines</a> ]</strong></p>
+
+<p>&nbsp;</p>
+</body>
+</html>

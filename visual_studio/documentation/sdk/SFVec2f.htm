@@ -1,0 +1,292 @@
+<html><head><title>SFVec2f Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">SFVec2f</a></h1>
+<dl>
+<dd>
+	Represents a 2d vector.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="sfvec2f.htm#aag">Summary</a> | </a>
+<a href="sfvec2f.htm#DESCRIPTION">Description</a> | 
+<a href="sfvec2f.htm#NOTES">Notes</a> | 
+<a href="sfvec2f.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="sfvec2f.htm#MEMBERS">Members</a> | 
+<a href="sfvec2f.htm#parents">Ancestors</a> | <a href="sfvec2f.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface SFVec2f<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> x, </td><td><a href="SFVec2f.htm#SFFloat_x,_y$">y</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFVec2f.htm#SFVec2f_(void)$">SFVec2f</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFVec2f.htm#SFVec2f_(const_SFVec2f&amp;_v)$">SFVec2f</a> (const SFVec2f&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="SFVec2f.htm#~SFVec2f_(void)$">SFVec2f</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFVec2f.htm#SFVec2f_(SFFloat_f)$">SFVec2f</a> (SFFloat f);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFVec2f.htm#SFVec2f_(SFFloat_f1,_SFFloat_f2)$">SFVec2f</a> (SFFloat f1, SFFloat f2);</td></tr>
+<tr><td align="right" valign="top">SFVec2f&amp; </td><td><a href="SFVec2f.htm#SFVec2f&amp;_operator$_(const_SFVec2f&amp;_v)$">operator=</a> (const SFVec2f&amp; v);</td></tr>
+<tr><td align="right" valign="top">SFFloat&amp; </td><td><a href="SFVec2f.htm#SFFloat&amp;_operator[]_(SFInt32_i)$">operator[]</a> (SFInt32 i);</td></tr>
+<tr><td align="right" valign="top">const SFFloat&amp; </td><td><a href="SFVec2f.htm#const_SFFloat&amp;_operator[]_(SFInt32_i)_const$">operator[]</a> (SFInt32 i) const;</td></tr>
+<tr><td align="right" valign="top">SFVec2f </td><td><a href="SFVec2f.htm#SFVec2f_operator+_(void)_const$">operator+</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">SFVec2f </td><td><a href="SFVec2f.htm#SFVec2f_operator-_(void)_const$">operator-</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">SFVec2f&amp; </td><td><a href="SFVec2f.htm#SFVec2f&amp;_operator+$_(const_SFVec2f&amp;_v)$">operator+=</a> (const SFVec2f&amp; v);</td></tr>
+<tr><td align="right" valign="top">SFVec2f&amp; </td><td><a href="SFVec2f.htm#SFVec2f&amp;_operator-$_(const_SFVec2f&amp;_v)$">operator-=</a> (const SFVec2f&amp; v);</td></tr>
+<tr><td align="right" valign="top">SFVec2f&amp; </td><td><a href="SFVec2f.htm#SFVec2f&amp;_operator*$_(const_SFVec2f&amp;_v)$">operator*=</a> (const SFVec2f&amp; v);</td></tr>
+<tr><td align="right" valign="top">SFVec2f&amp; </td><td><a href="SFVec2f.htm#SFVec2f&amp;_operator*$_(SFFloat_s)$">operator*=</a> (SFFloat s);</td></tr>
+<tr><td align="right" valign="top">SFVec2f&amp; </td><td><a href="SFVec2f.htm#SFVec2f&amp;_operator$$_(SFFloat_s)$">operator/=</a> (SFFloat s);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec2f </td><td><a href="SFVec2f.htm#friend_UL_Interface_SFVec2f_operator+_(const_SFVec2f&amp;_v1,_const_SFVec2f&amp;_v2)$">operator+</a> (const SFVec2f&amp; v1, const SFVec2f&amp; v2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec2f </td><td><a href="SFVec2f.htm#friend_UL_Interface_SFVec2f_operator-_(const_SFVec2f&amp;_v1,_const_SFVec2f&amp;_v2)$">operator-</a> (const SFVec2f&amp; v1, const SFVec2f&amp; v2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec2f </td><td><a href="SFVec2f.htm#friend_UL_Interface_SFVec2f_operator*_(const_SFVec2f&amp;_v1,_const_SFVec2f&amp;_v2)$">operator*</a> (const SFVec2f&amp; v1, const SFVec2f&amp; v2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec2f </td><td><a href="SFVec2f.htm#friend_UL_Interface_SFVec2f_operator*_(const_SFVec2f&amp;_v,_SFFloat_f)$">operator*</a> (const SFVec2f&amp; v, SFFloat f);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec2f </td><td><a href="SFVec2f.htm#friend_UL_Interface_SFVec2f_operator*_(SFFloat_f,_const_SFVec2f&amp;_v)$">operator*</a> (SFFloat f, const SFVec2f&amp; v);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec2f </td><td><a href="SFVec2f.htm#friend_UL_Interface_SFVec2f_operator$_(const_SFVec2f&amp;_v1,_const_SFVec2f&amp;_v2)$">operator/</a> (const SFVec2f&amp; v1, const SFVec2f&amp; v2);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec2f </td><td><a href="SFVec2f.htm#friend_UL_Interface_SFVec2f_operator$_(const_SFVec2f&amp;_v,_SFFloat_f)$">operator/</a> (const SFVec2f&amp; v, SFFloat f);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFVec2f </td><td><a href="SFVec2f.htm#friend_UL_Interface_SFVec2f_Normalize_(const_SFVec2f&amp;_v)$">Normalize</a> (const SFVec2f&amp; v);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	Represents the SFVec2f field as defined in VRML.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>None.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// This is just a simple vector class.  You can treat vectors (both
+	// 2D and 3D) as basic C++ types.  2D vectors are promoted to 3D vectors
+	// if need be.  Also, SFFloats are promoted to 2D or 3D vectors if needed.
+	
+	SFVec2f vec1(1.0, 1.0);
+	// construct from a float
+	SFVec2f vec2(2.0); 
+
+	// Treat them as basic data types.
+	SFVec2f vec3 = vec2 + vec1;
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFFloat_x,_y$"><ul><h3><li>SFFloat x, y;</li></h3></a>
+</ul>
+</ul>     <dd>The x and y components of the vector.
+<dl><dl>
+<dt><i>default:</i><strong> (0.0,0.0)</strong>
+<p>
+</dl></dl>
+<a name="SFVec2f_(void)$"><ul><h3><li>SFVec2f (void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="SFVec2f_(const_SFVec2f&amp;_v)$"><ul><h3><li>SFVec2f (const SFVec2f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="~SFVec2f_(void)$"><ul><h3><li>~SFVec2f (void);</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="SFVec2f_(SFFloat_f)$"><ul><h3><li>SFVec2f (SFFloat f);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>Value for both x and y components.
+<p>
+</dl></dl>
+<a name="SFVec2f_(SFFloat_f1,_SFFloat_f2)$"><ul><h3><li>SFVec2f (SFFloat f1, SFFloat f2);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f1:</strong>
+<dd>Value for x component.
+<dt><i>in</i><strong> f2:</strong>
+<dd>Value for y component.
+<p>
+</dl></dl>
+<a name="SFVec2f&amp;_operator$_(const_SFVec2f&amp;_v)$"><ul><h3><li>SFVec2f&amp; operator= (const SFVec2f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Equals operator.
+<p>
+<a name="SFFloat&amp;_operator[]_(SFInt32_i)$"><ul><h3><li>SFFloat&amp; operator[] (SFInt32 i);</li></h3></a>
+</ul>
+</ul>     <dd>Access operator used for componentwise assignment.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> i:</strong>
+<dd>Index into the vector (0 = x, 1 = y).
+<p>
+</dl></dl>
+<a name="const_SFFloat&amp;_operator[]_(SFInt32_i)_const$"><ul><h3><li>const SFFloat&amp; operator[] (SFInt32 i) const;</li></h3></a>
+</ul>
+</ul>     <dd>Access operator used for read only.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> i:</strong>
+<dd>Index into the vector (0 = x, 1 = y).
+<p>
+</dl></dl>
+<a name="SFVec2f_operator+_(void)_const$"><ul><h3><li>SFVec2f operator+ (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Unary addition.
+<p>
+<a name="SFVec2f_operator-_(void)_const$"><ul><h3><li>SFVec2f operator- (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>unary negation.
+<p>
+<a name="SFVec2f&amp;_operator+$_(const_SFVec2f&amp;_v)$"><ul><h3><li>SFVec2f&amp; operator+= (const SFVec2f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Add given vector to this vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to add.
+<p>
+</dl></dl>
+<a name="SFVec2f&amp;_operator-$_(const_SFVec2f&amp;_v)$"><ul><h3><li>SFVec2f&amp; operator-= (const SFVec2f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Subtract given vector from this vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to subtract.
+<p>
+</dl></dl>
+<a name="SFVec2f&amp;_operator*$_(const_SFVec2f&amp;_v)$"><ul><h3><li>SFVec2f&amp; operator*= (const SFVec2f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Multiply this vector by given vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to multiply by.
+<p>
+</dl></dl>
+<a name="SFVec2f&amp;_operator*$_(SFFloat_s)$"><ul><h3><li>SFVec2f&amp; operator*= (SFFloat s);</li></h3></a>
+</ul>
+</ul>     <dd>Multiply this vector by given scalar.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> s:</strong>
+<dd>The scalar to multiply by.
+<p>
+</dl></dl>
+<a name="SFVec2f&amp;_operator$$_(SFFloat_s)$"><ul><h3><li>SFVec2f&amp; operator/= (SFFloat s);</li></h3></a>
+</ul>
+</ul>     <dd>Divide this vector by given scalar.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> s:</strong>
+<dd>The scalar to divide by.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec2f_operator+_(const_SFVec2f&amp;_v1,_const_SFVec2f&amp;_v2)$"><ul><h3><li>friend UL_Interface SFVec2f operator+ (const SFVec2f&amp; v1, const SFVec2f&amp; v2);</li></h3></a>
+</ul>
+</ul>     <dd>Add two vectors.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v1:</strong>
+<dd>The first vector.
+<dt><i>in</i><strong> v2:</strong>
+<dd>The first vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec2f_operator-_(const_SFVec2f&amp;_v1,_const_SFVec2f&amp;_v2)$"><ul><h3><li>friend UL_Interface SFVec2f operator- (const SFVec2f&amp; v1, const SFVec2f&amp; v2);</li></h3></a>
+</ul>
+</ul>     <dd>Subtract two vectors.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v1:</strong>
+<dd>The first vector.
+<dt><i>in</i><strong> v2:</strong>
+<dd>The first vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec2f_operator*_(const_SFVec2f&amp;_v1,_const_SFVec2f&amp;_v2)$"><ul><h3><li>friend UL_Interface SFVec2f operator* (const SFVec2f&amp; v1, const SFVec2f&amp; v2);</li></h3></a>
+</ul>
+</ul>     <dd>Multiply two vectors.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v1:</strong>
+<dd>The first vector.
+<dt><i>in</i><strong> v2:</strong>
+<dd>The first vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec2f_operator*_(const_SFVec2f&amp;_v,_SFFloat_f)$"><ul><h3><li>friend UL_Interface SFVec2f operator* (const SFVec2f&amp; v, SFFloat f);</li></h3></a>
+</ul>
+</ul>     <dd>Multiply vector by scalar.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector.
+<dt><i>in</i><strong> f:</strong>
+<dd>The scalar.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec2f_operator*_(SFFloat_f,_const_SFVec2f&amp;_v)$"><ul><h3><li>friend UL_Interface SFVec2f operator* (SFFloat f, const SFVec2f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Multiply vector by scalar.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>The scalar.
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec2f_operator$_(const_SFVec2f&amp;_v1,_const_SFVec2f&amp;_v2)$"><ul><h3><li>friend UL_Interface SFVec2f operator/ (const SFVec2f&amp; v1, const SFVec2f&amp; v2);</li></h3></a>
+</ul>
+</ul>     <dd>Divide vector by vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v1:</strong>
+<dd>The first vector.
+<dt><i>in</i><strong> v2:</strong>
+<dd>The first vector.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec2f_operator$_(const_SFVec2f&amp;_v,_SFFloat_f)$"><ul><h3><li>friend UL_Interface SFVec2f operator/ (const SFVec2f&amp; v, SFFloat f);</li></h3></a>
+</ul>
+</ul>     <dd>Divide vector by scalar.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector.
+<dt><i>in</i><strong> f:</strong>
+<dd>The scalar.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFVec2f_Normalize_(const_SFVec2f&amp;_v)$"><ul><h3><li>friend UL_Interface SFVec2f Normalize (const SFVec2f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Nomalize the given vector.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to normalize.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:05 1999
+.<p>
+</body></html>

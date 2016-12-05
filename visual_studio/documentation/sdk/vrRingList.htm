@@ -1,0 +1,104 @@
+<html><head><title>vrRingList Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrRingList</a></h1>
+<dl>
+<dd>
+	A doubly linked list that links its tail to its head allowing
+	for iteration begining at any point (a circulator).
+
+template <class TYPE>
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrringlist.htm#aag">Summary</a> | </a>
+<a href="vrringlist.htm#DESCRIPTION">Description</a> | 
+<a href="vrringlist.htm#NOTES">Notes</a> | 
+<a href="vrringlist.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrringlist.htm#MEMBERS">Members</a> | 
+<a href="vrringlist.htm#parents">Ancestors</a> | <a href="vrringlist.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class vrRingList :<br>
+public <a href="vrIntrusiveList.htm">vrIntrusiveList</a> &lt; TYPE &gt;<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrRingList.htm#vrRingList()_$">vrRingList</a>() ;</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrRingList.htm#~vrRingList()_$">vrRingList</a>() ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRingList.htm#void_AddTail_(TYPE)$">AddTail</a> (TYPE);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRingList.htm#void_AddHead_(TYPE)$">AddHead</a> (TYPE);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRingList.htm#void_SetHead_(TYPE)$">SetHead</a> (TYPE);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRingList.htm#void_RemoveAt_(TYPE)$">RemoveAt</a> (TYPE);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRingList.htm#void_InsertNode_(TYPE,_TYPE)$">InsertNode</a> (TYPE, TYPE);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	This class is used only in the <a href="vrSolid.htm">vrSolid</a> class to implement the
+	<a href="vrHalfEdge.htm">vrHalfEdge</a> lists in each <a href="vrFace.htm">vrFace</a>.  It may have other user defined
+	uses however and is therefor included in this documentation.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>This is a templated class.  Data added to a list of this
+		type must contain two data items of type TYPE called next and prev
+		or be derived from the vrIntrusiveListNode object.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="vrRingList()_$"><ul><h3><li>vrRingList() ;</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<a name="~vrRingList()_$"><ul><h3><li>~vrRingList() ;</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="void_AddTail_(TYPE)$"><ul><h3><li>void AddTail (TYPE);</li></h3></a>
+</ul>
+</ul>     <dd>Add an item of type TYPE to the tail of the list.
+<p>
+<a name="void_AddHead_(TYPE)$"><ul><h3><li>void AddHead (TYPE);</li></h3></a>
+</ul>
+</ul>     <dd>Add an item of type TYPE to the head of the list.
+<p>
+<a name="void_SetHead_(TYPE)$"><ul><h3><li>void SetHead (TYPE);</li></h3></a>
+</ul>
+</ul>     <dd>Mark the given item as the head of the list.
+<p>
+<a name="void_RemoveAt_(TYPE)$"><ul><h3><li>void RemoveAt (TYPE);</li></h3></a>
+</ul>
+</ul>     <dd>Remove the given item from the list.
+<p>
+<a name="void_InsertNode_(TYPE,_TYPE)$"><ul><h3><li>void InsertNode (TYPE, TYPE);</li></h3></a>
+</ul>
+</ul>     <dd>Insert the given item in the list following the first item.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrRingList:<p>
+<ul>
+<li><a href="vrIntrusiveList.htm">vrIntrusiveList</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:02 1999
+.<p>
+</body></html>

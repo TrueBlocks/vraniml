@@ -1,0 +1,134 @@
+<html><head><title>vrRefCountList Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrRefCountList</a></h1>
+<dl>
+<dd>
+	A type-safe templated doubly linked list that reference counts
+	objects added to it.
+
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrrefcountlist.htm#aag">Summary</a> | </a>
+<a href="vrrefcountlist.htm#DESCRIPTION">Description</a> | 
+<a href="vrrefcountlist.htm#NOTES">Notes</a> | 
+<a href="vrrefcountlist.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrrefcountlist.htm#MEMBERS">Members</a> | 
+<a href="vrrefcountlist.htm#parents">Ancestors</a> | <a href="vrrefcountlist.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class vrRefCountList :<br>
+public <a href="vrList.htm">vrList</a> &lt; TYPE &gt;<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRefCountList.htm#void_AddTail_(TYPE_item)$">AddTail</a> (TYPE item);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRefCountList.htm#void_AddHead_(TYPE_item)$">AddHead</a> (TYPE item);</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrRefCountList.htm#TYPE_RemoveAt_(LISTPOS_pos)$">RemoveAt</a> (LISTPOS pos);</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrRefCountList.htm#TYPE_RemoveHead_(void)$">RemoveHead</a> (void);</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrRefCountList.htm#TYPE_RemoveTail_(void)$">RemoveTail</a> (void);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	A doubly linked list that reference counts objects added to it.
+	Either the added objects should be derived from the <a href="vrBaseNode.htm">vrBaseNode</a> class
+	(such as all the VRML nodes) or implement the Reference and
+	Dereference interfaces.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>The list itself does not own any of the memory for the object being stored.
+	The caller must allocate and delete the memory for the stored object.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// This is just a basic linked list class for reference counted objects:
+	vrRefCountList&lt;SFNode&gt; nodeList;
+
+	nodeList.<a href="vrrefcountlist.htm#void_AddTail_(TYPE_item)$">AddTail</a>(new <a href="vrCone.htm">vrCone</a>);
+	nodeList.<a href="vrrefcountlist.htm#void_AddTail_(TYPE_item)$">AddTail</a>(new <a href="vrCylinder.htm">vrCylinder</a>);
+	nodeList.<a href="vrrefcountlist.htm#void_AddTail_(TYPE_item)$">AddTail</a>(new <a href="vrBox.htm">vrBox</a>);
+
+	// Iteration is accomplished identically to the MFC.
+	LISTPOS pos = nodeList.GetHeadPosition();
+	while (pos)
+	{
+		SFNode node = nodeList.GetNext(pos);
+		// apply an operation to the node
+		ApplyOperation(node);
+	}
+
+	// To cleanup the list use the <a href="../../Documentation/define.htm#vrDELETE">vrDELETE</a> macro:
+	pos = nodeList.GetHeadPosition();
+	while (pos)
+	{
+		<a href="vrBaseNode.htm">vrBaseNode</a> *node = nodeList.GetNext(pos);
+		vrDELETE(node);
+	}
+	nodeList.RemoveAll();
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="void_AddTail_(TYPE_item)$"><ul><h3><li>void AddTail (TYPE item);</li></h3></a>
+</ul>
+</ul>     <dd>Add an object to the list at the tail and reference count.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> item:</strong>
+<dd>The item to add.
+<p>
+</dl></dl>
+<a name="void_AddHead_(TYPE_item)$"><ul><h3><li>void AddHead (TYPE item);</li></h3></a>
+</ul>
+</ul>     <dd>Add an object to the list at the head.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> item:</strong>
+<dd>The item to add.
+<p>
+</dl></dl>
+<a name="TYPE_RemoveAt_(LISTPOS_pos)$"><ul><h3><li>TYPE RemoveAt (LISTPOS pos);</li></h3></a>
+</ul>
+</ul>     <dd>Remove an object from the list given its position.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pos:</strong>
+<dd>LISTPOS of item to remove.
+<p>
+</dl></dl>
+<a name="TYPE_RemoveHead_(void)$"><ul><h3><li>TYPE RemoveHead (void);</li></h3></a>
+</ul>
+</ul>     <dd>Remove the head of the list.
+<p>
+<a name="TYPE_RemoveTail_(void)$"><ul><h3><li>TYPE RemoveTail (void);</li></h3></a>
+</ul>
+</ul>     <dd>Remove the tail of the list.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrRefCountList:<p>
+<ul>
+<li><a href="vrList.htm">vrList</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrRefCountStack.htm">vrRefCountStack</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:00 1999
+.<p>
+</body></html>

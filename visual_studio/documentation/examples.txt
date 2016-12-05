@@ -1,0 +1,714 @@
+//-------------------------------------------------------------------------
+//  Copyright (c) 1997-1998 Great Hill Corporation
+//  All Rights Reserved.
+//
+//  For conditions of distribution and use of this software,
+//  please see copyright notice in utility.h
+//-------------------------------------------------------------------------
+#include "Utility.h"
+#include "Examples.h"
+#include "conio.h"
+
+// For all output
+vrDumpContext dc;
+
+// Test harness calls a single function to test
+// each c++ class in the utility library.
+void main(int argc, char *argv[])
+{
+	// Collection classes
+	TestArrayBaseClass();
+	TestArrayClass();
+	TestIntrusiveListClass();
+	TestListClass();
+	TestRefCountListClass();
+	TestSFStringClass();
+	TestStackClass();
+	TestRefCountStackClass();
+
+	// Geometry classes
+	TestBoundingBoxClass();
+	TestImageClass();
+	TestMatrixClass();
+	TestPlaneClass();
+	TestRayClass();
+	TestRect2DClass();
+	TestColorClass();
+	TestVec2fClass();
+	TestVec3fClass();
+	TestRotationClass();
+
+	// Utility classes
+	TestDumpContextClass();
+	TestTimeClass();
+	TestUtilityFunctions();
+	TestImageLib();
+}
+
+// Test a generic array type
+template<class TYPE>
+void TestArray(TYPE a, TYPE b, TYPE c)
+{
+	// This is a basic array class.
+	vrArrayBase<TYPE> intArray;
+
+	intArray[0] = a;
+	intArray[1] = b;
+	intArray[2] = c;
+
+	for (int i=0;i<intArray.GetCount();i++)
+		dc << dc.Indent() << intArray[i] << " ";
+
+	dc << endl;
+}
+
+void TestArrayBaseClass(void)
+{
+	dc << "TestArrayBaseClass...\n";
+	dc.m_nIndents++;
+	
+	TestArray<SFBool> (0, 0, 1);
+	TestArray<SFInt32>(1, 2, 3);
+	TestArray<SFFloat>(0.1, 1.1, 1.2);;
+	TestArray<SFVec2f>(-2, 2, 0);
+	TestArray<SFVec3f>(-2, 2, 0);
+	TestArray<SFColor>(Red, Green, Blue);
+	TestArray<SFRotation>(defRotation, SFRotation(xAxis, 0), SFRotation(yAxis, 2));
+	TestArray<vrMatrix>(IdentityMatrix(), ScaleMatrix(2), MirrorX());
+	TestArray<SFString>("Hello", "World", "Hello\n\t\tThere");
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestArrayClass(void)
+{
+	dc << "\nTestArrayClass...\n";
+	dc.m_nIndents++;
+	// vrArrays can be treated like any C++ data type in that they
+	// support the common mathematical operators '+', '-', '*' and '/'.
+
+	// Note: could have used MFFloat instead.
+	vrArray<SFFloat> floatArray1;
+	floatArray1[0] = 1.0;
+	floatArray1[1] = 2.0;
+	floatArray1[2] = 3.0;
+	for (int i=0;i<floatArray1.GetCount();i++)
+		dc << dc.Indent() << floatArray1[i];
+	dc << endl;
+
+	// Note: could have used vrArray<SFFloat> instead.
+	MFFloat floatArray2;
+	floatArray2[0] = 3.0;
+	floatArray2[1] = 2.0;
+	floatArray2[2] = 1.0;
+	for (i=0;i<floatArray2.GetCount();i++)
+		dc << dc.Indent() << floatArray2[i];
+	dc << endl;
+
+	MFFloat result;
+	result = floatArray1 + floatArray2;
+	for (i=0;i<result.GetCount();i++)
+		dc << dc.Indent() << result[i];
+	dc << endl;
+
+	// OUTPUT:
+	// 1.0 2.0 3.0
+	// 3.0 2.0 1.0
+	// 4.0 4.0 4.0
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestIntrusiveListClass(void)
+{
+	dc << "\nTestIntrusiveListClass...\n";
+	dc.m_nIndents++;
+
+	// A simple linked list.  Items added to the vrIntrusiveList must
+	// possess next and prev pointers.
+	vrIntrusiveList<A*> Alist;
+	Alist.AddTail(new A(1));
+	Alist.AddTail(new A(2));
+	Alist.AddTail(new A(3));
+
+	LISTPOS pos = Alist.GetHeadPosition();
+	while (pos)
+	{
+		A *a = Alist.GetNext(pos);
+		dc << dc.Indent() << a->data;
+	}
+	dc << endl;
+
+	// OUTPUT
+	// 1 2 3
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+template<class TYPE>
+void TestList(TYPE a, TYPE b, TYPE c)
+{
+	// This is just a basic linked list class:
+	vrList<TYPE> list;
+
+	list.AddTail(a);
+	list.AddTail(b);
+	list.AddTail(c);
+
+	// Iteration is accomplished identically to the MFC.
+	LISTPOS pos = list.GetHeadPosition();
+	while (pos)
+		dc << dc.Indent() << list.GetNext(pos) << " ";
+	dc << endl;
+}
+
+void TestListClass(void)
+{
+	dc << "\nTestListClass...\n";
+	dc.m_nIndents++;
+
+	TestList<SFBool> (0, 0, 1);
+	TestList<SFInt32>(1, 2, 3);
+	TestList<SFFloat>(0.1, 1.1, 1.2);;
+	TestList<SFVec2f>(-2, 2, 0);
+	TestList<SFVec3f>(-2, 2, 0);
+	TestList<SFColor>(Red, Green, Blue);
+	TestList<SFRotation>(defRotation, SFRotation(xAxis, 0), SFRotation(yAxis, 2));
+	TestList<vrMatrix>(IdentityMatrix(), ScaleMatrix(2), MirrorX());
+	TestList<SFString>("Hello", "World", "Hello\n\t\tThere");
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestRefCountListClass(void)
+{
+	dc << "\nTestRefCountListClass...\n";
+	dc.m_nIndents++;
+
+	// This is just a basic linked list class for reference counted objects:
+	vrRefCountList<SFNode> nodeList;
+
+	nodeList.AddTail(new vrCone("Cone"));
+	nodeList.AddTail(new vrCylinder("Cylinder"));
+	vrBox *box = new vrBox("Box");
+	nodeList.AddTail(box);
+	nodeList.AddTail(box);  // reference counted twice
+
+	// Iteration is accomplished identically to the MFC.
+	LISTPOS pos = nodeList.GetHeadPosition();
+	while (pos)
+	{
+		SFNode node = nodeList.GetNext(pos);
+		// apply an operation to the node
+		ApplyOperation(node);
+	}
+
+	// To cleanup the list use the vrDelete macro:
+	pos = nodeList.GetHeadPosition();
+	while (pos)
+	{
+		SFNode node = nodeList.GetNext(pos);
+		dc << dc.Indent() << node->name << endl;
+		// Only delete if no longer referenced
+		vrDELETE(node);
+	}
+	nodeList.RemoveAll();
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestSFStringClass(void)
+{
+	dc << "\nTestSFStringClass...\n";
+	dc.m_nIndents++;
+
+	// Use SFStrings as you would any string class
+	SFString string = "This is a string";
+	// Find returns -1 if search string is not found.
+	ASSERT(string.Find(".")==-1);
+	dc << dc.Indent() << string << ":\tFind(\".\"): " << string.Find(".") << endl;
+
+	// Add a period.
+	string += ".";
+	// Now it is found.
+	ASSERT(string.Find(".")!=-1);
+	dc << dc.Indent() << string << ":\tFind(\".\"): " << string.Find(".") << endl;
+
+	// Assignment
+	SFString str1 = string;
+	// Equality (many other operators are available also).
+	ASSERT(str1 == string);
+
+	// Use 'nullString' or Empty to test for empty strings
+	SFString defaultString;
+	ASSERT(defaultString == nullString);
+	ASSERT(defaultString.Empty());
+
+	string.ToUpper();
+	dc << dc.Indent() << string << endl;
+
+	string.ToLower();
+	dc << dc.Indent() << string << endl;
+
+	string.Reverse();
+	dc << dc.Indent() << string << endl;
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+template<class TYPE>
+void TestStack(TYPE a, TYPE b, TYPE c)
+{
+	// A simple stack of integers.
+	vrStack<TYPE> stack;
+	stack.Push(a);
+	stack.Push(b);
+	stack.Push(c);
+
+	while (!stack.Empty())
+		dc << dc.Indent() << stack.Pop() << " ";
+	dc << endl;
+}
+
+void TestStackClass(void)
+{
+	dc << "\nTestStackClass...\n";
+	dc.m_nIndents++;
+
+	TestStack<SFBool> (0, 0, 1);
+	TestStack<SFInt32>(1, 2, 3);
+	TestStack<SFFloat>(1.0, 1.1, 1.2);;
+	TestStack<SFVec2f>(-2, 2, 0);
+	TestStack<SFVec3f>(-2, 2, 0);
+	TestStack<SFColor>(Red, Green, Blue);
+	TestStack<SFRotation>(defRotation, SFRotation(xAxis, 0), SFRotation(yAxis, 2));
+	TestStack<vrMatrix>(IdentityMatrix(), ScaleMatrix(2), MirrorX());
+	TestStack<SFString>("Hello", "World", "Hello\n\t\tThere");
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestRefCountStackClass(void)
+{
+	dc << "\nTestRefCountStackClass...\n";
+	dc.m_nIndents++;
+
+	// A reference counting stack.
+	vrRefCountStack<SFNode> nodeStack;
+	nodeStack.Push(new vrCone("Cone"));
+	nodeStack.Push(new vrBox("Box"));
+	SFNode cyl = new vrCylinder("Cylinder");
+	nodeStack.Push(cyl);
+	nodeStack.Push(cyl);  // reference count twice.
+
+	// Deletes the Sphere first.
+	while (nodeStack.Peek())
+	{
+		SFNode node = nodeStack.Pop();
+		dc << dc.Indent() << node->name << endl;
+		vrDELETE(node);
+	}
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestBoundingBoxClass(void)
+{
+	dc << "\nTestBoundingBoxClass...\n";
+	dc.m_nIndents++;
+
+	// To add values to a bounding box:
+	vrBoundingBox box;
+	box.Include(SFVec3f(-1.0));
+	box.Include(SFVec3f(1.0));
+
+	ASSERT(box.IsInside(SFVec3f(0.0)) == TRUE);
+	ASSERT(box.IsInside(SFVec3f(4.0)) == FALSE);
+
+	dc << dc.Indent() << box.GetMin() << ":" << box.GetMax() << 
+		":\t\tIsInside(0): " << box.IsInside(SFVec3f(0.0)) << endl;
+
+	dc << dc.Indent() << box.GetMin() << ":" << box.GetMax() << 
+		":\t\tIsInside(4): " << box.IsInside(SFVec3f(4.0)) << endl;
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestImageClass(void)
+{
+	dc << "\nTestImageClass...\n";
+	dc.m_nIndents++;
+
+	// To read a texture file for example:
+	SFImage image(4, 4, 3);
+	if (vrReadTextureImage(image, "..\\sample worlds\\texture\\earth.jpg"))
+	{
+		dc << dc.Indent() << image;
+	} else
+		dc << dc.Indent() << "Could not open texture file\n";
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void ShowMatrix(const SFString& msg, const vrMatrix& mat)
+{
+	dc.m_nDigits = 4;
+	dc << dc.Indent() << msg << "\n";
+	dc.m_nIndents++;
+	dc << dc.Indent() << mat;
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestMatrixClass(void)
+{
+	dc << "\nTestMatrixClass...\n";
+	dc.m_nIndents++;
+
+	// Use the vrMatrix class to perform various matrix related operations:
+	vrMatrix rot = RotationZMatrix(vrDeg2Rad(180.0));
+	ShowMatrix("RotationZMatrix:", rot);
+
+	SFVec3f rotated = rot * xAxis;
+	ASSERT(rotated == -xAxis);
+
+	vrMatrix scale = ScaleMatrix(2.0);
+	ShowMatrix("ScaleMatrix:", scale);
+
+	SFVec3f scaled = scale * xAxis;
+	ASSERT(scaled == xAxis*2.0);
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestPlaneClass(void)
+{
+	dc << "\nTestPlaneClass...\n";
+	dc.m_nIndents++;
+
+	// Can be used for various calculations:
+	vrPlane plane1(xAxis, 1.0);
+	dc << dc.Indent() << "Plane1: " << plane1 << endl;
+
+	vrPlane plane2(yAxis, 1.0);
+	dc << dc.Indent() << "Plane2: " << plane2 << endl;
+
+	// The intersection of two planes is a ray:
+	vrRay intersection = plane1.Intersect(plane2);
+	dc << dc.Indent() << "intersection(plane1, plane2):\n\t\t" << intersection << endl;
+
+	// The distance of a point to a plane:
+	SFFloat distance = plane1.GetDistance(origin);
+	ASSERT(distance == 1.0);
+	dc << dc.Indent() << "distance(plane1, origin): " << distance << endl;
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestRayClass(void)
+{
+	dc << "\nTestRayClass...\n";
+	dc.m_nIndents++;
+
+	// A vrRay can be used to calculate intersections for visiblity
+	// calculations or plane intersections (among other things):
+	SFNode model = new vrBox;
+
+	// a bounding box from some VRML model
+	vrBoundingBox box = model->GetBoundingBox(); 
+	vrRay lineOfSite = GetLineOfSite();
+
+	dc << dc.Indent() << "Bounding Box: " << box << endl;
+	dc << dc.Indent() << "LineofSite: " << lineOfSite << endl;
+
+	if (box.Intersect(lineOfSite))
+		{ dc << dc.Indent() << "Ray hits bounding box" << endl; }
+	else
+		{ dc << dc.Indent() << "Ray does not hit bounding box" << endl; }
+
+	vrPlane plane1(xAxis, 1.0);
+	vrPlane plane2(yAxis, 1.0);
+
+	dc << dc.Indent() << "Plane1: " << plane1 << endl;
+	dc << dc.Indent() << "Plane2: " << plane2 << endl;
+
+	// The intersection of two planes is a ray:
+	vrRay intersection = plane1.Intersect(plane2);
+	dc << dc.Indent() << "intersection: " << intersection << endl;
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestRect2DClass(void)
+{
+	dc << "\nTestRect2DClass...\n";
+	dc.m_nIndents++;
+
+	// This class has various uses:
+	SFNode model = new vrBox;
+	
+	// Get a bounding box from some VRML model.
+	vrBoundingBox box = model->GetBoundingBox();
+
+	vrRect2D front = box.GetFront();
+	vrRect2D side = box.GetSide();
+	vrRect2D top = box.GetTop();
+
+	dc << dc.Indent() << "box:  \t" << box << endl;
+	dc << dc.Indent() << "front:\t" << front << endl;
+	dc << dc.Indent() << "front:\t" << side << endl;
+	dc << dc.Indent() << "front:\t" << top << endl;
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestColorClass(void)
+{
+	dc << "\nTestColorClass...\n";
+	dc.m_nIndents++;
+
+	// You can add and subtract and multiply colors to your delight.
+	dc << dc.Indent() << "Red:\t" << Red << endl;
+	dc << dc.Indent() << "Green:\t" << Green << endl;
+
+	SFColor lightRedishGreen = (Red + Green) / 4.0;
+	dc << dc.Indent() << "(R+G)/4:\t" << lightRedishGreen << endl;
+
+	SFColor grey = (White * .5);
+	dc << dc.Indent() << "grey:\t" << grey << endl;
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestVec2fClass(void)
+{
+	dc << "\nTestVec2fClass...\n";
+	dc.m_nIndents++;
+
+	// This is just a simple vector class.  You can treat vectors (both
+	// 2D and 3D) as basic C++ types.  2D vectors are promoted to 3D vectors
+	// if need be.  Also, SFFloats are promoted to 2D or 3D vectors if needed.
+	
+	SFVec2f vec1(1.0, 1.0);
+	// construct from a float
+	SFVec2f vec2(2.0); 
+
+	// Treat them as basic data types.
+	SFVec2f vec3 = vec2 + vec1;
+
+	dc << dc.Indent() << "vec1:\t" << vec1 << endl;
+	dc << dc.Indent() << "vec2:\t" << vec2 << endl;
+	dc << dc.Indent() << "v1+v2:\t" << vec3 << endl;
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestVec3fClass(void)
+{
+	dc << "\nTestVec3fClass...\n";
+	dc.m_nIndents++;
+
+	// This is just a simple vector class.  You can treat vectors (both
+	// 2D and 3D) as basic C++ types.  2D vectors are promoted to 3D vectors
+	// if need be.  Also, SFFloats are promoted to 2D or 3D vectors if needed.
+	
+	SFVec3f vec1(1.0, 1.0, 1.0);
+	// construct from a float
+	SFVec3f vec2(2.0);
+
+	SFVec3f vec3 = vec2 + vec1;
+	
+	dc << dc.Indent() << "vec1:\t" << vec1 << endl;
+	dc << dc.Indent() << "vec2:\t" << vec2 << endl;
+	dc << dc.Indent() << "v1+v2:\t" << vec3 << endl;
+
+	// Treat them as a basic data type.
+	ASSERT((SFVec3f(0) + SFVec3f(1) / 2.0) == SFVec3f(.5));
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestRotationClass(void)
+{
+	dc << "\nTestRotationClass...\n";
+	dc.m_nIndents++;
+
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestDumpContextClass(void)
+{
+	dc << "\nTestDumpContextClass...\n";
+	dc.m_nIndents++;
+
+/*
+	// First create the output device and attach it to the vrDumpContext...
+	FILE *file = fopen("file.txt", "w");
+	ASSERT(file);
+	vrDumpContext dc(file);
+
+	// ... and then start writing
+	dc << 1 << " is the loneliest number.\n";
+
+	// Increase indent level
+	dc.m_nIndents++;
+
+	// Write indented text
+	dc << dc.Indent() << "This is indented\n";
+
+	// Close and Flush
+	dc.Close();
+*/
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestTimeClass(void)
+{
+	dc << "\nTestTimeClass...\n";
+	dc.m_nIndents++;
+
+	// This class allows calculations on time values:
+	vrTime time1 = vrNow();
+
+	// wait around a while....
+	for (int i=0;i<1000000;i++)
+		if (!(i%50000))
+			dc << ".";
+	dc << endl;
+	
+	vrTime time2 = vrNow();
+
+	ASSERT(time2 > time1); // comparison
+	ASSERT((time2-time1) > 0.0); // subtraction, conversion to double
+
+	dc.m_nDigits = 2;
+	dc << dc.Indent() << "time1:\t" << time1 << endl;
+	dc << dc.Indent() << "time2:\t" << time2 << endl;
+	dc << dc.Indent() << "(t1>t2):\t" << (time1>time2) << endl;
+	dc << dc.Indent() << "(t2>t1):\t" << (time2>time1) << endl;
+	
+	dc << dc.Indent() << "Hit enter..." << endl;
+	getch();
+
+	dc.m_nIndents--;
+}
+
+void TestUtilityFunctions(void)
+{
+	dc << "\nTestUtilityFunctions...\n";
+	dc.m_nIndents++;
+
+	dc << dc.Indent() << "MIN(1,0):\t" << MIN(1,0) << endl;
+	dc << dc.Indent() << "MAX(1,0):\t" << MAX(1,0) << endl;
+
+	vrMatrix A = ScaleMatrix(-4);
+	vrMatrix B = ScaleMatrix(4);
+	dc << dc.Indent() << "A: " << A << " B: " << B << " vrSwap(A, B) " << endl;
+	vrSwap(A,B);
+	dc << dc.Indent() << "A: " << A << " B: " << B;
+
+	dc << dc.Indent() << "vrClamp(10, 1, 2):\t" << vrClamp(10, 1, 2) << endl;
+	dc << dc.Indent() << "vrClamp(10, 11, 21):\t" << vrClamp(10, 11, 21) << endl;
+	dc << dc.Indent() << "vrInRange(10, 1, 2)\t" << vrInRange(10, 1, 2) << endl;
+	dc << dc.Indent() << "vrInRange(1.5, 1., 2.)\t" << vrInRange(1.5, 1., 2.) << endl;
+
+	dc << dc.Indent() << "vrInterpolate(0,5,0,1,.5):\t" << vrInterpolate(0,5,0,1,.5) << endl;
+	dc << dc.Indent() << "vrInterpolate(0.,5.,0,1,.5):\t" << vrInterpolate(0.,5.,0,1,.5) << endl;
+	dc << dc.Indent() << "vrInterpolate(SFVec3f(0),SFVec3f(5),0,1,.5):\t" << vrInterpolate(SFVec3f(0),SFVec3f(5),0,1,.5) << endl;
+
+	dc << dc.Indent() << "vrCompare(1, 1.1, .5):\t" << vrCompare(1, 1.1, .5) << endl;
+	dc << dc.Indent() << "vrCompare(1, 1.1, .05):\t" << vrCompare(1, 1.1, .05) << endl;
+	dc << dc.Indent() << "vrCompare(1, 0.9, .05):\t" << vrCompare(1, 0.9, .05) << endl;
+
+	dc << dc.Indent() << "vrEquals(1, 1.1, .5):\t" << vrEquals(1, 1.1, .5) << endl;
+	dc << dc.Indent() << "vrEquals(1, 1.1, .05):\t" << vrEquals(1, 1.1, .05) << endl;
+	dc << dc.Indent() << "vrEquals(1, 0.9, .05):\t" << vrEquals(1, 0.9, .05) << endl;
+
+	dc << dc.Indent() << "vrDeg2Rad(180.0):\t" << vrDeg2Rad(180.0) << endl;
+	dc << dc.Indent() << "vrRad2Deg(M_PI):\t" << vrRad2Deg(M_PI) << endl;
+
+	dc << dc.Indent() << "vrPow2LT(127):\t" << vrPow2LT(127) << endl;
+	dc << dc.Indent() << "vrPow2LT(129):\t" << vrPow2LT(129) << endl;
+	dc << dc.Indent() << "vrPow2LT(128, 32):\t" << vrPow2LT(129, 32) << endl;
+
+	SFString file = "example.exe";
+	dc << dc.Indent() << "vrCacheFile(\"example.exe\"):\t" << vrCacheFile(file) << endl;
+}
+
+void TestImageLib(void)
+{
+	dc << "\nTestImageLib...\n";
+	dc.m_nIndents++;
+
+	SFImage image(5,5,3);
+	
+	if (vrReadTextureImage(image, "test.jpg"))
+		dc << image << endl;
+	else
+		dc << "Could not open file: test.jpg\n";
+
+	if (vrReadTextureImage(image, "test.bmp"))
+		dc << image << endl;
+	else
+		dc << "Could not open file: test.bmp\n";
+
+	dc.m_nIndents--;
+}

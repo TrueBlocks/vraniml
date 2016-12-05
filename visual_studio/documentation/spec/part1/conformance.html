@@ -1,0 +1,607 @@
+<html>
+<head>
+  <meta NAME="GENERATOR" CONTENT="Adobe PageMill 2.0 Win">
+  <title>VRML97, ISO/IEC 14772-1:1997 -- 7 Conformance and minimum support requirements</title>
+</head>
+<body>
+
+<h1><center><img SRC="../Images/vrml97.gif" WIDTH="470" HEIGHT="85" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="VRML97 logo"></center></h1>
+
+<h1><center>The Virtual Reality Modeling Language</center></h1>
+
+<h1><center>7 Conformance and minimum support requirements</center></h1>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"> 7.1 <a NAME="7.1"></a>Introduction</h2>
+
+<h3>7.1.1 <a NAME="7.1.1"></a>Table of contents</h3>
+
+<p>7.1 <a HREF="conformance.html#7.1">Introduction</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.1 <a HREF="conformance.html#7.1.1">Table of contents</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.2 <a HREF="conformance.html#7.1.2">Objectives</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1.3 <a HREF="conformance.html#7.1.3">Scope</a> <br>
+7.2 <a HREF="conformance.html#7.2">Conformance </a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.2.1 <a HREF="conformance.html#7.2.1">Conformance of VRML&nbsp;files</a>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.2.2 <a HREF="conformance.html#7.2.2">Conformance of VRML
+generators</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.2.3 <a HREF="conformance.html#7.2.3">Conformance of VRML
+browsers</a> <br>
+7.3 <a HREF="conformance.html#7.3">Minimum support requirements</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.1 <a HREF="conformance.html#7.3.1">Minimum support requirements
+for generators </a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.2 <a HREF="conformance.html#7.3.2">Minimum support requirements
+for browsers</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.3 <a HREF="conformance.html#7.3.3">VRML requirements for
+conforming to the base profile</a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.3.4 <a HREF="conformance.html#7.3.4">Sound priority, attenuation,
+and spatialization</a></p>
+
+<h3>7.1.2 <a NAME="7.1.2"></a>Objectives</h3>
+
+<p>This clause addresses conformance of VRML files, VRML generators and
+VRML browsers.</p>
+
+<p>The primary objectives of the specifications in this clause are:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>to promote interoperability by eliminating arbitrary subsets of, or
+  extensions to, ISO/IEC 14772;
+  <li>to promote uniformity in the development of conformance tests;
+  <li>to promote consistent results across VRML browsers;
+  <li>to facilitate automated test generation.
+</ol><!--/NOEDIT--></p>
+
+<h3>7.1.3 <a NAME="7.1.3"></a>Scope</h3>
+
+<p>Conformance is defined for VRML files and for VRML browsers. For VRML
+generators, conformance guidelines are presented for enhancing the likelihood
+of successful interoperability.</p>
+
+<p>A concept of <i>base profile conformance</i> is defined to ensure interoperability
+of VRML generators and VRML browsers. Base profile conformance is based
+on a set of limits and minimal requirements. Base profile conformance is
+intended to provide a functional level of reasonable utility for VRML generators
+while limiting the complexity and resource requirements of VRML browsers.
+Base profile conformance may not be adequate for all uses of VRML.</p>
+
+<p>This clause addresses the VRML data stream and implementation requirements.
+Implementation requirements include the latitude allowed for VRML generators
+and VRML&nbsp;browsers. This clause does not directly address the environmental,
+performance, or resource requirements of the generator or browser.</p>
+
+<p>This clause does not define the application requirements or dictate application
+functional content within a VRML file.</p>
+
+<p>The scope of this clause is limited to rules for the open interchange
+of VRML content.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"> 7.2 <a NAME="7.2"></a>Conformance<a NAME="Conformance"></a></h2>
+
+<h3><a NAME="Conformance"></a>7.2.1 <a NAME="7.2.1"></a>Conformance of VRML
+files</h3>
+
+<p>A VRML&nbsp;file is <i>syntactically correct</i> according to ISO/IEC
+14772 if the following conditions are met:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>The VRML&nbsp;file contains as its first element a VRML header comment
+  (see <a HREF="concepts.html#4.2.2">4.2.2,&nbsp;Header</a>).
+  <li>All entities contained therein match the functional specification of
+  the corresponding entities of ISO/IEC 14772-1. The VRML&nbsp;file shall
+  obey the relationships defined in the formal grammar and all other syntactic
+  requirements.
+  <li>The sequence of entities in the VRML file obeys the relationships specified
+  in ISO/IEC 14772-1 producing the structure specified in ISO/IEC 14772-1.
+  <li>All field values in the VRML&nbsp;file obey the relationships specified
+  in ISO/IEC 14772-1 producing the structure specified in ISO/IEC 14772-1.
+  <li>No nodes appear in the VRML&nbsp;file other than those specified in
+  ISO/IEC 14772-1 unless required for the encoding technique or those defined
+  by the PROTO&nbsp;or EXTERNPROTO&nbsp;entities.
+  <li>The VRML file is encoded according to the rules of ISO/IEC 14772.
+  <li>It does not contain behaviour described as undefined elsewhere in this
+  specification.
+</ol><!--/NOEDIT--></p>
+
+<p>A&nbsp;VRML&nbsp;file conforms to the <i>base profile</i> if:</p>
+
+<p><!--NOEDIT--><ol START="8" TYPE="a">
+  <li>It is syntactically correct.
+  <li>It meets the restrictions of <a HREF="conformance.html#Table7.1">Table 7.1</a>.
+</ol><!--/NOEDIT--></p>
+
+<h3>7.2.2 <a NAME="7.2.2"></a>Conformance of VRML&nbsp;generators</h3>
+
+<p>A VRML generator is conforming to this part of ISO/IEC 14772 if all VRML
+files that are generated are syntactically correct.</p>
+
+<p>A VRML generator conforms to the base profile if it can be configured
+such that all VRML files generated conform to the base profile.</p>
+
+<h3>7.2.3 <a NAME="7.2.3"></a>Conformance of VRML browsers</h3>
+
+<p>A VRML&nbsp;browser conforms to the base profile if:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>It is able to read any VRML file that conforms to the base profile.
+  <li>It presents the graphical and audio characteristics of the VRML nodes
+  in any VRML file that conforms to the base profile, within the latitude
+  defined in this clause.
+  <li>It correctly handles user interaction and generation of events as specified
+  in ISO/IEC 14772, within the latitude defined in this clause.
+  <li>It satisfies the requirements of <a HREF="conformance.html#7.3.2">7.3.2, Minimum
+  support requirements for browsers</a>, as enumerated in <a HREF="conformance.html#Table7.1">Table 7.1</a>.
+</ol><!--/NOEDIT--></p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"></p>
+
+<h2><img SRC="../Images/cube.gif" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0" ALIGN="BOTTOM"> 7.3 <a NAME="7.3"></a>Minimum support requirements</h2>
+
+<h3>7.3.1 <a NAME="7.3.1"></a>Minimum support requirements for generators</h3>
+
+<p>There is no minimum complexity which is required of (or appropriate for)
+VRML generators. Any compliant set of nodes of arbitrary complexity may
+be generated, as appropriate to represent application content.</p>
+
+<h3>7.3.2 <a NAME="7.3.2"></a>Minimum support requirements for browsers</h3>
+
+<p>This subclause defines the minimum complexity which shall be supported
+by a VRML browser. Browser implementations may choose to support greater
+limits but may not reduce the limits described in <a HREF="conformance.html#Table7.1">Table
+7.1</a>. When the VRML file contains nodes which exceed the limits implemented
+by the browser, the results are undefined. Where latitude is specified in
+<a HREF="conformance.html#Table7.1">Table 7.1</a> for a particular node, full support is
+required for other aspects of that node.</p>
+
+<h3>7.3.3 <a NAME="7.3.3"></a>VRML requirements for conforming to the base
+profile</h3>
+
+<p>In the following table, the first column defines the item for which conformance
+is being defined. In some cases, general limits are defined but are later
+overridden in specific cases by more restrictive limits. The second column
+defines the requirements for a VRML file conforming to the base profile;
+if a VRML file contains any items that exceed these limits, it may not be
+possible for a VRML browser conforming to the base profile to successfully
+parse that VRML file. The third column defines the minimum complexity for
+a VRML scene that a VRML browser conforming to the base profile shall be
+able to present to the user. The word &quot;ignore&quot; in the minimum
+browser support column refers only to the display of the item; in particular,
+<i>set_</i> events to ignored exposedFields must still generate corresponding
+<i>_changed</i> events.</p>
+
+<p><table BORDER="1" CELLPADDING="4" CELLSPACING="4" WIDTH="100%">
+<caption ALIGN="TOP"><h4><a NAME="Table7.1"></a>Table 7.1 -- Specifications for VRML browsers
+conforming to the base profile</h4>
+</caption>
+<tr>
+<th WIDTH="28%"><dl>
+  <dt><center><b><font COLOR="#000000">Item</font></b></center>
+</dl>
+</th>
+<th WIDTH="22%"><b><font COLOR="#000000">VRML File Limit</font></b></th>
+<th WIDTH="50%"><b><font COLOR="#000000">Minimum Browser Support</font></b></th></tr>
+<tr ALIGN="LEFT">
+<td>All groups</td>
+<td>500 children.</td>
+<td>500 children. Ignore <i>bboxCenter</i> and <i>bboxSize</i>.</td></tr>
+<tr ALIGN="LEFT">
+<td>All interpolators</td>
+<td>1000 key-value pairs.</td>
+<td>1000 key-value pairs.</td></tr>
+<tr ALIGN="LEFT">
+<td>All lights</td>
+<td>8 simultaneous lights.</td>
+<td>8 simultaneous lights.</td></tr>
+<tr ALIGN="LEFT">
+<td>Names for DEF/PROTO/field</td>
+<td>50 utf8 octets.</td>
+<td>50 utf8 octets.</td></tr>
+<tr ALIGN="LEFT">
+<td>All <i>url</i> fields</td>
+<td>10 URLs.</td>
+<td>10 URLs. URN's ignored.<br>
+Support `http', `file', and `ftp' protocols.<br>
+Support relative URLs where relevant.</td></tr>
+<tr ALIGN="LEFT">
+<td>PROTO/<br>
+EXTERNPROTO</td>
+<td>30 fields, 30 eventIns, 30 eventOuts, 30 exposedFields.</td>
+<td>30 fields, 30 eventIns, 30 eventOuts, 30 exposedFields.</td></tr>
+<tr>
+<td>&nbsp;EXTERNPROTO</td>
+<td>&nbsp;n/a</td>
+<td>URL references VRML files conforming to the base profile</td></tr>
+<tr ALIGN="LEFT">
+<td>PROTO definition nesting depth</td>
+<td>5 levels.</td>
+<td>5 levels.</td></tr>
+<tr ALIGN="LEFT">
+<td>SFBool</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>SFColor</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>SFFloat</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>SFImage</td>
+<td>256 width. 256 height.</td>
+<td>256 width. 256 height.</td></tr>
+<tr ALIGN="LEFT">
+<td>SFInt32</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>SFNode</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>SFRotation</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>SFString</td>
+<td>30,000 utf8 octets.</td>
+<td>30,000 utf8 octets.</td></tr>
+<tr ALIGN="LEFT">
+<td>SFTime</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>SFVec2f</td>
+<td>15,000 values.</td>
+<td>15,000 values.</td></tr>
+<tr ALIGN="LEFT">
+<td>SFVec3f</td>
+<td>15,000 values.</td>
+<td>15,000 values.</td></tr>
+<tr ALIGN="LEFT">
+<td>MFColor</td>
+<td>15,000 values.</td>
+<td>15,000 values.</td></tr>
+<tr ALIGN="LEFT">
+<td>MFFloat</td>
+<td>1,000 values.</td>
+<td>1,000 values.</td></tr>
+<tr ALIGN="LEFT">
+<td>MFInt32</td>
+<td>20,000 values.</td>
+<td>20,000 values.</td></tr>
+<tr ALIGN="LEFT">
+<td>MFNode</td>
+<td>500 values.</td>
+<td>500 values.</td></tr>
+<tr ALIGN="LEFT">
+<td>MFRotation</td>
+<td>1,000 values.</td>
+<td>1,000 values.</td></tr>
+<tr ALIGN="LEFT">
+<td>MFString</td>
+<td>30,000 utf8 octets per string, 10 strings.</td>
+<td>30,000 utf8 octets per string, 10 strings.</td></tr>
+<tr ALIGN="LEFT">
+<td>MFTime</td>
+<td>1,000 values.</td>
+<td>1,000 values.</td></tr>
+<tr ALIGN="LEFT">
+<td>MFVec2f</td>
+<td>15,000 values.</td>
+<td>15,000 values.</td></tr>
+<tr ALIGN="LEFT">
+<td>MFVec3f</td>
+<td>15,000 values.</td>
+<td>15,000 values.</td></tr>
+<tr ALIGN="LEFT">
+<td>Anchor</td>
+<td>No restrictions.</td>
+<td>Ignore <i>parameter</i>. Ignore <i>description.</i></td></tr>
+<tr ALIGN="LEFT">
+<td>Appearance</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>AudioClip</td>
+<td>30 second uncompressed PCM WAV.</td>
+<td>30 second uncompressed PCM WAV. Ignore <i>description</i>.</td></tr>
+<tr ALIGN="LEFT">
+<td>Background</td>
+<td>No restrictions.</td>
+<td>One <i>skyColor</i>, one <i>groundColor</i>, panorama images as per ImageTexture.</td></tr>
+<tr ALIGN="LEFT">
+<td>Billboard</td>
+<td>Restrictions as for all groups.</td>
+<td>Full support except as for all groups.</td></tr>
+<tr ALIGN="LEFT">
+<td>Box</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>Collision</td>
+<td>Restrictions as for all groups.</td>
+<td>Full support except as for all groups. Any navigation behaviour acceptable
+when collision occurs.</td></tr>
+<tr ALIGN="LEFT">
+<td>Color</td>
+<td>15,000 colours.</td>
+<td>15,000 colours.</td></tr>
+<tr ALIGN="LEFT">
+<td>ColorInterpolator</td>
+<td>Restrictions as for all interpolators.</td>
+<td>Full support except as for all interpolators.</td></tr>
+<tr ALIGN="LEFT">
+<td>Cone</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>Coordinate</td>
+<td>15,000 points.</td>
+<td>15,000 points.</td></tr>
+<tr ALIGN="LEFT">
+<td>CoordinateInterpolator</td>
+<td>15,000 coordinates per <i>keyValue</i>. Restrictions as for all interpolators.</td>
+<td>15,000 coordinates per <i>keyValue</i>. Support as for all interpolators.</td></tr>
+<tr ALIGN="LEFT">
+<td>Cylinder</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>CylinderSensor</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>DirectionalLight</td>
+<td>No restrictions.</td>
+<td>Not scoped by parent Group or Transform.</td></tr>
+<tr ALIGN="LEFT">
+<td>ElevationGrid</td>
+<td>16,000 heights.</td>
+<td>16,000 heights.</td></tr>
+<tr ALIGN="LEFT">
+<td>Extrusion</td>
+<td>(#<i>crossSection</i> points)*(#<i>spine</i> points) &lt;= 2,500.</td>
+<td>(#<i>crossSection</i> points)*(#<i>spine</i> points) &lt;= 2,500.</td></tr>
+<tr ALIGN="LEFT">
+<td>Fog</td>
+<td>No restrictions.</td>
+<td>&quot;EXPONENTIAL&quot; treated as &quot;LINEAR&quot;</td></tr>
+<tr ALIGN="LEFT">
+<td>FontStyle</td>
+<td>No restrictions.</td>
+<td>If the values of the text aspects character set, <i>family</i>, <i>style</i>
+cannot be simultaneously supported, the order of precedence shall be: 1)
+character set 2) <i>family</i> 3) <i>style</i>. Browser must display all
+characters in ISO 8859-1 character set <a HREF="references.html#[I8859]">2.[I8859]</a>.</td></tr>
+<tr ALIGN="LEFT">
+<td>Group</td>
+<td>Restrictions as for all groups.</td>
+<td>Full support except as for all groups.</td></tr>
+<tr ALIGN="LEFT">
+<td>ImageTexture</td>
+<td>JPEG and PNG format. Restrictions as for PixelTexture.</td>
+<td>JPEG and PNG format. Support as for PixelTexture.</td></tr>
+<tr ALIGN="LEFT">
+<td>IndexedFaceSet</td>
+<td>10 vertices per face. 5000 faces. Less than 15,000 indices.</td>
+<td>10 vertices per face. 5000 faces. 15,000 indices in any index field.</td></tr>
+<tr ALIGN="LEFT">
+<td>IndexedLineSet</td>
+<td>15,000 total vertices. 15,000 indices in any index field.</td>
+<td>15,000 total vertices. 15,000 indices in any index field.</td></tr>
+<tr ALIGN="LEFT">
+<td>Inline</td>
+<td>No restrictions.</td>
+<td>Full support except as for all groups.<br>
+<i>url</i> references VRML files conforming to the base profile</td></tr>
+<tr ALIGN="LEFT">
+<td>LOD</td>
+<td>Restrictions as for all groups.</td>
+<td>At least first 4 <i>level</i>/<i>range</i> combinations interpreted, and
+support as for all groups. Implementations may disregard <i>level</i> distances.</td></tr>
+<tr ALIGN="LEFT">
+<td>Material</td>
+<td>No restrictions.</td>
+<td>Ignore ambient intensity. Ignore specular colour. Ignore emissive colour.
+One-bit transparency; transparency values &gt;= 0.5 transparent.</td></tr>
+<tr ALIGN="LEFT">
+<td>MovieTexture</td>
+<td>MPEG1-Systems and MPEG1-Video formats.</td>
+<td>MPEG1-Systems and MPEG1-Video formats. Display one active movie texture.
+Ignore <i>speed</i> field.</td></tr>
+<tr ALIGN="LEFT">
+<td>NavigationInfo</td>
+<td>No restrictions.</td>
+<td>Ignore <i>avatarSize</i>. Ignore <i>visibilityLimit</i>.</td></tr>
+<tr ALIGN="LEFT">
+<td>Normal</td>
+<td>15,000 normals</td>
+<td>15,000 normals</td></tr>
+<tr ALIGN="LEFT">
+<td>NormalInterpolator</td>
+<td>15,000 normals per <i>keyValue</i>. Restrictions as for all interpolators.</td>
+<td>15,000 normals per <i>keyValue</i>. Support as for all interpolators.</td></tr>
+<tr ALIGN="LEFT">
+<td>OrientationInterpolator</td>
+<td>Restrictions as for all interpolators.</td>
+<td>Full support except as for all interpolators.</td></tr>
+<tr ALIGN="LEFT">
+<td>PixelTexture</td>
+<td>256 width. 256 height.</td>
+<td>256 width. 256 height. Display fully transparent and fully opaque pixels.</td></tr>
+<tr ALIGN="LEFT">
+<td>PlaneSensor</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>PointLight</td>
+<td>No restrictions.</td>
+<td>Ignore <i>radius</i>. Linear attenuation.</td></tr>
+<tr ALIGN="LEFT">
+<td>PointSet</td>
+<td>5000 points.</td>
+<td>5000 points.</td></tr>
+<tr ALIGN="LEFT">
+<td>PositionInterpolator</td>
+<td>Restrictions as for all interpolators.</td>
+<td>Full support except as for all interpolators.</td></tr>
+<tr ALIGN="LEFT">
+<td>ProximitySensor</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>ScalarInterpolator</td>
+<td>Restrictions as for all interpolators.</td>
+<td>Full support except as for all interpolators.</td></tr>
+<tr ALIGN="LEFT">
+<td>Script</td>
+<td>25 eventIns. 25 eventOuts. 25 fields.</td>
+<td>25 eventIns. 25 eventOuts. 25 fields.<br>
+No scripting language support required.</td></tr>
+<tr ALIGN="LEFT">
+<td>Shape</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>Sound</td>
+<td>No restrictions.</td>
+<td>2 active sounds. Linear distance attenuation. No spatialization. See 7.3.4.</td></tr>
+<tr ALIGN="LEFT">
+<td>Sphere</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>SphereSensor</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>SpotLight</td>
+<td>No restriction</td>
+<td>Ignore <i>beamWidth</i>. Ignore <i>radius</i>. Linear attenuation.</td></tr>
+<tr ALIGN="LEFT">
+<td>Switch</td>
+<td>Restrictions as for all groups.</td>
+<td>Full support except as for all groups.</td></tr>
+<tr ALIGN="LEFT">
+<td>Text</td>
+<td>100 characters per string. 100 strings.</td>
+<td>100 characters per string. 100 strings.</td></tr>
+<tr ALIGN="LEFT">
+<td>TextureCoordinate</td>
+<td>15,000 coordinates.</td>
+<td>15,000 coordinates.</td></tr>
+<tr ALIGN="LEFT">
+<td>TextureTransform</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>TimeSensor</td>
+<td>No restrictions.</td>
+<td>Ignored if <i>cycleInterval</i> &lt; 0.01 second.</td></tr>
+<tr ALIGN="LEFT">
+<td>TouchSensor</td>
+<td>No restrictions.</td>
+<td>Full support.</td></tr>
+<tr ALIGN="LEFT">
+<td>Transform</td>
+<td>Restrictions as for all groups.</td>
+<td>Full support except as for all groups.</td></tr>
+<tr ALIGN="LEFT">
+<td>Viewpoint</td>
+<td>No restrictions.</td>
+<td>Ignore <i>fieldOfView</i>. Ignore <i>description</i>.</td></tr>
+<tr ALIGN="LEFT">
+<td>VisibilitySensor</td>
+<td>No restrictions.</td>
+<td>Always visible.</td></tr>
+<tr ALIGN="LEFT">
+<td>WorldInfo</td>
+<td>No restrictions.</td>
+<td>Ignored.</td></tr>
+</table>
+</p>
+
+<h3><a NAME="7.3.4"></a>7.3.4 Sound priority, attenuation, and spatialization</h3>
+
+<h4>7.3.4.1 Sound priority</h4>
+
+<p>If the browser does not have the resources to play all of the currently
+active sounds, it is recommended that the browser sort the active sounds
+into an ordered list using the following sort keys in the order specified:</p>
+
+<p><!--NOEDIT--><ol START="1" TYPE="a">
+  <li>decreasing <i>priority;</i>
+  <li>for sounds with <i>priority</i> &gt; 0.5, increasing (now-<i>startTime</i>);
+  <li>decreasing <i>intensity</i> at viewer location (<i>intensity</i> ×
+  intensity attenuation);
+</ol><!--/NOEDIT--></p>
+
+<p>where <i>priority </i>is the <i>priority</i> field of the Sound node,
+now represents the current time, <i>startTime</i> is the <i>startTime</i>
+field of the audio source node specified in the <i>source</i> field, and
+intensity attenuation refers to the intensity multiplier derived from the
+linear decibel attenuation ramp between inner and outer ellipsoids.</p>
+
+<p>It is important that sort key 2 be used for the high priority (event
+and cue) sounds so that new cues will be heard even when the browser is
+&quot;full&quot; of currently active high priority sounds. Sort key 2 should
+not be used for normal priority sounds, so selection among them will be
+based on sort key 3 (intensity at the location of the viewer).</p>
+
+<p>The browser shall play as many sounds from the beginning of this sorted
+list as it can given available resources and allowable latency between rendering.
+On most systems, the resources available for MIDI streams are different
+from those for playing sampled sounds, thus it may be beneficial to maintain
+a separate list to handle MIDI data.</p>
+
+<h4>7.3.4.2 Sound attenuation and spatialization</h4>
+
+<p>In order to create a linear decrease in loudness as the viewer moves
+from the inner to the outer ellipsoid of the sound, the attenuation must
+be based on a linear decibel ramp. To make the falloff consistent across
+browsers, the decibel ramp is to vary from 0 dB at the minimum ellipsoid
+to -20 dB at the outer ellipsoid. Sound nodes with an outer ellipsoid that
+is ten times larger than the minimum will display the inverse square intensity
+dropoff that approximates sound attenuation in an anechoic environment.</p>
+
+<p>Browsers may support spatial localization of sounds whose <i>spatialize</i>
+field is TRUE as well as their underlying sound libraries will allow. Browsers
+shall at least support stereo panning of non-MIDI sounds based on the angle
+between the viewer and the source. This angle is obtained by projecting
+the Sound <i>location</i> (in global space) onto the XZ plane of the viewer.
+Determine the angle between the Z-axis and the vector from the viewer to
+the transformed <i>location</i>, and assign a pan value in the range [0.0,
+1.0] as depicted in <a HREF="conformance.html#Figure7.1">Figure 7.1</a>. Given this pan
+value, left and right channel levels can be obtained using the following
+equations:</p>
+
+<pre>
+    leftPanFactor  = 1 - pan<sup>2</sup>
+
+    rightPanFactor = 1 - (1 - pan)<sup>2</sup></pre>
+
+<p><center><a NAME="Figure7.1"></a><img SRC="../Images/Sound2.gif" WIDTH="394" HEIGHT="288" NATURALSIZEFLAG="3" ALIGN="BOTTOM"></center></p>
+
+<h4><center>Figure 7.1: Stereo Panning</center></h4>
+
+<p>Using this technique, the loudness of the sound is modified by the <i>intensity</i>
+field value, then distance attenuation to obtain the unspatialized audio
+output. The values in the unspatialized audio output are then scaled by
+leftPanFactor and rightPanFactor to determine the final left and right output
+signals. The use of more sophisticated localization techniques is encouraged,
+but not required (see <a HREF="bibliography.html#[SNDB]">E.[SNDB]</a>).</p>
+
+<p><img SRC="../Images/vrmlbar.gif" WIDTH="470" HEIGHT="25" NATURALSIZEFLAG="0" ALIGN="BOTTOM" ALT="--- VRML separator bar ---"><br>
+<font SIZE="-1"><a HREF="mailto:rikk@wasabisoft.com,gavin@wasabisoft.com,chris@marrin.com">Questions
+or comments.</a></font><br>
+<font SIZE="-1"><a HREF="../copyright.html">Copyright</a> &amp;COPY; 1997 The
+VRML Consortium Incorporated.<br>
+<tt>http://www.vrml.org/Specifications/VRML97/part1/conformance.html</tt></font>
+</body>
+</html>

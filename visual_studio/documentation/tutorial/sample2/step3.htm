@@ -1,0 +1,144 @@
+<html>
+
+<head>
+<title>Step 3</title>
+
+<meta name="Microsoft Theme" content="sumipntg 011"></head>
+
+<body background="../../../../_themes/sumipntg/sumtextb.jpg" bgcolor="#FFFFFF" text="#808080" link="#3333CC" vlink="#666699" alink="#990099"><!--mstheme--><font face="verdana, arial, helvetica">
+<font face="book antiqua">
+
+<!--mstheme--></font><table border="0" width="100%" height="97">
+  <tr>
+    <td width="12%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><img src="../../logo.gif" alt="[Logo]" border="0" start="fileopen" width="100" height="110"><!--mstheme--></font></td>
+    <td width="88%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><em><br>
+    <big><big><big>Great Hill Corporation</big></big></big></em><br>
+    <em>Step 3: Drawing Something</em><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="verdana, arial, helvetica"><a HREF="step2.htm">[Prev]</a> <a HREF="step4.htm">[Next]</a> <a HREF="../sample2.htm">[Tutorial2]</a><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+<!--commentbeg------------------------------------------>
+<!--commentbeg------------------------------------------>
+
+<p>In this step we will finally draw something -- a gray sphere.</p>
+
+<p>Make the changes marked in <font color="FF0000">red</font> below to the file <b>sample2.cpp</b>
+and recompile and run the program.</p>
+
+<p>You should see a gray sphere in the center of the formerly black window. This is your
+first image created with VRaniML&#153;...</p>
+
+<p>...but it's pretty boring. So <a href="step4.htm">next</a> we will create something a
+little more interesting.</p>
+
+<p><img SRC="../bar.jpg" width="100%" height="3" alt="bar.jpg (730 bytes)" start="fileopen"> </p>
+
+<!--mstheme--></font><pre>
+#include &quot;windows.h&quot;
+
+<font color="#8000FF">// This is all you need to include all VRaniML functionality in your app</font>
+<font color="FF0000">#include &quot;vraniml.h&quot;</font>
+
+LRESULT APIENTRY WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	switch (message)
+	{
+	case WM_DESTROY:
+		PostQuitMessage( 0 );
+		break;
+	}
+	
+	return DefWindowProc(hWnd, message, wParam, lParam);
+}
+
+HWND InitWindow(HINSTANCE hCurrentInst, char *className, char *windowName)
+{
+	WNDCLASS wndClass;
+	HWND hWnd;
+
+	/* register window class */
+	wndClass.style         = CS_HREDRAW | CS_VREDRAW;
+	wndClass.lpfnWndProc   = WindowProc;
+	wndClass.cbClsExtra    = 0;
+	wndClass.cbWndExtra    = 0;
+	wndClass.hInstance     = hCurrentInst;
+	wndClass.hIcon         = LoadIcon(NULL, IDI_APPLICATION);
+	wndClass.hCursor       = LoadCursor(NULL, IDC_ARROW);
+	wndClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
+	wndClass.lpszMenuName  = NULL;
+	wndClass.lpszClassName = className;
+	RegisterClass(&amp;wndClass);
+
+	/* create window */
+	hWnd = CreateWindow(className, 
+		windowName,
+		WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS,
+		0, 0, 640, 480,
+		NULL, NULL, hCurrentInst, NULL);
+
+
+	ShowWindow(hWnd, SW_SHOW);
+	UpdateWindow(hWnd);
+
+	return hWnd;
+}
+
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPreviousInst, LPSTR lpszCmdLine, int nCmdShow)
+{
+	HWND hWnd = InitWindow(hInstance, &quot;VRaniML&quot;, &quot;VRaniML Sample Program 2&quot;);
+
+	<font color="FF0000"><font color="#8000FF">// Create a browser -- the browser manages the scene graph and allows traversals</font>
+	vrBrowser *browser = new vrBrowser(hWnd);
+	
+	<font color="#8000FF">// Create a sphere</font>
+	vrSphere *sphere = new vrSphere;
+	
+	<font color="#8000FF">// Create a shape to hold the sphere</font>
+	vrShape *shape = new vrShape;
+	
+	<font color="#8000FF">// Add the sphere to the shape and the shape to the browser</font>
+	shape-&gt;SetGeometry(sphere);
+	browser-&gt;AddChild(shape);
+
+	<font color="#8000FF">// Traverse the scene graph displaying it in the window</font>
+	browser-&gt;Traverse();</font>
+
+	while (1)
+	{
+		MSG msg;
+		if (PeekMessage(&amp;msg, NULL, 0, 0, PM_NOREMOVE))
+		{
+			if (GetMessage(&amp;msg, NULL, 0, 0) != TRUE)
+			{
+				<font color="FF0000">
+				<font color="#8000FF">// cleanup -- the browser -- deletes the scene graph</font>
+				delete browser;</font>
+				return msg.wParam;
+			}
+
+			TranslateMessage(&amp;msg);
+			DispatchMessage(&amp;msg);
+		}
+	}
+
+	<font color="FF0000">
+	<font color="#8000FF">// cleanup -- the browser -- deletes the scene graph</font>
+	delete browser;</font>
+	return FALSE;
+}
+
+</pre><!--mstheme--><font face="verdana, arial, helvetica">
+<!--commentend------------------------------------------>
+<!--commentend------------------------------------------>
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+
+<h5><!--mstheme--><font color="#003366"><font COLOR="#660033">Send mail to <a HREF="mailto:webmaster@greathill.com">webmaster@greathill.com</a>
+with questions or comments about this web site.<br>
+Copyright © 1997 Great Hill Corporation<br>
+Last modified: December 17, 1997&nbsp;</font><!--mstheme--></font></h5>
+</font>
+<!--mstheme--></font></body>
+</html>

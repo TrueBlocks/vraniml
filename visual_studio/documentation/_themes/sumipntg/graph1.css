@@ -1,0 +1,97 @@
+<style>
+.mstheme
+{
+	nav-banner-image: url(sumbanna.gif);
+	separator-image: url(sumhorsa.gif);
+	list-image-1: url(sumbul1a.gif);
+	list-image-2: url(sumbul2a.gif);
+	list-image-3: url(sumbul3a.gif);
+
+
+	navbutton-horiz-normal: url(sumhbuda.gif);
+	navbutton-horiz-hovered: url(sumhbuha.gif);
+	navbutton-horiz-pushed: url(sumhbusa.gif);
+
+	navbutton-vert-normal: url(sumvbuda.gif);
+	navbutton-vert-pushed: url(sumvbusa.gif);
+	navbutton-vert-hovered: url(sumvbuha.gif);
+
+	navbutton-home-normal: url(sumhomda.gif);
+	navbutton-home-hovered: url(sumhomha.gif);
+	navbutton-home-pushed: url(sumhomsa.gif);
+
+	navbutton-next-normal: url(sumnexda.gif);
+	navbutton-next-hovered: url(sumnexha.gif);
+	navbutton-next-pushed: url(sumnexsa.gif);
+
+	navbutton-prev-normal: url(sumpreda.gif);
+	navbutton-prev-hovered: url(sumpreha.gif);
+	navbutton-prev-pushed: url(sumpresa.gif);
+
+	navbutton-up-normal: url(sumupda.gif);
+	navbutton-up-hovered: url(sumupha.gif);
+	navbutton-up-pushed: url(sumupsa.gif);
+
+}
+
+.mstheme-bannertxt
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(153, 51, 102);
+	text-align: center;
+	vertical-align: middle;
+}
+.mstheme-horiz-navtxt
+{
+	font-family: Arial, Helvetica;
+
+	color: rgb(102, 0, 102);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mstheme-vert-navtxt
+{
+	font-family: Arial, Helvetica;
+
+	color: rgb(102, 0, 102);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mstheme-navtxthome
+{
+	font-family: Arial, Helvetica;
+
+	color: rgb(102, 51, 153);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mstheme-navtxtnext
+{
+	font-family: Arial, Helvetica;
+
+	color: rgb(102, 51, 153);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mstheme-navtxtprev
+{
+	font-family: Arial, Helvetica;
+
+	color: rgb(102, 51, 153);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mstheme-navtxtup
+{
+	font-family: Arial, Helvetica;
+
+	color: rgb(102, 51, 153);
+	text-align: center;
+	vertical-align: middle;
+}
+</style>.

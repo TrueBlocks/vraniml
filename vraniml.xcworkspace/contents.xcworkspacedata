@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:src/utils"
+      name = "utils">
+      <FileRef
+         location = "group:basenode.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:basenode.h">
+      </FileRef>
+      <FileRef
+         location = "group:buildme.txt">
+      </FileRef>
+      <Group
+         location = "group:containers"
+         name = "containers">
+         <FileRef
+            location = "group:array.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:array.h">
+         </FileRef>
+         <FileRef
+            location = "group:intrusivelist.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:intrusivelist.h">
+         </FileRef>
+         <FileRef
+            location = "group:list.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:list.h">
+         </FileRef>
+         <FileRef
+            location = "group:mfstring.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:mfstring.h">
+         </FileRef>
+         <FileRef
+            location = "group:ringlist.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:ringlist.h">
+         </FileRef>
+         <FileRef
+            location = "group:sfstring.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:sfstring.h">
+         </FileRef>
+         <FileRef
+            location = "group:stack.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:stack.h">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Field.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:field.h">
+      </FileRef>
+      <FileRef
+         location = "group:fieldval.h">
+      </FileRef>
+      <Group
+         location = "group:geometry"
+         name = "geometry">
+         <FileRef
+            location = "group:boundingbox.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:boundingbox.h">
+         </FileRef>
+         <FileRef
+            location = "group:image.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:image.h">
+         </FileRef>
+         <FileRef
+            location = "group:matrix.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:matrix.h">
+         </FileRef>
+         <FileRef
+            location = "group:plane.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:plane.h">
+         </FileRef>
+         <FileRef
+            location = "group:ray.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:ray.h">
+         </FileRef>
+         <FileRef
+            location = "group:rect2d.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:rect2d.h">
+         </FileRef>
+         <FileRef
+            location = "group:rotation.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:rotation.h">
+         </FileRef>
+         <FileRef
+            location = "group:sfcolor.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:sfcolor.h">
+         </FileRef>
+         <FileRef
+            location = "group:vec2f.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:vec2f.h">
+         </FileRef>
+         <FileRef
+            location = "group:vec3f.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:vec3f.h">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:imglib"
+         name = "imglib">
+         <FileRef
+            location = "group:00README.TXT">
+         </FileRef>
+         <FileRef
+            location = "group:01MODIFY.TXT">
+         </FileRef>
+         <FileRef
+            location = "group:bitimage.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:bitimage.h">
+         </FileRef>
+         <FileRef
+            location = "group:bmp.h">
+         </FileRef>
+         <FileRef
+            location = "group:bmpdecod.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:bmpdecod.h">
+         </FileRef>
+         <FileRef
+            location = "group:bmpencod.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:bmpencod.h">
+         </FileRef>
+         <FileRef
+            location = "group:datatype.h">
+         </FileRef>
+         <FileRef
+            location = "group:decoders.h">
+         </FileRef>
+         <FileRef
+            location = "group:encoders.h">
+         </FileRef>
+         <FileRef
+            location = "group:grexcept.h">
+         </FileRef>
+         <FileRef
+            location = "group:imagetyp.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:imagetyp.h">
+         </FileRef>
+         <FileRef
+            location = "group:imglib.h">
+         </FileRef>
+         <FileRef
+            location = "group:jfif.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:jfif.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpdecobk.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpdecomp.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:jpdecomp.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpdedu.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:jpdedu.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpdehuff.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:jpdehuff.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpdequan.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:jpdequan.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpeg.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:jpeg.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpegdeco.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:jpegdeco.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpegenco.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:jpegenco.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpencobk.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpencomp.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:jpencomp.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpendu.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:jpendu.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpenhuff.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:jpenhuff.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpenquan.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:jpenquan.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpgexcep.h">
+         </FileRef>
+         <FileRef
+            location = "group:jpmarker.h">
+         </FileRef>
+         <FileRef
+            location = "group:png.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:png.h">
+         </FileRef>
+         <FileRef
+            location = "group:pngchksm.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:pngchksm.h">
+         </FileRef>
+         <FileRef
+            location = "group:pngdecod.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:pngdecod.h">
+         </FileRef>
+         <FileRef
+            location = "group:pngencod.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:pngencod.h">
+         </FileRef>
+         <FileRef
+            location = "group:pnghuffd.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:pnghuffd.h">
+         </FileRef>
+         <FileRef
+            location = "group:pnghuffe.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:pnghuffe.h">
+         </FileRef>
+         <FileRef
+            location = "group:pngpvt.h">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:license.txt">
+      </FileRef>
+      <FileRef
+         location = "group:readme.txt">
+      </FileRef>
+      <FileRef
+         location = "group:runtimeclass.cpp">
+      </FileRef>
+      <FileRef
+         location = "group:runtimeclass.h">
+      </FileRef>
+      <FileRef
+         location = "group:utility.h">
+      </FileRef>
+      <Group
+         location = "group:utils"
+         name = "utils">
+         <FileRef
+            location = "group:dump.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:dump.h">
+         </FileRef>
+         <FileRef
+            location = "group:imageutils.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:imageutils.h">
+         </FileRef>
+         <FileRef
+            location = "group:soundutils.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:soundutils.h">
+         </FileRef>
+         <FileRef
+            location = "group:timeutils.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:timeutils.h">
+         </FileRef>
+         <FileRef
+            location = "group:version.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:version.h">
+         </FileRef>
+         <FileRef
+            location = "group:webutils.cpp">
+         </FileRef>
+         <FileRef
+            location = "group:webutils.h">
+         </FileRef>
+      </Group>
+   </Group>
+</Workspace>

@@ -1,0 +1,605 @@
+<html><head><title>vrSolid Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrSolid</a></h1>
+<dl>
+<dd>	geometry data.  It also serves as the basis for support for
+	advanced algorithms.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrsolid.htm#aag">Summary</a> | </a>
+<a href="vrsolid.htm#DESCRIPTION">Description</a> | 
+<a href="vrsolid.htm#NOTES">Notes</a> | 
+<a href="vrsolid.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrsolid.htm#MEMBERS">Members</a> | 
+<a href="vrsolid.htm#parents">Ancestors</a> | <a href="vrsolid.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrSolid : public <a href="vrBaseNode.htm">vrBaseNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">vrFaceList </td><td><a href="vrSolid.htm#vrFaceList_faces$">faces</a>;</td></tr>
+<tr><td align="right" valign="top">vrEdgeList </td><td><a href="vrSolid.htm#vrEdgeList_edges$">edges</a>;</td></tr>
+<tr><td align="right" valign="top">vrVertexList </td><td><a href="vrSolid.htm#vrVertexList_verts$">verts</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSolid.htm#SFBool_m_SolidColor$">m_SolidColor</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrSolid.htm#vrSolid(void)$">vrSolid</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrSolid.htm#vrSolid(const_vrSolid&amp;_s)$">vrSolid</a>(const vrSolid&amp; s);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrSolid.htm#~vrSolid(void)$">vrSolid</a>(void);</td></tr>
+<tr><td align="right" valign="top">vrSolid&amp; </td><td><a href="vrSolid.htm#vrSolid&amp;_operator$(const_vrSolid&amp;_s)$">operator=</a>(const vrSolid&amp; s);</td></tr>
+<tr><td align="right" valign="top"><a href="vrBaseNode.htm">vrBaseNode</a> *</td><td><a href="vrSolid.htm#vrBaseNode_*Clone(void)_const$">Clone</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrSolid.htm#vrSolid(SFFloat_x,_SFFloat_y,_SFFloat_z)$">vrSolid</a>(SFFloat x, SFFloat y, SFFloat z);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrSolid.htm#vrSolid(const_SFVec3f&amp;_v)$">vrSolid</a>(const <a href="SFVec3f.htm">SFVec3f</a>&amp; v);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_SetMark(Uint32_mark)$">SetMark</a>(Uint32 mark);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSolid.htm#SFBool_Marked(Uint32_mark)_const$">Marked</a>(Uint32 mark) const;</td></tr>
+<tr><td align="right" valign="top">Uint32 </td><td><a href="vrSolid.htm#Uint32_GetMark(void)_const$">GetMark</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_SetFaceMarks(Uint32_mark)$">SetFaceMarks</a>(Uint32 mark);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_SetVertexMarks(Uint32_mark)$">SetVertexMarks</a>(Uint32 mark);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSolid.htm#SFBool_isWire(void)_const$">isWire</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSolid.htm#SFBool_isLamina(void)_const$">isLamina</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrFace.htm">vrFace</a> *</td><td><a href="vrSolid.htm#vrFace_*findFace(Uint32_faceID)_const$">findFace</a>(Uint32 faceID) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrVertex.htm">vrVertex</a> *</td><td><a href="vrSolid.htm#vrVertex_*findVertex(Uint32_vertexID)_const$">findVertex</a>(Uint32 vertexID) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrEdge.htm">vrEdge</a> *</td><td><a href="vrSolid.htm#vrEdge_*findEdge(Uint32_edgeID)_const$">findEdge</a>(Uint32 edgeID) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrHalfEdge.htm">vrHalfEdge</a> *</td><td><a href="vrSolid.htm#vrHalfEdge_*findHalfEdge(vrFace_*f,_Uint32_v1,_Uint32_v2)_const$">findHalfEdge</a>(<a href="vrFace.htm">vrFace</a> *f, Uint32 v1, Uint32 v2) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrHalfEdge.htm">vrHalfEdge</a> *</td><td><a href="vrSolid.htm#vrHalfEdge_*findHalfEdge(vrFace_*f,_Uint32_v1)_const$">findHalfEdge</a>(<a href="vrFace.htm">vrFace</a> *f, Uint32 v1) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrSolid.htm#SFVec3f_Extents(SFVec3f&amp;_minn,_SFVec3f&amp;_maxx)_const$">Extents</a>(<a href="SFVec3f.htm">SFVec3f</a>&amp; minn, <a href="SFVec3f.htm">SFVec3f</a>&amp; maxx) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSolid.htm#SFFloat_Volume(void)_const$">Volume</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSolid.htm#SFFloat_Area(void)_const$">Area</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrSolid.htm#SFVec3f_Stats(Uint32&amp;_nVerts,_Uint32&amp;_nEdges,_Uint32&amp;_nFaces,_Uint32&amp;_nLoops,_Uint32&amp;_nHalfEdges)_const$">Stats</a>(Uint32&amp; nVerts, Uint32&amp; nEdges, Uint32&amp; nFaces, Uint32&amp; nLoops, Uint32&amp; nHalfEdges) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSolid.htm#SFBool_Contains(vrSolid_*B)_const$">Contains</a>(vrSolid *B) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_AddFace(vrFace_*f)$">AddFace</a>(<a href="vrFace.htm">vrFace</a> *f);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_AddEdge(vrEdge_*e)$">AddEdge</a>(<a href="vrEdge.htm">vrEdge</a> *e);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_AddVertex(vrVertex_*v)$">AddVertex</a>(<a href="vrVertex.htm">vrVertex</a> *v);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_BuildFromIndexSet(const_vrVertexArray&amp;_verticies,_const_MFInt32&amp;_indicies)$">BuildFromIndexSet</a>(const vrVertexArray&amp; verticies, const MFInt32&amp; indicies);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_CalcPlaneEquations(void)$">CalcPlaneEquations</a>(void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_MarkCreases(SFFloat_crease)$">MarkCreases</a>(SFFloat crease);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_Triangulate(void)$">Triangulate</a>(void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_Merge(vrSolid_*s2)$">Merge</a>(vrSolid *s2);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_TransformGeometry(const_vrMatrix&amp;_m)$">TransformGeometry</a>(const <a href="vrMatrix.htm">vrMatrix</a>&amp; m);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_TransformGeometry(SFFloat_x,_SFFloat_y,_SFFloat_z)$">TransformGeometry</a>(SFFloat x, SFFloat y, SFFloat z);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_Arc(Uint32_f,_Uint32_v,_SFFloat_cx,_SFFloat_cy,_SFFloat_rad,_SFFloat_h,_SFFloat_phi1,_SFFloat_ph2,_Uint32_n)$">Arc</a>(Uint32 f, Uint32 v, SFFloat cx, SFFloat cy, SFFloat rad, SFFloat h, SFFloat phi1, SFFloat ph2, Uint32 n);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_ArcSweep(vrFace_*f,_Uint32_n,_const_SFVec3f_v[])$">ArcSweep</a>(<a href="vrFace.htm">vrFace</a> *f, Uint32 n, const <a href="SFVec3f.htm">SFVec3f</a> v[]);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_TranslationalSweep(vrFace_*f,_const_SFVec3f&amp;_v)$">TranslationalSweep</a>(<a href="vrFace.htm">vrFace</a> *f, const <a href="SFVec3f.htm">SFVec3f</a>&amp; v);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_RotationalSweep(Uint32_nFaces)$">RotationalSweep</a>(Uint32 nFaces);</td></tr>
+<tr><td align="right" valign="top"><a href="vrFace.htm">vrFace</a> *</td><td><a href="vrSolid.htm#vrFace_*SweepWire(Uint32_nFaces)$">SweepWire</a>(Uint32 nFaces);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_Twist(PFF_func)$">Twist</a>(PFF func);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_CollapseFace(vrFace_*f)$">CollapseFace</a>(<a href="vrFace.htm">vrFace</a> *f);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_RemoveCoplaneColine(void)$">RemoveCoplaneColine</a>(void);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSolid.htm#SFBool_Split(const_vrPlane&amp;_SP,_vrSolid_**Above,_vrSolid_**Below)$">Split</a>(const <a href="vrPlane.htm">vrPlane</a>&amp; SP, vrSolid **Above, vrSolid **Below);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSolid.htm#SFBool_BoolOp(vrSolid_*A,_vrSolid_*B,_vrSolid_**result,_SFInt32_op,_void_*statRec)$">BoolOp</a>(vrSolid *A, vrSolid *B, vrSolid **result, SFInt32 op, void *statRec);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSolid.htm#SFBool_Union(vrSolid_*B,_vrSolid_**result,_void_*statRec_)$">Union</a>(vrSolid *B, vrSolid **result, void *statRec );</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSolid.htm#SFBool_Intersection(vrSolid_*B,_vrSolid_**result,_void_*statRec_)$">Intersection</a>(vrSolid *B, vrSolid **result, void *statRec );</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSolid.htm#SFBool_Difference(vrSolid_*B,_vrSolid_**result,_void_*statRec_)$">Difference</a>(vrSolid *B, vrSolid **result, void *statRec );</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_Cleanup(void)$">Cleanup</a>(void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_Renumber(void)$">Renumber</a>(void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_Revert(void)$">Revert</a>(void);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSolid.htm#SFBool_Write(FILE_*fp,_SFBool_forward_)_const$">Write</a>(FILE *fp, SFBool forward ) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSolid.htm#void_SetColor(const_SFColor&amp;_color)$">SetColor</a>(const <a href="SFColor.htm">SFColor</a>&amp; color);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	The vrSolid class implements 'solid modeling' using a data structures
+	called the half edge.  The half edge data structure is described
+	in the 3D liturature.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>None.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="vrFaceList_faces$"><ul><h3><li>vrFaceList faces;</li></h3></a>
+</ul>
+</ul>	  <dd>The list of faces making up this solid.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> empty</strong>
+<p>
+</dl></dl>
+<a name="vrEdgeList_edges$"><ul><h3><li>vrEdgeList edges;</li></h3></a>
+</ul>
+</ul>	  <dd>The list of edges making up this solid.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> empty</strong>
+<p>
+</dl></dl>
+<a name="vrVertexList_verts$"><ul><h3><li>vrVertexList verts;</li></h3></a>
+</ul>
+</ul>	  <dd>The list of verticies making up this solid.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> empty</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_SolidColor$"><ul><h3><li>SFBool m_SolidColor;</li></h3></a>
+</ul>
+</ul>	  <dd>The default color of this solid (if not found per vertex or per face).
+<p>
+<dl><dl>
+<dt><i>default</i><strong> vrBlack</strong>
+<p>
+</dl></dl>
+<a name="vrSolid(void)$"><ul><h3><li>vrSolid(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrSolid(const_vrSolid&amp;_s)$"><ul><h3><li>vrSolid(const vrSolid&amp; s);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> s:</strong>
+<dd>The solid to copy.
+<p>
+</dl></dl>
+<a name="~vrSolid(void)$"><ul><h3><li>~vrSolid(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrSolid&amp;_operator$(const_vrSolid&amp;_s)$"><ul><h3><li>vrSolid&amp; operator=(const vrSolid&amp; s);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> s:</strong>
+<dd>The solid to copy.
+<p>
+</dl></dl>
+<a name="vrBaseNode_*Clone(void)_const$"><ul><h3><li>vrBaseNode *Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Creates a clone of this solid.
+<p>
+<a name="vrSolid(SFFloat_x,_SFFloat_y,_SFFloat_z)$"><ul><h3><li>vrSolid(SFFloat x, SFFloat y, SFFloat z);</li></h3></a>
+</ul>
+</ul>	   <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> x,</strong>
+<dd>y, z: Initial location of first vertex of the new solid.
+<p>
+</dl></dl>
+<a name="vrSolid(const_SFVec3f&amp;_v)$"><ul><h3><li>vrSolid(const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>Initial location of first vertex of the new solid.
+<p>
+</dl></dl>
+<a name="void_SetMark(Uint32_mark)$"><ul><h3><li>void SetMark(Uint32 mark);</li></h3></a>
+</ul>
+</ul>	   <dd>Change the mark of this solid.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> mark:</strong>
+<dd>the new mark.
+<p>
+</dl></dl>
+<a name="SFBool_Marked(Uint32_mark)_const$"><ul><h3><li>SFBool Marked(Uint32 mark) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if this solid is marked with 'mark'.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> mark:</strong>
+<dd>the test mark.
+<p>
+</dl></dl>
+<a name="Uint32_GetMark(void)_const$"><ul><h3><li>Uint32 GetMark(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns the current mark of this solid.
+<p>
+<a name="void_SetFaceMarks(Uint32_mark)$"><ul><h3><li>void SetFaceMarks(Uint32 mark);</li></h3></a>
+</ul>
+</ul>	   <dd>Set's the mark of each face in this solid with 'mark'.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> mark:</strong>
+<dd>the mark.
+<p>
+</dl></dl>
+<a name="void_SetVertexMarks(Uint32_mark)$"><ul><h3><li>void SetVertexMarks(Uint32 mark);</li></h3></a>
+</ul>
+</ul>	   <dd>Set's the mark of each vertex in this solid with 'mark'.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> mark:</strong>
+<dd>the mark.
+<p>
+</dl></dl>
+<a name="SFBool_isWire(void)_const$"><ul><h3><li>SFBool isWire(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if this solid is a Wire (i.e. like a loosened hanger for example).
+<p>
+<a name="SFBool_isLamina(void)_const$"><ul><h3><li>SFBool isLamina(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if this solid is a Lamina (i.e. has no volume - like a flattened basketball).
+<p>
+<a name="vrFace_*findFace(Uint32_faceID)_const$"><ul><h3><li>vrFace *findFace(Uint32 faceID) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns a pointer to the face with the given ID or NULL.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> faceID:</strong>
+<dd>The face to find.
+<p>
+</dl></dl>
+<a name="vrVertex_*findVertex(Uint32_vertexID)_const$"><ul><h3><li>vrVertex *findVertex(Uint32 vertexID) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns a pointer to the vertex with the given ID or NULL.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> vertexID:</strong>
+<dd>The vertex to find.
+<p>
+</dl></dl>
+<a name="vrEdge_*findEdge(Uint32_edgeID)_const$"><ul><h3><li>vrEdge *findEdge(Uint32 edgeID) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns a pointer to the edge with the given ID or NULL.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> edgeID:</strong>
+<dd>The edge to find.
+<p>
+</dl></dl>
+<a name="vrHalfEdge_*findHalfEdge(vrFace_*f,_Uint32_v1,_Uint32_v2)_const$"><ul><h3><li>vrHalfEdge *findHalfEdge(vrFace *f, Uint32 v1, Uint32 v2) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns a pointer to the half edge in the given face that connects vertex 'v1' and vertex 'v2' or NULL.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>The face to search.
+<dt><i>in</i><strong> v1:</strong>
+<dd>The vertex from which the half edge eminates.
+<dt><i>in</i><strong> v2:</strong>
+<dd>The vertex to which the half edge goes.
+<p>
+</dl></dl>
+<a name="vrHalfEdge_*findHalfEdge(vrFace_*f,_Uint32_v1)_const$"><ul><h3><li>vrHalfEdge *findHalfEdge(vrFace *f, Uint32 v1) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns a pointer to the half edge in the given face that starts at vertex 'v1' or NULL.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>The face to search.
+<dt><i>in</i><strong> v1:</strong>
+<dd>The vertex from which the half edge eminates.
+<p>
+</dl></dl>
+<a name="SFVec3f_Extents(SFVec3f&amp;_minn,_SFVec3f&amp;_maxx)_const$"><ul><h3><li>SFVec3f Extents(SFVec3f&amp; minn, SFVec3f&amp; maxx) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the maximum and minimum extents of the solid.
+<p>
+<dl><dl>
+<dt><i>out</i><strong> minn:</strong>
+<dd>The smallest x,y,z components in this solid.
+<dt><i>out</i><strong> maxx:</strong>
+<dd>The largest x,y,z components in this solid.
+<p>
+</dl></dl>
+<a name="SFFloat_Volume(void)_const$"><ul><h3><li>SFFloat Volume(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the volume enclosed by the solid.
+<p>
+<a name="SFFloat_Area(void)_const$"><ul><h3><li>SFFloat Area(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the surface area of the solid.
+<p>
+<a name="SFVec3f_Stats(Uint32&amp;_nVerts,_Uint32&amp;_nEdges,_Uint32&amp;_nFaces,_Uint32&amp;_nLoops,_Uint32&amp;_nHalfEdges)_const$"><ul><h3><li>SFVec3f Stats(Uint32&amp; nVerts, Uint32&amp; nEdges, Uint32&amp; nFaces, Uint32&amp; nLoops, Uint32&amp; nHalfEdges) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return statistics about the solid.
+<p>
+<dl><dl>
+<dt><i>out</i><strong> nVerts:</strong>
+<dd>The number of verticies in this solid.
+<dt><i>out</i><strong> nEdges:</strong>
+<dd>The number of edges in this solid.
+<dt><i>out</i><strong> nFaces:</strong>
+<dd>The number of faces in this solid.
+<dt><i>out</i><strong> nLoops:</strong>
+<dd>The number of loops in this solid.
+<dt><i>out</i><strong> nHalfEdges:</strong>
+<dd>The number of half edges in this solid.
+<p>
+</dl></dl>
+<a name="SFBool_Contains(vrSolid_*B)_const$"><ul><h3><li>SFBool Contains(vrSolid *B) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return TRUE if this solid completly contains (or is equal to) solid 'B'.
+<p>
+<a name="void_AddFace(vrFace_*f)$"><ul><h3><li>void AddFace(vrFace *f);</li></h3></a>
+</ul>
+</ul>	   <dd>Add a face to this solid.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>The face to add.
+<p>
+</dl></dl>
+<a name="void_AddEdge(vrEdge_*e)$"><ul><h3><li>void AddEdge(vrEdge *e);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an edge to this solid.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> e:</strong>
+<dd>The edge to add.
+<p>
+</dl></dl>
+<a name="void_AddVertex(vrVertex_*v)$"><ul><h3><li>void AddVertex(vrVertex *v);</li></h3></a>
+</ul>
+</ul>	   <dd>Add a vertex to this solid.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The vertex to add.
+<p>
+</dl></dl>
+<a name="void_BuildFromIndexSet(const_vrVertexArray&amp;_verticies,_const_MFInt32&amp;_indicies)$"><ul><h3><li>void BuildFromIndexSet(const vrVertexArray&amp; verticies, const MFInt32&amp; indicies);</li></h3></a>
+</ul>
+</ul>	   <dd>Create a solid from a list of verticies and indicies (such as one might get from a VRML IndexedFaceSet).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> verticies:</strong>
+<dd>A list of verticies.
+<dt><i>in</i><strong> indicies:</strong>
+<dd>Indicies into the list of verticies defining the faces of the solid.
+<p>
+</dl></dl>
+<a name="void_CalcPlaneEquations(void)$"><ul><h3><li>void CalcPlaneEquations(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Calculate the plane equations for all faces in this solid.
+<p>
+<a name="void_MarkCreases(SFFloat_crease)$"><ul><h3><li>void MarkCreases(SFFloat crease);</li></h3></a>
+</ul>
+</ul>	   <dd>Mark edges where neighboring faces form an angle greater than or equal to 'crease'.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> crease:</strong>
+<dd>The angle above which a crease in the model is found.
+<p>
+</dl></dl>
+<a name="void_Triangulate(void)$"><ul><h3><li>void Triangulate(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Triangulate the faces of the solid.
+<p>
+<a name="void_Merge(vrSolid_*s2)$"><ul><h3><li>void Merge(vrSolid *s2);</li></h3></a>
+</ul>
+</ul>	   <dd>Merge two solids into one (copying 's2', which should be deleted when not in use).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> s2:</strong>
+<dd>The solid to merge into this solid.
+<p>
+</dl></dl>
+<a name="void_TransformGeometry(const_vrMatrix&amp;_m)$"><ul><h3><li>void TransformGeometry(const vrMatrix&amp; m);</li></h3></a>
+</ul>
+</ul>	   <dd>Modify each vertex in the solid by the matrix 'm'.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> m:</strong>
+<dd>The matrix with which to transform the verticies.
+<p>
+</dl></dl>
+<a name="void_TransformGeometry(SFFloat_x,_SFFloat_y,_SFFloat_z)$"><ul><h3><li>void TransformGeometry(SFFloat x, SFFloat y, SFFloat z);</li></h3></a>
+</ul>
+</ul>	   <dd>Modify each vertex in the solid by the matrix 'm' which would be formed by a translation of x,y,z.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> x,y,z:</strong>
+<dd>The translation with which to transform the verticies.
+<p>
+</dl></dl>
+<a name="void_Arc(Uint32_f,_Uint32_v,_SFFloat_cx,_SFFloat_cy,_SFFloat_rad,_SFFloat_h,_SFFloat_phi1,_SFFloat_ph2,_Uint32_n)$"><ul><h3><li>void Arc(Uint32 f, Uint32 v, SFFloat cx, SFFloat cy, SFFloat rad, SFFloat h, SFFloat phi1, SFFloat ph2, Uint32 n);</li></h3></a>
+</ul>
+</ul>	   <dd>
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dt><i>in</i><strong> v:</strong>
+<dt><i>in</i><strong> cx:</strong>
+<dt><i>in</i><strong> cy:</strong>
+<dt><i>in</i><strong> rad:</strong>
+<dt><i>in</i><strong> h:</strong>
+<dt><i>in</i><strong> phi1:</strong>
+<dt><i>in</i><strong> ph2:</strong>
+<dt><i>in</i><strong> n:</strong>
+<p>
+</dl></dl>
+<a name="void_ArcSweep(vrFace_*f,_Uint32_n,_const_SFVec3f_v[])$"><ul><h3><li>void ArcSweep(vrFace *f, Uint32 n, const SFVec3f v[]);</li></h3></a>
+</ul>
+</ul>	   <dd>Perform a translational sweep along an arc defined by 'v'.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>The face to sweep.
+<dt><i>in</i><strong> n:</strong>
+<dd>The number of verticies in 'v'.
+<dt><i>in</i><strong> v:</strong>
+<dd>The array of verticies to sweep the face along.
+<p>
+</dl></dl>
+<a name="void_TranslationalSweep(vrFace_*f,_const_SFVec3f&amp;_v)$"><ul><h3><li>void TranslationalSweep(vrFace *f, const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Perform a translational sweep of face 'f' along the vector 'v'.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>The face to sweep.
+<dt><i>in</i><strong> v:</strong>
+<dd>The vector to sweep the face along.
+<p>
+</dl></dl>
+<a name="void_RotationalSweep(Uint32_nFaces)$"><ul><h3><li>void RotationalSweep(Uint32 nFaces);</li></h3></a>
+</ul>
+</ul>	   <dd>Perform a rotational sweep around the zaxis in 'nFaces' steps.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> nFaces:</strong>
+<dd>The number of steps to take in the sweep.
+<p>
+</dl></dl>
+<a name="vrFace_*SweepWire(Uint32_nFaces)$"><ul><h3><li>vrFace *SweepWire(Uint32 nFaces);</li></h3></a>
+</ul>
+</ul>	   <dd>Perform a rotational sweep around the zaxis in 'nFaces' steps of a wire. (Note: if solid is not a wire nothing happens).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> nFaces:</strong>
+<dd>The number of steps to take in the sweep.
+<p>
+</dl></dl>
+<a name="void_Twist(PFF_func)$"><ul><h3><li>void Twist(PFF func);</li></h3></a>
+</ul>
+</ul>	   <dd>Modify the verticies in the solid by applying 'func' (a function that takes a 'z' coordinate and returns a modified 'z' coordinate) to each 'z' coord.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> func:</strong>
+<dd>The function (taking an SFFloat and returning an SFFloat) to apply to each 'z' coordinate.
+<p>
+</dl></dl>
+<a name="void_CollapseFace(vrFace_*f)$"><ul><h3><li>void CollapseFace(vrFace *f);</li></h3></a>
+</ul>
+</ul>	   <dd>Merge all verticies of the given face into a single vertex and remove the face.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>The face to collapse.
+<p>
+</dl></dl>
+<a name="void_RemoveCoplaneColine(void)$"><ul><h3><li>void RemoveCoplaneColine(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Remove coplaner neighboring faces and colinear neighboring edges.
+<p>
+<a name="SFBool_Split(const_vrPlane&amp;_SP,_vrSolid_**Above,_vrSolid_**Below)$"><ul><h3><li>SFBool Split(const vrPlane&amp; SP, vrSolid **Above, vrSolid **Below);</li></h3></a>
+</ul>
+</ul>	   <dd>Split this solid into two at the splitting plane (SP).  Return
+	   <dd>the 'Above' (ie on same side as plane normal) and 'Below' solids.
+	   <dd>(Note: if splitting plane does not cross the solid return FALSE and this solid is untouched).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> SP:</strong>
+<dd>The splitting plane to split this solid.
+<dt><i>out</i><strong> Above:</strong>
+<dd>A pointer to a pointer to a solid into which to place the solid that is split above the splitting plane.
+<dt><i>out</i><strong> Below:</strong>
+<dd>A pointer to a pointer to a solid into which to place the solid that is split below the splitting plane.
+<p>
+</dl></dl>
+<a name="SFBool_BoolOp(vrSolid_*A,_vrSolid_*B,_vrSolid_**result,_SFInt32_op,_void_*statRec)$"><ul><h3><li>SFBool BoolOp(vrSolid *A, vrSolid *B, vrSolid **result, SFInt32 op, void *statRec);</li></h3></a>
+</ul>
+</ul>	   <dd>Perform on of the valid boolean operations (UNION, DIFFERENCE, INTERSECTION)
+	   <dd>on this solid with the given solid.  Return the result in 'result'.  If stats is
+	   <dd>non-NULL record information about the operation for debugging.
+	   <dd>The equation of the operation is A op B where op is UNION, DIFFERENCE or INTERSECTION).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> A:</strong>
+<dd>The first solid in the above equation.
+<dt><i>in</i><strong> B:</strong>
+<dd>The second solid in the above equation.
+<dt><i>out</i><strong> result:</strong>
+<dd>A pointer to a pointer to a solid into which to place the result of the operation.
+<dt><i>out</i><strong> stats:</strong>
+<dd>A pointer to a vrStatistics structure into which to copy statistics about the operation (usually NULL except during debugging).
+<p>
+</dl></dl>
+<a name="SFBool_Union(vrSolid_*B,_vrSolid_**result,_void_*statRec_)$"><ul><h3><li>SFBool Union(vrSolid *B, vrSolid **result, void *statRec );</li></h3></a>
+</ul>
+</ul>	   <dd>Perform the UNION operation on this solid.  This solid serves as the A solid. (see BoolOp).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> B:</strong>
+<dd>The second solid in the above equation.
+<dt><i>out</i><strong> result:</strong>
+<dd>A pointer to a pointer to a solid into which to place the result of the operation.
+<dt><i>out</i><strong> stats:</strong>
+<dd>A pointer to a vrStatistics structure into which to copy statistics about the operation (usually NULL except during debugging).
+<p>
+</dl></dl>
+<a name="SFBool_Intersection(vrSolid_*B,_vrSolid_**result,_void_*statRec_)$"><ul><h3><li>SFBool Intersection(vrSolid *B, vrSolid **result, void *statRec );</li></h3></a>
+</ul>
+</ul>	   <dd>Perform the INTERSECTION operation on this solid.  This solid serves as the A solid. (see BoolOp).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> B:</strong>
+<dd>The second solid in the above equation.
+<dt><i>out</i><strong> result:</strong>
+<dd>A pointer to a pointer to a solid into which to place the result of the operation.
+<dt><i>out</i><strong> stats:</strong>
+<dd>A pointer to a vrStatistics structure into which to copy statistics about the operation (usually NULL except during debugging).
+<p>
+</dl></dl>
+<a name="SFBool_Difference(vrSolid_*B,_vrSolid_**result,_void_*statRec_)$"><ul><h3><li>SFBool Difference(vrSolid *B, vrSolid **result, void *statRec );</li></h3></a>
+</ul>
+</ul>	   <dd>Perform the DIFFERENCE operation on this solid.  This solid serves as the A solid. (see BoolOp).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> B:</strong>
+<dd>The second solid in the above equation.
+<dt><i>out</i><strong> result:</strong>
+<dd>A pointer to a pointer to a solid into which to place the result of the operation.
+<dt><i>out</i><strong> stats:</strong>
+<dd>A pointer to a vrStatistics structure into which to copy statistics about the operation (usually NULL except during debugging).
+<p>
+</dl></dl>
+<a name="void_Cleanup(void)$"><ul><h3><li>void Cleanup(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Cleanup the solid (i.e. given vertices and faces rebuild all other components).  Not used except by BoolOp operators.
+<p>
+<a name="void_Renumber(void)$"><ul><h3><li>void Renumber(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Renumber all objects in the solid (for presentation for example).
+<p>
+<a name="void_Revert(void)$"><ul><h3><li>void Revert(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Turn the solid inside out -- re-order all faces.
+<p>
+<a name="SFBool_Write(FILE_*fp,_SFBool_forward_)_const$"><ul><h3><li>SFBool Write(FILE *fp, SFBool forward ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Write the file to the given fp.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fp:</strong>
+<dd>The file to write to.
+<dt><i>in</i><strong> forward:</strong>
+<dd>order the verticies forward or backward (ie. clockwise or counterclockwise).
+<p>
+</dl></dl>
+<a name="void_SetColor(const_SFColor&amp;_color)$"><ul><h3><li>void SetColor(const SFColor&amp; color);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the color of all faces in this solid.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> color:</strong>
+<dd>The new color.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrSolid:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:04 1999
+.<p>
+</body></html>

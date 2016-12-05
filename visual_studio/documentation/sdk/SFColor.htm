@@ -1,0 +1,198 @@
+<html><head><title>SFColor Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">SFColor</a></h1>
+<dl>
+<dd>
+	Represents an RGBA color.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="sfcolor.htm#aag">Summary</a> | </a>
+<a href="sfcolor.htm#DESCRIPTION">Description</a> | 
+<a href="sfcolor.htm#NOTES">Notes</a> | 
+<a href="sfcolor.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="sfcolor.htm#MEMBERS">Members</a> | 
+<a href="sfcolor.htm#parents">Ancestors</a> | <a href="sfcolor.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface SFColor : public <a href="SFVec3f.htm">SFVec3f</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="SFColor.htm#SFFloat_a$">a</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFColor.htm#SFColor_(void)$">SFColor</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFColor.htm#SFColor_(const_SFColor&amp;_c)$">SFColor</a> (const SFColor&amp; c);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="SFColor.htm#~SFColor_(void)$">SFColor</a> (void);</td></tr>
+<tr><td align="right" valign="top">SFColor&amp; </td><td><a href="SFColor.htm#SFColor&amp;_operator$_(const_SFColor&amp;_c)$">operator=</a> (const SFColor&amp; c);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFColor.htm#SFColor_(SFFloat_red,_SFFloat_green,_SFFloat_blue)$">SFColor</a> (SFFloat red, SFFloat green, SFFloat blue);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFColor.htm#SFColor_(SFFloat_red,_SFFloat_green,_SFFloat_blue,_SFFloat_alpha)$">SFColor</a> (SFFloat red, SFFloat green, SFFloat blue, SFFloat alpha);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFColor.htm#SFColor_(SFFloat_all)$">SFColor</a> (SFFloat all);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="SFColor.htm#SFColor_(const_SFVec3f&amp;_v)$">SFColor</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; v);</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFColor </td><td><a href="SFColor.htm#friend_UL_Interface_SFColor_operator+(const_SFColor&amp;_c1,_const_SFColor&amp;_c2)_$">operator+</a>(const SFColor&amp; c1, const SFColor&amp; c2) ;</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFColor </td><td><a href="SFColor.htm#friend_UL_Interface_SFColor_operator-(const_SFColor&amp;_c1,_const_SFColor&amp;_c2)_$">operator-</a>(const SFColor&amp; c1, const SFColor&amp; c2) ;</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFColor </td><td><a href="SFColor.htm#friend_UL_Interface_SFColor_operator*(const_SFColor&amp;_c,_SFFloat_f)_$">operator*</a>(const SFColor&amp; c, SFFloat f) ;</td></tr>
+<tr><td align="right" valign="top">friend UL_Interface SFColor </td><td><a href="SFColor.htm#friend_UL_Interface_SFColor_NormalizeColor_(const_SFColor&amp;_c)$">NormalizeColor</a> (const SFColor&amp; c);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	Represents the SFColor field as defined in VRML.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>The red, green, blue and alpha values of colors should be clammed to
+	the range 0.0 and 1.0.  This is done during normalization, addition or subtraction
+	of colors but the user should avoid setting these values directly
+	outside of this range.</li>
+	<li>There is a large collection of pre-defined colors defined in the
+	SFColor.h file.  You may use these in place of any SFColor value.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// You can add and subtract and multiply colors to your delight.
+	
+	SFColor red   = vrRed;
+	SFColor green = vrGreen;
+	SFColor white = vrWhite;
+	
+	SFColor lightRedishGreen = (red + green) / 4.0;
+	SFColor grey = (white * .5);
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFFloat_a$"><ul><h3><li>SFFloat a;</li></h3></a>
+</ul>
+</ul>     <dd>The alpha component of the color (RGB is represented by x,y,z).
+<dl><dl>
+<dt><i>default:</i><strong> Black</strong>
+<p>
+</dl></dl>
+<a name="SFColor_(void)$"><ul><h3><li>SFColor (void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="SFColor_(const_SFColor&amp;_c)$"><ul><h3><li>SFColor (const SFColor&amp; c);</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="~SFColor_(void)$"><ul><h3><li>~SFColor (void);</li></h3></a>
+</ul>
+</ul>     <dd>Desctructor.
+<p>
+<a name="SFColor&amp;_operator$_(const_SFColor&amp;_c)$"><ul><h3><li>SFColor&amp; operator= (const SFColor&amp; c);</li></h3></a>
+</ul>
+</ul>     <dd>Equals operator.
+<p>
+<a name="SFColor_(SFFloat_red,_SFFloat_green,_SFFloat_blue)$"><ul><h3><li>SFColor (SFFloat red, SFFloat green, SFFloat blue);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> red:</strong>
+<dd>The red component of the color.
+<dt><i>in</i><strong> green:</strong>
+<dd>The green component of the color.
+<dt><i>in</i><strong> blue:</strong>
+<dd>The blue component of the color.
+<p>
+</dl></dl>
+<a name="SFColor_(SFFloat_red,_SFFloat_green,_SFFloat_blue,_SFFloat_alpha)$"><ul><h3><li>SFColor (SFFloat red, SFFloat green, SFFloat blue, SFFloat alpha);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> red:</strong>
+<dd>The red component of the color.
+<dt><i>in</i><strong> green:</strong>
+<dd>The green component of the color.
+<dt><i>in</i><strong> blue:</strong>
+<dd>The blue component of the color.
+<dt><i>in</i><strong> alpha:</strong>
+<dd>The alpha component of the color.
+<p>
+</dl></dl>
+<a name="SFColor_(SFFloat_all)$"><ul><h3><li>SFColor (SFFloat all);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> all:</strong>
+<dd>A value assigned to all three color components of the color (alpha = 1.0).
+<p>
+</dl></dl>
+<a name="SFColor_(const_SFVec3f&amp;_v)$"><ul><h3><li>SFColor (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>     <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>Values assigned to the three color components of the color (alpha = 1.0).
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFColor_operator+(const_SFColor&amp;_c1,_const_SFColor&amp;_c2)_$"><ul><h3><li>friend UL_Interface SFColor operator+(const SFColor&amp; c1, const SFColor&amp; c2) ;</li></h3></a>
+</ul>
+</ul>     <dd>Add two colors and normalize.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> c1:</strong>
+<dd>The first color.
+<dt><i>in</i><strong> c2:</strong>
+<dd>The second color.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFColor_operator-(const_SFColor&amp;_c1,_const_SFColor&amp;_c2)_$"><ul><h3><li>friend UL_Interface SFColor operator-(const SFColor&amp; c1, const SFColor&amp; c2) ;</li></h3></a>
+</ul>
+</ul>     <dd>Subtract two colors and normalize.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> c1:</strong>
+<dd>The first color.
+<dt><i>in</i><strong> c2:</strong>
+<dd>The second color.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFColor_operator*(const_SFColor&amp;_c,_SFFloat_f)_$"><ul><h3><li>friend UL_Interface SFColor operator*(const SFColor&amp; c, SFFloat f) ;</li></h3></a>
+</ul>
+</ul>     <dd>Multiply a colors by a scalar and normalize.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> c:</strong>
+<dd>The first color.
+<dt><i>in</i><strong> f:</strong>
+<dd>The scalar to multiply by.
+<p>
+</dl></dl>
+<a name="friend_UL_Interface_SFColor_NormalizeColor_(const_SFColor&amp;_c)$"><ul><h3><li>friend UL_Interface SFColor NormalizeColor (const SFColor&amp; c);</li></h3></a>
+</ul>
+</ul>     <dd>Normalize a color (i.e. make all value inRange(0.0, 1.0)).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> c:</strong>
+<dd>The color to normalize.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for SFColor:<p>
+<ul>
+<li><a href="SFVec3f.htm">SFVec3f</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:03 1999
+.<p>
+</body></html>

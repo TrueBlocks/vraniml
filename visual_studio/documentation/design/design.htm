@@ -1,0 +1,81 @@
+<html>
+
+<head>
+<title>VRaniML Design</title>
+
+
+<meta name="Microsoft Theme" content="neon 011, default"><meta name="Microsoft Border" content="b, default"></head>
+
+<body background="../../../_themes/neon/neobkgnd.gif" bgcolor="#000000" text="#FFFFFF" link="#FFFF66" vlink="#CCCC33" alink="#FFFF00"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top"><!--mstheme--><font face="verdana, arial, helvetica">
+
+<h1><!--mstheme--><font color="#CCCC00"><img src="../logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">VRaniML VRML 2.0 Node Class Library</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VRaniML Design Documentation<!--mstheme--></font></h1>
+
+<p>This document describes the component design of the library.</p>
+
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/neon/neoarule.gif" width="300" height="10"></p>
+
+<p>The VRaniML SDK is a library of C++ classes intended to help applications support
+importing, exporting and rendering of VRML 2.0 files.&nbsp; The current version of the
+library supports a subset of the VRML 2.0 specification which is detailed <a href="../inventory.htm">here</a>.</p>
+
+<p>A high level block diagram of the SDK is included here:</p>
+
+<p align="center"><b><img SRC="vraniml.gif" border="0" WIDTH="559" HEIGHT="480"></b></p>
+
+<p>&nbsp;</p>
+
+<p>The SDK is composed of five components.&nbsp; Each component is briefly described here
+and further defined on the following pages: </p>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/neon/neoabull1.gif" width="20" height="20" hspace="11"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica"><a href="vrfc.htm">Utility</a> - Utility Class Library - A collection of supporting
+    classes and routines for collection classes (lists, arrays, etc.), geometry classes
+    (vertex2, vertex3, rotation, matrix, etc.), and other supporting classes (timer, image,
+    runtime typing support etc.).&nbsp; This is also called the Virtual Reality Foundation
+    Classes or VRFC for short.<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/neon/neoabull1.gif" width="20" height="20" hspace="11"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica"><a href="vem.htm">Browser Related Classes</a> - VRML Execution Model - This component
+    supports the VRML 2.0 execution model. &nbsp; This provides support for the VRML 2.0 ROUTE
+    keyword.&nbsp; The generation and propagation of VRML eventIn's and eventOut's is handled
+    by this component.&nbsp; This component also provides support for top level scene graph
+    management as well as PROTO management.&nbsp; This component contains the VRML 2.0 parser
+    which is implemented using lex/yacc. <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/neon/neoabull1.gif" width="20" height="20" hspace="11"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica"><a href="nodes.htm">VRML97 Node Library</a> - Each VRML 2.0 node has a corresponding
+    VRaniML class.&nbsp; In effect, these classes simply provide access to the data fields of
+    each node type.&nbsp; This component provides one class for each of the 54 VRML 2.0 nodes.<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/neon/neoabull1.gif" width="20" height="20" hspace="11"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica"><a href="solid.htm">Solid Modeling library</a> - All VRaniML geometry nodes (for example
+    IndexedFaceSet or Extrusion) use the solid modeling library as their underlying data
+    representation. &nbsp; This data representation allows for a number of very useful
+    functions, including future support for such advanced features as automatic level of
+    detail generation and progressive mesh (that is progressive transmission) of geometry over
+    the internet. &nbsp; Other possible future features might include interactive splitting
+    planes and Boolean operations.<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/neon/neoabull1.gif" width="20" height="20" hspace="11"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica"><a href="traversers.htm">Traversers</a> - This component contains classes that
+    &quot;walk&quot; the scene graph at the applications direction to &quot;render&quot; the
+    scene.&nbsp; There are a number of Traversers in this component including OpenGLTraveser
+    which renders the scene graph to an OpenGL window, WriteTraverser which
+    &quot;renders&quot; the scene graph to a file (export) and ValidateTraverser which walks
+    the scene graph looking for and reporting on bad data.<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+&nbsp;<!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><br>
+<img src="../../../_borders/bar.jpg" width="100%" height="3" alt="bar.jpg (730 bytes)" start="fileopen"></p>
+
+<h5><!--mstheme--><font color="#6633FF">Send mail to <a href="mailto:webmaster@greathill.com">webmaster@greathill.com</a> with questions or comments about this web site.<br>
+Copyright © 1998 Great Hill Corporation<br>
+Last modified: February 01, 1999 <!--mstheme--></font></h5>
+<!--mstheme--></font></td></tr><!--msnavigation--></table></body>
+</html>

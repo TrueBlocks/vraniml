@@ -1,0 +1,187 @@
+<html>
+
+<head>
+<title>Step 5</title>
+
+<meta name="Microsoft Theme" content="sumipntg 011"></head>
+
+<body background="../../../../_themes/sumipntg/sumtextb.jpg" bgcolor="#FFFFFF" text="#808080" link="#3333CC" vlink="#666699" alink="#990099"><!--mstheme--><font face="verdana, arial, helvetica">
+<font face="book antiqua">
+
+<!--mstheme--></font><table border="0" width="100%" height="97">
+  <tr>
+    <td width="12%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><img src="../../logo.gif" alt="[Logo]" border="0" start="fileopen" width="100" height="110"><!--mstheme--></font></td>
+    <td width="88%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><em><br>
+    <big><big><big>Great Hill Corporation</big></big></big></em><br>
+    <em>Step 5: The Rendering Loop</em><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="verdana, arial, helvetica"><a HREF="step4.htm">[Prev]</a> <a HREF="step6.htm">[Next]</a> <a HREF="../sample2.htm">[Tutorial2]</a><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+<!--commentbeg------------------------------------------>
+<!--commentbeg------------------------------------------>
+
+<p>In this lesson you will insert a <b>Rendering Loop</b> into the code to enable
+animation. </p>
+
+<p>In previous steps we've learned about the <b>Traverse</b> function.&nbsp; This is the
+function that traverses the scene graph and displays it on the screen.&nbsp; A <b>Rendering
+Loop</b> simply refers to making repeated calls to a browser's <b>Traverse</b> function.</p>
+
+<p>However, in order to render at an apparently sustained frame rate (say 30 frames a
+second), we must insure two things: </p>
+
+<ol>
+  <li>call the Traverse function often enough</li>
+  <li>don't call the <b>Traverse</b> function too often</li>
+</ol>
+
+<p>The browser class helps us accomplish this with the method called <b>Tick</b>. The <b>Tick</b>
+method keeps track of the last time the scene graph was rendered. Each time <b>Tick</b> is
+called it will return either FALSE (meaning <i>slow down -- you are trying to traverse
+faster than the frame rate</i>) or it will return TRUE (meaning <i>it is OK to traverse</i>).&nbsp;
+Note that if <b>Tick</b> returns TRUE it may have advanced the internal clock so that
+missed frames are skipped over.&nbsp; This is in order to sustain the frame rate.</p>
+
+<p>This mechanism allows us to animate things by specifying an exact duration, for
+example, a TimeSensor that loops every three seconds.</p>
+
+<p>Make the changes marked in <font color="FF0000">red</font> in the file sample2.cpp (as
+it exists after step 4) and recompile and run the program. </p>
+
+<p>You will still see a red cone next to a green cylinder -- and they are not moving. Note
+however, that the scene <em>is</em> being rendered 30 times a second (the default frame
+rate of the browser) even though you don't notice it. Notice also, that the <b>Rendering
+Loop</b> is inserted into the code in such a way as to allow Windows to handle any of it's
+own messages. VRaniML&#153; renders only if there is nothing else to do. This allows the
+application to remain responsive to mouse movements and keystrokes.</p>
+
+<p>This step has prepared us for <a href="step6.htm">Step 6</a> where we will finally
+start making things move.</p>
+
+<p><img SRC="../bar.jpg" width="100%" height="3" alt="bar.jpg (730 bytes)" start="fileopen"> </p>
+
+<!--mstheme--></font><pre>
+#include &quot;windows.h&quot;
+
+#include &quot;vraniml.h&quot;
+
+LRESULT APIENTRY WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	switch (message)
+	{
+	case WM_DESTROY:
+		PostQuitMessage( 0 );
+		break;
+	}
+	
+	return DefWindowProc(hWnd, message, wParam, lParam);
+}
+
+HWND InitWindow(HINSTANCE hCurrentInst, char *className, char *windowName)
+{
+	WNDCLASS wndClass;
+	HWND hWnd;
+
+	/* register window class */
+	wndClass.style         = CS_HREDRAW | CS_VREDRAW;
+	wndClass.lpfnWndProc   = WindowProc;
+	wndClass.cbClsExtra    = 0;
+	wndClass.cbWndExtra    = 0;
+	wndClass.hInstance     = hCurrentInst;
+	wndClass.hIcon         = LoadIcon(NULL, IDI_APPLICATION);
+	wndClass.hCursor       = LoadCursor(NULL, IDC_ARROW);
+	wndClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
+	wndClass.lpszMenuName  = NULL;
+	wndClass.lpszClassName = className;
+	RegisterClass(&amp;wndClass);
+
+	/* create window */
+	hWnd = CreateWindow(className, 
+		windowName,
+		WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS,
+		0, 0, 640, 480,
+		NULL, NULL, hCurrentInst, NULL);
+
+
+	ShowWindow(hWnd, SW_SHOW);
+	UpdateWindow(hWnd);
+
+	return hWnd;
+}
+
+//
+// Create a shape object of the given color using the given geometry
+//
+vrShape *BuildShape(const SFColor&amp; color, vrGeometryNode *node)
+{
+	vrShape *shape = new vrShape;
+	vrAppearance *app = new vrAppearance;
+	vrMaterial *mat = new vrMaterial;
+	mat-&gt;SetDiffuseColor(color);
+	app-&gt;SetMaterial(mat);
+	shape-&gt;SetAppearance(app);
+	shape-&gt;SetGeometry(node);
+	return shape;
+}
+
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPreviousInst, LPSTR lpszCmdLine, int nCmdShow)
+{
+	HWND hWnd = InitWindow(hInstance, &quot;VRaniML&quot;, &quot;VRaniML Sample Program 2&quot;);
+
+	vrBrowser *browser = new vrBrowser(hWnd);
+
+	// Add a red cone, slightly away from the origin
+	vrTransform *t = new vrTransform;
+	t-&gt;SetTranslation(SFVec3f(-1.0, 0.0, 0.0));
+	t-&gt;AddChild(BuildShape(Red, new vrCone));
+	browser-&gt;AddChild(t);
+
+	// Add a green cylinder in a slightly different place
+	t = new vrTransform;
+	t-&gt;SetTranslation(SFVec3f(1.0, 0.0, 0.0));
+	t-&gt;AddChild(BuildShape(Green, new vrCylinder));
+	browser-&gt;AddChild(t);
+
+<font color="FF0000">remove this line -----&gt; browser-&gt;Traverse();</font>
+
+	while (1)
+	{
+		MSG msg;
+		if (PeekMessage(&amp;msg, NULL, 0, 0, PM_NOREMOVE))
+		{
+			if (GetMessage(&amp;msg, NULL, 0, 0) != TRUE)
+			{
+				delete browser;
+				return msg.wParam;
+			}
+
+			TranslateMessage(&amp;msg);
+			DispatchMessage(&amp;msg);<font color="FF0000">
+		} else
+		{
+</font><font color="#8000FF">			// Traverse if there is nothing else to
+			// do and Tick allows us to.</font><font color="FF0000">
+			if (browser-&gt;Tick())
+				browser-&gt;Traverse();
+</font>
+		}
+	}
+
+	delete browser;
+	return FALSE;
+}
+</pre><!--mstheme--><font face="verdana, arial, helvetica">
+<!--commentend------------------------------------------>
+<!--commentend------------------------------------------>
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+
+<h5><!--mstheme--><font color="#003366"><font COLOR="#660033">Send mail to <a HREF="mailto:webmaster@greathill.com">webmaster@greathill.com</a>
+with questions or comments about this web site.<br>
+Copyright © 1997 Great Hill Corporation<br>
+Last modified: December 17, 1997&nbsp;</font><!--mstheme--></font></h5>
+</font>
+<!--mstheme--></font></body>
+</html>

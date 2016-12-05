@@ -1,0 +1,104 @@
+<html><head><title>vrEvent Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrEvent</a></h1>
+<dl>
+<dd>
+	Utility class to store event information as it is passed along
+	routes.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrevent.htm#aag">Summary</a> | </a>
+<a href="vrevent.htm#DESCRIPTION">Description</a> | 
+<a href="vrevent.htm#NOTES">Notes</a> | 
+<a href="vrevent.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrevent.htm#MEMBERS">Members</a> | 
+<a href="vrevent.htm#parents">Ancestors</a> | <a href="vrevent.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrEvent<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">const <a href="vrNode.htm">vrNode</a> *</td><td><a href="vrEvent.htm#const_vrNode_*m_Destination$">m_Destination</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrEvent.htm#SFInt32_m_FieldID$">m_FieldID</a>;</td></tr>
+<tr><td align="right" valign="top">const void *</td><td><a href="vrEvent.htm#const_void_*m_Value$">m_Value</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrEvent.htm#vrEvent(const_vrNode_*dst,_SFInt32_fieldID,_const_void_*data)_$">vrEvent</a>(const <a href="vrNode.htm">vrNode</a> *dst, SFInt32 fieldID, const void *data) ;</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	Utility class to store information about events as they are passed
+	along <a href="vrRoute.htm">vrRoute</a>'s during an event cascade.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>Default constructor, copy constructor and equals operator are private
+	so you may not make invalid copies of vrRoutes.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="const_vrNode_*m_Destination$"><ul><h3><li>const vrNode *m_Destination;</li></h3></a>
+</ul>
+</ul>	   <dd> The destination node for this event.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NA</strong>
+<p>
+</dl></dl>
+<a name="SFInt32_m_FieldID$"><ul><h3><li>SFInt32 m_FieldID;</li></h3></a>
+</ul>
+</ul>	   <dd> The ID of the field responding to this event.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NA</strong>
+<p>
+</dl></dl>
+<a name="const_void_*m_Value$"><ul><h3><li>const void *m_Value;</li></h3></a>
+</ul>
+</ul>	   <dd> The value for the field responding to this event.
+	   <dd> Assumed that the void pointer points to the correct data type.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NA</strong>
+<p>
+</dl></dl>
+<a name="vrEvent(const_vrNode_*dst,_SFInt32_fieldID,_const_void_*data)_$"><ul><h3><li>vrEvent(const vrNode *dst, SFInt32 fieldID, const void *data) ;</li></h3></a>
+</ul>
+</ul>	   <dd> Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> dst:</strong>
+<dd>The destination node of this event.
+<dt><i>in</i><strong> fieldID:</strong>
+<dd>The field that should respond to this event.
+<dt><i>in</i><strong> data:</strong>
+<dd>Void pointer to data of the approriate type (as per the fieldID and the class type of dst).
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:58 1999
+.<p>
+</body></html>

@@ -1,0 +1,30 @@
+The project files for this library were created
+with MSVC version 5.0.  If you have another compiler
+you may have to create your own project files.
+
+You can build all parts of this library by opening the
+file vrutils.dsw in your IDE.
+
+First build the image library (free software available
+from Colosseum Builders C++ Image Library 
+<info@colosseumbuilders.com>).
+
+Next build the vrutils.lib and vrutils.dll files (note:
+these are called vrutilsd.lib and vrutilsd.dll when
+built _DEBUG mode).
+
+Next build the example.exe file.
+
+Debugging through the example.exe file will show
+you how each and every C++ class included in
+the library works.
+
+Have fun.  Please send us a note if you find this
+software usefull or if you have any questions:
+
+website: www.greathill.com
+email: info@greathill.com
+phone: 1-800-949-3334
+
+Thanks
+

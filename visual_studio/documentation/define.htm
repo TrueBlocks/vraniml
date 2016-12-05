@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<title>Defined symbols</title>
+</head>
+
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF">
+
+<h1><img src="logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">Utility Class Library Reference Manual</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Defined Symbols</h1>
+
+<p>This part of the manual documents a number of #defined values found in the Utility
+Class Library.&nbsp; These macros are used mostly for use in implementing runtime typing
+and dynamic object creation.&nbsp; These macros are very similar to the corresponding MFC
+macros.</p>
+
+<hr>
+
+<h4><em><a name="DECLARE_NODE">DECLARE_NODE</a>(className);</em></h4>
+
+<blockquote>
+  <p>This macro allows you to enable runtime typing and dynamic creation for any <a href="sdk/vrBaseNode.htm">vrBaseNode</a> derived class.&nbsp; The macro is added to the class
+  declaration in the same way that the DECLARE_DYNCREATE macro from the MFC.&nbsp; This
+  macro allows you to use the GETRUNTIME_CLASS and IsKindOf routines in your code. &nbsp;
+  Also, a static global function called Create[className]<sup>*</sup> is provided to
+  dynamically create objects of this type.&nbsp; If you add this macro to the class
+  declaration you must also add the IMPLEMENT_NODE macro in the class's .cpp file.</p>
+  <p><em>in </em><strong>className:</strong><br>
+  &nbsp;&nbsp;&nbsp; The name of the class (not quoted).</p>
+  <p><em><small>* - for example CreateBox if <strong>className</strong> equals Box.</small></em></p>
+</blockquote>
+
+<h4><em><a name="IMPLEMENT_NODE">IMPLEMENT_NODE</a>(className, parentName, version);</em></h4>
+
+<blockquote>
+  <p>This macro should be included in the implementation file (i.e. .cpp file) for any class
+  that includes the DECLARE_NODE macro.&nbsp; It corresponds to the IMPLEMENT_DYNCREATE
+  macro in the MFC.</p>
+  <p><em>in </em><strong>className:</strong><br>
+  &nbsp;&nbsp;&nbsp; The name of the class (not quoted).<br>
+  <em>in </em><strong>parentName:</strong><br>
+  &nbsp;&nbsp;&nbsp; The name of the class (not quoted) this class is derived from.<br>
+  <em>in </em><strong>version:</strong><br>
+  &nbsp;&nbsp;&nbsp; The version of this class (currently unused).</p>
+</blockquote>
+
+<h4><em><a name="GETRUNTIME_CLASS">GETRUNTIME_CLASS</a>(className);</em></h4>
+
+<blockquote>
+  <p>This macro can be used on any class that includes the DECLARE_RUNTIME or DECLARE_NODE
+  macros.&nbsp; The macro returns a <a href="sdk/vrRuntimeClass.htm">vrPrototype</a> class
+  instance that describes information about the requested class type.&nbsp; </p>
+  <p><em>in </em><strong>className:</strong><br>
+  &nbsp;&nbsp; The name of the class (not quoted).</p>
+</blockquote>
+
+<h4><em><a name="vrDELETE">vrDELETE</a>(node);</em></h4>
+
+<blockquote>
+  <p>This macro may be used by any vrBaseNode derived class to insure that the node is
+  properly deleted.&nbsp; The macro decrements the reference count on this node and only
+  deletes the node if the reference count goes to zero.</p>
+  <p><em>in </em><strong>node:</strong><br>
+  &nbsp;&nbsp; The node to be dereferenced and possibly deleted.</p>
+</blockquote>
+
+<hr>
+
+<p><strong>[ <a href="index.htm">Classes</a> | <a href="Types.htm">Data Types</a> | <a href="functions.htm">Utility Functions</a> ]</strong></p>
+</body>
+</html>

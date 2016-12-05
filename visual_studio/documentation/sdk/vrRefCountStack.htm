@@ -1,0 +1,95 @@
+<html><head><title>vrRefCountStack Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrRefCountStack</a></h1>
+<dl>
+<dd>
+	A templated stack class that implements reference counting.
+
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrrefcountstack.htm#aag">Summary</a> | </a>
+<a href="vrrefcountstack.htm#DESCRIPTION">Description</a> | 
+<a href="vrrefcountstack.htm#NOTES">Notes</a> | 
+<a href="vrrefcountstack.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrrefcountstack.htm#MEMBERS">Members</a> | 
+<a href="vrrefcountstack.htm#parents">Ancestors</a> | <a href="vrrefcountstack.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class vrRefCountStack :<br>
+public <a href="vrRefCountList.htm">vrRefCountList</a> &lt; TYPE &gt;<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRefCountStack.htm#void_Push_(TYPE_node)$">Push</a> (TYPE node);</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrRefCountStack.htm#TYPE_Pop_(void)$">Pop</a> (void);</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrRefCountStack.htm#TYPE_Peek_(void)_const$">Peek</a> (void) const;</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	A simple stack class built on top of the <a href="vrRefCountList.htm">vrRefCountList</a>.  This class
+	is a template class so stacks of objects can be built
+	as long as they implement the Reference and Dereference interfaces.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>None.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// A reference counting stack.
+	vrRefCountStack&lt;SFNode&gt; nodeStack;
+	nodeStack.<a href="vrrefcountstack.htm#void_Push_(TYPE_node)$">Push</a>(new <a href="vrCone.htm">vrCone</a>);
+	nodeStack.<a href="vrrefcountstack.htm#void_Push_(TYPE_node)$">Push</a>(new <a href="vrBox.htm">vrBox</a>);
+	nodeStack.<a href="vrrefcountstack.htm#void_Push_(TYPE_node)$">Push</a>(new <a href="vrSphere.htm">vrSphere</a>);
+
+	// Deletes the Sphere first.
+	while (nodeStack.<a href="vrrefcountstack.htm#TYPE_Peek_(void)_const$">Peek</a>())
+		delete nodeStack.<a href="vrrefcountstack.htm#TYPE_Pop_(void)$">Pop</a>();
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="void_Push_(TYPE_node)$"><ul><h3><li>void Push (TYPE node);</li></h3></a>
+</ul>
+</ul>     <dd>Push an object of type TYPE onto the stack.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> node:</strong>
+<dd>The node to be pushed.
+<p>
+</dl></dl>
+<a name="TYPE_Pop_(void)$"><ul><h3><li>TYPE Pop (void);</li></h3></a>
+</ul>
+</ul>     <dd>Pop the topmost item off of the stack.
+<p>
+<a name="TYPE_Peek_(void)_const$"><ul><h3><li>TYPE Peek (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Peek at the item on the top of the stack.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrRefCountStack:<p>
+<ul>
+<li><a href="vrList.htm">vrList</a>
+<li><a href="vrRefCountList.htm">vrRefCountList</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:04 1999
+.<p>
+</body></html>

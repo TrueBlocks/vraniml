@@ -1,0 +1,87 @@
+<style>
+.mstheme
+{
+	separator-image: url(sumhorsd.gif);
+	list-image-1: url(sumbul1d.gif);
+	list-image-2: url(sumbul2d.gif);
+	list-image-3: url(sumbul3d.gif);
+
+	nav-banner-image: url(sumbannd.gif);
+
+	navbutton-horiz-normal: url(sumhbudd.gif);
+	navbutton-horiz-pushed: url(sumhbusd.gif);
+
+	navbutton-vert-normal: url(sumvbudd.gif);
+	navbutton-vert-pushed: url(sumvbusd.gif);
+
+	navbutton-home-normal: url(sumhombd.gif);
+
+	navbutton-next-normal: url(sumnexbd.gif);
+
+	navbutton-prev-normal: url(sumprebd.gif);
+
+	navbutton-up-normal: url(sumupbd.gif);
+
+}
+
+.mstheme-bannertxt
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(51, 0, 0);
+	text-align: center;
+	vertical-align: middle;
+}
+.mstheme-horiz-navtxt
+{
+	font-family: Arial, Helvetica;
+
+	color: rgb(51, 51, 102);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mstheme-vert-navtxt
+{
+	font-family: Arial, Helvetica;
+
+	color: rgb(51, 51, 102);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mstheme-navtxthome
+{
+	font-family: Arial, Helvetica;
+
+	color: rgb(102, 51, 102);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mstheme-navtxtnext
+{
+	font-family: Arial, Helvetica;
+
+	color: rgb(102, 51, 102);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mstheme-navtxtprev
+{
+	font-family: Arial, Helvetica;
+
+	color: rgb(102, 51, 102);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mstheme-navtxtup
+{
+	font-family: Arial, Helvetica;
+
+	color: rgb(102, 51, 102);
+	text-align: center;
+	vertical-align: middle;
+}
+</style>.

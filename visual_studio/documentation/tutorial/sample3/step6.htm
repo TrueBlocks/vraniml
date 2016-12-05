@@ -1,0 +1,156 @@
+<html>
+
+<head>
+<title>Step 6</title>
+
+<meta name="Microsoft Theme" content="sumipntg 011"></head>
+
+<body background="../../../../_themes/sumipntg/sumtextb.jpg" bgcolor="#FFFFFF" text="#808080" link="#3333CC" vlink="#666699" alink="#990099"><!--mstheme--><font face="verdana, arial, helvetica">
+<font face="book antiqua">
+
+<!--mstheme--></font><table border="0" width="100%" height="97">
+  <tr>
+    <td width="12%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><img src="../../logo.gif" alt="[Logo]" border="0" start="fileopen" width="100" height="110"><!--mstheme--></font></td>
+    <td width="88%" height="93"><!--mstheme--><font face="verdana, arial, helvetica"><em><br>
+    <big><big><big>Great Hill Corporation</big></big></big></em><br>
+    <em>Step 6: Making It Move</em><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="verdana, arial, helvetica"><a HREF="step5.htm">[Prev]</a> <a HREF="step7.htm">[Next]</a> <a HREF="../sample3.htm">[Tutorial3]</a><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+<!--commentbeg------------------------------------------>
+<!--commentbeg------------------------------------------>
+
+<p>In this tutorial step we will animate the logo.wrl file that we opened in the previous
+step.</p>
+
+<p>This step is also fairly simple, however before we begin let's open the file logo.wrl
+in a text editor.</p>
+
+<p>Notice that this file has a TimeSensor ROUTED to Interpolators ROUTED to
+Tranformations. But if these ROUTES are in the VRML file why isn't the scene being
+animated? The reason is because we haven't yet told the application to animate the scene
+graph.<br>
+<br>
+This is done in the following few step.</p>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <ol>
+    <li>Using the class wizard add the <b>OnIdle</b> to <b>CSample3App</b> class. Change that
+      function as follows:<br>
+      <br>
+      <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--mstheme--></font><pre><font color="FF0000">BOOL CSample3App::OnIdle(LONG lCount) 
+{
+	<font COLOR="#8000FF">// We ignore lCount for ease of instruction</font>
+	
+	<font COLOR="#8000FF">// Get the MainFrame....</font>
+	CFrameWnd *pFrame = (CFrameWnd *)AfxGetApp()-&gt;m_pMainWnd;
+
+	<font COLOR="#8000FF">// ...and the current document...</font>
+	CSample3Doc *pDoc = ((pFrame) ? (CSample3Doc *)pFrame-&gt;GetActiveDocument() : NULL);
+	ASSERT(pDoc-&gt;IsKindOf(RUNTIME_CLASS(CSample3Doc)));
+	
+	<font COLOR="#8000FF">// ...and if it exists....</font>
+	if (pDoc)
+	{
+		<font COLOR="#8000FF">//... and there is a browser ...</font>
+		if (pDoc-&gt;browser)
+			<font COLOR="#8000FF">//... and we should render a frame ...</font>
+			if (pDoc-&gt;browser-&gt;Tick())
+				<font COLOR="#8000FF">//... then render a frame</font>
+				pDoc-&gt;UpdateAllViews(NULL);
+	}
+
+	return CWinApp::OnIdle(lCount);
+}
+</font></pre><!--mstheme--><font face="verdana, arial, helvetica">
+      <!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+    </li>
+  </ol>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../../_themes/sumipntg/sumbul1a.gif" width="20" height="20" hspace="11"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica">Using the class wizard add the <b>OnUpdate</b> to <b>CSample3View</b> class. Change that
+    function as follows:<br>
+    <br>
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <!--mstheme--></font><pre><font color="FF0000">void CSample3View::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint) 
+{
+	<font COLOR="#8000FF">// Get the document</font>
+    CSample3Doc* pDoc = GetDocument();
+    ASSERT_VALID(pDoc);
+
+	<font COLOR="#8000FF">// Draw the scene</font>
+	if (pDoc-&gt;browser)
+		pDoc-&gt;browser-&gt;Traverse();	
+}
+</font></pre><!--mstheme--><font face="verdana, arial, helvetica">
+    <!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../../_themes/sumipntg/sumbul1a.gif" width="20" height="20" hspace="11"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica">Compile and run the program. Take the File|New menu choice. You will notice that the
+    scene does animate, but only if you are moving the mouse in the window. This is because
+    the <b>OnIdle</b> message is only sent after a message is processed, so we need to
+    continually send messages to the application to keep the <b>OnIdle</b> time processing
+    pumping. We can do this easily by adding a Timer to our application.<!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../../_themes/sumipntg/sumbul1a.gif" width="20" height="20" hspace="11"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica"><br>
+    <br>
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../../_themes/sumipntg/sumbul1a.gif" width="20" height="20" hspace="11"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica">Add the following line to the <b>OnInitialUpdate</b> function of the <b>CSample3View</b>
+    class:<br>
+    <br>
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <!--mstheme--></font><pre>void CSample3View::OnInitialUpdate(void)
+{
+	// Call the base class's OnInitialUpdate function
+	CView::OnInitialUpdate();
+
+	// Get the document
+	CSample3Doc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+
+	if (!pDoc-&gt;browser)
+	{
+		// Create the browser and associate it to this window
+		pDoc-&gt;browser = new vrBrowser(m_hWnd);
+		
+		// Create a default box
+		vrBox *box = new vrBox;
+
+		// Create a shape in which we can hold the box
+		vrShape *shape = new vrShape;
+		
+		// Now add the box to the shape and the shape to the browser
+		shape-&gt;SetGeometry(box);
+		pDoc-&gt;browser-&gt;AddChild(shape);
+
+		<font COLOR="#8000FF">// Please note that this will drop a resource and should be
+		// properly cleaned up.  We ignore this for ease of instruction.</font>
+		<font color="FF0000">SetTimer(1001, 30, NULL);</font>
+	}
+}
+</pre><!--mstheme--><font face="verdana, arial, helvetica">
+    <!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../../_themes/sumipntg/sumbul1a.gif" width="20" height="20" hspace="11"></td><td valign="top" width="100%"><!--mstheme--><font face="verdana, arial, helvetica">Compile and run this program again. Do a File|New the VRaniML logo should be animating.
+    Now we see the power of VRaniML. With only 30 lines of code we've created a VRML 2.0
+    browser.<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="verdana, arial, helvetica">
+
+<p>In the <a HREF="step7.htm">final tutorial step</a> we will review what we've done and
+point out a few extensions that you can make to get started with your real VRaniML
+application. <!--commentend------------------------------------------> <!--commentend------------------------------------------> </p>
+
+<p><img SRC="../bar.jpg" ALT="bar.jpg (730 bytes)" HEIGHT="3" WIDTH="100%"></p>
+
+<h5><!--mstheme--><font color="#003366"><font COLOR="#660033">Send mail to <a HREF="mailto:webmaster@greathill.com">webmaster@greathill.com</a>
+with questions or comments about this web site.<br>
+Copyright © 1997 Great Hill Corporation<br>
+Last modified: December 17, 1997&nbsp;</font><!--mstheme--></font></h5>
+</font>
+<!--mstheme--></font></body>
+</html>

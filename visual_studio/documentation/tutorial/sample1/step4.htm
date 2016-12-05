@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<title>Library Tutorial</title>
+</head>
+
+<body BACKGROUND="../../sumtextb.jpg" BGCOLOR="#FFFFFF">
+
+<h1><img src="../../logo.gif" WIDTH="75" HEIGHT="75"> <a name="topofdoc">VRaniML Tutorials</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Step 4: Printing a VRML File</h1>
+
+<p>Now that we've read in the file we can export it.</p>
+
+<hr>
+
+<ul>
+  <li>First, we should check the result of the file read. Change the <b>main</b> function as
+    follows:</li>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <pre>void main(int argc, char *argv[])
+{
+	printf(&quot;VRaniML Pretty Printer\n&quot;);
+	printf(&quot;Version 1.0\n\n&quot;);
+
+	vrBrowser browser;
+
+	// Read the file (note: we hardcode the filename here for ease
+	// of instruction).  Note: Sending NULL to ReadURL will cause
+	// the browser to read from stdin.
+	<font color="FF0000">if (browser.ReadURL(&quot;<i><b>[install_dir]/sample browser/logo.wrl</b></i>&quot;))
+	{
+		printf(&quot;Read status: OK\n&quot;);
+	} else
+	{
+		printf(&quot;Read failed\n&quot;);
+	}</font>
+}</pre>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <li>Next we create a <b>vrWriteTraverser</b> to export the scene graph. A <b>vrWriteTraverser</b>
+    is a VRaniML class that 'walks' the scene graph writing each node to file. One of the
+    primary classes in VRaniML is the vrTraverser. In later tutorial lessons we will use a
+    vrRenderTraverser to actually display the scene graph in a window. Make the following
+    changes to the funcion main:<b> </b></li>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <b><pre></b>void main(int argc, char *argv[])
+{
+	printf(&quot;VRaniML Pretty Printer\n&quot;);
+	printf(&quot;Version 1.0\n\n&quot;);
+
+	vrBrowser browser;
+
+	// Read the file (note: we hardcode the filename here for ease of instruction).
+	// Note: Sending NULL to ReadURL will cause the browser to read from stdin.
+	if (browser.ReadURL(&quot;<i>[install_dir]/browser/logo.wrl</i>&quot;))
+	{
+		printf(&quot;Read status: OK\n&quot;);
+		<font color="FF0000">vrWriteTraverser wt;
+		browser.Traverse(&amp;wt);</font>
+	} else
+	{
+		printf(&quot;Read failed\n&quot;);
+	}
+}<b></pre>
+    </b>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <li>Recompile and run this program.</li>
+</ul>
+
+<p>This program should spit out a lot of VRML 2.0 source code. This is the first version
+of our Pretty Printer.&nbsp; In the <a href="step5.htm">next step</a> we will play with
+some of the parameters of the<b> <b>vrWriteTraverser</b>. </b></p>
+
+<hr>
+
+<p>&nbsp;</p>
+</body>
+</html>

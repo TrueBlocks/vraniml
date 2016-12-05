@@ -1,0 +1,366 @@
+<html><head><title>vrBrowser Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrBrowser</a></h1>
+<dl>
+<dd>
+	The top of the scene graph.  The generator of timing events.  The
+	be-all-end-all VRaniML class.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrbrowser.htm#aag">Summary</a> | </a>
+<a href="vrbrowser.htm#DESCRIPTION">Description</a> | 
+<a href="vrbrowser.htm#NOTES">Notes</a> | 
+<a href="vrbrowser.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrbrowser.htm#MEMBERS">Members</a> | 
+<a href="vrbrowser.htm#parents">Ancestors</a> | <a href="vrbrowser.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrBrowser : public <a href="vrTransform.htm">vrTransform</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">long </td><td><a href="vrBrowser.htm#long_m_FramesPerSec$">m_FramesPerSec</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrTime.htm">vrTime</a> </td><td><a href="vrBrowser.htm#vrTime_m_FrameRate$">m_FrameRate</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrTime.htm">vrTime</a> </td><td><a href="vrBrowser.htm#vrTime_m_LastFrame$">m_LastFrame</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBrowser.htm#vrBrowser_(void_*hWnd,_vrRenderTraverser_*drawTraverser_)$">vrBrowser</a> (void *hWnd, <a href="vrRenderTraverser.htm">vrRenderTraverser</a> *drawTraverser );</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrBrowser.htm#~vrBrowser_(void)$">vrBrowser</a></i> (void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBrowser.htm#void_Bind_(vrBackground_*node,_SFBool_val)$">Bind</a> (<a href="vrBackground.htm">vrBackground</a> *node, SFBool val);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBrowser.htm#void_Bind_(vrFog_*node,_SFBool_val)$">Bind</a> (<a href="vrFog.htm">vrFog</a> *node, SFBool val);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBrowser.htm#void_Bind_(vrViewpoint_*node,_SFBool_val)$">Bind</a> (<a href="vrViewpoint.htm">vrViewpoint</a> *node, SFBool val);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBrowser.htm#void_Bind_(vrNavigationInfo_*node,_SFBool_val)$">Bind</a> (<a href="vrNavigationInfo.htm">vrNavigationInfo</a> *node, SFBool val);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBrowser.htm#void_Bind_(vrBindable_*node,_SFBool_val)$">Bind</a> (<a href="vrBindable.htm">vrBindable</a> *node, SFBool val);</td></tr>
+<tr><td align="right" valign="top"><a href="vrBackground.htm">vrBackground</a> *</td><td><a href="vrBrowser.htm#vrBackground_*GetBackground_(void)_const$">GetBackground</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrFog.htm">vrFog</a> *</td><td><a href="vrBrowser.htm#vrFog_*GetFog_(void)_const$">GetFog</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrViewpoint.htm">vrViewpoint</a> *</td><td><a href="vrBrowser.htm#vrViewpoint_*GetViewpoint_(void)_const$">GetViewpoint</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrNavigationInfo.htm">vrNavigationInfo</a> *</td><td><a href="vrBrowser.htm#vrNavigationInfo_*GetNavigationInfo_(void)_const$">GetNavigationInfo</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrBrowser.htm#SFBool_ReadURL_(const_SFString&amp;_filename,_vrGroupingNode_*insertAt_)$">ReadURL</a> (const <a href="SFString.htm">SFString</a>&amp; filename, <a href="vrGroupingNode.htm">vrGroupingNode</a> *insertAt );</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrBrowser.htm#SFBool_ReadURL_(FILE_*fp,_vrGroupingNode_*insertAt_)$">ReadURL</a> (FILE *fp, <a href="vrGroupingNode.htm">vrGroupingNode</a> *insertAt );</td></tr>
+<tr><td align="right" valign="top"><a href="vrRoute.htm">vrRoute</a> *</td><td><a href="vrBrowser.htm#vrRoute_*AddRoute_(const_SFString&amp;_srcName,_const_SFString&amp;_srcType,_const_SFString&amp;_dstName,_const_SFString&amp;_dstType,_SFBool_internal_)$">AddRoute</a> (const <a href="SFString.htm">SFString</a>&amp; srcName, const <a href="SFString.htm">SFString</a>&amp; srcType, const <a href="SFString.htm">SFString</a>&amp; dstName, const <a href="SFString.htm">SFString</a>&amp; dstType, SFBool internal );</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBrowser.htm#void_SetFrameRate_(SFInt32_frames)$">SetFrameRate</a> (SFInt32 frames);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrBrowser.htm#SFBool_Tick_(SFInt32_mode_)$">Tick</a> (SFInt32 mode );</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrBrowser.htm#void_Traverse_(vrTraverser_*t_)_const$">Traverse</a></i> (<a href="vrTraverser.htm">vrTraverser</a> *t ) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrTraverser.htm">vrTraverser</a> *</td><td><a href="vrBrowser.htm#vrTraverser_*GetTraverserByNumber_(SFInt32_location)_const$">GetTraverserByNumber</a> (SFInt32 location) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrTraverser.htm">vrTraverser</a> *</td><td><a href="vrBrowser.htm#vrTraverser_*GetTraverserByType_(vrRuntimeClass_*pClass)_const$">GetTraverserByType</a> (<a href="vrRuntimeClass.htm">vrRuntimeClass</a> *pClass) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrTraverser.htm">vrTraverser</a> *</td><td><a href="vrBrowser.htm#vrTraverser_*SetTraverser_(vrTraverser_*t,_SFInt32_location,_SFBool_insert)$">SetTraverser</a> (<a href="vrTraverser.htm">vrTraverser</a> *t, SFInt32 location, SFBool insert);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrBrowser.htm#SFInt32_GetNTraversers_(void)_const$">GetNTraversers</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrBrowser.htm#SFBool_ProcessUserMessage_(const_vrUserMessage&amp;_msg)$">ProcessUserMessage</a></i> (const vrUserMessage&amp; msg);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBrowser.htm#void_ChangeViewpoint(vrViewpoint_*newVP,_SFInt32_nFrames_)$">ChangeViewpoint</a>(<a href="vrViewpoint.htm">vrViewpoint</a> *newVP, SFInt32 nFrames );</td></tr>
+<tr><td align="right" valign="top"><a href="vrGroupingNode.htm">vrGroupingNode</a> *</td><td><a href="vrBrowser.htm#vrGroupingNode_*GetSelection(void)_const$">GetSelection</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrGroupingNode.htm">vrGroupingNode</a> *</td><td><a href="vrBrowser.htm#vrGroupingNode_*PickScene(SFVec3f_pt)$">PickScene</a>(<a href="SFVec3f.htm">SFVec3f</a> pt);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrBrowser.htm#void_Clear_(SFBool_resetOnly)$">Clear</a> (SFBool resetOnly);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrBrowser.htm#DECLARE_NODE(vrBrowser)$">DECLARE_NODE</a>(vrBrowser);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="vrGroupingNode.htm">vrGroupingNode</a> *</td><td><a href="vrBrowser.htm#vrGroupingNode_*m_PickedObject$">m_PickedObject</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	The browser class is the basis for the runtime environment of 
+	VRaniML.  It serves as the top level of the scene graph providing
+	the initial coordinate system for the scene.  The vrBrowser class
+	also implements an internal timer to keep track of the passing
+	time in the system.  This is used to generate <a href="vrTimeSensor.htm">vrTimeSensor</a> events
+	if any such nodes exist in the scene graph.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>There can only be one active vrBrowser for each <a href="vrTraverser.htm">vrTraverser</a>
+	at any given time.</li>
+	<li>The vrBrowser corresponds roughly to the CDocument class 
+	in the MFC.  The <a href="vrRenderTraverser.htm">vrRenderTraverser</a> corresponds to the CView class.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="vrGroupingNode_*m_PickedObject$"><ul><h3><li>vrGroupingNode *m_PickedObject;</li></h3></a>
+</ul>
+</ul>	   <dd>The grouping node that was picked with the last call to PickScene (or the last mouse down event).
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="long_m_FramesPerSec$"><ul><h3><li>long m_FramesPerSec;</li></h3></a>
+</ul>
+</ul>	   <dd>The number of frames rendered per second
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 30</strong>
+<p>
+</dl></dl>
+<a name="vrTime_m_FrameRate$"><ul><h3><li>vrTime m_FrameRate;</li></h3></a>
+</ul>
+</ul>	   <dd>Millionths of a second allowed per frame (1000000 / m_FramesPerSec)
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 1000000</strong>
+<dd>/ 30
+<p>
+</dl></dl>
+<a name="vrTime_m_LastFrame$"><ul><h3><li>vrTime m_LastFrame;</li></h3></a>
+</ul>
+</ul>	   <dd>The time when the last frame was drawn.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> vrNow()</strong>
+<p>
+</dl></dl>
+<a name="vrBrowser_(void_*hWnd,_vrRenderTraverser_*drawTraverser_)$"><ul><h3><li>vrBrowser (void *hWnd, vrRenderTraverser *drawTraverser );</li></h3></a>
+</ul>
+</ul>	   <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> hWnd:</strong>
+<dd>Pointer to a HWND object into which to render the scene graph.
+<dt><i>in</i><strong> drawTraverser:</strong>
+<dd>The rendering traverser to use to render to the hWnd.  If NULL a <a href="vrOGLTraverser.htm">vrOGLTraverser</a> is created.
+<p>
+</dl></dl>
+<a name="~vrBrowser_(void)$"><ul><h3><li>~vrBrowser (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="void_Bind_(vrBackground_*node,_SFBool_val)$"><ul><h3><li>void Bind (vrBackground *node, SFBool val);</li></h3></a>
+</ul>
+</ul>	  <dd> Binds the given node to the Background stack (or unbinds the node).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> node:</strong>
+<dd>The node to bind or unbind.
+<dt><i>in</i><strong> val:</strong>
+<dd>TRUE to bind, FALSE to unbind the given node.
+<p>
+</dl></dl>
+<a name="void_Bind_(vrFog_*node,_SFBool_val)$"><ul><h3><li>void Bind (vrFog *node, SFBool val);</li></h3></a>
+</ul>
+</ul>	  <dd> Binds the given node to the Fog stack (or unbinds the node).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> node:</strong>
+<dd>The node to bind or unbind.
+<dt><i>in</i><strong> val:</strong>
+<dd>TRUE to bind, FALSE to unbind the given node.
+<p>
+</dl></dl>
+<a name="void_Bind_(vrViewpoint_*node,_SFBool_val)$"><ul><h3><li>void Bind (vrViewpoint *node, SFBool val);</li></h3></a>
+</ul>
+</ul>	  <dd> Binds the given node to the Viewpoint stack (or unbinds the node).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> node:</strong>
+<dd>The node to bind or unbind.
+<dt><i>in</i><strong> val:</strong>
+<dd>TRUE to bind, FALSE to unbind the given node.
+<p>
+</dl></dl>
+<a name="void_Bind_(vrNavigationInfo_*node,_SFBool_val)$"><ul><h3><li>void Bind (vrNavigationInfo *node, SFBool val);</li></h3></a>
+</ul>
+</ul>	  <dd> Binds the given node to the NavigationInfo stack (or unbinds the node).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> node:</strong>
+<dd>The node to bind or unbind.
+<dt><i>in</i><strong> val:</strong>
+<dd>TRUE to bind, FALSE to unbind the given node.
+<p>
+</dl></dl>
+<a name="void_Bind_(vrBindable_*node,_SFBool_val)$"><ul><h3><li>void Bind (vrBindable *node, SFBool val);</li></h3></a>
+</ul>
+</ul>	  <dd> Binds the given node to the approriate stack based on the nodes runtime type (or unbinds the node).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> node:</strong>
+<dd>The node to bind or unbind.
+<dt><i>in</i><strong> val:</strong>
+<dd>TRUE to bind, FALSE to unbind the given node.
+<p>
+</dl></dl>
+<a name="vrBackground_*GetBackground_(void)_const$"><ul><h3><li>vrBackground *GetBackground (void) const;</li></h3></a>
+</ul>
+</ul>	  <dd> Returns the top of the Background stack.
+<p>
+<a name="vrFog_*GetFog_(void)_const$"><ul><h3><li>vrFog *GetFog (void) const;</li></h3></a>
+</ul>
+</ul>	  <dd> Returns the top of the Fog stack.
+<p>
+<a name="vrViewpoint_*GetViewpoint_(void)_const$"><ul><h3><li>vrViewpoint *GetViewpoint (void) const;</li></h3></a>
+</ul>
+</ul>	  <dd> Returns the top of the Viewpoint stack.
+<p>
+<a name="vrNavigationInfo_*GetNavigationInfo_(void)_const$"><ul><h3><li>vrNavigationInfo *GetNavigationInfo (void) const;</li></h3></a>
+</ul>
+</ul>	  <dd> Returns the top of the NavigationInfo stack.
+<p>
+<a name="SFBool_ReadURL_(const_SFString&amp;_filename,_vrGroupingNode_*insertAt_)$"><ul><h3><li>SFBool ReadURL (const SFString&amp; filename, vrGroupingNode *insertAt );</li></h3></a>
+</ul>
+</ul>	  <dd> Read a .wrl file.  Returns TRUE on success.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> filename:</strong>
+<dd>The name of the file to read.
+<dt><i>in</i><strong> insertAt:</strong>
+<dd>A grouping node into which the file can be added.  If NULL file is added the this browser.
+<p>
+</dl></dl>
+<a name="SFBool_ReadURL_(FILE_*fp,_vrGroupingNode_*insertAt_)$"><ul><h3><li>SFBool ReadURL (FILE *fp, vrGroupingNode *insertAt );</li></h3></a>
+</ul>
+</ul>	  <dd> Read a .wrl file.  Returns TRUE on success.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fp:</strong>
+<dd>FILE * to open.
+<dt><i>in</i><strong> insertAt:</strong>
+<dd>A grouping node into which the file can be added.  If NULL file is added the this browser.
+<p>
+</dl></dl>
+<a name="vrRoute_*AddRoute_(const_SFString&amp;_srcName,_const_SFString&amp;_srcType,_const_SFString&amp;_dstName,_const_SFString&amp;_dstType,_SFBool_internal_)$"><ul><h3><li>vrRoute *AddRoute (const SFString&amp; srcName, const SFString&amp; srcType, const SFString&amp; dstName, const SFString&amp; dstType, SFBool internal );</li></h3></a>
+</ul>
+</ul>	  <dd> Add a ROUTE by name (as opposed to by a pointer to the node).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> srcName:</strong>
+<dd>The name of the source node.
+<dt><i>in</i><strong> srcType:</strong>
+<dd>The field in the source node to route from.
+<dt><i>in</i><strong> dstName:</strong>
+<dd>The name of the destination node.
+<dt><i>in</i><strong> dstType:</strong>
+<dd>The field in the destination node to route to.
+<p>
+</dl></dl>
+<a name="void_SetFrameRate_(SFInt32_frames)$"><ul><h3><li>void SetFrameRate (SFInt32 frames);</li></h3></a>
+</ul>
+</ul>	  <dd> Modifies the suggested frame rate.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> frames:</strong>
+<dd>The frame rate.
+<p>
+</dl></dl>
+<a name="SFBool_Tick_(SFInt32_mode_)$"><ul><h3><li>SFBool Tick (SFInt32 mode );</li></h3></a>
+</ul>
+</ul>	  <dd> Advance the internal clock one tick.  Returns TRUE if application should call Traverse to render the scene).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> mode:</strong>
+<dd>Undocumented.
+<p>
+</dl></dl>
+<a name="void_Traverse_(vrTraverser_*t_)_const$"><ul><h3><li>void Traverse (vrTraverser *t ) const;</li></h3></a>
+</ul>
+</ul>	  <dd> Traverse the scene.  NULL implies render the scene to the window.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> t:</strong>
+<dd>Traverser to use to traverse the scene graph.
+<p>
+</dl></dl>
+<a name="vrTraverser_*GetTraverserByNumber_(SFInt32_location)_const$"><ul><h3><li>vrTraverser *GetTraverserByNumber (SFInt32 location) const;</li></h3></a>
+</ul>
+</ul>	  <dd>Retrieve a traverser by it's position in traverser list.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> n:</strong>
+<dd>The traverser to return.
+<p>
+</dl></dl>
+<a name="vrTraverser_*GetTraverserByType_(vrRuntimeClass_*pClass)_const$"><ul><h3><li>vrTraverser *GetTraverserByType (vrRuntimeClass *pClass) const;</li></h3></a>
+</ul>
+</ul>	  <dd>Retrieve a traverser by it's type.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pClass:</strong>
+<dd>The type of the traverser to return (first one encountered).
+<p>
+</dl></dl>
+<a name="vrTraverser_*SetTraverser_(vrTraverser_*t,_SFInt32_location,_SFBool_insert)$"><ul><h3><li>vrTraverser *SetTraverser (vrTraverser *t, SFInt32 location, SFBool insert);</li></h3></a>
+</ul>
+</ul>	  <dd>Add a traverser to the traverser list (at a particular location in the list).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> t:</strong>
+<dd>The traverser to add (-1 means append to end of list).
+<p>
+</dl></dl>
+<a name="SFInt32_GetNTraversers_(void)_const$"><ul><h3><li>SFInt32 GetNTraversers (void) const;</li></h3></a>
+</ul>
+</ul>	  <dd>Retrieve the number of traversers attached to this browser
+<p>
+<a name="SFBool_ProcessUserMessage_(const_vrUserMessage&amp;_msg)$"><ul><h3><li>SFBool ProcessUserMessage (const vrUserMessage&amp; msg);</li></h3></a>
+</ul>
+</ul>	  <dd> Called by the application, this method responds to user actions (mouse movements).
+	  <dd> Returns TRUE if the message was processed.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> msg:</strong>
+<dd>The user message
+<p>
+</dl></dl>
+<a name="void_ChangeViewpoint(vrViewpoint_*newVP,_SFInt32_nFrames_)$"><ul><h3><li>void ChangeViewpoint(vrViewpoint *newVP, SFInt32 nFrames );</li></h3></a>
+</ul>
+</ul>	  <dd> Moves the current browser viewpoint to a different location (in nFrames steps)
+<p>
+<dl><dl>
+<dt><i>in</i><strong> newVP:</strong>
+<dd>The viewpoint
+<dt><i>in</i><strong> nFrames:</strong>
+<dd>The number of frames to display in the process of moving at the current frame rate.
+<p>
+</dl></dl>
+<a name="vrGroupingNode_*GetSelection(void)_const$"><ul><h3><li>vrGroupingNode *GetSelection(void) const;</li></h3></a>
+</ul>
+</ul>	  <dd> Returns the same value as the most recent PickScene function call.
+<p>
+<a name="vrGroupingNode_*PickScene(SFVec3f_pt)$"><ul><h3><li>vrGroupingNode *PickScene(SFVec3f pt);</li></h3></a>
+</ul>
+</ul>	  <dd> Returns a the grouping node (if any) that occupies the screen space referenced by the point.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pt:</strong>
+<dd>The screen space point at which to pick (z-component is unused). 
+<p>
+</dl></dl>
+<a name="void_Clear_(SFBool_resetOnly)$"><ul><h3><li>void Clear (SFBool resetOnly);</li></h3></a>
+</ul>
+</ul>	  <dd> Clear the browser's memory.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> resetOnly:</strong>
+<dd>If TRUE do not clear memory just reset.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrBrowser)$"><ul><h3><li>DECLARE_NODE(vrBrowser);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed and dynamically created. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrBrowser:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+<li><a href="vrGroupingNode.htm">vrGroupingNode</a>
+<li><a href="vrTransform.htm">vrTransform</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:58 1999
+.<p>
+</body></html>

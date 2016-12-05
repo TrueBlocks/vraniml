@@ -1,0 +1,278 @@
+<html><head><title>vrGeometryNode Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrGeometryNode</a></h1>
+<dl>
+<dd>
+	This class corresponds to the GeometryNode node in VRML.  
+	<a href="../spec/part1/nodesRef.html#GeometryNode">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrgeometrynode.htm#aag">Summary</a> | </a>
+<a href="vrgeometrynode.htm#DESCRIPTION">Description</a> | 
+<a href="vrgeometrynode.htm#NOTES">Notes</a> | 
+<a href="vrgeometrynode.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrgeometrynode.htm#MEMBERS">Members</a> | 
+<a href="vrgeometrynode.htm#parents">Ancestors</a> | <a href="vrgeometrynode.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrGeometryNode : public <a href="vrNode.htm">vrNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrGeometryNode.htm#vrGeometryNode(void)$">vrGeometryNode</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrGeometryNode.htm#vrGeometryNode(const_vrGeometryNode&amp;_v)$">vrGeometryNode</a>(const vrGeometryNode&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrGeometryNode.htm#~vrGeometryNode(void)$">vrGeometryNode</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrGeometryNode&amp; </td><td><a href="vrGeometryNode.htm#vrGeometryNode&amp;_operator$(const_vrGeometryNode&amp;_v)$">operator=</a>(const vrGeometryNode&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrGeometryNode.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrGeometryNode.htm#void_SetCcw(SFBool_ccw)$">SetCcw</a>(SFBool ccw);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrGeometryNode.htm#void_SetConvex(SFBool_convex)$">SetConvex</a>(SFBool convex);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrGeometryNode.htm#void_SetCreaseAngle(SFFloat_creaseangle)$">SetCreaseAngle</a>(SFFloat creaseangle);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrGeometryNode.htm#void_SetSolid(SFBool_solid)$">SetSolid</a>(SFBool solid);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrGeometryNode.htm#void_SetGeom(const_vrSolid*_geom)$">SetGeom</a>(const <a href="vrSolid.htm">vrSolid</a>* geom);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrGeometryNode.htm#void_SetNative(SFBool_native)$">SetNative</a>(SFBool native);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrGeometryNode.htm#SFBool_GetCcw(void)_const$">GetCcw</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrGeometryNode.htm#SFBool_GetConvex(void)_const$">GetConvex</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrGeometryNode.htm#SFFloat_GetCreaseAngle(void)_const$">GetCreaseAngle</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrGeometryNode.htm#SFBool_GetSolid(void)_const$">GetSolid</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrSolid.htm">vrSolid</a>* </td><td><a href="vrGeometryNode.htm#vrSolid*_GetGeom(void)_const$">GetGeom</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrGeometryNode.htm#SFBool_GetNative(void)_const$">GetNative</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrGeometryNode.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrGeometryNode.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrGeometryNode.htm#DECLARE_NODE(vrGeometryNode)$">DECLARE_NODE</a>(vrGeometryNode);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrGeometryNode.htm#SFBool_m_Ccw$">m_Ccw</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrGeometryNode.htm#SFBool_m_Convex$">m_Convex</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrGeometryNode.htm#SFFloat_m_CreaseAngle$">m_CreaseAngle</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrGeometryNode.htm#SFBool_m_Solid$">m_Solid</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrSolid.htm">vrSolid</a>* </td><td><a href="vrGeometryNode.htm#vrSolid*_m_Geom$">m_Geom</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrGeometryNode.htm#SFBool_m_Native$">m_Native</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the GeometryNode node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#GeometryNode">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFBool_m_Ccw$"><ul><h3><li>SFBool m_Ccw;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'ccw' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_Convex$"><ul><h3><li>SFBool m_Convex;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'convex' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_CreaseAngle$"><ul><h3><li>SFFloat m_CreaseAngle;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'creaseAngle' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0.0</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_Solid$"><ul><h3><li>SFBool m_Solid;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'solid' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="vrSolid*_m_Geom$"><ul><h3><li>vrSolid* m_Geom;</li></h3></a>
+</ul>
+</ul>	  <dd>Internal representation for the geometry.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_Native$"><ul><h3><li>SFBool m_Native;</li></h3></a>
+</ul>
+</ul>	  <dd>Unused.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="vrGeometryNode(void)$"><ul><h3><li>vrGeometryNode(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrGeometryNode(const_vrGeometryNode&amp;_v)$"><ul><h3><li>vrGeometryNode(const vrGeometryNode&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrGeometryNode(void)$"><ul><h3><li>~vrGeometryNode(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrGeometryNode&amp;_operator$(const_vrGeometryNode&amp;_v)$"><ul><h3><li>vrGeometryNode&amp; operator=(const vrGeometryNode&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_SetCcw(SFBool_ccw)$"><ul><h3><li>void SetCcw(SFBool ccw);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Ccw member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> ccw:</strong>
+<dd>The ccw value.
+<p>
+</dl></dl>
+<a name="void_SetConvex(SFBool_convex)$"><ul><h3><li>void SetConvex(SFBool convex);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Convex member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> convex:</strong>
+<dd>The convex value.
+<p>
+</dl></dl>
+<a name="void_SetCreaseAngle(SFFloat_creaseangle)$"><ul><h3><li>void SetCreaseAngle(SFFloat creaseangle);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_CreaseAngle member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> creaseangle:</strong>
+<dd>The creaseangle value.
+<p>
+</dl></dl>
+<a name="void_SetSolid(SFBool_solid)$"><ul><h3><li>void SetSolid(SFBool solid);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Solid member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> solid:</strong>
+<dd>The solid value.
+<p>
+</dl></dl>
+<a name="void_SetGeom(const_vrSolid*_geom)$"><ul><h3><li>void SetGeom(const vrSolid* geom);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Geom member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> geom:</strong>
+<dd>The geom value.
+<p>
+</dl></dl>
+<a name="void_SetNative(SFBool_native)$"><ul><h3><li>void SetNative(SFBool native);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Native member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> native:</strong>
+<dd>The native value.
+<p>
+</dl></dl>
+<a name="SFBool_GetCcw(void)_const$"><ul><h3><li>SFBool GetCcw(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Ccw member.
+<p>
+<a name="SFBool_GetConvex(void)_const$"><ul><h3><li>SFBool GetConvex(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Convex member.
+<p>
+<a name="SFFloat_GetCreaseAngle(void)_const$"><ul><h3><li>SFFloat GetCreaseAngle(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_CreaseAngle member.
+<p>
+<a name="SFBool_GetSolid(void)_const$"><ul><h3><li>SFBool GetSolid(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Solid member.
+<p>
+<a name="vrSolid*_GetGeom(void)_const$"><ul><h3><li>vrSolid* GetGeom(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Geom member.
+<p>
+<a name="SFBool_GetNative(void)_const$"><ul><h3><li>SFBool GetNative(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Native member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vrgeometrynode.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrGeometryNode)$"><ul><h3><li>DECLARE_NODE(vrGeometryNode);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrGeometryNode:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrBox.htm">vrBox</a>
+<li><a href="vrCone.htm">vrCone</a>
+<li><a href="vrCylinder.htm">vrCylinder</a>
+<li><a href="vrDataSet.htm">vrDataSet</a>
+<ul>
+<li><a href="vrElevationGrid.htm">vrElevationGrid</a>
+<li><a href="vrIndexedFaceSet.htm">vrIndexedFaceSet</a>
+<li><a href="vrIndexedLineSet.htm">vrIndexedLineSet</a>
+<li><a href="vrPointSet.htm">vrPointSet</a>
+</ul>
+<li><a href="vrExtrusion.htm">vrExtrusion</a>
+<li><a href="vrSphere.htm">vrSphere</a>
+<li><a href="vrText.htm">vrText</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:51 1999
+.<p>
+</body></html>

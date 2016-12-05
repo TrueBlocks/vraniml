@@ -1,0 +1,192 @@
+<html><head><title>vrIntrusiveList Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrIntrusiveList</a></h1>
+<dl>
+<dd>
+	Type-safe templated doubly linked list.
+
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrintrusivelist.htm#aag">Summary</a> | </a>
+<a href="vrintrusivelist.htm#DESCRIPTION">Description</a> | 
+<a href="vrintrusivelist.htm#NOTES">Notes</a> | 
+<a href="vrintrusivelist.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrintrusivelist.htm#MEMBERS">Members</a> | 
+<a href="vrintrusivelist.htm#parents">Ancestors</a> | <a href="vrintrusivelist.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class vrIntrusiveList<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrIntrusiveList.htm#vrIntrusiveList_(void)$">vrIntrusiveList</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrIntrusiveList.htm#~vrIntrusiveList_(void)_$">vrIntrusiveList</a> (void) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrIntrusiveList.htm#void_AddTail_(TYPE)$">AddTail</a> (TYPE);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrIntrusiveList.htm#void_AddHead_(TYPE)$">AddHead</a> (TYPE);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrIntrusiveList.htm#SFInt32_GetCount_(void)_const_$">GetCount</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrIntrusiveList.htm#TYPE_GetHead_(void)_const_$">GetHead</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrIntrusiveList.htm#TYPE_GetTail_(void)_const_$">GetTail</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrIntrusiveList.htm#TYPE_GetNext_(LISTPOS&amp;_rPosition)_const$">GetNext</a> (LISTPOS&amp; rPosition) const;</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrIntrusiveList.htm#TYPE_GetPrev_(LISTPOS&amp;_rPosition)_const$">GetPrev</a> (LISTPOS&amp; rPosition) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#LISTPOS">LISTPOS </a> </td><td><a href="vrIntrusiveList.htm#LISTPOS_GetHeadPosition_(void)_const_$">GetHeadPosition</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#LISTPOS">LISTPOS </a> </td><td><a href="vrIntrusiveList.htm#LISTPOS_GetTailPosition_(void)_const_$">GetTailPosition</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrIntrusiveList.htm#void_RemoveAt_(TYPE)$">RemoveAt</a> (TYPE);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrIntrusiveList.htm#void_RemoveAll_(void)$">RemoveAll</a> (void);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrIntrusiveList.htm#SFInt32_NextIndex_(void)_$">NextIndex</a> (void) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrIntrusiveList.htm#void_SetNextIndex_(SFInt32_i)$">SetNextIndex</a> (SFInt32 i);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFInt32">SFInt32 </a> </td><td><a href="vrIntrusiveList.htm#SFInt32_n$">n</a>;</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrIntrusiveList.htm#TYPE_m_Head$">m_Head</a>;</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrIntrusiveList.htm#TYPE_m_Tail$">m_Tail</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	This class requires that items added to it already posses a 
+	next and previous pointer (thus the name Intrusive).  It is modelled
+	heavily after the MFC class CList and behaves in much the same way.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>This is a templated class.  Data added to a list of this
+		type must contain two data items of type TYPE called next and prev
+		or be derived from the vrIntrusiveListNode object.</li>
+	<li>This class does not own the memory representing the items added to
+	the list.  The caller must allocate and de-allocate this memory.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// A simple linked list.  Items added to the vrIntrusiveList must
+	// possess next and prev pointers.
+	class A
+	{
+	public:
+		A *next;
+		A *prev;
+		int data;
+		A(int d) { data = d; }
+	};
+
+	vrIntrusiveList<a*> Alist;
+	Alist.<a href="vrintrusivelist.htm#void_AddTail_(TYPE)$">AddTail</a>(new A(1));
+	Alist.<a href="vrintrusivelist.htm#void_AddTail_(TYPE)$">AddTail</a>(new A(2));
+	Alist.<a href="vrintrusivelist.htm#void_AddTail_(TYPE)$">AddTail</a>(new A(3));
+
+	LISTPOS pos = Alist.<a href="vrintrusivelist.htm#LISTPOS_GetHeadPosition_(void)_const_$">GetHeadPosition</a>();
+	while (pos)
+	{
+		A *a = Alist.<a href="vrintrusivelist.htm#TYPE_GetNext_(LISTPOS&amp;_rPosition)_const$">GetNext</a>(pos);
+		printf(&quot;%d &quot;, a-&gt;data);
+	}
+	printf(&quot;\n&quot;);
+
+	// OUTPUT
+	// 1 2 3
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFInt32_n$"><ul><h3><li>SFInt32 n;</li></h3></a>
+</ul>
+</ul>     <dd>Number of items in the list.
+<dl><dl>
+<dt><i>default:</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="TYPE_m_Head$"><ul><h3><li>TYPE m_Head;</li></h3></a>
+</ul>
+</ul>     <dd>The head of the list.
+<dl><dl>
+<dt><i>default:</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="TYPE_m_Tail$"><ul><h3><li>TYPE m_Tail;</li></h3></a>
+</ul>
+</ul>     <dd>The tail of the list.
+<dl><dl>
+<dt><i>default:</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="vrIntrusiveList_(void)$"><ul><h3><li>vrIntrusiveList (void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="~vrIntrusiveList_(void)_$"><ul><h3><li>~vrIntrusiveList (void) ;</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="void_AddTail_(TYPE)$"><ul><h3><li>void AddTail (TYPE);</li></h3></a>
+</ul>
+</ul>     <dd>Add an item to the tail of the list.
+<p>
+<a name="void_AddHead_(TYPE)$"><ul><h3><li>void AddHead (TYPE);</li></h3></a>
+</ul>
+</ul>     <dd>Add an item to the head of the list.
+<p>
+<a name="SFInt32_GetCount_(void)_const_$"><ul><h3><li>SFInt32 GetCount (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Return the number of items in the list.
+<p>
+<a name="TYPE_GetHead_(void)_const_$"><ul><h3><li>TYPE GetHead (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Return the head of the list.
+<p>
+<a name="TYPE_GetTail_(void)_const_$"><ul><h3><li>TYPE GetTail (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Return the tail of the list.
+<p>
+<a name="TYPE_GetNext_(LISTPOS&amp;_rPosition)_const$"><ul><h3><li>TYPE GetNext (LISTPOS&amp; rPosition) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return the next item (as represented with the rPosition iterator).
+<p>
+<a name="TYPE_GetPrev_(LISTPOS&amp;_rPosition)_const$"><ul><h3><li>TYPE GetPrev (LISTPOS&amp; rPosition) const;</li></h3></a>
+</ul>
+</ul>     <dd>Return the previous item (as represented with the rPosition iterator).
+<p>
+<a name="LISTPOS_GetHeadPosition_(void)_const_$"><ul><h3><li>LISTPOS GetHeadPosition (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Return an iteration handle representing the head of the list.
+<p>
+<a name="LISTPOS_GetTailPosition_(void)_const_$"><ul><h3><li>LISTPOS GetTailPosition (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Return an iteration handle representing the tail of the list.
+<p>
+<a name="void_RemoveAt_(TYPE)$"><ul><h3><li>void RemoveAt (TYPE);</li></h3></a>
+</ul>
+</ul>     <dd>Remove the given item from the list.
+<p>
+<a name="void_RemoveAll_(void)$"><ul><h3><li>void RemoveAll (void);</li></h3></a>
+</ul>
+</ul>     <dd>Remove all items from the list.
+<p>
+<a name="SFInt32_NextIndex_(void)_$"><ul><h3><li>SFInt32 NextIndex (void) ;</li></h3></a>
+</ul>
+</ul>     <dd>Generate the next index for the item being added to the list.
+<p>
+<a name="void_SetNextIndex_(SFInt32_i)$"><ul><h3><li>void SetNextIndex (SFInt32 i);</li></h3></a>
+</ul>
+</ul>     <dd>Reset the next index generator.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrRingList.htm">vrRingList</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:00 1999
+.<p>
+</body></html>

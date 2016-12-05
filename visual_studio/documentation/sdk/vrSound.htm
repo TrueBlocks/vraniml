@@ -1,0 +1,404 @@
+<html><head><title>vrSound Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrSound</a></h1>
+<dl>
+<dd>
+	This class corresponds to the Sound node in VRML.  
+	<a href="../spec/part1/nodesRef.html#Sound">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrsound.htm#aag">Summary</a> | </a>
+<a href="vrsound.htm#DESCRIPTION">Description</a> | 
+<a href="vrsound.htm#NOTES">Notes</a> | 
+<a href="vrsound.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrsound.htm#MEMBERS">Members</a> | 
+<a href="vrsound.htm#parents">Ancestors</a> | <a href="vrsound.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrSound : public <a href="vrNode.htm">vrNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrSound.htm#vrSound(void)$">vrSound</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrSound.htm#vrSound(const_vrSound&amp;_v)$">vrSound</a>(const vrSound&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrSound.htm#~vrSound(void)$">vrSound</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrSound&amp; </td><td><a href="vrSound.htm#vrSound&amp;_operator$(const_vrSound&amp;_v)$">operator=</a>(const vrSound&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrSound.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSound.htm#void_SetSpatialize(SFBool_spatialize)$">SetSpatialize</a>(SFBool spatialize);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSound.htm#SFBool_GetSpatialize(void)_const$">GetSpatialize</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSound.htm#void_SetDirection(const_SFVec3f&amp;_direction)$">SetDirection</a>(const <a href="SFVec3f.htm">SFVec3f</a>&amp; direction);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSound.htm#void_SetIntensity(SFFloat_intensity)$">SetIntensity</a>(SFFloat intensity);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSound.htm#void_SetLocation(const_SFVec3f&amp;_location)$">SetLocation</a>(const <a href="SFVec3f.htm">SFVec3f</a>&amp; location);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSound.htm#void_SetMaxBack(SFFloat_maxback)$">SetMaxBack</a>(SFFloat maxback);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSound.htm#void_SetMaxFront(SFFloat_maxfront)$">SetMaxFront</a>(SFFloat maxfront);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSound.htm#void_SetMinBack(SFFloat_minback)$">SetMinBack</a>(SFFloat minback);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSound.htm#void_SetMinFront(SFFloat_minfront)$">SetMinFront</a>(SFFloat minfront);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSound.htm#void_SetPriority(SFFloat_priority)$">SetPriority</a>(SFFloat priority);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrSound.htm#void_SetSource(const_vrAudioClip*_source)$">SetSource</a>(const <a href="vrAudioClip.htm">vrAudioClip</a>* source);</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrSound.htm#SFVec3f_GetDirection(void)_const$">GetDirection</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSound.htm#SFFloat_GetIntensity(void)_const$">GetIntensity</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrSound.htm#SFVec3f_GetLocation(void)_const$">GetLocation</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSound.htm#SFFloat_GetMaxBack(void)_const$">GetMaxBack</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSound.htm#SFFloat_GetMaxFront(void)_const$">GetMaxFront</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSound.htm#SFFloat_GetMinBack(void)_const$">GetMinBack</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSound.htm#SFFloat_GetMinFront(void)_const$">GetMinFront</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSound.htm#SFFloat_GetPriority(void)_const$">GetPriority</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrAudioClip.htm">vrAudioClip</a>* </td><td><a href="vrSound.htm#vrAudioClip*_GetSource(void)_const$">GetSource</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrSound.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrSound.htm#void_ReceiveEventIn(vrEvent_*event)$">ReceiveEventIn</a></i>(<a href="vrEvent.htm">vrEvent</a> *event);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrSound.htm#SFNode_FindByType(vrRuntimeClass_*pClass)_const$">FindByType</a></i>(<a href="vrRuntimeClass.htm">vrRuntimeClass</a> *pClass) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrSound.htm#SFNode_FindByName(const_SFString&amp;_nodeName)_const$">FindByName</a></i>(const <a href="SFString.htm">SFString</a>&amp; nodeName) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrSound.htm#SFBool_ForEvery(PFBO3V_userFn,_void_*userData,_PFBO3V_afterFn_)$">ForEvery</a></i>(PFBO3V userFn, void *userData, PFBO3V afterFn );</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrSound.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrSound.htm#DECLARE_NODE(vrSound)$">DECLARE_NODE</a>(vrSound);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrSound.htm#SFBool_m_Spatialize$">m_Spatialize</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrSound.htm#SFVec3f_m_Direction$">m_Direction</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSound.htm#SFFloat_m_Intensity$">m_Intensity</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrSound.htm#SFVec3f_m_Location$">m_Location</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSound.htm#SFFloat_m_MaxBack$">m_MaxBack</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSound.htm#SFFloat_m_MaxFront$">m_MaxFront</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSound.htm#SFFloat_m_MinBack$">m_MinBack</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSound.htm#SFFloat_m_MinFront$">m_MinFront</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrSound.htm#SFFloat_m_Priority$">m_Priority</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrAudioClip.htm">vrAudioClip</a>* </td><td><a href="vrSound.htm#vrAudioClip*_m_Source$">m_Source</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the Sound node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#Sound">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFBool_m_Spatialize$"><ul><h3><li>SFBool m_Spatialize;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'spatialize' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="SFVec3f_m_Direction$"><ul><h3><li>SFVec3f m_Direction;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'direction' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> zAxis</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_Intensity$"><ul><h3><li>SFFloat m_Intensity;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'intensity' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 1.0</strong>
+<p>
+</dl></dl>
+<a name="SFVec3f_m_Location$"><ul><h3><li>SFVec3f m_Location;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'location' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> origin</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_MaxBack$"><ul><h3><li>SFFloat m_MaxBack;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'maxBack' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 10.0</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_MaxFront$"><ul><h3><li>SFFloat m_MaxFront;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'maxFront' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 10.0</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_MinBack$"><ul><h3><li>SFFloat m_MinBack;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'minBack' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 1.0</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_MinFront$"><ul><h3><li>SFFloat m_MinFront;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'minFront' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 1.0</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_Priority$"><ul><h3><li>SFFloat m_Priority;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'priority' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 0.0</strong>
+<p>
+</dl></dl>
+<a name="vrAudioClip*_m_Source$"><ul><h3><li>vrAudioClip* m_Source;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'source' exposedField.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="vrSound(void)$"><ul><h3><li>vrSound(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrSound(const_vrSound&amp;_v)$"><ul><h3><li>vrSound(const vrSound&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrSound(void)$"><ul><h3><li>~vrSound(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrSound&amp;_operator$(const_vrSound&amp;_v)$"><ul><h3><li>vrSound&amp; operator=(const vrSound&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_SetSpatialize(SFBool_spatialize)$"><ul><h3><li>void SetSpatialize(SFBool spatialize);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Spatialize member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> spatialize:</strong>
+<dd>The spatialize value.
+<p>
+</dl></dl>
+<a name="SFBool_GetSpatialize(void)_const$"><ul><h3><li>SFBool GetSpatialize(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Spatialize member.
+<p>
+<a name="void_SetDirection(const_SFVec3f&amp;_direction)$"><ul><h3><li>void SetDirection(const SFVec3f&amp; direction);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Direction member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> direction:</strong>
+<dd>The direction value.
+<p>
+</dl></dl>
+<a name="void_SetIntensity(SFFloat_intensity)$"><ul><h3><li>void SetIntensity(SFFloat intensity);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Intensity member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> intensity:</strong>
+<dd>The intensity value.
+<p>
+</dl></dl>
+<a name="void_SetLocation(const_SFVec3f&amp;_location)$"><ul><h3><li>void SetLocation(const SFVec3f&amp; location);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Location member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> location:</strong>
+<dd>The location value.
+<p>
+</dl></dl>
+<a name="void_SetMaxBack(SFFloat_maxback)$"><ul><h3><li>void SetMaxBack(SFFloat maxback);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_MaxBack member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> maxback:</strong>
+<dd>The maxback value.
+<p>
+</dl></dl>
+<a name="void_SetMaxFront(SFFloat_maxfront)$"><ul><h3><li>void SetMaxFront(SFFloat maxfront);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_MaxFront member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> maxfront:</strong>
+<dd>The maxfront value.
+<p>
+</dl></dl>
+<a name="void_SetMinBack(SFFloat_minback)$"><ul><h3><li>void SetMinBack(SFFloat minback);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_MinBack member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> minback:</strong>
+<dd>The minback value.
+<p>
+</dl></dl>
+<a name="void_SetMinFront(SFFloat_minfront)$"><ul><h3><li>void SetMinFront(SFFloat minfront);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_MinFront member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> minfront:</strong>
+<dd>The minfront value.
+<p>
+</dl></dl>
+<a name="void_SetPriority(SFFloat_priority)$"><ul><h3><li>void SetPriority(SFFloat priority);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Priority member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> priority:</strong>
+<dd>The priority value.
+<p>
+</dl></dl>
+<a name="void_SetSource(const_vrAudioClip*_source)$"><ul><h3><li>void SetSource(const vrAudioClip* source);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Source member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> source:</strong>
+<dd>The source value.
+<p>
+</dl></dl>
+<a name="SFVec3f_GetDirection(void)_const$"><ul><h3><li>SFVec3f GetDirection(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Direction member.
+<p>
+<a name="SFFloat_GetIntensity(void)_const$"><ul><h3><li>SFFloat GetIntensity(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Intensity member.
+<p>
+<a name="SFVec3f_GetLocation(void)_const$"><ul><h3><li>SFVec3f GetLocation(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Location member.
+<p>
+<a name="SFFloat_GetMaxBack(void)_const$"><ul><h3><li>SFFloat GetMaxBack(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_MaxBack member.
+<p>
+<a name="SFFloat_GetMaxFront(void)_const$"><ul><h3><li>SFFloat GetMaxFront(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_MaxFront member.
+<p>
+<a name="SFFloat_GetMinBack(void)_const$"><ul><h3><li>SFFloat GetMinBack(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_MinBack member.
+<p>
+<a name="SFFloat_GetMinFront(void)_const$"><ul><h3><li>SFFloat GetMinFront(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_MinFront member.
+<p>
+<a name="SFFloat_GetPriority(void)_const$"><ul><h3><li>SFFloat GetPriority(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Priority member.
+<p>
+<a name="vrAudioClip*_GetSource(void)_const$"><ul><h3><li>vrAudioClip* GetSource(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Source member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vrsound.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="void_ReceiveEventIn(vrEvent_*event)$"><ul><h3><li>void ReceiveEventIn(vrEvent *event);</li></h3></a>
+</ul>
+</ul>	   <dd>Receive an event during an event cascade or directly from caller.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> event:</strong>
+<dd>The <a href="vrEvent.htm">vrEvent</a> to be processed.
+<p>
+</dl></dl>
+<a name="SFNode_FindByType(vrRuntimeClass_*pClass)_const$"><ul><h3><li>SFNode FindByType(vrRuntimeClass *pClass) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Find a node by class type.  Returns NULL if not found. (Overridden to search <a href="vrNode.htm">vrNode</a> derived data members).
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pClass:</strong>
+<dd>Pointer to a <a href="vrRuntimeClass.htm">vrRuntimeClass</a> representing the searched for type.
+<p>
+</dl></dl>
+<a name="SFNode_FindByName(const_SFString&amp;_nodeName)_const$"><ul><h3><li>SFNode FindByName(const SFString&amp; nodeName) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Find a node by name.  Returns NULL if not found.  (Overridden to search <a href="vrNode.htm">vrNode</a> derived data members)
+<p>
+<dl><dl>
+<dt><i>in</i><strong> nodeName:</strong>
+<dd>The name of the node being searched for.
+<p>
+</dl></dl>
+<a name="SFBool_ForEvery(PFBO3V_userFn,_void_*userData,_PFBO3V_afterFn_)$"><ul><h3><li>SFBool ForEvery(PFBO3V userFn, void *userData, PFBO3V afterFn );</li></h3></a>
+</ul>
+</ul>	   <dd>Apply 'userFn' to all contained nodes (including any children and/or direct references).  [ <a href="../forevery.htm">Additional information.</a> ]
+<p>
+<dl><dl>
+<dt><i>in</i><strong> userFn:</strong>
+<dd>Pointer to a function returning SFBool and taking an SFNode and void pointer as arguments.  'userFn' is applied to this node and all children (if any).
+<dt><i>in</i><strong> userData:</strong>
+<dd>Pointer to arbitrary user data.
+<dt><i>in</i><strong> afterFn:</strong>
+<dd>Pointer to a function to apply after applying 'userFn' to all children (for example: popping a stack).
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrSound)$"><ul><h3><li>DECLARE_NODE(vrSound);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed and dynamically created. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrSound:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:55 1999
+.<p>
+</body></html>

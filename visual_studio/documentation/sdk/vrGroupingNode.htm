@@ -1,0 +1,261 @@
+<html><head><title>vrGroupingNode Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrGroupingNode</a></h1>
+<dl>
+<dd>
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrgroupingnode.htm#aag">Summary</a> | </a>
+<a href="vrgroupingnode.htm#DESCRIPTION">Description</a> | 
+<a href="vrgroupingnode.htm#NOTES">Notes</a> | 
+<a href="vrgroupingnode.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrgroupingnode.htm#MEMBERS">Members</a> | 
+<a href="vrgroupingnode.htm#parents">Ancestors</a> | <a href="vrgroupingnode.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrGroupingNode : public <a href="vrNode.htm">vrNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrGroupingNode.htm#vrGroupingNode(void)$">vrGroupingNode</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrGroupingNode.htm#vrGroupingNode(const_vrGroupingNode&amp;_v)$">vrGroupingNode</a>(const vrGroupingNode&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrGroupingNode.htm#~vrGroupingNode(void)$">vrGroupingNode</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrGroupingNode&amp; </td><td><a href="vrGroupingNode.htm#vrGroupingNode&amp;_operator$(const_vrGroupingNode&amp;_v)$">operator=</a>(const vrGroupingNode&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrGroupingNode.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrGroupingNode.htm#void_SetBboxCenter(const_SFVec3f&amp;_bboxcenter)$">SetBboxCenter</a>(const <a href="SFVec3f.htm">SFVec3f</a>&amp; bboxcenter);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrGroupingNode.htm#void_SetBboxSize(const_SFVec3f&amp;_bboxsize)$">SetBboxSize</a>(const <a href="SFVec3f.htm">SFVec3f</a>&amp; bboxsize);</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrGroupingNode.htm#SFVec3f_GetBboxCenter(void)_const$">GetBboxCenter</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrGroupingNode.htm#SFVec3f_GetBboxSize(void)_const$">GetBboxSize</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrGroupingNode.htm#void_AddChild_(SFNode_node)$">AddChild</a></i> (SFNode node);</td></tr>
+<tr><td align="right" valign="top">vrNodeList *</td><td><a href="vrGroupingNode.htm#vrNodeList_*GetChildren_(void)_const$">GetChildren</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrGroupingNode.htm#SFBool_HasChildren_(void)_const_$">HasChildren</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrGroupingNode.htm#void_Traverse_(vrTraverser_*t)_const$">Traverse</a></i> (<a href="vrTraverser.htm">vrTraverser</a> *t) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrGroupingNode.htm#SFBool_SetFieldValue(const_SFString&amp;_fieldName,_void_*val)$">SetFieldValue</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName, void *val);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrGroupingNode.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrGroupingNode.htm#SFNode_FindByType_(vrRuntimeClass_*pClass)_const$">FindByType</a></i> (<a href="vrRuntimeClass.htm">vrRuntimeClass</a> *pClass) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrGroupingNode.htm#SFNode_FindByName_(const_SFString&amp;_nodeName)_const$">FindByName</a></i> (const <a href="SFString.htm">SFString</a>&amp; nodeName) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrGroupingNode.htm#SFBool_ForEvery_(PFBO3V_userFn,_void_*userData,_PFBO3V_afterFn_)$">ForEvery</a></i> (PFBO3V userFn, void *userData, PFBO3V afterFn );</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrGroupingNode.htm#DECLARE_NODE(vrGroupingNode)$">DECLARE_NODE</a>(vrGroupingNode);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrGroupingNode.htm#SFBool_IsParentOf(SFNode_node)$">IsParentOf</a>(SFNode node);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">vrNodeList *</td><td><a href="vrGroupingNode.htm#vrNodeList_*m_Children$">m_Children</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrGroupingNode.htm#SFVec3f_m_BboxCenter$">m_BboxCenter</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrGroupingNode.htm#SFVec3f_m_BboxSize$">m_BboxSize</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This class serves as the base class for the all grouping nodes including
+	importantly the <a href="vrBrowser.htm">vrBrowser</a> class.  It maintains a list of children nodes
+	and is the basis for the VRML scene graph.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>You will probably not use this class directly, it will serve as the basis for derived classes.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="vrNodeList_*m_Children$"><ul><h3><li>vrNodeList *m_Children;</li></h3></a>
+</ul>
+</ul>     <dd>The list of children nodes of this grouping node.  This is the scene graph.
+<dl><dl>
+<dt><i>default:</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="SFVec3f_m_BboxCenter$"><ul><h3><li>SFVec3f m_BboxCenter;</li></h3></a>
+</ul>
+</ul>     <dd>The user supplied bounding box center (from the .wrl file).
+<dl><dl>
+<dt><i>default:</i><strong> zero</strong>
+<p>
+</dl></dl>
+<a name="SFVec3f_m_BboxSize$"><ul><h3><li>SFVec3f m_BboxSize;</li></h3></a>
+</ul>
+</ul>     <dd>The user supplied bounding box size (from the .wrl file).
+<dl><dl>
+<dt><i>default:</i><strong> zero</strong>
+<p>
+</dl></dl>
+<a name="vrGroupingNode(void)$"><ul><h3><li>vrGroupingNode(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrGroupingNode(const_vrGroupingNode&amp;_v)$"><ul><h3><li>vrGroupingNode(const vrGroupingNode&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrGroupingNode(void)$"><ul><h3><li>~vrGroupingNode(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrGroupingNode&amp;_operator$(const_vrGroupingNode&amp;_v)$"><ul><h3><li>vrGroupingNode&amp; operator=(const vrGroupingNode&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of this node (and all its children).
+<p>
+<a name="void_SetBboxCenter(const_SFVec3f&amp;_bboxcenter)$"><ul><h3><li>void SetBboxCenter(const SFVec3f&amp; bboxcenter);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the Bbox center field.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> bboxcenter:</strong>
+<dd>The value.
+<p>
+</dl></dl>
+<a name="void_SetBboxSize(const_SFVec3f&amp;_bboxsize)$"><ul><h3><li>void SetBboxSize(const SFVec3f&amp; bboxsize);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the Bbox size field.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> bboxsize:</strong>
+<dd>The value.
+<p>
+</dl></dl>
+<a name="SFVec3f_GetBboxCenter(void)_const$"><ul><h3><li>SFVec3f GetBboxCenter(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the bbox center field.
+<p>
+<a name="SFVec3f_GetBboxSize(void)_const$"><ul><h3><li>SFVec3f GetBboxSize(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the bbox size field.
+<p>
+<a name="void_AddChild_(SFNode_node)$"><ul><h3><li>void AddChild (SFNode node);</li></h3></a>
+</ul>
+</ul>	   <dd>Add a child to this node.  The node is verified before being added as
+	   <dd>   per the VRML specification.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> node:</strong>
+<dd>The node to add as a child.  Runtime typing is used to determine if the node is a valid child node.
+<p>
+</dl></dl>
+<a name="vrNodeList_*GetChildren_(void)_const$"><ul><h3><li>vrNodeList *GetChildren (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns a pointer to this nodes children list or NULL.
+<p>
+<p>
+<a name="SFBool_HasChildren_(void)_const_$"><ul><h3><li>SFBool HasChildren (void) const ;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if this node has children.
+<p>
+<p>
+<a name="void_Traverse_(vrTraverser_*t)_const$"><ul><h3><li>void Traverse (vrTraverser *t) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.
+	   <dd>Note: Normally, nodes just call t-&gt;<a href="vrgroupingnode.htm#void_Traverse_(vrTraverser_*t)_const$">Traverse</a>(this) to have the traverser handle the traversal.
+	   <dd>      you may override this method in your derived class to handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="SFBool_SetFieldValue(const_SFString&amp;_fieldName,_void_*val)$"><ul><h3><li>SFBool SetFieldValue(const SFString&amp; fieldName, void *val);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of a field given the field's name and a value.
+	   <dd>Note: Error checking is done on 'fieldName' but cannot be done on 'val',
+	   <dd>      so make sure you send the correct type of data to this method.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The name of the field to set (as specified in the VRML97 specification).
+<dt><i>in</i><strong> val:</strong>
+<dd>Void pointer to a field of the type corresponding to fieldName.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="SFNode_FindByType_(vrRuntimeClass_*pClass)_const$"><ul><h3><li>SFNode FindByType (vrRuntimeClass *pClass) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Find a node by type (searches any <a href="vrNode.htm">vrNode</a> derived data members).  Returns NULL if not found.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pClass:</strong>
+<dd>Pointer to a <a href="vrRuntimeClass.htm">vrRuntimeClass</a> representing the searched for type.
+<p>
+</dl></dl>
+<a name="SFNode_FindByName_(const_SFString&amp;_nodeName)_const$"><ul><h3><li>SFNode FindByName (const SFString&amp; nodeName) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Find a node by name (searches <a href="vrNode.htm">vrNode</a> derived data members).  Returns NULL if not found.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> nodeName:</strong>
+<dd>The name of the node being searched for.
+<p>
+</dl></dl>
+<a name="SFBool_ForEvery_(PFBO3V_userFn,_void_*userData,_PFBO3V_afterFn_)$"><ul><h3><li>SFBool ForEvery (PFBO3V userFn, void *userData, PFBO3V afterFn );</li></h3></a>
+</ul>
+</ul>	   <dd>Apply 'userFn' to all contained nodes (including any children and/or direct references).  [ <a href="../forevery.htm">Additional information.</a> ]
+<p>
+<dl><dl>
+<dt><i>in</i><strong> userFn:</strong>
+<dd>Pointer to a function returning SFBool and taking an SFNode and void pointer as arguments.  'userFn' is applied to this node and all children (if any).
+<dt><i>in</i><strong> userData:</strong>
+<dd>Pointer to arbitrary user data.
+<dt><i>in</i><strong> afterFn:</strong>
+<dd>Pointer to a function to apply after applying 'userFn' to all children (for example: popping a stack).
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrGroupingNode)$"><ul><h3><li>DECLARE_NODE(vrGroupingNode);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="SFBool_IsParentOf(SFNode_node)$"><ul><h3><li>SFBool IsParentOf(SFNode node);</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if this node is a direct parent the query node.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> node:</strong>
+<dd>The query node.
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrGroupingNode:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrAnchor.htm">vrAnchor</a>
+<li><a href="vrBillboard.htm">vrBillboard</a>
+<li><a href="vrCollision.htm">vrCollision</a>
+<li><a href="vrGroup.htm">vrGroup</a>
+<li><a href="vrInline.htm">vrInline</a>
+<li><a href="vrTransform.htm">vrTransform</a>
+<ul>
+<li><a href="vrBrowser.htm">vrBrowser</a>
+</ul>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:52 1999
+.<p>
+</body></html>

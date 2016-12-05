@@ -1,0 +1,276 @@
+<html><head><title>vrList Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrList</a></h1>
+<dl>
+<dd>
+	A type-safe templated doubly linked list.
+
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrlist.htm#aag">Summary</a> | </a>
+<a href="vrlist.htm#DESCRIPTION">Description</a> | 
+<a href="vrlist.htm#NOTES">Notes</a> | 
+<a href="vrlist.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrlist.htm#MEMBERS">Members</a> | 
+<a href="vrlist.htm#parents">Ancestors</a> | <a href="vrlist.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class vrList<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrList.htm#vrList_(void)$">vrList</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrList.htm#vrList_(const_vrList&amp;_l)$">vrList</a> (const vrList&amp; l);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrList.htm#~vrList_(void)$">vrList</a> (void);</td></tr>
+<tr><td align="right" valign="top">vrList&amp; </td><td><a href="vrList.htm#vrList&amp;_operator$_(const_vrList&amp;_l)$">operator=</a> (const vrList&amp; l);</td></tr>
+<tr><td align="right" valign="top">long </td><td><a href="vrList.htm#long_GetCount_(void)_const_$">GetCount</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrList.htm#TYPE_GetHead_(void)_const_$">GetHead</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrList.htm#TYPE_GetTail_(void)_const_$">GetTail</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrList.htm#TYPE_GetNext_(LISTPOS&amp;_rPosition)_const$">GetNext</a> (LISTPOS&amp; rPosition) const;</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrList.htm#TYPE_GetPrev_(LISTPOS&amp;_rPosition)_const$">GetPrev</a> (LISTPOS&amp; rPosition) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#LISTPOS">LISTPOS </a> </td><td><a href="vrList.htm#LISTPOS_GetHeadPosition_(void)_const_$">GetHeadPosition</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#LISTPOS">LISTPOS </a> </td><td><a href="vrList.htm#LISTPOS_GetTailPosition_(void)_const_$">GetTailPosition</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrList.htm#TYPE_FindAt_(TYPE_item)_const$">FindAt</a> (TYPE item) const;</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrList.htm#TYPE_FindAt_(LISTPOS_pos)_const$">FindAt</a> (LISTPOS pos) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#LISTPOS">LISTPOS </a> </td><td><a href="vrList.htm#LISTPOS_Find_(TYPE_item)_const$">Find</a> (TYPE item) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrList.htm#SFBool_Empty_(void)_const_$">Empty</a> (void) const ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrList.htm#void_AddToList_(TYPE_item)_$">AddToList</a> (TYPE item) ;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrList.htm#void_AddToList_(const_vrList&amp;_l)$">AddToList</a> (const vrList&amp; l);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrList.htm#void_AddTail_(TYPE_item)$">AddTail</a> (TYPE item);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrList.htm#void_AddHead_(TYPE_item)$">AddHead</a> (TYPE item);</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrList.htm#TYPE_RemoveAt_(LISTPOS_pos)$">RemoveAt</a> (LISTPOS pos);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrList.htm#void_RemoveAll_(void)$">RemoveAll</a> (void);</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrList.htm#TYPE_RemoveHead_(void)$">RemoveHead</a> (void);</td></tr>
+<tr><td align="right" valign="top">TYPE </td><td><a href="vrList.htm#TYPE_RemoveTail_(void)$">RemoveTail</a> (void);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">long </td><td><a href="vrList.htm#long_m_Count$">m_Count</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrListNode.htm">vrListNode</a>&amp;ltTYPE&gt; *</td><td><a href="vrList.htm#vrListNode&amp;ltTYPE&gt;_*m_Head$">m_Head</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrListNode.htm">vrListNode</a>&amp;ltTYPE&gt; *</td><td><a href="vrList.htm#vrListNode&amp;ltTYPE&gt;_*m_Tail$">m_Tail</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	A doubly linked list that requires nothing (i.e. is NonIntrusive)
+	of the nodes that are inserted in it.  This class is modelled
+	very much after the MFC class CList and behaves in much the same way.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>The list itself does not own any of the memory for the object being stored.
+	The caller must allocate and delete the memory for the stored object.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// This is just a basic linked list class:
+	vrList&lt;SFInt32&gt; intList;
+
+	intList.<a href="vrlist.htm#void_AddTail_(TYPE_item)$">AddTail</a>(1);
+	intList.<a href="vrlist.htm#void_AddTail_(TYPE_item)$">AddTail</a>(2);
+	intList.<a href="vrlist.htm#void_AddTail_(TYPE_item)$">AddTail</a>(3);
+
+	// Iteration is accomplished identically to the MFC.
+	LISTPOS pos = intList.<a href="vrlist.htm#LISTPOS_GetHeadPosition_(void)_const_$">GetHeadPosition</a>();
+	while (pos)
+	{
+		SFInt32 i = intList.<a href="vrlist.htm#TYPE_GetNext_(LISTPOS&amp;_rPosition)_const$">GetNext</a>(pos);
+		printf(&quot;%d &quot;, i);
+	}
+	printf(&quot;\n&quot;);
+
+	// OUTPUT: 1 2 3
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="long_m_Count$"><ul><h3><li>long m_Count;</li></h3></a>
+</ul>
+</ul>     <dd>Number of items in the list.
+<dl><dl>
+<dt><i>default:</i><strong> 0</strong>
+<p>
+</dl></dl>
+<a name="vrListNode&amp;ltTYPE&gt;_*m_Head$"><ul><h3><li>vrListNode&amp;ltTYPE&gt; *m_Head;</li></h3></a>
+</ul>
+</ul>     <dd>The head of the linked list.
+<dl><dl>
+<dt><i>default:</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="vrListNode&amp;ltTYPE&gt;_*m_Tail$"><ul><h3><li>vrListNode&amp;ltTYPE&gt; *m_Tail;</li></h3></a>
+</ul>
+</ul>     <dd>The tail of the linked list.
+<dl><dl>
+<dt><i>default:</i><strong> NULL</strong>
+<p>
+</dl></dl>
+<a name="vrList_(void)$"><ul><h3><li>vrList (void);</li></h3></a>
+</ul>
+</ul>     <dd>Default constructor.
+<p>
+<a name="vrList_(const_vrList&amp;_l)$"><ul><h3><li>vrList (const vrList&amp; l);</li></h3></a>
+</ul>
+</ul>     <dd>Copy constructor.
+<p>
+<a name="~vrList_(void)$"><ul><h3><li>~vrList (void);</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="vrList&amp;_operator$_(const_vrList&amp;_l)$"><ul><h3><li>vrList&amp; operator= (const vrList&amp; l);</li></h3></a>
+</ul>
+</ul>     <dd>Equals operator.
+<p>
+<a name="long_GetCount_(void)_const_$"><ul><h3><li>long GetCount (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Returns the number of items in the list.
+<p>
+<a name="TYPE_GetHead_(void)_const_$"><ul><h3><li>TYPE GetHead (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Returns the head of the list.
+<p>
+<a name="TYPE_GetTail_(void)_const_$"><ul><h3><li>TYPE GetTail (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Returns the tail of the list.
+<p>
+<a name="TYPE_GetNext_(LISTPOS&amp;_rPosition)_const$"><ul><h3><li>TYPE GetNext (LISTPOS&amp; rPosition) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns the next item in the iteration represented by rPosition.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> rPosition:</strong>
+<dd>reference to the LISTPOS used for iteration.
+<p>
+</dl></dl>
+<a name="TYPE_GetPrev_(LISTPOS&amp;_rPosition)_const$"><ul><h3><li>TYPE GetPrev (LISTPOS&amp; rPosition) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns the previous item in the iteration represented by rPosition.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> rPosition:</strong>
+<dd>reference to the LISTPOS used for iteration.
+<p>
+</dl></dl>
+<a name="LISTPOS_GetHeadPosition_(void)_const_$"><ul><h3><li>LISTPOS GetHeadPosition (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Returns an iteration handle representing the head of the list.
+<p>
+<a name="LISTPOS_GetTailPosition_(void)_const_$"><ul><h3><li>LISTPOS GetTailPosition (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Returns an iteration handle representing the tail of the list.
+<p>
+<a name="TYPE_FindAt_(TYPE_item)_const$"><ul><h3><li>TYPE FindAt (TYPE item) const;</li></h3></a>
+</ul>
+</ul>     <dd>Find the given item in the list.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> item:</strong>
+<dd>The item to find.
+<p>
+</dl></dl>
+<a name="TYPE_FindAt_(LISTPOS_pos)_const$"><ul><h3><li>TYPE FindAt (LISTPOS pos) const;</li></h3></a>
+</ul>
+</ul>     <dd>Find the given item in the list by iteration handle.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pos:</strong>
+<dd>LISTPOS used for iteration or searching.
+<p>
+</dl></dl>
+<a name="LISTPOS_Find_(TYPE_item)_const$"><ul><h3><li>LISTPOS Find (TYPE item) const;</li></h3></a>
+</ul>
+</ul>     <dd>Same as FindAt but returns a LISTPOS.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> item:</strong>
+<dd>The item to find.
+<p>
+</dl></dl>
+<a name="SFBool_Empty_(void)_const_$"><ul><h3><li>SFBool Empty (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Return TRUE if the list is empty.
+<p>
+<a name="void_AddToList_(TYPE_item)_$"><ul><h3><li>void AddToList (TYPE item) ;</li></h3></a>
+</ul>
+</ul>     <dd>Add an object to the list at the tail.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> item:</strong>
+<dd>The item to add.
+<p>
+</dl></dl>
+<a name="void_AddToList_(const_vrList&amp;_l)$"><ul><h3><li>void AddToList (const vrList&amp; l);</li></h3></a>
+</ul>
+</ul>     <dd>Add a list of objects to the list at the tail.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> l:</strong>
+<dd>List of items to add.
+<p>
+</dl></dl>
+<a name="void_AddTail_(TYPE_item)$"><ul><h3><li>void AddTail (TYPE item);</li></h3></a>
+</ul>
+</ul>     <dd>Add an object to the list at the tail.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> item:</strong>
+<dd>The item to add.
+<p>
+</dl></dl>
+<a name="void_AddHead_(TYPE_item)$"><ul><h3><li>void AddHead (TYPE item);</li></h3></a>
+</ul>
+</ul>     <dd>Add an object to the list at the head.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> item:</strong>
+<dd>The item to add.
+<p>
+</dl></dl>
+<a name="TYPE_RemoveAt_(LISTPOS_pos)$"><ul><h3><li>TYPE RemoveAt (LISTPOS pos);</li></h3></a>
+</ul>
+</ul>     <dd>Remove an object from the list given its position.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pos:</strong>
+<dd>LISTPOS of item to remove.
+<p>
+</dl></dl>
+<a name="void_RemoveAll_(void)$"><ul><h3><li>void RemoveAll (void);</li></h3></a>
+</ul>
+</ul>     <dd>Remove all objects from the list.
+<p>
+<a name="TYPE_RemoveHead_(void)$"><ul><h3><li>TYPE RemoveHead (void);</li></h3></a>
+</ul>
+</ul>     <dd>Remove the head of the list.
+<p>
+<a name="TYPE_RemoveTail_(void)$"><ul><h3><li>TYPE RemoveTail (void);</li></h3></a>
+</ul>
+</ul>     <dd>Remove the tail of the list.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+<ul>
+<li><a href="vrFieldList.htm">vrFieldList</a>
+<li><a href="vrRefCountList.htm">vrRefCountList</a>
+<ul>
+<li><a href="vrRefCountStack.htm">vrRefCountStack</a>
+</ul>
+<li><a href="vrRouteList.htm">vrRouteList</a>
+<li><a href="vrStack.htm">vrStack</a>
+</ul>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:00 1999
+.<p>
+</body></html>

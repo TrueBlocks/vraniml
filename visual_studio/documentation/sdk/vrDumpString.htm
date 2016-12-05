@@ -1,0 +1,76 @@
+<html><head><title>vrDumpString Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrDumpString</a></h1>
+<dl>
+<dd>
+	Utility class for dumping data to an output string.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrdumpstring.htm#aag">Summary</a> | </a>
+<a href="vrdumpstring.htm#DESCRIPTION">Description</a> | 
+<a href="vrdumpstring.htm#NOTES">Notes</a> | 
+<a href="vrdumpstring.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrdumpstring.htm#MEMBERS">Members</a> | 
+<a href="vrdumpstring.htm#parents">Ancestors</a> | <a href="vrdumpstring.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface vrDumpString : public <a href="vrDumpContext.htm">vrDumpContext</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="SFString.htm">SFString</a> </td><td><a href="vrDumpString.htm#SFString_string$">string</a>;</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	The vrDumpString class aids in writing data to an output
+	string.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// Use just like a string or a dump context...
+	vrDumpString ds;
+	ds.string += &quot;--&gt;&quot;;
+	ds << "This is test: " << 1 << endl; ds.string +="--&gt;" ; ds << "This is test: " << 2 << endl; ds.string +="--&gt;" ; ds << "This is test: " << 3 << endl; vrDumpContext dc; dc << ds.string; // OUTPUT:>This is test 1
+	--&gt;This is test 2
+	--&gt;This is test 3
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFString_string$"><ul><h3><li>SFString string;</li></h3></a>
+</ul>
+</ul>	   <dd>The string to accumulate user input.  Public for easy access.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> nullString</strong>
+<p>
+</dl></dl>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrDumpString:<p>
+<ul>
+<li><a href="vrDumpContext.htm">vrDumpContext</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:58 1999
+.<p>
+</body></html>

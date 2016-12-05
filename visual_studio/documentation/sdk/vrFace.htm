@@ -1,0 +1,416 @@
+<html><head><title>vrFace Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrFace</a></h1>
+<dl>
+<dd>
+	A face is a list of vrLoops.  vrLoops are lists of vrHalfEdges.
+	<a href="vrHalfEdge.htm">vrHalfEdge</a> nodes point to <a href="vrVertex.htm">vrVertex</a> nodes.  Therefor a vrFace
+	is a list of verticies.  In other words, a face is a polygon.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrface.htm#aag">Summary</a> | </a>
+<a href="vrface.htm#DESCRIPTION">Description</a> | 
+<a href="vrface.htm#NOTES">Notes</a> | 
+<a href="vrface.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrface.htm#MEMBERS">Members</a> | 
+<a href="vrface.htm#parents">Ancestors</a> | <a href="vrface.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrFace :<br>
+public vrIntrusiveListNode &lt; vrFace * &gt; , public <a href="vrPlane.htm">vrPlane</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">vrLoopList </td><td><a href="vrFace.htm#vrLoopList_loops$">loops</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrFace.htm#vrFace_(vrSolid_*s,_const_SFColor&amp;_c_)$">vrFace</a> (<a href="vrSolid.htm">vrSolid</a> *s, const <a href="SFColor.htm">SFColor</a>&amp; c );</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrFace.htm#vrFace_(const_vrFace&amp;_f)$">vrFace</a> (const vrFace&amp; f);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrFace.htm#~vrFace_()$">vrFace</a> ();</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_SetSolid_(vrSolid_*s)$">SetSolid</a> (<a href="vrSolid.htm">vrSolid</a> *s);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_SetLoopOut_(vrLoop_*l)$">SetLoopOut</a> (<a href="vrLoop.htm">vrLoop</a> *l);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_SetIndex_(Uint32_i)$">SetIndex</a> (Uint32 i);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_SetMark1_(Uint32_mark)$">SetMark1</a> (Uint32 mark);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_SetMark2_(Uint32_mark)$">SetMark2</a> (Uint32 mark);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_AddLoop_(vrLoop_*l,_SFBool_isOuter_)$">AddLoop</a> (<a href="vrLoop.htm">vrLoop</a> *l, SFBool isOuter );</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_RemoveLoop_(vrLoop_*l)$">RemoveLoop</a> (<a href="vrLoop.htm">vrLoop</a> *l);</td></tr>
+<tr><td align="right" valign="top"><a href="SFColor.htm">SFColor</a> </td><td><a href="vrFace.htm#SFColor_GetColor_(const_SFColor&amp;_def)_const$">GetColor</a> (const <a href="SFColor.htm">SFColor</a>&amp; def) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_SetColor_(const_SFColor&amp;_color)$">SetColor</a> (const <a href="SFColor.htm">SFColor</a>&amp; color);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFace.htm#SFBool_GetVertexLocations(Uint32&amp;_max,_SFVec3f_*vecs)_const$">GetVertexLocations</a>(Uint32&amp; max, <a href="SFVec3f.htm">SFVec3f</a> *vecs) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrSolid.htm">vrSolid</a> *</td><td><a href="vrFace.htm#vrSolid_*GetSolid_(void)_const$">GetSolid</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrLoop.htm">vrLoop</a> *</td><td><a href="vrFace.htm#vrLoop_*GetLoopOut_(void)_const$">GetLoopOut</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">Uint32 </td><td><a href="vrFace.htm#Uint32_GetIndex_(void)_const$">GetIndex</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">Uint32 </td><td><a href="vrFace.htm#Uint32_GetMark1_(void)_const$">GetMark1</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">Uint32 </td><td><a href="vrFace.htm#Uint32_GetMark2_(void)_const$">GetMark2</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFace.htm#SFBool_Marked1_(Uint32_mark)_const$">Marked1</a> (Uint32 mark) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFace.htm#SFBool_Marked2_(Uint32_mark)_const$">Marked2</a> (Uint32 mark) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrHalfEdge.htm">vrHalfEdge</a> *</td><td><a href="vrFace.htm#vrHalfEdge_*GetFirstHe_(void)_const$">GetFirstHe</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrHalfEdge.htm">vrHalfEdge</a> *</td><td><a href="vrFace.htm#vrHalfEdge_*GetFirstHeFromSecondLoop(void)_const$">GetFirstHeFromSecondLoop</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrVertex.htm">vrVertex</a> *</td><td><a href="vrFace.htm#vrVertex_*GetFirstVertex_(void)_const$">GetFirstVertex</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrLoop.htm">vrLoop</a> *</td><td><a href="vrFace.htm#vrLoop_*GetFirstLoop_(void)_const$">GetFirstLoop</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrLoop.htm">vrLoop</a> *</td><td><a href="vrFace.htm#vrLoop_*GetSecondLoop_(void)_const$">GetSecondLoop</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrFace.htm#SFVec3f_GetNormal_(void)_const$">GetNormal</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrFace.htm#SFFloat_GetD_(void)_const$">GetD</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFace.htm#SFBool_CalcEquation_(const_vrLoop_*l,_SFVec3f_*normOut,_SFFloat_*dOut)_const$">CalcEquation</a> (const <a href="vrLoop.htm">vrLoop</a> *l, <a href="SFVec3f.htm">SFVec3f</a> *normOut, SFFloat *dOut) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrFace.htm#SFVec3f_GetCenter_(void)_const$">GetCenter</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">Uint32 </td><td><a href="vrFace.htm#Uint32_nLoops_(void)_const$">nLoops</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFace.htm#SFBool_isDegenerate_(void)_const$">isDegenerate</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFace.htm#SFBool_isPlanar_(void)_const$">isPlanar</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFace.htm#SFBool_Contains_(vrVertex_*v,_vrIntersectRecord&amp;_rec)_const$">Contains</a> (<a href="vrVertex.htm">vrVertex</a> *v, vrIntersectRecord&amp; rec) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFace.htm#SFBool_IsComplex_(void)_const$">IsComplex</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_Triangulate_(void)$">Triangulate</a> (void);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFace.htm#SFBool_CalcEquation_(void)$">CalcEquation</a> (void);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrFace.htm#SFBool_CalcEquation_(const_vrLoop_*l)$">CalcEquation</a> (const <a href="vrLoop.htm">vrLoop</a> *l);</td></tr>
+<tr><td align="right" valign="top"><a href="vrEdge.htm">vrEdge</a> *</td><td><a href="vrFace.htm#vrEdge_*MakeRing_(const_SFVec3f&amp;_v)$">MakeRing</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; v);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_Revert_(void)$">Revert</a> (void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_InvertNormal_(void)$">InvertNormal</a> (void);</td></tr>
+<tr><td align="right" valign="top"><a href="vrHalfEdge.htm">vrHalfEdge</a> *</td><td><a href="vrFace.htm#vrHalfEdge_*NearestInteriorVertex_(vrHalfEdge_*he,_SFFloat_*dOut)_const$">NearestInteriorVertex</a> (<a href="vrHalfEdge.htm">vrHalfEdge</a> *he, SFFloat *dOut) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_FindTwoClosest_(vrHalfEdge_**he1Out,_vrHalfEdge_**he2Out)_const$">FindTwoClosest</a> (<a href="vrHalfEdge.htm">vrHalfEdge</a> **he1Out, <a href="vrHalfEdge.htm">vrHalfEdge</a> **he2Out) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrFace.htm#SFFloat_Area_(void)_const$">Area</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_Show_(vrDumpContext&amp;_dc)_const$">Show</a> (<a href="vrDumpContext.htm">vrDumpContext</a>&amp; dc) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrFace.htm#void_Verify_(void)_const$">Verify</a> (void) const;</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	A polygon (possibly with holes) described as a list of verticies.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>None.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="vrLoopList_loops$"><ul><h3><li>vrLoopList loops;</li></h3></a>
+</ul>
+</ul>	   <dd>The loop list.
+<p>
+<dl><dl>
+<dt><i>defualt</i><strong> Empty</strong>
+<p>
+</dl></dl>
+<a name="vrFace_(vrSolid_*s,_const_SFColor&amp;_c_)$"><ul><h3><li>vrFace (vrSolid *s, const SFColor&amp; c );</li></h3></a>
+</ul>
+</ul>	   <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> s:</strong>
+<dd>The solid to which this face belongs.
+<dt><i>in</i><strong> c:</strong>
+<dd>The default color for this face.
+<p>
+</dl></dl>
+<a name="vrFace_(const_vrFace&amp;_f)$"><ul><h3><li>vrFace (const vrFace&amp; f);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy Constructor.
+<p>
+<a name="~vrFace_()$"><ul><h3><li>~vrFace ();</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="void_SetSolid_(vrSolid_*s)$"><ul><h3><li>void SetSolid (vrSolid *s);</li></h3></a>
+</ul>
+</ul>	   <dd>Change the solid in which this face belongs.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> s:</strong>
+<dd>The solid.
+<p>
+</dl></dl>
+<a name="void_SetLoopOut_(vrLoop_*l)$"><ul><h3><li>void SetLoopOut (vrLoop *l);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the outer loop for this solid.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> l:</strong>
+<dd>The outer loop.
+<p>
+</dl></dl>
+<a name="void_SetIndex_(Uint32_i)$"><ul><h3><li>void SetIndex (Uint32 i);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the index for this solid.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> i:</strong>
+<dd>The index.
+<p>
+</dl></dl>
+<a name="void_SetMark1_(Uint32_mark)$"><ul><h3><li>void SetMark1 (Uint32 mark);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the mark1 value for this solid.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> mark:</strong>
+<dd>The mark1.
+<p>
+</dl></dl>
+<a name="void_SetMark2_(Uint32_mark)$"><ul><h3><li>void SetMark2 (Uint32 mark);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the mark2 value for this solid.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> mark:</strong>
+<dd>The mark2.
+<p>
+</dl></dl>
+<a name="void_AddLoop_(vrLoop_*l,_SFBool_isOuter_)$"><ul><h3><li>void AddLoop (vrLoop *l, SFBool isOuter );</li></h3></a>
+</ul>
+</ul>	   <dd>Add a <a href="vrLoop.htm">vrLoop</a> to this face.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> l:</strong>
+<dd>The loop.
+<dt><i>in</i><strong> isOuter:</strong>
+<dd>TRUE if this should become the outer loop for this face.
+<p>
+</dl></dl>
+<a name="void_RemoveLoop_(vrLoop_*l)$"><ul><h3><li>void RemoveLoop (vrLoop *l);</li></h3></a>
+</ul>
+</ul>	   <dd>Remove a loop from this face.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> l:</strong>
+<dd>The loop to remove.
+<p>
+</dl></dl>
+<a name="SFColor_GetColor_(const_SFColor&amp;_def)_const$"><ul><h3><li>SFColor GetColor (const SFColor&amp; def) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Get the color of this face.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> def:</strong>
+<dd>The default color if this face has no color.
+<p>
+</dl></dl>
+<a name="void_SetColor_(const_SFColor&amp;_color)$"><ul><h3><li>void SetColor (const SFColor&amp; color);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the color of this face.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> color:</strong>
+<dd>The color.
+<p>
+</dl></dl>
+<a name="SFBool_GetVertexLocations(Uint32&amp;_max,_SFVec3f_*vecs)_const$"><ul><h3><li>SFBool GetVertexLocations(Uint32&amp; max, SFVec3f *vecs) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the loop's verticies in the given array.  Returns TRUE if the verticies fit into the array.
+<p>
+<dl><dl>
+<dt><i>in/out</i><strong> max:</strong>
+<dd>The number of vecs that can be added.
+<dt><i>out</i><strong> vecs:</strong>
+<dd>The memory location into which to copy the verticies.  If NULL, max returns the required number of verticies.
+<p>
+</dl></dl>
+<a name="vrSolid_*GetSolid_(void)_const$"><ul><h3><li>vrSolid *GetSolid (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the <a href="vrSolid.htm">vrSolid</a> to which this face belongs.
+<p>
+<a name="vrLoop_*GetLoopOut_(void)_const$"><ul><h3><li>vrLoop *GetLoopOut (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the outer <a href="vrLoop.htm">vrLoop</a> of this face.
+<p>
+<a name="Uint32_GetIndex_(void)_const$"><ul><h3><li>Uint32 GetIndex (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the index of this face.
+<p>
+<a name="Uint32_GetMark1_(void)_const$"><ul><h3><li>Uint32 GetMark1 (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the mark1 value of this face.
+<p>
+<a name="Uint32_GetMark2_(void)_const$"><ul><h3><li>Uint32 GetMark2 (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the mark2 value of this face.
+<p>
+<a name="SFBool_Marked1_(Uint32_mark)_const$"><ul><h3><li>SFBool Marked1 (Uint32 mark) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return TRUE if this face is marked with mark.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> mark:</strong>
+<dd>The mark to check.
+<p>
+</dl></dl>
+<a name="SFBool_Marked2_(Uint32_mark)_const$"><ul><h3><li>SFBool Marked2 (Uint32 mark) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return TRUE if this face is marked with mark.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> mark:</strong>
+<dd>The mark to check.
+<p>
+</dl></dl>
+<a name="vrHalfEdge_*GetFirstHe_(void)_const$"><ul><h3><li>vrHalfEdge *GetFirstHe (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the first <a href="vrHalfEdge.htm">vrHalfEdge</a> in the outer loop.
+<p>
+<a name="vrHalfEdge_*GetFirstHeFromSecondLoop(void)_const$"><ul><h3><li>vrHalfEdge *GetFirstHeFromSecondLoop(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the first <a href="vrHalfEdge.htm">vrHalfEdge</a> in the first inner loop (if any).
+<p>
+<a name="vrVertex_*GetFirstVertex_(void)_const$"><ul><h3><li>vrVertex *GetFirstVertex (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the <a href="vrVertex.htm">vrVertex</a> pointer to by the first <a href="vrHalfEdge.htm">vrHalfEdge</a> in the outer loop.
+<p>
+<a name="vrLoop_*GetFirstLoop_(void)_const$"><ul><h3><li>vrLoop *GetFirstLoop (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the first <a href="vrLoop.htm">vrLoop</a> in the loop list (may not be outer loop).
+<p>
+<a name="vrLoop_*GetSecondLoop_(void)_const$"><ul><h3><li>vrLoop *GetSecondLoop (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the second <a href="vrLoop.htm">vrLoop</a> in the loop list (if present).
+<p>
+<a name="SFVec3f_GetNormal_(void)_const$"><ul><h3><li>SFVec3f GetNormal (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the face normal.
+<p>
+<a name="SFFloat_GetD_(void)_const$"><ul><h3><li>SFFloat GetD (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the 'D' value of the plane equation of the face.
+<p>
+<a name="SFBool_CalcEquation_(const_vrLoop_*l,_SFVec3f_*normOut,_SFFloat_*dOut)_const$"><ul><h3><li>SFBool CalcEquation (const vrLoop *l, SFVec3f *normOut, SFFloat *dOut) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Calculate the plane equation.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> l:</strong>
+<dd>The <a href="vrLoop.htm">vrLoop</a> to use for the calculation.
+<dt><i>out</i><strong> normOut:</strong>
+<dd>The memory location into which to copy the plane normal.
+<dt><i>out</i><strong> dOut:</strong>
+<dd>The memory location into which to copy the 'D' value of the plane equation.
+<p>
+</dl></dl>
+<a name="SFVec3f_GetCenter_(void)_const$"><ul><h3><li>SFVec3f GetCenter (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the center of the face.
+<p>
+<a name="Uint32_nLoops_(void)_const$"><ul><h3><li>Uint32 nLoops (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the number of loops in this face.
+<p>
+<a name="SFBool_isDegenerate_(void)_const$"><ul><h3><li>SFBool isDegenerate (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if this face is degenerate (i.e. has no area).
+<p>
+<a name="SFBool_isPlanar_(void)_const$"><ul><h3><li>SFBool isPlanar (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if this face is planer (within a tolerance).
+<p>
+<a name="SFBool_Contains_(vrVertex_*v,_vrIntersectRecord&amp;_rec)_const$"><ul><h3><li>SFBool Contains (vrVertex *v, vrIntersectRecord&amp; rec) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if this face contains the given point.  Returns additional info in the intersection record.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The query vertex.
+<dt><i>out</i><strong> rec:</strong>
+<dd>Memory location into which to copy further information about the intersection.
+<p>
+</dl></dl>
+<a name="SFBool_IsComplex_(void)_const$"><ul><h3><li>SFBool IsComplex (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if this face has holes.
+<p>
+<a name="void_Triangulate_(void)$"><ul><h3><li>void Triangulate (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Triangulates this face.
+<p>
+<a name="SFBool_CalcEquation_(void)$"><ul><h3><li>SFBool CalcEquation (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Calculates this face's plane equation.  Returns TRUE if the face is not degenerate.
+<p>
+<a name="SFBool_CalcEquation_(const_vrLoop_*l)$"><ul><h3><li>SFBool CalcEquation (const vrLoop *l);</li></h3></a>
+</ul>
+</ul>	   <dd>Calculates this face's plane equation using a particular loop.  Returns TRUE if the face is not degenerate.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> l:</strong>
+<dd>The loop to use in the calculation.
+<p>
+</dl></dl>
+<a name="vrEdge_*MakeRing_(const_SFVec3f&amp;_v)$"><ul><h3><li>vrEdge *MakeRing (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Add an internal ring at the given vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The location at which to make the loop (should be contained by the face).
+<p>
+</dl></dl>
+<a name="void_Revert_(void)$"><ul><h3><li>void Revert (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Revert the face (flip it inside out -- reverse the loops).
+<p>
+<a name="void_InvertNormal_(void)$"><ul><h3><li>void InvertNormal (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Invert the plane normal.
+<p>
+<a name="vrHalfEdge_*NearestInteriorVertex_(vrHalfEdge_*he,_SFFloat_*dOut)_const$"><ul><h3><li>vrHalfEdge *NearestInteriorVertex (vrHalfEdge *he, SFFloat *dOut) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the nearest internal vertex (i.e. not on the outer loop) in any internal loops in this face.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> he:</strong>
+<dd>The query halfedge.
+<dt><i>out</i><strong> dOut:</strong>
+<dd>The distance of the nearest vertex to the 'he'.
+<p>
+</dl></dl>
+<a name="void_FindTwoClosest_(vrHalfEdge_**he1Out,_vrHalfEdge_**he2Out)_const$"><ul><h3><li>void FindTwoClosest (vrHalfEdge **he1Out, vrHalfEdge **he2Out) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns the two closest verticies in the face (from the outer loop to any inner loop).
+<p>
+<dl><dl>
+<dt><i>out</i><strong> he1Out:</strong>
+<dd>The first he.
+<dt><i>out</i><strong> he2Out:</strong>
+<dd>The second he.
+<p>
+</dl></dl>
+<a name="SFFloat_Area_(void)_const$"><ul><h3><li>SFFloat Area (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns the area of the face.
+<p>
+<a name="void_Show_(vrDumpContext&amp;_dc)_const$"><ul><h3><li>void Show (vrDumpContext&amp; dc) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Debugging support.  Display the contents of the <a href="vrEdge.htm">vrEdge</a> to the dc.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> dc:</strong>
+<dd>The <a href="vrDumpContext.htm">vrDumpContext</a> to which to dump this edge.
+<p>
+</dl></dl>
+<a name="void_Verify_(void)_const$"><ul><h3><li>void Verify (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Debugging support.  Verify the edge.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrFace:<p>
+<ul>
+<li>vrIntrusiveListNode
+<li><a href="vrPlane.htm">vrPlane</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:59 1999
+.<p>
+</body></html>

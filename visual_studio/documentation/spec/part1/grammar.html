@@ -1,0 +1,402 @@
+<html>
+<head>
+  <meta NAME="GENERATOR" CONTENT="Adobe PageMill 2.0 Win">
+  <!-- SGI_COMMENT COSMOCREATE -->
+  <!-- SGI_COMMENT VERSION NUMBER="1.0.2" -->
+  <title>VRML97, ISO/IEC 14772-1:1997 -- Annex A, Grammar</title>
+</head>
+<body>
+
+<h1><center><img SRC="../Images/vrml97.gif" ALIGN="TOP" WIDTH="470" HEIGHT="85" NATURALSIZEFLAG="0" ALT="VRML97 logo"></center></h1>
+
+<h1><center>The Virtual Reality Modeling Language</center></h1>
+
+<h1><center>Annex A<br>
+<font SIZE="+1">(normative)</font></center></h1>
+
+<h1><center>Grammar definition</center></h1>
+
+<h3><center>&nbsp;</center></h3>
+
+<p><img SRC="../Images/vrmlbar.gif" ALIGN="TOP" WIDTH="470" HEIGHT="25" ALT="--- VRML separator bar ---" NATURALSIZEFLAG="0"></p>
+
+<h2><img SRC="../Images/cube.gif" ALIGN="TOP" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0"> A.1 <a NAME="Introduction"></a>Table of contents and introduction</h2>
+
+<h3><a NAME="A.1.1"></a>A.1.1 Table of contents</h3>
+
+<p>This annex provides a detailed description of the grammar for each syntactic
+element in this part of ISO/IEC 14772. The following table of contents lists
+the topics in this clause:</p>
+
+<p><a HREF="grammar.html#Introduction">A.1 Table of contents and introduction</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="grammar.html#A.1.1">A.1.1 Table
+of contents</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a HREF="grammar.html#A.1.2">A.1.2 Introduction</a><br>
+<a HREF="grammar.html#General">A.2 General</a><br>
+<a HREF="grammar.html#Nodes">A.3 Nodes</a><br>
+<a HREF="grammar.html#Fields">A.4 Fields</a></p>
+
+<h3><a NAME="A.1.2"></a>A.1.2 Introduction</h3>
+
+<p>It is not possible to parse VRML files using a context-free grammar.
+Semantic knowledge of the names and types of fields, eventIns, and eventOuts
+for each node type (either built-in or user-defined using <b>PROTO</b> or
+<b>EXTERNPROTO</b>) shall be used during parsing so that the parser knows
+which field type is being parsed.</p>
+
+<p>The '#' (0x23) character begins a comment wherever it appears outside
+of the first line of the VRML file or quoted SFString or MFString fields.
+The '#' character and all characters until the next line terminator comprise
+the comment and are treated as whitespace.</p>
+
+<p>The carriage return (0x0d), linefeed (0x0a), space (0x20), tab (0x09),
+and comma (0x2c) characters are whitespace characters wherever they appear
+outside of quoted SFString or MFString fields. Any number of whitespace
+characters and comments may be used to separate the syntactic entities of
+a VRML file. All reserved keywords are displayed in boldface type.</p>
+
+<p>Any characters (including linefeed and '#') may appear within the quotes
+of SFString and MFString fields. A double quote character within a string
+shall be preceded with a backslash (e.g,&nbsp;&quot;Each &nbsp;double&nbsp;quotes&nbsp;character&nbsp;\&quot;&nbsp;shall&nbsp;have&nbsp;a&nbsp;backslash.&quot;).
+A backslash character within a string shall be preceded with a backslash
+forming two backslashes (e.g.,&nbsp;&quot;One&nbsp;backslash&nbsp;\\&nbsp;character&quot;).</p>
+
+<p>Clause <a HREF="nodesRef.html">6, Nodes reference</a>, contains a description
+of the allowed fields, eventIns and eventOuts for all pre-defined node types.
+The <i>double</i>, <i>float</i>, and <i>int32</i> symbols are expressed
+using Perl regular expression syntax; see <a HREF="bibliography.html#[PERL]">E.[PERL]</a>
+for details. The <i>IdFirstChar</i>, <i>IdRestChars</i>, and <i>string</i>
+symbols have not been formally specified; Clause <a HREF="fieldsRef.html">5,
+Fields and events reference</a>, contains a more complete description of
+their syntax.</p>
+
+<p>The following conventions are used in the semi-formal grammar specified
+in this clause:</p>
+
+<p><!--NOEDIT--><ol TYPE="a">
+  <li>Keywords and terminal symbols which appear literally in the VRML file,
+  are specified in <b>bold</b>.
+  <li>Nonterminal symbols used in the grammar are specified in <i>italic</i>.
+  <li>Production rules begin with a nonterminal symbol and the sequence of
+  characters &quot;::=&quot;, and end with a semi-colon (&quot;;&quot;).
+  <li>Alternation for production rules is specified using the vertical-bar
+  symbol (&quot;|&quot;).
+</ol><!--/NOEDIT--></p>
+
+<p><a HREF="grammar.html#TableA.1">Table A.1</a> contains the complete list of lexical
+elements for the grammar in this part of ISO/IEC&nbsp;14772.</p>
+
+<h4><center><a NAME="TableA.1"></a>Table A.1 -- VRML lexical elements</center></h4>
+
+<p><center><table WIDTH="381" BORDER="1" CELLSPACING="0" CELLPADDING="4" HEIGHT="345">
+<tr>
+<td WIDTH="38%" HEIGHT="50" ALIGN="CENTER">&nbsp;<b>Keywords</b></td>
+<td WIDTH="35%" VALIGN="TOP" ALIGN="CENTER"><b>Terminal<br>
+symbols</b></td>
+<td WIDTH="27%" VALIGN="TOP" ALIGN="CENTER"><b>Other<br>
+symbols</b></td></tr>
+<tr>
+<td VALIGN="TOP" HEIGHT="164">&nbsp;&nbsp;&nbsp;<b>DEF<br>
+&nbsp;&nbsp;&nbsp;EXTERNPROTO<br>
+&nbsp;&nbsp;&nbsp;FALSE<br>
+&nbsp;&nbsp;&nbsp;IS<br>
+&nbsp;&nbsp;&nbsp;NULL<br>
+&nbsp;&nbsp;&nbsp;PROTO<br>
+&nbsp;&nbsp;&nbsp;ROUTE<br>
+&nbsp;&nbsp;&nbsp;TO<br>
+&nbsp;&nbsp;&nbsp;TRUE<br>
+&nbsp;&nbsp;&nbsp;USE<br>
+&nbsp;&nbsp;&nbsp;eventIn<br>
+&nbsp;&nbsp;&nbsp;eventOut<br>
+&nbsp;&nbsp;&nbsp;exposedField<br>
+&nbsp;&nbsp;&nbsp;field</b></td>
+<td VALIGN="TOP">&nbsp;&nbsp;&nbsp;&nbsp;period (<b>.</b>)<br>
+&nbsp;&nbsp;&nbsp;open brace (<b>{</b>)<br>
+&nbsp;&nbsp;&nbsp;close brace (<b>}</b>)<br>
+&nbsp;&nbsp;&nbsp;open bracket (<b>[</b>)<br>
+&nbsp;&nbsp;&nbsp;close bracket (<b>]</b>)</td>
+<td VALIGN="TOP">&nbsp;<i>&nbsp;&nbsp;Id<br>
+&nbsp;&nbsp;&nbsp;double<br>
+&nbsp;&nbsp;&nbsp;fieldType<br>
+&nbsp;&nbsp;&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;int32<br>
+&nbsp;&nbsp;&nbsp;string</i></td></tr>
+</table>
+</center></p>
+
+<p>Terminal symbols and the string symbol may be separated by one or more
+whitespace characters. Keywords and the <i>Id</i>, <i>fieldType</i>, <i>float</i>,
+<i>int32</i>, and <i>double</i> symbols shall be separated by one or more
+whitespace characters.</p>
+
+<p><img SRC="../Images/vrmlbar.gif" ALIGN="TOP" WIDTH="470" HEIGHT="25" ALT="--- VRML separator bar ---" NATURALSIZEFLAG="0"></p>
+
+<h2><img SRC="../Images/cube.gif" ALIGN="TOP" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0"> A.2 <a NAME="General"></a>General</h2>
+
+<dl>
+  <dt><i>vrmlScene </i>::=
+  <dd><i>statements</i> ;
+  <dt><i>statements </i>::=
+  <dd><i>statement </i>|
+  <dd><i>statement statements </i>|
+  <dd><i>empty </i>;
+  <dt><i>statement </i>::=
+  <dd><i>nodeStatement</i> |
+  <dd><i>protoStatement</i> |
+  <dd><i>routeStatement</i> ;
+  <dt><i>nodeStatement </i>::=
+  <dd><i>node</i> |
+  <dd><b>DEF </b><i>nodeNameId node</i> |
+  <dd><b>USE</b><i> nodeNameId</i> ;
+  <dt><i>rootNodeStatement</i> ::=
+  <dd><i>node | DEF nodeNameId node </i>;
+  <dt><i>protoStatement </i>::=
+  <dd><i>proto</i> |
+  <dd><i>externproto</i> ;
+  <dt><i>protoStatements</i> ::=
+  <dd><i>protoStatement</i> |
+  <dd><i>protoStatement protoStatements</i> |
+  <dd><i>empty</i> ;
+  <dt><i>proto </i>::=
+  <dd><b>PROTO</b><i> nodeTypeId </i><b>[</b><i> interfaceDeclarations</i><b>
+  ] {</b><i> protoBody </i><b>}</b> ;
+  <dt><i>protoBody</i> ::=
+  <dd><i>protoStatements</i> <i>rootNodeStatement</i> <i>statements</i> ;
+  <dt><i>interfaceDeclarations </i>::=
+  <dd><i>interfaceDeclaration</i> |
+  <dd><i>interfaceDeclaration interfaceDeclarations</i> |
+  <dd><i>empty</i> ;
+  <dt><i>restrictedInterfaceDeclaration </i>::=
+  <dd><b>eventIn</b> <i>fieldType</i> <i>eventInId</i> |
+  <dd><b>eventOut</b><i> fieldType eventOutId</i> |
+  <dd><b>field</b><i> fieldType fieldId fieldValue</i> ;
+  <dt><i>interfaceDeclaration </i>::=
+  <dd><i>restrictedInterfaceDeclaration</i> |
+  <dd><b>exposedField</b><i> fieldType fieldId fieldValue</i> ;
+  <dt><i>externproto </i>::=
+  <dd><b>EXTERNPROTO</b><i> nodeTypeId</i><b> [</b><i> externInterfaceDeclarations
+  </i><b>]</b><i> URLList </i>;
+  <dt><i>externInterfaceDeclarations </i>::=
+  <dd><i>externInterfaceDeclaration</i> |
+  <dd><i>externInterfaceDeclaration externInterfaceDeclarations</i> |
+  <dd><i>empty</i> ;
+  <dt><i>externInterfaceDeclaration </i>::=
+  <dd><b>eventIn</b> <i>fieldType</i> <i>eventInId</i> |
+  <dd><b>eventOut</b><i> fieldType eventOutId</i> |
+  <dd><b>field</b><i> fieldType fieldId</i> |
+  <dd><b>exposedField</b><i> fieldType fieldId</i> ;
+  <dt><i>routeStatement </i>::=
+  <dd><b>ROUTE</b><i> nodeNameId </i><b>. </b><i>eventOutId </i><b>TO</b><i>
+  nodeNameId </i><b>.</b><i> eventInId</i> ;
+  <dt><i>URLList</i> ::=
+  <dd><i>mfstringValue</i> ;
+  <dt><i>empty</i> ::=
+  <dd>;
+</dl>
+
+<p><img SRC="../Images/vrmlbar.gif" ALIGN="TOP" WIDTH="470" HEIGHT="25" ALT="--- VRML separator bar ---" NATURALSIZEFLAG="0"></p>
+
+<h2><img SRC="../Images/cube.gif" ALIGN="TOP" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0"> A.3 <a NAME="Nodes"></a>Nodes</h2>
+
+<dl>
+  <dt><i>node </i>::=
+  <dd><i>nodeTypeId </i><b>{</b> <i>nodeBody </i><b>}</b> |
+  <dd><b>Script {</b><i> scriptBody </i><b>}</b> ;
+  <dt><i>nodeBody </i>::=
+  <dd><i>nodeBodyElement</i> |
+  <dd><i>nodeBodyElement nodeBody</i> |
+  <dd><i>empty</i> ;
+  <dt><i>scriptBody </i>::=
+  <dd><i>scriptBodyElement</i> |
+  <dd><i>scriptBodyElement scriptBody</i> |
+  <dd><i>empty</i> ;
+  <dt><i>scriptBodyElement </i>::=
+  <dd><i>nodeBodyElement</i> |
+  <dd><i>restrictedInterfaceDeclaration</i> |
+  <dd><b>eventIn</b> <i>fieldType</i> <i>eventInId </i><b>IS</b><i> eventInId</i>
+  |
+  <dd><b>eventOut</b><i> fieldType eventOutId</i> <b>IS</b><i> eventOutId</i>
+  |
+  <dd><b>field</b><i> fieldType fieldId </i><b>IS</b><i> fieldId</i> ;
+  <dt><i>nodeBodyElement </i>::=
+  <dd><i>fieldId fieldValue</i> |
+  <dd><i>fieldId </i><b>IS</b><i> fieldId</i> |
+  <dd><i>eventInId </i><b>IS</b><i> eventInId</i> |
+  <dd><i>eventOutId </i><b>IS</b><i> eventOutId</i> |
+  <dd><i>routeStatement</i> |
+  <dd><i>protoStatement</i> ;
+  <dt><i>nodeNameId </i>::=
+  <dd><i>Id</i> ;
+  <dt><i>nodeTypeId </i>::=
+  <dd><i>Id</i> ;
+  <dt><i>fieldId </i>::=
+  <dd><i>Id</i> ;
+  <dt><i>eventInId </i>::=
+  <dd><i>Id</i> ;
+  <dt><i>eventOutId </i>::=
+  <dd><i>Id</i> ;
+  <dt><i>Id </i>::=
+  <dd><i>IdFirstChar</i> |
+  <dd><i>IdFirstChar IdRestChars</i> ;
+  <dt><i>IdFirstChar </i>::=
+  <dd>Any ISO-10646 character encoded using UTF-8 except: 0x30-0x39, 0x0-0x20,
+  0x22, 0x23, 0x27, 0x2b, 0x2c, 0x2d, 0x2e, 0x5b, 0x5c, 0x5d, 0x7b, 0x7d,
+  0x7f ;
+  <dt><i>IdRestChars </i>::=
+  <dd>Any number of ISO-10646 characters except: 0x0-0x20, 0x22, 0x23, 0x27,
+  0x2c, 0x2e, 0x5b, 0x5c, 0x5d, 0x7b, 0x7d, 0x7f ;
+</dl>
+
+<p><img SRC="../Images/vrmlbar.gif" ALIGN="TOP" WIDTH="470" HEIGHT="25" ALT="--- VRML separator bar ---" NATURALSIZEFLAG="0"></p>
+
+<h2><img SRC="../Images/cube.gif" ALIGN="TOP" WIDTH="20" HEIGHT="19" NATURALSIZEFLAG="0"> A.4 <a NAME="Fields"></a>Fields</h2>
+
+<dl>
+  <dt><i>fieldType </i>::=
+  <dd><b>MFColor</b> |
+  <dd><b>MFFloat</b> |
+  <dd><b>MFInt32</b> |
+  <dd><b>MFNode</b> |
+  <dd><b>MFRotation</b> |
+  <dd><b>MFString</b> |
+  <dd><b>MFTime</b> |
+  <dd><b>MFVec2f</b> |
+  <dd><b>MFVec3f</b> |
+  <dd><b>SFBool</b> |
+  <dd><b>SFColor</b> |
+  <dd><b>SFFloat</b> |
+  <dd><b>SFImage</b> |
+  <dd><b>SFInt32</b> |
+  <dd><b>SFNode</b> |
+  <dd><b>SFRotation</b> |
+  <dd><b>SFString</b> |
+  <dd><b>SFTime</b> |
+  <dd><b>SFVec2f</b> |
+  <dd><b>SFVec3f</b> ;
+  <dt><i>fieldValue </i>::=
+  <dd><i>sfboolValue</i> |
+  <dd><i>sfcolorValue</i> |
+  <dd><i>sffloatValue</i> |
+  <dd><i>sfimageValue</i> |
+  <dd><i>sfint32Value</i> |
+  <dd><i>sfnodeValue</i> |
+  <dd><i>sfrotationValue</i> |
+  <dd><i>sfstringValue</i> |
+  <dd><i>sftimeValue</i> |
+  <dd><i>sfvec2fValue</i> |
+  <dd><i>sfvec3fValue</i> |
+  <dd><i>mfcolorValue</i> |
+  <dd><i>mffloatValue</i> |
+  <dd><i>mfint32Value</i> |
+  <dd><i>mfnodeValue</i> |
+  <dd><i>mfrotationValue</i> |
+  <dd><i>mfstringValue</i> |
+  <dd><i>mftimeValue</i> |
+  <dd><i>mfvec2fValue</i> |
+  <dd><i>mfvec3fValue</i> ;
+  <dt><i>sfboolValue </i>::=
+  <dd><b>TRUE</b> |
+  <dd><b>FALSE</b> ;
+  <dt><i>sfcolorValue </i>::=
+  <dd><i>float float float</i> ;
+  <dt><i>sffloatValue </i>::=
+  <dd><i>float ;</i>
+  <dt><i>float ::=</i>
+  <dd>([+/-]?((([0-9]+(\.)?)|([0-9]*\.[0-9]+))([eE][+\-]?[0-9]+)?)).
+  <dt><i>sfimageValue </i>::=
+  <dd><i>int32 int32 int32 ...</i>
+  <dt><i>sfint32Value </i>::=
+  <dd><i>int32</i> ;
+  <dt><i>int32 </i>::=
+  <dd>([+\-]?(([0-9]+)|(0[xX][0-9a-fA-F]+)))
+  <dt><i>sfnodeValue </i>::=
+  <dd><i>nodeStatement</i> |
+  <dd><b>NULL</b> ;
+  <dt><i>sfrotationValue </i>::=
+  <dd><i>float float float float</i> ;
+  <dt><i>sfstringValue </i>::=
+  <dd><i>string</i> ;
+  <dt><i>string</i> ::=
+  <dd><b>&quot;<i>.*</i>&quot;</b> ... double-quotes must be \&quot;, backslashes
+  must be \\...
+  <dt><i>sftimeValue </i>::=
+  <dd><i>double</i> ;
+  <dt><i>double </i>::=
+  <dd>([+/-]?((([0-9]+(\.)?)|([0-9]*\.[0-9]+))([eE][+\-]?[0-9]+)?))
+  <dt><i>mftimeValue </i>::=
+  <dd><i>sftimeValue</i> |
+  <dd><b>[ ]</b> |
+  <dd><b>[</b><i> sftimeValues </i><b>]</b> ;
+  <dt><i>sftimeValues </i>::=
+  <dd><i>sftimeValue</i> |
+  <dd><i>sftimeValue sftimeValues</i> ;
+  <dt><i>sfvec2fValue </i>::=
+  <dd><i>float float</i> ;
+  <dt><i>sfvec3fValue </i>::=
+  <dd><i>float float float</i> ;
+  <dt><i>mfcolorValue </i>::=
+  <dd><i>sfcolorValue</i> |
+  <dd><b>[ ]</b> |
+  <dd><b>[</b><i> sfcolorValues </i><b>]</b> ;
+  <dt><i>sfcolorValues </i>::=
+  <dd><i>sfcolorValue</i> |
+  <dd><i>sfcolorValue sfcolorValues</i> ;
+  <dt><i>mffloatValue </i>::=
+  <dd><i>sffloatValue</i> |
+  <dd><b>[ ]</b> |
+  <dd><b>[</b><i> sffloatValues </i><b>]</b> ;
+  <dt><i>sffloatValues </i>::=
+  <dd><i>sffloatValue</i> |
+  <dd><i>sffloatValue</i><b> </b><i>sffloatValues</i> ;
+  <dt><i>mfint32Value </i>::=
+  <dd><i>sfint32Value</i> |
+  <dd><b>[ ]</b> |
+  <dd><b>[</b><i> sfint32Values </i><b>]</b> ;
+  <dt><i>sfint32Values </i>::=
+  <dd><i>sfint32Value</i> |
+  <dd><i>sfint32Value sfint32Values</i> ;
+  <dt><i>mfnodeValue </i>::=
+  <dd><i>nodeStatement</i> |
+  <dd><b>[ ]</b> |
+  <dd><b>[</b><i> nodeStatements</i><b> ]</b> ;
+  <dt><i>nodeStatements </i>::=
+  <dd><i>nodeStatement</i> |
+  <dd><i>nodeStatement nodeStatements</i> ;
+  <dt><i>mfrotationValue </i>::=
+  <dd><i>sfrotationValue</i> |
+  <dd><b>[ ]</b> |
+  <dd><b>[</b><i> sfrotationValues</i><b> ]</b> ;
+  <dt><i>sfrotationValues </i>::=
+  <dd><i>sfrotationValue</i> |
+  <dd><i>sfrotationValue sfrotationValues</i> ;
+  <dt><i>mfstringValue </i>::=
+  <dd><i>sfstringValue</i> |
+  <dd><b>[ ]</b> |
+  <dd><b>[</b><i> sfstringValues</i><b> ]</b> ;
+  <dt><i>sfstringValues </i>::=
+  <dd><i>sfstringValue</i> |
+  <dd><i>sfstringValue sfstringValues</i> ;
+  <dt><i>mfvec2fValue </i>::=
+  <dd><i>sfvec2fValue</i> |
+  <dd><b>[ ]</b> |
+  <dd><b>[</b><i> sfvec2fValues</i><b>]</b> ;
+  <dt><i>sfvec2fValues </i>::=
+  <dd><i>sfvec2fValue</i> |
+  <dd><i>sfvec2fValue sfvec2fValues</i> ;
+  <dt><i>mfvec3fValue </i>::=
+  <dd><i>sfvec3fValue</i> |
+  <dd><b>[ ]</b> |
+  <dd><b>[</b><i> sfvec3fValues</i><b> ]</b> ;
+  <dt><i>sfvec3fValues </i>::=
+  <dd><i>sfvec3fValue</i> |
+  <dd><i>sfvec3fValue</i><b> </b><i>sfvec3fValues</i> ;
+</dl>
+
+<p><img SRC="../Images/vrmlbar.gif" ALIGN="TOP" WIDTH="470" HEIGHT="25" ALT="--- VRML separator bar ---" NATURALSIZEFLAG="0"><br>
+<font SIZE="-1"><a HREF="mailto:rikk@wasabisoft.com,gavin@wasabisoft.com,chris@marrin.com">Questions
+or comments.</a></font><br>
+<font SIZE="-1"><a HREF="../copyright.html">Copyright</a> &amp;COPY; 1997 The
+VRML Consortium Incorporated.<br>
+<tt>http://www.vrml.org/Specifications/VRML97/part1/grammar.html</tt></font>
+</body>
+</html>

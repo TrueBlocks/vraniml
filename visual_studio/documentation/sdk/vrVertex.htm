@@ -1,0 +1,286 @@
+<html><head><title>vrVertex Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrVertex</a></h1>
+<dl>
+<dd>
+	A point in 3-space pointed at by a <a href="vrHalfEdge.htm">vrHalfEdge</a>.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrvertex.htm#aag">Summary</a> | </a>
+<a href="vrvertex.htm#DESCRIPTION">Description</a> | 
+<a href="vrvertex.htm#NOTES">Notes</a> | 
+<a href="vrvertex.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrvertex.htm#MEMBERS">Members</a> | 
+<a href="vrvertex.htm#parents">Ancestors</a> | <a href="vrvertex.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrVertex :<br>
+public vrIntrusiveListNode &lt; vrVertex * &gt;, public <a href="SFVec3f.htm">SFVec3f</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrVertex.htm#vrVertex_(void)$">vrVertex</a> (void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrVertex.htm#vrVertex_(const_vrVertex&amp;_v)$">vrVertex</a> (const vrVertex&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrVertex.htm#vrVertex_(const_SFVec3f&amp;_v)$">vrVertex</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrVertex.htm#vrVertex_(vrSolid_*s,_SFFloat_x,_SFFloat_y,_SFFloat_z)$">vrVertex</a> (<a href="vrSolid.htm">vrSolid</a> *s, SFFloat x, SFFloat y, SFFloat z);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<a href="vrVertex.htm#~vrVertex_(void)$">vrVertex</a> (void);</td></tr>
+<tr><td align="right" valign="top">vrVertex&amp; </td><td><a href="vrVertex.htm#vrVertex&amp;_operator$_(const_vrVertex&amp;_v)$">operator=</a> (const vrVertex&amp; v);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_CalcNormal_(void)$">CalcNormal</a> (void);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_SetTexCoord_(const_SFVec2f&amp;_coord)$">SetTexCoord</a> (const <a href="SFVec2f.htm">SFVec2f</a>&amp; coord);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_SetColor_(const_SFColor&amp;_color)$">SetColor</a> (const <a href="SFColor.htm">SFColor</a>&amp; color);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_SetNormal_(const_SFVec3f&amp;_normal)$">SetNormal</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; normal);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_SetHe_(vrHalfEdge_*he)$">SetHe</a> (<a href="vrHalfEdge.htm">vrHalfEdge</a> *he);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_SetIndex_(Uint32_i)$">SetIndex</a> (Uint32 i);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_SetId_(Uint32_i)$">SetId</a> (Uint32 i);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_SetScratch_(SFFloat_f)$">SetScratch</a> (SFFloat f);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_SetMark_(Uint32_mark)$">SetMark</a> (Uint32 mark);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_SetLocation_(const_SFVec3f&amp;_pt)$">SetLocation</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; pt);</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec2f.htm">SFVec2f</a> </td><td><a href="vrVertex.htm#SFVec2f_GetTextureCoord(const_SFVec2f&amp;_def)_const$">GetTextureCoord</a>(const <a href="SFVec2f.htm">SFVec2f</a>&amp; def) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFColor.htm">SFColor</a> </td><td><a href="vrVertex.htm#SFColor_GetColor_(const_SFColor&amp;_def)_const$">GetColor</a> (const <a href="SFColor.htm">SFColor</a>&amp; def) const;</td></tr>
+<tr><td align="right" valign="top"><a href="SFVec3f.htm">SFVec3f</a> </td><td><a href="vrVertex.htm#SFVec3f_GetNormal_(const_SFVec3f&amp;_def)_const$">GetNormal</a> (const <a href="SFVec3f.htm">SFVec3f</a>&amp; def) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrHalfEdge.htm">vrHalfEdge</a> *</td><td><a href="vrVertex.htm#vrHalfEdge_*GetHe_(void)_const$">GetHe</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">Uint32 </td><td><a href="vrVertex.htm#Uint32_GetIndex_(void)_const$">GetIndex</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrVertex.htm#SFFloat_GetScratch_(void)_const$">GetScratch</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">Uint32 </td><td><a href="vrVertex.htm#Uint32_GetMark_(void)_const$">GetMark</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrVertex.htm#SFBool_IsMarked_(Uint32_mark)_const$">IsMarked</a> (Uint32 mark) const;</td></tr>
+<tr><td align="right" valign="top"><a href="vrEdge.htm">vrEdge</a> *</td><td><a href="vrVertex.htm#vrEdge_*GetEdge_(void)_const$">GetEdge</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_Show_(vrDumpContext&amp;_dc)_const$">Show</a> (<a href="vrDumpContext.htm">vrDumpContext</a>&amp; dc) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_Verify_(void)_const$">Verify</a> (void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrVertex.htm#void_WriteNeighborhood(void)$">WriteNeighborhood</a>(void);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	The vrVertex class stores the vertex information about a <a href="vrFace.htm">vrFace</a>.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>You will probably not use this class directly.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="vrVertex_(void)$"><ul><h3><li>vrVertex (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default Constructor.
+<p>
+<a name="vrVertex_(const_vrVertex&amp;_v)$"><ul><h3><li>vrVertex (const vrVertex&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy Constructor.
+<p>
+<a name="vrVertex_(const_SFVec3f&amp;_v)$"><ul><h3><li>vrVertex (const SFVec3f&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> v:</strong>
+<dd>The coordinates of the vertex.
+<p>
+</dl></dl>
+<a name="vrVertex_(vrSolid_*s,_SFFloat_x,_SFFloat_y,_SFFloat_z)$"><ul><h3><li>vrVertex (vrSolid *s, SFFloat x, SFFloat y, SFFloat z);</li></h3></a>
+</ul>
+</ul>	   <dd>Constructor.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> s:</strong>
+<dd>The solid to which this vertex belongs.
+<dt><i>in</i><strong> x,y,z:</strong>
+<dd>The coordinates of the vertex.
+<p>
+</dl></dl>
+<a name="~vrVertex_(void)$"><ul><h3><li>~vrVertex (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrVertex&amp;_operator$_(const_vrVertex&amp;_v)$"><ul><h3><li>vrVertex&amp; operator= (const vrVertex&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="void_CalcNormal_(void)$"><ul><h3><li>void CalcNormal (void);</li></h3></a>
+</ul>
+</ul>	   <dd>Calculate the normal surrounding this vertex.
+<p>
+<a name="void_SetTexCoord_(const_SFVec2f&amp;_coord)$"><ul><h3><li>void SetTexCoord (const SFVec2f&amp; coord);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the texture coordinate for this vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> coord:</strong>
+<dd>The texture coordinate.
+<p>
+</dl></dl>
+<a name="void_SetColor_(const_SFColor&amp;_color)$"><ul><h3><li>void SetColor (const SFColor&amp; color);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the color for this vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> color:</strong>
+<dd>The color.
+<p>
+</dl></dl>
+<a name="void_SetNormal_(const_SFVec3f&amp;_normal)$"><ul><h3><li>void SetNormal (const SFVec3f&amp; normal);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the normal for this vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> normal:</strong>
+<dd>The normal.
+<p>
+</dl></dl>
+<a name="void_SetHe_(vrHalfEdge_*he)$"><ul><h3><li>void SetHe (vrHalfEdge *he);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the HE for this vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> he:</strong>
+<dd>The halfedge.
+<p>
+</dl></dl>
+<a name="void_SetIndex_(Uint32_i)$"><ul><h3><li>void SetIndex (Uint32 i);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the index for this vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> i:</strong>
+<dd>The index.
+<p>
+</dl></dl>
+<a name="void_SetId_(Uint32_i)$"><ul><h3><li>void SetId (Uint32 i);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the ID for this vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> i:</strong>
+<dd>The id.
+<p>
+</dl></dl>
+<a name="void_SetScratch_(SFFloat_f)$"><ul><h3><li>void SetScratch (SFFloat f);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the scratch value for this vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> f:</strong>
+<dd>The value.
+<p>
+</dl></dl>
+<a name="void_SetMark_(Uint32_mark)$"><ul><h3><li>void SetMark (Uint32 mark);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the mark for this vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> mark:</strong>
+<dd>The mark.
+<p>
+</dl></dl>
+<a name="void_SetLocation_(const_SFVec3f&amp;_pt)$"><ul><h3><li>void SetLocation (const SFVec3f&amp; pt);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the coordinates for this vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pt:</strong>
+<dd>The coordinate.
+<p>
+</dl></dl>
+<a name="SFVec2f_GetTextureCoord(const_SFVec2f&amp;_def)_const$"><ul><h3><li>SFVec2f GetTextureCoord(const SFVec2f&amp; def) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the texture coordinates for this vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> def:</strong>
+<dd>Default value if this vertex has no texture coord.
+<p>
+</dl></dl>
+<a name="SFColor_GetColor_(const_SFColor&amp;_def)_const$"><ul><h3><li>SFColor GetColor (const SFColor&amp; def) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the color for this vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> def:</strong>
+<dd>Default value if this vertex has no color.
+<p>
+</dl></dl>
+<a name="SFVec3f_GetNormal_(const_SFVec3f&amp;_def)_const$"><ul><h3><li>SFVec3f GetNormal (const SFVec3f&amp; def) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the normal for this vertex.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> def:</strong>
+<dd>Default value if this vertex has no normal.
+<p>
+</dl></dl>
+<a name="vrHalfEdge_*GetHe_(void)_const$"><ul><h3><li>vrHalfEdge *GetHe (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the half edge for this vertex.
+<p>
+<a name="Uint32_GetIndex_(void)_const$"><ul><h3><li>Uint32 GetIndex (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the index for this vertex.
+<p>
+<a name="SFFloat_GetScratch_(void)_const$"><ul><h3><li>SFFloat GetScratch (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the scratch value for this vertex.
+<p>
+<a name="Uint32_GetMark_(void)_const$"><ul><h3><li>Uint32 GetMark (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the mark value for this vertex.
+<p>
+<a name="SFBool_IsMarked_(Uint32_mark)_const$"><ul><h3><li>SFBool IsMarked (Uint32 mark) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if this vertex is marked with 'mark'.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> mark:</strong>
+<dd>The mark to check.
+<p>
+</dl></dl>
+<a name="vrEdge_*GetEdge_(void)_const$"><ul><h3><li>vrEdge *GetEdge (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the <a href="vrEdge.htm">vrEdge</a> that this vertex is a part of (he-&gt;edge).
+<p>
+<a name="void_Show_(vrDumpContext&amp;_dc)_const$"><ul><h3><li>void Show (vrDumpContext&amp; dc) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Debugging support.  Display the contents of the <a href="vrEdge.htm">vrEdge</a> to the dc.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> dc:</strong>
+<dd>The <a href="vrDumpContext.htm">vrDumpContext</a> to which to dump this edge.
+<p>
+</dl></dl>
+<a name="void_Verify_(void)_const$"><ul><h3><li>void Verify (void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Debugging support.  Verify the edge.
+<p>
+<a name="void_WriteNeighborhood(void)$"><ul><h3><li>void WriteNeighborhood(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Debugging support.  Write the neighborhood of this vertex.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrVertex:<p>
+<ul>
+<li><a href="SFVec3f.htm">SFVec3f</a>
+<li>vrIntrusiveListNode
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:06 1999
+.<p>
+</body></html>

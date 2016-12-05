@@ -1,0 +1,241 @@
+<html><head><title>vrCylinder Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrCylinder</a></h1>
+<dl>
+<dd>
+	This class corresponds to the Cylinder node in VRML.  
+	<a href="../spec/part1/nodesRef.html#Cylinder">Further information</a> 
+	about this class is available in any VRML related documentation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrcylinder.htm#aag">Summary</a> | </a>
+<a href="vrcylinder.htm#DESCRIPTION">Description</a> | 
+<a href="vrcylinder.htm#NOTES">Notes</a> | 
+<a href="vrcylinder.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrcylinder.htm#MEMBERS">Members</a> | 
+<a href="vrcylinder.htm#parents">Ancestors</a> | <a href="vrcylinder.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class <spc> vrCylinder : public <a href="vrGeometryNode.htm">vrGeometryNode</a><br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrCylinder.htm#vrCylinder(void)$">vrCylinder</a>(void);</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrCylinder.htm#vrCylinder(const_vrCylinder&amp;_v)$">vrCylinder</a>(const vrCylinder&amp; v);</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrCylinder.htm#~vrCylinder(void)$">vrCylinder</a></i>(void);</td></tr>
+<tr><td align="right" valign="top">vrCylinder&amp; </td><td><a href="vrCylinder.htm#vrCylinder&amp;_operator$(const_vrCylinder&amp;_v)$">operator=</a>(const vrCylinder&amp; v);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFNode">SFNode </a> </td><td><i><a href="vrCylinder.htm#SFNode_Clone(void)_const$">Clone</a></i>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrCylinder.htm#void_SetBottom(SFBool_bottom)$">SetBottom</a>(SFBool bottom);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrCylinder.htm#void_SetHeight(SFFloat_height)$">SetHeight</a>(SFFloat height);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrCylinder.htm#void_SetRadius(SFFloat_radius)$">SetRadius</a>(SFFloat radius);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrCylinder.htm#void_SetSide(SFBool_side)$">SetSide</a>(SFBool side);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrCylinder.htm#void_SetTop(SFBool_top)$">SetTop</a>(SFBool top);</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrCylinder.htm#SFBool_GetBottom(void)_const$">GetBottom</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrCylinder.htm#SFFloat_GetHeight(void)_const$">GetHeight</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrCylinder.htm#SFFloat_GetRadius(void)_const$">GetRadius</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrCylinder.htm#SFBool_GetSide(void)_const$">GetSide</a>(void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrCylinder.htm#SFBool_GetTop(void)_const$">GetTop</a>(void) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><i><a href="vrCylinder.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a></i>(<a href="vrTraverser.htm">vrTraverser</a> *trav) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><i><a href="vrCylinder.htm#SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$">IsDefault</a></i>(const <a href="SFString.htm">SFString</a>&amp; fieldName , <a href="vrField.htm">vrField</a> *field ) const;</td></tr>
+<tr><td align="right" valign="top"></td><td><a href="vrCylinder.htm#DECLARE_NODE(vrCylinder)$">DECLARE_NODE</a>(vrCylinder);</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrCylinder.htm#SFBool_m_Bottom$">m_Bottom</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrCylinder.htm#SFFloat_m_Height$">m_Height</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFFloat">SFFloat </a> </td><td><a href="vrCylinder.htm#SFFloat_m_Radius$">m_Radius</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrCylinder.htm#SFBool_m_Side$">m_Side</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrCylinder.htm#SFBool_m_Top$">m_Top</a>;</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>This node corresponds to the Cylinder node as defined in the VRML97 
+	specification.  Like all Node Classes this class is better described in the 
+	<a href="../spec/index.html">VRML97 Specification</a>.  In particular, at this 
+	<a href="../spec/part1/nodesRef.html#Cylinder">link</a>.</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>All node classes share certain aspects which are described <a href="../nodespec.htm">here</a>.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// None.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="SFBool_m_Bottom$"><ul><h3><li>SFBool m_Bottom;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'bottom' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_Height$"><ul><h3><li>SFFloat m_Height;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'height' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 2.0</strong>
+<p>
+</dl></dl>
+<a name="SFFloat_m_Radius$"><ul><h3><li>SFFloat m_Radius;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'radius' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> 1.0</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_Side$"><ul><h3><li>SFBool m_Side;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'side' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="SFBool_m_Top$"><ul><h3><li>SFBool m_Top;</li></h3></a>
+</ul>
+</ul>	  <dd>Corresponds to the 'top' field.
+<p>
+<dl><dl>
+<dt><i>default</i><strong> TRUE</strong>
+<p>
+</dl></dl>
+<a name="vrCylinder(void)$"><ul><h3><li>vrCylinder(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Default constructor.
+<p>
+<a name="vrCylinder(const_vrCylinder&amp;_v)$"><ul><h3><li>vrCylinder(const vrCylinder&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Copy constructor.
+<p>
+<a name="~vrCylinder(void)$"><ul><h3><li>~vrCylinder(void);</li></h3></a>
+</ul>
+</ul>	   <dd>Destructor.
+<p>
+<a name="vrCylinder&amp;_operator$(const_vrCylinder&amp;_v)$"><ul><h3><li>vrCylinder&amp; operator=(const vrCylinder&amp; v);</li></h3></a>
+</ul>
+</ul>	   <dd>Equals operator.
+<p>
+<a name="SFNode_Clone(void)_const$"><ul><h3><li>SFNode Clone(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns an exact copy of the given node.
+<p>
+<a name="void_SetBottom(SFBool_bottom)$"><ul><h3><li>void SetBottom(SFBool bottom);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Bottom member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> bottom:</strong>
+<dd>The bottom value.
+<p>
+</dl></dl>
+<a name="void_SetHeight(SFFloat_height)$"><ul><h3><li>void SetHeight(SFFloat height);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Height member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> height:</strong>
+<dd>The height value.
+<p>
+</dl></dl>
+<a name="void_SetRadius(SFFloat_radius)$"><ul><h3><li>void SetRadius(SFFloat radius);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Radius member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> radius:</strong>
+<dd>The radius value.
+<p>
+</dl></dl>
+<a name="void_SetSide(SFBool_side)$"><ul><h3><li>void SetSide(SFBool side);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Side member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> side:</strong>
+<dd>The side value.
+<p>
+</dl></dl>
+<a name="void_SetTop(SFBool_top)$"><ul><h3><li>void SetTop(SFBool top);</li></h3></a>
+</ul>
+</ul>	   <dd>Set the value of the m_Top member.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> top:</strong>
+<dd>The top value.
+<p>
+</dl></dl>
+<a name="SFBool_GetBottom(void)_const$"><ul><h3><li>SFBool GetBottom(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Bottom member.
+<p>
+<a name="SFFloat_GetHeight(void)_const$"><ul><h3><li>SFFloat GetHeight(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Height member.
+<p>
+<a name="SFFloat_GetRadius(void)_const$"><ul><h3><li>SFFloat GetRadius(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Radius member.
+<p>
+<a name="SFBool_GetSide(void)_const$"><ul><h3><li>SFBool GetSide(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Side member.
+<p>
+<a name="SFBool_GetTop(void)_const$"><ul><h3><li>SFBool GetTop(void) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Return the value of the m_Top member.
+<p>
+<a name="void_Traverse(vrTraverser_*trav)_const$"><ul><h3><li>void Traverse(vrTraverser *trav) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Respond to a traversal by an arbitrary traverser.  Note: Normally, nodes just call t-&gt;<a href="vrcylinder.htm#void_Traverse(vrTraverser_*trav)_const$">Traverse</a>(this)
+	   <dd>to have the traverser handle the traversal.  you may override this method in your derived class to
+	   <dd>handle traversals of node types.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> trav:</strong>
+<dd>The <a href="vrTraverser.htm">vrTraverser</a> requesting the traversal.
+<p>
+</dl></dl>
+<a name="SFBool_IsDefault(const_SFString&amp;_fieldName_,_vrField_*field_)_const$"><ul><h3><li>SFBool IsDefault(const SFString&amp; fieldName , vrField *field ) const;</li></h3></a>
+</ul>
+</ul>	   <dd>Returns TRUE if the node (or a particular field) is in it's default state.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The field to check for default value.  NULL implies check all fields of this node.
+<dt><i>out</i><strong> field:</strong>
+<dd>If non-NULL the value of the field will be returned in field.
+<p>
+</dl></dl>
+<a name="DECLARE_NODE(vrCylinder)$"><ul><h3><li>DECLARE_NODE(vrCylinder);</li></h3></a>
+</ul>
+</ul>	   <dd>Declare that this node may be runtime typed and dynamically created. [ <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> ]
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+Inheritance chain for vrCylinder:<p>
+<ul>
+<li><a href="vrBaseNode.htm">vrBaseNode</a>
+<li><a href="vrNode.htm">vrNode</a>
+<li><a href="vrGeometryNode.htm">vrGeometryNode</a>
+</ul>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:20:50 1999
+.<p>
+</body></html>

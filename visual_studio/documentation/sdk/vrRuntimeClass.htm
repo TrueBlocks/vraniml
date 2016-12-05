@@ -1,0 +1,157 @@
+<html><head><title>vrRuntimeClass Documentation</title></head>
+<body BACKGROUND="sumtextb.jpg" BGCOLOR="#FFFFFF"><h1>
+<a name="topofdoc"><img src="logo.gif" WIDTH="75" HEIGHT="75">vrRuntimeClass</a></h1>
+<dl>
+<dd>
+	Information about a given class's type used for runtime typing and dynamic creation.
+
+</dl>
+<hr><p></p>
+<p><strong>[ 
+<a href="../../Documentation/utility.htm">Utility</a> | <a href="../../Documentation/solids.htm">Solid</a> | <a href="../../Documentation/noderef.htm">VRML97</a> ]<br>[  
+<a href="vrruntimeclass.htm#aag">Summary</a> | </a>
+<a href="vrruntimeclass.htm#DESCRIPTION">Description</a> | 
+<a href="vrruntimeclass.htm#NOTES">Notes</a> | 
+<a href="vrruntimeclass.htm#EXAMPLE_CODE">Example Code</a> | 
+<a href="vrruntimeclass.htm#MEMBERS">Members</a> | 
+<a href="vrruntimeclass.htm#parents">Ancestors</a> | <a href="vrruntimeclass.htm#children">Descendants</a>  ]</strong><p>
+<a name="aag"><hr><p></p></a><h2><i>Summary</i></h2>
+class UL_Interface vrRuntimeClass<br>
+<br>
+ {
+<br>
+<table>
+<tr><td align="left"><font size="+1"><i><b>public:</b></i></font>
+</td></tr>
+<tr><td align="right" valign="top">char *</td><td><a href="vrRuntimeClass.htm#char_*m_ClassName$">m_ClassName</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#PFNV">PFNV </a> </td><td><a href="vrRuntimeClass.htm#PFNV_m_CreateFunc$">m_CreateFunc</a>;</td></tr>
+<tr><td align="right" valign="top">vrRuntimeClass *</td><td><a href="vrRuntimeClass.htm#vrRuntimeClass_*m_BaseClass$">m_BaseClass</a>;</td></tr>
+<tr><td align="right" valign="top"><a href="vrFieldList.htm">vrFieldList</a> *</td><td><a href="vrRuntimeClass.htm#vrFieldList_*m_FieldList$">m_FieldList</a>;</td></tr>
+<tr><td align="right" valign="top"></td><td>~<i><a href="vrRuntimeClass.htm#~vrRuntimeClass_(void)$">vrRuntimeClass</a></i> (void);</td></tr>
+<tr><td align="right" valign="top">char *</td><td><a href="vrRuntimeClass.htm#char_*ClassName_(void)_const$">ClassName</a> (void) const;</td></tr>
+<tr><td align="right" valign="top"><a href="../types.htm#SFBool">SFBool </a> </td><td><a href="vrRuntimeClass.htm#SFBool_IsDerivedFrom_(const_vrRuntimeClass*_pBaseClass)_const$">IsDerivedFrom</a> (const vrRuntimeClass* pBaseClass) const;</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRuntimeClass.htm#void_AddField_(const_SFString&amp;_fieldName,_SFInt32_dataType,_vrEventType_eventType,_SFInt32_fieldID)$">AddField</a> (const <a href="SFString.htm">SFString</a>&amp; fieldName, SFInt32 dataType, vrEventType eventType, SFInt32 fieldID);</td></tr>
+<tr><td align="right" valign="top">void </td><td><a href="vrRuntimeClass.htm#void_ClearFieldList_(void)$">ClearFieldList</a> (void);</td></tr>
+<tr><td align="right" valign="top"><a href="vrFieldList.htm">vrFieldList</a> *</td><td><a href="vrRuntimeClass.htm#vrFieldList_*GetFieldList_(void)_const_$">GetFieldList</a> (void) const ;</td></tr>
+<tr><td align="left"><font size="+1"><i><b>protected:</b></i></font>
+</td></tr>
+</table>
+}; <p>
+<a name="DESCRIPTION"><hr><p></p></a><h2><i>Description</i></h2>
+	<ul>
+	The vrRuntimeClass class corresponds to the MFC class CRuntimeClass.<br><br>
+	It provides runtime information about a class.  All classes that
+	include a <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> macro in thier
+	class definition have a pointer to a static vrRuntimeClass
+	for that class.  This pointer is used to determine the runtime 
+	type of the node.  The vrRuntimeClass may also be used for dynamic 
+	addition of class types as is required to support the PROTO concept
+	in VRML.
+	</ul>
+<p>
+<a name="NOTES"><hr><p></p></a><h2><i>Notes</i></h2>
+	<ul>
+	<li>This class corresponds almost exactly to the CRuntimeClass of the MFC.</li>
+	</ul>
+<p>
+<a name="EXAMPLE_CODE"><hr><p></p></a><h2><i>Example Code</i></h2>
+	<pre>
+	// Use the DECLARE and IMPLEMENT macros for a class to create
+	// the runtime class type information needed for runtime typeing.
+	// For example, in the header file for a class called vrMyClass:
+	
+	DECLARE_NODE(vrMyClass);
+		
+	// and in the .cpp file:
+	
+	IMPLEMENT_NODE(vrMyClass, vrMyBaseClass, schemaNumber);
+
+	// You may also use the <a href="../../Documentation/define.htm#DECLARE_NODE">DECLARE_NODE</a> and <a href="../../Documentation/define.htm#IMPLEMENT_NODE">IMPLEMENT_NODE</a> macros in the same way.
+	</pre>
+<p>
+<a name="MEMBERS"><hr><p></p></a><h2><i>Members</i></h2>
+<a name="char_*m_ClassName$"><ul><h3><li>char *m_ClassName;</li></h3></a>
+</ul>
+</ul>     <dd>The human readable name of this class.
+<dl><dl>
+<dt><i>default:</i><strong> className</strong>
+<p>
+</dl></dl>
+<a name="PFNV_m_CreateFunc$"><ul><h3><li>PFNV m_CreateFunc;</li></h3></a>
+</ul>
+</ul>     <dd>Pointer to a function that creates objects of this type.
+<dl><dl>
+<dt><i>default:</i><strong> Create[className]</strong>
+<p>
+</dl></dl>
+<a name="vrRuntimeClass_*m_BaseClass$"><ul><h3><li>vrRuntimeClass *m_BaseClass;</li></h3></a>
+</ul>
+</ul>     <dd>The base class of this type if any.
+<dl><dl>
+<dt><i>default:</i><strong> baseClass</strong>
+<p>
+</dl></dl>
+<a name="vrFieldList_*m_FieldList$"><ul><h3><li>vrFieldList *m_FieldList;</li></h3></a>
+</ul>
+</ul>     <dd>A linked list of <a href="vrField.htm">vrField</a> objects that make up the class type
+	   this data type.
+<dl><dl>
+<dt><i>default:</i><strong> empty</strong>
+<p>
+</dl></dl>
+<a name="~vrRuntimeClass_(void)$"><ul><h3><li>~vrRuntimeClass (void);</li></h3></a>
+</ul>
+</ul>     <dd>Destructor.
+<p>
+<a name="char_*ClassName_(void)_const$"><ul><h3><li>char *ClassName (void) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns the name of the class type.
+<p>
+<a name="SFBool_IsDerivedFrom_(const_vrRuntimeClass*_pBaseClass)_const$"><ul><h3><li>SFBool IsDerivedFrom (const vrRuntimeClass* pBaseClass) const;</li></h3></a>
+</ul>
+</ul>     <dd>Returns TRUE if this class is derived from pBaseClass.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> pBaseClass:</strong>
+<dd>A pointer to the query class type.  Use the 
+	         GETRUNTIME_CLASS(className) macro to access the static
+	         class type pointer for a given class.
+<p>
+</dl></dl>
+<a name="void_AddField_(const_SFString&amp;_fieldName,_SFInt32_dataType,_vrEventType_eventType,_SFInt32_fieldID)$"><ul><h3><li>void AddField (const SFString&amp; fieldName, SFInt32 dataType, vrEventType eventType, SFInt32 fieldID);</li></h3></a>
+</ul>
+</ul>     <dd>Add a <a href="vrField.htm">vrField</a> to the field list.
+<p>
+<dl><dl>
+<dt><i>in</i><strong> fieldName:</strong>
+<dd>The name of this field (may be NULL).
+<dt><i>in</i><strong> dataType:</strong>
+<dd>The data type of this field.
+<dt><i>in</i><strong> eventType:</strong>
+<dd>The event type of this field.
+<dt><i>in</i><strong> fieldID:</strong>
+<dd>The unique id of this field.
+<p>
+</dl></dl>
+<a name="void_ClearFieldList_(void)$"><ul><h3><li>void ClearFieldList (void);</li></h3></a>
+</ul>
+</ul>     <dd>Release memory contained in and empty the field list.
+<p>
+<a name="vrFieldList_*GetFieldList_(void)_const_$"><ul><h3><li>vrFieldList *GetFieldList (void) const ;</li></h3></a>
+</ul>
+</ul>     <dd>Return a pointer to the field list.
+<p>
+<a name="parents"><hr><p></p></a>
+<h2><i>Ancestors</i></h2>
+<ul>
+No ancestors.<p>
+</ul>
+<a name="children"><hr><p></p></a>
+<h2><i>Descendants</i></h2>
+<ul>
+No descendants.<p>
+</ul>
+<hr><p></p>
+Generated from source by the <i><a href="http://www.cs.umn.edu/~kotula/cocoon/cocoon.htm">Cocoon</a></i> utilities on Mon Feb 01 22:21:03 1999
+.<p>
+</body></html>
